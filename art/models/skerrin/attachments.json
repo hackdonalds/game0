@@ -24,16 +24,16 @@
         "ibex": {
           "file": "skerrin/horns-ibex.glb",
           "position": [
-            -0.09,
-            0.16,
-            0.04
+            -0.03,
+            0.225,
+            -0.06
           ],
           "rotation": [
-            0,
-            0,
-            0
+            -32,
+            6,
+            6
           ],
-          "scale": 0.14
+          "scale": 0.115
         }
       }
     },
