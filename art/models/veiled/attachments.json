@@ -9,16 +9,16 @@
         "oath": {
           "file": "veiled/mask-oath.glb",
           "position": [
-            0.003,
-            0.121,
-            0.008
+            0.005,
+            0.145,
+            0.02
           ],
           "rotation": [
             -6,
             -2,
             -2
           ],
-          "scale": 0.27
+          "scale": 0.31
         },
         "horned": {
           "file": "veiled/mask-horned.glb",
