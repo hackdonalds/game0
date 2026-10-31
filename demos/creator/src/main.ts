@@ -1,6 +1,7 @@
 import * as THREE from "three";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+import { TransformControls } from "three/addons/controls/TransformControls.js";
 import GUI from "lil-gui";
 
 type Option = { file: string; position: [number, number, number]; rotation: [number, number, number]; scale: number };
@@ -135,20 +136,71 @@ async function equip(slot: string, name: string) {
   refreshFit();
 }
 
+// Gizmo: drag a mounted part by hand; changes are written back into its attachments.json option
+const gizmo = new TransformControls(camera, renderer.domElement);
+gizmo.setSize(0.8);
+scene.add(gizmo.getHelper());
+gizmo.addEventListener("dragging-changed", (e) => (controls.enabled = !e.value));
+gizmo.addEventListener("objectChange", () => {
+  const m = Object.values(mounted).find((x) => x?.object === gizmo.object);
+  if (!m) return;
+  const { object, option } = m;
+  if (gizmo.mode === "scale") {
+    // Keep scale uniform: take whichever axis the user dragged
+    const s = object.scale.toArray().reduce((a, b) => (Math.abs(b - option.scale) > Math.abs(a - option.scale) ? b : a));
+    object.scale.setScalar(s);
+  }
+  // Update the arrays in place: the Fit sliders are bound to them
+  object.position.toArray().forEach((v, i) => (option.position[i] = +v.toFixed(3)));
+  [object.rotation.x, object.rotation.y, object.rotation.z].forEach((r, i) => (option.rotation[i] = +THREE.MathUtils.radToDeg(r).toFixed(1)));
+  option.scale = +object.scale.x.toFixed(3);
+  fitFolder.controllersRecursive().forEach((c) => c.updateDisplay());
+});
+const gizmoState = { target: "off", mode: "translate" as "translate" | "rotate" | "scale", space: "local" as "local" | "world" };
+
+function attachGizmo() {
+  const m = mounted[gizmoState.target];
+  if (m) gizmo.attach(m.object);
+  else gizmo.detach();
+  gizmo.setMode(gizmoState.mode);
+  gizmo.setSpace(gizmoState.space);
+}
+
+addEventListener("keydown", (e) => {
+  if ((e.target as HTMLElement).tagName === "INPUT") return;
+  const modes: Record<string, typeof gizmoState.mode> = { w: "translate", e: "rotate", r: "scale" };
+  if (modes[e.key]) gizmoState.mode = modes[e.key];
+  else if (e.key === "q") gizmoState.space = gizmoState.space === "local" ? "world" : "local";
+  else return;
+  attachGizmo();
+  fitFolder.controllersRecursive().forEach((c) => c.updateDisplay());
+});
+
 // Fit panel: tune offsets for the mounted parts, then paste the copied JSON into art/models/<people>/attachments.json
 function refreshFit() {
+  const wasOpen = !fitFolder._closed;
   fitFolder.destroy();
-  fitFolder = gui.addFolder("Fit (dev)").close();
-  for (const [slot, m] of Object.entries(mounted)) {
-    if (!m) continue;
+  fitFolder = gui.addFolder("Fit (dev)");
+  if (!wasOpen) fitFolder.close();
+
+  const slots = Object.keys(mounted).filter((s) => mounted[s]);
+  if (!slots.includes(gizmoState.target)) gizmoState.target = "off";
+  const g = fitFolder.addFolder("gizmo · keys W E R Q");
+  g.add(gizmoState, "target", ["off", ...slots]).name("part").onChange(attachGizmo);
+  g.add(gizmoState, "mode", ["translate", "rotate", "scale"]).onChange(attachGizmo);
+  g.add(gizmoState, "space", ["local", "world"]).onChange(attachGizmo);
+
+  for (const slot of slots) {
+    const m = mounted[slot]!;
     const f = fitFolder.addFolder(slot);
     const o = m.option;
     const update = () => applyTransform(m.object, o);
     ["x", "y", "z"].forEach((axis, i) => f.add(o.position, i as any, -0.6, 0.6, 0.005).name(`pos ${axis}`).onChange(update));
     ["x", "y", "z"].forEach((axis, i) => f.add(o.rotation, i as any, -180, 180, 1).name(`rot ${axis}`).onChange(update));
-    f.add(o, "scale", 0.01, 1.5, 0.005).onChange(update);
+    f.add(o, "scale", 0.01, 3, 0.005).onChange(update);
   }
   fitFolder.add({ copy: () => { const json = JSON.stringify(cfg, null, 2); console.log(json); navigator.clipboard?.writeText(json); } }, "copy").name("copy attachments.json");
+  attachGizmo();
 }
 
 await loadPeople(state.people);
