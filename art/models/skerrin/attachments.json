@@ -10,16 +10,16 @@
         "ram": {
           "file": "skerrin/horns-ram.glb",
           "position": [
-            0,
-            0.2,
-            -0.01
+            -0.019,
+            0.203,
+            0.047
           ],
           "rotation": [
-            0,
-            0,
-            0
+            -23,
+            6,
+            6
           ],
-          "scale": 0.16
+          "scale": 0.22
         },
         "ibex": {
           "file": "skerrin/horns-ibex.glb",
