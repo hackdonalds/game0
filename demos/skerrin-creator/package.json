@@ -1,0 +1,19 @@
+{
+  "name": "@game0/demo-skerrin-creator",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "models": "bun ../../scripts/web-models.ts ../../art/models/skerrin/attachments.json public/models",
+    "dev": "bun run models && vite",
+    "build": "bun run models && vite build"
+  },
+  "dependencies": {
+    "lil-gui": "0.21.0",
+    "three": "0.186.1"
+  },
+  "devDependencies": {
+    "@gltf-transform/cli": "4.5.1",
+    "@types/three": "0.186.0",
+    "vite": "8.3.4"
+  }
+}

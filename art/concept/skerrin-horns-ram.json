@@ -1,0 +1,10 @@
+{
+  "prompt": "A single pair of large curled ram horns for a goat-folk character, shown alone as a game asset, no head, three-quarter front view, thick spiralling ridged horns with a couple of carved bronze rings. Hand-painted stylized game art, mid-level detail, chunky readable shapes, softer muted colours. Plain light grey background, even soft lighting, no cast shadows, no text, no labels.",
+  "model": "openai/gpt-image-2.5-sunburst",
+  "aspect": "1:1",
+  "quality": "high",
+  "refs": [
+    "art/concept/turnaround-skerrin.png"
+  ],
+  "createdAt": "2026-10-31T21:18:30.533Z"
+}

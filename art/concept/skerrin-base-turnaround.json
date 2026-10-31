@@ -1,0 +1,10 @@
+{
+  "prompt": "Character base-body turnaround sheet for 3D modeling: the same Skerrin goat-folk shown three times side by side, evenly spaced, not overlapping: front view, side view, back view, neutral A-pose with arms angled down and away from the body, hands open. Lean anthropomorphic goat-folk with the same face, fur and hooves as the reference, but WITHOUT HORNS: a smooth hornless head with small horn buds only. Wearing only simple plain fitted undershirt and short trousers, no harness, no belts, no ropes, no tools, no accessories. Full body, head to hooves fully visible. Hand-painted stylized game art, mid-level detail, chunky readable shapes, softer muted colours. Plain light grey background, even soft lighting, no cast shadows, no text, no labels.",
+  "model": "openai/gpt-image-2.5-sunburst",
+  "aspect": "21:9",
+  "quality": "high",
+  "refs": [
+    "art/concept/turnaround-skerrin.png"
+  ],
+  "createdAt": "2026-10-31T21:18:22.635Z"
+}

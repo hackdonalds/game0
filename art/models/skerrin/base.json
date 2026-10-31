@@ -1,0 +1,13 @@
+{
+  "taskId": "01a193d4-959c-77ee-bed1-1c69a9296d83",
+  "endpoint": "/multi-image-to-3d",
+  "images": [
+    "art/concept/views/skerrin-base-front.png",
+    "art/concept/views/skerrin-base-side.png",
+    "art/concept/views/skerrin-base-back.png"
+  ],
+  "polycount": 20000,
+  "pose": "a-pose",
+  "credits": 30,
+  "createdAt": "2026-10-31T21:24:44.487Z"
+}

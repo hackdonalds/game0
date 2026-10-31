@@ -1,0 +1,11 @@
+{
+  "taskId": "01a193d4-95b2-75e5-8112-50fc3123c403",
+  "endpoint": "/image-to-3d",
+  "images": [
+    "art/concept/skerrin-horns-ram.png"
+  ],
+  "polycount": 5000,
+  "pose": "",
+  "credits": 30,
+  "createdAt": "2026-10-31T21:20:50.242Z"
+}
