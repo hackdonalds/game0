@@ -1,0 +1,10 @@
+{
+  "prompt": "Third-person over-the-shoulder game view of a heroic stylized adventurer with slightly exaggerated proportions, light leather armor and a glowing teal sword, standing on a mossy stone path at the edge of a floating isle, looking across the sky toward distant isles and spires. Stylized painterly epic high fantasy, hand-painted textures, warm golden key light with cool teal shadows, glowing teal magic water, moss green foliage, terracotta roofs, gothic spires, luminous and hopeful. Match the style, palette and mood of the reference image.",
+  "model": "openai/gpt-image-2.5-sunburst",
+  "aspect": "16:9",
+  "quality": "high",
+  "refs": [
+    "art/references/world-tree-floating-isle.webp"
+  ],
+  "createdAt": "2026-10-31T20:56:08.725Z"
+}

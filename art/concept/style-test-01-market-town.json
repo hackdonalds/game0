@@ -1,0 +1,10 @@
+{
+  "prompt": "A bustling sky-island market town built on a floating isle, stone bridges linking to neighbouring isles, a docked wooden airship unloading cargo, stalls and red-roofed houses, giant ancient tree in the distance. Stylized painterly epic high fantasy, hand-painted textures, warm golden key light with cool teal shadows, glowing teal magic water, moss green foliage, terracotta roofs, gothic spires, luminous and hopeful. Match the style, palette and mood of the reference image.",
+  "model": "openai/gpt-image-2.5-sunburst",
+  "aspect": "16:9",
+  "quality": "high",
+  "refs": [
+    "art/references/world-tree-floating-isle.webp"
+  ],
+  "createdAt": "2026-10-31T20:55:28.914Z"
+}

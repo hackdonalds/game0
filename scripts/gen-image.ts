@@ -1,5 +1,5 @@
 // Generate concept art via OpenRouter and save it into the repo with a prompt sidecar.
-// Usage: bun run art:image "prompt" [--out art/concept/name] [--ref path.webp ...] [--aspect 16:9] [--model id]
+// Usage: bun run art:image "prompt" [--out art/concept/name] [--ref path.webp ...] [--aspect 16:9] [--quality high] [--model id]
 import { parseArgs } from "node:util";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, extname } from "node:path";
@@ -12,6 +12,7 @@ const { values, positionals } = parseArgs({
     out: { type: "string" },
     ref: { type: "string", multiple: true, default: [] },
     aspect: { type: "string", default: "16:9" },
+    quality: { type: "string", default: "high" },
     model: { type: "string", default: DEFAULT_MODEL },
   },
 });
@@ -29,19 +30,20 @@ const refs = await Promise.all(
   })),
 );
 
-const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+const res = await fetch("https://openrouter.ai/api/v1/images", {
   method: "POST",
   headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json", "X-Title": "game0" },
   body: JSON.stringify({
     model: values.model,
-    modalities: ["image"],
-    image_config: { aspect_ratio: values.aspect },
-    messages: [{ role: "user", content: [{ type: "text", text: prompt }, ...refs] }],
+    prompt,
+    aspect_ratio: values.aspect,
+    quality: values.quality,
+    ...(refs.length && { input_references: refs }),
   }),
 });
 if (!res.ok) throw new Error(`OpenRouter ${res.status}: ${await res.text()}`);
 const data = await res.json();
-const images: { image_url: { url: string } }[] = data.choices?.[0]?.message?.images ?? [];
+const images: { url?: string; b64_json?: string }[] = data.data ?? [];
 if (!images.length) throw new Error(`No image returned: ${JSON.stringify(data).slice(0, 500)}`);
 
 const slug = prompt.toLowerCase().replace(/[^a-z0-9]+/g, "-").slice(0, 48).replace(/-+$/, "");
@@ -49,12 +51,19 @@ const base = values.out ?? `art/concept/${new Date().toISOString().slice(0, 10)}
 await mkdir(dirname(base), { recursive: true });
 
 for (const [i, img] of images.entries()) {
-  const [, type, b64] = img.image_url.url.match(/^data:image\/(\w+);base64,(.+)$/)!;
+  let bytes: Buffer;
+  let type = "png";
+  if (img.b64_json) bytes = Buffer.from(img.b64_json, "base64");
+  else if (img.url?.startsWith("data:")) {
+    const [, t, b64] = img.url.match(/^data:image\/(\w+);base64,(.+)$/)!;
+    [type, bytes] = [t, Buffer.from(b64, "base64")];
+  } else if (img.url) bytes = Buffer.from(await (await fetch(img.url)).arrayBuffer());
+  else throw new Error(`Unrecognised image entry: ${JSON.stringify(img).slice(0, 200)}`);
   const file = `${base}${images.length > 1 ? `-${i + 1}` : ""}.${type === "jpeg" ? "jpg" : type}`;
-  await writeFile(file, Buffer.from(b64, "base64"));
+  await writeFile(file, bytes);
   console.log(file);
 }
 await writeFile(
   `${base}.json`,
-  JSON.stringify({ prompt, model: values.model, aspect: values.aspect, refs: values.ref, generationId: data.id, createdAt: new Date().toISOString() }, null, 2) + "\n",
+  JSON.stringify({ prompt, model: values.model, aspect: values.aspect, quality: values.quality, refs: values.ref, generationId: data.id, createdAt: new Date().toISOString() }, null, 2) + "\n",
 );
