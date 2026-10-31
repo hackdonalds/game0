@@ -47,14 +47,14 @@
         "stone-hammer": {
           "file": "props/rootborn-stone-hammer.glb",
           "position": [
-            -0.166,
-            0.367,
-            -0.126
+            -0.14,
+            0.148,
+            0.129
           ],
           "rotation": [
-            -15,
-            -20,
-            27
+            123.6,
+            -72.5,
+            51.3
           ],
           "scale": 1.15
         }
