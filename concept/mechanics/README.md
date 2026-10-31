@@ -26,7 +26,7 @@ Classless, skill-based progression with action combat, open-world risk and a pla
 
 ## Skills
 
-About 35 skills. Every skill rises by use and decays slowly when unused.
+About 35 skills (approved 2026-11-01). Every skill rises by use and decays slowly when unused.
 
 | Group | Skills |
 | --- | --- |
