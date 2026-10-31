@@ -1,9 +1,49 @@
 # Art Direction
 
-> To be shaped in the concept interviews.
+Stylized painterly, epic high fantasy. Grand and luminous, never grim.
+
+## Decisions so far
+
+| Topic | Decision |
+| --- | --- |
+| Rendering | Stylized painterly: hand-painted textures, soft lighting, gentle rim light |
+| Camera | Third-person, over the shoulder |
+| Characters | Heroic stylized proportions: slightly larger hands, heads and shoulders, readable silhouettes at distance |
+| Reference use | The reference anchors the palette and mood; other elements stay open to exploration |
 
 ## Starting reference
 
 ![World tree on a floating isle](../../art/references/world-tree-floating-isle.webp)
 
-Painterly, warm high-fantasy: a giant world tree on a floating island, teal glowing water, red-roofed towns, gothic spires, stone paths and arched bridges.
+## Palette
+
+Taken from the reference.
+
+| Role | Colour | Hex |
+| --- | --- | --- |
+| Magic and water glow | Teal | `#2FC4B2` |
+| Deep water and shadow | Deep teal | `#0E5A57` |
+| Sunlight and highlights | Warm gold | `#E3B45A` |
+| Foliage and grass | Moss green | `#4F7A3A` |
+| Settlements | Terracotta roofs | `#C7643A` |
+| Stone and paths | Parchment stone | `#F3ECD9` |
+| Night and UI ground | Ink green | `#12261F` |
+
+## Visual rules
+
+- **Light:** warm golden key light with cool teal shadows and fill. Magic glows teal.
+- **Shapes:** organic, twisting forms for nature, and tall gothic spires for civilisation. Isles taper into rock and root undersides.
+- **Scale:** huge landmarks (world tree, spires) seen at a distance give every shard a skyline.
+- **Detail:** dense detail only near the player's focal points. Surfaces far away read as soft painted mass.
+- **Readability:** combat effects and enemy tells must read clearly against busy foliage, so keep effects high-contrast against the moss and stone.
+
+## Asset pipeline
+
+- **Concept art:** `bun run art:image` with `openai/gpt-image-2.5-sunburst`, using the reference image as a style input. Saved to `art/concept/`.
+- **3D models:** generated with the Meshy MCP from concept art, saved to `art/models/` as `.glb`, then hand-tuned as needed.
+
+## Open questions
+
+- Day and night cycle, weather, and how the sky looks below the isles
+- UI style: parchment and gold, or minimal glass
+- Visual identity for each biome and isle type
