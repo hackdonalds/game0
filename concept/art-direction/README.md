@@ -13,6 +13,7 @@ Stylized painterly, epic high fantasy. Grand and luminous, never grim.
 | 3D fidelity | Hand-painted, mid detail: chunky readable shapes, with detail painted into textures rather than modelled |
 | Animal folk | Animal heads and fur on humanoid bodies, with clothing and gear on top (as in [lineup 02](../../art/concept/peoples-lineup-02.png)) |
 | Colour and light | Softer and more muted than the first tests: gentler saturation, painterly atmosphere. The palette below is applied at lower saturation |
+| Texture lighting | Flat, unlit colour textures (Meshy 7.1). Painterly lighting comes from in-engine shaders, not baked into textures ([lighting test](../../art/models/tests/lighting-ab/compare-unlit.png)) |
 | Character concept format | Turnaround sheets (front, side, back) on a neutral background, used as input for Meshy image-to-3D |
 
 ## Starting reference
