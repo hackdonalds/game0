@@ -1,0 +1,10 @@
+{
+  "prompt": "Character turnaround sheet for 3D modeling: the same character shown three times side by side in a neutral A-pose: front view, side view, back view. Full body, orthographic feel, plain light grey background, even soft lighting, no cast shadows, no text, no labels. Style: hand-painted stylized game art with mid-level detail, chunky readable shapes, detail painted into textures, heroic stylized proportions, softer muted colours with gentle saturation. Keep the exact design of this character from the reference lineup: position 1, the Rootborn: broad stocky humanoid with bark-grained wooden skin, moss and lichen on shoulders and beard, carved stone pauldron with teal inlay, stone-headed hammer.",
+  "model": "openai/gpt-image-2.5-sunburst",
+  "aspect": "21:9",
+  "quality": "high",
+  "refs": [
+    "art/concept/peoples-lineup-02.png"
+  ],
+  "createdAt": "2026-10-31T21:09:43.987Z"
+}
