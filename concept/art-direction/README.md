@@ -15,6 +15,12 @@ Stylized painterly, epic high fantasy. Grand and luminous, never grim.
 
 ![World tree on a floating isle](../../art/references/world-tree-floating-isle.webp)
 
+## Locked: landscape style
+
+Approved from the first style tests: [market town](../../art/concept/style-test-01-market-town.png) and [airship](../../art/concept/style-test-03-airship.png). These two images are the reference for environments.
+
+Characters are not locked. The [adventurer test](../../art/concept/style-test-02-adventurer.png) read as a generic young sword hero, and character design needs its own pass.
+
 ## Palette
 
 Taken from the reference.

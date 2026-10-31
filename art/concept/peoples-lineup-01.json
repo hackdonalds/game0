@@ -1,0 +1,8 @@
+{
+  "prompt": "Character concept lineup sheet for an epic high fantasy MMORPG: six original playable peoples standing side by side, full body, front three-quarter view, evenly spaced, each with a distinct silhouette, on a soft warm parchment background with a faint painted sky-isle horizon. Stylized painterly hand-painted look, heroic stylized proportions (slightly larger hands, heads and shoulders), warm golden key light, cool teal shadows. Outfits are grounded and handmade (leather, cloth, forged metal) with epic details: teal crystal accents and gold trim. From left to right: (1) Rootborn: broad, stocky, bark-grained skin with lichen markings, mossy beard, stonewright tools and carved stone pauldron. (2) Galeborn: very tall and light-boned, feather-crest hair, long elegant hands, layered sky-sailor coat with harness, rope and a brass spyglass. (3) Hearthkin: sturdy human-like smith-merchant, leather apron over a padded tunic, forge hammer, coin pouch, warm terracotta and gold colors. (4) Glimmerfolk: slender and pale, teal light glowing through veins and eyes, scholar robes with crystal focus and book chained at the hip. (5) Brushtails: anthropomorphic fox-folk courier with ink-dipped ear tips and bushy tail, satchels, letters, a short blade and a mischievous grin. (6) Hartkin: tall deer-folk warden with antlers growing moss and small flowers, bow and hunting cloak of leaves. No text, no labels.",
+  "model": "openai/gpt-image-2.5-sunburst",
+  "aspect": "21:9",
+  "quality": "high",
+  "refs": [],
+  "createdAt": "2026-10-31T21:02:44.152Z"
+}
