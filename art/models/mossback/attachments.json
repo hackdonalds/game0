@@ -42,14 +42,14 @@
         "bell-staff": {
           "file": "props/mossback-bell-staff.glb",
           "position": [
-            -0.109,
-            0.18,
-            0.07
+            -0.275,
+            0.13,
+            0.222
           ],
           "rotation": [
-            -168.3,
-            -33.7,
-            89.6
+            -35.7,
+            48.7,
+            98.5
           ],
           "scale": 1.7
         }
