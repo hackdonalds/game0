@@ -22,5 +22,4 @@ Outfit tone for all peoples: grounded, handmade leather, cloth and forged metal,
 
 - Home towns within each homeland (homelands are in [the world doc](README.md))
 - Do peoples have small innate traits, or only cosmetic and cultural differences?
-- How do the peoples relate: alliances, old feuds, trade ties?
 - Male, female and body variation for each people
