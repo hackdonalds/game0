@@ -18,14 +18,14 @@ Each `.glb` has a `.json` sidecar with the Meshy task ID, input images and credi
 
 ## Pipeline
 
-1. **Concept:** generate a base-body turnaround with `bun run art:image`, using the people's turnaround sheet as the reference. The base body wears plain underclothes, with no gear, props or swappable features. Locked features stay on (bark, shell, tail).
-2. **Views:** crop the sheet into front, side and back images in `art/concept/views/`.
-3. **Base model:**
-   ```sh
-   bun run art:3d model art/models/<people>/base <front> <side> <back> --polycount 20000 --pose a-pose
-   ```
-4. **Rig:** `bun run art:3d rig art/models/<people>/base-rigged --task <base task id> --height <metres>`
-5. **Parts and props:** one concept image each, then `bun run art:3d model <out> <image> --polycount 3000-5000 --pose none`.
+The step-by-step workflow, cost routing and guardrails are in the project's Meshy skill (`.claude/skills/meshy/SKILL.md`). In short:
+
+1. **Concept:** base-body turnaround with `bun run art:image`, cropped into views in `art/concept/views/`.
+2. **Mesh first:** `bun run art:3d model <out> <images...> --model <model> --polycount <n>`. It dry-runs and prints the cost; add `--yes` to spend.
+3. **Texture:** rerun with `--texture` once the geometry is accepted, or `bun run art:3d retexture` for variants.
+4. **Rig and animate:** on the Meshy web app (free), or `bun run art:3d rig` (5 credits).
+
+Every paid task is logged in `credit-ledger.csv`.
 
 ## Budgets
 

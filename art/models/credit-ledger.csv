@@ -1,0 +1,6 @@
+date,session,kind,output,credits,model,task_id
+2026-10-31T21:24:44Z,2026-10-31,model,art/models/skerrin/base,30,meshy-7.1,01a193d4-959c-77ee-bed1-1c69a9296d83
+2026-10-31T21:20:00Z,2026-10-31,model,art/models/skerrin/horns-ram,30,meshy-7.1,01a193d4-95b2-75e5-8112-50fc3123c403
+2026-10-31T21:20:00Z,2026-10-31,model,art/models/skerrin/horns-ibex,30,meshy-7.1,01a193d4-9609-7401-becc-f8451c600063
+2026-10-31T21:20:00Z,2026-10-31,model,art/models/props/skerrin-pickaxe,30,meshy-7.1,01a193d4-95a8-77ac-91ed-a506ecbce31b
+2026-10-31T21:25:00Z,2026-10-31,rig,art/models/skerrin/base-rigged,5,rig,
