@@ -17,11 +17,11 @@ An epic high-fantasy sandbox MMORPG set across floating sky isles. Players aren'
 | Topic | Decision |
 | --- | --- |
 | Player role | Free choice of settling, adventuring, crafting, fighting and trading |
-| Progression | Classless, use-based skills: skills rise by use under a total skill cap that forces specialisation |
+| Progression | Classless, use-based skills with a soft cap: unused skills decay slowly. Abilities are learned techniques in 6 slots. See [mechanics](mechanics/README.md) |
 | Professions | Open to everyone, no lock-in |
 | Combat | Action, skill-based |
 | Tone | Epic high fantasy |
-| PvP | Open world, with safe havens (towns and sanctuaries) |
+| PvP | Three risk tiers: safe Accord towns, guarded lanes and home isles (consensual PvP), open wild isles |
 | Death | Partial loot drop: carried resources drop, equipped gear is kept (and loses durability) |
 | Scale | Small shards, about 50–200 concurrent players per world |
 | Travel | Bridges and paths between nearby isles; crafted sailships (enchanted sails, wind currents) for longer routes and cargo |
@@ -31,8 +31,6 @@ An epic high-fantasy sandbox MMORPG set across floating sky isles. Players aren'
 
 ## Open questions
 
-- What is the total skill cap, and how do skills decay or get lowered to make room?
-- Which zones count as safe, and how does the PvP risk gradient work across isles?
 - How many town plots per shard, and how are they allocated?
 - Can sailships be attacked or boarded, and what happens to their cargo?
 - Is there persistence across shards (characters or markets), or is each shard sealed?
