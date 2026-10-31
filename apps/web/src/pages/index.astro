@@ -1,0 +1,48 @@
+---
+import Base from "../layouts/Base.astro";
+import HeroScene from "../components/HeroScene.astro";
+
+type Demo = { title: string; summary: string };
+const demos = Object.entries(import.meta.glob<Demo>("../../../../demos/*/demo.json", { eager: true, import: "default" }))
+  .map(([path, meta]) => ({ slug: path.split("/").at(-2)!, ...meta }));
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+---
+<Base title="game0">
+  <header class="hero">
+    <HeroScene />
+    <div class="hero-copy">
+      <p class="eyebrow">Working title</p>
+      <h1>game0</h1>
+      <p>A world of floating isles, ancient trees and cities in the clouds.</p>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h2>Playable demos</h2>
+      <ul class="demos">
+        {demos.map((d) => (
+          <li>
+            <a href={`${base}/demos/${d.slug}/`}>
+              <h3>{d.title}</h3>
+              <p>{d.summary}</p>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  </main>
+</Base>
+
+<style>
+  .hero { position: relative; min-height: 88vh; display: grid; align-items: end; overflow: hidden;
+    background: radial-gradient(ellipse at 50% 30%, #1f6f62 0%, var(--ink) 70%); }
+  .hero-copy { position: relative; padding: 0 clamp(16px, 6vw, 96px) 10vh; max-width: 40rem; }
+  .hero h1 { font-size: clamp(3rem, 9vw, 7rem); margin: 0; color: var(--gold); }
+  .eyebrow { text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.8rem; color: var(--teal); margin: 0; }
+  main { padding: 4rem clamp(16px, 6vw, 96px); }
+  .demos { list-style: none; padding: 0; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr)); }
+  .demos a { display: block; padding: 1.25rem; border: 1px solid #ffffff22; border-radius: 12px; text-decoration: none; color: inherit; background: #ffffff08; }
+  .demos a:hover { border-color: var(--gold); }
+  .demos h3 { margin: 0 0 0.25rem; color: var(--gold); }
+</style>
