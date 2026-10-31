@@ -185,21 +185,27 @@ function refreshFit() {
 
   const slots = Object.keys(mounted).filter((s) => mounted[s]);
   if (!slots.includes(gizmoState.target)) gizmoState.target = "off";
+  fitFolder.add({ copy: () => { const json = JSON.stringify(cfg, null, 2); console.log(json); navigator.clipboard?.writeText(json); } }, "copy").name("copy attachments.json");
   const g = fitFolder.addFolder("gizmo · keys W E R Q");
-  g.add(gizmoState, "target", ["off", ...slots]).name("part").onChange(attachGizmo);
+  // Picking a part collapses the other parts' sliders so the selected one stays on screen
+  g.add(gizmoState, "target", ["off", ...slots]).name("part").onChange(() => { attachGizmo(); focusPart(); });
   g.add(gizmoState, "mode", ["translate", "rotate", "scale"]).onChange(attachGizmo);
   g.add(gizmoState, "space", ["local", "world"]).onChange(attachGizmo);
 
+  const partFolders: Record<string, GUI> = {};
+  const focusPart = () => {
+    for (const [slot, f] of Object.entries(partFolders)) f.open(gizmoState.target === "off" || slot === gizmoState.target);
+  };
   for (const slot of slots) {
     const m = mounted[slot]!;
-    const f = fitFolder.addFolder(slot);
+    const f = (partFolders[slot] = fitFolder.addFolder(slot));
     const o = m.option;
     const update = () => applyTransform(m.object, o);
     ["x", "y", "z"].forEach((axis, i) => f.add(o.position, i as any, -0.6, 0.6, 0.005).name(`pos ${axis}`).onChange(update));
     ["x", "y", "z"].forEach((axis, i) => f.add(o.rotation, i as any, -180, 180, 1).name(`rot ${axis}`).onChange(update));
     f.add(o, "scale", 0.01, 3, 0.005).onChange(update);
   }
-  fitFolder.add({ copy: () => { const json = JSON.stringify(cfg, null, 2); console.log(json); navigator.clipboard?.writeText(json); } }, "copy").name("copy attachments.json");
+  focusPart();
   attachGizmo();
 }
 
