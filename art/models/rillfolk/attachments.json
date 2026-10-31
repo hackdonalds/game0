@@ -9,16 +9,16 @@
         "rings": {
           "file": "rillfolk/tail-rings.glb",
           "position": [
-            0,
-            0.1,
-            0
+            -0.05,
+            -0.308,
+            -0.344
           ],
           "rotation": [
-            0,
-            0,
+            47,
+            1,
             0
           ],
-          "scale": 0.15
+          "scale": 0.21
         }
       }
     },
@@ -28,30 +28,30 @@
         "ladle": {
           "file": "props/rillfolk-ladle.glb",
           "position": [
-            0,
-            0.1,
-            0
+            0.016,
+            0.205,
+            -0.06
           ],
           "rotation": [
-            0,
-            0,
-            0
+            -18,
+            -22,
+            -157
           ],
-          "scale": 0.3
+          "scale": 0.55
         },
         "fish-net": {
           "file": "props/rillfolk-fish-net.glb",
           "position": [
-            0,
-            0.1,
-            0
+            -0.046,
+            0.191,
+            -0.059
           ],
           "rotation": [
-            0,
-            0,
-            0
+            -18,
+            -22,
+            -157
           ],
-          "scale": 0.25
+          "scale": 0.35
         }
       }
     }

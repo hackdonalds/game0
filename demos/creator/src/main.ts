@@ -153,7 +153,22 @@ function refreshFit() {
 
 await loadPeople(state.people);
 document.getElementById("loading")?.remove();
-if (import.meta.env.DEV) Object.assign(window, { fitDebug: { get mounted() { return mounted; }, applyTransform, get cfg() { return cfg; }, camera, controls, play, loadPeople } });
+// Dev-only fitting helper: give the offset (metres) and rotation (degrees) in world axes for the bind pose
+// (+Y up, +Z the character's front, -X its right), and it stores the equivalent bone-local values.
+function fitWorld(slot: string, offset: [number, number, number], euler: [number, number, number], scale: number) {
+  const m = mounted[slot];
+  if (!m) throw new Error(`${slot} not mounted`);
+  const inv = m.object.parent!.getWorldQuaternion(new THREE.Quaternion()).invert();
+  const world = new THREE.Quaternion().setFromEuler(new THREE.Euler(...(euler.map(THREE.MathUtils.degToRad) as [number, number, number])));
+  const local = new THREE.Euler().setFromQuaternion(inv.clone().multiply(world));
+  m.option.position = new THREE.Vector3(...offset).applyQuaternion(inv).toArray().map((v) => +v.toFixed(3)) as Option["position"];
+  m.option.rotation = [local.x, local.y, local.z].map((r) => Math.round(THREE.MathUtils.radToDeg(r))) as Option["rotation"];
+  m.option.scale = scale;
+  applyTransform(m.object, m.option);
+  return m.option;
+}
+
+if (import.meta.env.DEV) Object.assign(window, { fitDebug: { get mounted() { return mounted; }, applyTransform, get cfg() { return cfg; }, camera, controls, play, loadPeople, fitWorld } });
 
 addEventListener("resize", () => {
   camera.aspect = innerWidth / innerHeight;

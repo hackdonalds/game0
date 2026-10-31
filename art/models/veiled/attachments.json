@@ -9,30 +9,30 @@
         "oath": {
           "file": "veiled/mask-oath.glb",
           "position": [
-            0,
-            0.1,
-            0.08
+            0.003,
+            0.121,
+            0.008
           ],
           "rotation": [
-            0,
-            0,
-            0
+            -6,
+            -2,
+            -2
           ],
-          "scale": 0.14
+          "scale": 0.27
         },
         "horned": {
           "file": "veiled/mask-horned.glb",
           "position": [
-            0,
-            0.1,
-            0.08
+            0.004,
+            0.174,
+            0.032
           ],
           "rotation": [
-            0,
-            0,
-            0
+            -6,
+            -2,
+            -2
           ],
-          "scale": 0.14
+          "scale": 0.4
         }
       }
     },
@@ -42,16 +42,16 @@
         "spear": {
           "file": "props/veiled-spear.glb",
           "position": [
-            0,
-            0.1,
-            0.08
+            0.087,
+            -0.105,
+            0.076
           ],
           "rotation": [
-            0,
-            0,
-            90
+            -6,
+            -20,
+            -149
           ],
-          "scale": 0.6
+          "scale": 2.3
         }
       }
     }

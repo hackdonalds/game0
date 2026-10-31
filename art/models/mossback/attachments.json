@@ -10,29 +10,29 @@
           "file": "mossback/garden-bonsai.glb",
           "position": [
             0,
-            0.2,
-            -0.25
+            -0.09,
+            -0.268
           ],
           "rotation": [
-            0,
+            -99,
             0,
             0
           ],
-          "scale": 0.4
+          "scale": 0.45
         },
         "herbs": {
           "file": "mossback/garden-herbs.glb",
           "position": [
             0,
-            0.2,
-            -0.25
+            -0.09,
+            -0.268
           ],
           "rotation": [
-            0,
+            -99,
             0,
             0
           ],
-          "scale": 0.4
+          "scale": 0.45
         }
       }
     },
@@ -42,16 +42,16 @@
         "bell-staff": {
           "file": "props/mossback-bell-staff.glb",
           "position": [
-            0,
-            0.2,
-            -0.25
+            0.151,
+            -0.102,
+            0.092
           ],
           "rotation": [
-            0,
-            0,
-            0
+            -21,
+            -8,
+            -138
           ],
-          "scale": 0.5
+          "scale": 1.7
         }
       }
     }

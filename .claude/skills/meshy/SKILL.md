@@ -44,6 +44,16 @@ Use the API `rig` command only when the web path fails or the user asks for it. 
 
 Details per asset type, settings and prompt templates are in `references/settings.md`.
 
+## Fitting parts
+
+Fit in the creator demo's dev server (`demos/creator`, `bun run dev`) with the animation set to `none`, so the character is in its bind A-pose.
+
+- Use `fitDebug.fitWorld(slot, [x, y, z], [rx, ry, rz], scale)` in the page console. The offset and rotation are in world axes (+Y up, +Z the character's front, -X its right). The helper converts them to bone-local values, because Mixamo bones are rotated.
+- Check sizes first. Parts are normalised to about 1 unit on their longest side, so scale is roughly the real size in metres: masks 0.27–0.4, helmet-sized growths 0.35, mantles 0.9, staffs and spears 1.7–2.3.
+- Grip: the hand bone sits at the wrist. Hanging tools need an offset down along their length so the fist holds the end of the handle.
+- In the browser pane, wait about 1 s before each screenshot; otherwise the frame can be stale.
+- Save `JSON.stringify(fitDebug.cfg)` to `art/models/<people>/attachments.json` before switching peoples, because switching reloads the file. Then check the fit in the Walking clip and in the people's signature clip.
+
 ## Gotchas
 
 - API results are deleted after 3 days. The script downloads immediately, so never rely on task URLs later.

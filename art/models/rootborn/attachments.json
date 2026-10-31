@@ -10,15 +10,15 @@
           "file": "rootborn/growth-moss.glb",
           "position": [
             0,
-            0.1,
-            0
+            0.038,
+            -0.012
           ],
           "rotation": [
-            0,
+            -18,
             0,
             0
           ],
-          "scale": 0.35
+          "scale": 0.9
         }
       }
     },
@@ -28,16 +28,16 @@
         "bloom": {
           "file": "rootborn/growth-bloom.glb",
           "position": [
-            0,
-            0.1,
-            0
+            -0.004,
+            0.271,
+            -0.07
           ],
           "rotation": [
-            0,
-            0,
-            0
+            -15,
+            1,
+            1
           ],
-          "scale": 0.2
+          "scale": 0.35
         }
       }
     },
@@ -47,16 +47,16 @@
         "stone-hammer": {
           "file": "props/rootborn-stone-hammer.glb",
           "position": [
-            0,
-            0.1,
-            0
+            -0.166,
+            0.367,
+            -0.126
           ],
           "rotation": [
-            0,
-            0,
-            0
+            -15,
+            -20,
+            27
           ],
-          "scale": 0.3
+          "scale": 1.15
         }
       }
     }
