@@ -1,0 +1,10 @@
+{
+  "prompt": "A single Veiled One spear shown alone as a game prop, no hands, three-quarter view, long spear with a broad gold leaf-shaped blade, thick dark cloth-wrapped shaft, a teal crystal set below the blade, gold fittings and a gold butt cap, thick chunky proportions. Hand-painted stylized game art, mid-level detail, chunky readable shapes, softer muted colours. Plain light grey background, even soft lighting, no cast shadows, no text, no labels.",
+  "model": "openai/gpt-image-2.5-sunburst",
+  "aspect": "1:1",
+  "quality": "high",
+  "refs": [
+    "art/concept/turnaround-veiled-one.png"
+  ],
+  "createdAt": "2026-10-31T22:07:17.253Z"
+}

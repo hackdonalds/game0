@@ -1,0 +1,10 @@
+{
+  "prompt": "A single Mossback bell staff shown alone as a game prop, no hands, front view, thick gnarled wooden walking staff with a hooked knotted top, a LARGE chunky brass bell, about as wide as three staff thicknesses, fixed directly under the hook with no gap, the bell top fused solidly to the wood by a thick short wooden peg and wrapped rope, nothing thin or dangling, thick chunky proportions, one solid connected object. Hand-painted stylized game art, mid-level detail, chunky readable shapes, softer muted colours. Plain light grey background, even soft lighting, no cast shadows, no text, no labels.",
+  "model": "openai/gpt-image-2.5-sunburst",
+  "aspect": "1:1",
+  "quality": "high",
+  "refs": [
+    "art/concept/turnaround-mossback.png"
+  ],
+  "createdAt": "2026-10-31T22:14:28.828Z"
+}

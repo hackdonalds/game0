@@ -1,0 +1,15 @@
+{
+  "taskId": "01a19401-b90b-7758-97a8-d3ab8382731c",
+  "endpoint": "/multi-image-to-3d",
+  "images": [
+    "art/concept/views/rootborn-base-front.png",
+    "art/concept/views/rootborn-base-side.png",
+    "art/concept/views/rootborn-base-back.png"
+  ],
+  "model": "meshy-7.1",
+  "textured": true,
+  "polycount": 20000,
+  "pose": "a-pose",
+  "credits": 30,
+  "createdAt": "2026-10-31T22:11:29.728Z"
+}

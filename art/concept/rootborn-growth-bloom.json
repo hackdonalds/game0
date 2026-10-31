@@ -1,0 +1,10 @@
+{
+  "prompt": "A single Rootborn head growth shown alone as a game asset, no head, no body, three-quarter front view: a crown-shaped cluster of small wildflowers and little brown and red-capped mushrooms growing from a thick ring-shaped mossy base that would sit on top of a head, chunky thick stems and petals, solid compact shape. Hand-painted stylized game art, mid-level detail, chunky readable shapes, softer muted colours. Plain light grey background, even soft lighting, no cast shadows, no text, no labels.",
+  "model": "openai/gpt-image-2.5-sunburst",
+  "aspect": "1:1",
+  "quality": "high",
+  "refs": [
+    "art/concept/turnaround-rootborn.png"
+  ],
+  "createdAt": "2026-10-31T22:07:35.562Z"
+}

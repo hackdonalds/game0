@@ -1,0 +1,13 @@
+{
+  "taskId": "01a19404-4320-765e-b054-e875a052b51a",
+  "endpoint": "/image-to-3d",
+  "images": [
+    "art/concept/mossback-garden-bonsai.png"
+  ],
+  "model": "meshy-t2.5",
+  "textured": true,
+  "polycount": 4000,
+  "pose": "none",
+  "credits": 15,
+  "createdAt": "2026-10-31T22:12:13.929Z"
+}

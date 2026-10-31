@@ -1,0 +1,13 @@
+{
+  "taskId": "01a19405-3fe9-73e0-94c2-9593d6ee713a",
+  "endpoint": "/image-to-3d",
+  "images": [
+    "art/concept/mossback-garden-herbs.png"
+  ],
+  "model": "meshy-t2.5",
+  "textured": true,
+  "polycount": 4000,
+  "pose": "none",
+  "credits": 15,
+  "createdAt": "2026-10-31T22:12:58.284Z"
+}

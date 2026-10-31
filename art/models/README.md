@@ -46,4 +46,4 @@ Meshy output is for prototypes and web demos, and it's the starting point for pr
 
 ## Attachments
 
-Attachment offsets live in `<people>/attachments.json`: for each slot, the bone and each option's position (metres), rotation (degrees) and scale relative to that bone. Tune them in the creator demo's Fit panel and paste the copied JSON back.
+Attachment offsets live in `<people>/attachments.json`: for each slot, the bone and each option's position (metres), rotation (degrees) and scale relative to that bone. Tune them in the Peoples Creator demo's Fit panel (`demos/creator`) and paste the copied JSON back.

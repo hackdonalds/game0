@@ -1,0 +1,59 @@
+{
+  "base": {
+    "file": "rillfolk/base-rigged.glb"
+  },
+  "slots": {
+    "tail": {
+      "bone": "Hips",
+      "options": {
+        "rings": {
+          "file": "rillfolk/tail-rings.glb",
+          "position": [
+            0,
+            0.1,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": 0.15
+        }
+      }
+    },
+    "hand": {
+      "bone": "RightHand",
+      "options": {
+        "ladle": {
+          "file": "props/rillfolk-ladle.glb",
+          "position": [
+            0,
+            0.1,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": 0.3
+        },
+        "fish-net": {
+          "file": "props/rillfolk-fish-net.glb",
+          "position": [
+            0,
+            0.1,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": 0.25
+        }
+      }
+    }
+  }
+}

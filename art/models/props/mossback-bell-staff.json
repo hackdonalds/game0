@@ -1,0 +1,13 @@
+{
+  "taskId": "01a19407-65e0-7105-a3a4-9b5f2f736675",
+  "endpoint": "/image-to-3d",
+  "images": [
+    "art/concept/mossback-bell-staff.png"
+  ],
+  "model": "meshy-t2.5",
+  "textured": true,
+  "polycount": 3000,
+  "pose": "none",
+  "credits": 15,
+  "createdAt": "2026-10-31T22:15:08.998Z"
+}

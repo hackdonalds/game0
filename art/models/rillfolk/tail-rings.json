@@ -1,0 +1,13 @@
+{
+  "taskId": "01a19401-cc16-74df-87ce-54776a2928e0",
+  "endpoint": "/image-to-3d",
+  "images": [
+    "art/concept/rillfolk-tail-rings.png"
+  ],
+  "model": "meshy-t2.5",
+  "textured": true,
+  "polycount": 3000,
+  "pose": "none",
+  "credits": 15,
+  "createdAt": "2026-10-31T22:09:22.479Z"
+}

@@ -1,0 +1,13 @@
+{
+  "taskId": "01a19404-eaa7-72f0-851a-7c0753bc1c23",
+  "endpoint": "/image-to-3d",
+  "images": [
+    "art/concept/rillfolk-ladle.png"
+  ],
+  "model": "meshy-t2.5",
+  "textured": true,
+  "polycount": 3000,
+  "pose": "none",
+  "credits": 15,
+  "createdAt": "2026-10-31T22:12:26.921Z"
+}

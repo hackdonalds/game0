@@ -1,0 +1,59 @@
+{
+  "base": {
+    "file": "mossback/base-rigged.glb"
+  },
+  "slots": {
+    "garden": {
+      "bone": "Spine02",
+      "options": {
+        "bonsai": {
+          "file": "mossback/garden-bonsai.glb",
+          "position": [
+            0,
+            0.2,
+            -0.25
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": 0.4
+        },
+        "herbs": {
+          "file": "mossback/garden-herbs.glb",
+          "position": [
+            0,
+            0.2,
+            -0.25
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": 0.4
+        }
+      }
+    },
+    "hand": {
+      "bone": "RightHand",
+      "options": {
+        "bell-staff": {
+          "file": "props/mossback-bell-staff.glb",
+          "position": [
+            0,
+            0.2,
+            -0.25
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": 0.5
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "taskId": "01a19405-70d0-72af-b070-4fcb0ef7c412",
+  "endpoint": "/image-to-3d",
+  "images": [
+    "art/concept/rootborn-stone-hammer.png"
+  ],
+  "model": "meshy-t2.5",
+  "textured": true,
+  "polycount": 3000,
+  "pose": "none",
+  "credits": 15,
+  "createdAt": "2026-10-31T22:13:00.557Z"
+}

@@ -1,0 +1,13 @@
+{
+  "taskId": "01a19401-6bf0-7254-bbde-517e21067907",
+  "endpoint": "/image-to-3d",
+  "images": [
+    "art/concept/veiled-mask-horned.png"
+  ],
+  "model": "meshy-t2.5",
+  "textured": true,
+  "polycount": 3000,
+  "pose": "none",
+  "credits": 15,
+  "createdAt": "2026-10-31T22:08:47.449Z"
+}

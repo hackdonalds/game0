@@ -1,0 +1,13 @@
+{
+  "taskId": "01a19401-772a-725e-b6c0-1f86640f78a5",
+  "endpoint": "/image-to-3d",
+  "images": [
+    "art/concept/veiled-spear.png"
+  ],
+  "model": "meshy-t2.5",
+  "textured": true,
+  "polycount": 3000,
+  "pose": "none",
+  "credits": 15,
+  "createdAt": "2026-10-31T22:08:50.172Z"
+}

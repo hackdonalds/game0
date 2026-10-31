@@ -1,0 +1,13 @@
+{
+  "taskId": "01a19401-5fd7-77f8-a654-89b293bf1e0b",
+  "endpoint": "/image-to-3d",
+  "images": [
+    "art/concept/veiled-mask-oath.png"
+  ],
+  "model": "meshy-t2.5",
+  "textured": true,
+  "polycount": 3000,
+  "pose": "none",
+  "credits": 15,
+  "createdAt": "2026-10-31T22:08:54.415Z"
+}

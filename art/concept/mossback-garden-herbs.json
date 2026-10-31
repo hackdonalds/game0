@@ -1,0 +1,10 @@
+{
+  "prompt": "A single shell garden shown alone as a game asset, a garden that sits on top of a domed tortoise shell, three-quarter front view, with a flat slightly curved underside, no shell, no creature: a thick round wooden planter ring filled with soil, rows of chunky herbs and small vegetables (cabbages, carrot tops, leafy greens) and a tiny wooden shrine with a little peaked roof. Hand-painted stylized game art, mid-level detail, chunky readable shapes, softer muted colours. Plain light grey background, even soft lighting, no cast shadows, no text, no labels.",
+  "model": "openai/gpt-image-2.5-sunburst",
+  "aspect": "1:1",
+  "quality": "high",
+  "refs": [
+    "art/concept/turnaround-mossback.png"
+  ],
+  "createdAt": "2026-10-31T22:07:29.928Z"
+}

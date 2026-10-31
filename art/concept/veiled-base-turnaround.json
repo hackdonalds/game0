@@ -1,0 +1,10 @@
+{
+  "prompt": "Character base-body turnaround sheet for 3D modeling: the same very tall slender Veiled One shown three times side by side, evenly spaced with wide empty gaps between them, not overlapping: front view, side view, back view, neutral A-pose with arms angled down and away from the body, hands open. Same tall slender proportions as the reference but WITHOUT A MASK: the head is a smooth featureless wrapped head, tightly wound pale cloth covering the whole head, no face visible, no eyes, no mask. Body in simple close-fitting layered under-wraps of pale cream and deep blue cloth bands, tightly fitted to the body, ending at the knees and wrists, no flowing robes, no long loose drapes, no scarves, no ribbons, no jewellery, no belts, no spear, no accessories. Bare wrapped hands and bare wrapped feet. Full body, head to feet fully visible. Hand-painted stylized game art, mid-level detail, chunky readable shapes, softer muted colours. Plain light grey background, even soft lighting, no cast shadows, no text, no labels.",
+  "model": "openai/gpt-image-2.5-sunburst",
+  "aspect": "21:9",
+  "quality": "high",
+  "refs": [
+    "art/concept/turnaround-veiled-one.png"
+  ],
+  "createdAt": "2026-10-31T22:07:10.512Z"
+}

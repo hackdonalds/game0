@@ -1,0 +1,10 @@
+{
+  "prompt": "Character base-body turnaround sheet for 3D modeling: the same Mossback tortoise-folk shown three times side by side, evenly spaced with wide gaps between figures, not overlapping: front view, side view, back view, neutral A-pose with arms angled down and away from the body, hands open. Stout anthropomorphic tortoise-folk with the same beaked face and green scaled skin as the reference, and a large domed tortoise shell on the back, but the shell is PLAIN AND BARE: smooth patterned shell plates only, no garden, no plants, no moss, no shrine, no baskets, no bags, no hanging items. Wearing only a simple plain short tunic, no apron pockets, no belts, no straps, no tools, no accessories. No staff, no bells, nothing in the hands. Full body, head to feet fully visible. Hand-painted stylized game art, mid-level detail, chunky readable shapes, softer muted colours. Plain light grey background, even soft lighting, no cast shadows, no text, no labels.",
+  "model": "openai/gpt-image-2.5-sunburst",
+  "aspect": "21:9",
+  "quality": "high",
+  "refs": [
+    "art/concept/turnaround-mossback.png"
+  ],
+  "createdAt": "2026-10-31T22:07:14.031Z"
+}

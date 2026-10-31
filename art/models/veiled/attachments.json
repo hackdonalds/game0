@@ -1,0 +1,59 @@
+{
+  "base": {
+    "file": "veiled/base-rigged.glb"
+  },
+  "slots": {
+    "mask": {
+      "bone": "Head",
+      "options": {
+        "oath": {
+          "file": "veiled/mask-oath.glb",
+          "position": [
+            0,
+            0.1,
+            0.08
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": 0.14
+        },
+        "horned": {
+          "file": "veiled/mask-horned.glb",
+          "position": [
+            0,
+            0.1,
+            0.08
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": 0.14
+        }
+      }
+    },
+    "hand": {
+      "bone": "RightHand",
+      "options": {
+        "spear": {
+          "file": "props/veiled-spear.glb",
+          "position": [
+            0,
+            0.1,
+            0.08
+          ],
+          "rotation": [
+            0,
+            0,
+            90
+          ],
+          "scale": 0.6
+        }
+      }
+    }
+  }
+}

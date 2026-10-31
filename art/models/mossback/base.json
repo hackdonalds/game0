@@ -1,0 +1,15 @@
+{
+  "taskId": "01a19401-8edc-750f-a162-dd4c51b36689",
+  "endpoint": "/multi-image-to-3d",
+  "images": [
+    "art/concept/views/mossback-base-front.png",
+    "art/concept/views/mossback-base-side.png",
+    "art/concept/views/mossback-base-back.png"
+  ],
+  "model": "meshy-7.1",
+  "textured": true,
+  "polycount": 20000,
+  "pose": "a-pose",
+  "credits": 30,
+  "createdAt": "2026-10-31T22:11:09.260Z"
+}

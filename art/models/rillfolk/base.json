@@ -1,0 +1,15 @@
+{
+  "taskId": "01a19401-cc20-7693-bb7a-3b046b86acf4",
+  "endpoint": "/multi-image-to-3d",
+  "images": [
+    "art/concept/views/rillfolk-base-front.png",
+    "art/concept/views/rillfolk-base-side.png",
+    "art/concept/views/rillfolk-base-back.png"
+  ],
+  "model": "meshy-7.1",
+  "textured": true,
+  "polycount": 20000,
+  "pose": "a-pose",
+  "credits": 30,
+  "createdAt": "2026-10-31T22:11:44.780Z"
+}

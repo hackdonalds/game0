@@ -1,0 +1,10 @@
+{
+  "prompt": "A single shell garden shown alone as a game asset, a garden that sits on top of a domed tortoise shell, three-quarter front view, with a flat slightly curved underside, no shell, no creature: a thick mossy soil mound with a small chunky bonsai tree with large leaf clumps, cushions of moss, small pink flower clusters and a tiny stone lantern shrine. Hand-painted stylized game art, mid-level detail, chunky readable shapes, softer muted colours. Plain light grey background, even soft lighting, no cast shadows, no text, no labels.",
+  "model": "openai/gpt-image-2.5-sunburst",
+  "aspect": "1:1",
+  "quality": "high",
+  "refs": [
+    "art/concept/turnaround-mossback.png"
+  ],
+  "createdAt": "2026-10-31T22:07:30.196Z"
+}

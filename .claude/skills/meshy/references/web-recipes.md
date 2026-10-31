@@ -4,39 +4,38 @@ Use these for free web operations: rigging, preset animations, standalone remesh
 
 ## Rules
 
-- Load the Chrome tools in one ToolSearch call: `select:mcp__claude-in-chrome__tabs_context_mcp,mcp__claude-in-chrome__tabs_create_mcp,mcp__claude-in-chrome__navigate,mcp__claude-in-chrome__computer,mcp__claude-in-chrome__read_page,mcp__claude-in-chrome__find,mcp__claude-in-chrome__get_page_text,mcp__claude-in-chrome__tabs_close_mcp`.
-- Work in a new tab and close it when done. Never touch the user's other tabs.
-- **Read the credit label before every click** that starts a task. The cost is shown next to the button as `<time> · <credits>`. If it isn't 0 and the action isn't already approved, stop and ask.
-- Human pace: one action at a time, wait for each task to finish, no loops over many assets without checking in.
-- Never click Buy, Upgrade, Subscribe, plan or billing controls, or account settings.
-- Downloads land in `~/Downloads`. Move them into the repo with `mv`, under the paths in `art/models/README.md`.
-- Log every web action in `art/models/credit-ledger.csv` with kind `web-<action>` and its credits (0 for free ones).
+- Load the Chrome tools in one ToolSearch call: `select:mcp__claude-in-chrome__tabs_context_mcp,mcp__claude-in-chrome__navigate,mcp__claude-in-chrome__computer,mcp__claude-in-chrome__find,mcp__claude-in-chrome__get_page_text,mcp__claude-in-chrome__file_upload,mcp__claude-in-chrome__browser_batch,mcp__claude-in-chrome__tabs_close_mcp`.
+- Work in a new tab and close it when done. Never touch the user's other tabs. Only one agent drives Chrome at a time, so rig sequentially.
+- **Read the credit label before every click** that starts a task (shown as `<time> · <credits>`). If it isn't 0 and the action isn't already approved, stop and ask.
+- Human pace: one action at a time, wait for each task to finish.
+- Never click Buy, Upgrade, Top Up, plan or billing controls, the share button (the "+800" badge), or account settings.
+- Log every web action in `art/models/credit-ledger.csv` with kind `web-<action>` and its credits (0 for free ones). Reconcile the ledger total against `bun run art:3d balance` afterwards (starting balance 1,900).
 
-## Known UI (verified read-only, 2026-10-31)
+## Rig and animate an API-generated model (verified 2026-10-31, 0 credits)
 
-- Workspace: https://www.meshy.ai/workspace. The balance shows in the sidebar.
-- The Generate panel has tabs: Image to 3D (with a multi-view toggle), Text to 3D, Image. Model sub-modes are "High Detail", "Smart Topology" and "Relief". Options are Split (+10), Texture, Pose (A / T / Custom), Image Enhancement and License (Private).
-- **Paid plans default Meshy 7.1 to Ultra 2K (+5).** Switch to Standard unless it's a hero render.
-- Asset tiles show "x4", the free retries left for that task.
-- Animate: https://www.meshy.ai/workspace?sidebar=animate. It shows "Select Model / Textured Model to Rig", and the library tabs are Text to Motion (paid), Video to Motion, AI Motions and Preset Motions (free on Pro).
+API models don't appear in the web library, so upload them first.
 
-## Recipes
+1. Open https://www.meshy.ai/workspace?sidebar=animate, then click **Upload** (top right of the asset panel).
+2. Upload: use `file_upload` on the dialog's file input with `art/models/<people>/base.glb` (GLB/FBX/OBJ/STL/glTF, max 100 MB). Keep "Keep Original Texture and UV" on. **Set License to Private**; it defaults to CC BY 4.0, which is public. Click Continue. The upload costs nothing.
+3. Click **Rig** (top left, "Rig the model to animate"). Choose Humanoid (Quadruped Dog and Smart Rig also exist). Click Next.
+4. Alignment step: set **Height** to the people's height (Veiled 2.0, Rootborn 1.9, Skerrin 1.8, Mossback 1.5, Rillfolk 1.5). Click Next.
+5. Joint markers are placed automatically. Check chin, shoulders, elbows, wrists, groin, knees and ankles, then click **Confirm**. Rigging takes about 30 s and auto-adds Walking and Running.
+   - Shells (Mossback) and tails (Rillfolk) rig fine as Humanoid. The tail follows the hips and has no bones of its own.
+6. Add clips: type in "Search motion", press Enter, **hover** the card, then `find` "Add button on the preset motion card named '<name>'" and click that ref. Clicking coordinates without hovering doesn't register.
+   - The preset named plain "Idle" fails with a 400 error. Use **"Idle 1"** (exported as `Idle_02`).
+   - Matching clips exist, such as "Spear Walk" and "Heavy Hammer Swing".
+   - Check the **Added** tab after clearing the search box; the search filters that tab too.
+7. Click the green download button in the viewer toolbar. If the "Download Settings" popover doesn't open, click once more. Settings: Format glb, Skeleton template Mixamo, Rigged Character off, Animation **All Added**, Single file on. Click Download.
+8. The file arrives in `~/Downloads/Meshy_AI_base_All_Animations*.glb` after 20–60 s; Chrome may hold it briefly as `.com.google.Chrome.*`. Move it to `art/models/<people>/base-rigged.glb` and delete any duplicates.
 
-These steps are unverified until first use. Correct them, and mark each "verified" with the date, the first time it runs.
+The web rig exports a full Mixamo skeleton with finger bones (`mixamorig:Head`, `mixamorig:RightHand`, `mixamorig:Spine2`...). GLTFLoader strips the colon, so names become `mixamorigHead`. Keep `attachments.json` on the Meshy names (`Head`, `RightHand`, `Spine02`); the creator demo maps them.
 
-### Rig and animate a model (free)
-
-1. Get the model into the web library. Web-generated assets are already there. For an API-generated GLB, use the library's model upload; check whether an upload costs credits.
-2. Open the Animate sidebar, then Select Model, then the asset. Choose rig type Humanoid (Quadruped or Smart Rig for non-humanoids). Mark the joints if asked. Confirm the label reads 0, then rig.
-3. In Preset Motions, add the clips the user asked for (idle, walk, run, attack…). Choose the Mixamo-compatible skeleton if offered.
-4. Download as GLB (all added clips), then move it to `art/models/<people>/base-rigged.glb`.
-
-### Remesh (free)
+## Remesh (free, not yet used)
 
 1. Open the asset's viewer, then Remesh.
 2. Pick Triangle, Custom target (the polycount from `settings.md`), and confirm the label reads 0.
 3. Download the GLB into the repo.
 
-### Download in another format (free on Pro)
+## Download in another format (free on Pro)
 
 Open the asset, then Download, then pick the format. Never use the API Convert endpoint.

@@ -24,7 +24,7 @@ Meshy's web app and API share **one credit pool** (Pro, 1,000 credits a month), 
 | Texture accepted geometry | **API**: rerun `model` with `--texture` (keeps the 7.1 texture path for characters), or `retexture` for variants | +10 |
 | Polycount | Bake into generation (`--polycount`) | 0 |
 | Standalone remesh | **Web** Remesh | 0 (API 5: never use) |
-| Rigging | **Web** (Humanoid, Quadruped, Smart Rig) | 0 (API 5) |
+| Rigging | **Web**: upload the API GLB, then Humanoid rig (verified free; Mixamo skeleton with fingers) | 0 (API 5) |
 | Preset animations | **Web** Animate library (500+) | 0 per clip (API 3) |
 | Masked texture fixes, decals, seams | **Web** Texture Edit | unpublished: check the UI label first |
 | Downloads and formats | **Web** download, or `target_formats` at generation | 0 (API convert 1: never use) |
@@ -35,12 +35,12 @@ Use the API `rig` command only when the web path fails or the user asks for it. 
 ## Pipeline for a character people
 
 1. **Concept sheet:** `bun run art:image` with a front, side and back turnaround of the **base body**. The body wears plain underclothes, in A-pose, with no props, capes, swappable features, tails or shells. Use the people's turnaround as `--ref` and `--aspect 21:9`.
-2. **Views:** crop into thirds with `sips -c <h> <w> --cropOffset 0 <x>` into `art/concept/views/<people>-base-{front,side,back}.png`. Check each crop.
-3. **Mesh pass:** `bun run art:3d model art/models/<people>/base <front> <side> <back> --model meshy-7.1 --pose a-pose --polycount 20000`. Review the `.front/.back/.left/.right.png` thumbnails before texturing.
-4. **Texture pass:** rerun with `--texture` once the geometry is accepted.
-5. **Rig and animate on the web** (free), and download the GLB to `art/models/<people>/base-rigged.glb`.
+2. **Views:** crop into thirds with `sips -c <h> <w> --cropOffset 0 <x>` into `art/concept/views/<people>-base-{front,side,back}.png`. **sips ignores an offset of 0 and crops from the centre**, so use x = 1 for the first crop. Read each crop, or compare with `md5 -q`, before sending it to Meshy. Wide figures often spill past even thirds: cut at the gaps between figures instead, keeping the full sheet height.
+3. **Base model, textured in one pass:** `bun run art:3d model art/models/<people>/base <front> <side> <back> --model meshy-7.1 --texture --pose a-pose --polycount 20000` (30). Clean three-view base sheets have been accepted on the first try, and mesh-first would cost 20 + 30. Fall back to mesh-only passes (20 each) only if a base needs rerolls.
+4. **Review** the `.front/.back/.left/.right.png` thumbnails before rigging.
+5. **Rig and animate on the web** (free; follow `references/web-recipes.md`), and download the GLB to `art/models/<people>/base-rigged.glb`.
 6. **Parts and props:** one isolated object per concept image on a plain background. Run `model --model meshy-t2.5` (or `meshy-t2` for clean separated parts) with `--polycount 300-4000`, mesh only, then `--texture`.
-7. **Attach:** add each part to `art/models/<people>/attachments.json` (bone, position, rotation, scale), and tune it in the creator demo's Fit panel. For web use, add a demo whose `models` script runs `scripts/web-models.ts`.
+7. **Attach:** add each part to `art/models/<people>/attachments.json` (bone, position, rotation, scale), and tune it in the Peoples Creator demo's Fit panel (`demos/creator`). For web use, add a demo whose `models` script runs `scripts/web-models.ts`.
 
 Details per asset type, settings and prompt templates are in `references/settings.md`.
 
@@ -49,6 +49,8 @@ Details per asset type, settings and prompt templates are in `references/setting
 - API results are deleted after 3 days. The script downloads immediately, so never rely on task URLs later.
 - The API has no idempotency key. Never resend a create call after a timeout. Check `GET` on the task or the dashboard first.
 - FAILED tasks are refunded. IN_PROGRESS tasks can't be cancelled.
+- Queue at most 3 tasks at once across all agents. More returns 429 "NoMorePendingTasks"; nothing is created or charged, so wait and resend that one call.
+- When parallel agents generate, give them one shared `MESHY_SESSION` and a `MESHY_SESSION_BUDGET` so the cap covers them all.
 - Meshy GLBs come normalised to about ±0.95 units, so parts always need a scale in `attachments.json`.
 - API rigging is humanoid-only and fails on tails, shells, capes and props fused to the body. That's why base bodies are bare.
 - Retexture rejects `meshy-7.1`. The script uses `meshy-7`.

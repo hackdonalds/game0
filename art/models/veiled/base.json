@@ -1,0 +1,15 @@
+{
+  "taskId": "01a19401-53fe-77c8-b205-ae43dd776562",
+  "endpoint": "/multi-image-to-3d",
+  "images": [
+    "art/concept/views/veiled-base-front.png",
+    "art/concept/views/veiled-base-side.png",
+    "art/concept/views/veiled-base-back.png"
+  ],
+  "model": "meshy-7.1",
+  "textured": true,
+  "polycount": 20000,
+  "pose": "a-pose",
+  "credits": 30,
+  "createdAt": "2026-10-31T22:10:43.737Z"
+}
