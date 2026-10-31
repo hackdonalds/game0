@@ -43,13 +43,13 @@
         "pickaxe": {
           "file": "props/skerrin-pickaxe.glb",
           "position": [
-            0.12,
-            0.1,
-            0.03
+            -0.06,
+            0.13,
+            0.05
           ],
           "rotation": [
-            0,
-            0,
+            34,
+            57,
             90
           ],
           "scale": 0.3
