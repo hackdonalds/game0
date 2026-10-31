@@ -4,3 +4,5 @@ date,session,kind,output,credits,model,task_id
 2026-10-31T21:20:00Z,2026-10-31,model,art/models/skerrin/horns-ibex,30,meshy-7.1,01a193d4-9609-7401-becc-f8451c600063
 2026-10-31T21:20:00Z,2026-10-31,model,art/models/props/skerrin-pickaxe,30,meshy-7.1,01a193d4-95a8-77ac-91ed-a506ecbce31b
 2026-10-31T21:25:00Z,2026-10-31,rig,art/models/skerrin/base-rigged,5,rig,
+2026-10-31T21:58:19.417Z,ab-test,model,art/models/tests/lighting-ab/pickaxe-71,30,meshy-7.1,01a193f7-d77b-7587-99ef-5df19e378f0a
+2026-10-31T21:59:00.076Z,ab-test,model,art/models/tests/lighting-ab/pickaxe-6-lit,30,meshy-6,01a193f7-d77e-7424-9a6d-6b0ce2103af8

@@ -9,7 +9,7 @@ Source: `docs/reports/Meshy pricing and usage.md` (October 2026). Script default
 | `meshy-t2.5` | Props, weapons, rocks, trees, most attachments. Clean triangles, 100–30,000 faces, sharper detail | 5 / 15 |
 | `meshy-t2` | Attachments that should come out as separated parts. 100–15,000 faces | 5 / 15 |
 | `meshy-7.1` | Character base bodies, buildings, anything with faces or anatomy. Only model with Ultra geometry | 20 / 30 (+5 Ultra) |
-| `meshy-6` | Only model that honours `remove_lighting`. `--keep-lighting` may preserve painted light (unverified; A/B pending) | 20 / 30 |
+| `meshy-6` | Only model that honours `remove_lighting`. `--keep-lighting` bakes painted shading and highlights into the texture (verified 2026-10-31; default use not yet decided) | 20 / 30 |
 | `meshy-6-lite` | Not used: cheaper but lower quality | 5 / 15 |
 
 Retired: meshy-5, meshy-t1 / low-poly. Deprecated: meshy-7 (still the Retexture model).
@@ -49,3 +49,14 @@ Meshy's formula: subject + material + art style + technical constraints, most im
 
 **Retexture style prompt** (`retexture --style`):
 > Hand-painted stylized fantasy texture, soft muted colours, painted highlights and shadows, warm golden light, cool teal shadows, [material], no photorealism, no text.
+
+## Test results
+
+**Lighting A/B (2026-10-31, 60 credits, `art/models/tests/lighting-ab/`).** The same pickaxe concept was generated textured, PBR off, at 3,000 faces, on `meshy-7.1` and on `meshy-6 --keep-lighting`.
+- `meshy-6` baked painted shading and warm highlights into the base colour.
+- `meshy-7.1` gave flat colour.
+- Both cost 30.
+- With PBR off, each GLB has one texture and is about 4 MB (12 MB with PBR).
+- Both use fragmented automatic UV layouts, so the textures are hard to repaint by hand.
+
+**Decision pending:** where to use baked light (props only, everywhere, or nowhere).

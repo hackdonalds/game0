@@ -1,0 +1,13 @@
+{
+  "taskId": "01a193f7-d77b-7587-99ef-5df19e378f0a",
+  "endpoint": "/image-to-3d",
+  "images": [
+    "art/concept/skerrin-pickaxe.png"
+  ],
+  "model": "meshy-7.1",
+  "textured": true,
+  "polycount": 3000,
+  "pose": "none",
+  "credits": 30,
+  "createdAt": "2026-10-31T21:58:19.415Z"
+}
