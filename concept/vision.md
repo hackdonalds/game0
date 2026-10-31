@@ -24,16 +24,17 @@ An epic high-fantasy sandbox MMORPG set across floating sky isles. Players aren'
 | PvP | Open world, with safe havens (towns and sanctuaries) |
 | Death | Partial loot drop: carried resources drop, equipped gear is kept (and loses durability) |
 | Scale | Small shards, about 50–200 concurrent players per world |
-| Travel | Bridges and paths between nearby isles; crafted player airships for longer routes and cargo |
+| Travel | Bridges and paths between nearby isles; crafted sailships (enchanted sails, wind currents) for longer routes and cargo |
 | Housing | Personal plots in safe towns (cosmetics and crafting stations); no guild land claims for now |
-| World premise | Open, to be decided in the world session |
+| World premise | Floating isles above the drowned old world. Why they float is unknown; isles are slowly sinking. See [world](world/README.md) |
+| Technology | Pure high fantasy; ships sail on enchanted sails and wind currents |
 
 ## Open questions
 
 - What is the total skill cap, and how do skills decay or get lowered to make room?
 - Which zones count as safe, and how does the PvP risk gradient work across isles?
 - How many town plots per shard, and how are they allocated?
-- Can airships be attacked or boarded, and what happens to their cargo?
+- Can sailships be attacked or boarded, and what happens to their cargo?
 - Is there persistence across shards (characters or markets), or is each shard sealed?
 
 ## Target players
