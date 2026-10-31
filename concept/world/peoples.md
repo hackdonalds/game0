@@ -1,21 +1,26 @@
 # Peoples
 
-Six original playable peoples. Characters read first by culture, then by gear. Since there are no classes, any people can follow any path, but each culture has crafts and styles it's known for.
+Five original playable peoples, locked from [lineup 02](../../art/concept/peoples-lineup-02.png): positions 1, 4, 5, 6 and 7. Characters read first by culture, then by gear. Since there are no classes, any people can follow any path, but each culture has crafts and styles it's known for.
 
 Outfit tone for all peoples: grounded, handmade leather, cloth and forged metal, with epic details such as teal crystal, gold trim and culture motifs.
 
 | People | Look | Culture | Known for |
 | --- | --- | --- | --- |
-| **Rootborn** | Broad, slow-aging, bark-grained skin, lichen markings | Live in the roots beneath the isles | Stonewrights, keepers of the old trees |
-| **Galeborn** | Tall, light-boned, feather-crest hair, long hands | Nomadic, never quite at home on the ground | Sky-sailors, airship navigators |
-| **Hearthkin** | Sturdy, human-like | Red-roofed cities, the most widespread people | Smiths, merchants, builders |
-| **Glimmerfolk** | Slender, pale, teal light pulsing in veins and eyes | Glowing lagoons, bound to the teal magic | Reclusive scholars, mages |
-| **Brushtails** | Fox-folk with ink-dipped ear tips | Everywhere there's a deal | Couriers, gamblers, market brokers |
-| **Hartkin** | Tall deer-folk whose antlers grow moss and flowers through the seasons | Wild isles | Wardens, hunters, pathfinders |
+| **Rootborn** | Broad, stocky, bark-grained wooden skin, moss and lichen on shoulders and beard, carved stone gear | Live in the roots beneath the isles | Stonewrights, keepers of the old trees |
+| **Veiled Ones** | Very tall, always masked with no visible face, wrapped in living cloth embroidered with shimmering oath markings | Wanderers bound by sworn oaths | Oath-keepers, mercenaries, envoys |
+| **Mossbacks** | Tortoise-folk carrying a small garden and shrine on a domed shell | Slow, patient, long memory | Farmers, caravan masters |
+| **Skerrin** | Lean goat-folk with large curled horns and sure-footed hooves | Cliffs and undersides of the isles | Herders, climbers, miners |
+| **Rillfolk** | Sleek otter-folk with glossy fur | Glowing lagoons and rivers | River traders, divers, cooks |
+
+## Rejected
+
+- Round 1: Galeborn, Hearthkin, Glimmerfolk, Brushtails (fox), Hartkin (deer)
+- Round 2: Cindrel (ember-skinned), Shardkin (crystal)
+- Not drawn: Nimbari (cloud-touched), Lumenwings (moth)
 
 ## Open questions
 
-- Is there a third animal folk? Candidates considered: Mossbacks (tortoise), Lumenwings (moth).
 - Starting isles and home towns for each people
 - Do peoples have small innate traits, or only cosmetic and cultural differences?
 - How do the peoples relate: alliances, old feuds, trade ties?
+- Male, female and body variation for each people
