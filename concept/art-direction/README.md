@@ -57,3 +57,7 @@ Taken from the reference.
 - Day and night cycle, weather, and how the sky looks below the isles
 - UI style: parchment and gold, or minimal glass
 - Visual identity for each biome and isle type
+
+## Related
+
+- [Character customization](character-customization.md)
