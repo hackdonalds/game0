@@ -27,12 +27,12 @@ An epic high-fantasy sandbox MMORPG set across floating sky isles. Players aren'
 | Travel | Bridges and paths between nearby isles; crafted sailships (enchanted sails, wind currents) for longer routes and cargo |
 | Housing | Personal plots in safe towns (cosmetics and crafting stations); no guild land claims for now |
 | World premise | Floating isles above the drowned old world. Why they float is unknown; isles are slowly sinking. See [world](world/README.md) |
+| Ships | Can be attacked; cargo can be looted. Realistic sail simulation on enchanted wind currents |
 | Technology | Pure high fantasy; ships sail on enchanted sails and wind currents |
 
 ## Open questions
 
 - How many town plots per shard, and how are they allocated?
-- Can sailships be attacked or boarded, and what happens to their cargo?
 - Is there persistence across shards (characters or markets), or is each shard sealed?
 
 ## Target players

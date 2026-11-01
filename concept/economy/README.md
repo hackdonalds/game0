@@ -9,7 +9,8 @@ A single-gold, player-driven economy. Local markets and sailship hauling create 
 | Gear source | Mixed: monster drops and player crafting are both viable sources of gear |
 | Currency | Single gold currency |
 | Markets | Local order books per town. Goods must be physically hauled, and prices differ between towns |
-| Gold sinks | Gear durability and repair, town plot rent and upkeep, sail enchantments that wear out per voyage |
+| Gold sinks | Gear durability and repair, town plot rent and upkeep, sail wear from attacks, weather and distance |
+| Cargo | Ship cargo can be looted when a ship is attacked |
 
 ## Flows
 
@@ -21,7 +22,8 @@ A single-gold, player-driven economy. Local markets and sailship hauling create 
 **Sinks** (gold and items leaving the world)
 - Repairs, and gear broken beyond repair
 - Plot rent and upkeep
-- Sail enchantments wear out per voyage and need re-enchanting by crafters
+- Sails wear from attacks, weather and distance travelled, and need re-enchanting by crafters
+- Ship cargo looted in attacks
 - Resources lost on death (partial loot): some are picked up by other players, and the rest decay
 - Crafting inputs consumed
 
@@ -35,5 +37,4 @@ A single-gold, player-driven economy. Local markets and sailship hauling create 
 
 - How do crafted and dropped gear stay balanced? Options include drops needing crafted upgrades, or drops having lower durability.
 - Should there be any market tax? Not chosen yet; the sinks above are expected to carry the load.
-- Can ship cargo be lost or looted, and how much?
 - Which item tiers exist, and how fast does gear churn through durability?

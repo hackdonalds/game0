@@ -8,7 +8,11 @@
 
 A world of floating isles above the **drowned old world**. Nobody knows why the isles float: scholars, priests and expeditions all disagree, and that mystery drives exploration. Below the clouds and a permanent storm layer lie the ruins of the civilisation that came before.
 
-**The isles are sinking.** Every so often an isle loses its lift and slowly settles into the storm layer and the drowned world below. Land is shrinking, so claiming, holding and saving isles is what everyone fights over.
+**The isles are sinking.** Every so often an isle loses its lift and slowly settles into the storm layer and the drowned world below. Land is shrinking, so claiming and holding isles is what everyone fights over.
+
+**Sinking can be slowed, never stopped.** Rootborn tending of the ancient trees slows an isle's sinking, but once an isle starts to fall it can't be saved.
+
+**New isles are born.** Rarely, a new isle rises out of the storm layer. An isle's birth is a world event: unclaimed land, untouched resource nodes and a race to settle and hold it.
 
 **A threat is coming** *(to be defined later)*, so the peoples can't simply fight each other forever.
 
@@ -40,6 +44,7 @@ A fragile trade pact between all five peoples, signed after a great sinking that
 
 ## Gameplay hooks
 
+- **Isle births** are rare world events: the whole shard races to chart, settle and contest the new land.
 - **Sinking isles** can be a live event: an isle's last days, with evacuation, salvage and a race for its resources.
 - **Drowned-world dives** are high-risk, high-reward expeditions for old-world relics. The Rillfolk are the lore experts, but any player can dive.
 - **Grudges** give PvP its flavour without hard factions; the Accord towns are the safe havens.
@@ -47,6 +52,5 @@ A fragile trade pact between all five peoples, signed after a great sinking that
 ## Open questions
 
 - The threat: what, and when is it revealed?
-- Can players slow, stop or reverse sinking? Does it happen on a schedule or by player action?
 - Is Vael ever raised? That could be a long-term world event.
 - Names and geography of the first shard's isles.

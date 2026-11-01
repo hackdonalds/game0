@@ -14,6 +14,8 @@ Classless, skill-based progression with action combat, open-world risk and a pla
 | Death | Carried resources drop at the death spot for a while; equipped gear stays but loses durability. Respawn at the **nearest Accord shrine** |
 | Crafting | **Simple recipes**: recipe plus materials makes an item; skill sets the success chance and quality roll |
 | Group PvE | **Sinking-isle events** and **world bosses** |
+| Sinking | Slowed by Rootborn tending the ancient trees; a sinking isle can't be saved. Rare **isle births** add new land as world events |
+| Ships | Can be attacked; cargo can be looted. Sails wear from attacks, weather and distance travelled. See [sailing](#sailing) |
 | Long-term goals | Mastery and rare techniques, rare drowned-world relic gear, ships and trade empires, reputation and customization |
 
 ## Risk tiers
@@ -53,11 +55,21 @@ Each people has cultural affinities but no restrictions. For example, Skerrin le
 - **Fight**: world bosses and sinking-isle events drop techniques, relic gear and rare materials.
 - **Sinking-isle events**: an isle's last days on a shard. Evacuate settlers, salvage relics and resources, and fight for the spoils before the isle drops into the storm layer.
 
+## Sailing
+
+- **Realistic sail simulation.** Ships move by sail trim, heading against the wind, and hull drag. Tacking, running and reaching all feel different, and a well-trimmed ship beats a badly handled one.
+- **Enchanted wind directions.** The sky has wind currents with set directions and strengths. Accord lanes have charted, steady winds. Wild routes have stronger, shifting winds: faster, but in open-PvP space.
+- **Sail wear.** Sails wear from attacks, weather (storms, gusts) and distance travelled. Worn sails catch less wind, and Sailweavers re-enchant them.
+- **Ship combat.** Ships can be attacked anywhere PvP is allowed. A disabled ship's cargo can be looted.
+
 ## Open questions
 
 - Exact decay rate, and whether the "half of peak" floor is per skill.
 - How fast skills rise, and which actions grant gains (anti-macro rules).
 - Technique counts per tree, and how weapon and magic techniques interact.
 - Is stamina or mana the shared resource, or both?
-- Sinking cadence: scheduled per shard, triggered by players, or slowed by Rootborn tending?
+- Base sinking cadence per shard, and how much tending slows it.
+- How often isles are born, and what triggers the birth.
+- Ship combat weapons (spells, bows, boarding) and how a ship is disabled.
+- Can ships themselves be destroyed or captured, or only their cargo taken?
 - Relic sources: with dives not chosen as group content, do relics come only from sinking isles and world bosses, or also from solo or small-group dives?
