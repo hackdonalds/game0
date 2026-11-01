@@ -39,6 +39,17 @@
         "vite": "8.3.4",
       },
     },
+    "demos/world-editor": {
+      "name": "@game0/demo-world-editor",
+      "dependencies": {
+        "lil-gui": "0.21.0",
+        "three": "0.186.1",
+      },
+      "devDependencies": {
+        "@types/three": "0.186.0",
+        "vite": "8.3.4",
+      },
+    },
   },
   "packages": {
     "@astrojs/compiler-binding": ["@astrojs/compiler-binding@0.5.2", "", { "optionalDependencies": { "@astrojs/compiler-binding-android-arm64": "0.5.2", "@astrojs/compiler-binding-darwin-arm64": "0.5.2", "@astrojs/compiler-binding-darwin-x64": "0.5.2", "@astrojs/compiler-binding-linux-arm64-gnu": "0.5.2", "@astrojs/compiler-binding-linux-arm64-musl": "0.5.2", "@astrojs/compiler-binding-linux-x64-gnu": "0.5.2", "@astrojs/compiler-binding-linux-x64-musl": "0.5.2", "@astrojs/compiler-binding-wasm32-wasi": "0.5.2", "@astrojs/compiler-binding-win32-arm64-msvc": "0.5.2", "@astrojs/compiler-binding-win32-x64-msvc": "0.5.2" } }, "sha512-lEn76+0JcMQ5RDXU0wSMWJg2ZppiZvSULpghC29cfv4o9bhvWFDbQjsCtvjjXN9iVLFQ7fL3wTR2L2UU13mP8g=="],
@@ -122,6 +133,8 @@
     "@game0/demo-creator": ["@game0/demo-creator@workspace:demos/creator"],
 
     "@game0/demo-floating-isle": ["@game0/demo-floating-isle@workspace:demos/floating-isle"],
+
+    "@game0/demo-world-editor": ["@game0/demo-world-editor@workspace:demos/world-editor"],
 
     "@game0/web": ["@game0/web@workspace:apps/web"],
 

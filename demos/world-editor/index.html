@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>World Editor · game0 demo</title>
+    <style>
+      html, body { margin: 0; height: 100%; overflow: hidden; background: #9cc3e6; color: #1d2733; font: 14px/1.4 system-ui, sans-serif; }
+      canvas { display: block; }
+      .bar { position: fixed; top: 12px; left: 12px; display: flex; flex-wrap: wrap; gap: 6px; max-width: calc(100vw - 280px); }
+      .group { display: flex; gap: 2px; padding: 3px; border-radius: 10px; background: #ffffffd9; box-shadow: 0 4px 16px -6px #1d273366; }
+      .bar button { font: 500 13px system-ui, sans-serif; color: #1d2733; background: none; border: 0; border-radius: 7px; padding: 6px 10px; cursor: pointer; white-space: nowrap; }
+      .bar button:hover { background: #1d27330f; }
+      .bar button[aria-pressed="true"] { background: #1d2733; color: #fff; }
+      .bar kbd { font: 11px ui-monospace, monospace; opacity: 0.55; margin-left: 4px; }
+      .hint { position: fixed; left: 12px; bottom: 12px; padding: 8px 12px; border-radius: 10px; background: #ffffffd9; box-shadow: 0 4px 16px -6px #1d273366; max-width: min(560px, calc(100vw - 24px)); }
+      .legend { display: flex; flex-wrap: wrap; gap: 4px 14px; margin-top: 4px; font-size: 12px; opacity: 0.8; }
+      .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 5px; vertical-align: -1px; }
+      .label { font: 600 12px system-ui, sans-serif; color: #fff; text-shadow: 0 1px 3px #000a, 0 0 1px #000; white-space: nowrap; pointer-events: none; }
+      .label.wind { font-weight: 500; font-style: italic; opacity: 0.85; }
+      .label small { display: block; text-align: center; font-weight: 500; opacity: 0.85; }
+      .lil-gui.root { position: fixed; top: 12px; right: 12px; max-height: calc(100vh - 24px); overflow: auto; }
+      @media (max-width: 700px) { .bar { max-width: calc(100vw - 24px); } .lil-gui.root { top: auto; bottom: 12px; max-height: 45vh; } .hint { display: none; } }
+    </style>
+  </head>
+  <body>
+    <div class="bar">
+      <div class="group" id="tools">
+        <button data-tool="select" aria-pressed="true">Select<kbd>V</kbd></button>
+        <button data-tool="isle">Isle<kbd>I</kbd></button>
+        <button data-tool="wind">Wind<kbd>W</kbd></button>
+        <button data-tool="bridge">Bridge<kbd>B</kbd></button>
+      </div>
+      <div class="group">
+        <button id="undo">Undo</button>
+        <button id="redo">Redo</button>
+      </div>
+      <div class="group">
+        <button id="new">New</button>
+        <button id="generate">Generate</button>
+        <button id="import">Import</button>
+        <button id="export">Export</button>
+      </div>
+    </div>
+    <div class="hint">
+      <div id="help"></div>
+      <div class="legend">
+        <span><i style="background:#f2c14e"></i>Safe</span>
+        <span><i style="background:#3fb6a8"></i>Guarded</span>
+        <span><i style="background:#e0533d"></i>Wild</span>
+        <span><i style="background:#cfe8ff"></i>Accord lane</span>
+        <span><i style="background:#ff9a3c"></i>Wild current</span>
+      </div>
+    </div>
+    <input type="file" id="file" accept=".json,application/json" hidden />
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
