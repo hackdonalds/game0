@@ -40,7 +40,7 @@ Use the API `rig` command only when the web path fails or the user asks for it. 
 4. **Review** the `.front/.back/.left/.right.png` thumbnails before rigging.
 5. **Rig and animate on the web** (free; follow `references/web-recipes.md`), and download the GLB to `art/models/<people>/base-rigged.glb`.
 6. **Parts and props:** one isolated object per concept image on a plain background. Run `model --model meshy-t2.5` (or `meshy-t2` for clean separated parts) with `--polycount 300-4000`, mesh only, then `--texture`.
-7. **Attach:** add each part to `art/models/<people>/attachments.json` (bone, position, rotation, scale), and tune it in the Peoples Creator demo's Fit panel (`demos/creator`). For web use, add a demo whose `models` script runs `scripts/web-models.ts`.
+7. **Into the game:** anything that must fit the body system (bodies, gear, parts, clips, dye masks) continues in the `asset-forge` skill. For quick demo-only attachments, add each part to `art/models/<people>/attachments.json` (bone, position, rotation, scale), and tune it in the Peoples Creator demo's Fit panel (`demos/creator`). For web use, add a demo whose `models` script runs `scripts/web-models.ts`.
 
 Details per asset type, settings and prompt templates are in `references/settings.md`.
 

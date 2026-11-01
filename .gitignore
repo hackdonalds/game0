@@ -9,3 +9,5 @@ dist/
 # Godot
 apps/game/.godot/
 apps/game/*.import
+
+__pycache__/

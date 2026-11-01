@@ -1,0 +1,63 @@
+{
+  "family": "rigid",
+  "description": "Unskinned assets: ships, buildings, island pieces, modular kits, props. Customised by swapping parts on sockets and by dye masks.",
+  "units": "metres; glTF +Y up, +Z front (bow of a ship points +Z)",
+  "origin": "base centre on the ground plane (ships: waterline at hull centre)",
+  "sockets": "empties named Socket_<Name> anywhere in the hierarchy; held props carry one empty named Grip at the hand-hold, Y along the handle",
+  "kinds": {
+    "prop": {
+      "triangles": 3000,
+      "texture": 1024,
+      "requires": [
+        "Grip"
+      ]
+    },
+    "ship": {
+      "triangles": 40000,
+      "texture": 2048,
+      "sockets": [
+        "Socket_Mast_*",
+        "Socket_Helm",
+        "Socket_Crew_*",
+        "Socket_Cannon_*",
+        "Socket_Figurehead"
+      ],
+      "parts": [
+        "hull",
+        "deck",
+        "mast",
+        "sail",
+        "rigging",
+        "figurehead",
+        "trim"
+      ],
+      "note": "Sails may carry a small bone chain or shape keys for billowing; that is the only skinning on a ship."
+    },
+    "building": {
+      "triangles": 20000,
+      "texture": 2048
+    },
+    "kit": {
+      "triangles": 2000,
+      "texture": 1024,
+      "grid": 0.5,
+      "note": "modular pieces snap on a 0.5 m grid, pivots on grid corners"
+    },
+    "environment": {
+      "triangles": 8000,
+      "texture": 2048
+    }
+  },
+  "dye": {
+    "channels": [
+      "primary",
+      "secondary",
+      "accent"
+    ],
+    "encoding": "as humanoid"
+  },
+  "procedural": "generators live in scripts/forge/procgen/<kind>.py: deterministic Blender Python taking a JSON spec and a seed",
+  "material": {
+    "style": "painterly albedo or vertex colours, toon ramp"
+  }
+}

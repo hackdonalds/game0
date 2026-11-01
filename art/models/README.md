@@ -42,13 +42,12 @@ Every paid task is logged in `credit-ledger.csv`.
 
 ## Known limits
 
-Meshy output is for prototypes and web demos, and it's the starting point for production assets. These still need a 3D artist working in Blender:
+Meshy output is for prototypes and web demos, and it's the starting point for production assets. Rigs come with Mixamo-like names in centimetres, sloppy weights and a different topology per people. The forge steps (`bun run art:forge`) fix the names, scale and rest pose, and wrap each people onto the shared base so sliders and fitted clothing work across them.
 
-- face and body sliders (blend shapes);
-- clothing fitted to each body;
-- weighting the tail and shell to the skeleton;
-- consistent topology across the peoples.
+## From here to the game
 
-## Attachments
+Files here are **sources**: raw generator output with sidecars. The `asset-forge` skill turns them into family assets in `art/families/` (canonical skeleton, shared base, fitted gear, clip libraries, dye masks), which is what the game and site load.
+
+## Attachments (demo only)
 
 Attachment offsets live in `<people>/attachments.json`: for each slot, the bone and each option's position (metres), rotation (degrees) and scale relative to that bone. Tune them in the Peoples Creator demo's Fit panel (`demos/creator`) and paste the copied JSON back.
