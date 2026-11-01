@@ -14,6 +14,7 @@ Stylized painterly, epic high fantasy. Grand and luminous, never grim.
 | Animal folk | Animal heads and fur on humanoid bodies, with clothing and gear on top (as in [lineup 02](../../art/concept/peoples-lineup-02.png)) |
 | Colour and light | Softer and more muted than the first tests: gentler saturation, painterly atmosphere. The palette below is applied at lower saturation |
 | Texture lighting | Flat, unlit colour textures (Meshy 7.1). Painterly lighting comes from in-engine shaders, not baked into textures ([lighting test](../../art/models/tests/lighting-ab/compare-unlit.png)) |
+| Time | Day and night cycle and four seasons, changing light, colour and foliage |
 | Character concept format | Turnaround sheets (front, side, back) on a neutral background, used as input for Meshy image-to-3D |
 
 ## Starting reference
@@ -55,7 +56,7 @@ Taken from the reference.
 
 ## Open questions
 
-- Day and night cycle, weather, and how the sky looks below the isles
+- How each season looks, weather, and how the sky looks below the isles
 - UI style: parchment and gold, or minimal glass
 - Visual identity for each biome and isle type
 

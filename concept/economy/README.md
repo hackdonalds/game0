@@ -8,7 +8,9 @@ A single-gold, player-driven economy. Local markets and sailship hauling create 
 | --- | --- |
 | Gear source | Mixed: monster drops and player crafting are both viable sources of gear |
 | Currency | Single gold currency |
-| Markets | Local order books per town. Goods must be physically hauled, and prices differ between towns |
+| Markets | Local order books per town, shared across shards. Goods must be physically hauled, and prices differ between towns |
+| Gear wear | Gear wears down with use, which keeps crafters in demand |
+| Knowledge | Player trainers and player-written books are traded like goods |
 | Gold sinks | Gear durability and repair, town plot rent and upkeep, sail wear from attacks, weather and distance |
 | Cargo | Ship cargo can be looted when a ship is attacked |
 
@@ -35,6 +37,7 @@ A single-gold, player-driven economy. Local markets and sailship hauling create 
 
 ## Open questions
 
+- How are skill books priced and copied: one book per copy, written by hand?
 - How do crafted and dropped gear stay balanced? Options include drops needing crafted upgrades, or drops having lower durability.
 - Should there be any market tax? Not chosen yet; the sinks above are expected to carry the load.
 - Which item tiers exist, and how fast does gear churn through durability?

@@ -59,7 +59,11 @@ Map: [`worlds/first-shard.world.json`](../../worlds/first-shard.world.json), edi
 - **Drowned-world dives** are high-risk, high-reward expeditions for old-world relics. The Rillfolk are the lore experts, but any player can dive.
 - **Grudges** give PvP its flavour without hard factions; the Accord towns are the safe havens.
 
+## Time and seasons
+
+The world has a day and night cycle and four seasons.
+
 ## Open questions
 
-- The threat: what, and when is it revealed?
+- The threat: what, and when is it revealed? (The game has no end, so the threat is an ongoing pressure, not a final battle.)
 - Is Vael ever raised? That could be a long-term world event.
