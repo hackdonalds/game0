@@ -1,0 +1,10 @@
+{
+  "prompt": "Bestiary plate for a fantasy field guide: a fierce sharp-winged hawk with storm-grey and white feathers diving with talons out through wind streaks, a ship's sail behind. The whole creature is in view at a three-quarter angle, set in its habitat, with a soft vignette fading to warm parchment at the edges. No text, no labels, no border, no frame. Style: hand-painted stylized game art, painterly, soft lighting with gentle rim light, softer muted colours with gentle saturation, epic and luminous fantasy, never grim.",
+  "model": "openai/gpt-image-2.5-sunburst",
+  "aspect": "1:1",
+  "quality": "high",
+  "refs": [
+    "art/references/world-tree-floating-isle.webp"
+  ],
+  "createdAt": "2026-11-01T13:49:23.956Z"
+}

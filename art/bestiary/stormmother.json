@@ -1,0 +1,10 @@
+{
+  "prompt": "Bestiary plate for a fantasy field guide: a towering ethereal figure made of dark storm clouds and lightning with a vague serene feminine face, arms spread, rising above a stormy sea of clouds, swarms of small storm creatures around her, tiny sailing ships below for scale. The whole creature is in view at a three-quarter angle, set in its habitat, with a soft vignette fading to warm parchment at the edges. No text, no labels, no border, no frame. Style: hand-painted stylized game art, painterly, soft lighting with gentle rim light, softer muted colours with gentle saturation, epic and luminous fantasy, never grim.",
+  "model": "openai/gpt-image-2.5-sunburst",
+  "aspect": "1:1",
+  "quality": "high",
+  "refs": [
+    "art/references/world-tree-floating-isle.webp"
+  ],
+  "createdAt": "2026-11-01T13:51:05.623Z"
+}

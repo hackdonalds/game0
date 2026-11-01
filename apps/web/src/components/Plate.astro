@@ -9,7 +9,7 @@ const plates = import.meta.glob<{ default: ImageMetadata }>("../../../../art/bes
 const plate = Object.entries(plates).find(([path]) => path.endsWith(`/${creature.id}.png`))?.[1].default;
 ---
 {plate ? (
-  <Image class="plate" src={plate} alt={`Painted plate of the ${creature.name}`} widths={[320, 640, 1024]} sizes={sizes} loading={eager ? "eager" : "lazy"} />
+  <Image class="plate img" src={plate} alt={`Painted plate of the ${creature.name}`} widths={[320, 640, 1024]} sizes={sizes} loading={eager ? "eager" : "lazy"} />
 ) : (
   <div class="plate placeholder" data-region={creature.region} role="img" aria-label={`${creature.name}, plate not painted yet`}>
     <span class="initial">{creature.name.replace(/^The /, "")[0]}</span>
@@ -18,7 +18,8 @@ const plate = Object.entries(plates).find(([path]) => path.endsWith(`/${creature
 )}
 
 <style>
-  .plate { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 6px; background: var(--paper-deep); }
+  /* Scoped styles don't reach the <img> that <Image> renders, so it is styled globally by class */
+  :global(img.plate.img), .plate { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; border-radius: 6px; background: var(--paper-deep); }
   .placeholder {
     --tone: var(--teal);
     position: relative; display: grid; place-items: center; container-type: inline-size;

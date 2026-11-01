@@ -1,0 +1,10 @@
+{
+  "prompt": "Bestiary plate for a fantasy field guide: a twisted creature shaped like a goat made of dark swirling storm cloud with crackling lightning for eyes and veins, emerging from a dark stormy mist. The whole creature is in view at a three-quarter angle, set in its habitat, with a soft vignette fading to warm parchment at the edges. No text, no labels, no border, no frame. Style: hand-painted stylized game art, painterly, soft lighting with gentle rim light, softer muted colours with gentle saturation, epic and luminous fantasy, never grim.",
+  "model": "openai/gpt-image-2.5-sunburst",
+  "aspect": "1:1",
+  "quality": "high",
+  "refs": [
+    "art/references/world-tree-floating-isle.webp"
+  ],
+  "createdAt": "2026-11-01T13:50:12.874Z"
+}
