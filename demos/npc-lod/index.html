@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Living Shard · game0 demo</title>
+    <style>
+      html, body { margin: 0; height: 100%; overflow: hidden; background: #9cc3e6; color: #1d2733; font: 13px/1.45 system-ui, sans-serif; }
+      canvas { display: block; }
+      .panel { position: fixed; left: 12px; padding: 10px 14px; border-radius: 12px; background: #ffffffe0; box-shadow: 0 6px 20px -8px #1d273366; max-width: min(460px, calc(100vw - 24px)); }
+      #intro { top: 12px; }
+      #intro h1 { font-size: 15px; margin: 0 0 4px; }
+      #intro p { margin: 0; }
+      #hud { bottom: 12px; }
+      #hud table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; }
+      #hud th { text-align: left; font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.6; padding: 0 8px 4px 0; }
+      #hud td { padding: 2px 8px 2px 0; }
+      #hud i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; vertical-align: -1px; }
+      #hud p { margin: 8px 0 0; }
+      .label { font: 600 12px system-ui, sans-serif; color: #fff; text-shadow: 0 1px 3px #000a; white-space: nowrap; pointer-events: none; }
+      @media (max-width: 700px) { #intro { display: none; } .lil-gui.root { max-height: 40vh; overflow: auto; } }
+    </style>
+  </head>
+  <body>
+    <div id="intro" class="panel">
+      <h1>Living Shard</h1>
+      <p>Thousands of NPCs on the First Shard. Those near you (orange) run <b>Full</b>; nearby ones run <b>Light</b>; everyone else follows an <b>Abstract</b> plan. Click an isle to fly there, drag to orbit.</p>
+    </div>
+    <div id="hud" class="panel">Starting…</div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
