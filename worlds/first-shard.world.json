@@ -1,0 +1,900 @@
+{
+  "format": "game0-world",
+  "version": 1,
+  "name": "The First Shard",
+  "seed": 1,
+  "size": 1200,
+  "stormY": -60,
+  "ambientWind": {
+    "heading": 70,
+    "strength": 3
+  },
+  "isles": [
+    {
+      "id": "isle_accord-hall",
+      "name": "Accord Hall",
+      "x": 0,
+      "z": 0,
+      "y": 10,
+      "radius": 75,
+      "biome": "meadow",
+      "people": "none",
+      "tier": "safe",
+      "town": true,
+      "shrine": true,
+      "ancientTree": false,
+      "state": "stable"
+    },
+    {
+      "id": "isle_tetherport",
+      "name": "Tetherport",
+      "x": 430,
+      "z": -430,
+      "y": 15,
+      "radius": 50,
+      "biome": "meadow",
+      "people": "none",
+      "tier": "safe",
+      "town": true,
+      "shrine": true,
+      "ancientTree": false,
+      "state": "stable"
+    },
+    {
+      "id": "isle_windmarket",
+      "name": "Windmarket",
+      "x": 430,
+      "z": 430,
+      "y": 5,
+      "radius": 50,
+      "biome": "meadow",
+      "people": "none",
+      "tier": "safe",
+      "town": true,
+      "shrine": true,
+      "ancientTree": false,
+      "state": "stable"
+    },
+    {
+      "id": "isle_lanterncross",
+      "name": "Lanterncross",
+      "x": -430,
+      "z": 430,
+      "y": 0,
+      "radius": 50,
+      "biome": "meadow",
+      "people": "none",
+      "tier": "safe",
+      "town": true,
+      "shrine": true,
+      "ancientTree": false,
+      "state": "stable"
+    },
+    {
+      "id": "isle_oathgate",
+      "name": "Oathgate",
+      "x": -430,
+      "z": -430,
+      "y": 20,
+      "radius": 50,
+      "biome": "meadow",
+      "people": "none",
+      "tier": "safe",
+      "town": true,
+      "shrine": true,
+      "ancientTree": false,
+      "state": "stable"
+    },
+    {
+      "id": "isle_elderroot",
+      "name": "Elderroot",
+      "x": 0,
+      "z": -690,
+      "y": 25,
+      "radius": 75,
+      "biome": "roothold",
+      "people": "rootborn",
+      "tier": "guarded",
+      "town": false,
+      "shrine": true,
+      "ancientTree": true,
+      "state": "stable"
+    },
+    {
+      "id": "isle_rootmother",
+      "name": "Rootmother",
+      "x": -160,
+      "z": -600,
+      "y": 15,
+      "radius": 50,
+      "biome": "roothold",
+      "people": "rootborn",
+      "tier": "guarded",
+      "town": false,
+      "shrine": false,
+      "ancientTree": true,
+      "state": "stable"
+    },
+    {
+      "id": "isle_deephold",
+      "name": "Deephold",
+      "x": 150,
+      "z": -610,
+      "y": 10,
+      "radius": 45,
+      "biome": "roothold",
+      "people": "rootborn",
+      "tier": "guarded",
+      "town": false,
+      "shrine": false,
+      "ancientTree": false,
+      "state": "stable"
+    },
+    {
+      "id": "isle_hollowgrain",
+      "name": "Hollowgrain",
+      "x": 60,
+      "z": -850,
+      "y": 30,
+      "radius": 40,
+      "biome": "roothold",
+      "people": "rootborn",
+      "tier": "guarded",
+      "town": false,
+      "shrine": false,
+      "ancientTree": true,
+      "state": "stable"
+    },
+    {
+      "id": "isle_ledgerhome",
+      "name": "Ledgerhome",
+      "x": 690,
+      "z": -20,
+      "y": 5,
+      "radius": 70,
+      "biome": "garden",
+      "people": "mossback",
+      "tier": "guarded",
+      "town": false,
+      "shrine": true,
+      "ancientTree": false,
+      "state": "stable"
+    },
+    {
+      "id": "isle_terrace-hill",
+      "name": "Terrace Hill",
+      "x": 570,
+      "z": 130,
+      "y": 0,
+      "radius": 45,
+      "biome": "garden",
+      "people": "mossback",
+      "tier": "guarded",
+      "town": false,
+      "shrine": false,
+      "ancientTree": false,
+      "state": "stable"
+    },
+    {
+      "id": "isle_slowfield",
+      "name": "Slowfield",
+      "x": 840,
+      "z": 100,
+      "y": 0,
+      "radius": 50,
+      "biome": "garden",
+      "people": "mossback",
+      "tier": "guarded",
+      "town": false,
+      "shrine": false,
+      "ancientTree": false,
+      "state": "stable"
+    },
+    {
+      "id": "isle_greenshell",
+      "name": "Greenshell",
+      "x": 730,
+      "z": -180,
+      "y": 10,
+      "radius": 40,
+      "biome": "garden",
+      "people": "mossback",
+      "tier": "guarded",
+      "town": false,
+      "shrine": false,
+      "ancientTree": false,
+      "state": "stable"
+    },
+    {
+      "id": "isle_glimmerpool",
+      "name": "Glimmerpool",
+      "x": 20,
+      "z": 690,
+      "y": -10,
+      "radius": 70,
+      "biome": "lagoon",
+      "people": "rillfolk",
+      "tier": "guarded",
+      "town": false,
+      "shrine": true,
+      "ancientTree": false,
+      "state": "stable"
+    },
+    {
+      "id": "isle_otterwake",
+      "name": "Otterwake",
+      "x": -150,
+      "z": 610,
+      "y": -15,
+      "radius": 45,
+      "biome": "lagoon",
+      "people": "rillfolk",
+      "tier": "guarded",
+      "town": false,
+      "shrine": false,
+      "ancientTree": false,
+      "state": "stable"
+    },
+    {
+      "id": "isle_lanternmere",
+      "name": "Lanternmere",
+      "x": 170,
+      "z": 620,
+      "y": -5,
+      "radius": 45,
+      "biome": "lagoon",
+      "people": "rillfolk",
+      "tier": "guarded",
+      "town": false,
+      "shrine": false,
+      "ancientTree": false,
+      "state": "stable"
+    },
+    {
+      "id": "isle_shellbay",
+      "name": "Shellbay",
+      "x": 50,
+      "z": 860,
+      "y": -25,
+      "radius": 40,
+      "biome": "lagoon",
+      "people": "rillfolk",
+      "tier": "guarded",
+      "town": false,
+      "shrine": false,
+      "ancientTree": false,
+      "state": "stable"
+    },
+    {
+      "id": "isle_high-spire",
+      "name": "High Spire",
+      "x": -690,
+      "z": 0,
+      "y": 45,
+      "radius": 70,
+      "biome": "crag",
+      "people": "skerrin",
+      "tier": "guarded",
+      "town": false,
+      "shrine": true,
+      "ancientTree": false,
+      "state": "stable"
+    },
+    {
+      "id": "isle_hornfast",
+      "name": "Hornfast",
+      "x": -590,
+      "z": -150,
+      "y": 35,
+      "radius": 45,
+      "biome": "crag",
+      "people": "skerrin",
+      "tier": "guarded",
+      "town": false,
+      "shrine": false,
+      "ancientTree": false,
+      "state": "stable"
+    },
+    {
+      "id": "isle_ironcleft",
+      "name": "Ironcleft",
+      "x": -840,
+      "z": -90,
+      "y": 50,
+      "radius": 50,
+      "biome": "crag",
+      "people": "skerrin",
+      "tier": "guarded",
+      "town": false,
+      "shrine": false,
+      "ancientTree": false,
+      "state": "stable"
+    },
+    {
+      "id": "isle_goatstair",
+      "name": "Goatstair",
+      "x": -600,
+      "z": 160,
+      "y": 30,
+      "radius": 40,
+      "biome": "crag",
+      "people": "skerrin",
+      "tier": "guarded",
+      "town": false,
+      "shrine": false,
+      "ancientTree": false,
+      "state": "stable"
+    },
+    {
+      "id": "isle_waystone",
+      "name": "Waystone",
+      "x": -240,
+      "z": 230,
+      "y": 5,
+      "radius": 30,
+      "biome": "meadow",
+      "people": "none",
+      "tier": "guarded",
+      "town": false,
+      "shrine": false,
+      "ancientTree": false,
+      "state": "stable"
+    },
+    {
+      "id": "isle_ferrymoor",
+      "name": "Ferrymoor",
+      "x": 250,
+      "z": -220,
+      "y": 10,
+      "radius": 30,
+      "biome": "forest",
+      "people": "none",
+      "tier": "guarded",
+      "town": false,
+      "shrine": false,
+      "ancientTree": false,
+      "state": "stable"
+    },
+    {
+      "id": "isle_grudgewood",
+      "name": "Grudgewood",
+      "x": -330,
+      "z": -700,
+      "y": 20,
+      "radius": 50,
+      "biome": "forest",
+      "people": "none",
+      "tier": "wild",
+      "town": false,
+      "shrine": false,
+      "ancientTree": true,
+      "state": "stable"
+    },
+    {
+      "id": "isle_ironreach",
+      "name": "Ironreach",
+      "x": -870,
+      "z": -430,
+      "y": 40,
+      "radius": 45,
+      "biome": "crag",
+      "people": "none",
+      "tier": "wild",
+      "town": false,
+      "shrine": false,
+      "ancientTree": false,
+      "state": "stable"
+    },
+    {
+      "id": "isle_hollowsky",
+      "name": "Hollowsky",
+      "x": 560,
+      "z": -900,
+      "y": 25,
+      "radius": 45,
+      "biome": "forest",
+      "people": "none",
+      "tier": "wild",
+      "town": false,
+      "shrine": false,
+      "ancientTree": false,
+      "state": "stable"
+    },
+    {
+      "id": "isle_ashfall",
+      "name": "Ashfall",
+      "x": 920,
+      "z": -480,
+      "y": -20,
+      "radius": 40,
+      "biome": "crag",
+      "people": "none",
+      "tier": "wild",
+      "town": false,
+      "shrine": false,
+      "ancientTree": false,
+      "state": "sinking"
+    },
+    {
+      "id": "isle_last-light",
+      "name": "Last Light",
+      "x": 1010,
+      "z": 300,
+      "y": -5,
+      "radius": 35,
+      "biome": "meadow",
+      "people": "none",
+      "tier": "wild",
+      "town": false,
+      "shrine": false,
+      "ancientTree": false,
+      "state": "stable"
+    },
+    {
+      "id": "isle_vael-s-shadow",
+      "name": "Vael's Shadow",
+      "x": 820,
+      "z": 650,
+      "y": -35,
+      "radius": 55,
+      "biome": "ruin",
+      "people": "none",
+      "tier": "wild",
+      "town": false,
+      "shrine": false,
+      "ancientTree": false,
+      "state": "stable"
+    },
+    {
+      "id": "isle_stormbite",
+      "name": "Stormbite",
+      "x": 330,
+      "z": 1000,
+      "y": -30,
+      "radius": 40,
+      "biome": "crag",
+      "people": "none",
+      "tier": "wild",
+      "town": false,
+      "shrine": false,
+      "ancientTree": false,
+      "state": "stable"
+    },
+    {
+      "id": "isle_wreckrest",
+      "name": "Wreckrest",
+      "x": -230,
+      "z": 1040,
+      "y": -45,
+      "radius": 45,
+      "biome": "ruin",
+      "people": "none",
+      "tier": "wild",
+      "town": false,
+      "shrine": false,
+      "ancientTree": false,
+      "state": "sinking"
+    },
+    {
+      "id": "isle_cinderkey",
+      "name": "Cinderkey",
+      "x": -720,
+      "z": 760,
+      "y": 0,
+      "radius": 40,
+      "biome": "crag",
+      "people": "none",
+      "tier": "wild",
+      "town": false,
+      "shrine": false,
+      "ancientTree": false,
+      "state": "stable"
+    },
+    {
+      "id": "isle_brokenreach",
+      "name": "Brokenreach",
+      "x": -980,
+      "z": 330,
+      "y": 10,
+      "radius": 45,
+      "biome": "ruin",
+      "people": "none",
+      "tier": "wild",
+      "town": false,
+      "shrine": false,
+      "ancientTree": false,
+      "state": "stable"
+    },
+    {
+      "id": "isle_duskcrown",
+      "name": "Duskcrown",
+      "x": -620,
+      "z": -880,
+      "y": 35,
+      "radius": 35,
+      "biome": "forest",
+      "people": "none",
+      "tier": "wild",
+      "town": false,
+      "shrine": false,
+      "ancientTree": false,
+      "state": "stable"
+    }
+  ],
+  "winds": [
+    {
+      "id": "wind_accord-ring",
+      "name": "Accord Ring",
+      "kind": "lane",
+      "points": [
+        [
+          -430,
+          -430
+        ],
+        [
+          430,
+          -430
+        ],
+        [
+          430,
+          430
+        ],
+        [
+          -430,
+          430
+        ],
+        [
+          -430,
+          -430
+        ]
+      ],
+      "y": 12,
+      "width": 70,
+      "strength": 12,
+      "gustiness": 0.1
+    },
+    {
+      "id": "wind_tether-spoke",
+      "name": "Tether Spoke",
+      "kind": "lane",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          230,
+          -200
+        ],
+        [
+          430,
+          -430
+        ]
+      ],
+      "y": 15,
+      "width": 60,
+      "strength": 10,
+      "gustiness": 0.1
+    },
+    {
+      "id": "wind_market-spoke",
+      "name": "Market Spoke",
+      "kind": "lane",
+      "points": [
+        [
+          430,
+          430
+        ],
+        [
+          200,
+          240
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "y": 10,
+      "width": 60,
+      "strength": 10,
+      "gustiness": 0.1
+    },
+    {
+      "id": "wind_lantern-spoke",
+      "name": "Lantern Spoke",
+      "kind": "lane",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          -240,
+          180
+        ],
+        [
+          -430,
+          430
+        ]
+      ],
+      "y": 8,
+      "width": 60,
+      "strength": 10,
+      "gustiness": 0.1
+    },
+    {
+      "id": "wind_oath-spoke",
+      "name": "Oath Spoke",
+      "kind": "lane",
+      "points": [
+        [
+          -430,
+          -430
+        ],
+        [
+          -200,
+          -240
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "y": 15,
+      "width": 60,
+      "strength": 10,
+      "gustiness": 0.1
+    },
+    {
+      "id": "wind_rootward",
+      "name": "Rootward",
+      "kind": "lane",
+      "points": [
+        [
+          430,
+          -430
+        ],
+        [
+          260,
+          -580
+        ],
+        [
+          0,
+          -690
+        ]
+      ],
+      "y": 20,
+      "width": 50,
+      "strength": 9,
+      "gustiness": 0.15
+    },
+    {
+      "id": "wind_gardenward",
+      "name": "Gardenward",
+      "kind": "lane",
+      "points": [
+        [
+          430,
+          430
+        ],
+        [
+          610,
+          280
+        ],
+        [
+          690,
+          -20
+        ]
+      ],
+      "y": 5,
+      "width": 50,
+      "strength": 9,
+      "gustiness": 0.15
+    },
+    {
+      "id": "wind_lagoonward",
+      "name": "Lagoonward",
+      "kind": "lane",
+      "points": [
+        [
+          -430,
+          430
+        ],
+        [
+          -230,
+          600
+        ],
+        [
+          20,
+          690
+        ]
+      ],
+      "y": 0,
+      "width": 50,
+      "strength": 9,
+      "gustiness": 0.15
+    },
+    {
+      "id": "wind_spireward",
+      "name": "Spireward",
+      "kind": "lane",
+      "points": [
+        [
+          -430,
+          -430
+        ],
+        [
+          -600,
+          -270
+        ],
+        [
+          -690,
+          0
+        ]
+      ],
+      "y": 30,
+      "width": 50,
+      "strength": 9,
+      "gustiness": 0.15
+    },
+    {
+      "id": "wind_the-long-gale",
+      "name": "The Long Gale",
+      "kind": "wild",
+      "points": [
+        [
+          -1000,
+          -150
+        ],
+        [
+          -850,
+          -650
+        ],
+        [
+          -400,
+          -980
+        ],
+        [
+          200,
+          -1050
+        ],
+        [
+          750,
+          -800
+        ],
+        [
+          1030,
+          -350
+        ]
+      ],
+      "y": 30,
+      "width": 100,
+      "strength": 24,
+      "gustiness": 0.6
+    },
+    {
+      "id": "wind_drowned-drift",
+      "name": "Drowned Drift",
+      "kind": "wild",
+      "points": [
+        [
+          1050,
+          150
+        ],
+        [
+          950,
+          600
+        ],
+        [
+          500,
+          950
+        ],
+        [
+          0,
+          1100
+        ],
+        [
+          -500,
+          1000
+        ]
+      ],
+      "y": -30,
+      "width": 110,
+      "strength": 20,
+      "gustiness": 0.85
+    },
+    {
+      "id": "wind_grudge-wind",
+      "name": "Grudge Wind",
+      "kind": "wild",
+      "points": [
+        [
+          -950,
+          500
+        ],
+        [
+          -850,
+          100
+        ],
+        [
+          -560,
+          -480
+        ],
+        [
+          -330,
+          -700
+        ],
+        [
+          -80,
+          -950
+        ]
+      ],
+      "y": 25,
+      "width": 80,
+      "strength": 18,
+      "gustiness": 0.7
+    }
+  ],
+  "bridges": [
+    {
+      "id": "bridge_rootmother_elderroot",
+      "a": "isle_rootmother",
+      "b": "isle_elderroot"
+    },
+    {
+      "id": "bridge_deephold_elderroot",
+      "a": "isle_deephold",
+      "b": "isle_elderroot"
+    },
+    {
+      "id": "bridge_hollowgrain_elderroot",
+      "a": "isle_hollowgrain",
+      "b": "isle_elderroot"
+    },
+    {
+      "id": "bridge_terrace-hill_ledgerhome",
+      "a": "isle_terrace-hill",
+      "b": "isle_ledgerhome"
+    },
+    {
+      "id": "bridge_slowfield_ledgerhome",
+      "a": "isle_slowfield",
+      "b": "isle_ledgerhome"
+    },
+    {
+      "id": "bridge_greenshell_ledgerhome",
+      "a": "isle_greenshell",
+      "b": "isle_ledgerhome"
+    },
+    {
+      "id": "bridge_otterwake_glimmerpool",
+      "a": "isle_otterwake",
+      "b": "isle_glimmerpool"
+    },
+    {
+      "id": "bridge_lanternmere_glimmerpool",
+      "a": "isle_lanternmere",
+      "b": "isle_glimmerpool"
+    },
+    {
+      "id": "bridge_shellbay_glimmerpool",
+      "a": "isle_shellbay",
+      "b": "isle_glimmerpool"
+    },
+    {
+      "id": "bridge_hornfast_high-spire",
+      "a": "isle_hornfast",
+      "b": "isle_high-spire"
+    },
+    {
+      "id": "bridge_ironcleft_high-spire",
+      "a": "isle_ironcleft",
+      "b": "isle_high-spire"
+    },
+    {
+      "id": "bridge_goatstair_high-spire",
+      "a": "isle_goatstair",
+      "b": "isle_high-spire"
+    }
+  ]
+}

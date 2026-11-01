@@ -15,6 +15,7 @@ A sky-island MMORPG, in the concept stage. This monorepo holds the game concept,
 | `art/textures/` | Textures and HDRIs |
 | `apps/web/` | Marketing site (Astro + Three.js) |
 | `apps/game/` | Godot client (not started yet) |
+| `worlds/` | Shard maps (`*.world.json`) made with the world editor demo |
 | `demos/<name>/` | Standalone playable Three.js demos (Vite), published under `/demos/<name>/` |
 | `scripts/` | Build and asset pipeline scripts |
 

@@ -8,6 +8,12 @@ import {
   type Biome, type Isle, type Tier, type Wind, type World,
 } from "./world";
 
+// Worlds saved in the repo's worlds/ folder, bundled into the editor
+const LIBRARY: Record<string, unknown> = Object.fromEntries(
+  Object.entries(import.meta.glob("../../../worlds/*.world.json", { eager: true, import: "default" }))
+    .map(([path, data]) => [path.split("/").pop()!.replace(".world.json", ""), data]),
+);
+
 // ---------- Scene ----------
 
 const renderer = new THREE.WebGLRenderer({ antialias: true });
@@ -59,8 +65,9 @@ function load(): World {
   try {
     const saved = localStorage.getItem(STORAGE);
     if (saved) return parseWorld(JSON.parse(saved));
-  } catch { /* fall through to a generated world */ }
-  return generateWorld(7, "Shard of the Accord");
+  } catch { /* fall through to the library */ }
+  const first = LIBRARY["first-shard"] ?? Object.values(LIBRARY)[0];
+  return first ? parseWorld(structuredClone(first)) : generateWorld(7, "Shard of the Accord");
 }
 
 /** Record the current world as one undoable step, save it, and redraw. */
@@ -673,6 +680,13 @@ function buildGui() {
     gui.add(world, "name").onFinishChange(commit);
     gui.add(world, "size", 300, 4000, 50).name("radius (m)").onChange(rebuild).onFinishChange(() => { commit(); });
     gui.add(world, "stormY", -300, 0, 5).name("storm layer y").onChange(rebuild).onFinishChange(commit);
+    const names = Object.keys(LIBRARY);
+    if (names.length) {
+      const lib = gui.addFolder("Repo worlds");
+      const pick = { world: names[0] };
+      lib.add(pick, "world", names).name("file");
+      lib.add({ open: () => replaceWorld(parseWorld(structuredClone(LIBRARY[pick.world]))) }, "open").name("Open (undoable)");
+    }
     const amb = gui.addFolder("Ambient wind");
     amb.add(world.ambientWind, "heading", 0, 359, 1).name("heading (°)").onFinishChange(commit);
     amb.add(world.ambientWind, "strength", 0, 15, 0.5).name("speed (m/s)").onFinishChange(commit);
@@ -745,7 +759,7 @@ function updateHelp() {
 
 function frame() {
   const s = world.size;
-  camera.position.set(0, s * 1.15, s * 1.05);
+  camera.position.set(0, s * 1.7, s * 1.35);
   controls.target.set(0, 0, 0);
   controls.maxDistance = s * 4;
   scene.fog = new THREE.Fog(SKY, s * 2.5, s * 6);

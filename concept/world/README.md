@@ -42,6 +42,16 @@ A fragile trade pact between all five peoples, signed after a great sinking that
 - **Rootborn and Mossbacks:** old allies who tend the land together.
 - **Skerrin and Rillfolk:** trade partners, ore for goods and relics.
 
+## The First Shard
+
+Map: [`worlds/first-shard.world.json`](../../worlds/first-shard.world.json), editable in the world editor demo.
+
+- **Accord Hall** sits at the centre. Four Accord towns (**Oathgate**, **Tetherport**, **Windmarket**, **Lanterncross**) sit between the homelands, joined by the clockwise **Accord Ring** wind lane, with spokes to the hub.
+- **Homelands**: the Rootholds in the north, the Garden Isles in the east, the Glimmer Lagoons in the south (lowest, nearest the storm) and the Crag Spires in the west (highest). Each has a shrine isle bridged to three smaller isles and a lane from the nearest town.
+- **Neighbours follow the ties**: Rootborn sit next to their Mossback allies, and Skerrin next to their Rillfolk trade partners. The Rootholds and Crag Spires share the contested northwest frontier.
+- **Wild rim**: **Grudgewood**, an ancient tree on rich ore between the Rootholds and the Crags; **Vael's Shadow**, ruins above where Vael sank; **Ashfall** and **Wreckrest** are sinking. Three wild currents (**The Long Gale**, **Drowned Drift**, **Grudge Wind**) are fast shortcuts through open-PvP sky.
+- The Veiled have no homeland isle; their oath-caravans travel the lanes.
+
 ## Gameplay hooks
 
 - **Isle births** are rare world events: the whole shard races to chart, settle and contest the new land.
@@ -53,4 +63,3 @@ A fragile trade pact between all five peoples, signed after a great sinking that
 
 - The threat: what, and when is it revealed?
 - Is Vael ever raised? That could be a long-term world event.
-- Names and geography of the first shard's isles.
