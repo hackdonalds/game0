@@ -16,7 +16,7 @@ Classless, skill-based progression with action combat, open-world risk and a pla
 | Risk zones | **Three tiers**, see below |
 | Death | Carried resources drop at the death spot for a while; equipped gear stays but loses durability. Respawn at the **nearest Accord shrine** |
 | Crafting | **Simple recipes**: recipe plus materials makes an item; skill sets the success chance and quality roll |
-| Group PvE | **Sinking-isle events** and **world bosses** |
+| Group PvE | **Sinking-isle events** and **world bosses** from storm surges. See [monsters](../monsters/README.md) |
 | Sinking | Slowed by Rootborn tending the ancient trees; a sinking isle can't be saved. Rare **isle births** add new land as world events |
 | Gear | Wears down with use, as well as on death. Worn gear is repaired by crafters or replaced |
 | Ships | Three sizes; can be attacked and cargo looted. Sails wear from attacks, weather and distance travelled. See [sailing](#sailing) |
@@ -44,7 +44,7 @@ About 35 skills (approved 2026-11-01). Every skill is learned at a source, rises
 | **Defence and survival (4)** | Light Armour, Heavy Armour, Evasion, Field Medicine |
 | **Gathering (6)** | Mining, Woodcutting, Herbalism, Fishing, Hunting, Salvage (diving and recovering relics) |
 | **Crafting (9)** | Smithing, Carpentry, Leatherworking, Tailoring, Stonecraft, Alchemy, Cooking, Shipwright, Sailweaving (enchanting sails) |
-| **Travel and lore (3)** | Sailing, Climbing, Lore (identifying relics, reading the Ledger) |
+| **Travel and lore (4)** | Sailing, Climbing, Taming (mounts and pack animals), Lore (identifying relics, reading the Ledger) |
 
 Each people has cultural affinities but no restrictions. For example, Skerrin lean towards Mining and Climbing, and Rillfolk towards Salvage and Fishing.
 
@@ -103,4 +103,3 @@ Four kinds, all simple to pick up:
 - How often isles are born, and what triggers the birth.
 - Ship combat weapons (spells, bows, boarding) and how a ship is disabled.
 - Can ships themselves be destroyed or captured, or only their cargo taken?
-- Relic sources: with dives not chosen as group content, do relics come only from sinking isles and world bosses, or also from solo or small-group dives?
