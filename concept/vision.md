@@ -37,12 +37,11 @@ An epic high-fantasy sandbox MMORPG set across floating sky isles. Players aren'
 
 ## Open questions
 
-- How many town plots per shard, and how are they allocated?
+- How many town plots per shard.
 
 ## Target players
 
 First of all, a group of friends playing together. Beyond that:
-
 
 Mid-core sandbox fans: players who enjoy Albion Online or New World, play a few sessions a week, and value the economy, crafting and guild play over raid schedules.
 
