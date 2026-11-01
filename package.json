@@ -14,8 +14,7 @@
     "art:image": "bun scripts/gen-image.ts",
     "art:3d": "bun scripts/meshy.ts",
     "art:bestiary": "bun scripts/handbook-art.ts --only bestiary",
-    "art:handbook": "bun scripts/handbook-art.ts",
-    "art:forge": "bun scripts/forge.ts"
+    "art:handbook": "bun scripts/handbook-art.ts"
   },
   "devDependencies": {
     "@gltf-transform/cli": "4.5.1",

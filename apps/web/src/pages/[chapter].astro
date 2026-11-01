@@ -4,7 +4,6 @@ import Base from "../layouts/Base.astro";
 import Plate from "../components/Plate.astro";
 import ShardMap from "../components/ShardMap.astro";
 import SailToy from "../components/SailToy.astro";
-import Creator from "../components/Creator.astro";
 import LivingShard from "../components/LivingShard.astro";
 import { chapters } from "../data/chapters.mjs";
 import { catalogue } from "../lib/catalogues";
@@ -57,7 +56,6 @@ const demoTitle = { map: "Explore the First Shard", peoples: "Make your characte
           <p class="eyebrow">Try it</p>
           <h2 class="demo-title">{demoTitle[chapter.demo]}</h2>
           {chapter.demo === "map" && <ShardMap />}
-          {chapter.demo === "peoples" && <Creator mode="embed" />}
           {chapter.demo === "sail" && <SailToy />}
           {chapter.demo === "shard" && <LivingShard />}
         </section>

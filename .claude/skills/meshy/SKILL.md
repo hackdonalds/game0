@@ -40,20 +40,7 @@ Use the API `rig` command only when the web path fails or the user asks for it. 
 4. **Review** the `.front/.back/.left/.right.png` thumbnails before rigging.
 5. **Rig and animate on the web** (free; follow `references/web-recipes.md`), and download the GLB to `art/models/<people>/base-rigged.glb`.
 6. **Parts and props:** one isolated object per concept image on a plain background. Run `model --model meshy-t2.5` (or `meshy-t2` for clean separated parts) with `--polycount 300-4000`, mesh only, then `--texture`.
-7. **Into the game:** everything continues in the `asset-forge` skill (canonicalize, wrap, extract parts, fit, clips, dye masks, skin bake); `scripts/web-forge.ts` ships the results to the site and demos.
-
 Details per asset type, settings and prompt templates are in `references/settings.md`.
-
-## Fitting parts
-
-Fit in the creator demo's dev server (`demos/creator`, `bun run dev`) with the animation set to `none`, so the character is in its bind A-pose.
-
-- By hand: open Fit (dev), then gizmo, and pick a part. Drag it with the gizmo (W move, E rotate, R scale with uniform scale enforced, Q local/world space). The sliders and `copy attachments.json` pick up the changes.
-- By script: use `fitDebug.fitWorld(slot, [x, y, z], [rx, ry, rz], scale)` in the page console. The offset and rotation are in world axes (+Y up, +Z the character's front, -X its right). The helper converts them to bone-local values, because Mixamo bones are rotated.
-- Check sizes first. Parts are normalised to about 1 unit on their longest side, so scale is roughly the real size in metres: masks 0.27–0.4, helmet-sized growths 0.35, mantles 0.9, staffs and spears 1.7–2.3.
-- Grip: the hand bone sits at the wrist. Hanging tools need an offset down along their length so the fist holds the end of the handle.
-- In the browser pane, wait about 1 s before each screenshot; otherwise the frame can be stale.
-- Save `JSON.stringify(fitDebug.cfg)` to `art/models/<people>/attachments.json` before switching peoples, because switching reloads the file. Then check the fit in the Walking clip and in the people's signature clip.
 
 ## Gotchas
 
@@ -62,7 +49,6 @@ Fit in the creator demo's dev server (`demos/creator`, `bun run dev`) with the a
 - FAILED tasks are refunded. IN_PROGRESS tasks can't be cancelled.
 - Queue at most 3 tasks at once across all agents. More returns 429 "NoMorePendingTasks"; nothing is created or charged, so wait and resend that one call.
 - When parallel agents generate, give them one shared `MESHY_SESSION` and a `MESHY_SESSION_BUDGET` so the cap covers them all.
-- Meshy GLBs come normalised to about ±0.95 units, so parts always need a scale in `attachments.json`.
 - API rigging is humanoid-only and fails on tails, shells, capes and props fused to the body. That's why base bodies are bare.
 - Retexture rejects `meshy-7.1`. The script uses `meshy-7`.
 - Smart Topology doesn't accept multi-image input.

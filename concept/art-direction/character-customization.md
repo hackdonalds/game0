@@ -39,12 +39,10 @@ Players build distinct characters within each of the [peoples](../world/peoples.
 
 ## Pipeline
 
-The `asset-forge` skill and `bun run art:forge` steps build every customisable asset. The family rules live in `art/families/<family>/contract.json`. The research behind the choices is in `docs/reports/AI 3D game asset pipeline.md`.
+The research behind the choices is in `docs/reports/AI 3D game asset pipeline.md`.
 
 - **Meshy:** shapes and paint for bodies, gear, parts, props and environment pieces (the `meshy` skill).
-- **Forge steps (headless Blender):** convert any rig to the family skeleton, wrap each people onto the base, fit gear, retarget clips, make dye masks, render, and validate in Godot.
 - **Engines:** live sliders (bone offsets and shape key pairs), body regions hidden under gear, dye shaders with a toon ramp, ARKit 52 expressions, and spring bones for mantles, tails, ears and capes.
-- **Web demo:** the Peoples Creator (`demos/creator`) becomes the first runtime for the full system, starting with the Galeborne.
 
 ## Open questions
 

@@ -28,7 +28,7 @@ API models don't appear in the web library, so upload them first.
 7. Click the green download button in the viewer toolbar. If the "Download Settings" popover doesn't open, click once more. Settings: Format glb, Skeleton template Mixamo, Rigged Character off, Animation **All Added**, Single file on. Click Download.
 8. The file arrives in `~/Downloads/Meshy_AI_base_All_Animations*.glb` after 20–60 s; Chrome may hold it briefly as `.com.google.Chrome.*`. Move it to `art/models/<people>/base-rigged.glb` and delete any duplicates.
 
-The web rig exports a full Mixamo skeleton with finger bones (`mixamorig:Head`, `mixamorig:RightHand`, `mixamorig:Spine2`...). GLTFLoader strips the colon, so names become `mixamorigHead`. Keep `attachments.json` on the Meshy names (`Head`, `RightHand`, `Spine02`); the creator demo maps them.
+The web rig exports a full Mixamo skeleton with finger bones (`mixamorig:Head`, `mixamorig:RightHand`, `mixamorig:Spine2`...). GLTFLoader strips the colon, so names become `mixamorigHead`. Keep bone names on the Meshy names (`Head`, `RightHand`, `Spine02`).
 
 ## Remesh (free, not yet used)
 

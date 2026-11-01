@@ -1,7 +1,7 @@
 ---
 title: Five peoples, one world
 date: 2026-11-01
-summary: The world premise is set, the five peoples are modelled and rigged, and you can customize them in the Peoples Creator.
+summary: The world premise is set, the five peoples are modelled and rigged, and the peoples are rigged.
 ---
 
 The isles float above the drowned old world, and nobody knows why. What everyone does know is that the isles are sinking. Every so often one loses its lift and settles into the storm layer below, so land is shrinking and every isle is worth fighting for.
@@ -20,7 +20,7 @@ Old grudges run under the Accord. The Rootborn blame Skerrin mining for the sink
 
 ## Customization
 
-Every people has a base body, signature features and props that attach to the skeleton: Skerrin horns, Veiled masks, Mossback shell gardens, Rootborn growths and Rillfolk tail rings. Try them in the [Peoples Creator](/game0/demos/creator/).
+Every people has a base body, signature features and props that attach to the skeleton: Skerrin horns, Veiled masks, Mossback shell gardens, Rootborn growths and Rillfolk tail rings.
 
 ## How you'll play
 

@@ -3,10 +3,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "bun run models && astro dev",
-    "build": "bun run models && astro build",
-    "preview": "astro preview",
-    "models": "bun ../../scripts/web-forge.ts public/models/forge"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
   },
   "dependencies": {
     "@astrojs/markdown-remark": "7.3.3",
