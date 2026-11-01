@@ -1,5 +1,5 @@
 {
-  "taskId": "01a197e7-7e84-709f-857d-acdb06e8c849",
+  "taskId": "01a1989f-0615-7149-aac9-d74c06fbe01a",
   "endpoint": "/multi-image-to-3d",
   "images": [
     "art/concept/views/anchorkin-base-front.png",
@@ -11,5 +11,5 @@
   "polycount": 20000,
   "pose": "a-pose",
   "credits": 30,
-  "createdAt": "2026-11-01T16:20:47.838Z"
+  "createdAt": "2026-11-01T19:41:57.610Z"
 }

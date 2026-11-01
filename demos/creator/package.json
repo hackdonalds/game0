@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "models": "bun ../../scripts/web-models.ts public/models ../../art/models/*/attachments.json",
+    "models": "bun ../../scripts/web-forge.ts public/models/forge",
     "dev": "bun run models && vite",
     "build": "bun run models && vite build"
   },

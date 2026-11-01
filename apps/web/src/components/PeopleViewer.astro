@@ -10,22 +10,16 @@ const { people } = Astro.props;
 
 <script>
   import * as THREE from "three";
-  import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
   import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+  import { ForgeCharacter, type Manifest } from "../lib/forge";
 
-  type Option = { file: string; position: [number, number, number]; rotation: [number, number, number]; scale: number };
-  type Config = { base: { file: string }; slots: Record<string, { bone: string; options: Record<string, Option> }> };
-  const MODELS = `${import.meta.env.BASE_URL.replace(/\/?$/, "/")}models/`;
-  const BONE_ALIASES: Record<string, string> = { Spine02: "Spine2", Spine01: "Spine1" };
-  const findBone = (root: THREE.Object3D, name: string) =>
-    [name, `mixamorig${name}`, `mixamorig${BONE_ALIASES[name] ?? name}`].map((n) => root.getObjectByName(n)).find(Boolean);
+  const FORGE = `${import.meta.env.BASE_URL.replace(/\/?$/, "/")}models/forge/`;
 
   async function mount(el: HTMLElement) {
     const canvas = el.querySelector("canvas")!;
     const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
     renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
     renderer.outputColorSpace = THREE.SRGBColorSpace;
-    renderer.toneMapping = THREE.ACESFilmicToneMapping;
     const scene = new THREE.Scene();
     scene.add(new THREE.HemisphereLight(0xfff4dc, 0x6a8f9a, 2.4));
     const sun = new THREE.DirectionalLight(0xffd79a, 2.6);
@@ -38,37 +32,20 @@ const { people } = Astro.props;
     controls.autoRotate = !matchMedia("(prefers-reduced-motion: reduce)").matches;
     controls.autoRotateSpeed = 1.2;
 
-    const loader = new GLTFLoader();
+    // The people in their default look: signature parts and their own underclothes, idling
     const id = el.dataset.viewer!;
-    const available: string[] = await (await fetch(MODELS + "peoples.json")).json();
-    if (!available.includes(id)) { el.classList.add("missing"); return; }
-    const cfg: Config = await (await fetch(`${MODELS}${id}/attachments.json`)).json();
-    const gltf = await loader.loadAsync(MODELS + cfg.base.file);
-    const character = gltf.scene;
-    scene.add(character);
-    for (const { bone: boneName, options } of Object.values(cfg.slots)) {
-      const bone = findBone(character, boneName), option = Object.values(options)[0];
-      if (!bone || !option) continue;
-      const socket = new THREE.Object3D();
-      const s = bone.getWorldScale(new THREE.Vector3());
-      socket.scale.set(1 / s.x, 1 / s.y, 1 / s.z);
-      bone.add(socket);
-      const part = (await loader.loadAsync(MODELS + option.file)).scene;
-      part.position.fromArray(option.position);
-      part.rotation.set(...(option.rotation.map(THREE.MathUtils.degToRad) as [number, number, number]));
-      part.scale.setScalar(option.scale);
-      socket.add(part);
-    }
-    const box = new THREE.Box3().setFromObject(character);
-    const h = box.max.y - box.min.y;
-    character.position.y -= box.min.y;
+    const manifest: Manifest | null = await fetch(FORGE + "forge.json").then((r) => (r.ok ? r.json() : null), () => null);
+    const family = manifest?.humanoid;
+    if (!family?.peoples[id]) { el.classList.add("missing"); return; }
+    const c = await ForgeCharacter.create(manifest!, FORGE, "humanoid", id);
+    for (const g of family.gear.filter((g) => g.id.startsWith(`${id}-`))) await c.equip(g.slot, g.id);
+    scene.add(c.root);
+    c.play("idle");
+    const h = (family.contract.peoples[id]?.heightMetres ?? [1.8, 2])[1];
     controls.target.set(0, h * 0.55, 0);
     camera.position.set(h * 0.6, h * 0.75, h * 2.6);
     controls.minDistance = h * 1.2;
     controls.maxDistance = h * 4;
-    const mixer = new THREE.AnimationMixer(character);
-    const idle = gltf.animations.find((c) => /idle/i.test(c.name)) ?? gltf.animations[0];
-    if (idle) mixer.clipAction(idle).play();
 
     const resize = () => {
       renderer.setSize(canvas.clientWidth, canvas.clientHeight, false);
@@ -82,7 +59,7 @@ const { people } = Astro.props;
     new IntersectionObserver(([e]) => (visible = e.isIntersecting)).observe(el);
     renderer.setAnimationLoop(() => {
       if (!visible) return;
-      mixer.update(Math.min(clock.getDelta(), 0.1));
+      c.update(Math.min(clock.getDelta(), 0.1));
       controls.update();
       renderer.render(scene, camera);
     });

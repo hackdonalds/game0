@@ -31,3 +31,10 @@ date,session,kind,output,credits,model,task_id
 2026-11-01T16:20:47.838Z,2026-11-01,model,art/models/anchorkin/base,30,meshy-7.1,01a197e7-7e84-709f-857d-acdb06e8c849
 2026-11-01T16:21:47.577Z,2026-11-01,rig,art/models/galeborne/base-rigged,5,rig,01a197ea-6603-74f2-901e-ec0fd81d08c5
 2026-11-01T16:21:50.486Z,2026-11-01,rig,art/models/anchorkin/base-rigged,5,rig,01a197ea-71cc-718b-9267-8a2dd9a2dc07
+2026-11-01T19:41:52.759Z,races-2026-11-02,model,art/models/rootwarden/base,30,meshy-7.1,01a1989f-1a37-7416-b6ea-ddb51eba20e0
+2026-11-01T19:41:57.610Z,races-2026-11-02,model,art/models/anchorkin/base,30,meshy-7.1,01a1989f-0615-7149-aac9-d74c06fbe01a
+2026-11-01T19:42:09.461Z,races-2026-11-02,model,art/models/galeborne/base,30,meshy-7.1,01a1989f-0c71-72e5-a435-d0c47e3a611a
+2026-11-01T19:57:47Z,races-2026-11-02,web-rig,art/models/galeborne/base-rigged,0,web-humanoid,
+2026-11-01T19:57:47Z,races-2026-11-02,web-animate,art/models/galeborne/base-rigged,0,web-presets: Idle 1; Regular Jump; Attack; Dead,
+2026-11-01T20:00:28Z,races-2026-11-02,web-rig,art/models/anchorkin/base-rigged,0,web-humanoid,
+2026-11-01T20:05:20Z,races-2026-11-02,web-rig,art/models/rootwarden/base-rigged,0,web-humanoid,

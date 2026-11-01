@@ -1,10 +1,10 @@
 {
-  "prompt": "Character base-body turnaround sheet for 3D modeling: the same Anchorkin shown three times side by side, evenly spaced with wide gaps, not overlapping: front view, side view, back view, neutral A-pose with arms angled down and away from the body, hands open. Huge broad heavy humanoid with the same face as the reference, skin of grey slate stone veined with glowing teal crystal, a coarse beard of stone fibres, carved marks on the shoulders. Wearing only a plain simple short cloth wrap and a plain sleeveless undershirt, barefoot, NO chains, no apron, no armour, no belts, no tools, no accessories. Full body, head to feet fully visible. Hand-painted stylized game art, mid-level detail, chunky readable shapes, softer muted colours. Plain light grey background, even soft lighting, no cast shadows, no text, no labels.",
+  "prompt": "Character base-body turnaround sheet for 3D modeling: the same Anchorkin shown three times side by side, evenly spaced with wide empty gaps between figures, not overlapping: front view, side view facing left, back view. Neutral A-pose, standing straight, arms straight and angled about 45 degrees down and away from the body, hands open and flat with fingers together, feet shoulder-width apart, full body head to feet visible. Huge broad heavy humanoid with a clear human body plan, two arms, two legs, five fingers on each hand, same face as the reference. Smooth slate and basalt grey stone skin with the stone texture painted on, thin glowing teal crystal veins, no loose rocks attached to the body. A thick coarse beard of pale sandy-ochre stone fibres that hangs clearly off the chin onto the chest, a different colour from the grey skin. Bare grey stone skin clearly visible on the arms, hands, face, knees, shins and bare feet. Wearing only a plain tight fitted sleeveless top and plain tight mid-thigh shorts, both solid deep rust-red cloth, clearly not grey. NO belts, no chains, no straps, no bags, no jewellery, no weapons, no armour, no apron, no loose cloth, no accessories. Hand-painted stylized game art, mid-level detail, chunky readable shapes, softer muted colours. Plain light grey background, even soft lighting, no cast shadows, no text, no labels.",
   "model": "openai/gpt-image-2.5-sunburst",
   "aspect": "21:9",
   "quality": "high",
   "refs": [
     "art/handbook/peoples/anchorkin.webp"
   ],
-  "createdAt": "2026-11-01T16:13:24.011Z"
+  "createdAt": "2026-11-01T19:38:19.588Z"
 }

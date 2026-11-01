@@ -10,7 +10,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from lib import args, done, fail, load, path, reset  # noqa: E402
+from lib import args, done, fail, load, path, rasterise, reset, save_png  # noqa: E402
 
 import bpy  # noqa: E402
 import numpy as np  # noqa: E402
@@ -78,52 +78,14 @@ remap[order] = np.arange(k)
 label, centres = remap[label], centres[order]
 
 
-def rasterise(colours: np.ndarray) -> np.ndarray:
-    """Paint each triangle's colour into UV space, then grow islands by 4 px so seams don't bleed black."""
-    img = np.zeros((size, size, 3), dtype=np.float32)
-    filled = np.zeros((size, size), dtype=bool)
-    for tri, col in zip(tri_uv * (size - 1), colours):
-        lo = np.floor(tri.min(0)).astype(int).clip(0, size - 1)
-        hi = np.ceil(tri.max(0)).astype(int).clip(0, size - 1)
-        xs, ys = np.meshgrid(np.arange(lo[0], hi[0] + 1), np.arange(lo[1], hi[1] + 1))
-        p = np.stack([xs.ravel() + 0.5, ys.ravel() + 0.5], 1)
-        a0, b0, c0 = tri
-        v0, v1, v2 = c0 - a0, b0 - a0, p - a0
-        den = v0[0] * v1[1] - v1[0] * v0[1]
-        if abs(den) < 1e-9:
-            continue
-        u = (v2[:, 0] * v1[1] - v1[0] * v2[:, 1]) / den
-        v = (v0[0] * v2[:, 1] - v2[:, 0] * v0[1]) / den
-        inside = (u >= -0.01) & (v >= -0.01) & (u + v <= 1.02)
-        img[ys.ravel()[inside], xs.ravel()[inside]] = col
-        filled[ys.ravel()[inside], xs.ravel()[inside]] = True
-    for _ in range(4):
-        grow = img.copy()
-        for dy, dx in ((0, 1), (0, -1), (1, 0), (-1, 0)):
-            shifted = np.roll(np.roll(img, dy, 0), dx, 1)
-            sf = np.roll(np.roll(filled, dy, 0), dx, 1)
-            take = ~filled & sf
-            grow[take] = shifted[take]
-            filled = filled | take
-        img = grow
-    return img
-
-
-def save(img: np.ndarray, file: Path):
-    im = bpy.data.images.new(file.stem, size, size, alpha=True)
-    im.colorspace_settings.name = "Non-Color"
-    rgba = np.concatenate([img, np.ones((size, size, 1), dtype=np.float32)], 2)
-    im.pixels = rgba.ravel().tolist()
-    im.filepath_raw = str(file)
-    im.file_format = "PNG"
-    im.save()
-    return str(file)
+def save(img, file: Path):
+    return save_png(img, file)
 
 
 hexes = ["#%02x%02x%02x" % tuple(int(x * 255) for x in np.clip(c, 0, 1)) for c in centres]
 shares = np.bincount(label, minlength=k) / len(label)
 if a.get("mode", "analyze") == "analyze":
-    out = save(rasterise(centres[label]), Path(f"{base}.dye-clusters.png"))
+    out = save(rasterise(tri_uv, centres[label], size), Path(f"{base}.dye-clusters.png"))
     done(clusters=[{"id": i, "colour": hexes[i], "share": round(float(shares[i]), 3)} for i in range(k)], preview=out,
          next="map clusters to channels and rerun with --mode write --channels")
 else:
@@ -133,5 +95,5 @@ else:
         if ch not in channel:
             fail(f"unknown channel {ch}")
         table[int(cid)] = channel[ch]
-    out = save(rasterise(table[label]), Path(f"{base}.dye.png"))
+    out = save(rasterise(tri_uv, table[label], size), Path(f"{base}.dye.png"))
     done(mask=out, channels={ch: [i for i in range(k) if tuple(table[i]) == v] for ch, v in channel.items()})

@@ -1,0 +1,10 @@
+{
+  "prompt": "Character base-body turnaround sheet for 3D modeling: the same Rootwarden shown three times side by side, evenly spaced with wide gaps, not overlapping: front view, side view, back view, neutral A-pose standing straight, arms straight and angled 45 degrees down and away from the body, hands open with fingers together, feet shoulder-width apart. Broad stocky humanoid with a clear human body plan, two arms, two legs, five fingers, the same face as the reference. Skin is bark-grained wood in warm oak brown, grain painted on the skin, smooth body silhouette. Bright green moss and lichen with small white flowers grow as thick raised clumps on top of both shoulders and on the crown of the head, and a full leafy green foliage beard, all standing out from the body. Bare wooden skin clearly visible on the face, forearms, hands, shins and bare feet. Wearing only a plain fitted sleeveless top and plain fitted mid-thigh shorts in deep slate-blue cloth, no armour, no pauldrons, no gems, no crystals, no belts, no straps, no bags, no jewellery, no weapons, no loose cloth, no roots on the body. Full body, head to feet fully visible. Hand-painted stylized game art, mid-level detail, chunky readable shapes, softer muted colours. Plain light grey background, even soft lighting, no cast shadows, no text, no labels.",
+  "model": "openai/gpt-image-2.5-sunburst",
+  "aspect": "21:9",
+  "quality": "high",
+  "refs": [
+    "art/handbook/peoples/rootwarden.webp"
+  ],
+  "createdAt": "2026-11-01T19:38:25.711Z"
+}

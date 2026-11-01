@@ -8,7 +8,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from lib import DIRS, args, canonical_map, armature_of, bone_vertices, contract, done, export, fail, limit_and_normalize, load, regions_uv, reset, skinned_meshes, triangles, warn, with_active  # noqa: E402
+from lib import args, canonical_map, socket_points, armature_of, contract, done, export, fail, limit_and_normalize, load, regions_uv, reset, skinned_meshes, triangles, warn, with_active  # noqa: E402
 
 import bpy  # noqa: E402
 from mathutils import Matrix, Vector  # noqa: E402
@@ -127,29 +127,7 @@ if missing:
 
 # Root bone, bones pointing up with roll 0, and sockets
 sockets = {}
-socket_points = {}
-for sk in c["sockets"]:
-    source = {n for n in sk["from"] if n in arm.data.bones}
-    pts = [p for m in meshes for p in bone_vertices(m, source)]
-    if not pts:
-        warn(f"{sk['name']}: no vertices for {sorted(source)}; placed at the bone head")
-        bone = next(n for n in sk["bone"].split("|") if n in arm.data.bones)
-        socket_points[sk["name"]] = arm.data.bones[bone].head_local.copy()
-        continue
-    p = sum(pts, Vector()) / len(pts)
-    if "ray" in sk:
-        d = DIRS[sk["ray"]]
-        hits = []
-        for m in meshes:
-            inv = m.matrix_world.inverted()
-            ok, loc, *_ = m.ray_cast(inv @ p, (inv.to_3x3() @ d).normalized())
-            if ok:
-                hits.append(m.matrix_world @ loc)
-        if hits:
-            p = min(hits, key=lambda h: (h - p).length) + d * sk.get("offset", 0)
-        else:
-            warn(f"{sk['name']}: ray {sk['ray']} missed the body; left at the centroid")
-    socket_points[sk["name"]] = p
+points = socket_points(arm, meshes, c)
 
 with with_active(arm):
     bpy.ops.object.mode_set(mode="EDIT")
@@ -160,13 +138,13 @@ for b in eb:
     length = max(b.length, 0.03)
     b.tail = b.head + Vector((0, 0, length))
     b.roll = 0
-root = eb.new("Root")
-root.head, root.tail, root.use_deform = Vector((0, 0, 0)), Vector((0, 0, 0.1)), False
+root = eb.get("Root") or eb.new("Root")
+root.head, root.tail, root.use_deform, root.parent = Vector((0, 0, 0)), Vector((0, 0, 0.1)), False, None
 eb["Hips"].parent = root
 for sk in c["sockets"]:
     bone = next(n for n in sk["bone"].split("|") if n in eb)
     s_b = eb.new(sk["name"])
-    s_b.head = socket_points[sk["name"]]
+    s_b.head = points[sk["name"]]
     s_b.tail = s_b.head + Vector((0, 0, 0.05))
     s_b.parent, s_b.use_deform = eb[bone], False
     sockets[sk["name"]] = {"bone": bone, "at": [round(x, 4) for x in s_b.head]}
@@ -191,7 +169,7 @@ for m in meshes:
     names = {g.index: g.name for g in m.vertex_groups}
     vert_region = []
     for v in m.data.vertices:
-        best = max(v.groups, key=lambda g: g.weight, default=None)
+        best = max((g for g in v.groups if names[g.group] in deform), key=lambda g: g.weight, default=None)
         vert_region.append(regions.index(region_of.get(names.get(best.group) if best else None, "hips")))
     uv = regions_uv(m) or m.data.uv_layers.new(name="Regions")
     m.data.uv_layers[0].active_render = True

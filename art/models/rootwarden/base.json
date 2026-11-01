@@ -1,15 +1,15 @@
 {
-  "taskId": "01a19401-b90b-7758-97a8-d3ab8382731c",
+  "taskId": "01a1989f-1a37-7416-b6ea-ddb51eba20e0",
   "endpoint": "/multi-image-to-3d",
   "images": [
-    "art/concept/views/rootborn-base-front.png",
-    "art/concept/views/rootborn-base-side.png",
-    "art/concept/views/rootborn-base-back.png"
+    "art/concept/views/rootwarden-base-front.png",
+    "art/concept/views/rootwarden-base-side.png",
+    "art/concept/views/rootwarden-base-back.png"
   ],
   "model": "meshy-7.1",
   "textured": true,
   "polycount": 20000,
   "pose": "a-pose",
   "credits": 30,
-  "createdAt": "2026-10-31T22:11:29.728Z"
+  "createdAt": "2026-11-01T19:41:52.758Z"
 }

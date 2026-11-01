@@ -103,7 +103,12 @@
       "RightLowerLeg": "RightFoot",
       "RightFoot": "RightToes"
     },
-    "maxInfluences": 4
+    "maxInfluences": 4,
+    "limits": {
+      "LeftLowerLeg": 125,
+      "RightLowerLeg": 125
+    },
+    "limitsNote": "max bend in degrees between a bone's parent limb and its own limb; retarget clamps clips to it (a 150 degree heel kick folds the shin into the seat of any trousers)"
   },
   "sockets": [
     {
@@ -290,7 +295,11 @@
     "cloak": "cloak",
     "hair": "skin",
     "beard": "skin",
-    "brows": "skin"
+    "brows": "skin",
+    "mantle": "skin",
+    "crest": "skin",
+    "crown": "skin",
+    "moss": "skin"
   },
   "dye": {
     "channels": [
@@ -305,7 +314,7 @@
     "bone": {
       "height": {
         "bones": [
-          "Hips"
+          "Root"
         ],
         "op": "uniformScale",
         "range": [
@@ -403,6 +412,7 @@
     },
     "morph": {
       "body": [
+        "body_gender",
         "body_muscle",
         "body_fat",
         "body_belly",
@@ -537,6 +547,14 @@
           "#3b3f52",
           "#c49a6c"
         ]
+      },
+      "defaults": {
+        "body_gender": 0.7,
+        "body_muscle": -0.2,
+        "body_fat": -0.4,
+        "face_ear_point": 0.8,
+        "face_eye_size": 0.2,
+        "face_cheekbones": 0.5
       }
     },
     "anchorkin": {
@@ -578,6 +596,11 @@
           "#7bb7ff",
           "#f2c86b"
         ]
+      },
+      "defaults": {
+        "body_gender": 0.6,
+        "body_muscle": 0.8,
+        "body_fat": 0.3
       }
     },
     "rootwarden": {
@@ -616,12 +639,17 @@
           "#e7d36f",
           "#c97b8f"
         ]
+      },
+      "defaults": {
+        "body_gender": 0.5,
+        "body_fat": 0.3,
+        "body_age": 0.4
       }
     }
   },
   "budgets": {
     "body": {
-      "triangles": 24000,
+      "triangles": 28000,
       "texture": 2048
     },
     "gear": {
@@ -644,5 +672,27 @@
   "material": {
     "style": "painterly albedo with baked shading, no PBR maps; toon ramp in the engine shader",
     "texture": "baseColor only"
-  }
+  },
+  "poseOffsets": {
+    "armSpread": {
+      "bones": {
+        "LeftUpperArm": 1,
+        "RightUpperArm": -1
+      },
+      "axis": "front",
+      "note": "degrees; spreads the arms away from the body (rotation about the bone's front axis, applied after the clip). From peoples[id].pose and sliderPose."
+    }
+  },
+  "sliderPose": {
+    "armSpread": {
+      "base": 0,
+      "per": {
+        "body_fat_pos": 8,
+        "body_muscle_pos": 5,
+        "body_belly_pos": 4,
+        "body_hips_pos": 4
+      }
+    }
+  },
+  "sliderPoseNote": "degrees of arm spread added for wider bodies (per unit of each key), so arms swing clear of the hips; applied by the runtime, the fit check and renders"
 }

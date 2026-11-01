@@ -8,14 +8,17 @@
 #                                             # are rebound to the first file's armature so they follow the pose
 # Writes <prefix>-<view>.png and prints the paths.
 import colorsys
+import json
 import math
 import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from lib import args, done, fail, load, path, regions_uv, reset  # noqa: E402
+from lib import apply_pose_offsets, args, contract, done, fail, load, path, pose_offsets, regions_uv, reset  # noqa: E402
 
+import bmesh  # noqa: E402
 import bpy  # noqa: E402
+import numpy as np  # noqa: E402
 from mathutils import Euler, Vector  # noqa: E402
 
 a = args()
@@ -46,17 +49,52 @@ if arms and a.get("action"):
         fail(f"no clip {a['action']}", clips=[x.name for x in bpy.data.actions])
     arms[0].animation_data_create()
     arms[0].animation_data.action = act
-    if act.slots and getattr(arms[0].animation_data, "action_slot", 1) is None:
+    if act.slots:
         arms[0].animation_data.action_slot = act.slots[0]
     bpy.context.scene.frame_set(int(a.get("frame", act.frame_range[0])))
+    body_meta = next((json.loads(m["forge"]) for m in meshes if "forge" in m and json.loads(m["forge"]).get("kind") == "body"), {})
+    if body_meta.get("people"):
+        apply_pose_offsets(arms[0], pose_offsets(contract(body_meta.get("family", "humanoid")), body_meta["people"], a.get("keys", {})))
 if arms and a.get("pose"):
     for bone, rot in a["pose"].items():
         pb = arms[0].pose.bones.get(bone)
         if pb:
             pb.rotation_mode = "XYZ"
             pb.rotation_euler = Euler([math.radians(r) for r in rot])
+# Worn pieces hide the body under them with their body masks, as the runtime does
+masks = []
+for o in meshes:
+    meta = json.loads(o["forge"]) if "forge" in o else {}
+    if meta.get("kind") == "gear" and meta.get("mask"):
+        for extra in ([a["with"]] if isinstance(a.get("with"), str) else a.get("with", [])):
+            f = Path(path(extra)).with_suffix(".mask.png")
+            if f.name == meta["mask"] and f.exists():
+                img = bpy.data.images.load(str(f))
+                masks.append(np.array(img.pixels[:], dtype=np.float32).reshape(img.size[1], img.size[0], -1)[..., 0])
+if masks:
+    hide = np.maximum.reduce(masks)
+    h, w = hide.shape
+    for o in meshes:
+        meta = json.loads(o["forge"]) if "forge" in o else {}
+        if meta.get("kind") != "body":
+            continue
+        bm = bmesh.new()
+        bm.from_mesh(o.data)
+        uv = bm.loops.layers.uv[0]
+        gone = [f for f in bm.faces if all(hide[min(h - 1, int(l[uv].uv[1] * h)), min(w - 1, int(l[uv].uv[0] * w))] > 0.5 for l in f.loops)]
+        bmesh.ops.delete(bm, geom=gone, context="FACES_ONLY")
+        bm.to_mesh(o.data)
+        bm.free()
+
+# A people's body turns its signature key on in every mesh worn with it (generalised gear carries the key at 0)
+people_keys = {}
+for o in meshes:
+    if "forge" in o:
+        meta = json.loads(o["forge"])
+        if meta.get("kind") == "body" and meta.get("signature"):
+            people_keys[meta["signature"]] = 1.0
 for m in meshes:
-    for name, value in a.get("keys", {}).items():
+    for name, value in {**people_keys, **a.get("keys", {})}.items():
         if m.data.shape_keys and name in m.data.shape_keys.key_blocks:
             m.data.shape_keys.key_blocks[name].value = value
 bpy.context.view_layer.update()

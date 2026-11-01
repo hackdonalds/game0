@@ -8,7 +8,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from lib import args, contract, done, load, regions_uv, reset, triangles  # noqa: E402
+from lib import args, contract, done, glb_json, load, regions_uv, reset, triangles  # noqa: E402
 
 import bpy  # noqa: E402
 
@@ -57,6 +57,16 @@ if family != "rigid" and kind in ("body", "gear", "anims"):
             stats["clips"] = [act.name for act in bpy.data.actions]
             if not bpy.data.actions:
                 errors.append("animation library has no clips")
+            # What the file holds, not what Blender re-imported: engines play every frame between keys
+            gltf = glb_json(a["in"])
+            nodes = [n.get("name") for n in gltf.get("nodes", [])]
+            for anim in gltf.get("animations", []):
+                kinds = {s["interpolation"] for s in anim["samplers"] if "interpolation" in s} or {"LINEAR"}
+                if kinds - {"LINEAR", "STEP"}:
+                    errors.append(f"clip {anim.get('name')}: {sorted(kinds)} interpolation (must be LINEAR; cubic tangents overshoot between keys)")
+                moved = sorted({nodes[ch["target"]["node"]] for ch in anim["channels"] if ch["target"]["path"] != "rotation"} - {"Hips"})
+                if moved:
+                    errors.append(f"clip {anim.get('name')}: translation/scale keys on {moved[:6]} (would override body proportions)")
         deform = {b.name for b in arm.data.bones if b.use_deform}
         for m in meshes:
             gnames = {g.index: g.name for g in m.vertex_groups}
@@ -94,7 +104,13 @@ if kind == "gear":
             have = {k.name for k in m.data.shape_keys.key_blocks[1:]} if m.data.shape_keys else set()
             lacking = sorted(body_keys - have)
             if lacking:
-                errors.append(f"{m.name}: lacks body shape keys {lacking[:10]} (gear will not follow those sliders)")
+                meta_keys = set(meta.get("fittedKeys", []))
+                unfitted = [k for k in lacking if meta_keys and k not in meta_keys]
+                if unfitted or not meta_keys:
+                    errors.append(f"{m.name}: was never fitted to body keys {(unfitted or lacking)[:10]}; refit it")
+                else:
+                    checks_note = f"{m.name}: {len(lacking)} body keys don't move this piece and were left out"
+                    warns.append(checks_note)
 
 if family == "rigid" or kind in ("prop", "rigid"):
     sub = c["kinds"].get(meta.get("rigidKind", kind), {}) if family == "rigid" else {}

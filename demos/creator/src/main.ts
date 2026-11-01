@@ -3,6 +3,7 @@ import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { TransformControls } from "three/addons/controls/TransformControls.js";
 import GUI from "lil-gui";
+import { ForgeCharacter, type Manifest } from "../../../apps/web/src/lib/forge";
 
 type Option = { file: string; position: [number, number, number]; rotation: [number, number, number]; scale: number };
 type Config = { base: { file: string; walk?: string }; slots: Record<string, { bone: string; options: Record<string, Option> }> };
@@ -59,16 +60,31 @@ let clips: THREE.AnimationClip[] = [];
 let sockets: Record<string, THREE.Object3D> = {};
 let mounted: Record<string, { object: THREE.Object3D; option: Option } | undefined> = {};
 
-const peoples: string[] = await (await fetch(MODELS + "peoples.json")).json();
-const state: Record<string, any> = { people: peoples.includes("rootwarden") ? "rootwarden" : peoples[0], animation: "none", turntable: false };
+// Peoples built with the asset forge (shared base, fitted gear, sliders, dyes) load through ./forge;
+// the others still use their per-people attachments.json until they are forged.
+const FORGE = `${MODELS}forge/`;
+const manifest: Manifest | null = await fetch(FORGE + "forge.json").then((r) => (r.ok ? r.json() : null), () => null);
+const forged = Object.keys(manifest?.humanoid?.peoples ?? {});
+const legacy: string[] = await fetch(MODELS + "peoples.json").then((r) => (r.ok ? r.json() : []), () => []);
+const peoples = [...new Set([...forged, ...legacy])];
+const state: Record<string, any> = { people: forged[0] ?? (legacy.includes("rootwarden") ? "rootwarden" : legacy[0]), animation: "none", turntable: false };
 const gui = new GUI({ title: "Peoples" });
 gui.add(state, "people", peoples).onChange(loadPeople);
+let forge: ForgeCharacter | undefined;
+let forgeFolders: GUI[] = [];
 let slotFolder = gui.addFolder("Customize");
 let fitFolder = gui.addFolder("Fit (dev)").close();
 let animController: ReturnType<GUI["add"]> | undefined;
 gui.add(state, "turntable");
 
 async function loadPeople(people: string) {
+  forge?.root.removeFromParent();
+  forge = undefined;
+  forgeFolders.forEach((f) => f.destroy());
+  forgeFolders = [];
+  if (forged.includes(people)) return loadForged(people);
+  slotFolder.show();
+  fitFolder.show();
   document.body.classList.add("loading");
   cfg = await (await fetch(`${MODELS}${people}/attachments.json`)).json();
   const base = await load(cfg.base.file);
@@ -110,6 +126,81 @@ async function loadPeople(people: string) {
   play(state.animation);
 
   await Promise.all(Object.keys(cfg.slots).map((slot) => equip(slot, state[slot])));
+  document.body.classList.remove("loading");
+}
+
+const EXPRESSIONS: Record<string, Record<string, number>> = {
+  neutral: {},
+  smile: { mouthSmileLeft: 0.8, mouthSmileRight: 0.8, cheekSquintLeft: 0.4, cheekSquintRight: 0.4 },
+  surprise: { jawOpen: 0.45, browInnerUp: 0.9, browOuterUpLeft: 0.7, browOuterUpRight: 0.7, eyeWideLeft: 0.8, eyeWideRight: 0.8 },
+  anger: { browDownLeft: 0.9, browDownRight: 0.9, noseSneerLeft: 0.6, noseSneerRight: 0.6, mouthFrownLeft: 0.5, mouthFrownRight: 0.5 },
+  wink: { eyeBlinkLeft: 1, mouthSmileLeft: 0.5 },
+};
+
+async function loadForged(people: string) {
+  document.body.classList.add("loading");
+  character?.removeFromParent();
+  mixer?.stopAllAction();
+  character = undefined;
+  mixer = undefined;
+  slotFolder.hide();
+  fitFolder.hide();
+  animController?.destroy();
+  animController = undefined;
+  const family = manifest!.humanoid;
+  const c = (forge = await ForgeCharacter.create(manifest!, FORGE, "humanoid", people));
+  scene.add(c.root);
+  const contract = family.contract;
+  const sliders = (title: string, names: string[]) => {
+    const f = gui.addFolder(title).close();
+    forgeFolders.push(f);
+    const values: Record<string, number> = {};
+    for (const n of names) {
+      const [lo, hi] = c.range(n);
+      values[n] = c.values[n] ?? 0;
+      f.add(values, n, lo, hi, 0.01).name(n.replace(/^(body|face)_/, "")).onChange((v: number) => c.setSlider(n, v));
+    }
+    return f;
+  };
+  sliders("Body", [...Object.keys(contract.sliders.bone), ...contract.sliders.morph.body]).open();
+  sliders("Face", contract.sliders.morph.face);
+
+  const look = { expression: "neutral", skin: contract.peoples[people]?.palette?.skin?.[0] ?? "#e1c7b9", prop: "right hand" };
+  const lookFolder = gui.addFolder("Look");
+  forgeFolders.push(lookFolder);
+  lookFolder.add(look, "expression", Object.keys(EXPRESSIONS)).onChange((e: string) => {
+    for (const k of contract.sliders.expressions) c.setMorph(k, EXPRESSIONS[e][k] ?? 0);
+  });
+  lookFolder.addColor(look, "skin").onChange((v: string) => c.skin(v));
+  c.skin(look.skin);
+
+  const gearFolder = gui.addFolder("Gear and dyes");
+  forgeFolders.push(gearFolder);
+  const slots = [...new Set(family.gear.map((g) => g.slot))];
+  for (const slot of slots) {
+    const ids = family.gear.filter((g) => g.slot === slot).map((g) => g.id);
+    const pick = { [slot]: ids[0], dyed: false, primary: "#3f6f9a", secondary: "#e8d9b0", accent: "#c4893c" };
+    await c.equip(slot, ids[0]);
+    const f = gearFolder.addFolder(slot).close();
+    const redye = () => c.dye(slot, pick.dyed ? { primary: pick.primary, secondary: pick.secondary, accent: pick.accent } : null);
+    f.add(pick, slot, ["none", ...ids]).name("piece").onChange(async (id: string) => { await c.equip(slot, id === "none" ? null : id); redye(); });
+    f.add(pick, "dyed").onChange(redye);
+    for (const ch of ["primary", "secondary", "accent"] as const) f.addColor(pick, ch).onChange(redye);
+  }
+  const spear = manifest!.props.find((p) => p.id === "spear");
+  const placeProp = async (where: string) => {
+    await c.hold("Socket_Grip_R", where === "right hand" && spear ? spear.file : null, undefined, spear?.dye);
+    await c.hold("Socket_Back", where === "back" && spear ? spear.file : null, undefined, spear?.dye);
+  };
+  if (spear) {
+    lookFolder.add(look, "prop", ["none", "right hand", "back"]).name("spear").onChange(placeProp);
+    await placeProp(look.prop);
+  }
+
+  state.animation = c.clipNames.includes("idle") ? "idle" : "none";
+  animController = gui.add(state, "animation", ["none", ...c.clipNames]).onChange((n: string) => c.play(n === "none" ? null : n));
+  c.play(state.animation === "none" ? null : state.animation);
+  if (import.meta.env.DEV) Object.assign(window, { forge: c });
   document.body.classList.remove("loading");
 }
 
@@ -238,7 +329,9 @@ const clock = new THREE.Clock();
 renderer.setAnimationLoop(() => {
   const dt = clock.getDelta();
   mixer?.update(dt);
-  if (state.turntable && character) character.rotation.y += dt * 0.5;
+  forge?.update(dt);
+  const turning = character ?? forge?.root;
+  if (state.turntable && turning) turning.rotation.y += dt * 0.5;
   controls.update();
   renderer.render(scene, camera);
 });

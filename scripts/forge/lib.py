@@ -45,6 +45,7 @@ def contract(family: str) -> dict:
 
 def reset():
     bpy.ops.wm.read_factory_settings(use_empty=True)
+    bpy.context.scene.render.fps = 30  # the forge frame rate: glTF times convert to frames at this rate on import
 
 
 def load(file: str) -> list:
@@ -114,11 +115,12 @@ def with_active(obj):
     return bpy.context.temp_override(object=obj, active_object=obj, selected_objects=[obj], selected_editable_objects=[obj])
 
 
-def dominant_groups(obj) -> list:
-    """Index of the heaviest vertex group per vertex (-1 when unweighted)."""
+def dominant_groups(obj, only: set | None = None) -> list:
+    """Index of the heaviest vertex group per vertex (-1 when unweighted), optionally among `only` names."""
+    names = {g.index: g.name for g in obj.vertex_groups}
     out = []
     for v in obj.data.vertices:
-        best = max(v.groups, key=lambda g: g.weight, default=None)
+        best = max((g for g in v.groups if only is None or names[g.group] in only), key=lambda g: g.weight, default=None)
         out.append(best.group if best and best.weight > 0 else -1)
     return out
 
@@ -126,7 +128,8 @@ def dominant_groups(obj) -> list:
 def bone_vertices(obj, bones: set) -> list:
     """World positions of vertices whose heaviest group is one of `bones`."""
     names = {g.index: g.name for g in obj.vertex_groups}
-    dom = dominant_groups(obj)
+    arm = obj.find_armature()
+    dom = dominant_groups(obj, {b.name for b in arm.data.bones if b.use_deform} if arm else None)
     mw = obj.matrix_world
     return [mw @ obj.data.vertices[i].co for i, g in enumerate(dom) if names.get(g) in bones]
 
@@ -203,3 +206,183 @@ def canonical_map(arm, c: dict) -> dict:
     if len(set(mapping.values())) != len(mapping):
         fail("two bones map to the same canonical name", mapping=mapping)
     return mapping
+
+
+
+def albedo_image(material):
+    """The image feeding a material's Base Color, if any."""
+    if not material or not material.use_nodes:
+        return None
+    for node in material.node_tree.nodes:
+        if node.type == "BSDF_PRINCIPLED":
+            link = next(iter(node.inputs["Base Color"].links), None)
+            n = link.from_node if link else None
+            while n and n.type != "TEX_IMAGE" and n.inputs and n.inputs[0].links:
+                n = n.inputs[0].links[0].from_node
+            return n.image if n and n.type == "TEX_IMAGE" else None
+    return None
+
+
+def face_colours(obj, samples: bool = False):
+    """Mean painted albedo per polygon (corners and centre sampled from the base colour texture); with
+    samples=True, every sample per polygon (corners first, centre last)."""
+    import numpy as np
+    uv = obj.data.uv_layers[0].data
+    cache = {}
+    out = np.zeros((len(obj.data.polygons), 3), dtype=np.float32)
+    every = []
+    for p in obj.data.polygons:
+        mat = obj.data.materials[p.material_index] if obj.data.materials else None
+        if mat not in cache:
+            img = albedo_image(mat)
+            cache[mat] = (np.array(img.pixels[:], dtype=np.float32).reshape(img.size[1], img.size[0], -1)[..., :3], img.size) if img else None
+        data = cache[mat]
+        if data is None:
+            out[p.index] = mat.diffuse_color[:3] if mat else (0.8, 0.8, 0.8)
+            every.append(out[p.index][None])
+            continue
+        px, (w, h) = data
+        pts = np.array([uv[li].uv[:] for li in p.loop_indices], dtype=np.float32)
+        pts = np.vstack([pts, pts.mean(0)]) % 1.0
+        cols = px[(pts[:, 1] * (h - 1)).astype(int), (pts[:, 0] * (w - 1)).astype(int)]
+        out[p.index] = cols.mean(0)
+        every.append(cols)
+    return every if samples else out
+
+
+def socket_points(arm, meshes, c: dict) -> dict:
+    """Where each contract socket goes on these meshes as they evaluate now (shape keys included): the centroid
+    of the vertices dominated by the socket's `from` bones, then optionally a ray to the surface plus an offset."""
+    deps = bpy.context.evaluated_depsgraph_get()
+    deform = {b.name for b in arm.data.bones if b.use_deform}
+    points = {}
+    for sk in c["sockets"]:
+        source = {n for n in sk["from"] if n in arm.data.bones}
+        pts = []
+        for m in meshes:
+            names = {g.index: g.name for g in m.vertex_groups}
+            ev = m.evaluated_get(deps).to_mesh()
+            for v, src_v in zip(ev.vertices, m.data.vertices):
+                best = max((g for g in src_v.groups if names[g.group] in deform), key=lambda g: g.weight, default=None)
+                if best and names[best.group] in source:
+                    pts.append(m.matrix_world @ v.co)
+            m.evaluated_get(deps).to_mesh_clear()
+        if not pts:
+            warn(f"{sk['name']}: no vertices for {sorted(source)}; placed at the bone head")
+            bone = next(n for n in sk["bone"].split("|") if n in arm.data.bones)
+            points[sk["name"]] = arm.matrix_world @ arm.data.bones[bone].head_local
+            continue
+        p = sum(pts, Vector()) / len(pts)
+        if "ray" in sk:
+            d = DIRS[sk["ray"]]
+            hits = []
+            for m in meshes:
+                inv = m.matrix_world.inverted()
+                ok, loc, *_ = m.ray_cast(inv @ p, (inv.to_3x3() @ d).normalized(), depsgraph=deps)
+                if ok:
+                    hits.append(m.matrix_world @ loc)
+            if hits:
+                p = min(hits, key=lambda h: (h - p).length) + d * sk.get("offset", 0)
+            else:
+                warn(f"{sk['name']}: ray {sk['ray']} missed the body; left at the centroid")
+        points[sk["name"]] = p
+    return points
+
+
+def action_fcurves(action):
+    """F-curves of an action, for both legacy and layered (Blender 4.4+/5) actions."""
+    if hasattr(action, "layers") and action.layers:
+        return [fc for layer in action.layers for strip in layer.strips for bag in strip.channelbags for fc in bag.fcurves]
+    return list(getattr(action, "fcurves", []))
+
+
+def linear_keys(action):
+    """Linear interpolation on every key. Bezier keys export as glTF CUBICSPLINE, whose tangents overshoot
+    between keys: Blender renders on whole frames look right while a 60 fps engine shakes."""
+    for fc in action_fcurves(action):
+        for kp in fc.keyframe_points:
+            kp.interpolation = "LINEAR"
+
+
+def glb_json(file: str) -> dict:
+    """The JSON chunk of a GLB, to check what an exporter actually wrote."""
+    import struct
+    data = Path(path(file)).read_bytes()
+    length, kind = struct.unpack_from("<II", data, 12)
+    return json.loads(data[20:20 + length])
+
+
+def rasterise(tri_uv, colours, size: int, grow: int = 4):
+    """Paint each triangle's colour into a size x size UV-space image (row 0 = v 0, Blender's image order), then
+    grow the painted islands by `grow` pixels so seams don't leave gaps."""
+    import numpy as np
+    img = np.zeros((size, size, 3), dtype=np.float32)
+    filled = np.zeros((size, size), dtype=bool)
+    for tri, col in zip(np.asarray(tri_uv) * (size - 1), colours):
+        lo = np.floor(tri.min(0)).astype(int).clip(0, size - 1)
+        hi = np.ceil(tri.max(0)).astype(int).clip(0, size - 1)
+        xs, ys = np.meshgrid(np.arange(lo[0], hi[0] + 1), np.arange(lo[1], hi[1] + 1))
+        p = np.stack([xs.ravel() + 0.5, ys.ravel() + 0.5], 1)
+        a0, b0, c0 = tri
+        v0, v1, v2 = c0 - a0, b0 - a0, p - a0
+        den = v0[0] * v1[1] - v1[0] * v0[1]
+        if abs(den) < 1e-9:
+            continue
+        u = (v2[:, 0] * v1[1] - v1[0] * v2[:, 1]) / den
+        v = (v0[0] * v2[:, 1] - v2[:, 0] * v0[1]) / den
+        inside = (u >= -0.01) & (v >= -0.01) & (u + v <= 1.02)
+        img[ys.ravel()[inside], xs.ravel()[inside]] = col
+        filled[ys.ravel()[inside], xs.ravel()[inside]] = True
+    for _ in range(grow):
+        out = img.copy()
+        for dy, dx in ((0, 1), (0, -1), (1, 0), (-1, 0)):
+            shifted = np.roll(np.roll(img, dy, 0), dx, 1)
+            sf = np.roll(np.roll(filled, dy, 0), dx, 1)
+            take = ~filled & sf
+            out[take] = shifted[take]
+            filled = filled | take
+        img = out
+    return img
+
+
+def save_png(img, file) -> str:
+    """Write an RGB float image (rows bottom-up) as a non-colour PNG."""
+    import numpy as np
+    h, w = img.shape[:2]
+    im = bpy.data.images.new(Path(file).stem, w, h, alpha=True)
+    im.colorspace_settings.name = "Non-Color"
+    im.pixels = np.concatenate([img, np.ones((h, w, 1), dtype=np.float32)], 2).ravel().tolist()
+    im.filepath_raw = str(file)
+    im.file_format = "PNG"
+    im.save()
+    return str(file)
+
+
+def pose_offsets(c: dict, people: str | None, keys: dict | None = None) -> dict:
+    """Additive pose offsets from the contract (the people's fixed `pose` plus `sliderPose` from the current
+    shape key values), as {bone: (axis, radians)} in bone-local space. Bones point up at rest with roll 0, so
+    local Z is the character's front (back) axis in Blender."""
+    import math
+    out = {}
+    amounts = dict(c.get("peoples", {}).get(people or "", {}).get("pose", {}) or {})
+    for name, rule in (c.get("sliderPose") or {}).items():
+        amounts[name] = amounts.get(name, 0) + rule.get("base", 0) + sum(w * (keys or {}).get(k, 0) for k, w in rule["per"].items())
+    for name, deg in amounts.items():
+        spec = c.get("poseOffsets", {}).get(name)
+        if not spec:
+            continue
+        for bone, sign in spec["bones"].items():
+            out[bone] = ("Z", math.radians(deg) * sign)
+    return out
+
+
+def apply_pose_offsets(arm, offsets: dict):
+    """Rotate pose bones by their offsets after the clip has been evaluated (call after frame_set). The offset is
+    applied in the parent's frame, after the clip's rotation, so a clip's twist can't turn it inwards."""
+    from mathutils import Quaternion
+    for bone, (axis, angle) in offsets.items():
+        pb = arm.pose.bones.get(bone)
+        if pb:
+            pb.rotation_mode = "QUATERNION"
+            pb.rotation_quaternion = Quaternion({"X": (1, 0, 0), "Y": (0, 1, 0), "Z": (0, 0, 1)}[axis], angle) @ pb.rotation_quaternion
+    bpy.context.view_layer.update()

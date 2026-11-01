@@ -1,0 +1,15 @@
+{
+  "taskId": "01a197e7-7e84-709f-857d-acdb06e8c849",
+  "endpoint": "/multi-image-to-3d",
+  "images": [
+    "art/concept/views/anchorkin-base-front.png",
+    "art/concept/views/anchorkin-base-side.png",
+    "art/concept/views/anchorkin-base-back.png"
+  ],
+  "model": "meshy-7.1",
+  "textured": true,
+  "polycount": 20000,
+  "pose": "a-pose",
+  "credits": 30,
+  "createdAt": "2026-11-01T16:20:47.838Z"
+}

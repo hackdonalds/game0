@@ -1,0 +1,209 @@
+{
+  "note": "Contract morph slider -> MakeHuman/MPFB2 targets (CC0 data). neg/pos are the targets at weight 1; macros are MPFB macro values set from the neutral base (0.5).",
+  "neutral": {
+    "gender": 0.5,
+    "age": 0.5,
+    "muscle": 0.5,
+    "weight": 0.5,
+    "height": 0.5,
+    "proportions": 0.5,
+    "cupsize": 0.5,
+    "firmness": 0.5
+  },
+  "macros": {
+    "body_gender": {
+      "macro": "gender",
+      "neg": 0.0,
+      "pos": 1.0
+    },
+    "body_muscle": {
+      "macro": "muscle",
+      "neg": 0.0,
+      "pos": 1.0
+    },
+    "body_fat": {
+      "macro": "weight",
+      "neg": 0.0,
+      "pos": 1.0
+    },
+    "body_age": {
+      "macro": "age",
+      "neg": 0.42,
+      "pos": 0.875
+    }
+  },
+  "targets": {
+    "body_belly": {
+      "neg": [
+        "stomach-pregnant-decr"
+      ],
+      "pos": [
+        "stomach-pregnant-incr"
+      ]
+    },
+    "body_chest": {
+      "neg": [
+        "measure-bust-circ-decr"
+      ],
+      "pos": [
+        "measure-bust-circ-incr"
+      ]
+    },
+    "body_waist": {
+      "neg": [
+        "measure-waist-circ-decr"
+      ],
+      "pos": [
+        "measure-waist-circ-incr"
+      ]
+    },
+    "body_hips": {
+      "neg": [
+        "measure-hips-circ-decr"
+      ],
+      "pos": [
+        "measure-hips-circ-incr"
+      ]
+    },
+    "face_width": {
+      "neg": [
+        "head-scale-horiz-decr"
+      ],
+      "pos": [
+        "head-scale-horiz-incr"
+      ]
+    },
+    "face_jaw_width": {
+      "neg": [
+        "chin-width-decr"
+      ],
+      "pos": [
+        "chin-width-incr"
+      ]
+    },
+    "face_chin_length": {
+      "neg": [
+        "chin-height-decr"
+      ],
+      "pos": [
+        "chin-height-incr"
+      ]
+    },
+    "face_cheekbones": {
+      "neg": [
+        "l-cheek-bones-decr",
+        "r-cheek-bones-decr"
+      ],
+      "pos": [
+        "l-cheek-bones-incr",
+        "r-cheek-bones-incr"
+      ]
+    },
+    "face_brow_height": {
+      "neg": [
+        "eyebrows-trans-down"
+      ],
+      "pos": [
+        "eyebrows-trans-up"
+      ]
+    },
+    "face_eye_size": {
+      "neg": [
+        "l-eye-scale-decr",
+        "r-eye-scale-decr"
+      ],
+      "pos": [
+        "l-eye-scale-incr",
+        "r-eye-scale-incr"
+      ]
+    },
+    "face_eye_spacing": {
+      "neg": [
+        "l-eye-trans-in",
+        "r-eye-trans-in"
+      ],
+      "pos": [
+        "l-eye-trans-out",
+        "r-eye-trans-out"
+      ]
+    },
+    "face_eye_tilt": {
+      "neg": [
+        "l-eye-eyefold-angle-down",
+        "r-eye-eyefold-angle-down"
+      ],
+      "pos": [
+        "l-eye-eyefold-angle-up",
+        "r-eye-eyefold-angle-up"
+      ]
+    },
+    "face_nose_width": {
+      "neg": [
+        "nose-scale-horiz-decr"
+      ],
+      "pos": [
+        "nose-scale-horiz-incr"
+      ]
+    },
+    "face_nose_length": {
+      "neg": [
+        "nose-scale-vert-decr"
+      ],
+      "pos": [
+        "nose-scale-vert-incr"
+      ]
+    },
+    "face_nose_bridge": {
+      "neg": [
+        "nose-hump-decr"
+      ],
+      "pos": [
+        "nose-hump-incr"
+      ]
+    },
+    "face_mouth_width": {
+      "neg": [
+        "mouth-scale-horiz-decr"
+      ],
+      "pos": [
+        "mouth-scale-horiz-incr"
+      ]
+    },
+    "face_lip_fullness": {
+      "neg": [
+        "mouth-upperlip-volume-decr",
+        "mouth-lowerlip-volume-decr"
+      ],
+      "pos": [
+        "mouth-upperlip-volume-incr",
+        "mouth-lowerlip-volume-incr"
+      ]
+    },
+    "face_ear_size": {
+      "neg": [
+        "l-ear-scale-decr",
+        "r-ear-scale-decr"
+      ],
+      "pos": [
+        "l-ear-scale-incr",
+        "r-ear-scale-incr"
+      ]
+    },
+    "face_ear_point": {
+      "neg": [
+        "l-ear-scale-vert-decr",
+        "r-ear-scale-vert-decr"
+      ],
+      "pos": [
+        "l-ear-scale-vert-incr",
+        "r-ear-scale-vert-incr"
+      ]
+    }
+  },
+  "rig": "game_engine",
+  "keep": [
+    "body",
+    "helper-l-eye",
+    "helper-r-eye"
+  ]
+}

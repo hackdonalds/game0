@@ -1,5 +1,5 @@
 {
-  "taskId": "01a197e7-6b27-7461-a9af-d02ccdf1cb80",
+  "taskId": "01a1989f-0c71-72e5-a435-d0c47e3a611a",
   "endpoint": "/multi-image-to-3d",
   "images": [
     "art/concept/views/galeborne-base-front.png",
@@ -11,5 +11,5 @@
   "polycount": 20000,
   "pose": "a-pose",
   "credits": 30,
-  "createdAt": "2026-11-01T16:20:33.361Z"
+  "createdAt": "2026-11-01T19:42:09.461Z"
 }

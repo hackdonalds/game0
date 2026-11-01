@@ -23,13 +23,16 @@ Research behind every choice: `docs/reports/AI 3D game asset pipeline.md`.
 | Dyes | 3 channels (primary, secondary, accent); colours come from crafted dye items |
 | Paid | Meshy credits only (through the `meshy` skill and its budget). No Tripo, no cloud GPUs |
 | Engines | Godot 4.7 (installed) and three.js WebGLRenderer |
-| First slice | Galeborne end to end |
+| Peoples | All three built end to end from new Meshy bodies (2026-11-02): shared base, signature parts, own underclothes that fit every people, 6 clips (idle, walk, run, jump, attack, death) from the Meshy web app, character creator on the site (`/creator` and the Peoples chapter) |
+| Budgets | Player bodies 28k triangles (MakeHuman topology with a full face); gear 6k; props 3k |
 
 ## Guardrails
 
 1. **Approval gates.** Stop for the user's OK (a) before spending credits (the `meshy` skill's dry run), (b) after generation, with renders next to the concept, (c) after wrap/rig/fit, with posed renders, before animation and export.
 2. **Scripts, not ad-hoc Blender code.** Every stage is a step in `scripts/forge/`, run headless with `bun run art:forge <step>`. Use the Blender MCP only to inspect or debug interactively; long work through the MCP times out after about 4 minutes. If a step is missing, add a new script in the same style (JSON args in, one `FORGE_RESULT` line out) rather than pasting code into the MCP.
-3. **Look at renders.** After every geometry step run `art:forge render` (posed, `--color regions` for bodies, `--color dye` for masks) and read the PNGs before going on.
+3. **Look at renders, then measure.** After every geometry step run `art:forge render` (posed, `--color regions` for bodies, `--color dye` for masks) and read the PNGs. Renders land exactly on keyframes and can't show playback faults, so also:
+   - every gear piece: `art:forge check_fit --extremes true --samples 20` (visible poke-through at the people's defaults, widest and narrowest allowed bodies, through every clip);
+   - every clip library: `art:forge validate` (LINEAR keys, rotation-only channels) and, in the runtime, a jitter probe (60 Hz second differences should be about a quarter of 30 Hz ones).
 4. **Validate before anything ships**: `art:forge validate`, `art:forge godot`, then `art:forge web` for the site.
 5. **Licences.** Every source asset gets a line in its `.json` sidecar: origin, licence, credits. See `references/sources.md` for what is allowed.
 6. **Pilot before batch**, as in the meshy skill.
@@ -41,16 +44,24 @@ Research behind every choice: `docs/reports/AI 3D game asset pipeline.md`.
 | Step | What it does |
 | --- | --- |
 | `inspect --in f.glb` | Objects, bones, shape keys, triangles, UV sets, forge metadata, size |
+| `mpfb_base --out raw.glb` | The humanoid base from MakeHuman/MPFB2 (CC0): neutral body, game-engine rig, `_neg`/`_pos` keys per morph slider (`mpfb-targets.json`), 52 ARKit keys. Then `canonicalize` it |
 | `canonicalize --in rigged.glb --out body.glb [--people id] [--height m]` | Any rig (Meshy, Mixamo, UE, Rigify) → contract skeleton: metres, feet on 0, canonical names, Root, bones pointing up, sockets, `Regions` UV, ≤4 weights |
-| `wrap --base base.glb --target people.glb --out base+key.glb --key people_<id>` | Base topology onto a people's sculpt → signature shape key + `.rest.json` joints, with a fit report |
+| `wrap --base base.glb --target people.glb --out base+key.glb --key people_<id> [--shrink-regions [..]] [--exclude [parts]]` | Base topology onto a people's sculpt → signature shape key + `.rest.json` joints, with a fit report. Two passes for a fused generated body: wrap bare skin, `extract` the parts, then wrap again with the parts excluded and every region but the head shrinkwrapped (tight underclothes are fine to follow) |
+| `extract --source people.canon.glb --body people.body.glb --out part.glb --regions [..] [--skin-regions [..]] [--keep-near [hex]] [--drop-near [hex]] [--not-face true]` | Cut what the base lacks (crest, beard, mantle, growths, underclothes) out of a generated body, with its own texture: by region, distance from the people's body, skin colour, garment colour (keep or drop), and never the face (ARKit-moved vertices); decimated to budget |
+| `bake_skin --source people.canon.glb --body people.body.glb --out people.body.glb --parts [..]` | The generated body's painted skin (stone, bark) baked onto the shared UVs; texels that came from parts are filled from surrounding skin. Skip it for plain skin (Galeborne): the runtime's palette colour looks cleaner |
 | `build_people --base base+keys.glb --rest x.rest.json --people id --out body.glb` | The people's shipped body: signature key on, skeleton at the people's joints |
-| `fit_gear --body body.glb --gear piece.glb --out fitted.glb --slot top` | Push-out by layer, skin weights, one shape key per body key, auto `covers`; writes `.part.json` |
-| `retarget --source clips.glb --target body.glb --out anims.glb [--clips [..]]` | Any humanoid clips → family clip library (rotations + Hips translation only) |
+| `fit_gear --body body.glb --gear piece.glb --out fitted.glb --slot top [--rest-keys {..}] [--own-shape true]` | Subdivides coarse pieces, pushes vertices *and faces* out of the body (body vertices can't poke between sparse gear vertices), skin weights (smoothed only for loose cloth over 8 cm off), one shape key per body key that moves the piece, a body mask `<piece>.mask.png` hiding the skin where the piece hugs it; writes `.part.json`. `--rest-keys`: the shape it was made on (re-expressed on the neutral base so it fits everyone); `--own-shape`: a people's signature part |
+| `retarget --source clips.glb\|[..] --target body.glb --out anims.glb [--clips [..]] [--rename {..}]` | Any humanoid clips → family clip library (rotations + Hips translation only, LINEAR keys, joint limits from the contract) |
+| `idle --in anims.glb --out anims.glb` | Procedural looping idle, a stand-in until a real one |
+| `prop --in model.glb --out prop.glb --length m [--grip 0.45]` | Held prop: upright, real length, `Grip` empty at the hand-hold, decimated to budget |
 | `dye --in f.glb --mode analyze --k 6` then `--mode write --channels {...}` | Colour clusters → `<asset>.dye.png` mask |
 | `render --in f.glb --out prefix [--with gear.glb] [--action clip --frame n] [--pose {..}] [--keys {..}] [--color texture\|regions\|dye\|single]` | Orthographic QA renders |
-| `validate --in f.glb [--kind body\|gear\|anims\|prop] [--body body.glb]` | Contract check: bones, sockets, rest axes, weights, regions, keys, slots, budgets |
+| `validate --in f.glb [--kind body\|gear\|anims\|prop] [--body body.glb]` | Contract check: bones, sockets, rest axes, weights, regions, keys, slots, budgets; for clip libraries the exported samplers (LINEAR only) and channels (rotations + Hips translation only) |
+| `check_fit --body people.body.glb --gear fitted.glb --anims anims.glb [--extremes true] [--samples 20]` | Visible poke-through of a piece through every clip, honouring its body mask and the contract's pose offsets; skin-layer parts are reported but never fail |
 | `godot --in f.glb` | Headless Godot 4.7 import into a throwaway project |
 | `web --in f.glb` | three.js copy (`.web.glb`): meshopt + webp, keeps TEXCOORD_1 and the node graph |
+
+`bun scripts/web-forge.ts <outDir>` ships every family asset plus a `forge.json` manifest to a web demo; `demos/creator/src/forge.ts` is the three.js runtime that reads it.
 
 ## Routes
 
@@ -79,9 +90,11 @@ Engines read the plain GLB (Godot) or its `.web.glb` (site). How the runtime app
 
 ## Not built yet (be honest about these)
 
-- **MPFB2 base** (`art/families/humanoid/base.glb`): install the MPFB2 Blender extension, export the CC0 base with its targets mapped to the contract's slider names. This is step 1 of the Galeborne slice. Until it exists, canonical Meshy bodies stand in, and wraps from them are coarse.
-- **Face-accurate wraps** need landmarks (eyes, mouth corners, nose tip, ears); `wrap` currently fits proportions and silhouette only.
-- **ARKit 52 expression keys** on the base (free ARKit blendshape baker or by hand).
-- **Runtime code** in Godot and three.js (`references/runtime.md` is the spec), `procgen/` generators, the quadruped base, and a local TRELLIS.2 install.
+- **Fit check failures.** `check_fit` still fails every garment in motion: arms and hands swing through the vests and shorts (most on wide bodies and other peoples' garments), and the vests poke at the armholes. Some of it is the metric (thick limbs); the rest needs per-garment work: tighter masks, sleeve-aware push-out, wider arm spread.
+- **Face fidelity.** Crests and beards are cut by region; the base face stays MakeHuman's (good for ARKit, less like the concept). Anchorkin and Rootwarden wraps crease where the generated surface has deep plates or bark.
+- **Bone chains and spring bones** for the mantle, tails and capes; the mantle is skinned to the arms only.
+- **Face-accurate wraps** (landmarks); faces come from the base plus face sliders.
+- **General outfits** made on the base itself (the slice's shorts were cut from the Galeborne and generalised).
+- **Godot runtime** (the three.js one exists), `procgen/` generators, the quadruped base, TRELLIS.2 locally.
 
 Lessons and gotchas from building these steps: `references/gotchas.md`. Adding a family, people, slot or socket: `references/contracts.md`.

@@ -1,0 +1,12 @@
+---
+import Base from "../layouts/Base.astro";
+import Creator from "../components/Creator.astro";
+---
+<Base title="Character creator · game0 handbook" description="Make a Galeborne, Anchorkin or Rootwarden: shape the body and face, dress them, dye their clothes and watch them move." section="chapters">
+  <h1 class="sr-only">Character creator</h1>
+  <Creator mode="page" />
+</Base>
+
+<style>
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+</style>

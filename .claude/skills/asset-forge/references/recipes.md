@@ -4,23 +4,28 @@ Commands use `S` for the session scratchpad and `F=art/families/humanoid`. Every
 
 ## 0. Family base (once per family)
 
-Humanoid: the MPFB2 CC0 base.
-1. Install MPFB2 from extensions.blender.org into Blender 5.2, plus the CC0 MakeHuman system assets pack.
-2. In Blender (MCP for inspection, then a `scripts/forge/mpfb_base.py` step): create a neutral human in A-pose with the default game-engine skeleton, no clothes, no eyebrows or hair, low-poly proxy off.
-3. Export targets as paired shape keys named by the contract (`body_muscle_pos/neg`, `face_nose_width_pos/neg`, …). Map each contract slider to the MPFB target(s) in `art/families/humanoid/mpfb-targets.json` so the export is repeatable.
-4. `canonicalize --in <mpfb export> --out $F/base.glb` (renames to the contract, sockets, regions).
-5. Add the ARKit 52 expression keys (free ARKit blendshape baker add-on, or sculpted), then `validate`.
-6. Render with `--color regions` and check that the regions follow the body cleanly (they will, unlike the Meshy rigs).
+Humanoid (done; rerun only to change sliders):
+```
+blender -c extension install mpfb --enable          # once; the faceunits01 pack (CC0) goes in MPFB's user data/targets
+bun run art:forge mpfb_base --out $S/mpfb.raw.glb   # sliders from art/families/humanoid/mpfb-targets.json
+bun run art:forge canonicalize --in $S/mpfb.raw.glb --out $F/base.glb
+```
+Then rerun `wrap` for every people (the base loses its `people_*` keys) and refit all gear.
 
-## 1. A people
+## 1. A people (the Galeborne route)
 
-1. Concept turnaround of the bare body in A-pose (meshy skill, `art:image`).
-2. Meshy base (meshy skill) → web rig (free) → `art/models/<people>/base-rigged.glb`. **Gate:** renders vs concept.
-3. `canonicalize --in art/models/<people>/base-rigged.glb --out $S/<people>.canon.glb --people <people> --height <m>`. Height: the middle of `heightMetres` in the contract.
-4. `wrap --base $F/base.glb --target $S/<people>.canon.glb --out $F/base.glb --key people_<people>`. Check the fit report: mean ≤ 1 cm and p95 ≤ 3 cm against the target is good; worse means the target has features the base can't reach (beards, feathers, shells). Those become **parts** (step 6), not wrap targets.
-5. `build_people --base $F/base.glb --rest $F/base.rest.json --people <people> --out $F/peoples/<people>.body.glb`, and keep the `.rest.json` next to it as `peoples/<people>.rest.json`.
-6. Signature parts the base can't carry (Galeborne mantle feathers, Rootwarden growth, Anchorkin crystal veins) are gear in the `skin` layer: generate them separately, `fit_gear --slot hair|beard|brows` or a new contract slot, with bone chains for anything that moves (mantle, tail).
-7. **Gate:** renders posed (`--pose`), sliders at both ends (`--keys`), regions colouring. Then `validate`, `godot`.
+1. Concept turnaround of the body in A-pose → Meshy base (meshy skill) → web rig → `art/models/<people>/base-rigged.glb`. **Gate.**
+2. `canonicalize --in art/models/<people>/base-rigged.glb --out $S/<people>.canon.glb --people <people> --height <m>` (middle of `heightMetres`).
+3. `wrap --base $F/base.glb --target $S/<people>.canon.glb --out $F/base.glb --key people_<people> --shrink-regions [bare-skin regions]`. Regions where the Meshy body has feathers, hair or clothes fused on stay out of the shrinkwrap; the skeleton fit gives them the right proportions. Galeborne: `["shin_l","shin_r","foot_l","foot_r","hand_l","hand_r"]`.
+4. `build_people --base $F/base.glb --rest $F/base.rest.json --people <people> --out $F/peoples/<people>.body.glb`; move the `.rest.json` to `peoples/<people>.rest.json`. Sockets are re-placed on the people's surface.
+5. Signature parts from the same Meshy body, with its textures and no new credits:
+   ```
+   extract --source $S/<p>.canon.glb --body $F/peoples/<p>.body.glb --out $S/x-crest.glb --regions '["head","neck"]' --min-distance 0.01 --skin-regions '<bare regions>' --skin-tolerance 0.1
+   fit_gear --body $F/peoples/<p>.body.glb --gear $S/x-crest.glb --out $F/gear/crest/<p>-crest.glb --slot crest --rest-keys '{"people_<p>":1}' --own-shape true --covers '[]'
+   ```
+   Clothes cut this way are fitted against the **base** without `--own-shape`, so they fit every people.
+6. Add `defaults` (slider values) for the people in the contract; the runtime applies them.
+7. **Gate:** renders with gear (`render --in body --with '[gear..., anims]' --action walk --keys {...}`), then `validate`, `godot`, and the demo (`bun run --cwd demos/creator dev`).
 
 ## 2. NPC variety
 

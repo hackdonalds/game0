@@ -4,7 +4,7 @@ import Base from "../layouts/Base.astro";
 import Plate from "../components/Plate.astro";
 import ShardMap from "../components/ShardMap.astro";
 import SailToy from "../components/SailToy.astro";
-import PeoplesStage from "../components/PeoplesStage.astro";
+import Creator from "../components/Creator.astro";
 import LivingShard from "../components/LivingShard.astro";
 import { chapters } from "../data/chapters.mjs";
 import { catalogue } from "../lib/catalogues";
@@ -29,7 +29,7 @@ const toc = docs.flatMap((d, i) => [
   ...d.headings.filter((h) => h.depth === 2),
 ]);
 const related = chapter.catalogues.map(catalogue);
-const demoTitle = { map: "Explore the First Shard", peoples: "Meet the peoples", sail: "Trim a sail", shard: "Watch a living shard" } as const;
+const demoTitle = { map: "Explore the First Shard", peoples: "Make your character", sail: "Trim a sail", shard: "Watch a living shard" } as const;
 ---
 <Base title={`${chapter.title} · game0 handbook`} description={chapter.summary} section="chapters">
   <header class="hero">
@@ -57,7 +57,7 @@ const demoTitle = { map: "Explore the First Shard", peoples: "Meet the peoples",
           <p class="eyebrow">Try it</p>
           <h2 class="demo-title">{demoTitle[chapter.demo]}</h2>
           {chapter.demo === "map" && <ShardMap />}
-          {chapter.demo === "peoples" && <div class="stage"><PeoplesStage /></div>}
+          {chapter.demo === "peoples" && <Creator mode="embed" />}
           {chapter.demo === "sail" && <SailToy />}
           {chapter.demo === "shard" && <LivingShard />}
         </section>

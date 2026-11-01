@@ -1,0 +1,354 @@
+---
+// The character creator: pick a people, shape the body and face, dress them, dye their clothes and watch them move.
+// Built on the asset-forge runtime (src/lib/forge.ts) and the family assets shipped to public/models/forge.
+interface Props { mode?: "embed" | "page" }
+const { mode = "embed" } = Astro.props;
+---
+<div class:list={["creator", mode]} data-creator={mode}>
+  <div class="viewport">
+    <canvas aria-label="Your character. Drag to turn, pinch or scroll to zoom."></canvas>
+    <div class="peoples" role="tablist" aria-label="People"></div>
+    <div class="moves" aria-label="Animation"></div>
+    <p class="status" role="status">Loading the peoples…</p>
+  </div>
+  <div class="panel">
+    <div class="tabs" role="tablist" aria-label="Customise">
+      <button type="button" role="tab" data-tab="body" aria-selected="true">Body</button>
+      <button type="button" role="tab" data-tab="face" aria-selected="false">Face</button>
+      <button type="button" role="tab" data-tab="look" aria-selected="false">Look</button>
+      <button type="button" role="tab" data-tab="outfit" aria-selected="false">Outfit</button>
+    </div>
+    <div class="pane" data-pane="body"></div>
+    <div class="pane" data-pane="face" hidden></div>
+    <div class="pane" data-pane="look" hidden></div>
+    <div class="pane" data-pane="outfit" hidden></div>
+    <div class="actions">
+      <button type="button" data-action="random">Surprise me</button>
+      <button type="button" data-action="reset">Reset</button>
+      {mode === "embed" && <a data-action="full">Open full screen ↗</a>}
+    </div>
+  </div>
+</div>
+
+<script>
+  import * as THREE from "three";
+  import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+  import { ForgeCharacter, type Manifest } from "../lib/forge";
+
+  const BASE = import.meta.env.BASE_URL.replace(/\/?$/, "/");
+  const FORGE = `${BASE}models/forge/`;
+  const NAMES: Record<string, string> = { galeborne: "Galeborne", anchorkin: "Anchorkin", rootwarden: "Rootwardens" };
+  const LABELS: Record<string, string> = {
+    height: "Height", shoulders: "Shoulders", neck: "Neck", arms: "Arms", legs: "Legs", head: "Head size", hands: "Hands", feet: "Feet",
+    body_gender: "Build", body_muscle: "Muscle", body_fat: "Weight", body_belly: "Belly", body_age: "Age", body_chest: "Chest", body_waist: "Waist", body_hips: "Hips",
+    face_width: "Face width", face_jaw_width: "Jaw", face_chin_length: "Chin", face_cheekbones: "Cheekbones", face_brow_height: "Brow",
+    face_eye_size: "Eye size", face_eye_spacing: "Eye spacing", face_eye_tilt: "Eye tilt", face_nose_width: "Nose width",
+    face_nose_length: "Nose length", face_nose_bridge: "Nose bridge", face_mouth_width: "Mouth", face_lip_fullness: "Lips",
+    face_ear_size: "Ear size", face_ear_point: "Ear height",
+  };
+  const MOVES: Record<string, string> = { idle: "Idle", walk: "Walk", run: "Run", jump: "Jump", attack: "Attack", hit: "Hit", death: "Death" };
+  const EXPRESSIONS: Record<string, Record<string, number>> = {
+    Calm: {},
+    Smile: { mouthSmileLeft: 0.8, mouthSmileRight: 0.8, cheekSquintLeft: 0.4, cheekSquintRight: 0.4 },
+    Surprise: { jawOpen: 0.45, browInnerUp: 0.9, browOuterUpLeft: 0.7, browOuterUpRight: 0.7, eyeWideLeft: 0.8, eyeWideRight: 0.8 },
+    Anger: { browDownLeft: 0.9, browDownRight: 0.9, noseSneerLeft: 0.6, noseSneerRight: 0.6, mouthFrownLeft: 0.5, mouthFrownRight: 0.5 },
+    Wink: { eyeBlinkLeft: 1, mouthSmileLeft: 0.5 },
+  };
+  // Dyes are crafted items in the game; these are the starting set
+  const DYES = [
+    { name: "Undyed", hex: "" }, { name: "Sky", hex: "#4f7fae" }, { name: "Storm", hex: "#3c4658" }, { name: "Ochre", hex: "#c08a3a" },
+    { name: "Rust", hex: "#9b4a2c" }, { name: "Moss", hex: "#5d7a3a" }, { name: "Plum", hex: "#6c4470" }, { name: "Bone", hex: "#e3d6bc" },
+  ];
+
+  async function mount(root: HTMLElement) {
+    const canvas = root.querySelector("canvas")!;
+    const status = root.querySelector<HTMLElement>(".status")!;
+    const manifest: Manifest | null = await fetch(FORGE + "forge.json").then((r) => (r.ok ? r.json() : null), () => null);
+    const family = manifest?.humanoid;
+    if (!family || !Object.keys(family.peoples).length) {
+      status.textContent = "The character models aren't available yet.";
+      return;
+    }
+    const contract = family.contract;
+
+    const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+    renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+    renderer.outputColorSpace = THREE.SRGBColorSpace;
+    const scene = new THREE.Scene();
+    scene.add(new THREE.HemisphereLight(0xfff3dc, 0x5d7f8c, 2.2));
+    const sun = new THREE.DirectionalLight(0xffe0aa, 2.6);
+    sun.position.set(2.5, 5, 4);
+    scene.add(sun);
+    const rim = new THREE.DirectionalLight(0xa6e6ff, 1.1);
+    rim.position.set(-3, 3, -4);
+    scene.add(rim);
+    const ground = new THREE.Mesh(new THREE.CircleGeometry(1.1, 64), new THREE.MeshToonMaterial({ color: 0x8fa77a }));
+    ground.rotation.x = -Math.PI / 2;
+    scene.add(ground);
+    const camera = new THREE.PerspectiveCamera(30, 1, 0.05, 60);
+    camera.position.set(1.4, 1.5, 5.2);
+    const controls = new OrbitControls(camera, canvas);
+    controls.target.set(0, 1.05, 0);
+    controls.enableDamping = true;
+    controls.enablePan = false;
+    controls.minDistance = 1.2;
+    controls.maxDistance = 8;
+    controls.maxPolarAngle = Math.PI * 0.55;
+
+    const resize = () => {
+      const { clientWidth: w, clientHeight: h } = canvas;
+      renderer.setSize(w, h, false);
+      camera.aspect = w / h;
+      camera.updateProjectionMatrix();
+    };
+    new ResizeObserver(resize).observe(canvas);
+    resize();
+
+    const peoples = Object.keys(family.peoples);
+    const cache = new Map<string, ForgeCharacter>();
+    type Look = { expression: string; skin: string; signature: string; outfit: Record<string, string>; dyes: Record<string, { primary?: string; secondary?: string }> };
+    const looks = new Map<string, Look>();
+    let current: ForgeCharacter | undefined;
+    let people = peoples.includes("galeborne") ? "galeborne" : peoples[0];
+    let move = "idle";
+
+    // People of a piece: signature parts belong to one people (ownShape); outfits fit everyone
+    const signatureParts = (p: string) => family.gear.filter((g) => g.part.ownShape && g.id.startsWith(p));
+    const outfitSlots = () => [...new Set(family.gear.filter((g) => !g.part.ownShape).map((g) => g.slot))];
+    const outfitFor = (slot: string) => family.gear.filter((g) => !g.part.ownShape && g.slot === slot);
+    const palette = (p: string) => contract.peoples[p]?.palette ?? {};
+    const skinKey = (p: string) => Object.keys(palette(p))[0];
+    const sigKey = (p: string) => Object.keys(palette(p))[1];
+
+    function defaultLook(p: string): Look {
+      const outfit: Record<string, string> = {};
+      for (const slot of outfitSlots()) {
+        const own = outfitFor(slot).find((g) => g.id.startsWith(p)) ?? outfitFor(slot)[0];
+        if (own) outfit[slot] = own.id;
+      }
+      return { expression: "Calm", skin: "", signature: "", outfit, dyes: {} };
+    }
+
+    async function character(p: string) {
+      if (cache.has(p)) return cache.get(p)!;
+      const c = await ForgeCharacter.create(manifest!, FORGE, "humanoid", p);
+      for (const g of signatureParts(p)) await c.equip(g.slot, g.id);
+      cache.set(p, c);
+      return c;
+    }
+
+    async function show(p: string) {
+      people = p;
+      status.textContent = `Loading the ${NAMES[p] ?? p}…`;
+      status.hidden = false;
+      root.querySelectorAll<HTMLButtonElement>(".peoples button").forEach((b) => b.setAttribute("aria-selected", String(b.dataset.people === p)));
+      const c = await character(p);
+      if (people !== p) return;
+      current?.root.removeFromParent();
+      current = c;
+      scene.add(c.root);
+      if (!looks.has(p)) looks.set(p, defaultLook(p));
+      await applyLook();
+      c.play(move);
+      // Frame each people by its height (an Anchorkin is half a metre taller than a Rootwarden)
+      const h = (contract.peoples[p]?.heightMetres ?? [1.8, 2])[1];
+      controls.target.set(0, h * 0.52, 0);
+      camera.position.set(h * 0.65, h * 0.72, h * 2.55);
+      controls.update();
+      buildPanes();
+      buildMoves();
+      status.hidden = true;
+    }
+
+    async function applyLook() {
+      const c = current!;
+      const look = looks.get(people)!;
+      for (const k of contract.sliders.expressions) c.setMorph(k, EXPRESSIONS[look.expression]?.[k] ?? 0);
+      if (look.skin) c.skin(look.skin);
+      for (const g of signatureParts(people)) c.dye(g.slot, look.signature ? { primary: look.signature } : null);
+      for (const slot of outfitSlots()) {
+        const want = look.outfit[slot] ?? null;
+        if ((c.slots.get(slot)?.gear.id ?? null) !== want) await c.equip(slot, want);
+        const d = look.dyes[slot];
+        c.dye(slot, d && (d.primary || d.secondary) ? d : null);
+      }
+    }
+
+    // Panes
+    const pane = (name: string) => root.querySelector<HTMLElement>(`[data-pane="${name}"]`)!;
+    function slider(host: HTMLElement, name: string) {
+      const c = current!;
+      const [lo, hi] = c.range(name);
+      if (lo === hi) return;
+      const row = document.createElement("label");
+      row.className = "slider";
+      row.innerHTML = `<span>${LABELS[name] ?? name}</span><input type="range" min="${lo}" max="${hi}" step="0.01" value="${c.values[name] ?? 0}">`;
+      row.querySelector("input")!.addEventListener("input", (e) => c.setSlider(name, +(e.target as HTMLInputElement).value));
+      host.append(row);
+    }
+    function chips(host: HTMLElement, title: string, items: { label: string; value: string; swatch?: string }[], selected: string, pick: (v: string) => void) {
+      const group = document.createElement("div");
+      group.className = "group";
+      group.innerHTML = `<p class="label">${title}</p>`;
+      const list = document.createElement("div");
+      list.className = "chips";
+      for (const it of items) {
+        const b = document.createElement("button");
+        b.type = "button";
+        b.className = it.swatch !== undefined ? "swatch" : "chip";
+        b.title = it.label;
+        b.setAttribute("aria-pressed", String(it.value === selected));
+        if (it.swatch !== undefined) {
+          b.style.setProperty("--c", it.swatch || "transparent");
+          b.innerHTML = `<span class="sr">${it.label}</span>`;
+          if (!it.swatch) b.classList.add("none");
+        } else b.textContent = it.label;
+        b.addEventListener("click", async () => {
+          list.querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+          pick(it.value);
+          await applyLook();
+        });
+        list.append(b);
+      }
+      group.append(list);
+      host.append(group);
+    }
+
+    function buildPanes() {
+      const look = looks.get(people)!;
+      const body = pane("body"), face = pane("face"), lookPane = pane("look"), outfit = pane("outfit");
+      [body, face, lookPane, outfit].forEach((p) => p.replaceChildren());
+      for (const n of [...Object.keys(contract.sliders.bone), ...contract.sliders.morph.body]) slider(body, n);
+      chips(face, "Expression", Object.keys(EXPRESSIONS).map((e) => ({ label: e, value: e })), look.expression, (v) => (look.expression = v));
+      for (const n of contract.sliders.morph.face) slider(face, n);
+      const pal = palette(people);
+      const sk = skinKey(people), sg = sigKey(people);
+      if (sk) chips(lookPane, `${sk[0].toUpperCase()}${sk.slice(1)}`, [{ label: "As painted", value: "", swatch: "" }, ...pal[sk].map((h: string) => ({ label: h, value: h, swatch: h }))], look.skin, (v) => (look.skin = v));
+      if (sg && signatureParts(people).length) chips(lookPane, `${sg[0].toUpperCase()}${sg.slice(1)}`, [{ label: "As painted", value: "", swatch: "" }, ...pal[sg].map((h: string) => ({ label: h, value: h, swatch: h }))], look.signature, (v) => (look.signature = v));
+      for (const slot of outfitSlots()) {
+        const garment = slot === "top" ? "vest" : slot === "bottom" ? "shorts" : slot;
+        const items = [{ label: "None", value: "" }, ...outfitFor(slot).map((g) => ({ label: `${NAMES[g.id.split("-")[0]]?.replace(/s$/, "") ?? g.id} ${garment}`, value: g.id }))];
+        chips(outfit, slot === "top" ? "Top" : slot === "bottom" ? "Bottom" : slot, items, look.outfit[slot] ?? "", (v) => (look.outfit[slot] = v));
+        look.dyes[slot] ??= {};
+        chips(outfit, "Dye", DYES.map((d) => ({ label: d.name, value: d.hex, swatch: d.hex })), look.dyes[slot].primary ?? "", (v) => (look.dyes[slot].primary = v || undefined));
+      }
+    }
+
+    function buildMoves() {
+      const host = root.querySelector<HTMLElement>(".moves")!;
+      host.replaceChildren();
+      for (const name of current!.clipNames.filter((n) => MOVES[n]).sort((a, b) => Object.keys(MOVES).indexOf(a) - Object.keys(MOVES).indexOf(b))) {
+        const b = document.createElement("button");
+        b.type = "button";
+        b.textContent = MOVES[name];
+        b.setAttribute("aria-pressed", String(name === move));
+        b.addEventListener("click", () => {
+          move = name;
+          current!.play(name);
+          host.querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+        });
+        host.append(b);
+      }
+    }
+
+    const tabs = root.querySelector(".peoples")!;
+    for (const p of peoples) {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.role = "tab";
+      b.dataset.people = p;
+      b.textContent = NAMES[p] ?? p;
+      b.addEventListener("click", () => show(p));
+      tabs.append(b);
+    }
+    root.querySelectorAll<HTMLButtonElement>(".tabs [data-tab]").forEach((t) => t.addEventListener("click", () => {
+      root.querySelectorAll<HTMLButtonElement>(".tabs [data-tab]").forEach((x) => x.setAttribute("aria-selected", String(x === t)));
+      root.querySelectorAll<HTMLElement>("[data-pane]").forEach((p) => (p.hidden = p.dataset.pane !== t.dataset.tab));
+    }));
+    root.querySelector('[data-action="random"]')!.addEventListener("click", async () => {
+      const c = current!;
+      const look = looks.get(people)!;
+      const sliders = [...Object.keys(contract.sliders.bone), ...contract.sliders.morph.body, ...contract.sliders.morph.face];
+      for (const n of sliders) { const [lo, hi] = c.range(n); c.setSlider(n, lo + Math.random() * (hi - lo) * 0.8 + (hi - lo) * 0.1); }
+      const pal = palette(people);
+      const pick = <T,>(xs: T[]) => xs[Math.floor(Math.random() * xs.length)];
+      look.skin = pal[skinKey(people)] ? pick(pal[skinKey(people)]) : "";
+      look.signature = pal[sigKey(people)] ? pick(pal[sigKey(people)]) : "";
+      look.expression = pick(Object.keys(EXPRESSIONS));
+      for (const slot of outfitSlots()) { look.outfit[slot] = pick(outfitFor(slot)).id; look.dyes[slot] = { primary: pick(DYES).hex || undefined }; }
+      await applyLook();
+      buildPanes();
+    });
+    root.querySelector('[data-action="reset"]')!.addEventListener("click", async () => {
+      const c = current!;
+      const defaults = contract.peoples[people]?.defaults ?? {};
+      for (const n of [...Object.keys(contract.sliders.bone), ...contract.sliders.morph.body, ...contract.sliders.morph.face]) c.setSlider(n, defaults[n] ?? 0);
+      looks.set(people, defaultLook(people));
+      await applyLook();
+      buildPanes();
+    });
+    const full = root.querySelector<HTMLAnchorElement>('[data-action="full"]');
+    if (full) full.href = `${BASE}creator/`;
+
+    // Render only while on screen
+    const clock = new THREE.Clock();
+    const frame = () => {
+      const dt = Math.min(clock.getDelta(), 0.1);
+      current?.update(dt);
+      controls.update();
+      renderer.render(scene, camera);
+    };
+    let started = false;
+    new IntersectionObserver(async ([e]) => {
+      renderer.setAnimationLoop(e.isIntersecting ? frame : null);
+      if (e.isIntersecting && !started) {
+        started = true;
+        await show(people);
+      }
+    }, { rootMargin: "200px" }).observe(root);
+  }
+
+  document.querySelectorAll<HTMLElement>("[data-creator]").forEach((el) => mount(el));
+</script>
+
+<style is:global>
+  /* Global (scoped by .creator): the controls are built by script, so Astro's scoped styles would miss them */
+  .creator { display: grid; gap: 0; background: var(--card); border-radius: 14px; overflow: hidden; box-shadow: var(--shadow); }
+  .creator.embed { grid-template-columns: minmax(0, 1.4fr) minmax(16rem, 1fr); height: clamp(460px, 70vh, 640px); }
+  .creator.page { grid-template-columns: minmax(0, 1fr) minmax(18rem, 24rem); height: calc(100dvh - var(--tabbar) - 4.5rem); border-radius: 0; }
+  @media (max-width: 760px) {
+    .creator.embed, .creator.page { grid-template-columns: 1fr; grid-template-rows: minmax(300px, 52vh) auto; height: auto; }
+    .creator .panel { max-height: none; }
+  }
+  .creator .viewport { position: relative; min-height: 300px; background: linear-gradient(180deg, #cfe6f0, #f4ead4); }
+  .creator canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; }
+  .creator .peoples { position: absolute; top: 0.75rem; left: 0.75rem; right: 0.75rem; display: flex; flex-wrap: wrap; gap: 0.35rem; }
+  .creator .moves { position: absolute; bottom: 0.75rem; left: 0.75rem; right: 0.75rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.3rem; }
+  .creator .peoples button, .creator .moves button {
+    font: 500 0.82rem var(--font-body); padding: 0.45rem 0.85rem; min-height: 36px; border-radius: 999px; border: 0;
+    background: #ffffffcc; color: #1d2733; box-shadow: 0 4px 14px -6px #1d273366; cursor: pointer; backdrop-filter: blur(6px);
+  }
+  .creator .peoples button[aria-selected="true"], .creator .moves button[aria-pressed="true"] { background: #1d2733; color: #fff; }
+  .creator .status { position: absolute; inset: 0; display: grid; place-items: center; margin: 0; color: #1d2733; font-size: 0.9rem; letter-spacing: 0.04em; pointer-events: none; }
+
+  .creator .panel { display: flex; flex-direction: column; min-height: 0; border-left: 1px solid var(--line); }
+  .creator .tabs { display: flex; border-bottom: 1px solid var(--line); }
+  .creator .tabs button { flex: 1; padding: 0.8rem 0.4rem; border: 0; background: none; color: var(--ink-soft); font: 600 0.85rem var(--font-body); cursor: pointer; border-bottom: 2px solid transparent; }
+  .creator .tabs button[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--rule); }
+  .creator .pane { flex: 1; overflow-y: auto; padding: 0.75rem 1rem 1rem; display: grid; align-content: start; gap: 0.55rem; }
+  .creator .slider { display: grid; grid-template-columns: 7.5rem 1fr; align-items: center; gap: 0.6rem; font-size: 0.85rem; color: var(--ink-soft); }
+  .creator .slider input { width: 100%; accent-color: var(--teal); }
+  .creator .group { display: grid; gap: 0.35rem; margin-bottom: 0.35rem; }
+  .creator .label { margin: 0.2rem 0 0; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); }
+  .creator .chips { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+  .creator .chip { padding: 0.35rem 0.7rem; min-height: 32px; border-radius: 999px; border: 1px solid var(--line); background: var(--paper); color: var(--ink); font: 500 0.8rem var(--font-body); cursor: pointer; text-transform: capitalize; }
+  .creator .chip[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+  .creator .swatch { width: 32px; height: 32px; border-radius: 50%; border: 2px solid var(--line); background: var(--c); cursor: pointer; }
+  .creator .swatch.none { background: repeating-linear-gradient(45deg, var(--paper), var(--paper) 4px, var(--paper-deep) 4px, var(--paper-deep) 8px); }
+  .creator .swatch[aria-pressed="true"] { outline: 2px solid var(--ink); outline-offset: 2px; }
+  .creator .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .creator .actions { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; padding: 0.75rem 1rem; border-top: 1px solid var(--line); }
+  .creator .actions button { padding: 0.5rem 0.9rem; min-height: 38px; border-radius: 999px; border: 1px solid var(--line); background: var(--paper); color: var(--ink); font: 600 0.82rem var(--font-body); cursor: pointer; }
+  .creator .actions [data-action="random"] { background: var(--teal); border-color: var(--teal); color: #fff; }
+  .creator .actions a { margin-left: auto; font-size: 0.85rem; color: var(--rule); }
+</style>

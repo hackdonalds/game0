@@ -19,6 +19,9 @@
 | `sliders.expressions` | ARKit 52 names |
 | `peoples` (or `species`) | Per people: height range, chains it uses, slider clamps, locked features, palettes |
 | `budgets` | Triangles and texture size per asset kind |
+| `skeleton.limits` | Max bend per joint (degrees between parent limb and limb); retarget clamps clips to it |
+| `sliderPose`, `poseOffsets`, `peoples[id].pose` | Additive pose offsets (arm spread) for wider bodies, per slider unit or per people; runtime, check_fit and renders apply them |
+| `peoples[id].defaults` | Slider values a new character of that people starts with |
 
 ## Adding a people
 
