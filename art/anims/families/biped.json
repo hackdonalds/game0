@@ -1,0 +1,273 @@
+{
+  "family": "biped",
+  "description": "Two-legged, two-armed humanoids: peoples, orcs, undead, giants.",
+  "rest": "A-pose: arms 30-60 degrees from vertical, palms forward or down, fingers spread (closed fingers fall back to a mitten), legs apart, facing -Y in Blender (+Z in glTF).",
+  "rig": "scripts/rig/autorig.py",
+  "bones": [
+    {
+      "name": "root",
+      "parent": null,
+      "deform": false
+    },
+    {
+      "name": "hips",
+      "parent": "root",
+      "deform": true
+    },
+    {
+      "name": "spine",
+      "parent": "hips",
+      "deform": true
+    },
+    {
+      "name": "chest",
+      "parent": "spine",
+      "deform": true
+    },
+    {
+      "name": "neck",
+      "parent": "chest",
+      "deform": true
+    },
+    {
+      "name": "head",
+      "parent": "neck",
+      "deform": true
+    },
+    {
+      "name": "clavicle.L",
+      "parent": "chest",
+      "deform": true
+    },
+    {
+      "name": "upper_arm.L",
+      "parent": "clavicle.L",
+      "deform": true
+    },
+    {
+      "name": "forearm.L",
+      "parent": "upper_arm.L",
+      "deform": true
+    },
+    {
+      "name": "hand.L",
+      "parent": "forearm.L",
+      "deform": true
+    },
+    {
+      "name": "thigh.L",
+      "parent": "hips",
+      "deform": true
+    },
+    {
+      "name": "shin.L",
+      "parent": "thigh.L",
+      "deform": true
+    },
+    {
+      "name": "foot.L",
+      "parent": "shin.L",
+      "deform": true
+    },
+    {
+      "name": "toe.L",
+      "parent": "foot.L",
+      "deform": true
+    },
+    {
+      "name": "thumb_01.L",
+      "parent": "hand.L",
+      "deform": true
+    },
+    {
+      "name": "thumb_02.L",
+      "parent": "thumb_01.L",
+      "deform": true
+    },
+    {
+      "name": "thumb_03.L",
+      "parent": "thumb_02.L",
+      "deform": true
+    },
+    {
+      "name": "index_01.L",
+      "parent": "hand.L",
+      "deform": true
+    },
+    {
+      "name": "index_02.L",
+      "parent": "index_01.L",
+      "deform": true
+    },
+    {
+      "name": "index_03.L",
+      "parent": "index_02.L",
+      "deform": true
+    },
+    {
+      "name": "middle_01.L",
+      "parent": "hand.L",
+      "deform": true
+    },
+    {
+      "name": "middle_02.L",
+      "parent": "middle_01.L",
+      "deform": true
+    },
+    {
+      "name": "middle_03.L",
+      "parent": "middle_02.L",
+      "deform": true
+    },
+    {
+      "name": "ring_01.L",
+      "parent": "hand.L",
+      "deform": true
+    },
+    {
+      "name": "ring_02.L",
+      "parent": "ring_01.L",
+      "deform": true
+    },
+    {
+      "name": "ring_03.L",
+      "parent": "ring_02.L",
+      "deform": true
+    },
+    {
+      "name": "pinky_01.L",
+      "parent": "hand.L",
+      "deform": true
+    },
+    {
+      "name": "pinky_02.L",
+      "parent": "pinky_01.L",
+      "deform": true
+    },
+    {
+      "name": "pinky_03.L",
+      "parent": "pinky_02.L",
+      "deform": true
+    },
+    {
+      "name": "clavicle.R",
+      "parent": "chest",
+      "deform": true
+    },
+    {
+      "name": "upper_arm.R",
+      "parent": "clavicle.R",
+      "deform": true
+    },
+    {
+      "name": "forearm.R",
+      "parent": "upper_arm.R",
+      "deform": true
+    },
+    {
+      "name": "hand.R",
+      "parent": "forearm.R",
+      "deform": true
+    },
+    {
+      "name": "thigh.R",
+      "parent": "hips",
+      "deform": true
+    },
+    {
+      "name": "shin.R",
+      "parent": "thigh.R",
+      "deform": true
+    },
+    {
+      "name": "foot.R",
+      "parent": "shin.R",
+      "deform": true
+    },
+    {
+      "name": "toe.R",
+      "parent": "foot.R",
+      "deform": true
+    },
+    {
+      "name": "thumb_01.R",
+      "parent": "hand.R",
+      "deform": true
+    },
+    {
+      "name": "thumb_02.R",
+      "parent": "thumb_01.R",
+      "deform": true
+    },
+    {
+      "name": "thumb_03.R",
+      "parent": "thumb_02.R",
+      "deform": true
+    },
+    {
+      "name": "index_01.R",
+      "parent": "hand.R",
+      "deform": true
+    },
+    {
+      "name": "index_02.R",
+      "parent": "index_01.R",
+      "deform": true
+    },
+    {
+      "name": "index_03.R",
+      "parent": "index_02.R",
+      "deform": true
+    },
+    {
+      "name": "middle_01.R",
+      "parent": "hand.R",
+      "deform": true
+    },
+    {
+      "name": "middle_02.R",
+      "parent": "middle_01.R",
+      "deform": true
+    },
+    {
+      "name": "middle_03.R",
+      "parent": "middle_02.R",
+      "deform": true
+    },
+    {
+      "name": "ring_01.R",
+      "parent": "hand.R",
+      "deform": true
+    },
+    {
+      "name": "ring_02.R",
+      "parent": "ring_01.R",
+      "deform": true
+    },
+    {
+      "name": "ring_03.R",
+      "parent": "ring_02.R",
+      "deform": true
+    },
+    {
+      "name": "pinky_01.R",
+      "parent": "hand.R",
+      "deform": true
+    },
+    {
+      "name": "pinky_02.R",
+      "parent": "pinky_01.R",
+      "deform": true
+    },
+    {
+      "name": "pinky_03.R",
+      "parent": "pinky_02.R",
+      "deform": true
+    },
+    {
+      "name": "carry",
+      "parent": "chest",
+      "deform": false
+    }
+  ]
+}
