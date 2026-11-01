@@ -8,8 +8,8 @@ Classless, skill-based progression with action combat, open-world risk and a pla
 | --- | --- |
 | Progression | Use-based skills, 0–100 each. **Soft cap with decay**: no hard total cap; unused skills decay slowly and never below half their peak, so returning to an old skill is fast |
 | Everything is a skill | No separation between magic and other skills. Wind magic, swordplay, cooking and sailing all work the same way |
-| Resources | **No mana.** Magic uses the same resources as any other skill |
-| Learning | Skills are learned at a **source**: a trainer, a book, or a place tied to the skill. At a high level a player can **become a trainer**; at an even higher level they can **write books** that teach the skill |
+| Resources | **No mana.** One **stamina** bar for everything (swinging, casting, dodging, sprinting), refilling quickly at rest. Strong techniques also have their own **cooldowns** |
+| Learning | Skills are learned at a **source**: a trainer, a book, or a place tied to the skill. At **75** a player can **become a trainer**; at **100** they can **write books** that teach the skill |
 | Skill count | About 35 skills across combat, magic, gathering, crafting and travel (list below) |
 | Abilities | **Learned techniques** from trainers and books, unlocked at skill thresholds. **6 technique slots**, swapped outside combat |
 | Controls | **Hybrid**: free-aim attacks by default, with an optional soft lock-on toggle (good for gamepad) |
@@ -20,7 +20,9 @@ Classless, skill-based progression with action combat, open-world risk and a pla
 | Sinking | Slowed by Rootborn tending the ancient trees; a sinking isle can't be saved. Rare **isle births** add new land as world events |
 | Gear | Wears down with use, as well as on death. Worn gear is repaired by crafters or replaced |
 | Ships | Three sizes; can be attacked and cargo looted. Sails wear from attacks, weather and distance travelled. See [sailing](#sailing) |
-| Quests and achievements | Quests give direction and story; achievements record what a character has done. No endgame |
+| Quests and achievements | Quests give direction and story; achievements record what a character has done. No endgame. See [quests](#quests) |
+| Gear tiers | Set by **material** (for example copper, iron, skysteel, relic). Crafting skill sets the **quality** within a tier |
+| First hours | Start in your people's homeland. See [first hours](#first-hours) |
 | Long-term goals | Mastery and rare techniques, rare drowned-world relic gear, ships and trade empires, reputation and customization |
 
 ## Risk tiers
@@ -75,13 +77,27 @@ Each people has cultural affinities but no restrictions. For example, Skerrin le
 - **Sail wear.** Sails wear from attacks, weather (storms, gusts) and distance travelled. Worn sails catch less wind, and Sailweavers re-enchant them.
 - **Ship combat.** Ships can be attacked anywhere PvP is allowed. A disabled ship's cargo can be looted.
 
+## Quests
+
+Four kinds, all simple to pick up:
+
+- **Story quests** for each people: hand-written chains about their history and grudges.
+- **Town job boards**: repeatable jobs from NPCs and the world, such as hauling, gathering, hunting and escorting.
+- **Player-posted jobs**: players post paid jobs on the same boards, for example "bring 50 iron to Windmarket".
+- **World event quests**: appear with sinkings, isle births, storm surges and seasons.
+
+## First hours
+
+- New characters start on their people's **home isles**, in guarded space. Veiled characters start aboard an **oath-caravan** travelling the Accord lanes; their first steps happen on deck and at its stops.
+- Short quests teach movement, gathering, learning a first skill from a trainer, crafting, and a skiff ride to the nearest Accord town.
+- From the town, the job boards and story quests take over.
+
 ## Open questions
 
 - Exact decay rate, and whether the "half of peak" floor is per skill.
 - How fast skills rise, and which actions grant gains (anti-macro rules).
 - Technique counts per tree.
-- With no mana: is stamina the only resource, or do techniques just have cooldowns?
-- Skill levels needed to become a trainer and to write books, and whether written books carry their author's name.
+- Whether written books carry their author's name.
 - Which sources teach which skills, and whether some skills can only be learned in certain places.
 - Base sinking cadence per shard, and how much tending slows it.
 - How often isles are born, and what triggers the birth.

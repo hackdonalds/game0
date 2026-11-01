@@ -1,6 +1,6 @@
 # World
 
-> Approved 2026-11-01, except the threat, which is still open.
+> Approved 2026-11-01.
 
 - [Peoples](peoples.md): the five playable peoples
 
@@ -14,7 +14,7 @@ A world of floating isles above the **drowned old world**. Nobody knows why the 
 
 **New isles are born.** Rarely, a new isle rises out of the storm layer. An isle's birth is a world event: unclaimed land, untouched resource nodes and a race to settle and hold it.
 
-**A threat is coming** *(to be defined later)*, so the peoples can't simply fight each other forever.
+**The storm below is alive.** The storm layer is slowly rising. It sends creatures up onto the isles and pulls isles down. It never wins and is never defeated: it is the constant pressure that makes the peoples need each other, and the reason the Tether Accord holds.
 
 ## Tone and technology
 
@@ -65,5 +65,6 @@ The world has a day and night cycle and four seasons.
 
 ## Open questions
 
-- The threat: what, and when is it revealed? (The game has no end, so the threat is an ongoing pressure, not a final battle.)
+- What the storm is: a force of nature, something sleeping, or the old world's doing? Players may never fully learn.
+- How storm surges play out: creature waves, faster sinking, blocked wind lanes.
 - Is Vael ever raised? That could be a long-term world event.

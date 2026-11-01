@@ -30,7 +30,7 @@ An epic high-fantasy sandbox MMORPG set across floating sky isles. Players aren'
 | Scale | Small shards, about 50–200 concurrent players per world |
 | Shards | Characters and markets are shared across shards; players can move between them |
 | Travel | Bridges and paths between nearby isles; crafted sailships (enchanted sails, wind currents) for longer routes and cargo |
-| Housing | Personal plots in safe towns (cosmetics and crafting stations); no guild land claims for now |
+| Housing | Rented personal plots in safe towns, with a house, crafting stations, storage and a dock. Guild property is decided with [social](social/README.md) |
 | World premise | Floating isles above the drowned old world. Why they float is unknown; isles are slowly sinking. See [world](world/README.md) |
 | Ships | Can be attacked; cargo can be looted. Realistic sail simulation on enchanted wind currents |
 | Technology | Pure high fantasy; ships sail on enchanted sails and wind currents |
@@ -38,7 +38,6 @@ An epic high-fantasy sandbox MMORPG set across floating sky isles. Players aren'
 ## Open questions
 
 - How many town plots per shard, and how are they allocated?
-- How do shared markets work with physical hauling: is each town's order book shared by that town on every shard?
 
 ## Target players
 

@@ -6,9 +6,11 @@ A single-gold, player-driven economy. Local markets and sailship hauling create 
 
 | Topic | Decision |
 | --- | --- |
-| Gear source | Mixed: monster drops and player crafting are both viable sources of gear |
+| Gear source | **Crafting first.** Monsters mostly drop materials, recipes and books. Finished gear drops are rare and still need crafters to repair |
+| Gear tiers | Set by material (copper, iron, skysteel, relic and so on); crafting skill sets quality within a tier |
+| Housing | Town plots are **rented weekly** with gold. If rent stops, after a warning the plot is freed and its contents go to storage |
 | Currency | Single gold currency |
-| Markets | Local order books per town, shared across shards. Goods must be physically hauled, and prices differ between towns |
+| Markets | Local order books per town. **Each town's book is the same on every shard**: Windmarket's orders are shared by Windmarket on all shards. Goods still have to be hauled there on the shard you're on. Prices differ between towns, not between shards |
 | Gear wear | Gear wears down with use, which keeps crafters in demand |
 | Knowledge | Player trainers and player-written books are traded like goods |
 | Gold sinks | Gear durability and repair, town plot rent and upkeep, sail wear from attacks, weather and distance |
@@ -23,7 +25,7 @@ A single-gold, player-driven economy. Local markets and sailship hauling create 
 
 **Sinks** (gold and items leaving the world)
 - Repairs, and gear broken beyond repair
-- Plot rent and upkeep
+- Weekly plot rent
 - Sails wear from attacks, weather and distance travelled, and need re-enchanting by crafters
 - Ship cargo looted in attacks
 - Resources lost on death (partial loot): some are picked up by other players, and the rest decay
@@ -38,6 +40,5 @@ A single-gold, player-driven economy. Local markets and sailship hauling create 
 ## Open questions
 
 - How are skill books priced and copied: one book per copy, written by hand?
-- How do crafted and dropped gear stay balanced? Options include drops needing crafted upgrades, or drops having lower durability.
 - Should there be any market tax? Not chosen yet; the sinks above are expected to carry the load.
-- Which item tiers exist, and how fast does gear churn through durability?
+- The exact material tiers, and how fast gear wears through durability.
