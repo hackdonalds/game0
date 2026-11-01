@@ -21,8 +21,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 const formatDate = (d: Date) => d.toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
 
 const features = [
-  { title: "No classes", text: "About 35 skills grow as you use them, across weapons, five schools of magic, gathering, crafting and travel. Skills you neglect fade slowly, but never below half their peak." },
-  { title: "Six techniques", text: "Learn techniques from trainers and rare scrolls, then slot any six. Change your role by changing your loadout, not your character." },
+  { title: "No classes", text: "About 35 skills grow as you use them, from swords and wind magic to cooking and sailing. Learn them from trainers, books and places of power. Skills you neglect fade slowly, but never below half their peak." },
+  { title: "Six techniques", text: "Learn techniques from trainers and books, then slot any six. Change your role by changing your loadout, not your character." },
   { title: "Risk you choose", text: "Accord towns are safe. Sky lanes and home isles are guarded. The wild isles are open PvP, and whatever you carry, you can lose." },
   { title: "Craft and haul", text: "Every town has its own market. Craft, load your sailship and run goods between isles, the faster wild routes for more profit, the guarded lanes for safety." },
   { title: "Sinking isles", text: "When an isle starts to sink, the whole shard races to evacuate it, salvage its riches and fight over the spoils before it drops into the storm." },
@@ -39,6 +39,7 @@ const initial = Math.floor(peoples.length / 2);
         <a href="#world">World</a>
         <a href="#peoples">Peoples</a>
         <a href="#play">Play</a>
+        <a href={`${base}/bestiary/`}>Bestiary</a>
         <a href="#demos">Demos</a>
         <a href="#devlog">Devlog</a>
       </div>

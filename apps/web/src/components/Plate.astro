@@ -1,0 +1,38 @@
+---
+// A creature's painted plate, or a placeholder until `bun run art:bestiary` has generated it.
+import { Image } from "astro:assets";
+import type { Creature } from "../data/bestiary";
+
+interface Props { creature: Creature; sizes: string; eager?: boolean }
+const { creature, sizes, eager = false } = Astro.props;
+const plates = import.meta.glob<{ default: ImageMetadata }>("../../../../art/bestiary/*.png", { eager: true });
+const plate = Object.entries(plates).find(([path]) => path.endsWith(`/${creature.id}.png`))?.[1].default;
+---
+{plate ? (
+  <Image class="plate" src={plate} alt={`Painted plate of the ${creature.name}`} widths={[320, 640, 1024]} sizes={sizes} loading={eager ? "eager" : "lazy"} />
+) : (
+  <div class="plate placeholder" data-region={creature.region} role="img" aria-label={`${creature.name}, plate not painted yet`}>
+    <span class="initial">{creature.name.replace(/^The /, "")[0]}</span>
+    <span class="note">Plate to come</span>
+  </div>
+)}
+
+<style>
+  .plate { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 6px; background: var(--paper-deep); }
+  .placeholder {
+    --tone: var(--teal);
+    position: relative; display: grid; place-items: center;
+    background: radial-gradient(circle at 50% 42%, #fffaf0 0%, var(--paper-deep) 70%);
+    box-shadow: inset 0 0 0 1px var(--line), inset 0 0 0 6px var(--paper), inset 0 0 0 7px color-mix(in srgb, var(--tone) 45%, transparent);
+  }
+  .placeholder[data-region="meadows"] { --tone: #5d8a3a; }
+  .placeholder[data-region="rootholds"] { --tone: #6b4e36; }
+  .placeholder[data-region="gardens"] { --tone: #7fa84a; }
+  .placeholder[data-region="crags"] { --tone: #7d766c; }
+  .placeholder[data-region="lagoons"] { --tone: #178f84; }
+  .placeholder[data-region="sky"] { --tone: #4f86b8; }
+  .placeholder[data-region="rim"] { --tone: #b8552f; }
+  .placeholder[data-region="storm"] { --tone: #4b3f78; }
+  .initial { font-family: var(--font-display); font-size: clamp(3rem, 12vw, 7rem); font-weight: 600; color: color-mix(in srgb, var(--tone) 70%, var(--ink)); line-height: 1; }
+  .note { position: absolute; bottom: 10%; font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft); }
+</style>

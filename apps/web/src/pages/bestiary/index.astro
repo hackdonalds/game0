@@ -1,0 +1,162 @@
+---
+import Base from "../../layouts/Base.astro";
+import Plate from "../../components/Plate.astro";
+import { bestiary, DANGER, REGIONS } from "../../data/bestiary";
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const sections = REGIONS.map((r) => ({ ...r, entries: bestiary.filter((c) => c.region === r.id) })).filter((s) => s.entries.length);
+const alphabetical = [...bestiary].sort((a, b) => a.name.replace(/^The /, "").localeCompare(b.name.replace(/^The /, "")));
+const temperaments = ["passive", "neutral", "territorial", "hostile"];
+---
+<Base title="Bestiary · game0" description="Every creature and world boss of the floating isles, with stats, habitats and lore.">
+  <header class="head">
+    <div class="wrap">
+      <a class="back" href={`${base}/`}>← game0</a>
+      <p class="eyebrow">Field guide</p>
+      <h1>Bestiary of the Sky</h1>
+      <p class="lede">The creatures of the floating isles, the open sky and the storm below. Every creature uses the same skills as the players, from 0 to 100, so you can see exactly how it measures up against you.</p>
+      <dl class="key">
+        <div><dt>Danger</dt><dd>{DANGER.slice(1).map((d, i) => <span><b>{i + 1}</b> {d}</span>)}</dd></div>
+        <div><dt>Temperament</dt><dd><span><b>Passive</b> flees</span><span><b>Neutral</b> fights back</span><span><b>Territorial</b> attacks if you come close</span><span><b>Hostile</b> hunts you</span></dd></div>
+      </dl>
+    </div>
+  </header>
+
+  <div class="filters" role="search">
+    <div class="wrap filter-row">
+      <input id="q" type="search" placeholder="Search creatures, drops, skills…" aria-label="Search the bestiary" />
+      <div class="chips" aria-label="Temperament">
+        {temperaments.map((t) => <button type="button" data-temper={t} aria-pressed="false">{t}</button>)}
+      </div>
+      <div class="chips">
+        <button type="button" data-flag="tame" aria-pressed="false">Tameable</button>
+        <button type="button" data-flag="boss" aria-pressed="false">World bosses</button>
+      </div>
+      <select id="region" aria-label="Jump to region">
+        <option value="">Jump to…</option>
+        {sections.map((s) => <option value={s.id}>{s.name}</option>)}
+        <option value="index">A–Z index</option>
+      </select>
+    </div>
+  </div>
+
+  <main class="wrap">
+    {sections.map((s) => (
+      <section class="region" id={s.id}>
+        <h2>{s.name}</h2>
+        <ul class="grid">
+          {s.entries.map((c) => (
+            <li class="entry" data-temper={c.temperament} data-tame={c.taming ? "1" : ""} data-boss={c.boss ? "1" : ""}
+                data-text={[c.name, c.family, c.habitat, c.drops.join(" "), Object.keys(c.skills).join(" "), c.lore].join(" ").toLowerCase()}>
+              <a href={`${base}/bestiary/${c.id}/`}>
+                <Plate creature={c} sizes="(max-width: 640px) 45vw, 260px" />
+                <h3>{c.name}</h3>
+                <p class="type">{c.size} {c.family.toLowerCase()} · {c.temperament}</p>
+                <p class="danger" aria-label={`Danger ${c.danger}, ${DANGER[c.danger]}`}>
+                  {[1, 2, 3, 4, 5].map((n) => <i class={n <= c.danger ? "on" : ""} />)}
+                  <span>{c.boss ? "World boss" : DANGER[c.danger]}</span>
+                </p>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
+    <p class="empty" hidden>No creature matches. Try fewer filters.</p>
+
+    <section class="index" id="index">
+      <h2>A–Z index</h2>
+      <ol>
+        {alphabetical.map((c) => (
+          <li><a href={`${base}/bestiary/${c.id}/`}>{c.name}</a> <span>{REGIONS.find((r) => r.id === c.region)!.name}</span></li>
+        ))}
+      </ol>
+    </section>
+  </main>
+</Base>
+
+<script>
+  const q = document.getElementById("q") as HTMLInputElement;
+  const entries = [...document.querySelectorAll<HTMLElement>(".entry")];
+  const sections = [...document.querySelectorAll<HTMLElement>(".region")];
+  const empty = document.querySelector<HTMLElement>(".empty")!;
+  const tempers = new Set<string>();
+  const flags = new Set<string>();
+
+  const apply = () => {
+    const text = q.value.trim().toLowerCase();
+    let shown = 0;
+    for (const e of entries) {
+      const ok = (!text || e.dataset.text!.includes(text))
+        && (!tempers.size || tempers.has(e.dataset.temper!))
+        && [...flags].every((f) => e.dataset[f]);
+      e.hidden = !ok;
+      if (ok) shown++;
+    }
+    for (const s of sections) s.hidden = !s.querySelector(".entry:not([hidden])");
+    empty.hidden = shown > 0;
+  };
+
+  q.addEventListener("input", apply);
+  document.querySelectorAll<HTMLButtonElement>("[data-temper][aria-pressed], [data-flag]").forEach((b) => {
+    b.addEventListener("click", () => {
+      const on = b.getAttribute("aria-pressed") !== "true";
+      b.setAttribute("aria-pressed", String(on));
+      const set = b.dataset.flag ? flags : tempers;
+      const key = b.dataset.flag ?? b.dataset.temper!;
+      on ? set.add(key) : set.delete(key);
+      apply();
+    });
+  });
+  const jump = document.getElementById("region") as HTMLSelectElement;
+  jump.addEventListener("change", () => {
+    if (jump.value) document.getElementById(jump.value)?.scrollIntoView({ behavior: "smooth" });
+    jump.value = "";
+  });
+</script>
+
+<style>
+  .wrap { max-width: 72rem; margin: 0 auto; padding: 0 clamp(16px, 5vw, 48px); }
+  .head { background: linear-gradient(180deg, var(--night) 0%, var(--night-soft) 100%); color: #f3ecd9; padding: 2.5rem 0 3rem; }
+  .back { color: #f3ecd9cc; text-decoration: none; font-family: var(--font-display); font-weight: 600; font-size: 1.15rem; }
+  .back:hover { color: var(--gold-light); }
+  .eyebrow { margin: 2.5rem 0 0.4rem; color: var(--gold-light); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; }
+  h1 { font-size: clamp(2.6rem, 7vw, 4.6rem); margin: 0; color: #fff; }
+  .lede { max-width: 40rem; color: #f3ecd9d9; font-size: 1.1rem; }
+  .key { display: grid; gap: 0.6rem; margin: 1.6rem 0 0; font-size: 0.86rem; }
+  .key div { display: flex; flex-wrap: wrap; gap: 0.3rem 1rem; align-items: baseline; }
+  .key dt { font-weight: 600; color: var(--gold-light); min-width: 7rem; }
+  .key dd { margin: 0; display: flex; flex-wrap: wrap; gap: 0.3rem 1rem; color: #f3ecd9bb; }
+  .key b { color: #fff; font-weight: 600; }
+
+  .filters { position: sticky; top: 0; z-index: 5; background: color-mix(in srgb, var(--paper) 92%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+  .filter-row { display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center; padding-top: 0.75rem; padding-bottom: 0.75rem; }
+  #q { flex: 1 1 14rem; min-width: 0; font: inherit; font-size: 0.95rem; padding: 0.5rem 0.85rem; border: 1px solid var(--line); border-radius: 999px; background: #fff; color: var(--ink); }
+  .chips { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+  .chips button, #region { font: 500 0.85rem var(--font-body); text-transform: capitalize; color: var(--ink-soft); background: #fff; border: 1px solid var(--line); border-radius: 999px; padding: 0.4rem 0.8rem; cursor: pointer; }
+  .chips button[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: #fff; }
+  #region { text-transform: none; }
+  :is(#q, .chips button, #region):focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+
+  .region { padding-top: 3rem; scroll-margin-top: 4.5rem; }
+  .region h2 { font-size: clamp(1.6rem, 3.5vw, 2.2rem); margin: 0 0 1.2rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--gold); display: inline-block; }
+  .grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 13.5rem), 1fr)); gap: 1.4rem; }
+  .entry a { display: block; text-decoration: none; color: inherit; padding: 0.6rem; margin: -0.6rem; border-radius: 10px; transition: background 0.15s; }
+  .entry a:hover { background: #fffaf0; }
+  .entry a:hover h3 { color: var(--teal); }
+  .entry h3 { font-size: 1.25rem; margin: 0.75rem 0 0.15rem; }
+  .type { margin: 0; font-size: 0.85rem; color: var(--ink-soft); font-style: italic; text-transform: capitalize; }
+  .danger { display: flex; align-items: center; gap: 3px; margin: 0.4rem 0 0; font-size: 0.78rem; color: var(--ink-soft); }
+  .danger i { width: 9px; height: 9px; border-radius: 2px; background: var(--line); transform: rotate(45deg); margin-right: 2px; }
+  .danger i.on { background: var(--roof); }
+  .danger span { margin-left: 0.4rem; }
+  .empty { padding: 3rem 0; color: var(--ink-soft); }
+
+  .index { padding: 4rem 0 6rem; scroll-margin-top: 4.5rem; }
+  .index h2 { font-size: 1.8rem; }
+  .index ol { columns: 3 14rem; gap: 2rem; list-style: none; margin: 0; padding: 0; }
+  .index li { break-inside: avoid; padding: 0.25rem 0; border-bottom: 1px dotted var(--line); display: flex; justify-content: space-between; gap: 1rem; }
+  .index a { font-family: var(--font-display); font-weight: 600; color: var(--ink); text-decoration: none; }
+  .index a:hover { color: var(--teal); }
+  .index span { font-size: 0.8rem; color: var(--ink-soft); text-align: right; }
+</style>
