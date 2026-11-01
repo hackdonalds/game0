@@ -2,6 +2,7 @@
 import Base from "../../../layouts/Base.astro";
 import Plate from "../../../components/Plate.astro";
 import ShardMap from "../../../components/ShardMap.astro";
+import PeopleViewer from "../../../components/PeopleViewer.astro";
 import shard from "../../../../../../worlds/first-shard.world.json";
 import { bestiary, DANGER, REGIONS } from "../../../data/bestiary";
 import { peopleEntries } from "../../../data/peoples-handbook";
@@ -185,6 +186,7 @@ const hasPlate = kind !== "winds";
           </>)}
         </article>
       )}
+      {people && <section class="viewer"><h2>Turn them around</h2><PeopleViewer people={people.id} /></section>}
       {isle && <section class="viewer"><h2>On the map</h2><ShardMap compact highlight={card.id} /></section>}
 
       {wind && (

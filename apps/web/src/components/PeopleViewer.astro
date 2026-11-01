@@ -1,0 +1,88 @@
+---
+// Rotate one people's rigged model with touch or mouse, idling. Loads when scrolled near.
+interface Props { people: string }
+const { people } = Astro.props;
+---
+<div class="viewer" data-viewer={people}>
+  <canvas aria-label={`3D model of the ${people}. Drag to turn it.`}></canvas>
+  <p class="hint">Drag to turn · pinch to zoom</p>
+</div>
+
+<script>
+  import * as THREE from "three";
+  import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
+  import { MeshoptDecoder } from "three/addons/libs/meshopt_decoder.module.js";
+  import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+
+  const MODELS = `${import.meta.env.BASE_URL.replace(/\/?$/, "/")}models/peoples/`;
+  const loader = new GLTFLoader().setMeshoptDecoder(MeshoptDecoder);
+
+  async function mount(el: HTMLElement) {
+    const canvas = el.querySelector("canvas")!;
+    const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+    renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+    renderer.outputColorSpace = THREE.SRGBColorSpace;
+    const scene = new THREE.Scene();
+    scene.add(new THREE.HemisphereLight(0xfff4dc, 0x6a8f9a, 2.4));
+    const sun = new THREE.DirectionalLight(0xffd79a, 2.6);
+    sun.position.set(2, 4, 3);
+    scene.add(sun);
+    const camera = new THREE.PerspectiveCamera(32, 1, 0.05, 50);
+    const controls = new OrbitControls(camera, canvas);
+    controls.enableDamping = true;
+    controls.enablePan = false;
+    controls.autoRotate = !matchMedia("(prefers-reduced-motion: reduce)").matches;
+    controls.autoRotateSpeed = 1.2;
+
+    const gltf = await loader.loadAsync(`${MODELS}${el.dataset.viewer}.glb`).catch(() => null);
+    if (!gltf) { el.classList.add("missing"); return; }
+    const model = gltf.scene;
+    scene.add(model);
+
+    // Frame the model: stand it on the floor and aim the camera at its middle
+    const box = new THREE.Box3().setFromObject(model);
+    const size = box.getSize(new THREE.Vector3());
+    const h = size.y;
+    model.position.y -= box.min.y;
+    controls.target.set(0, h * 0.55, 0);
+    camera.position.set(0, h * 0.75, h * 2.6);
+    controls.minDistance = h * 1.2;
+    controls.maxDistance = h * 4;
+
+    // Idle loop: the first clip whose name mentions idle, else the first clip
+    const mixer = new THREE.AnimationMixer(model);
+    const clip = gltf.animations.find((a) => /idle/i.test(a.name)) ?? gltf.animations[0];
+    if (clip) mixer.clipAction(clip).play();
+
+    const resize = () => {
+      renderer.setSize(canvas.clientWidth, canvas.clientHeight, false);
+      camera.aspect = canvas.clientWidth / canvas.clientHeight;
+      camera.updateProjectionMatrix();
+    };
+    new ResizeObserver(resize).observe(canvas);
+    resize();
+    const clock = new THREE.Clock();
+    let visible = true;
+    new IntersectionObserver(([e]) => (visible = e.isIntersecting)).observe(el);
+    renderer.setAnimationLoop(() => {
+      if (!visible) return;
+      mixer.update(Math.min(clock.getDelta(), 0.1));
+      controls.update();
+      renderer.render(scene, camera);
+    });
+    el.classList.add("ready");
+  }
+
+  document.querySelectorAll<HTMLElement>("[data-viewer]").forEach((el) => {
+    const io = new IntersectionObserver(([e]) => { if (e.isIntersecting) { io.disconnect(); mount(el); } }, { rootMargin: "200px" });
+    io.observe(el);
+  });
+</script>
+
+<style>
+  .viewer { position: relative; aspect-ratio: 4 / 5; max-height: 70vh; border-radius: 14px; overflow: hidden; background: radial-gradient(circle at 50% 30%, #fffaf0, #e9dcc0); }
+  canvas { width: 100%; height: 100%; display: block; touch-action: none; opacity: 0; transition: opacity 0.8s; }
+  .ready canvas { opacity: 1; }
+  .hint { position: absolute; bottom: 0.6rem; left: 0; right: 0; margin: 0; text-align: center; font-size: 0.75rem; color: #55606c; pointer-events: none; }
+  .missing .hint::after { content: " · model coming soon"; }
+</style>
