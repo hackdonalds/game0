@@ -1,0 +1,10 @@
+{
+  "prompt": "Plate for an illustrated field guide: two huge stone-skinned feet planted on a ship's deck, glowing teal crystal veins in the stone, a heavy iron chain coiled beside them as a gust tears at the rigging. Soft vignette fading to warm parchment at the edges. Style: hand-painted stylized game art, painterly, soft lighting with gentle rim light, softer muted colours with gentle saturation, epic and luminous fantasy, never grim. No text, no labels, no border, no frame.",
+  "model": "openai/gpt-image-2.5-sunburst",
+  "aspect": "1:1",
+  "quality": "medium",
+  "refs": [
+    "art/references/world-tree-floating-isle.webp"
+  ],
+  "createdAt": "2026-11-01T16:23:41.681Z"
+}

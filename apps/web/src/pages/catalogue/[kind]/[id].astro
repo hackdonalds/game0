@@ -122,6 +122,10 @@ const hasPlate = kind !== "winds";
             <div><dt>Affinities</dt><dd>{people.affinities.map((a, i) => <>{i > 0 && ", "}<a href={`${base}/catalogue/skills/${a.toLowerCase().replace(/\s+/g, "-")}/`}>{a}</a></>)}</dd></div>
           </dl>
           <hr />
+          <h3>Innate skill: <a href={`${base}/catalogue/skills/${people.innate.name.toLowerCase().replace(/\s+/g, "-")}/`}>{people.innate.name}</a></h3>
+          <p>{people.innate.text}</p>
+          <p class="limit"><b>Limit:</b> {people.innate.limit}</p>
+          <hr />
           <h3>Relations</h3>
           <ul class="relations">
             {people.relations.map((r) => (

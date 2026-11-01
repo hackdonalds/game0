@@ -5,7 +5,7 @@ import GUI from "lil-gui";
 import shard from "../../../worlds/first-shard.world.json";
 import { Sim, Tier, type SimIsle } from "./sim";
 
-type ShardIsle = SimIsle & { biome: string };
+type ShardIsle = SimIsle & { shrine: boolean };
 const isles = shard.isles as ShardIsle[];
 
 // ---------- Scene ----------
@@ -54,7 +54,7 @@ isles.forEach((i, index) => {
   under.userData.index = index;
   scene.add(top, under);
   isleMeshes.push(top, under);
-  if (i.town || i.people !== "none" && i.radius >= 70) {
+  if (i.town || i.shrine) {
     const el = document.createElement("div");
     el.className = "label";
     el.textContent = i.name;

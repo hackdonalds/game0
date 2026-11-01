@@ -14,7 +14,7 @@ export const materials: Material[] = [
     summary: "Soft, warm metal found in shallow seams on many guarded isles.",
     description:
       "Copper is the first metal every smith learns. It is easy to mine and easy to work, and it makes honest starter gear. It also goes into ship fittings, pots and tools across the sky.",
-    where: "Shallow seams on Hornfast, Goatstair and Waystone",
+    where: "Shallow seams on Featherfast, Gale Stair and Waystone",
     gatheredWith: "Mining",
     usedFor: ["Starter weapons and armour", "Tools and pots", "Skiff fittings"],
     draft: true,
@@ -85,7 +85,7 @@ export const materials: Material[] = [
     tier: 2,
     summary: "Dense, twisting wood from fallen roots beneath the Rootholds.",
     description:
-      "Rootwood is cut only from roots that have already fallen, as Rootborn custom demands. It is dense, springy and strong. Bowyers prize it, and shipwrights use it for keels.",
+      "Rootwood is cut only from roots that have already fallen, as Rootwarden custom demands. It is dense, springy and strong. Bowyers prize it, and shipwrights use it for keels.",
     where: "Fallen roots on Rootmother, Hollowgrain and Deephold",
     gatheredWith: "Woodcutting (25)",
     usedFor: ["Strong bows", "Shields and hafts", "Cutter keels"],
@@ -113,10 +113,10 @@ export const materials: Material[] = [
     tier: 4,
     summary: "Heartwood from the fallen limbs of an ancient tree.",
     description:
-      "Grudgeheart comes from the ancient tree at Grudgewood, which grows on rich ore on the northwest frontier between the Rootholds and the Crag Spires. Only fallen limbs may be taken, and both peoples claim the tree. The wood glows faintly with green life long after it is cut.",
+      "Grudgeheart comes from the ancient tree at Grudgewood, on the northwest frontier between the Rootholds and the Crag Spires, and it makes the finest masts in the sky. The Rootwardens allow only fallen limbs to be taken; Galeborne shipwrights want more, and both peoples claim the tree. The wood glows faintly with green life long after it is cut.",
     where: "Fallen limbs of the ancient tree at Grudgewood",
     gatheredWith: "Woodcutting (100)",
-    usedFor: ["Master bows and staves", "Rare ship parts", "Gear that slowly mends itself (draft)"],
+    usedFor: ["The finest masts", "Master bows and staves", "Rare ship parts", "Gear that slowly mends itself (draft)"],
     draft: true,
     art: "a massive fallen limb of an ancient tree, its cut face showing golden rings that glow faintly green, moss and flowers growing over the bark",
   },
@@ -143,8 +143,8 @@ export const materials: Material[] = [
     tier: 2,
     summary: "Supple, grippy leather from cliff goats.",
     description:
-      "Cliff goat leather bends without cracking, and climbers swear it helps them grip the rock. Skerrin herders tan it in the high winds of the Crag Spires.",
-    where: "Hornfast, Goatstair and the other Crag Spire isles",
+      "Cliff goat leather bends without cracking, and climbers swear it helps them grip the rock. Crag herders tan it in the high winds of the Spires.",
+    where: "Featherfast, Gale Stair and the other Crag Spire isles",
     gatheredWith: "Hunting",
     usedFor: ["Light armour for climbers", "Gloves and boots", "Mount saddles"],
     draft: true,
@@ -187,7 +187,7 @@ export const materials: Material[] = [
     tier: 1,
     summary: "Plain linen woven from flax grown on the Garden Isles.",
     description:
-      "Mossback farmers grow flax in long patient terraces. Spun and woven, it makes plain linen for clothes, bandages and the most common sailcloth.",
+      "Garden Isle farmers grow flax in long patient terraces. Spun and woven, it makes plain linen for clothes, bandages and the most common sailcloth.",
     where: "Flax fields on Slowfield and Terrace Hill",
     gatheredWith: "Herbalism (25)",
     usedFor: ["Robes and simple clothes", "Bandages for Field Medicine", "Plain sailcloth"],
@@ -202,7 +202,7 @@ export const materials: Material[] = [
     summary: "Warm, soft cloth spun from moss grazer wool.",
     description:
       "Moss grazers grow a thick coat of moss-tangled wool. Shorn and spun, it makes warm cloth that sheds rain. Caravan crews wear it on long, cold voyages.",
-    where: "Moss grazer herds on the Garden Isles, especially around Ledgerhome",
+    where: "Moss grazer herds on the Garden Isles, especially around Hearthfield",
     gatheredWith: "Taming (shearing a calm grazer)",
     usedFor: ["Warm robes and cloaks", "Cloth armour", "Strong sailcloth"],
     draft: true,
@@ -216,7 +216,7 @@ export const materials: Material[] = [
     summary: "Softly glowing cloth woven from lagoon reeds.",
     description:
       "Glimmerreed grows in the glowing water of the lagoons and keeps a little of that glow when it is woven. Glimmersilk holds enchantment well, so casters and Sailweavers seek it.",
-    where: "Reed beds of Lanternmere and Glimmerpool",
+    where: "Reed beds of Lanternmere and Anchor Bay",
     gatheredWith: "Herbalism (75)",
     usedFor: ["Caster robes", "Sails that hold enchantment longer", "Lantern cloth"],
     draft: true,
@@ -260,7 +260,7 @@ export const materials: Material[] = [
     summary: "Hard grey slate that splits into clean sheets.",
     description:
       "Cragslate makes up the sheer cliffs of the Crag Spires. It splits into flat tiles and holds an edge, so it is used for roofs, whetstones and carved shields.",
-    where: "High Spire, Hornfast and Goatstair",
+    where: "High Spire, Featherfast and Gale Stair",
     gatheredWith: "Mining (50)",
     usedFor: ["Roof tiles and building blocks", "Good whetstones", "Carved stone shields"],
     draft: true,

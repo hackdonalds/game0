@@ -1,7 +1,7 @@
 // Three-level NPC simulation, written the way the shard server would run it: no rendering in here.
 // Full: 20 Hz steering near players. Light: 1 Hz state machine nearby. Abstract: timed plans everywhere else.
 
-export interface SimIsle { x: number; y: number; z: number; radius: number; town: boolean; people: string; tier: string; name: string }
+export interface SimIsle { x: number; y: number; z: number; radius: number; town: boolean; people: string; tier: string; name: string; biome: string }
 
 export const Tier = { Abstract: 0, Light: 1, Full: 2 } as const;
 export type Tier = (typeof Tier)[keyof typeof Tier];
@@ -67,7 +67,8 @@ export class Sim {
     this.rand = () => ((a = Math.imul(a ^ (a >>> 15), a | 1) + 0x6d2b79f5) >>> 0) / 4294967296;
     this.towns = isles.map((_, i) => i).filter((i) => isles[i].town);
     this.wild = isles.map((_, i) => i).filter((i) => isles[i].tier === "wild");
-    this.homes = isles.map((_, i) => i).filter((i) => isles[i].people !== "none" || isles[i].town);
+    // Homes: homeland isles, towns, and the unclaimed Garden Isles where farmers live
+    this.homes = isles.map((_, i) => i).filter((i) => isles[i].people !== "none" || isles[i].town || isles[i].biome === "garden");
     for (let id = 0; id < count; id++) this.npcs.push(this.spawn(id));
   }
 

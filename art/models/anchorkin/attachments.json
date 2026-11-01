@@ -1,0 +1,7 @@
+{
+  "base": {
+    "file": "anchorkin/base-rigged.glb",
+    "walk": "anchorkin/base-rigged.walk.glb"
+  },
+  "slots": {}
+}

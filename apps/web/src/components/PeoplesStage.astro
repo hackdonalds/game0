@@ -1,7 +1,7 @@
 ---
 import { peoples } from "../data/peoples";
 ---
-<canvas id="peoples-stage" data-lineup={peoples.map((p) => p.id).join(",")} aria-label="The five peoples of game0 standing in a ring, the chosen one at the front"></canvas>
+<canvas id="peoples-stage" data-lineup={peoples.map((p) => p.id).join(",")} aria-label="The peoples of game0 standing in a ring, the chosen one at the front"></canvas>
 <div class="people-tabs" role="tablist" aria-label="Peoples">
   {peoples.map((p, i) => (
     <button type="button" role="tab" id={`tab-${p.id}`} data-index={i} aria-selected={i === Math.floor(peoples.length / 2) ? "true" : "false"}>{p.name}</button>

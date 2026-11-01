@@ -67,7 +67,7 @@ Behaviour building blocks: wander, graze, flee, guard, charge, hunt, swarm, ambu
 | Crag Spires | **Cliff goat** | Neutral | Tameable ground mount |
 | | **Crag drake** | Territorial | Small drake that nests on spires. Flies |
 | | **Stonewing bat** | Territorial | Night swarms in caves |
-| Glimmer Lagoons | **Lantern eel** | Territorial | Glows at night. Prized by cooks |
+| Moorings | **Lantern eel** | Territorial | Glows at night. Prized by cooks |
 | | **Shellback crab** | Neutral | Shell and meat |
 | Open sky | **Cloud whale** | Passive | Huge, migrates with the seasons. Ships follow its wake |
 | | **Gale hawk** | Hostile | Flocks that harass skiffs on wild routes |

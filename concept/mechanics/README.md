@@ -10,14 +10,14 @@ Classless, skill-based progression with action combat, open-world risk and a pla
 | Everything is a skill | No separation between magic and other skills. Wind magic, swordplay, cooking and sailing all work the same way |
 | Resources | **No mana.** One **stamina** bar for everything (swinging, casting, dodging, sprinting), refilling quickly at rest. Strong techniques also have their own **cooldowns** |
 | Learning | Skills are learned at a **source**: a trainer, a book, or a place tied to the skill. At **75** a player can **become a trainer**; at **100** they can **write books** that teach the skill |
-| Skill count | 36 skills across combat, magic, gathering, crafting and travel (list below) |
+| Skill count | 37 shared skills across combat, magic, gathering, crafting and travel (list below), plus one innate skill per people |
 | Abilities | **Learned techniques** from trainers and books, unlocked at skill thresholds. **6 technique slots**, swapped outside combat |
 | Controls | **Hybrid**: free-aim attacks by default, with an optional soft lock-on toggle (good for gamepad) |
 | Risk zones | **Three tiers**, see below |
 | Death | Carried resources drop at the death spot for a while; equipped gear stays but loses durability. Respawn at the **nearest Accord shrine** |
 | Crafting | **Simple recipes**: recipe plus materials makes an item; skill sets the success chance and quality roll |
 | Group PvE | **Sinking-isle events** and **world bosses** from storm surges. See [monsters](../monsters/README.md) |
-| Sinking | Slowed by Rootborn tending the ancient trees; a sinking isle can't be saved. Rare **isle births** add new land as world events |
+| Sinking | Slowed by **Treetending** the ancient trees (a skill anyone can learn); a sinking isle can't be saved. Rare **isle births** add new land as world events |
 | Gear | Wears down with use, as well as on death. Worn gear is repaired by crafters or replaced |
 | Ships | Three sizes; can be attacked and cargo looted. Sails wear from attacks, weather and distance travelled. See [sailing](../sailing/README.md) |
 | Quests and achievements | Quests give direction and story; achievements record what a character has done. No endgame. See [quests](#quests) |
@@ -35,18 +35,18 @@ Classless, skill-based progression with action combat, open-world risk and a pla
 
 ## Skills
 
-About 35 skills (approved 2026-11-01). Every skill is learned at a source, rises by use and decays slowly when unused. The groups are only for reading the list: an arcane skill works like any other.
+37 shared skills (approved 2026-11-01; Treetending added 2026-11-01). Every skill is learned at a source, rises by use and decays slowly when unused. The groups are only for reading the list: an arcane skill works like any other.
 
 | Group | Skills |
 | --- | --- |
 | **Weapons (8)** | Blades, Heavy Weapons (axes, hammers), Polearms, Daggers, Bows, Thrown, Shields, Unarmed |
-| **Arcane (5)** | Wind (movement, gusts), Stone (wards, quakes), Tide (healing, water), Bloom (growth, roots), Oathcraft (bindings and buffs, a Veiled tradition) |
+| **Arcane (5)** | Wind (movement, gusts), Stone (wards, quakes), Tide (healing, water), Bloom (growth, roots), Oathcraft (bindings and buffs, taught at Oathgate) |
 | **Defence and survival (4)** | Light Armour, Heavy Armour, Evasion, Field Medicine |
-| **Gathering (6)** | Mining, Woodcutting, Herbalism, Fishing, Hunting, Salvage (diving and recovering relics) |
+| **Gathering (7)** | Mining, Woodcutting, Herbalism, Fishing, Hunting, Salvage (diving and recovering relics), Treetending (tending ancient trees to slow an isle's sinking) |
 | **Crafting (9)** | Smithing, Carpentry, Leatherworking, Tailoring, Stonecraft, Alchemy, Cooking, Shipwright, Sailweaving (enchanting sails) |
 | **Travel and lore (4)** | Sailing, Climbing, Taming (mounts and pack animals), Lore (identifying relics, reading the Ledger) |
 
-Each people has cultural affinities but no restrictions. For example, Skerrin lean towards Mining and Climbing, and Rillfolk towards Salvage and Fishing.
+Each people has cultural affinities but no restrictions. For example, Galeborne lean towards Sailing and Shipwright, and Rootwardens towards Treetending and Herbalism. Each people also has one **innate skill** only it can learn: Glide, Anchor or Take Root (see [peoples](../world/peoples.md#innate-skills)).
 
 ## Techniques
 
@@ -74,7 +74,7 @@ Four kinds, all simple to pick up:
 
 ## First hours
 
-- New characters start on their people's **home isles**, in guarded space. Veiled characters start aboard an **oath-caravan**, a fleet of Veiled ships travelling the Accord lanes; their first steps happen on deck and at its stops.
+- New characters start on their people's **home isles**, in guarded space.
 - Short quests teach movement, gathering, learning a first skill from a trainer, crafting, and a skiff ride to the nearest Accord town.
 - From the town, the job boards and story quests take over.
 

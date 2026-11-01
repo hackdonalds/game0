@@ -1,0 +1,10 @@
+{
+  "prompt": "Plate for an illustrated field guide: a tall, slender Galeborne near-human with sky-pale skin and a crest of slate-blue and white feathers instead of hair, a feathered mantle growing from the shoulders and forearms folded like a cloak, wearing a light leather flight harness with brass buckles and a courier satchel, waist-up three-quarter view, standing on a windswept ledge of a towering rock spire high above the clouds, the mantle catching the wind. Soft vignette fading to warm parchment at the edges. Style: hand-painted stylized game art, painterly, soft lighting with gentle rim light, softer muted colours with gentle saturation, epic and luminous fantasy, never grim. No text, no labels, no border, no frame.",
+  "model": "openai/gpt-image-2.5-sunburst",
+  "aspect": "1:1",
+  "quality": "high",
+  "refs": [
+    "art/references/world-tree-floating-isle.webp"
+  ],
+  "createdAt": "2026-11-01T16:12:44.532Z"
+}

@@ -4,7 +4,7 @@ How a shard fills its world with thousands of NPCs and bot characters while stay
 
 ## Goal
 
-From day one, a shard should feel lived in: caravans on the wind lanes, farmers on the Garden Isles, miners on the Crag Spires, traders in the Accord towns. That means about **500–2,000 simulated characters per shard** next to 50–200 real players, without the server or clients slowing down.
+From day one, a shard should feel lived in: caravans on the wind lanes, farmers on the Garden Isles, shipwrights on the Crag Spires, traders in the Accord towns. That means about **500–2,000 simulated characters per shard** next to 50–200 real players, without the server or clients slowing down.
 
 ## Three levels of detail
 

@@ -6,7 +6,7 @@ Guilds, reputation, grudges between peoples, chat and friends, and how players a
 
 ## Design rule: built to extend
 
-New peoples will join later, so nothing social is hard-coded to the current five.
+New peoples will join later, so nothing social is hard-coded to the current three.
 
 - Each people is **data**: its homeland, culture, starting relations with every other people, and NPC behaviour.
 - Relations between peoples are a table, so a new people adds a row and a column.

@@ -1,10 +1,10 @@
 {
-  "prompt": "Plate for an illustrated field guide: a wide flat floating isle of golden fields and green hedgerows, great timber barns, a herd of slow mossy beasts grazing, a lone Mossback farmer with a garden on its shell walking a furrow, seen from a slight aerial angle. Soft vignette fading to warm parchment at the edges. Style: hand-painted stylized game art, painterly, soft lighting with gentle rim light, softer muted colours with gentle saturation, epic and luminous fantasy, never grim. No text, no labels, no border, no frame.",
+  "prompt": "Plate for an illustrated field guide: a wide flat floating isle of golden fields and green hedgerows, great timber barns, a herd of slow mossy beasts grazing, a lone farmer with a plough walking a furrow, seen from a slight aerial angle. Soft vignette fading to warm parchment at the edges. Style: hand-painted stylized game art, painterly, soft lighting with gentle rim light, softer muted colours with gentle saturation, epic and luminous fantasy, never grim. No text, no labels, no border, no frame.",
   "model": "openai/gpt-image-2.5-sunburst",
   "aspect": "1:1",
   "quality": "medium",
   "refs": [
     "art/references/world-tree-floating-isle.webp"
   ],
-  "createdAt": "2026-11-01T14:18:23.345Z"
+  "createdAt": "2026-11-01T16:22:50.218Z"
 }

@@ -41,10 +41,11 @@ export interface Catalogue {
 
 export const TONE: Record<string, string> = {
   meadow: "#5d8a3a", forest: "#3f7a3a", roothold: "#6b4e36", crag: "#7d766c", garden: "#7fa84a", lagoon: "#178f84", ruin: "#a5835a",
-  meadows: "#5d8a3a", rootholds: "#6b4e36", gardens: "#7fa84a", crags: "#7d766c", lagoons: "#178f84", sky: "#4f86b8", rim: "#b8552f", storm: "#4b3f78",
-  rootborn: "#6b4e36", veiled: "#5b4a86", mossback: "#6f9a3a", skerrin: "#9a7b4f", rillfolk: "#178f84",
+  meadows: "#5d8a3a", rootholds: "#6b4e36", gardens: "#7fa84a", crags: "#7d766c", sky: "#4f86b8", rim: "#b8552f", storm: "#4b3f78",
+  galeborne: "#4f86b8", anchorkin: "#6c6a78", rootwarden: "#6b4e36",
+  moorings: "#178f84", mooring: "#178f84",
   Metal: "#7d766c", Wood: "#7a5d44", Leather: "#9a5b3a", Cloth: "#5b6fa0", Stone: "#8c857c",
-  Weapons: "#9b3f24", Arcane: "#5b4a86", "Defence and survival": "#3f6f8f", Gathering: "#5d8a3a", Crafting: "#a5772c", "Travel and lore": "#178f84",
+  Weapons: "#9b3f24", Arcane: "#5b4a86", "Defence and survival": "#3f6f8f", Gathering: "#5d8a3a", Crafting: "#a5772c", "Travel and lore": "#178f84", Innate: "#b08a2e",
 };
 
 export type ShardIsle = (typeof shard.isles)[number];
@@ -116,7 +117,7 @@ const glossaryCards: Card[] = [...glossary].sort((a, b) => sortName(a.term).loca
 }));
 
 export const catalogues: Catalogue[] = [
-  { slug: "peoples", title: "Peoples", kicker: "Five peoples, one sky", summary: "The five playable peoples: look, culture, homeland, starting point and old grudges.", filters: [], cards: peopleCards, cover: "peoples/skerrin", pages: true },
+  { slug: "peoples", title: "Peoples", kicker: "Three peoples, one sky", summary: "The three playable peoples: look, culture, homeland, innate skill, starting point and old grudges.", filters: [], cards: peopleCards, cover: "peoples/galeborne", pages: true },
   { slug: "bestiary", title: "Bestiary", kicker: "Field guide", summary: "Every creature and world boss, with stats, habitats, actions and lore.", filters: ["Region", "Temperament", "Tameable"], cards: bestiaryCards, cover: "bestiary/crag-drake", pages: true },
   { slug: "skills", title: "Skills", kicker: "Everything is a skill", summary: "All the skills, where to learn them, and what each unlocks at 25, 50, 75 and 100.", filters: ["Group"], cards: skillCards, cover: "skills/wind", pages: true },
   { slug: "isles", title: "Isles and places", kicker: "The First Shard", summary: "Every isle of the First Shard: who lives there, its risk tier, landmarks and resources.", filters: ["Tier", "Biome", "State"], cards: isleCards, cover: "isles/isle_accord-hall", pages: true },

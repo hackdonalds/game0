@@ -12,9 +12,9 @@ export const skills: Skill[] = [
     group: "Weapons",
     summary: "Swords of every length, from short arming swords to two-handed greatswords.",
     description:
-      "Blades reward footwork and timing. A swordsman lives between the cut and the parry, and the best of them turn a blocked blow into an opening. Veiled envoys carry the oldest sword forms in the sky.",
-    sources: ["Trainer at Oathgate", "Veiled sword-masters aboard the oath-caravans", "Books sold in Tetherport"],
-    affinity: ["veiled", "rootborn"],
+      "Blades reward footwork and timing. A swordsman lives between the cut and the parry, and the best of them turn a blocked blow into an opening. The duelling masters of Oathgate keep the oldest sword forms in the sky.",
+    sources: ["Trainer at Oathgate", "Sword-masters of the Hearing Ring at Oathgate", "Books sold in Tetherport"],
+    affinity: [],
     uses: ["Close combat with one or two hands", "Pairs with Shields or a free hand for casting", "Duels in guarded space"],
     milestones: [
       { level: 25, name: "Riposte", text: "Parry an incoming blow at the right moment and strike back at once for bonus damage." },
@@ -30,9 +30,9 @@ export const skills: Skill[] = [
     group: "Weapons",
     summary: "Axes, hammers and mauls that trade speed for crushing force.",
     description:
-      "Heavy weapons are slow to swing and hard to stop. They break guards, stagger large creatures and dent the thickest armour. Skerrin miners say a good hammer is just a pick that learned to fight.",
-    sources: ["Trainer at Ironcleft", "Trainer at Hornfast", "Books sold in Windmarket"],
-    affinity: ["skerrin", "rootborn"],
+      "Heavy weapons are slow to swing and hard to stop. They break guards, stagger large creatures and dent the thickest armour. Rootwarden grove guards swing great stone mauls, and say a hammer is just a root that learned to fight.",
+    sources: ["Trainer at Deephold", "Trainer at Ironcleft", "Books sold in Windmarket"],
+    affinity: ["rootwarden"],
     uses: ["Breaking shields and blocks", "Staggering large creatures and world bosses", "Smashing old-world constructs"],
     milestones: [
       { level: 25, name: "Guard Breaker", text: "An overhead blow that breaks a raised shield and leaves the target open for 2 s." },
@@ -49,8 +49,8 @@ export const skills: Skill[] = [
     summary: "Spears, glaives and halberds that hold the line and control space.",
     description:
       "A polearm keeps danger at arm's length and then some. It is the weapon of deck defenders, caravan guards and anyone who has to hold a bridge. Its reach makes it strong in groups and on ships.",
-    sources: ["Trainer at Accord Hall", "Veiled caravan guards aboard the oath-caravans", "Books sold in Lanterncross"],
-    affinity: ["veiled", "mossback"],
+    sources: ["Trainer at Accord Hall", "Anchorkin chain-wardens at Chainwake", "Books sold in Lanterncross"],
+    affinity: [],
     uses: ["Holding bridges and ship decks", "Keeping creatures at a distance", "Group fights in tight lines"],
     milestones: [
       { level: 25, name: "Long Reach", text: "A thrust at full extension that pushes the target back 3 m." },
@@ -66,9 +66,9 @@ export const skills: Skill[] = [
     group: "Weapons",
     summary: "Short, quick blades for fast strikes, bleeding wounds and sudden exits.",
     description:
-      "Daggers are light, quick and close. They suit fighters who strike from the side or from behind and are gone before the answer comes. Rillfolk traders keep one in every boot.",
-    sources: ["Trainer at Lanterncross", "Trainer at Otterwake", "Books sold in Tetherport"],
-    affinity: ["rillfolk", "skerrin"],
+      "Daggers are light, quick and close. They suit fighters who strike from the side or from behind and are gone before the answer comes. Couriers and traders keep one in every boot.",
+    sources: ["Trainer at Lanterncross", "Trainer at Waystone", "Books sold in Tetherport"],
+    affinity: [],
     uses: ["Fast single-target damage", "Striking from behind", "Light builds that pair with Evasion"],
     milestones: [
       { level: 25, name: "Quick Cut", text: "Two fast slashes that cost very little stamina." },
@@ -84,9 +84,9 @@ export const skills: Skill[] = [
     group: "Weapons",
     summary: "Shortbows and longbows for striking from range, on land or from a deck.",
     description:
-      "Bows are aimed by hand, so a good archer is made, not geared. They are the main weapon of ship fights for now, fired across the gap between two decks. Mossback caravan masters and Rootborn hunters both swear by them.",
-    sources: ["Trainer at Windmarket", "Trainer at Ferrymoor", "Books sold in Ledgerhome"],
-    affinity: ["rootborn", "mossback"],
+      "Bows are aimed by hand, so a good archer is made, not geared. They are the main weapon of ship fights for now, fired across the gap between two decks. Galeborne scouts loose them mid-glide and swear no other weapon is worth the weight.",
+    sources: ["Trainer at Windmarket", "Trainer at Ferrymoor", "Galeborne scouts at Featherfast"],
+    affinity: ["galeborne"],
     uses: ["Ranged combat on isles", "Defending ships and striking enemy crews", "Hunting flighty creatures"],
     milestones: [
       { level: 25, name: "Steady Draw", text: "Hold your aim for longer without losing stamina, and the arrow flies truer." },
@@ -102,9 +102,9 @@ export const skills: Skill[] = [
     group: "Weapons",
     summary: "Throwing knives, axes, javelins and bolas.",
     description:
-      "Thrown weapons fill the gap between blade and bow. They hit hard at short range and can be thrown while running or climbing. Skerrin herders learn the bola before they learn to read.",
-    sources: ["Trainer at Goatstair", "Trainer at Waystone", "Books sold in Windmarket"],
-    affinity: ["skerrin", "rillfolk"],
+      "Thrown weapons fill the gap between blade and bow. They hit hard at short range and can be thrown while running or climbing. Crag herders learn the bola before they learn to read.",
+    sources: ["Trainer at Gale Stair", "Trainer at Waystone", "Books sold in Windmarket"],
+    affinity: [],
     uses: ["Short-range damage on the move", "Slowing fleeing creatures and players", "Striking while climbing"],
     milestones: [
       { level: 25, name: "Bola", text: "Throw a weighted cord that slows the target for 4 s." },
@@ -120,9 +120,9 @@ export const skills: Skill[] = [
     group: "Weapons",
     summary: "Bucklers, round shields and tower shields, for blocking and bashing.",
     description:
-      "A shield is a weapon as much as a wall. It blocks blows, turns arrows and opens enemies with a well-timed bash. Rootborn carve theirs from stone and root and pass them down for generations.",
-    sources: ["Trainer at Deephold", "Trainer at Accord Hall", "Books sold in Ledgerhome"],
-    affinity: ["rootborn", "mossback"],
+      "A shield is a weapon as much as a wall. It blocks blows, turns arrows and opens enemies with a well-timed bash. Rootwardens carve theirs from stone and root; Anchorkin forge theirs from stone and chain, and pass them down for generations.",
+    sources: ["Trainer at Ledgerstone", "Trainer at Accord Hall", "Books sold in Lanterncross"],
+    affinity: ["anchorkin"],
     uses: ["Blocking melee and arrows", "Protecting allies in groups", "Holding the line on decks and bridges"],
     milestones: [
       { level: 25, name: "Shield Bash", text: "Strike with your shield to stagger the target for 1 s." },
@@ -139,8 +139,8 @@ export const skills: Skill[] = [
     summary: "Fists, kicks, grapples and throws.",
     description:
       "Unarmed fighting never runs out of durability and can never be dropped. It is quick, close and full of grabs and throws. Many creatures fight with it too, using teeth, claws and horns.",
-    sources: ["Trainer at Glimmerpool", "Trainer at Hornfast", "Books sold in Lanterncross"],
-    affinity: ["rillfolk", "skerrin"],
+    sources: ["Trainer at Ledgerstone", "Trainer at Featherfast", "Books sold in Lanterncross"],
+    affinity: [],
     uses: ["Fighting with no gear at all", "Grabs and throws, including off ship decks", "Light builds with Evasion"],
     milestones: [
       { level: 25, name: "Palm Strike", text: "A quick blow that knocks the target back 2 m." },
@@ -158,9 +158,9 @@ export const skills: Skill[] = [
     group: "Arcane",
     summary: "The art of moving air: gusts, leaps and sails that fill on command.",
     description:
-      "Wind casters bend the same currents that carry ships across the sky. In a fight they push, lift and scatter. On a deck they are worth their weight in gold, because a strong gust in the right sail wins races.",
+      "Wind casters bend the same currents that carry ships across the sky. In a fight they push, lift and scatter. On a deck they are worth their weight in gold, because a strong gust in the right sail wins races. Galeborne learn it young, riding the updrafts of the Spires.",
     sources: ["Meditating on the windward cliff of High Spire", "Trainer at Tetherport", "Books sold in Windmarket"],
-    affinity: ["skerrin", "rillfolk"],
+    affinity: ["galeborne"],
     uses: ["Movement: leaps, dashes and slow falls", "Pushing enemies back or off edges", "Filling a ship's sails in calm air"],
     milestones: [
       { level: 25, name: "Gust", text: "A blast of air that pushes everyone in a cone back 4 m." },
@@ -176,9 +176,9 @@ export const skills: Skill[] = [
     group: "Arcane",
     summary: "The art of rock and earth: wards, walls and quakes.",
     description:
-      "Stone casters speak to the rock that every isle is made of. They raise walls, harden skin and shake the ground. Rootborn say the deep stone of the Rootholds answers more readily than any other.",
-    sources: ["Listening in the deep caverns of Deephold", "Trainer at Rootmother", "Books sold in Oathgate"],
-    affinity: ["rootborn", "skerrin"],
+      "Stone casters speak to the rock that every isle is made of. They raise walls, harden skin and shake the ground. Anchorkin say the stone of the Moorings, chained and held for generations, answers more readily than any other.",
+    sources: ["Listening in the deep caverns of Deephold", "Trainer at Ledgerstone", "Books sold in Oathgate"],
+    affinity: ["anchorkin"],
     uses: ["Wards that absorb damage", "Walls for cover and blocking paths", "Quakes that knock groups down"],
     milestones: [
       { level: 25, name: "Stoneskin", text: "A ward that absorbs damage for you or an ally for 8 s." },
@@ -195,8 +195,8 @@ export const skills: Skill[] = [
     summary: "The art of water: healing, cleansing and the pull of currents.",
     description:
       "Tide is the healer's art. Its casters draw on the glowing water of the lagoons to close wounds and wash away poison. In skilled hands water also strikes, pulls and holds.",
-    sources: ["Bathing in the glowing water at Glimmerpool", "Trainer at Lanternmere", "Books sold in Lanterncross"],
-    affinity: ["rillfolk", "mossback"],
+    sources: ["Bathing in the glowing mere of Lanternmere", "Trainer at Anchor Bay", "Books sold in Lanterncross"],
+    affinity: [],
     uses: ["Healing allies in and out of combat", "Clearing poison and bleeding", "Pulling enemies closer"],
     milestones: [
       { level: 25, name: "Mending Water", text: "Heal an ally over 6 s." },
@@ -212,14 +212,14 @@ export const skills: Skill[] = [
     group: "Arcane",
     summary: "The art of growing things: roots, vines and quick green life.",
     description:
-      "Bloom casters ask living things to grow faster than they should. Roots grip enemies, vines lift allies and crops ripen in a day. Rootborn believe the same art, practised slowly, holds the isles up.",
-    sources: ["Meditating under an ancient tree at Elderroot", "Trainer at Hollowgrain", "Books sold in Ledgerhome"],
-    affinity: ["rootborn", "mossback"],
+      "Bloom casters ask living things to grow faster than they should. Roots grip enemies, vines lift allies and crops ripen in a day. Rootwardens pair it with Treetending, and say a grove in bloom sinks slowest of all.",
+    sources: ["Meditating under an ancient tree at Elderroot", "Trainer at Hollowgrain", "Books sold in Tetherport"],
+    affinity: ["rootwarden"],
     uses: ["Rooting enemies in place", "Healing over time through living growth", "Helping crops and tending ancient trees"],
     milestones: [
       { level: 25, name: "Grasping Roots", text: "Roots burst from the ground and hold a target for 2 s." },
       { level: 50, name: "Thornward", text: "Wrap an ally in thorny vines that heal them slowly and hurt anyone who strikes them. Lasts 8 s." },
-      { level: 75, name: "Tend the Old Tree", text: "Join a tending at an ancient tree. Each tending slows its isle's sinking a little." },
+      { level: 75, name: "Green Hands", text: "Cast Bloom into a Treetending at an ancient tree, so the tending slows its isle's sinking a little more." },
       { level: 100, name: "Overgrowth", text: "Fill a 10 m circle with living growth. Enemies are slowed and allies healed for 10 s. Cooldown 90 s." },
     ],
     art: "a bright sapling unfurling from cracked earth between gnarled giant roots, golden motes and teal spores rising around its new leaves",
@@ -228,11 +228,11 @@ export const skills: Skill[] = [
     id: "oathcraft",
     name: "Oathcraft",
     group: "Arcane",
-    summary: "The Veiled tradition of binding words: buffs, pacts and chains of promise.",
+    summary: "The Oathgate tradition of binding words: buffs, pacts and chains of promise.",
     description:
-      "Oathcraft turns a spoken promise into power. Its casters bind allies to shared strength and bind enemies to their own broken word. It is a Veiled art, but the Veiled teach it to any who swear to use it well.",
-    sources: ["Sworn aboard an oath-caravan before a Veiled oath-keeper", "Trainer at Oathgate", "Books copied in Accord Hall"],
-    affinity: ["veiled"],
+      "Oathcraft turns a spoken promise into power. Its casters bind allies to shared strength and bind enemies to their own broken word. It is taught at Oathgate, where the Tether Accord was sworn, to any who swear to use it well.",
+    sources: ["Trainer at Oathgate", "Swearing before the oath-keepers under the Oath Arch at Oathgate", "Books copied in Accord Hall"],
+    affinity: [],
     uses: ["Group buffs", "Binding enemies to slow or weaken them", "Pacts that share damage between allies"],
     milestones: [
       { level: 25, name: "Word of Strength", text: "Bind up to four allies: they deal more damage for 10 s." },
@@ -251,8 +251,8 @@ export const skills: Skill[] = [
     summary: "Leather and cloth armour that protects without slowing you down.",
     description:
       "Light armour costs little stamina to move in. The more you wear it, the better you are at sprinting, climbing and dodging while protected. It is the choice of scouts, archers, divers and casters.",
-    sources: ["Trainer at Windmarket", "Trainer at Otterwake", "Books sold in Tetherport"],
-    affinity: ["rillfolk", "skerrin"],
+    sources: ["Trainer at Windmarket", "Trainer at Gale Stair", "Books sold in Tetherport"],
+    affinity: [],
     uses: ["Protection with full mobility", "Climbing and swimming in armour", "Pairs with Evasion and casting"],
     milestones: [
       { level: 25, name: "Easy Stride", text: "Sprinting in light armour costs less stamina." },
@@ -268,9 +268,9 @@ export const skills: Skill[] = [
     group: "Defence and survival",
     summary: "Plate and mail that turns blades, at the cost of speed and stamina.",
     description:
-      "Heavy armour makes you hard to kill and slow to move. Training it lowers the stamina cost of fighting in plate and teaches you to stand firm. Mossbacks joke that they were born wearing it.",
-    sources: ["Trainer at Ironcleft", "Trainer at Accord Hall", "Books sold in Oathgate"],
-    affinity: ["mossback", "rootborn"],
+      "Heavy armour makes you hard to kill and slow to move. Training it lowers the stamina cost of fighting in plate and teaches you to stand firm. Anchorkin joke that they were born wearing it.",
+    sources: ["Trainer at Chainwake", "Trainer at Accord Hall", "Books sold in Oathgate"],
+    affinity: ["anchorkin"],
     uses: ["Front-line fighting", "Standing against world bosses", "Guarding caravans and galleons"],
     milestones: [
       { level: 25, name: "Braced", text: "You are knocked back less far while wearing heavy armour." },
@@ -287,8 +287,8 @@ export const skills: Skill[] = [
     summary: "Dodging, rolling and reading an attack before it lands.",
     description:
       "Evasion makes every dodge cheaper and safer. It rewards players who watch creatures' tells and move at the last moment. In an action fight, not being hit is the best armour there is.",
-    sources: ["Trainer at Goatstair", "Trainer at Lanterncross", "Books sold in Windmarket"],
-    affinity: ["skerrin", "rillfolk"],
+    sources: ["Trainer at Gale Stair", "Trainer at Lanterncross", "Books sold in Windmarket"],
+    affinity: ["galeborne"],
     uses: ["Cheaper, longer dodges", "Avoiding boss attacks", "Escaping fights you cannot win"],
     milestones: [
       { level: 25, name: "Light Feet", text: "Dodging costs less stamina." },
@@ -305,8 +305,8 @@ export const skills: Skill[] = [
     summary: "Bandages, splints and quick care for wounds, without any magic.",
     description:
       "Field Medicine patches people up with bandages, salves and steady hands. It works anywhere, needs no casting and pairs well with Herbalism. Every caravan wants someone who has it.",
-    sources: ["Trainer at Slowfield", "Trainer at Tetherport", "Books sold in Ledgerhome"],
-    affinity: ["mossback", "rillfolk"],
+    sources: ["Rootwarden healers at Elderroot", "Trainer at Tetherport", "Books sold in Hearthfield"],
+    affinity: ["rootwarden"],
     uses: ["Healing out of combat", "Stopping bleeding and poison", "Reviving downed allies faster"],
     milestones: [
       { level: 25, name: "Bandage", text: "Wrap a wound to heal yourself or an ally over 8 s." },
@@ -324,9 +324,9 @@ export const skills: Skill[] = [
     group: "Gathering",
     summary: "Breaking ore and stone out of the isles.",
     description:
-      "Miners dig the metals and stone every crafter needs. The richest seams are on the wild rim, where the risk is highest. The Rootborn say mining weakens the isles; the Skerrin say that is superstition.",
-    sources: ["Trainer at Ironcleft", "Trainer at Hornfast", "Books sold in Windmarket"],
-    affinity: ["skerrin"],
+      "Miners dig the metals and stone every crafter needs. The richest seams are on the wild rim, where the risk is highest. The Rootwardens say deep mining weakens the isles; most miners say that is superstition.",
+    sources: ["Trainer at Ironcleft", "Trainer at Deephold", "Books sold in Windmarket"],
+    affinity: [],
     uses: ["Gathering copper, iron, skysteel ore and stone", "Supplying Smithing and Stonecraft", "Selling ore in town markets"],
     milestones: [
       { level: 25, name: "Iron seams", text: "Mine iron ore." },
@@ -342,9 +342,9 @@ export const skills: Skill[] = [
     group: "Gathering",
     summary: "Felling trees and splitting timber.",
     description:
-      "Woodcutters supply every ship, bow and house in the sky. Common timber grows on meadow and forest isles, and the finest grows on wild ones. Rootborn custom forbids felling ancient trees, so their wood comes only from fallen limbs.",
+      "Woodcutters supply every ship, bow and house in the sky. Common timber grows on meadow and forest isles, and the finest grows on wild ones. Rootwarden custom forbids felling ancient trees, so their wood comes only from fallen limbs. Galeborne shipwrights don't share the custom, which is how Grudgewood got its name.",
     sources: ["Trainer at Ferrymoor", "Trainer at Rootmother", "Books sold in Tetherport"],
-    affinity: ["rootborn"],
+    affinity: ["rootwarden"],
     uses: ["Gathering timber for Carpentry and Shipwright", "Clearing land on newborn isles", "Selling wood in town markets"],
     milestones: [
       { level: 25, name: "Rootwood", text: "Gather rootwood from fallen roots in the Rootholds." },
@@ -360,9 +360,9 @@ export const skills: Skill[] = [
     group: "Gathering",
     summary: "Finding and picking herbs, flowers, fibres and fungi.",
     description:
-      "Herbalists know which leaf heals and which one kills. They gather for Alchemy, Cooking and Field Medicine, and pick the flax and reeds that weavers spin. Mossbacks keep the oldest herb gardens in the sky.",
-    sources: ["Trainer at Terrace Hill", "Trainer at Greenshell", "Books sold in Ledgerhome"],
-    affinity: ["mossback", "rootborn"],
+      "Herbalists know which leaf heals and which one kills. They gather for Alchemy, Cooking and Field Medicine, and pick the flax and reeds that weavers spin. Rootwardens keep the oldest herb gardens in the sky, in the light-wells of their root caverns.",
+    sources: ["Trainer at Terrace Hill", "Trainer at Greenfold", "Books sold in Hearthfield"],
+    affinity: ["rootwarden"],
     uses: ["Gathering herbs for Alchemy and Field Medicine", "Picking flax and reeds for Tailoring", "Finding rare plants on wild isles"],
     milestones: [
       { level: 25, name: "Fibre picking", text: "Gather flax and other plant fibres for cloth." },
@@ -378,9 +378,9 @@ export const skills: Skill[] = [
     group: "Gathering",
     summary: "Rod, net and line, in lagoons and in the open sky.",
     description:
-      "Fishers work the glowing lagoons and cast lines off isle edges into the sky, where cloud fish swim. Fish feed the Cooking trade, and some catches are worth a fortune. Rillfolk learn to fish before they learn to walk.",
-    sources: ["Trainer at Shellbay", "Trainer at Otterwake", "Books sold in Lanterncross"],
-    affinity: ["rillfolk"],
+      "Fishers work the glowing lagoons and cast lines off isle edges into the sky, where cloud fish swim. Fish feed the Cooking trade, and some catches are worth a fortune. Anchorkin can't swim, but they fish the low pools of the Moorings from their chains with endless patience.",
+    sources: ["Trainer at Anchor Bay", "Trainer at Lanternmere", "Books sold in Lanterncross"],
+    affinity: [],
     uses: ["Catching fish for Cooking", "Catching lantern eels and other prized fish", "Casting nets from a ship's deck"],
     milestones: [
       { level: 25, name: "Sky casting", text: "Cast a line off an isle edge or a ship's rail for sky fish." },
@@ -397,8 +397,8 @@ export const skills: Skill[] = [
     summary: "Tracking creatures and taking meat, hide, horn and feather.",
     description:
       "Hunters read tracks, choose their quarry and skin it cleanly. Good hunting yields more and better leather. Since creature populations thin when overhunted, hunters move from isle to isle with the seasons.",
-    sources: ["Trainer at Ferrymoor", "Trainer at Goatstair", "Books sold in Windmarket"],
-    affinity: ["skerrin", "rootborn"],
+    sources: ["Trainer at Ferrymoor", "Trainer at Gale Stair", "Books sold in Windmarket"],
+    affinity: [],
     uses: ["Gathering hide for Leatherworking", "Meat for Cooking", "Tracking dangerous creatures for job-board bounties"],
     milestones: [
       { level: 25, name: "Clean skinning", text: "Get an extra hide from every creature you skin." },
@@ -414,9 +414,9 @@ export const skills: Skill[] = [
     group: "Gathering",
     summary: "Diving into the drowned world and recovering relics from ruins and sinking isles.",
     description:
-      "Salvagers dive below the clouds and pick through ruins for old-world relics. It is the riskiest gathering there is, and the richest. The Rillfolk are its masters, though the Veiled call it robbing the dead of Vael.",
-    sources: ["A first dive from Shellbay", "Trainer at Glimmerpool", "Books sold in Tetherport"],
-    affinity: ["rillfolk"],
+      "Salvagers dive below the clouds and pick through ruins for old-world relics. It is the riskiest gathering there is, and the richest. Anyone can dive, though the Anchorkin are too heavy to swim and go down by rope and chain.",
+    sources: ["A first dive from the wells of Anchor Bay", "Trainer at Lanterncross", "Books sold in Tetherport"],
+    affinity: [],
     uses: ["Recovering relics and relic metal", "Salvaging sinking isles before they fall", "Diving into the drowned world"],
     milestones: [
       { level: 25, name: "Ruin picking", text: "Search old-world ruins on the wild rim for relic scraps." },
@@ -427,6 +427,25 @@ export const skills: Skill[] = [
     art: "a diver's brass helmet and coiled rope beside a glowing old-world relic on a wet stone ledge, storm clouds swirling far below",
   },
 
+  {
+    id: "treetending",
+    name: "Treetending",
+    group: "Gathering",
+    summary: "Tending the ancient trees, which slows an isle's sinking.",
+    description:
+      "Treetenders prune, feed and listen to the ancient trees that hold some isles up. Every tending slows its isle's sinking a little, though no tending can save an isle once it starts to fall. Anyone can learn it, but no one tends like a Rootwarden.",
+    sources: ["The Tending Circle at Rootmother", "Trainer at Elderroot", "Tending beside the elder of Hollowgrain"],
+    affinity: ["rootwarden"],
+    uses: ["Slowing the sinking of isles with ancient trees", "Reading an isle's health from its tree", "Carrying seedlings to other isles"],
+    milestones: [
+      { level: 25, name: "Read the bark", text: "See how healthy an ancient tree is, and how fast its isle is sinking." },
+      { level: 50, name: "Long tending", text: "Your tendings last twice as long before the tree needs you again." },
+      { level: 75, name: "Seedling", text: "Take a seedling from an ancient tree and plant it on another isle. It takes many seasons to grow." },
+      { level: 100, name: "Grove keeper", text: "Lead a tending circle: every tender working beside you counts double." },
+    ],
+    art: "weathered hands pressing a poultice of moss into the bark of a colossal ancient tree, faint teal light pulsing through its roots, lanterns hung in the low branches at dusk",
+  },
+
   // Crafting
   {
     id: "smithing",
@@ -434,9 +453,9 @@ export const skills: Skill[] = [
     group: "Crafting",
     summary: "Forging metal into weapons, armour, tools and ship fittings.",
     description:
-      "Smiths turn ore into gear. The metal sets the tier and the smith's skill sets the quality, so a master's copper sword can beat a novice's iron one. Smiths also repair the worn gear that every fight leaves behind.",
+      "Smiths turn ore into gear. The metal sets the tier and the smith's skill sets the quality, so a master's copper sword can beat a novice's iron one. Smiths also repair the worn gear that every fight leaves behind. Anchorkin chainsmiths forge the links that hold the Moorings together.",
     sources: ["Trainer at Ironcleft", "Trainer at Oathgate", "Books sold in Windmarket"],
-    affinity: ["skerrin", "rootborn"],
+    affinity: ["anchorkin"],
     uses: ["Weapons, heavy armour and tools", "Repairing worn metal gear", "Fittings for ships"],
     milestones: [
       { level: 25, name: "Iron recipes", text: "Forge iron weapons, armour and tools." },
@@ -454,7 +473,7 @@ export const skills: Skill[] = [
     description:
       "Carpenters make bows, polearm hafts, shields, furniture and the frames of houses. They also patch hulls when a ship takes damage. Good timber and a careful hand make the difference.",
     sources: ["Trainer at Ferrymoor", "Trainer at Hollowgrain", "Books sold in Tetherport"],
-    affinity: ["rootborn", "mossback"],
+    affinity: [],
     uses: ["Bows, hafts and wooden shields", "Furniture and house parts for town plots", "Patching damaged hulls"],
     milestones: [
       { level: 25, name: "Rootwood recipes", text: "Craft with rootwood: stronger bows and hafts." },
@@ -471,8 +490,8 @@ export const skills: Skill[] = [
     summary: "Tanning hides and stitching leather armour, packs and saddles.",
     description:
       "Leatherworkers turn hides into light armour, belts, packs, saddles and harness. Saddles for tamed mounts are their work too. Every hunter needs a leatherworker and every leatherworker needs a hunter.",
-    sources: ["Trainer at Goatstair", "Trainer at Windmarket", "Books sold in Lanterncross"],
-    affinity: ["skerrin", "mossback"],
+    sources: ["Trainer at Gale Stair", "Trainer at Windmarket", "Books sold in Lanterncross"],
+    affinity: [],
     uses: ["Light armour", "Saddles and harness for mounts and pack animals", "Packs that carry more"],
     milestones: [
       { level: 25, name: "Goat leather recipes", text: "Work cliff goat hide into supple armour." },
@@ -488,9 +507,9 @@ export const skills: Skill[] = [
     group: "Crafting",
     summary: "Spinning, weaving and sewing cloth into clothes, robes and bags.",
     description:
-      "Tailors make the cloth that casters and travellers wear. They also weave the plain sailcloth that Sailweavers later enchant. The Veiled are famed for living cloth that shimmers with oath markings.",
-    sources: ["Veiled weavers aboard the oath-caravans", "Trainer at Slowfield", "Books sold in Accord Hall"],
-    affinity: ["veiled", "mossback"],
+      "Tailors make the cloth that casters and travellers wear. They also weave the plain sailcloth that Sailweavers later enchant. The weavers of Oathgate are famed for oath cloths that shimmer with sworn script.",
+    sources: ["Weavers at Oathgate", "Trainer at Slowfield", "Books sold in Accord Hall"],
+    affinity: [],
     uses: ["Cloth armour and robes", "Plain sailcloth for Sailweaving", "Bags and cosmetic clothing"],
     milestones: [
       { level: 25, name: "Mossweave recipes", text: "Spin moss grazer wool into warm mossweave." },
@@ -506,9 +525,9 @@ export const skills: Skill[] = [
     group: "Crafting",
     summary: "Cutting and carving stone into buildings, tools and carved gear.",
     description:
-      "Stonecrafters cut blocks for houses, carve whetstones and grindstones, and shape the stone gear the Rootborn are known for. They also rebuild shrines and walls after storm surges.",
-    sources: ["Trainer at Deephold", "Trainer at Elderroot", "Books sold in Oathgate"],
-    affinity: ["rootborn"],
+      "Stonecrafters cut blocks for houses, carve whetstones and grindstones, and shape the stone gear the Anchorkin are known for. They also rebuild shrines and walls after storm surges.",
+    sources: ["Trainer at Deephold", "Masons at Ledgerstone", "Books sold in Oathgate"],
+    affinity: ["anchorkin"],
     uses: ["Building stone for town plots", "Whetstones that sharpen weapons", "Carved stone shields and charms"],
     milestones: [
       { level: 25, name: "Cragslate recipes", text: "Cut cragslate into blocks, tiles and whetstones." },
@@ -525,8 +544,8 @@ export const skills: Skill[] = [
     summary: "Brewing potions, tonics, poisons and oils.",
     description:
       "Alchemists boil herbs, minerals and creature parts into potions. Their tonics refill stamina, their oils coat blades and their salves cure poison. Most of what they need comes from Herbalism and Hunting.",
-    sources: ["Trainer at Greenshell", "Trainer at Lanternmere", "Books sold in Ledgerhome"],
-    affinity: ["mossback", "rillfolk"],
+    sources: ["Trainer at Greenfold", "Trainer at Lanternmere", "Books sold in Windmarket"],
+    affinity: [],
     uses: ["Stamina tonics", "Weapon oils and poisons", "Cures for storm-touched wounds"],
     milestones: [
       { level: 25, name: "Stamina tonic", text: "Brew a tonic that refills stamina quickly." },
@@ -542,9 +561,9 @@ export const skills: Skill[] = [
     group: "Crafting",
     summary: "Cooking meals that keep travellers fed and fighters strong.",
     description:
-      "A good meal gives a long buff: faster stamina refill, more health or a warmer coat against the high winds. Rillfolk cooks are famous across the sky, and a galleon's cook is as valued as its helmsman.",
-    sources: ["Trainer at Glimmerpool", "Trainer at Lanterncross", "Books sold in Windmarket"],
-    affinity: ["rillfolk", "mossback"],
+      "A good meal gives a long buff: faster stamina refill, more health or a warmer coat against the high winds. Lanterncross cooks are famous across the sky, and a galleon's cook is as valued as its helmsman.",
+    sources: ["Trainer at Lanternmere", "Trainer at Lanterncross", "Books sold in Windmarket"],
+    affinity: [],
     uses: ["Meals with long buffs", "Feeding crews on long voyages", "Selling food in towns"],
     milestones: [
       { level: 25, name: "Hearty stew", text: "Cook a stew that boosts health for an hour." },
@@ -560,9 +579,9 @@ export const skills: Skill[] = [
     group: "Crafting",
     summary: "Building and repairing sailships.",
     description:
-      "Shipwrights build the hulls that carry everyone through the sky. They need timber, metal fittings and enchanted sails from a Sailweaver. A well-built hull has less drag and sails faster.",
-    sources: ["Trainer at Tetherport", "Trainer at Otterwake", "Books sold in Windmarket"],
-    affinity: ["rillfolk", "skerrin"],
+      "Shipwrights build the hulls that carry everyone through the sky. They need timber, metal fittings and enchanted sails from a Sailweaver. A well-built hull has less drag and sails faster. The Galeborne build the best hulls in the sky, from wood the Rootwardens would rather they left standing.",
+    sources: ["Trainer at Tetherport", "Galeborne shipwrights at High Spire", "Books sold in Windmarket"],
+    affinity: ["galeborne"],
     uses: ["Building skiffs, cutters and galleons", "Repairing hulls in dock", "Upgrading cargo holds"],
     milestones: [
       { level: 25, name: "Skiff", text: "Build a skiff." },
@@ -579,8 +598,8 @@ export const skills: Skill[] = [
     summary: "Enchanting sailcloth so it catches the wind currents.",
     description:
       "Sailweavers turn plain sailcloth into the enchanted sails that carry ships. Sails wear from attacks, weather and distance, so Sailweavers are always in work. Their art keeps the whole sky's trade moving.",
-    sources: ["Trainer at Tetherport", "Veiled weavers aboard the oath-caravans", "Books sold in Windmarket"],
-    affinity: ["veiled", "rillfolk"],
+    sources: ["Trainer at Tetherport", "The sail lofts of Featherfast", "Books sold in Windmarket"],
+    affinity: ["galeborne"],
     uses: ["Enchanting new sails", "Re-enchanting worn sails", "Mending sails at sea"],
     milestones: [
       { level: 25, name: "Skiff sails", text: "Enchant and re-enchant skiff sails." },
@@ -598,9 +617,9 @@ export const skills: Skill[] = [
     group: "Travel and lore",
     summary: "Steering ships and trimming sails on the wind currents.",
     description:
-      "Anyone can take a skiff's tiller, but only practice makes a sailor. Sailing is about reading the wind, trimming sails and choosing when to tack. A skilled skipper beats a badly handled ship every time.",
-    sources: ["Trainer at Tetherport", "Trainer at Otterwake", "Books sold in Lanterncross"],
-    affinity: ["rillfolk", "mossback"],
+      "Anyone can take a skiff's tiller, but only practice makes a sailor. Sailing is about reading the wind, trimming sails and choosing when to tack. A skilled skipper beats a badly handled ship every time, and the best skippers in the sky are Galeborne.",
+    sources: ["Trainer at Tetherport", "Trainer at High Spire", "Books sold in Lanterncross"],
+    affinity: ["galeborne"],
     uses: ["Steering ships", "Hauling cargo between towns", "Racing through wild currents"],
     milestones: [
       { level: 25, name: "Read the wind", text: "See the direction and strength of nearby wind currents." },
@@ -616,9 +635,9 @@ export const skills: Skill[] = [
     group: "Travel and lore",
     summary: "Scaling cliffs, roots and isle undersides.",
     description:
-      "Climbers can go where others cannot: up sheer spires, along roots under the isles, onto drakes' nests. It costs stamina, so skill means climbing further on one breath. Skerrin climb as easily as they walk.",
-    sources: ["Trainer at High Spire", "Trainer at Goatstair", "Books sold in Oathgate"],
-    affinity: ["skerrin"],
+      "Climbers can go where others cannot: up sheer spires, along roots under the isles, onto drakes' nests. It costs stamina, so skill means climbing further on one breath. Crag herders climb as easily as they walk.",
+    sources: ["Trainer at High Spire", "Trainer at Gale Stair", "Books sold in Oathgate"],
+    affinity: [],
     uses: ["Reaching high nodes and nests", "Escaping or ambushing", "Crossing isle undersides"],
     milestones: [
       { level: 25, name: "Sure grip", text: "Climbing costs less stamina." },
@@ -626,7 +645,7 @@ export const skills: Skill[] = [
       { level: 75, name: "Underside", text: "Climb across the undersides of isles, hanging upside down." },
       { level: 100, name: "Spider's rest", text: "Rest on any wall to refill stamina." },
     ],
-    art: "a hooved foot and rope against a sheer sunlit cliff face, far below a sea of clouds and floating isles",
+    art: "a gloved hand gripping a rope against a sheer sunlit cliff face, far below a sea of clouds and floating isles",
   },
   {
     id: "taming",
@@ -634,9 +653,9 @@ export const skills: Skill[] = [
     group: "Travel and lore",
     summary: "Befriending creatures as mounts and pack animals.",
     description:
-      "Tamers win a creature's trust and turn it into a ground mount, a pack animal or, rarely, a flying mount. Tamed creatures need care and rest. Mossback caravan masters and Skerrin herders lead the craft.",
-    sources: ["Trainer at Slowfield", "Trainer at Goatstair", "Books sold in Ledgerhome"],
-    affinity: ["mossback", "skerrin"],
+      "Tamers win a creature's trust and turn it into a ground mount, a pack animal or, rarely, a flying mount. Tamed creatures need care and rest. Caravan masters and crag herders lead the craft.",
+    sources: ["Trainer at Slowfield", "Trainer at Gale Stair", "Books sold in Hearthfield"],
+    affinity: [],
     uses: ["Ground mounts", "Pack animals that carry cargo", "Rare flying mounts"],
     milestones: [
       { level: 25, name: "Mounts and packs", text: "Tame burrow boars as ground mounts and moss grazers as pack animals. Cliff goats follow at 40." },
@@ -652,9 +671,9 @@ export const skills: Skill[] = [
     group: "Travel and lore",
     summary: "Identifying relics, reading old scripts and understanding the Ledger.",
     description:
-      "Lore keepers know the history of the sky and the drowned world below. They identify relics, read the Ledger and find hidden meanings in old-world ruins. Mossback scholars and Rillfolk divers are its greatest experts.",
-    sources: ["Reading the Ledger in Ledgerhome", "Trainer at Accord Hall", "Studying the ruins of Vael's Shadow"],
-    affinity: ["mossback", "rillfolk", "veiled"],
+      "Lore keepers know the history of the sky and the drowned world below. They identify relics, read the Ledger and find hidden meanings in old-world ruins. The Anchorkin Ledgerkeepers are its greatest experts.",
+    sources: ["Reading the Ledger at Ledgerstone", "Trainer at Accord Hall", "Studying the ruins of Vael's Shadow"],
+    affinity: ["anchorkin"],
     uses: ["Identifying relics so they can be used or reforged", "Reading the Ledger", "Finding hidden routes and ruins"],
     milestones: [
       { level: 25, name: "Identify relic", text: "Identify common relics and their uses." },
@@ -663,5 +682,61 @@ export const skills: Skill[] = [
       { level: 100, name: "Sage's eye", text: "Identify any relic, even master ones." },
     ],
     art: "an open ancient book with glowing script beside a strange old-world relic, candlelight in a tall library",
+  },
+
+  // Innate: one per people, and no other people can learn it. Exact numbers are still open (concept/world/peoples.md)
+  {
+    id: "glide",
+    name: "Glide",
+    group: "Innate",
+    summary: "Spread the feathered mantle and glide down from any height. Galeborne only.",
+    description:
+      "A Galeborne spreads the mantle to glide down from any height without fall damage. Riding a wind current, they can glide between nearby isles without a ship. It costs stamina, it can't gain height without an updraft, and it can't carry a heavy load.",
+    sources: ["Innate to the Galeborne", "First practised from ledge to ledge on High Spire"],
+    affinity: ["galeborne"],
+    uses: ["Leaving any isle or deck safely", "Crossing between nearby isles on a wind current", "Scouting and courier runs"],
+    milestones: [
+      { level: 25, name: "Long glide", text: "Glides cost less stamina and carry you further." },
+      { level: 50, name: "Catch the updraft", text: "Ride updrafts to gain height mid-glide." },
+      { level: 75, name: "Isle hop", text: "Glide between isles further apart, as long as a wind current carries you." },
+      { level: 100, name: "Skyborne", text: "Glide while carrying a medium load, and turn sharply without losing speed." },
+    ],
+    art: "a feathered mantle spread wide against a sunset sky, slate-blue and white feathers catching an updraft, a towering rock spire and sea of clouds far below",
+  },
+  {
+    id: "anchor",
+    name: "Anchor",
+    group: "Innate",
+    summary: "Plant your feet and nothing can move you. Anchorkin only.",
+    description:
+      "An anchored Anchorkin can't be knocked back, pushed or pulled. On a ship they steady it against gusts and rams, and during a sinking they can hold a breaking bridge or ledge for a while. They can't move while anchored, can't swim and take extra fall damage.",
+    sources: ["Innate to the Anchorkin", "First practised on the chains of Ledgerstone"],
+    affinity: ["anchorkin"],
+    uses: ["Holding a line against charges and knockbacks", "Steadying a ship in gusts and rams", "Holding a breaking bridge or ledge during a sinking"],
+    milestones: [
+      { level: 25, name: "Quick set", text: "Anchor and release faster." },
+      { level: 50, name: "Steady the deck", text: "An anchored Anchorkin cancels more of the gusts and rams that hit their ship." },
+      { level: 75, name: "Hold the span", text: "Hold a breaking bridge or ledge for twice as long." },
+      { level: 100, name: "Unmoved", text: "Allies right beside you can't be knocked back while you are anchored." },
+    ],
+    art: "two huge stone-skinned feet planted on a ship's deck, glowing teal crystal veins in the stone, a heavy iron chain coiled beside them as a gust tears at the rigging",
+  },
+  {
+    id: "take-root",
+    name: "Take Root",
+    group: "Innate",
+    summary: "Stand still and take root to regenerate health and stamina. Rootwardens only.",
+    description:
+      "A rooted Rootwarden regenerates health and stamina, and near an ancient tree the rooting speeds regeneration for nearby allies too. While rooted they can't move or dodge, pulling free takes a moment, and like all Rootwardens they are weak to fire.",
+    sources: ["Innate to the Rootwardens", "First practised among the roots of Elderroot"],
+    affinity: ["rootwarden"],
+    uses: ["Recovering between fights", "Healing a group near an ancient tree", "Outlasting a long siege"],
+    milestones: [
+      { level: 25, name: "Deep roots", text: "Regenerate faster while rooted." },
+      { level: 50, name: "Quick pull", text: "Pull free in half the time." },
+      { level: 75, name: "Shared roots", text: "Nearby allies regenerate while you are rooted, even away from an ancient tree." },
+      { level: 100, name: "Old growth", text: "While rooted, take less damage from everything but fire." },
+    ],
+    art: "bark-skinned feet sinking fine roots into mossy earth beside a giant glowing root of an ancient tree, small white flowers opening around them, warm motes of light rising",
   },
 ];

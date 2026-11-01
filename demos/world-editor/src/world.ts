@@ -4,7 +4,7 @@
 export const FORMAT = "game0-world";
 export const VERSION = 1;
 
-export const PEOPLES = ["none", "rootborn", "veiled", "skerrin", "mossback", "rillfolk"] as const;
+export const PEOPLES = ["none", "galeborne", "anchorkin", "rootwarden"] as const;
 export const BIOMES = ["meadow", "forest", "roothold", "crag", "garden", "lagoon", "ruin"] as const;
 export const TIERS = ["safe", "guarded", "wild"] as const;
 export const STATES = ["stable", "sinking", "newborn"] as const;
@@ -30,7 +30,7 @@ export interface Isle {
   tier: Tier;
   town: boolean;
   shrine: boolean;
-  /** Ancient tree the Rootborn tend to slow the isle's sinking */
+  /** Ancient tree that Treetending (a Rootwarden speciality) keeps, slowing the isle's sinking */
   ancientTree: boolean;
   state: IsleState;
 }
@@ -115,10 +115,11 @@ function rng(seed: number) {
 }
 
 const HOMELANDS: { people: People; biome: Biome; names: string[]; tree?: boolean }[] = [
-  { people: "rootborn", biome: "roothold", names: ["Elderroot", "Deephold", "Barkmoor", "Rootmother", "Hollowgrain"], tree: true },
-  { people: "skerrin", biome: "crag", names: ["High Spire", "Hornfast", "Ironcleft", "Goatstair", "Shalepeak"] },
-  { people: "mossback", biome: "garden", names: ["Ledgerhome", "Terrace Hill", "Slowfield", "Greenshell", "Mossmere"] },
-  { people: "rillfolk", biome: "lagoon", names: ["Glimmerpool", "Otterwake", "Brightrill", "Shellbay", "Lanternmere"] },
+  { people: "rootwarden", biome: "roothold", names: ["Elderroot", "Deephold", "Barkmoor", "Rootmother", "Hollowgrain"], tree: true },
+  { people: "galeborne", biome: "crag", names: ["High Spire", "Featherfast", "Ironcleft", "Gale Stair", "Shalepeak"] },
+  // The Garden Isles belong to no people: unclaimed farmland for player plots
+  { people: "none", biome: "garden", names: ["Hearthfield", "Terrace Hill", "Slowfield", "Greenfold", "Mossmere"] },
+  { people: "anchorkin", biome: "lagoon", names: ["Ledgerstone", "Chainwake", "Brightrill", "Anchor Bay", "Lanternmere"] },
 ];
 const TOWNS = ["Accord Hall", "Tetherport", "Lanterncross", "Windmarket", "Oathgate", "Saltcloud"];
 const WILD = ["Ashfall", "Brokenreach", "Cinderkey", "Duskcrown", "Grimwater", "Hollowsky", "Ruinmark", "Stormbite", "Thornveil", "Vael's Shadow", "Wreckrest", "Gloamrock", "Sundered Isle", "Last Light"];

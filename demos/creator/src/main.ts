@@ -60,7 +60,7 @@ let sockets: Record<string, THREE.Object3D> = {};
 let mounted: Record<string, { object: THREE.Object3D; option: Option } | undefined> = {};
 
 const peoples: string[] = await (await fetch(MODELS + "peoples.json")).json();
-const state: Record<string, any> = { people: peoples.includes("skerrin") ? "skerrin" : peoples[0], animation: "none", turntable: false };
+const state: Record<string, any> = { people: peoples.includes("rootwarden") ? "rootwarden" : peoples[0], animation: "none", turntable: false };
 const gui = new GUI({ title: "Peoples" });
 gui.add(state, "people", peoples).onChange(loadPeople);
 let slotFolder = gui.addFolder("Customize");

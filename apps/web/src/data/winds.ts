@@ -22,23 +22,23 @@ export const windNotes: WindNote[] = [
   },
   {
     id: "wind_oath-spoke",
-    blurb: "Brings Oathgate's travellers in to Accord Hall. Veiled caravans favour it, and sailors say a quiet tongue is wise aboard.",
+    blurb: "Brings Oathgate's travellers in to Accord Hall. Envoys bound for the Hall favour it, and sailors say a quiet tongue is wise aboard.",
   },
   {
     id: "wind_rootward",
-    blurb: "Climbs from Tetherport to Elderroot in the north. It smells of leaf mould, and Rootborn crews hum to it as they sail.",
+    blurb: "Climbs from Tetherport to Elderroot in the north. It smells of leaf mould, and Rootwarden crews hum to it as they sail.",
   },
   {
     id: "wind_gardenward",
-    blurb: "A slow, easy lane from Windmarket to Ledgerhome. Mossbacks say it was made for them, and nobody has argued.",
+    blurb: "A slow, easy lane from Windmarket to Hearthfield. Farmers say it was made for hay carts, and nobody has argued.",
   },
   {
-    id: "wind_lagoonward",
-    blurb: "Drops from Lanterncross to Glimmerpool, the lowest of the lanes. Watch the clouds beneath you: on a bad day the storm is close.",
+    id: "wind_moorward",
+    blurb: "Drops from Lanterncross to Ledgerstone, the lowest of the lanes. Watch the clouds beneath you: on a bad day the storm is close.",
   },
   {
     id: "wind_spireward",
-    blurb: "Climbs hard from Oathgate to High Spire. Skerrin say it is the only lane that makes you earn your arrival.",
+    blurb: "Climbs hard from Oathgate to High Spire. Galeborne say it is the only lane that makes you earn your arrival, then glide down it in half the time.",
   },
 
   // Wild currents (open PvP)
@@ -52,6 +52,6 @@ export const windNotes: WindNote[] = [
   },
   {
     id: "wind_grudge-wind",
-    blurb: "Runs up the contested west from Brokenreach past Grudgewood. Rootborn and Skerrin crews meet on it often, and seldom politely.",
+    blurb: "Runs up the contested west from Brokenreach past Grudgewood. Rootwarden and Galeborne crews meet on it often, and seldom politely.",
   },
 ];

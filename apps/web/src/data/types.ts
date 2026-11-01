@@ -1,9 +1,9 @@
 // Shapes of the handbook's catalogue data. Each catalogue lives in its own file in this folder.
 // Every entry with an `art` prompt gets a painted plate from scripts/handbook-art.ts.
 
-export type PeopleId = "rootborn" | "veiled" | "mossback" | "skerrin" | "rillfolk";
+export type PeopleId = "galeborne" | "anchorkin" | "rootwarden";
 
-export type SkillGroup = "Weapons" | "Arcane" | "Defence and survival" | "Gathering" | "Crafting" | "Travel and lore";
+export type SkillGroup = "Weapons" | "Arcane" | "Defence and survival" | "Gathering" | "Crafting" | "Travel and lore" | "Innate";
 
 export interface Skill {
   id: string;
@@ -91,6 +91,8 @@ export interface PeopleEntry {
   affinities: string[];
   start: string;
   relations: { with: PeopleId; kind: "ally" | "rival" | "trade" | "wary"; text: string }[];
+  /** The one skill only this people can learn */
+  innate: { name: string; text: string; limit: string };
   signature: { customizable: string[]; locked: string[] };
   quote: { text: string; by: string };
   art: string;

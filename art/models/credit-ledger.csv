@@ -27,3 +27,7 @@ date,session,kind,output,credits,model,task_id
 2026-10-31T22:23:25Z,peoples-rollout,web-rig,art/models/rootborn/base-rigged,0,web-humanoid,
 2026-10-31T22:26:20Z,peoples-rollout,web-rig,art/models/mossback/base-rigged,0,web-humanoid,
 2026-10-31T22:30:43Z,peoples-rollout,web-rig,art/models/rillfolk/base-rigged,0,web-humanoid,
+2026-11-01T16:20:33.362Z,2026-11-01,model,art/models/galeborne/base,30,meshy-7.1,01a197e7-6b27-7461-a9af-d02ccdf1cb80
+2026-11-01T16:20:47.838Z,2026-11-01,model,art/models/anchorkin/base,30,meshy-7.1,01a197e7-7e84-709f-857d-acdb06e8c849
+2026-11-01T16:21:47.577Z,2026-11-01,rig,art/models/galeborne/base-rigged,5,rig,01a197ea-6603-74f2-901e-ec0fd81d08c5
+2026-11-01T16:21:50.486Z,2026-11-01,rig,art/models/anchorkin/base-rigged,5,rig,01a197ea-71cc-718b-9267-8a2dd9a2dc07

@@ -1,0 +1,7 @@
+{
+  "base": {
+    "file": "galeborne/base-rigged.glb",
+    "walk": "galeborne/base-rigged.walk.glb"
+  },
+  "slots": {}
+}

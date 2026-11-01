@@ -1,10 +1,10 @@
 {
-  "prompt": "Plate for an illustrated field guide: a floating meadow isle with a walled town built around a great carved stone arch hung with embroidered oath cloths, a round stone hearing ring, Veiled caravan wagons and tents by the gate, distant crag spires and giant trees on the horizon, seen from a slight aerial angle. Soft vignette fading to warm parchment at the edges. Style: hand-painted stylized game art, painterly, soft lighting with gentle rim light, softer muted colours with gentle saturation, epic and luminous fantasy, never grim. No text, no labels, no border, no frame.",
+  "prompt": "Plate for an illustrated field guide: a floating meadow isle with a walled town built around a great carved stone arch hung with embroidered oath cloths, a round stone hearing ring, travellers' tents by the gate, distant crag spires and giant trees on the horizon, seen from a slight aerial angle. Soft vignette fading to warm parchment at the edges. Style: hand-painted stylized game art, painterly, soft lighting with gentle rim light, softer muted colours with gentle saturation, epic and luminous fantasy, never grim. No text, no labels, no border, no frame.",
   "model": "openai/gpt-image-2.5-sunburst",
   "aspect": "1:1",
   "quality": "medium",
   "refs": [
     "art/references/world-tree-floating-isle.webp"
   ],
-  "createdAt": "2026-11-01T14:17:33.772Z"
+  "createdAt": "2026-11-01T16:22:25.912Z"
 }

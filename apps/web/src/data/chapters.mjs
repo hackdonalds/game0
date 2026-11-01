@@ -18,10 +18,10 @@ export const chapters = [
     art: "a dramatic view down past the edge of a floating isle into a churning living storm layer far below with lightning, ancient drowned ruins faintly visible through gaps in the clouds, and an isle slowly sinking into it",
   },
   {
-    slug: "peoples", number: 3, title: "Peoples", kicker: "Five peoples, one sky",
-    summary: "Rootborn, Veiled Ones, Mossbacks, Skerrin and Rillfolk: who they are, where they live, what they hold against each other, and how players shape them.",
+    slug: "peoples", number: 3, title: "Peoples", kicker: "Three peoples, one sky",
+    summary: "Galeborne, Anchorkin and Rootwardens: who they are, where they live, their innate skills, what they hold against each other, and how players shape them.",
     docs: ["world/peoples.md", "art-direction/character-customization.md"], catalogues: ["peoples"], demo: "peoples",
-    art: "five fantasy travellers standing together on a cliff edge at dawn seen from behind: a broad bark-skinned tree-folk, a very tall masked figure in embroidered cloth, a tortoise-folk with a garden on its shell, a goat-folk with curled horns, and an otter-folk, looking out over floating isles",
+    art: "three fantasy travellers standing together on a cliff edge at dawn seen from behind: a tall slender figure with a folded feathered mantle, a huge broad figure with grey stone skin veined with teal crystal, and a stocky bark-skinned figure with moss and small flowers on its shoulders, looking out over floating isles",
   },
   {
     slug: "play", number: 4, title: "How You Play", kicker: "Everything is a skill",
@@ -51,7 +51,7 @@ export const chapters = [
     slug: "society", number: 8, title: "Society", kicker: "Guilds, grudges, reputation",
     summary: "How players and peoples relate: guilds, reputation, old grudges and new friendships. Built to grow as new peoples join.",
     docs: ["social/README.md"], catalogues: ["peoples", "glossary"],
-    art: "a great round hall in an Accord town with banners of five peoples hanging from the rafters, envoys of different fantasy peoples gathered around a large round table with a map, warm lantern light",
+    art: "a great round hall in an Accord town with banners of three peoples hanging from the rafters, envoys of different fantasy peoples gathered around a large round table with a map, warm lantern light",
   },
   {
     slug: "simulation", number: 9, title: "Simulation", kicker: "A living shard",

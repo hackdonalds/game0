@@ -1,0 +1,10 @@
+{
+  "prompt": "Plate for an illustrated field guide: a huge, broad Anchorkin with skin of grey slate stone veined with glowing teal crystal, carved marks on the shoulders and brow, a coarse beard of stone fibres, wearing heavy forged iron chain across the chest over a leather apron with gold trim, waist-up three-quarter view, standing on a low isle bound by giant iron chains, a flickering storm layer close below. Soft vignette fading to warm parchment at the edges. Style: hand-painted stylized game art, painterly, soft lighting with gentle rim light, softer muted colours with gentle saturation, epic and luminous fantasy, never grim. No text, no labels, no border, no frame.",
+  "model": "openai/gpt-image-2.5-sunburst",
+  "aspect": "1:1",
+  "quality": "high",
+  "refs": [
+    "art/references/world-tree-floating-isle.webp"
+  ],
+  "createdAt": "2026-11-01T16:12:42.917Z"
+}

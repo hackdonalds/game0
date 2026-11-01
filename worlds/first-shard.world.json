@@ -93,7 +93,7 @@
       "y": 25,
       "radius": 75,
       "biome": "roothold",
-      "people": "rootborn",
+      "people": "rootwarden",
       "tier": "guarded",
       "town": false,
       "shrine": true,
@@ -108,7 +108,7 @@
       "y": 15,
       "radius": 50,
       "biome": "roothold",
-      "people": "rootborn",
+      "people": "rootwarden",
       "tier": "guarded",
       "town": false,
       "shrine": false,
@@ -123,7 +123,7 @@
       "y": 10,
       "radius": 45,
       "biome": "roothold",
-      "people": "rootborn",
+      "people": "rootwarden",
       "tier": "guarded",
       "town": false,
       "shrine": false,
@@ -138,7 +138,7 @@
       "y": 30,
       "radius": 40,
       "biome": "roothold",
-      "people": "rootborn",
+      "people": "rootwarden",
       "tier": "guarded",
       "town": false,
       "shrine": false,
@@ -146,14 +146,14 @@
       "state": "stable"
     },
     {
-      "id": "isle_ledgerhome",
-      "name": "Ledgerhome",
+      "id": "isle_hearthfield",
+      "name": "Hearthfield",
       "x": 690,
       "z": -20,
       "y": 5,
       "radius": 70,
       "biome": "garden",
-      "people": "mossback",
+      "people": "none",
       "tier": "guarded",
       "town": false,
       "shrine": true,
@@ -168,7 +168,7 @@
       "y": 0,
       "radius": 45,
       "biome": "garden",
-      "people": "mossback",
+      "people": "none",
       "tier": "guarded",
       "town": false,
       "shrine": false,
@@ -183,7 +183,7 @@
       "y": 0,
       "radius": 50,
       "biome": "garden",
-      "people": "mossback",
+      "people": "none",
       "tier": "guarded",
       "town": false,
       "shrine": false,
@@ -191,14 +191,14 @@
       "state": "stable"
     },
     {
-      "id": "isle_greenshell",
-      "name": "Greenshell",
+      "id": "isle_greenfold",
+      "name": "Greenfold",
       "x": 730,
       "z": -180,
       "y": 10,
       "radius": 40,
       "biome": "garden",
-      "people": "mossback",
+      "people": "none",
       "tier": "guarded",
       "town": false,
       "shrine": false,
@@ -206,14 +206,14 @@
       "state": "stable"
     },
     {
-      "id": "isle_glimmerpool",
-      "name": "Glimmerpool",
+      "id": "isle_ledgerstone",
+      "name": "Ledgerstone",
       "x": 20,
       "z": 690,
       "y": -10,
       "radius": 70,
       "biome": "lagoon",
-      "people": "rillfolk",
+      "people": "anchorkin",
       "tier": "guarded",
       "town": false,
       "shrine": true,
@@ -221,14 +221,14 @@
       "state": "stable"
     },
     {
-      "id": "isle_otterwake",
-      "name": "Otterwake",
+      "id": "isle_chainwake",
+      "name": "Chainwake",
       "x": -150,
       "z": 610,
       "y": -15,
       "radius": 45,
       "biome": "lagoon",
-      "people": "rillfolk",
+      "people": "anchorkin",
       "tier": "guarded",
       "town": false,
       "shrine": false,
@@ -243,7 +243,7 @@
       "y": -5,
       "radius": 45,
       "biome": "lagoon",
-      "people": "rillfolk",
+      "people": "anchorkin",
       "tier": "guarded",
       "town": false,
       "shrine": false,
@@ -251,14 +251,14 @@
       "state": "stable"
     },
     {
-      "id": "isle_shellbay",
-      "name": "Shellbay",
+      "id": "isle_anchor-bay",
+      "name": "Anchor Bay",
       "x": 50,
       "z": 860,
       "y": -25,
       "radius": 40,
       "biome": "lagoon",
-      "people": "rillfolk",
+      "people": "anchorkin",
       "tier": "guarded",
       "town": false,
       "shrine": false,
@@ -273,7 +273,7 @@
       "y": 45,
       "radius": 70,
       "biome": "crag",
-      "people": "skerrin",
+      "people": "galeborne",
       "tier": "guarded",
       "town": false,
       "shrine": true,
@@ -281,14 +281,14 @@
       "state": "stable"
     },
     {
-      "id": "isle_hornfast",
-      "name": "Hornfast",
+      "id": "isle_featherfast",
+      "name": "Featherfast",
       "x": -590,
       "z": -150,
       "y": 35,
       "radius": 45,
       "biome": "crag",
-      "people": "skerrin",
+      "people": "galeborne",
       "tier": "guarded",
       "town": false,
       "shrine": false,
@@ -303,7 +303,7 @@
       "y": 50,
       "radius": 50,
       "biome": "crag",
-      "people": "skerrin",
+      "people": "galeborne",
       "tier": "guarded",
       "town": false,
       "shrine": false,
@@ -311,14 +311,14 @@
       "state": "stable"
     },
     {
-      "id": "isle_goatstair",
-      "name": "Goatstair",
+      "id": "isle_gale-stair",
+      "name": "Gale Stair",
       "x": -600,
       "z": 160,
       "y": 30,
       "radius": 40,
       "biome": "crag",
-      "people": "skerrin",
+      "people": "galeborne",
       "tier": "guarded",
       "town": false,
       "shrine": false,
@@ -692,8 +692,8 @@
       "gustiness": 0.15
     },
     {
-      "id": "wind_lagoonward",
-      "name": "Lagoonward",
+      "id": "wind_moorward",
+      "name": "Moorward",
       "kind": "lane",
       "points": [
         [
@@ -852,38 +852,38 @@
       "b": "isle_elderroot"
     },
     {
-      "id": "bridge_terrace-hill_ledgerhome",
+      "id": "bridge_terrace-hill_hearthfield",
       "a": "isle_terrace-hill",
-      "b": "isle_ledgerhome"
+      "b": "isle_hearthfield"
     },
     {
-      "id": "bridge_slowfield_ledgerhome",
+      "id": "bridge_slowfield_hearthfield",
       "a": "isle_slowfield",
-      "b": "isle_ledgerhome"
+      "b": "isle_hearthfield"
     },
     {
-      "id": "bridge_greenshell_ledgerhome",
-      "a": "isle_greenshell",
-      "b": "isle_ledgerhome"
+      "id": "bridge_greenfold_hearthfield",
+      "a": "isle_greenfold",
+      "b": "isle_hearthfield"
     },
     {
-      "id": "bridge_otterwake_glimmerpool",
-      "a": "isle_otterwake",
-      "b": "isle_glimmerpool"
+      "id": "bridge_chainwake_ledgerstone",
+      "a": "isle_chainwake",
+      "b": "isle_ledgerstone"
     },
     {
-      "id": "bridge_lanternmere_glimmerpool",
+      "id": "bridge_lanternmere_ledgerstone",
       "a": "isle_lanternmere",
-      "b": "isle_glimmerpool"
+      "b": "isle_ledgerstone"
     },
     {
-      "id": "bridge_shellbay_glimmerpool",
-      "a": "isle_shellbay",
-      "b": "isle_glimmerpool"
+      "id": "bridge_anchor-bay_ledgerstone",
+      "a": "isle_anchor-bay",
+      "b": "isle_ledgerstone"
     },
     {
-      "id": "bridge_hornfast_high-spire",
-      "a": "isle_hornfast",
+      "id": "bridge_featherfast_high-spire",
+      "a": "isle_featherfast",
       "b": "isle_high-spire"
     },
     {
@@ -892,8 +892,8 @@
       "b": "isle_high-spire"
     },
     {
-      "id": "bridge_goatstair_high-spire",
-      "a": "isle_goatstair",
+      "id": "bridge_gale-stair_high-spire",
+      "a": "isle_gale-stair",
       "b": "isle_high-spire"
     }
   ]
