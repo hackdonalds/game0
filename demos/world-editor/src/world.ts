@@ -129,6 +129,9 @@ export function generateWorld(seed: number, name = `Shard ${seed}`): World {
   const pick = <T,>(xs: T[]) => xs[Math.floor(r() * xs.length)];
   const range = (a: number, b: number) => a + r() * (b - a);
   const w = { ...emptyWorld(name), seed };
+  // Deterministic ids, so the same seed always produces an identical world
+  let next = 0;
+  const gid = (prefix: string) => `${prefix}_g${next++}`;
   w.ambientWind = { heading: Math.round(range(0, 360)), strength: Math.round(range(2, 5)) };
   const fits = (x: number, z: number, rad: number) => w.isles.every((i) => Math.hypot(i.x - x, i.z - z) > i.radius + rad + 25);
   const place = (cx: number, cz: number, spread: number, rad: number, patch: Partial<Isle>) => {
@@ -136,7 +139,7 @@ export function generateWorld(seed: number, name = `Shard ${seed}`): World {
       const a = r() * Math.PI * 2, d = r() * spread;
       const x = cx + Math.cos(a) * d, z = cz + Math.sin(a) * d;
       if (Math.hypot(x, z) + rad < w.size && fits(x, z, rad)) {
-        const isle = newIsle(Math.round(x), Math.round(z), { radius: Math.round(rad), y: Math.round(range(-15, 25)), ...patch });
+        const isle = newIsle(Math.round(x), Math.round(z), { id: gid("isle"), radius: Math.round(rad), y: Math.round(range(-15, 25)), ...patch });
         w.isles.push(isle);
         return isle;
       }
@@ -164,7 +167,7 @@ export function generateWorld(seed: number, name = `Shard ${seed}`): World {
     // Bridges link each homeland isle to its nearest neighbour in the cluster
     cluster.slice(1).forEach((isle) => {
       const near = cluster.filter((o) => o !== isle).sort((p, q) => Math.hypot(p.x - isle.x, p.z - isle.z) - Math.hypot(q.x - isle.x, q.z - isle.z))[0];
-      if (near && Math.hypot(near.x - isle.x, near.z - isle.z) - near.radius - isle.radius < 120) w.bridges.push({ id: uid("bridge"), a: isle.id, b: near.id });
+      if (near && Math.hypot(near.x - isle.x, near.z - isle.z) - near.radius - isle.radius < 120) w.bridges.push({ id: gid("bridge"), a: isle.id, b: near.id });
     });
     // A town on the lane between this homeland and the next
     const b = a + Math.PI / HOMELANDS.length;
@@ -190,11 +193,11 @@ export function generateWorld(seed: number, name = `Shard ${seed}`): World {
   const ring = towns.slice(1).sort((p, q) => Math.atan2(p.z, p.x) - Math.atan2(q.z, q.x));
   if (ring.length > 2) {
     const pts = ring.map((t) => [t.x, t.z] as [number, number]);
-    w.winds.push({ id: uid("wind"), name: "Accord Ring", kind: "lane", points: [...pts, pts[0]], y: 10, width: 70, strength: 12, gustiness: 0.1 });
+    w.winds.push({ id: gid("wind"), name: "Accord Ring", kind: "lane", points: [...pts, pts[0]], y: 10, width: 70, strength: 12, gustiness: 0.1 });
   }
   if (hub) ring.filter((_, k) => k % 2 === 0).forEach((t, k) => {
     const pts: [number, number][] = [[hub.x, hub.z], [(hub.x + t.x) / 2 + range(-40, 40), (hub.z + t.z) / 2 + range(-40, 40)], [t.x, t.z]];
-    w.winds.push({ id: uid("wind"), name: `Hub lane ${k + 1}`, kind: "lane", points: k % 2 ? pts.reverse() : pts, y: 15, width: 60, strength: 10, gustiness: 0.1 });
+    w.winds.push({ id: gid("wind"), name: `Hub lane ${k + 1}`, kind: "lane", points: k % 2 ? pts.reverse() : pts, y: 15, width: 60, strength: 10, gustiness: 0.1 });
   });
   // Wild currents: fast, gusty arcs across the rim
   for (let n = 0; n < 3; n++) {
@@ -204,7 +207,7 @@ export function generateWorld(seed: number, name = `Shard ${seed}`): World {
       const a = a0 + (sweep * s) / 4, dd = d + range(-80, 80);
       pts.push([Math.round(Math.cos(a) * dd), Math.round(Math.sin(a) * dd)]);
     }
-    w.winds.push({ id: uid("wind"), name: `Wild current ${n + 1}`, kind: "wild", points: pts, y: Math.round(range(-10, 30)), width: 90, strength: Math.round(range(18, 26)), gustiness: 0.7 });
+    w.winds.push({ id: gid("wind"), name: `Wild current ${n + 1}`, kind: "wild", points: pts, y: Math.round(range(-10, 30)), width: 90, strength: Math.round(range(18, 26)), gustiness: 0.7 });
   }
   return w;
 }
