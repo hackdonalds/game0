@@ -1,7 +1,7 @@
 ---
 import { peoples } from "../data/peoples";
 ---
-<canvas id="peoples-stage" data-lineup={peoples.map((p) => p.id).join(",")} aria-label="The five peoples of game0 standing side by side"></canvas>
+<canvas id="peoples-stage" data-lineup={peoples.map((p) => p.id).join(",")} aria-label="The five peoples of game0 standing in a ring, the chosen one at the front"></canvas>
 
 <script>
   import * as THREE from "three";
@@ -34,7 +34,7 @@ import { peoples } from "../data/peoples";
   sun.shadow.camera.left = sun.shadow.camera.bottom = -5;
   sun.shadow.camera.right = sun.shadow.camera.top = 5;
   sun.shadow.radius = 6;
-  scene.add(sun);
+  scene.add(sun, sun.target);
   const rim = new THREE.DirectionalLight(0x9fe9ff, 1.4);
   rim.position.set(-4, 3, -4);
   scene.add(rim);
@@ -51,23 +51,35 @@ import { peoples } from "../data/peoples";
 
   const loader = new GLTFLoader();
   const mixers: THREE.AnimationMixer[] = [];
-  const slots: (THREE.Vector3 | undefined)[] = [];
 
-  async function loadPeople(people: string, index: number, count: number) {
+  // Round carousel: everyone stands on a ring and it turns so the chosen people faces the camera
+  const RADIUS = 2.4;
+  const FOCUS_SCALE = 1.18;
+  const ring = new THREE.Group();
+  ring.position.z = -RADIUS;
+  scene.add(ring);
+  sun.position.z -= RADIUS;
+  sun.target.position.set(0, 0, -RADIUS);
+  const holders: THREE.Group[] = [];
+
+  async function loadPeople(people: string) {
     const cfg: Config = await (await fetch(`${MODELS}${people}/attachments.json`)).json();
     const gltf = await loader.loadAsync(MODELS + cfg.base.file);
     const character = gltf.scene;
 
-    // Shallow arc facing the camera
-    const t = count > 1 ? index / (count - 1) - 0.5 : 0;
-    const angle = t * 1.15;
-    character.position.set(Math.sin(angle) * 3.2, 0, -Math.cos(angle) * 3.2 + 3.2 - Math.abs(t) * 0.4);
-    character.rotation.y = -angle * 0.6;
-    scene.add(character);
+    // Each people gets a holder on the ring, facing outwards
+    const slot = LINEUP.indexOf(people);
+    const angle = (slot / LINEUP.length) * Math.PI * 2;
+    const holder = new THREE.Group();
+    holder.position.set(Math.sin(angle) * RADIUS, 0, Math.cos(angle) * RADIUS);
+    holder.rotation.y = angle;
+    holder.userData.slot = slot;
+    holder.add(character);
+    ring.add(holder);
+    holders[slot] = holder;
     const box = new THREE.Box3().setFromObject(character);
     character.position.y -= box.min.y;
     character.updateMatrixWorld(true);
-    slots[LINEUP.indexOf(people)] = character.position.clone();
 
     // Default look: the first option in every slot
     for (const { bone: boneName, options } of Object.values(cfg.slots)) {
@@ -95,17 +107,44 @@ import { peoples } from "../data/peoples";
     mixers.push(mixer);
   }
 
-  // Camera eases towards the chosen people while keeping its neighbours in frame
+  // The ring turns the shortest way round to bring the chosen people to the front
   let focus = Math.floor(LINEUP.length / 2);
-  addEventListener("people:focus", (e) => { focus = (e as CustomEvent<number>).detail; });
+  const step = (Math.PI * 2) / LINEUP.length;
+  let target = -focus * step;
+  ring.rotation.y = target;
+  addEventListener("people:focus", (e) => {
+    const next = (e as CustomEvent<number>).detail;
+    let delta = (next - focus) % LINEUP.length;
+    if (delta > LINEUP.length / 2) delta -= LINEUP.length;
+    if (delta < -LINEUP.length / 2) delta += LINEUP.length;
+    target -= delta * step;
+    focus = next;
+  });
 
-  const view = { distance: 9, lookY: 1, spread: 0.7 };
+  // Clicking someone on the ring selects their tab
+  const raycaster = new THREE.Raycaster();
+  const pointer = new THREE.Vector2();
+  const pick = (e: PointerEvent) => {
+    const r = canvas.getBoundingClientRect();
+    pointer.set(((e.clientX - r.left) / r.width) * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1);
+    raycaster.setFromCamera(pointer, camera);
+    let o: THREE.Object3D | null = raycaster.intersectObjects(holders.filter(Boolean), true)[0]?.object ?? null;
+    while (o && o.userData.slot === undefined) o = o.parent;
+    return o ? (o.userData.slot as number) : -1;
+  };
+  canvas.addEventListener("click", (e) => {
+    const slot = pick(e);
+    if (slot >= 0) document.getElementById(`tab-${LINEUP[slot]}`)?.click();
+  });
+  canvas.addEventListener("pointermove", (e) => { canvas.style.cursor = pick(e) >= 0 ? "pointer" : ""; });
+
+  const view = { distance: 9, lookY: 1 };
   const resize = () => {
     const { clientWidth: w, clientHeight: h } = canvas;
     renderer.setSize(w, h, false);
     camera.aspect = w / h;
     const portrait = w / h < 1;
-    Object.assign(view, portrait ? { distance: 9, lookY: 1.1, spread: 1 } : { distance: 6.4, lookY: 1.05, spread: 0.6 });
+    Object.assign(view, portrait ? { distance: 11, lookY: 1.1 } : { distance: 7.6, lookY: 1.05 });
     camera.updateProjectionMatrix();
   };
   new ResizeObserver(resize).observe(canvas);
@@ -114,15 +153,19 @@ import { peoples } from "../data/peoples";
   const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const clock = new THREE.Clock();
   const look = new THREE.Vector3(0, 1, 0);
-  const wanted = new THREE.Vector3();
   const frame = () => {
     const dt = Math.min(clock.getDelta(), 0.1);
     if (!reduceMotion) mixers.forEach((m) => m.update(dt));
-    const x = (slots[focus]?.x ?? 0) * view.spread;
-    wanted.set(x, view.lookY, 0);
-    look.lerp(wanted, reduceMotion ? 1 : 1 - Math.exp(-dt * 3));
-    const sway = reduceMotion ? 0 : Math.sin(clock.elapsedTime * 0.15) * 0.12;
-    camera.position.set(look.x + Math.sin(sway) * view.distance, 1.9, Math.cos(sway) * view.distance);
+    const ease = reduceMotion ? 1 : 1 - Math.exp(-dt * 4);
+    ring.rotation.y += (target - ring.rotation.y) * ease;
+    holders.forEach((h, i) => {
+      if (!h) return;
+      const s = i === focus ? FOCUS_SCALE : 1;
+      h.scale.setScalar(h.scale.x + (s - h.scale.x) * ease);
+    });
+    look.set(0, view.lookY, -RADIUS * 0.35);
+    const sway = reduceMotion ? 0 : Math.sin(clock.elapsedTime * 0.15) * 0.06;
+    camera.position.set(Math.sin(sway) * view.distance, 2.1, Math.cos(sway) * view.distance - RADIUS * 0.35);
     camera.lookAt(look);
     renderer.render(scene, camera);
   };
@@ -135,7 +178,7 @@ import { peoples } from "../data/peoples";
     loaded = true;
     const available: string[] = await (await fetch(MODELS + "peoples.json")).json();
     const lineup = LINEUP.filter((p) => available.includes(p));
-    await Promise.all(lineup.map((p, i) => loadPeople(p, i, lineup.length)));
+    await Promise.all(lineup.map((p) => loadPeople(p)));
     canvas.classList.add("ready");
   }, { rootMargin: "300px" }).observe(canvas);
 </script>
