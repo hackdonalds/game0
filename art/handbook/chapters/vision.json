@@ -1,0 +1,10 @@
+{
+  "prompt": "Chapter cover illustration for a fantasy world handbook: a sweeping vista of many floating isles at golden hour, waterfalls spilling from their edges into a sea of clouds, small sailing ships with glowing enchanted sails crossing between them, an enormous ancient tree on the central isle. Wide cinematic composition with calm space in the upper third. Style: hand-painted stylized game art, painterly, soft lighting with gentle rim light, softer muted colours with gentle saturation, epic and luminous fantasy, never grim. No text, no labels, no border, no frame.",
+  "model": "openai/gpt-image-2.5-sunburst",
+  "aspect": "16:9",
+  "quality": "high",
+  "refs": [
+    "art/references/world-tree-floating-isle.webp"
+  ],
+  "createdAt": "2026-11-01T14:13:51.410Z"
+}

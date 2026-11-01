@@ -1,0 +1,10 @@
+{
+  "prompt": "Plate for an illustrated field guide: a low ruined floating isle tilted and sinking into dark churning storm clouds, its edges piled with broken wooden ship hulls and torn sails, crumbling old-world stone stairs, salvagers on ropes, seen from a slight aerial angle. Soft vignette fading to warm parchment at the edges. Style: hand-painted stylized game art, painterly, soft lighting with gentle rim light, softer muted colours with gentle saturation, epic and luminous fantasy, never grim. No text, no labels, no border, no frame.",
+  "model": "openai/gpt-image-2.5-sunburst",
+  "aspect": "1:1",
+  "quality": "medium",
+  "refs": [
+    "art/references/world-tree-floating-isle.webp"
+  ],
+  "createdAt": "2026-11-01T14:19:51.900Z"
+}

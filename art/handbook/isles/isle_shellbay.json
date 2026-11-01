@@ -1,0 +1,10 @@
+{
+  "prompt": "Plate for an illustrated field guide: a small low floating isle with a curved sandy bay and glowing shallows full of large crabs, wooden racks of salvaged old-world stone, ropes descending through a well in the rock, dark storm clouds churning not far below, seen from a slight aerial angle. Soft vignette fading to warm parchment at the edges. Style: hand-painted stylized game art, painterly, soft lighting with gentle rim light, softer muted colours with gentle saturation, epic and luminous fantasy, never grim. No text, no labels, no border, no frame.",
+  "model": "openai/gpt-image-2.5-sunburst",
+  "aspect": "1:1",
+  "quality": "medium",
+  "refs": [
+    "art/references/world-tree-floating-isle.webp"
+  ],
+  "createdAt": "2026-11-01T14:18:44.131Z"
+}

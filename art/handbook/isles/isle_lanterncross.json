@@ -1,0 +1,10 @@
+{
+  "prompt": "Plate for an illustrated field guide: a floating meadow isle at dusk with a crossroads town strung with hundreds of glowing lanterns, stone weighing houses and timber inns, glowing teal water channels, sailships arriving with ore crates, dark storm clouds far below, seen from a slight aerial angle. Soft vignette fading to warm parchment at the edges. Style: hand-painted stylized game art, painterly, soft lighting with gentle rim light, softer muted colours with gentle saturation, epic and luminous fantasy, never grim. No text, no labels, no border, no frame.",
+  "model": "openai/gpt-image-2.5-sunburst",
+  "aspect": "1:1",
+  "quality": "medium",
+  "refs": [
+    "art/references/world-tree-floating-isle.webp"
+  ],
+  "createdAt": "2026-11-01T14:17:31.588Z"
+}

@@ -1,0 +1,10 @@
+{
+  "prompt": "Plate for an illustrated field guide: a lean Skerrin goat-person with large curled ram horns ringed with bronze and carved with marks, grey-brown fur, a short beard and ear tags, wearing a leather mining harness with a pick over the shoulder and a coil of rope, waist-up three-quarter view, standing on a narrow cliff ledge of a towering rock spire high above the clouds. Soft vignette fading to warm parchment at the edges. Style: hand-painted stylized game art, painterly, soft lighting with gentle rim light, softer muted colours with gentle saturation, epic and luminous fantasy, never grim. No text, no labels, no border, no frame.",
+  "model": "openai/gpt-image-2.5-sunburst",
+  "aspect": "1:1",
+  "quality": "high",
+  "refs": [
+    "art/references/world-tree-floating-isle.webp"
+  ],
+  "createdAt": "2026-11-01T14:17:08.456Z"
+}

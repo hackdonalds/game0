@@ -1,0 +1,34 @@
+---
+// Embeds the Living Shard demo. It only loads when tapped, so the chapter stays light on phones.
+import { base } from "../lib/text";
+---
+<div class="living" data-living>
+  <button type="button" class="start">
+    <span class="play" aria-hidden="true">▶</span>
+    <span><b>Start the Living Shard</b><small>5,000 NPCs on the First Shard, simulated at three levels of detail. Runs in your browser.</small></span>
+  </button>
+  <a class="full" href={`${base}/demos/npc-lod/`}>Open full screen ↗</a>
+</div>
+
+<script>
+  document.querySelectorAll<HTMLElement>("[data-living]").forEach((el) => {
+    el.querySelector(".start")!.addEventListener("click", () => {
+      const frame = document.createElement("iframe");
+      frame.src = `${import.meta.env.BASE_URL.replace(/\/?$/, "/")}demos/npc-lod/`;
+      frame.title = "Living Shard demo";
+      frame.allow = "fullscreen";
+      el.querySelector(".start")!.replaceWith(frame);
+    });
+  });
+</script>
+
+<style>
+  .living { position: relative; aspect-ratio: 16 / 10; border-radius: 12px; overflow: hidden; background: radial-gradient(circle at 50% 40%, #cfe6f0, #8fb0c8); }
+  .start { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; gap: 1rem; padding: 1.5rem; border: 0; background: none; color: #1d2733; text-align: left; cursor: pointer; font: inherit; }
+  .play { display: grid; place-items: center; flex: none; width: 3.5rem; height: 3.5rem; border-radius: 50%; background: #1d2733; color: #fff; font-size: 1.2rem; box-shadow: 0 10px 30px -10px #1d2733aa; }
+  .start b { display: block; font-family: var(--font-display); font-size: 1.3rem; }
+  .start small { display: block; max-width: 22rem; font-size: 0.88rem; color: #33404d; }
+  iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .full { position: absolute; top: 0.6rem; right: 0.6rem; z-index: 2; font-size: 0.8rem; font-weight: 600; padding: 0.35rem 0.7rem; border-radius: 999px; background: #ffffffd0; color: #1d2733; text-decoration: none; }
+  @media (max-width: 520px) { .living { aspect-ratio: 3 / 4; } }
+</style>

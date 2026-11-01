@@ -1,0 +1,330 @@
+---
+import Base from "../../../layouts/Base.astro";
+import Plate from "../../../components/Plate.astro";
+import ShardMap from "../../../components/ShardMap.astro";
+import PeopleViewer from "../../../components/PeopleViewer.astro";
+import shard from "../../../../../../worlds/first-shard.world.json";
+import { bestiary, DANGER, REGIONS } from "../../../data/bestiary";
+import { peopleEntries } from "../../../data/peoples-handbook";
+import { skills } from "../../../data/skills";
+import { isleNotes } from "../../../data/isles";
+import { windNotes } from "../../../data/winds";
+import { ships } from "../../../data/ships";
+import { materials } from "../../../data/materials";
+import { catalogues, isleSlug, windSlug, peopleName, TONE, type Card } from "../../../lib/catalogues";
+import { base, cap } from "../../../lib/text";
+
+export function getStaticPaths() {
+  return catalogues.filter((c) => c.pages).flatMap((cat) =>
+    cat.cards.map((card, i) => ({
+      params: { kind: cat.slug, id: card.id },
+      props: { kind: cat.slug, title: cat.title, card, prev: cat.cards[(i - 1 + cat.cards.length) % cat.cards.length], next: cat.cards[(i + 1) % cat.cards.length], siblings: cat.cards },
+    })),
+  );
+}
+
+interface Props { kind: string; title: string; card: Card; prev: Card; next: Card; siblings: Card[] }
+const { kind, title, card, prev, next } = Astro.props;
+const fmt = (n: number) => (n >= 999 && n < 1000 ? "Unlimited" : n.toLocaleString("en-GB"));
+const isleByName = new Map(shard.isles.map((i) => [i.name, i]));
+// Link mentions of isle names in free text to their entries
+const linkIsles = (text: string) => {
+  let out = text.replace(/[&<>]/g, (c) => `&#${c.charCodeAt(0)};`);
+  for (const i of [...shard.isles].sort((a, b) => b.name.length - a.name.length)) {
+    const safe = i.name.replace(/[&<>]/g, (c) => `&#${c.charCodeAt(0)};`).replace(/'/g, "&#39;");
+    out = out.replace(new RegExp(`(^|[^\\w>])(${safe.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")})(?![\\w<])`, "g"), `$1<a href="${base}/catalogue/isles/${isleSlug(i.id)}/">$2</a>`);
+  }
+  return out;
+};
+
+const creature = kind === "bestiary" ? bestiary.find((c) => c.id === card.id) : undefined;
+const people = kind === "peoples" ? peopleEntries.find((p) => p.id === card.id) : undefined;
+const skill = kind === "skills" ? skills.find((s) => s.id === card.id) : undefined;
+const isle = kind === "isles" ? shard.isles.find((i) => isleSlug(i.id) === card.id) : undefined;
+const isleNote = isle && isleNotes.find((n) => n.id === isle.id);
+const wind = kind === "winds" ? shard.winds.find((w) => windSlug(w.id) === card.id) : undefined;
+const windNote = wind && windNotes.find((n) => n.id === wind.id);
+const ship = kind === "ships" ? ships.find((s) => s.id === card.id) : undefined;
+const material = kind === "materials" ? materials.find((m) => m.id === card.id) : undefined;
+
+const bridged = isle ? shard.bridges.filter((b) => b.a === isle.id || b.b === isle.id).map((b) => shard.isles.find((i) => i.id === (b.a === isle.id ? b.b : b.a))!) : [];
+const windEnds = wind ? [wind.points[0], wind.points.at(-1)!].map(([x, z]) => shard.isles.reduce((best, i) => (Math.hypot(i.x - x, i.z - z) < Math.hypot(best.x - x, best.z - z) ? i : best))) : [];
+const windLength = wind ? Math.round(wind.points.slice(1).reduce((s, p, i) => s + Math.hypot(p[0] - wind.points[i][0], p[1] - wind.points[i][1]), 0)) : 0;
+const kin = creature ? bestiary.filter((o) => o.region === creature.region && o.id !== creature.id) : [];
+const homeIsles = people ? shard.isles.filter((i) => i.people === people.id) : [];
+const hasPlate = kind !== "winds";
+---
+<Base title={`${card.name} · ${title} · game0 handbook`} description={card.summary} section="catalogues">
+  <nav class="wrap crumbs" aria-label="Breadcrumb">
+    <a href={`${base}/catalogue/`}>Catalogues</a><span>/</span><a href={`${base}/catalogue/${kind}/`}>{title}</a>
+  </nav>
+
+  <div class="wrap page">
+    <div class="art">
+      {hasPlate ? <Plate art={card.art} name={card.name} tone={card.tone} sizes="(max-width: 900px) 100vw, 460px" eager /> : null}
+      {kind === "winds" && <ShardMap compact />}
+      {(creature?.quote ?? people?.quote) && (
+        <blockquote><p>“{(creature?.quote ?? people?.quote)!.text}”</p><footer>{(creature?.quote ?? people?.quote)!.by}</footer></blockquote>
+      )}
+    </div>
+
+    <div class="text">
+      <p class="eyebrow">{title}</p>
+      <h1>{card.name}</h1>
+      {card.subtitle && <p class="subtitle">{card.subtitle}</p>}
+      {card.badges?.length ? <p class="badges">{card.badges.map((b) => <span class:list={["chip", b.class]}>{b.label}</span>)}</p> : null}
+      <p class="lore" set:html={linkIsles(creature?.lore ?? people?.culture ?? skill?.description ?? isleNote?.blurb ?? windNote?.blurb ?? ship?.description ?? material?.description ?? card.summary)} />
+
+      {creature && (
+        <article class="stat">
+          <header><h2>{creature.name}</h2><p class="type">{cap(creature.size)} {creature.family.toLowerCase()}, {creature.temperament}</p></header>
+          <hr />
+          <dl class="core">
+            <div><dt>Danger</dt><dd>{creature.danger} · {creature.boss ? "World boss" : DANGER[creature.danger]}</dd></div>
+            <div><dt>Health</dt><dd>{fmt(creature.health)}</dd></div>
+            <div><dt>Stamina</dt><dd>{fmt(creature.stamina)}</dd></div>
+            <div><dt>Speed</dt><dd>{Object.entries(creature.speed).map(([k, v]) => `${k} ${v} m/s`).join(", ")}</dd></div>
+          </dl>
+          <hr />
+          <h3>Skills</h3>
+          <ul class="bars">{Object.entries(creature.skills).map(([n, l]) => <li><a href={`${base}/catalogue/skills/${n.toLowerCase().replace(/\s+/g, "-")}/`}>{n}</a><span class="bar" style={`--v:${l}%`}></span><b>{l}</b></li>)}</ul>
+          <hr />
+          <dl class="lines">
+            <div><dt>Senses</dt><dd>{creature.senses}</dd></div>
+            <div><dt>Active</dt><dd>{creature.active}</dd></div>
+            <div><dt>Seasons</dt><dd>{creature.seasons}</dd></div>
+            <div><dt>Habitat</dt><dd>{creature.habitat}</dd></div>
+            <div><dt>Region</dt><dd>{REGIONS.find((r) => r.id === creature.region)!.name}</dd></div>
+            <div><dt>Risk tiers</dt><dd>{creature.tiers.map(cap).join(", ")}</dd></div>
+            {creature.population && <div><dt>Population</dt><dd>{creature.population}</dd></div>}
+          </dl>
+          <hr />
+          <h3>Actions</h3>
+          <ul class="actions">{creature.actions.map((a) => <li><b>{a.name}.</b> {a.text}</li>)}</ul>
+          <h3>Behaviour</h3>
+          <p class="tags">{creature.behaviours.map((b) => <span class="chip">{b}</span>)}</p>
+          <hr />
+          <dl class="lines">
+            <div><dt>Drops</dt><dd>{creature.drops.join(", ")}</dd></div>
+            {creature.taming && <div><dt>Taming</dt><dd>{creature.taming.use}, needs <a href={`${base}/catalogue/skills/taming/`}>Taming</a> {creature.taming.skill}</dd></div>}
+          </dl>
+          {creature.storm && <aside class="storm"><h3>Storm-touched: {creature.storm.name}</h3><p>{creature.storm.text}</p></aside>}
+        </article>
+      )}
+
+      {people && (
+        <article class="stat">
+          <dl class="lines">
+            <div><dt>Homeland</dt><dd>{people.homeland}</dd></div>
+            <div><dt>Look</dt><dd>{people.look}</dd></div>
+            <div><dt>Known for</dt><dd>{people.knownFor}</dd></div>
+            <div><dt>Starts</dt><dd set:html={linkIsles(people.start)} /></div>
+            <div><dt>Affinities</dt><dd>{people.affinities.map((a, i) => <>{i > 0 && ", "}<a href={`${base}/catalogue/skills/${a.toLowerCase().replace(/\s+/g, "-")}/`}>{a}</a></>)}</dd></div>
+          </dl>
+          <hr />
+          <h3>Relations</h3>
+          <ul class="relations">
+            {people.relations.map((r) => (
+              <li><a href={`${base}/catalogue/peoples/${r.with}/`}>{peopleName(r.with)}</a> <span class:list={["chip", "rel", r.kind]}>{r.kind}</span><p>{r.text}</p></li>
+            ))}
+          </ul>
+          <hr />
+          <h3>Signature features</h3>
+          <dl class="lines">
+            <div><dt>Customizable</dt><dd>{people.signature.customizable.join(", ")}</dd></div>
+            <div><dt>Always</dt><dd>{people.signature.locked.join(", ")}</dd></div>
+          </dl>
+          {homeIsles.length > 0 && (<><hr /><h3>Home isles</h3><p class="tags">{homeIsles.map((i) => <a class="chip" href={`${base}/catalogue/isles/${isleSlug(i.id)}/`}>{i.name}</a>)}</p></>)}
+        </article>
+      )}
+      {people && <section class="viewer"><h2>Turn them around</h2><PeopleViewer people={people.id} /></section>}
+
+      {skill && (
+        <article class="stat">
+          <dl class="lines">
+            <div><dt>Group</dt><dd>{skill.group}</dd></div>
+            <div><dt>Affinity</dt><dd>{skill.affinity.length ? skill.affinity.map((p, i) => <>{i > 0 && ", "}<a href={`${base}/catalogue/peoples/${p}/`}>{peopleName(p)}</a></>) : "Any people"}</dd></div>
+          </dl>
+          <hr />
+          <h3>Where to learn it</h3>
+          <ul class="list">{skill.sources.map((s) => <li set:html={linkIsles(s)} />)}</ul>
+          <h3>Used for</h3>
+          <p class="tags">{skill.uses.map((u) => <span class="chip">{u}</span>)}</p>
+          <hr />
+          <h3>Milestones</h3>
+          <ol class="milestones">
+            {skill.milestones.map((m) => <li><span class="lvl">{m.level}</span><div><b>{m.name}</b><p>{m.text}</p></div></li>)}
+          </ol>
+          <p class="note">At 75 you can train others in this skill. At 100 you can write books that teach it.</p>
+        </article>
+      )}
+
+      {isle && (
+        <article class="stat">
+          <dl class="core">
+            <div><dt>Tier</dt><dd>{cap(isle.tier)}</dd></div>
+            <div><dt>Biome</dt><dd>{cap(isle.biome)}</dd></div>
+            <div><dt>Altitude</dt><dd>{isle.y} m</dd></div>
+            <div><dt>Radius</dt><dd>{isle.radius} m</dd></div>
+          </dl>
+          <hr />
+          <dl class="lines">
+            <div><dt>People</dt><dd>{isle.people !== "none" ? <a href={`${base}/catalogue/peoples/${isle.people}/`}>{peopleName(isle.people)}</a> : isle.town ? "Accord town, open to all" : "Unclaimed"}</dd></div>
+            <div><dt>State</dt><dd>{isle.state === "sinking" ? "Sinking: its last days have begun" : isle.state === "newborn" ? "Newborn: recently risen" : "Stable"}</dd></div>
+            <div><dt>Has</dt><dd>{[isle.town && "Accord town", isle.shrine && "Accord shrine (respawn)", isle.ancientTree && "Ancient tree"].filter(Boolean).join(", ") || "Nothing built"}</dd></div>
+            {bridged.length > 0 && <div><dt>Bridges to</dt><dd>{bridged.map((b, i) => <>{i > 0 && ", "}<a href={`${base}/catalogue/isles/${isleSlug(b.id)}/`}>{b.name}</a></>)}</dd></div>}
+          </dl>
+          {isleNote && (<>
+            <hr />
+            <h3>Landmarks</h3>
+            <ul class="list">{isleNote.landmarks.map((l) => <li>{l}</li>)}</ul>
+            <h3>Resources</h3>
+            <p class="tags">{isleNote.resources.map((r) => <span class="chip">{r}</span>)}</p>
+          </>)}
+        </article>
+      )}
+      {isle && <section class="viewer"><h2>On the map</h2><ShardMap compact highlight={card.id} /></section>}
+
+      {wind && (
+        <article class="stat">
+          <dl class="core">
+            <div><dt>Kind</dt><dd>{wind.kind === "lane" ? "Accord lane" : "Wild current"}</dd></div>
+            <div><dt>Speed</dt><dd>{wind.strength} m/s</dd></div>
+            <div><dt>Width</dt><dd>{wind.width} m</dd></div>
+            <div><dt>Length</dt><dd>{windLength.toLocaleString("en-GB")} m</dd></div>
+          </dl>
+          <hr />
+          <dl class="lines">
+            <div><dt>Risk</dt><dd>{wind.kind === "lane" ? "Guarded: consensual PvP only" : "Wild: open PvP, carried cargo can be looted"}</dd></div>
+            <div><dt>Gustiness</dt><dd>{wind.gustiness < 0.2 ? "Steady" : wind.gustiness < 0.5 ? "Some gusts" : wind.gustiness < 0.8 ? "Gusty and shifting" : "Violent"}</dd></div>
+            <div><dt>Altitude</dt><dd>{wind.y} m</dd></div>
+            <div><dt>Blows from</dt><dd><a href={`${base}/catalogue/isles/${isleSlug(windEnds[0].id)}/`}>near {windEnds[0].name}</a> to <a href={`${base}/catalogue/isles/${isleSlug(windEnds[1].id)}/`}>near {windEnds[1].name}</a></dd></div>
+            <div><dt>Crossing</dt><dd>About {Math.round(windLength / wind.strength / 6) / 10} minutes riding the current</dd></div>
+          </dl>
+        </article>
+      )}
+
+      {ship && (
+        <article class="stat">
+          <dl class="lines">{ship.stats.map((s) => <div><dt>{s.label}</dt><dd>{s.value}</dd></div>)}</dl>
+          <hr />
+          <h3>Crew</h3>
+          <ul class="actions">{ship.roles.map((r) => <li><b>{r.name}.</b> {r.text}</li>)}</ul>
+          <h3>Used for</h3>
+          <p class="tags">{ship.uses.map((u) => <span class="chip">{u}</span>)}</p>
+          <hr />
+          <dl class="lines"><div><dt>Building</dt><dd>{ship.building}</dd></div></dl>
+        </article>
+      )}
+
+      {material && (
+        <article class="stat">
+          <dl class="core">
+            <div><dt>Family</dt><dd>{material.family}</dd></div>
+            <div><dt>Tier</dt><dd>{material.tier}</dd></div>
+          </dl>
+          <hr />
+          <dl class="lines">
+            <div><dt>Found</dt><dd set:html={linkIsles(material.where)} /></div>
+            <div><dt>Gathered with</dt><dd>{material.gatheredWith}</dd></div>
+          </dl>
+          <h3>Makes</h3>
+          <p class="tags">{material.usedFor.map((u) => <span class="chip">{u}</span>)}</p>
+          {material.draft && <p class="note"><span class="draft">Draft</span> Material names and tiers are placeholders until the economy chapter decides them.</p>}
+        </article>
+      )}
+    </div>
+  </div>
+
+  {kin.length > 0 && (
+    <section class="wrap kin">
+      <h2>Also in {REGIONS.find((r) => r.id === creature!.region)!.name.replace(/^The /, "the ")}</h2>
+      <ul>{kin.map((o) => <li><a href={`${base}/catalogue/bestiary/${o.id}/`}><Plate art={`bestiary/${o.id}`} name={o.name} tone={TONE[o.region]} sizes="120px" /><span>{o.name}</span></a></li>)}</ul>
+    </section>
+  )}
+
+  <nav class="wrap pager" aria-label={`More ${title.toLowerCase()}`}>
+    <a href={prev.href}><small>← Previous</small>{prev.name}</a>
+    <a class="all" href={`${base}/catalogue/${kind}/`}>All {title.toLowerCase()}</a>
+    <a class="next" href={next.href}><small>Next →</small>{next.name}</a>
+  </nav>
+</Base>
+
+<style>
+  .crumbs { display: flex; gap: 0.5rem; padding-top: 1.25rem; font-size: 0.88rem; color: var(--ink-faint); }
+  .crumbs a { color: var(--ink-soft); text-decoration: none; }
+  .crumbs a:hover { color: var(--teal); }
+  .page { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(1.5rem, 4vw, 3.5rem); padding-top: 1.5rem; align-items: start; }
+  .art { position: sticky; top: 5rem; display: grid; gap: 1.25rem; }
+  .art :global(.plate) { box-shadow: 0 30px 60px -30px #0008; }
+  blockquote { margin: 0; padding-left: 1.1rem; border-left: 3px solid var(--gold); }
+  blockquote p { margin: 0; font-family: var(--font-display); font-style: italic; font-size: 1.2rem; line-height: 1.4; }
+  blockquote footer { margin-top: 0.4rem; font-size: 0.85rem; color: var(--ink-soft); }
+  blockquote footer::before { content: "— "; }
+  h1 { font-size: clamp(2.3rem, 6vw, 3.6rem); margin: 0.3rem 0 0.3rem; }
+  .subtitle { margin: 0; font-style: italic; color: var(--ink-soft); }
+  .badges { display: flex; flex-wrap: wrap; gap: 0.35rem; margin: 0.6rem 0 0; }
+  .lore { font-size: 1.1rem; color: color-mix(in srgb, var(--ink) 85%, var(--paper)); margin: 1rem 0 1.75rem; }
+  .lore :global(a), .stat :global(dd a), .stat :global(li a) { text-decoration: none; border-bottom: 1px solid color-mix(in srgb, var(--teal) 40%, transparent); }
+
+  .stat {
+    background: linear-gradient(180deg, color-mix(in srgb, var(--card) 100%, white 0%), color-mix(in srgb, var(--paper-deep) 70%, var(--card)));
+    border-top: 5px solid var(--gold); border-bottom: 5px solid var(--gold);
+    padding: 1.2rem clamp(1rem, 3vw, 1.6rem) 1.4rem; box-shadow: var(--shadow), 0 0 0 1px color-mix(in srgb, var(--gold) 25%, transparent);
+    font-size: 0.95rem; line-height: 1.5;
+  }
+  .stat h2 { margin: 0; font-size: 1.7rem; color: var(--rule); font-variant: small-caps; letter-spacing: 0.02em; }
+  .stat .type { margin: 0.1rem 0 0; font-style: italic; color: var(--ink-soft); }
+  .stat hr { border: 0; height: 2px; margin: 0.9rem 0; background: linear-gradient(90deg, var(--rule), transparent); }
+  .stat h3 { margin: 0.3rem 0 0.45rem; font-size: 1.1rem; color: var(--rule); font-variant: small-caps; letter-spacing: 0.03em; border-bottom: 1px solid color-mix(in srgb, var(--rule) 25%, transparent); padding-bottom: 0.15rem; }
+  .core { display: grid; grid-template-columns: repeat(auto-fit, minmax(6.5rem, 1fr)); gap: 0.5rem 1rem; margin: 0; }
+  .core dt { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rule); }
+  .core dd { margin: 0; font-weight: 500; }
+  .lines { margin: 0; display: grid; gap: 0.35rem; }
+  .lines div { display: grid; grid-template-columns: 7.5rem 1fr; gap: 0.75rem; }
+  .lines dt { font-weight: 600; color: var(--rule); }
+  .lines dd { margin: 0; }
+  .bars { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.35rem; }
+  .bars li { display: grid; grid-template-columns: 8.5rem 1fr 2.2rem; gap: 0.75rem; align-items: center; }
+  .bars .bar { height: 6px; border-radius: 3px; background: linear-gradient(90deg, var(--teal) var(--v), var(--line) var(--v)); }
+  .bars b { text-align: right; font-variant-numeric: tabular-nums; }
+  .actions, .list { margin: 0 0 0.8rem; padding: 0; list-style: none; display: grid; gap: 0.45rem; }
+  .list li { padding-left: 1rem; position: relative; }
+  .list li::before { content: "◆"; position: absolute; left: 0; font-size: 0.6rem; top: 0.45rem; color: var(--gold); }
+  .actions b { font-style: italic; }
+  .tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin: 0 0 0.6rem; }
+  .tags a.chip { text-decoration: none; color: var(--ink); }
+  .storm { margin-top: 1rem; padding: 0.9rem 1rem; border-radius: 8px; background: linear-gradient(135deg, #2a2445, #3d3566); color: #e9e4ff; }
+  .storm h3 { color: #c9bcff; border-color: #c9bcff40; }
+  .storm p { margin: 0; }
+  .relations { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.7rem; }
+  .relations p { margin: 0.2rem 0 0; color: var(--ink-soft); font-size: 0.9rem; }
+  .rel { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; margin-left: 0.3rem; }
+  .rel.ally { color: var(--tier-guarded); } .rel.rival { color: var(--tier-wild); } .rel.trade { color: var(--tier-safe); }
+  .milestones { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.8rem; }
+  .milestones li { display: grid; grid-template-columns: 2.8rem 1fr; gap: 0.8rem; align-items: start; }
+  .lvl { display: grid; place-items: center; width: 2.6rem; height: 2.6rem; border-radius: 50%; background: color-mix(in srgb, var(--gold) 18%, transparent); border: 2px solid var(--gold); font-family: var(--font-display); font-weight: 600; }
+  .milestones p { margin: 0.15rem 0 0; color: var(--ink-soft); font-size: 0.9rem; }
+  .note { margin: 1rem 0 0; font-size: 0.85rem; color: var(--ink-soft); }
+  .viewer { margin-top: 2.5rem; }
+  .viewer h2 { font-size: 1.4rem; }
+
+  .kin { margin-top: 3rem; }
+  .kin h2 { font-size: 1.4rem; }
+  .kin ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 1rem; }
+  .kin a { display: grid; gap: 0.4rem; width: 120px; text-decoration: none; color: var(--ink); font-family: var(--font-display); font-weight: 600; font-size: 0.95rem; line-height: 1.2; }
+  .kin a:hover { color: var(--teal); }
+  .pager { display: grid; grid-template-columns: 1fr auto 1fr; gap: 1rem; align-items: center; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--line); }
+  .pager a { text-decoration: none; color: var(--ink); font-family: var(--font-display); font-weight: 600; font-size: 1.1rem; }
+  .pager a:hover { color: var(--teal); }
+  .pager small { display: block; font-family: var(--font-body); font-weight: 600; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); }
+  .pager .next { text-align: right; }
+  .pager .all { font-family: var(--font-body); font-size: 0.85rem; padding: 0.5rem 1rem; border: 1px solid var(--line); border-radius: 999px; }
+  @media (max-width: 900px) { .page { grid-template-columns: 1fr; } .art { position: static; max-width: 32rem; } }
+  @media (max-width: 520px) {
+    .lines div { grid-template-columns: 1fr; gap: 0; }
+    .bars li { grid-template-columns: 6.5rem 1fr 2rem; }
+    .pager { grid-template-columns: 1fr 1fr; }
+    .pager .all { display: none; }
+  }
+</style>

@@ -1,40 +1,29 @@
 ---
-// A creature's painted plate, or a placeholder until `bun run art:bestiary` has generated it.
+// A painted plate, or a lettered placeholder until scripts/handbook-art.ts has generated it.
 import { Image } from "astro:assets";
-import type { Creature } from "../data/bestiary";
+import { plate } from "../lib/art";
 
-interface Props { creature: Creature; sizes: string; eager?: boolean }
-const { creature, sizes, eager = false } = Astro.props;
-const plates = import.meta.glob<{ default: ImageMetadata }>("../../../../art/bestiary/*.png", { eager: true });
-const plate = Object.entries(plates).find(([path]) => path.endsWith(`/${creature.id}.png`))?.[1].default;
+interface Props { art: string; name: string; sizes: string; eager?: boolean; wide?: boolean; tone?: string; class?: string }
+const { art, name, sizes, eager = false, wide = false, tone = "var(--teal)", class: cls = "" } = Astro.props;
+const src = plate(art);
 ---
-{plate ? (
-  <Image class="plate img" src={plate} alt={`Painted plate of the ${creature.name}`} widths={[320, 640, 1024]} sizes={sizes} loading={eager ? "eager" : "lazy"} />
+{src ? (
+  <Image class:list={["plate", "plate-img", { wide }, cls]} src={src} alt={`Painting: ${name}`} widths={wide ? [480, 960, 1600] : [240, 480, 960]} sizes={sizes} loading={eager ? "eager" : "lazy"} fetchpriority={eager ? "high" : "auto"} />
 ) : (
-  <div class="plate placeholder" data-region={creature.region} role="img" aria-label={`${creature.name}, plate not painted yet`}>
-    <span class="initial">{creature.name.replace(/^The /, "")[0]}</span>
-    <span class="note">Plate to come</span>
+  <div class:list={["plate", "placeholder", { wide }, cls]} style={`--tone:${tone}`} role="img" aria-label={`${name}, painting to come`}>
+    <span class="initial">{name.replace(/^The /, "").charAt(0)}</span>
   </div>
 )}
 
 <style>
-  /* Scoped styles don't reach the <img> that <Image> renders, so it is styled globally by class */
-  :global(img.plate.img), .plate { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; border-radius: 6px; background: var(--paper-deep); }
+  /* <Image> renders outside this component's scope, so its class is styled globally */
+  :global(img.plate-img), .plate { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; border-radius: 10px; background: var(--paper-deep); }
+  :global(img.plate-img.wide), .plate.wide { aspect-ratio: 16 / 9; }
   .placeholder {
-    --tone: var(--teal);
     position: relative; display: grid; place-items: center; container-type: inline-size;
-    background: radial-gradient(circle at 50% 42%, #fffaf0 0%, var(--paper-deep) 70%);
+    background: radial-gradient(circle at 50% 42%, var(--card) 0%, var(--paper-deep) 75%);
     box-shadow: inset 0 0 0 1px var(--line), inset 0 0 0 6px var(--paper), inset 0 0 0 7px color-mix(in srgb, var(--tone) 45%, transparent);
   }
-  .placeholder[data-region="meadows"] { --tone: #5d8a3a; }
-  .placeholder[data-region="rootholds"] { --tone: #6b4e36; }
-  .placeholder[data-region="gardens"] { --tone: #7fa84a; }
-  .placeholder[data-region="crags"] { --tone: #7d766c; }
-  .placeholder[data-region="lagoons"] { --tone: #178f84; }
-  .placeholder[data-region="sky"] { --tone: #4f86b8; }
-  .placeholder[data-region="rim"] { --tone: #b8552f; }
-  .placeholder[data-region="storm"] { --tone: #4b3f78; }
-  .initial { font-family: var(--font-display); font-size: 38cqi; font-weight: 600; color: color-mix(in srgb, var(--tone) 70%, var(--ink)); line-height: 1; }
-  @container (max-width: 160px) { .note { display: none; } }
-  .note { position: absolute; bottom: 10%; font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft); }
+  .initial { font-family: var(--font-display); font-size: 38cqi; font-weight: 600; line-height: 1; color: color-mix(in srgb, var(--tone) 70%, var(--ink)); }
+  .wide .initial { font-size: 20cqi; }
 </style>

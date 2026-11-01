@@ -13,9 +13,11 @@
     "preview": "bunx serve@14.2.4 dist/site -l 4321",
     "art:image": "bun scripts/gen-image.ts",
     "art:3d": "bun scripts/meshy.ts",
-    "art:bestiary": "bun scripts/bestiary-art.ts"
+    "art:bestiary": "bun scripts/handbook-art.ts --only bestiary",
+    "art:handbook": "bun scripts/handbook-art.ts"
   },
   "devDependencies": {
-    "@gltf-transform/cli": "4.5.1"
+    "@gltf-transform/cli": "4.5.1",
+    "sharp": "0.35.5"
   }
 }

@@ -1,0 +1,75 @@
+---
+import Base from "../../../layouts/Base.astro";
+import CardGrid from "../../../components/CardGrid.astro";
+import ShardMap from "../../../components/ShardMap.astro";
+import { catalogues, type Catalogue } from "../../../lib/catalogues";
+import { glossary } from "../../../data/glossary";
+import { chapters } from "../../../data/chapters.mjs";
+import { base, sortName } from "../../../lib/text";
+
+export function getStaticPaths() {
+  return catalogues.map((c) => ({ params: { kind: c.slug }, props: { cat: c } }));
+}
+const { cat } = Astro.props as { cat: Catalogue };
+const chapterOf = (slug: string) => chapters.find((c) => c.slug === slug);
+const terms = [...glossary].sort((a, b) => sortName(a.term).localeCompare(sortName(b.term)));
+const letters = [...new Set(terms.map((t) => sortName(t.term)[0].toUpperCase()))];
+const anchor = (t: string) => t.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+---
+<Base title={`${cat.title} · game0 handbook`} description={cat.summary} section="catalogues">
+  <header class="wrap head">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href={`${base}/catalogue/`}>Catalogues</a></nav>
+    <p class="eyebrow">{cat.kicker}</p>
+    <h1>{cat.title}</h1>
+    <p class="lede">{cat.summary}</p>
+  </header>
+
+  <div class="wrap">
+    {(cat.slug === "isles" || cat.slug === "winds") && (
+      <section class="map"><ShardMap compact /></section>
+    )}
+
+    {cat.slug === "glossary" ? (
+      <>
+        <nav class="letters" aria-label="Letters">{letters.map((l) => <a href={`#letter-${l}`}>{l}</a>)}</nav>
+        {letters.map((l) => (
+          <section class="letter" id={`letter-${l}`}>
+            <h2>{l}</h2>
+            <dl>
+              {terms.filter((t) => sortName(t.term)[0].toUpperCase() === l).map((t) => (
+                <div id={anchor(t.term)}>
+                  <dt>{t.term}</dt>
+                  <dd>{t.definition} {chapterOf(t.chapter) && <a href={`${base}/${t.chapter}/`}>{chapterOf(t.chapter)!.title} →</a>}</dd>
+                </div>
+              ))}
+            </dl>
+          </section>
+        ))}
+      </>
+    ) : (
+      <CardGrid cards={cat.cards} filters={cat.filters} label={cat.title} />
+    )}
+  </div>
+</Base>
+
+<style>
+  .head { padding-top: clamp(1.5rem, 5vw, 3rem); padding-bottom: 1rem; }
+  .crumbs a { font-size: 0.88rem; color: var(--ink-soft); text-decoration: none; }
+  .crumbs a:hover { color: var(--teal); }
+  .crumbs a::before { content: "← "; }
+  .eyebrow { margin-top: 1.25rem; }
+  h1 { font-size: clamp(2.4rem, 7vw, 4rem); margin: 0.2rem 0 0.5rem; }
+  .lede { max-width: 40rem; margin: 0; color: var(--ink-soft); font-size: 1.1rem; }
+  .map { margin: 1rem 0 2rem; }
+  .letters { position: sticky; top: 3.6rem; z-index: 5; display: flex; flex-wrap: wrap; gap: 0.2rem; padding: 0.6rem 0; background: color-mix(in srgb, var(--paper) 92%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+  .letters a { display: grid; place-items: center; min-width: 2.2rem; height: 2.2rem; border-radius: 8px; font-family: var(--font-display); font-weight: 600; color: var(--ink); text-decoration: none; }
+  .letters a:hover { background: var(--card); color: var(--teal); }
+  .letter { scroll-margin-top: 7rem; }
+  .letter h2 { font-size: 2rem; color: var(--rule); margin: 2rem 0 0.5rem; }
+  dl { margin: 0; display: grid; gap: 0.2rem; }
+  dl div { padding: 0.8rem 0; border-bottom: 1px solid var(--line); scroll-margin-top: 7rem; }
+  dl div:target { background: color-mix(in srgb, var(--gold) 12%, transparent); border-radius: 8px; padding-inline: 0.75rem; }
+  dt { font-family: var(--font-display); font-weight: 600; font-size: 1.2rem; }
+  dd { margin: 0.2rem 0 0; color: var(--ink-soft); max-width: 46rem; }
+  dd a { font-size: 0.85rem; font-weight: 600; text-decoration: none; white-space: nowrap; }
+</style>

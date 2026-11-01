@@ -1,0 +1,162 @@
+---
+import { getEntry, render } from "astro:content";
+import Base from "../layouts/Base.astro";
+import Plate from "../components/Plate.astro";
+import ShardMap from "../components/ShardMap.astro";
+import SailToy from "../components/SailToy.astro";
+import PeoplesStage from "../components/PeoplesStage.astro";
+import LivingShard from "../components/LivingShard.astro";
+import { chapters } from "../data/chapters.mjs";
+import { catalogue } from "../lib/catalogues";
+import { base } from "../lib/text";
+
+export function getStaticPaths() {
+  return chapters.map((c, i) => ({ params: { chapter: c.slug }, props: { index: i } }));
+}
+
+const { index } = Astro.props as { index: number };
+const chapter = chapters[index];
+const prev = chapters[index - 1];
+const next = chapters[index + 1];
+const docs = await Promise.all(chapter.docs.map(async (id) => {
+  const entry = await getEntry("concept", id);
+  if (!entry) throw new Error(`Missing concept doc ${id}`);
+  const { Content, headings } = await render(entry);
+  return { id, Content, headings, title: headings.find((h) => h.depth === 1)?.text ?? id };
+}));
+const toc = docs.flatMap((d, i) => [
+  ...(i > 0 ? [{ slug: `doc-${i}`, text: d.title, depth: 1 }] : []),
+  ...d.headings.filter((h) => h.depth === 2),
+]);
+const related = chapter.catalogues.map(catalogue);
+const demoTitle = { map: "Explore the First Shard", peoples: "Meet the peoples", sail: "Trim a sail", shard: "Watch a living shard" } as const;
+---
+<Base title={`${chapter.title} · game0 handbook`} description={chapter.summary} section="chapters">
+  <header class="hero">
+    <Plate art={`chapters/${chapter.slug}`} name={chapter.title} sizes="100vw" wide eager class="cover" />
+    <div class="wrap hero-text">
+      <p class="num">Chapter {chapter.number}</p>
+      <h1>{chapter.title}</h1>
+      <p class="lede">{chapter.summary}</p>
+    </div>
+  </header>
+
+  <div class="wrap layout" data-swipe data-prev={prev && `${base}/${prev.slug}/`} data-next={next && `${base}/${next.slug}/`}>
+    <aside class="toc">
+      <details open>
+        <summary>In this chapter</summary>
+        <ol>
+          {toc.map((h) => <li class={h.depth === 1 ? "doc" : ""}><a href={`#${h.slug}`}>{h.text}</a></li>)}
+        </ol>
+      </details>
+    </aside>
+
+    <article class="body">
+      {chapter.demo && (
+        <section class="demo" id="explore" aria-label={demoTitle[chapter.demo]}>
+          <p class="eyebrow">Try it</p>
+          <h2 class="demo-title">{demoTitle[chapter.demo]}</h2>
+          {chapter.demo === "map" && <ShardMap />}
+          {chapter.demo === "peoples" && <div class="stage"><PeoplesStage /></div>}
+          {chapter.demo === "sail" && <SailToy />}
+          {chapter.demo === "shard" && <LivingShard />}
+        </section>
+      )}
+
+      {docs.map((d, i) => (
+        <div class:list={["prose", { sub: i > 0 }]} id={i > 0 ? `doc-${i}` : undefined}>
+          <d.Content />
+        </div>
+      ))}
+
+      {related.length > 0 && (
+        <section class="related">
+          <h2>Catalogues for this chapter</h2>
+          <ul>
+            {related.map((c) => (
+              <li><a href={`${base}/catalogue/${c.slug}/`}><span class="eyebrow">{c.kicker}</span><b>{c.title}</b><span class="count">{c.cards.length} entries</span></a></li>
+            ))}
+          </ul>
+        </section>
+      )}
+    </article>
+  </div>
+
+  <nav class="wrap pager" aria-label="Chapters">
+    {prev ? <a href={`${base}/${prev.slug}/`}><small>← Chapter {prev.number}</small>{prev.title}</a> : <span></span>}
+    {next ? <a class="next" href={`${base}/${next.slug}/`}><small>Chapter {next.number} →</small>{next.title}</a> : <span></span>}
+  </nav>
+</Base>
+
+<script>
+  // Swipe left or right on a chapter to move to the next or previous one
+  const el = document.querySelector<HTMLElement>("[data-swipe]");
+  let start: { x: number; y: number; t: number } | null = null;
+  el?.addEventListener("touchstart", (e) => {
+    const target = e.target as HTMLElement;
+    start = target.closest(".demo, .table-wrap, input, canvas, svg") ? null : { x: e.touches[0].clientX, y: e.touches[0].clientY, t: Date.now() };
+  }, { passive: true });
+  el?.addEventListener("touchend", (e) => {
+    if (!start) return;
+    const dx = e.changedTouches[0].clientX - start.x, dy = e.changedTouches[0].clientY - start.y;
+    if (Math.abs(dx) > 90 && Math.abs(dx) > Math.abs(dy) * 2.5 && Date.now() - start.t < 600) {
+      const to = dx < 0 ? el.dataset.next : el.dataset.prev;
+      if (to) location.href = to;
+    }
+    start = null;
+  }, { passive: true });
+</script>
+
+<style>
+  .hero { position: relative; isolation: isolate; color: #fff; }
+  .hero :global(.cover) { width: 100%; height: clamp(320px, 56vh, 560px); aspect-ratio: auto; border-radius: 0; object-fit: cover; }
+  .hero::after { content: ""; position: absolute; inset: 0; z-index: 0; background: linear-gradient(180deg, #0b141f00 30%, #0b141fcc 100%); pointer-events: none; }
+  .hero-text { position: absolute; left: 0; right: 0; bottom: 0; z-index: 1; padding-bottom: clamp(1.5rem, 4vw, 2.75rem); }
+  .num { margin: 0; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-light); }
+  h1 { font-size: clamp(2.6rem, 8vw, 5rem); margin: 0.2rem 0 0.6rem; color: #fff; text-shadow: 0 2px 20px #0008; }
+  .lede { max-width: 42rem; margin: 0; font-size: clamp(1rem, 2.2vw, 1.2rem); color: #f3ecd9; text-shadow: 0 1px 10px #0009; }
+
+  .layout { display: grid; grid-template-columns: 15rem minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 4rem); padding-top: 2.5rem; }
+  .toc details { position: sticky; top: 5rem; }
+  .toc summary { list-style: none; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); cursor: pointer; margin-bottom: 0.6rem; }
+  .toc summary::-webkit-details-marker { display: none; }
+  .toc ol { list-style: none; margin: 0; padding: 0 0 0 0.9rem; border-left: 2px solid var(--line); display: grid; gap: 0.15rem; }
+  .toc li.doc { margin-top: 0.8rem; font-weight: 600; }
+  .toc a { display: block; padding: 0.3rem 0; color: var(--ink-soft); text-decoration: none; font-size: 0.92rem; line-height: 1.35; }
+  .toc a:hover { color: var(--teal); }
+  .body { min-width: 0; max-width: 46rem; }
+
+  .demo { margin-bottom: 2.5rem; padding: clamp(1rem, 3vw, 1.5rem); border-radius: 16px; background: var(--card); box-shadow: var(--shadow), 0 0 0 1px var(--line); }
+  .demo-title { font-size: 1.5rem; margin: 0.2rem 0 1rem; }
+  .stage { position: relative; height: clamp(320px, 55vh, 520px); border-radius: 12px; overflow: hidden; background: linear-gradient(180deg, #cfe6f0, #f4ead4); }
+
+  .prose.sub { margin-top: 3.5rem; padding-top: 2rem; border-top: 1px solid var(--line); }
+  .prose.sub :global(> h1:first-child) { display: block; font-size: clamp(1.8rem, 4vw, 2.4rem); margin: 0 0 1rem; scroll-margin-top: 5rem; }
+
+  .related { margin-top: 3.5rem; }
+  .related h2 { font-size: 1.4rem; }
+  .related ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr)); gap: 0.8rem; }
+  .related a { display: grid; gap: 0.2rem; padding: 1rem 1.1rem; border-radius: 12px; background: var(--card); box-shadow: 0 0 0 1px var(--line); text-decoration: none; color: var(--ink); transition: transform 0.15s, box-shadow 0.15s; }
+  .related a:hover { transform: translateY(-2px); box-shadow: var(--shadow), 0 0 0 1px var(--gold); }
+  .related b { font-family: var(--font-display); font-size: 1.25rem; }
+  .related .count { font-size: 0.82rem; color: var(--ink-soft); }
+
+  .pager { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--line); }
+  .pager a { display: block; padding: 0.6rem 0; text-decoration: none; color: var(--ink); font-family: var(--font-display); font-weight: 600; font-size: 1.25rem; }
+  .pager a:hover { color: var(--teal); }
+  .pager small { display: block; font-family: var(--font-body); font-size: 0.74rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); }
+  .pager .next { text-align: right; }
+
+  @media (max-width: 900px) {
+    .layout { grid-template-columns: 1fr; padding-top: 1.25rem; }
+    .toc details { position: static; padding: 0.8rem 1rem; border-radius: 12px; background: var(--card); box-shadow: 0 0 0 1px var(--line); }
+    .toc summary { margin: 0; }
+    .toc summary::after { content: " ▾"; }
+    .toc details[open] summary { margin-bottom: 0.6rem; }
+  }
+</style>
+
+<script>
+  // Collapse the contents list on phones so the chapter starts right away
+  if (matchMedia("(max-width: 900px)").matches) document.querySelector(".toc details")?.removeAttribute("open");
+</script>

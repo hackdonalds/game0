@@ -1,0 +1,10 @@
+{
+  "prompt": "Plate for an illustrated field guide: a floating meadow isle covered in a bustling market town of colourful cloth awnings and timber stalls, a tall hall with a carved order board, windmills on the edge, many small sailships docked along a quay, seen from a slight aerial angle. Soft vignette fading to warm parchment at the edges. Style: hand-painted stylized game art, painterly, soft lighting with gentle rim light, softer muted colours with gentle saturation, epic and luminous fantasy, never grim. No text, no labels, no border, no frame.",
+  "model": "openai/gpt-image-2.5-sunburst",
+  "aspect": "1:1",
+  "quality": "medium",
+  "refs": [
+    "art/references/world-tree-floating-isle.webp"
+  ],
+  "createdAt": "2026-11-01T14:17:32.272Z"
+}

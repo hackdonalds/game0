@@ -1,0 +1,10 @@
+{
+  "prompt": "Plate for an illustrated field guide: dark red-brown yew planks with a tight wavy grain, stacked under a shadowy evergreen with golden light through the needles. Soft vignette fading to warm parchment at the edges. Style: hand-painted stylized game art, painterly, soft lighting with gentle rim light, softer muted colours with gentle saturation, epic and luminous fantasy, never grim. No text, no labels, no border, no frame.",
+  "model": "openai/gpt-image-2.5-sunburst",
+  "aspect": "1:1",
+  "quality": "medium",
+  "refs": [
+    "art/references/world-tree-floating-isle.webp"
+  ],
+  "createdAt": "2026-11-01T14:24:07.671Z"
+}

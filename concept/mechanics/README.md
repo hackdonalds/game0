@@ -10,7 +10,7 @@ Classless, skill-based progression with action combat, open-world risk and a pla
 | Everything is a skill | No separation between magic and other skills. Wind magic, swordplay, cooking and sailing all work the same way |
 | Resources | **No mana.** One **stamina** bar for everything (swinging, casting, dodging, sprinting), refilling quickly at rest. Strong techniques also have their own **cooldowns** |
 | Learning | Skills are learned at a **source**: a trainer, a book, or a place tied to the skill. At **75** a player can **become a trainer**; at **100** they can **write books** that teach the skill |
-| Skill count | About 35 skills across combat, magic, gathering, crafting and travel (list below) |
+| Skill count | 36 skills across combat, magic, gathering, crafting and travel (list below) |
 | Abilities | **Learned techniques** from trainers and books, unlocked at skill thresholds. **6 technique slots**, swapped outside combat |
 | Controls | **Hybrid**: free-aim attacks by default, with an optional soft lock-on toggle (good for gamepad) |
 | Risk zones | **Three tiers**, see below |
@@ -19,7 +19,7 @@ Classless, skill-based progression with action combat, open-world risk and a pla
 | Group PvE | **Sinking-isle events** and **world bosses** from storm surges. See [monsters](../monsters/README.md) |
 | Sinking | Slowed by Rootborn tending the ancient trees; a sinking isle can't be saved. Rare **isle births** add new land as world events |
 | Gear | Wears down with use, as well as on death. Worn gear is repaired by crafters or replaced |
-| Ships | Three sizes; can be attacked and cargo looted. Sails wear from attacks, weather and distance travelled. See [sailing](#sailing) |
+| Ships | Three sizes; can be attacked and cargo looted. Sails wear from attacks, weather and distance travelled. See [sailing](../sailing/README.md) |
 | Quests and achievements | Quests give direction and story; achievements record what a character has done. No endgame. See [quests](#quests) |
 | Gear tiers | Set by **material** (for example copper, iron, skysteel, relic). Crafting skill sets the **quality** within a tier |
 | First hours | Start in your people's homeland. See [first hours](#first-hours) |
@@ -63,20 +63,6 @@ Each people has cultural affinities but no restrictions. For example, Skerrin le
 - **Fight**: world bosses and sinking-isle events drop techniques, relic gear and rare materials.
 - **Sinking-isle events**: an isle's last days on a shard. Evacuate settlers, salvage relics and resources, and fight for the spoils before the isle drops into the storm layer.
 
-## Sailing
-
-| Ship | Aboard | Steered by |
-| --- | --- | --- |
-| **Skiff** | Up to 5 | 1: one person steers and trims the sails |
-| **Cutter** | Up to 10 | 1: one person steers and trims the sails |
-| **Galleon** | Up to 100 | 2: a helmsman steers while a sailmaster works the sails |
-
-
-- **Realistic sail simulation.** Ships move by sail trim, heading against the wind, and hull drag. Tacking, running and reaching all feel different, and a well-trimmed ship beats a badly handled one.
-- **Enchanted wind directions.** The sky has wind currents with set directions and strengths. Accord lanes have charted, steady winds. Wild routes have stronger, shifting winds: faster, but in open-PvP space.
-- **Sail wear.** Sails wear from attacks, weather (storms, gusts) and distance travelled. Worn sails catch less wind, and Sailweavers re-enchant them.
-- **Ship combat.** Ships can be attacked anywhere PvP is allowed. A disabled ship's cargo can be looted.
-
 ## Quests
 
 Four kinds, all simple to pick up:
@@ -101,5 +87,3 @@ Four kinds, all simple to pick up:
 - Which sources teach which skills, and whether some skills can only be learned in certain places.
 - Base sinking cadence per shard, and how much tending slows it.
 - How often isles are born, and what triggers the birth.
-- Ship combat weapons (spells, bows, boarding) and how a ship is disabled.
-- Can ships themselves be destroyed or captured, or only their cargo taken?

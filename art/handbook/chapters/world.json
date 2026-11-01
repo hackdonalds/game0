@@ -1,0 +1,10 @@
+{
+  "prompt": "Chapter cover illustration for a fantasy world handbook: a dramatic view down past the edge of a floating isle into a churning living storm layer far below with lightning, ancient drowned ruins faintly visible through gaps in the clouds, and an isle slowly sinking into it. Wide cinematic composition with calm space in the upper third. Style: hand-painted stylized game art, painterly, soft lighting with gentle rim light, softer muted colours with gentle saturation, epic and luminous fantasy, never grim. No text, no labels, no border, no frame.",
+  "model": "openai/gpt-image-2.5-sunburst",
+  "aspect": "16:9",
+  "quality": "high",
+  "refs": [
+    "art/references/world-tree-floating-isle.webp"
+  ],
+  "createdAt": "2026-11-01T14:13:48.788Z"
+}

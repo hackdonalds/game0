@@ -1,301 +1,148 @@
 ---
-import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import Base from "../layouts/Base.astro";
-import PeoplesStage from "../components/PeoplesStage.astro";
-import { peoples } from "../data/peoples";
-import marketTown from "../../../../art/concept/style-test-01-market-town.png";
-import adventurer from "../../../../art/concept/style-test-02-adventurer.png";
-import sailship from "../../../../art/concept/style-test-03-airship.png";
-import skerrinSheet from "../../../../art/concept/turnaround-skerrin.png";
+import Plate from "../components/Plate.astro";
+import { chapters } from "../data/chapters.mjs";
+import { catalogues } from "../lib/catalogues";
+import { decisionLog } from "../lib/decisions";
+import { base } from "../lib/text";
 
-type Demo = { title: string; summary: string };
-const demos = Object.entries(import.meta.glob<Demo>("../../../../demos/*/demo.json", { eager: true, import: "default" }))
-  .map(([path, meta]) => ({ slug: path.split("/").at(-2)!, ...meta }));
-const demoArt: Record<string, { src: ImageMetadata; position: string }> = {
-  creator: { src: skerrinSheet, position: "18% 30%" },
-  "floating-isle": { src: adventurer, position: "center" },
-};
-const posts = (await getCollection("devlog")).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
-const base = import.meta.env.BASE_URL.replace(/\/$/, "");
-const formatDate = (d: Date) => d.toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
-
-const features = [
-  { title: "No classes", text: "About 35 skills grow as you use them, from swords and wind magic to cooking and sailing. Learn them from trainers, books and places of power. Skills you neglect fade slowly, but never below half their peak." },
-  { title: "Six techniques", text: "Learn techniques from trainers and books, then slot any six. Change your role by changing your loadout, not your character." },
-  { title: "Risk you choose", text: "Accord towns are safe. Sky lanes and home isles are guarded. The wild isles are open PvP, and whatever you carry, you can lose." },
-  { title: "Craft and haul", text: "Every town has its own market. Craft, load your sailship and run goods between isles, the faster wild routes for more profit, the guarded lanes for safety." },
-  { title: "Sinking isles", text: "When an isle starts to sink, the whole shard races to evacuate it, salvage its riches and fight over the spoils before it drops into the storm." },
-  { title: "Make them yours", text: "Horns, masks, shell gardens, bark growths and tail rings. Each people's signature look grows and changes as you play." },
+const log = await decisionLog();
+const decided = log.reduce((n, d) => n + d.decisions.length, 0);
+const open = log.reduce((n, d) => n + d.open.length, 0);
+const entries = catalogues.reduce((n, c) => n + c.cards.length, 0);
+const posts = (await getCollection("devlog")).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()).slice(0, 3);
+const fmt = (d: Date) => d.toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
+const demos = [
+  { title: "The First Shard", text: "Pan and pinch the world map; tap any isle.", href: `${base}/world/#explore`, art: "chapters/world" },
+  { title: "Meet the peoples", text: "Turn the five peoples on a carousel.", href: `${base}/peoples/`, art: "chapters/peoples" },
+  { title: "Trim a sail", text: "Steer against the wind and find your best speed.", href: `${base}/sailing/`, art: "chapters/sailing" },
+  { title: "A living shard", text: "5,000 NPCs at three levels of detail.", href: `${base}/simulation/`, art: "chapters/simulation" },
 ];
-const initial = Math.floor(peoples.length / 2);
 ---
-<Base title="game0 · a sky-isle MMORPG">
-  <header class="hero">
-    <Image class="hero-art" src={sailship} alt="" widths={[960, 1536]} sizes="100vw" loading="eager" fetchpriority="high" />
-    <nav class="top">
-      <a class="brand" href={`${base}/`}>game0</a>
-      <div class="links">
-        <a href="#world">World</a>
-        <a href="#peoples">Peoples</a>
-        <a href="#play">Play</a>
-        <a href={`${base}/bestiary/`}>Bestiary</a>
-        <a href="#demos">Demos</a>
-        <a href="#devlog">Devlog</a>
-      </div>
-    </nav>
-    <div class="hero-copy">
-      <p class="eyebrow">A sky-isle MMORPG · in development</p>
+<Base title="game0 handbook" section="home">
+  <header class="cover">
+    <Plate art="chapters/vision" name="The sky isles" sizes="100vw" wide eager class="cover-art" />
+    <div class="wrap cover-text">
+      <p class="kicker">The handbook</p>
       <h1>The isles are sinking.<br /><em>Five peoples share what is left.</em></h1>
-      <p class="lede">A sandbox of floating islands above a drowned world. Grow any skill, sail your own trade ship, and decide how much you are willing to lose.</p>
+      <p class="lede">The world, the peoples, the rules and the creatures of game0, a sandbox of floating isles above a drowned world. Written down before a line of game code, so whatever we build it with, this is the game.</p>
       <div class="actions">
-        <a class="btn primary" href={`${base}/demos/creator/`}>Try the Peoples Creator</a>
-        <a class="btn ghost" href="#world">Explore the world ↓</a>
+        <a class="btn primary" href={`${base}/vision/`}>Start reading</a>
+        <a class="btn ghost" href={`${base}/catalogue/`}>Browse catalogues</a>
       </div>
     </div>
   </header>
 
-  <main>
-    <section id="world" class="world wrap">
-      <div class="world-copy">
-        <p class="eyebrow">The world</p>
-        <h2>Above the drowned world</h2>
-        <p class="big">Nobody knows why the isles float. Scholars argue, priests pray, and expeditions vanish looking for the answer.</p>
-        <p>Below the clouds, under a storm that never ends, lie the ruins of the world that came before. Every so often an isle loses its lift and settles into that storm, so land is shrinking and every isle is worth fighting for.</p>
-        <p>The five peoples hold together under the <strong>Tether Accord</strong>, a fragile pact that keeps the towns neutral and the sky lanes open. Old grudges still run deep beneath it.</p>
-      </div>
-      <figure class="world-art">
-        <Image src={marketTown} alt="A market town on a floating isle, with a docked airship and waterfalls spilling into the clouds" widths={[640, 1024, 1536]} sizes="(max-width: 900px) 100vw, 58vw" />
-        <figcaption>A market town under the Tether Accord</figcaption>
-      </figure>
-    </section>
+  <section class="wrap stats" aria-label="The handbook in numbers">
+    <a href={`${base}/chapters/`}><b>{chapters.length}</b><span>chapters</span></a>
+    <a href={`${base}/catalogue/`}><b>{entries}</b><span>catalogue entries</span></a>
+    <a href={`${base}/decisions/`}><b>{decided}</b><span>decisions made</span></a>
+    <a href={`${base}/decisions/#open`}><b>{open}</b><span>questions open</span></a>
+  </section>
 
-    <section id="peoples" class="peoples">
-      <div class="wrap peoples-head">
-        <p class="eyebrow">The peoples</p>
-        <h2>Five peoples, one sky</h2>
-      </div>
-      <div class="stage">
-        <PeoplesStage />
-      </div>
-      <div class="wrap">
-        <div class="tabs" role="tablist" aria-label="Peoples">
-          {peoples.map((p, i) => (
-            <button role="tab" id={`tab-${p.id}`} aria-controls={`panel-${p.id}`} aria-selected={i === initial ? "true" : "false"} tabindex={i === initial ? 0 : -1} data-index={i}>{p.name}</button>
-          ))}
-        </div>
-        {peoples.map((p, i) => (
-          <article class="people" role="tabpanel" id={`panel-${p.id}`} aria-labelledby={`tab-${p.id}`} hidden={i !== initial}>
-            <div>
-              <h3>{p.name}</h3>
-              <p class="homeland">{p.homeland}</p>
-            </div>
-            <p class="blurb">{p.blurb}</p>
-            <p class="known"><span>Known as</span>{p.known}</p>
-          </article>
-        ))}
-      </div>
-    </section>
+  <section class="wrap block">
+    <div class="block-head"><p class="eyebrow">Read</p><h2>Chapters</h2><a href={`${base}/chapters/`}>All chapters →</a></div>
+    <ol class="chapters">
+      {chapters.map((c) => (
+        <li>
+          <a href={`${base}/${c.slug}/`}>
+            <Plate art={`chapters/${c.slug}`} name={c.title} sizes="(max-width: 640px) 85vw, 380px" wide />
+            <span class="ch-text"><span class="num">{String(c.number).padStart(2, "0")}</span><b>{c.title}</b><span class="kick">{c.kicker}</span></span>
+          </a>
+        </li>
+      ))}
+    </ol>
+  </section>
 
-    <section id="play" class="play">
-      <div class="wrap play-grid">
-        <div class="play-head">
-          <p class="eyebrow">How you play</p>
-          <h2>A sandbox with something to lose</h2>
-          <p>No levels to grind past, no class to regret. What you can do grows from what you do, and what you carry is only yours until someone takes it.</p>
-        </div>
-        <ol class="features">
-          {features.map((f) => (
-            <li>
-              <h3>{f.title}</h3>
-              <p>{f.text}</p>
-            </li>
-          ))}
-        </ol>
-      </div>
-    </section>
+  <section class="wrap block">
+    <div class="block-head"><p class="eyebrow">Look up</p><h2>Catalogues</h2><a href={`${base}/catalogue/`}>All catalogues →</a></div>
+    <ul class="shelf">
+      {catalogues.map((c) => (
+        <li><a href={`${base}/catalogue/${c.slug}/`}>
+          {c.cover ? <Plate art={c.cover} name={c.title} sizes="200px" /> : <span class="blank" data-kind={c.slug}></span>}
+          <b>{c.title}</b><span>{c.cards.length} entries</span>
+        </a></li>
+      ))}
+    </ul>
+  </section>
 
-    <section id="demos" class="wrap demos">
-      <p class="eyebrow">Playable now</p>
-      <h2>Prototypes from the workshop</h2>
-      <ul class="demo-list">
-        {demos.map((d) => {
-          const art = demoArt[d.slug];
-          return (
-            <li>
-              <a href={`${base}/demos/${d.slug}/`}>
-                {art && <Image src={art.src} alt="" widths={[480, 960]} sizes="(max-width: 800px) 100vw, 50vw" style={`object-position: ${art.position}`} />}
-                <div>
-                  <h3>{d.title} <span aria-hidden="true">→</span></h3>
-                  <p>{d.summary}</p>
-                </div>
-              </a>
-            </li>
-          );
-        })}
-      </ul>
-    </section>
+  <section class="wrap block">
+    <div class="block-head"><p class="eyebrow">Try</p><h2>Mini demos</h2><a href={`${base}/workshop/`}>Workshop →</a></div>
+    <ul class="demos">
+      {demos.map((d) => (
+        <li><a href={d.href}><Plate art={d.art} name={d.title} sizes="(max-width: 640px) 80vw, 300px" wide /><b>{d.title}</b><span>{d.text}</span></a></li>
+      ))}
+    </ul>
+  </section>
 
-    <section id="devlog" class="wrap devlog">
-      <p class="eyebrow">Devlog</p>
-      <h2>Notes from the build</h2>
+  {posts.length > 0 && (
+    <section class="wrap block">
+      <div class="block-head"><p class="eyebrow">News</p><h2>Devlog</h2><a href={`${base}/devlog/`}>All posts →</a></div>
       <ul class="posts">
-        {posts.map((post) => (
-          <li>
-            <a href={`${base}/devlog/${post.id}/`}>
-              <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
-              <div>
-                <h3>{post.data.title}</h3>
-                <p>{post.data.summary}</p>
-              </div>
-            </a>
-          </li>
-        ))}
+        {posts.map((p) => <li><a href={`${base}/devlog/${p.id}/`}><time datetime={p.data.date.toISOString()}>{fmt(p.data.date)}</time><b>{p.data.title}</b><span>{p.data.summary}</span></a></li>)}
       </ul>
     </section>
-  </main>
-
-  <footer>
-    <div class="wrap">
-      <p class="brand">game0</p>
-      <p>A sky-isle MMORPG in early concept development. Everything here is a work in progress.</p>
-    </div>
-  </footer>
+  )}
 </Base>
 
-<script>
-  const tabs = [...document.querySelectorAll<HTMLButtonElement>(".tabs [role=tab]")];
-  const select = (tab: HTMLButtonElement) => {
-    for (const t of tabs) {
-      const on = t === tab;
-      t.setAttribute("aria-selected", String(on));
-      t.tabIndex = on ? 0 : -1;
-      document.getElementById(t.getAttribute("aria-controls")!)!.hidden = !on;
-    }
-    dispatchEvent(new CustomEvent("people:focus", { detail: Number(tab.dataset.index) }));
-  };
-  tabs.forEach((tab, i) => {
-    tab.addEventListener("click", () => select(tab));
-    tab.addEventListener("keydown", (e) => {
-      const step = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
-      if (!step) return;
-      const next = tabs[(i + step + tabs.length) % tabs.length];
-      next.focus();
-      select(next);
-    });
-  });
-</script>
-
 <style>
-  .wrap { padding-inline: var(--gutter); max-width: calc(1240px + 2 * var(--gutter)); margin-inline: auto; }
-  section { padding-block: clamp(4rem, 10vw, 8rem); }
-  h2 { font-size: clamp(2.2rem, 5vw, 3.6rem); margin: 0.4rem 0 1.5rem; }
-  .eyebrow { margin: 0; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--teal); }
-
-  /* Hero */
-  .hero { position: relative; min-height: 100svh; display: flex; flex-direction: column; color: #fff; background: var(--night); overflow: hidden; isolation: isolate; }
-  .hero-art { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 40% center; z-index: -2; animation: drift 40s ease-in-out infinite alternate; }
-  .hero::before { content: ""; position: absolute; inset: 0; z-index: -1; background:
-      linear-gradient(to top, #0d1b29e6 0%, #0d1b2980 28%, #0d1b2900 55%),
-      linear-gradient(to right, #0d1b29b3 0%, #0d1b2940 40%, #0d1b2900 62%),
-      linear-gradient(to bottom, #0d1b2999 0%, #0d1b2900 18%); }
-  @keyframes drift { from { transform: scale(1.04) translateX(0); } to { transform: scale(1.1) translateX(-1.5%); } }
-  @media (prefers-reduced-motion: reduce) { .hero-art { animation: none; } }
-
-  .top { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; padding: 1.25rem var(--gutter); }
-  .top .brand { font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; color: #fff; text-decoration: none; letter-spacing: -0.01em; }
-  .top .links { display: flex; gap: clamp(0.9rem, 2vw, 1.75rem); }
-  .top .links a { color: #fffd; text-decoration: none; font-size: 0.92rem; font-weight: 500; }
-  .top .links a:hover { color: var(--gold-light); }
-
-  .hero-copy { margin-top: auto; padding: 0 var(--gutter) clamp(3rem, 9vh, 6rem); max-width: calc(46rem + 2 * var(--gutter)); }
-  .hero .eyebrow { color: var(--teal-glow); }
-  .hero h1 { font-size: clamp(2.6rem, 6.4vw, 5.4rem); margin: 0.9rem 0 1.25rem; font-weight: 600; text-shadow: 0 2px 30px #0008; }
-  .hero h1 em { font-style: italic; font-weight: 400; color: var(--gold-light); }
-  .lede { font-size: clamp(1.05rem, 1.6vw, 1.25rem); max-width: 34rem; color: #ffffffe0; margin: 0 0 2rem; }
-  .actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
-  .btn { display: inline-flex; align-items: center; padding: 0.85rem 1.4rem; border-radius: 999px; font-weight: 600; text-decoration: none; transition: transform 0.15s ease, background 0.15s ease; }
-  .btn:hover { transform: translateY(-1px); }
-  .btn.primary { background: var(--gold-light); color: var(--ink); box-shadow: 0 8px 30px #f2c46c40; }
-  .btn.primary:hover { background: #ffd385; }
-  .btn.ghost { color: #fff; border: 1px solid #ffffff55; backdrop-filter: blur(6px); background: #ffffff10; }
+  .cover { position: relative; isolation: isolate; color: #fff; }
+  .cover :global(.cover-art) { width: 100%; height: clamp(520px, 86vh, 820px); aspect-ratio: auto; border-radius: 0; object-fit: cover; }
+  .cover::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, #0b141f99 0%, #0b141f00 65%), linear-gradient(180deg, #0b141f22 0%, #0b141f10 35%, #0b141fdd 100%); pointer-events: none; }
+  .cover-text { position: absolute; left: 0; right: 0; bottom: 0; z-index: 1; padding-bottom: clamp(2rem, 6vw, 4.5rem); }
+  .kicker { text-shadow: 0 1px 8px #000c; margin: 0 0 0.6rem; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-light); }
+  h1 { font-size: clamp(2.3rem, 7vw, 5rem); margin: 0; max-width: 16ch; color: #fff; text-shadow: 0 2px 24px #0009; }
+  h1 em { font-style: italic; font-weight: 400; color: #f3e3bd; }
+  .lede { max-width: 38rem; margin: 1rem 0 1.5rem; font-size: clamp(1rem, 2.2vw, 1.15rem); color: #f3ecd9; text-shadow: 0 1px 10px #000a; }
+  .actions { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+  .btn { display: inline-flex; align-items: center; min-height: 48px; padding: 0.7rem 1.4rem; border-radius: 999px; font-weight: 600; text-decoration: none; }
+  .btn.primary { background: var(--gold-light); color: #1d2733; }
+  .btn.primary:hover { background: #fff; }
+  .btn.ghost { color: #fff; box-shadow: inset 0 0 0 1.5px #ffffffaa; backdrop-filter: blur(6px); }
   .btn.ghost:hover { background: #ffffff22; }
 
-  /* World */
-  .world { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(2rem, 5vw, 5rem); align-items: center; }
-  .world-copy p { color: var(--ink-soft); max-width: 32rem; }
-  .world-copy .big { font-family: var(--font-display); font-size: clamp(1.3rem, 2vw, 1.6rem); line-height: 1.4; color: var(--ink); }
-  .world-copy strong { color: var(--ink); }
-  .world-art { margin: 0; }
-  .world-art img { display: block; width: 100%; height: auto; border-radius: 6px; box-shadow: 0 30px 60px -20px #1d273366, 0 0 0 1px #1d273310; }
-  figcaption { margin-top: 0.75rem; font-size: 0.85rem; color: var(--ink-soft); font-style: italic; }
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; margin-top: -2.2rem; position: relative; z-index: 2; }
+  .stats a { display: grid; padding: 1rem 1.1rem; border-radius: 14px; background: var(--card); box-shadow: var(--shadow), 0 0 0 1px var(--line); text-decoration: none; color: var(--ink); }
+  .stats b { font-family: var(--font-display); font-size: clamp(1.6rem, 4vw, 2.3rem); font-weight: 600; line-height: 1; }
+  .stats span { font-size: 0.85rem; color: var(--ink-soft); margin-top: 0.3rem; }
 
-  /* Peoples */
-  .peoples { padding-bottom: clamp(4rem, 8vw, 6rem); background: linear-gradient(to bottom, var(--paper) 0%, #cfe8ee 22%, #f8e6c2 70%, var(--paper) 100%); }
-  .peoples-head { text-align: center; }
-  .peoples-head h2 { margin-bottom: 0; }
-  .stage { position: relative; height: clamp(380px, 62vh, 620px); margin-top: -1rem; isolation: isolate; }
-  .stage::after { content: ""; position: absolute; left: 10%; right: 10%; bottom: 6%; height: 22%; z-index: -1; border-radius: 50%; background: radial-gradient(closest-side, #ffffffd0, #ffffff00); filter: blur(8px); }
-  .tabs { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.4rem; margin: 0 auto 2rem; padding: 0.35rem; width: fit-content; max-width: 100%; border-radius: 999px; background: #ffffff8c; box-shadow: 0 0 0 1px #1d273314, 0 10px 30px -15px #1d273340; backdrop-filter: blur(8px); }
-  .tabs button { font: 500 0.95rem var(--font-body); color: var(--ink-soft); background: none; border: 0; border-radius: 999px; padding: 0.55rem 1.1rem; cursor: pointer; }
-  .tabs button:hover { color: var(--ink); }
-  .tabs button[aria-selected="true"] { background: var(--ink); color: #fff; }
-  .tabs button:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
-  .people { display: grid; grid-template-columns: 1fr 2fr 1fr; gap: 2rem; align-items: start; max-width: 64rem; margin: 0 auto; }
-  .people h3 { font-size: 2rem; margin: 0; }
-  .homeland { margin: 0.25rem 0 0; color: var(--teal); font-weight: 500; }
-  .blurb { margin: 0; font-size: 1.15rem; }
-  .known { margin: 0; font-size: 0.92rem; color: var(--ink-soft); }
-  .known span { display: block; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.2rem; }
+  .block { margin-top: clamp(3rem, 7vw, 5rem); }
+  .block-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.2rem 1rem; margin-bottom: 1.25rem; }
+  .block-head .eyebrow { width: 100%; }
+  .block-head h2 { font-size: clamp(1.9rem, 5vw, 2.8rem); margin: 0; }
+  .block-head a { margin-left: auto; font-weight: 600; text-decoration: none; font-size: 0.92rem; }
 
-  /* Play */
-  .play { background: radial-gradient(ellipse at 85% 0%, #1f4a5a 0%, var(--night) 55%); color: #e9eef2; }
-  .play .eyebrow { color: var(--teal-glow); }
-  .play-grid { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: clamp(2rem, 6vw, 6rem); align-items: start; }
-  .play-head { position: sticky; top: 3rem; }
-  .play-head p:not(.eyebrow) { color: #b9c6d0; max-width: 26rem; }
-  .features { list-style: none; margin: 0; padding: 0; counter-reset: f; display: grid; grid-template-columns: 1fr 1fr; gap: 0 3rem; }
-  .features li { counter-increment: f; padding: 1.75rem 0; border-top: 1px solid #ffffff1f; }
-  .features li::before { content: counter(f, decimal-leading-zero); display: block; font: 500 0.8rem var(--font-body); letter-spacing: 0.1em; color: var(--gold-light); margin-bottom: 0.6rem; }
-  .features h3 { font-size: 1.5rem; margin: 0 0 0.5rem; color: #fff; }
-  .features p { margin: 0; color: #b9c6d0; font-size: 0.98rem; }
+  .chapters { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr)); gap: 1.25rem; }
+  .chapters a { position: relative; display: block; border-radius: 16px; overflow: hidden; color: #fff; text-decoration: none; box-shadow: var(--shadow); isolation: isolate; }
+  .chapters a :global(.plate) { border-radius: 0; transition: transform 0.4s; }
+  .chapters a:hover :global(.plate) { transform: scale(1.04); }
+  .chapters a::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 35%, #0b141fd9); }
+  .ch-text { position: absolute; left: 1rem; right: 1rem; bottom: 0.9rem; z-index: 1; display: grid; }
+  .num { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.16em; color: var(--gold-light); }
+  .ch-text b { font-family: var(--font-display); font-size: 1.6rem; font-weight: 600; line-height: 1.1; }
+  .kick { font-size: 0.88rem; color: #f3ecd9cc; }
 
-  /* Demos */
-  .demo-list { list-style: none; padding: 0; margin: 2.5rem 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); gap: 1.5rem; }
-  .demo-list a { display: block; height: 100%; color: inherit; text-decoration: none; background: #fffaf0; border-radius: 10px; overflow: hidden; box-shadow: 0 0 0 1px var(--line), 0 20px 40px -25px #1d273355; transition: transform 0.2s ease, box-shadow 0.2s ease; }
-  .demo-list a:hover { transform: translateY(-3px); box-shadow: 0 0 0 1px #1d273333, 0 30px 50px -25px #1d273377; }
-  .demo-list img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; background: #d4d4d4; }
-  .demo-list div { padding: 1.4rem 1.5rem 1.6rem; }
-  .demo-list h3 { font-size: 1.5rem; margin: 0 0 0.4rem; }
-  .demo-list h3 span { color: var(--teal); display: inline-block; transition: transform 0.2s ease; }
-  .demo-list a:hover h3 span { transform: translateX(4px); }
-  .demo-list p { margin: 0; color: var(--ink-soft); }
+  .shelf, .demos { list-style: none; margin: 0 calc(var(--gutter) * -1); padding: 0.25rem var(--gutter) 1rem; display: grid; grid-auto-flow: column; gap: 1rem; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: var(--gutter); scrollbar-width: thin; -webkit-overflow-scrolling: touch; }
+  .shelf { grid-auto-columns: minmax(9.5rem, 11rem); }
+  .demos { grid-auto-columns: minmax(15rem, 19rem); }
+  .shelf li, .demos li { scroll-snap-align: start; }
+  .shelf a, .demos a { display: grid; gap: 0.35rem; text-decoration: none; color: var(--ink); }
+  .shelf b, .demos b { font-family: var(--font-display); font-size: 1.15rem; font-weight: 600; margin-top: 0.3rem; }
+  .shelf span, .demos span { font-size: 0.85rem; color: var(--ink-soft); }
+  .shelf a:hover b, .demos a:hover b { color: var(--teal); }
+  .blank { display: block; aspect-ratio: 1; border-radius: 10px; background: repeating-linear-gradient(135deg, color-mix(in srgb, var(--teal) 12%, var(--paper-deep)) 0 12px, var(--paper-deep) 12px 24px); }
+  .blank[data-kind="winds"] { background: repeating-linear-gradient(170deg, transparent 0 16px, color-mix(in srgb, #4f86b8 35%, transparent) 16px 18px), linear-gradient(180deg, #cfe6f0, #9fc3dc); }
 
-  /* Devlog */
-  .devlog { padding-top: 0; }
-  .posts { list-style: none; padding: 0; margin: 2rem 0 0; border-top: 1px solid var(--line); }
-  .posts a { display: grid; grid-template-columns: 9rem 1fr; gap: 1.5rem; padding: 1.5rem 0; border-bottom: 1px solid var(--line); color: inherit; text-decoration: none; }
-  .posts a:hover h3 { color: var(--teal); }
-  .posts time { font-size: 0.9rem; color: var(--ink-soft); padding-top: 0.3rem; }
-  .posts h3 { font-size: 1.4rem; margin: 0 0 0.3rem; transition: color 0.15s ease; }
-  .posts p { margin: 0; color: var(--ink-soft); max-width: 44rem; }
+  .posts { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.75rem; }
+  .posts a { display: grid; gap: 0.2rem; padding: 1rem 1.2rem; border-radius: 14px; background: var(--card); box-shadow: 0 0 0 1px var(--line); text-decoration: none; color: var(--ink); }
+  .posts time { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); }
+  .posts b { font-family: var(--font-display); font-size: 1.3rem; font-weight: 600; }
+  .posts span { color: var(--ink-soft); font-size: 0.95rem; }
 
-  footer { background: var(--night); color: #b9c6d0; padding-block: 3rem; font-size: 0.92rem; }
-  footer .brand { font-family: var(--font-display); font-size: 1.4rem; color: #fff; margin: 0 0 0.25rem; }
-  footer p { margin: 0; }
-
-  @media (max-width: 900px) {
-    .world, .play-grid { grid-template-columns: 1fr; }
-    .play-head { position: static; }
-    .people { grid-template-columns: 1fr; gap: 0.75rem; text-align: center; }
-  }
   @media (max-width: 640px) {
-    .top .links { display: none; }
-    .hero-art { object-position: 30% center; }
-    .hero::before { background: linear-gradient(to top, #0d1b29f5 0%, #0d1b29cc 45%, #0d1b2933 75%, #0d1b2999 100%); }
-    .features { grid-template-columns: 1fr; }
-    .posts a { grid-template-columns: 1fr; gap: 0.25rem; }
-    .tabs { border-radius: 18px; }
-    .tabs button { padding: 0.5rem 0.8rem; font-size: 0.88rem; }
+    .stats { grid-template-columns: repeat(2, 1fr); margin-top: 1.25rem; }
+    .chapters { grid-auto-flow: column; grid-template-columns: none; grid-auto-columns: 82%; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: var(--gutter); margin: 0 calc(var(--gutter) * -1); padding: 0 var(--gutter) 1rem; }
+    .chapters li { scroll-snap-align: start; }
   }
 </style>

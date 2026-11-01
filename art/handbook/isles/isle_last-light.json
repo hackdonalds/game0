@@ -1,0 +1,10 @@
+{
+  "prompt": "Plate for an illustrated field guide: a small floating meadow isle on the edge of the world at sunrise, a tall old stone beacon tower on a grassy rise, wildflowers and long grass, a cloud whale drifting past in the distance, seen from a slight aerial angle. Soft vignette fading to warm parchment at the edges. Style: hand-painted stylized game art, painterly, soft lighting with gentle rim light, softer muted colours with gentle saturation, epic and luminous fantasy, never grim. No text, no labels, no border, no frame.",
+  "model": "openai/gpt-image-2.5-sunburst",
+  "aspect": "1:1",
+  "quality": "medium",
+  "refs": [
+    "art/references/world-tree-floating-isle.webp"
+  ],
+  "createdAt": "2026-11-01T14:19:28.783Z"
+}

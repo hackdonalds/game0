@@ -1,0 +1,45 @@
+---
+import Base from "../../layouts/Base.astro";
+import Plate from "../../components/Plate.astro";
+import { catalogues } from "../../lib/catalogues";
+import { base } from "../../lib/text";
+---
+<Base title="Catalogues · game0 handbook" description="Peoples, creatures, skills, isles, winds, ships, materials and terms of the game0 world." section="catalogues">
+  <header class="wrap head">
+    <p class="eyebrow">Catalogues</p>
+    <h1>Everything in the world, entry by entry</h1>
+    <p class="lede">Every catalogue is built from the game's data, so it always matches the latest design.</p>
+  </header>
+  <ul class="wrap hub">
+    {catalogues.map((c) => (
+      <li>
+        <a href={`${base}/catalogue/${c.slug}/`}>
+          {c.cover ? <Plate art={c.cover} name={c.title} sizes="(max-width: 640px) 100vw, 360px" wide /> : <div class="pattern" data-kind={c.slug} aria-hidden="true"></div>}
+          <span class="text">
+            <span class="eyebrow">{c.kicker}</span>
+            <b>{c.title}</b>
+            <span class="sum">{c.summary}</span>
+            <span class="count">{c.cards.length} entries →</span>
+          </span>
+        </a>
+      </li>
+    ))}
+  </ul>
+</Base>
+
+<style>
+  .head { padding-top: clamp(2rem, 6vw, 4rem); padding-bottom: 1.5rem; }
+  h1 { font-size: clamp(2.2rem, 6vw, 3.6rem); margin: 0.3rem 0 0.6rem; max-width: 18ch; }
+  .lede { max-width: 38rem; color: var(--ink-soft); font-size: 1.1rem; margin: 0; }
+  .hub { list-style: none; margin-top: 1rem; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr)); gap: 1.25rem; }
+  .hub a { display: grid; height: 100%; border-radius: 16px; overflow: hidden; background: var(--card); box-shadow: 0 0 0 1px var(--line); text-decoration: none; color: var(--ink); transition: transform 0.15s, box-shadow 0.15s; }
+  .hub a:hover { transform: translateY(-3px); box-shadow: var(--shadow), 0 0 0 1px var(--gold); }
+  .hub a :global(.plate) { border-radius: 0; }
+  .pattern { aspect-ratio: 16 / 9; background: repeating-linear-gradient(135deg, color-mix(in srgb, var(--teal) 10%, var(--paper-deep)) 0 14px, var(--paper-deep) 14px 28px); }
+  .pattern[data-kind="winds"] { background: repeating-linear-gradient(170deg, transparent 0 18px, color-mix(in srgb, #4f86b8 30%, transparent) 18px 20px), linear-gradient(180deg, #cfe6f0, #9fc3dc); }
+  .pattern[data-kind="glossary"] { background: radial-gradient(circle at 30% 40%, color-mix(in srgb, var(--gold) 30%, transparent), transparent 60%), var(--paper-deep); }
+  .text { display: grid; gap: 0.3rem; padding: 1.1rem 1.25rem 1.3rem; }
+  b { font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; }
+  .sum { color: var(--ink-soft); font-size: 0.95rem; }
+  .count { margin-top: 0.3rem; font-size: 0.85rem; font-weight: 600; color: var(--teal); }
+</style>

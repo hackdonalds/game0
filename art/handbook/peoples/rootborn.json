@@ -1,0 +1,10 @@
+{
+  "prompt": "Plate for an illustrated field guide: a broad, stocky Rootborn with bark-grained oak skin, moss and lichen on the shoulders, a beard of moss and small white flowers, teal crystal inlays in the brow, wearing carved stone shoulder plates over leather, waist-up three-quarter view, standing among the giant glowing roots of an ancient tree in a root cavern. Soft vignette fading to warm parchment at the edges. Style: hand-painted stylized game art, painterly, soft lighting with gentle rim light, softer muted colours with gentle saturation, epic and luminous fantasy, never grim. No text, no labels, no border, no frame.",
+  "model": "openai/gpt-image-2.5-sunburst",
+  "aspect": "1:1",
+  "quality": "high",
+  "refs": [
+    "art/references/world-tree-floating-isle.webp"
+  ],
+  "createdAt": "2026-11-01T14:17:09.934Z"
+}

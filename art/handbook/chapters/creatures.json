@@ -1,0 +1,10 @@
+{
+  "prompt": "Chapter cover illustration for a fantasy world handbook: a field naturalist's view of sky wildlife: a cloud whale drifting past a floating isle, a crag drake on a spire, gale hawks circling, a herd of mossy grazers below, all in soft morning light. Wide cinematic composition with calm space in the upper third. Style: hand-painted stylized game art, painterly, soft lighting with gentle rim light, softer muted colours with gentle saturation, epic and luminous fantasy, never grim. No text, no labels, no border, no frame.",
+  "model": "openai/gpt-image-2.5-sunburst",
+  "aspect": "16:9",
+  "quality": "high",
+  "refs": [
+    "art/references/world-tree-floating-isle.webp"
+  ],
+  "createdAt": "2026-11-01T14:14:29.480Z"
+}

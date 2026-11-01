@@ -1,0 +1,26 @@
+---
+import { getCollection } from "astro:content";
+import Base from "../../layouts/Base.astro";
+import { base } from "../../lib/text";
+const posts = (await getCollection("devlog")).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const fmt = (d: Date) => d.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
+---
+<Base title="Devlog · game0 handbook">
+  <div class="wrap page">
+    <p class="eyebrow">Devlog</p>
+    <h1>News from the workshop</h1>
+    <ul>
+      {posts.map((p) => <li><a href={`${base}/devlog/${p.id}/`}><time datetime={p.data.date.toISOString()}>{fmt(p.data.date)}</time><b>{p.data.title}</b><span>{p.data.summary}</span></a></li>)}
+    </ul>
+  </div>
+</Base>
+<style>
+  .page { max-width: 46rem; padding-top: clamp(1.5rem, 5vw, 3rem); }
+  h1 { font-size: clamp(2.2rem, 6vw, 3.4rem); margin: 0.2rem 0 1.5rem; }
+  ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.8rem; }
+  a { display: grid; gap: 0.25rem; padding: 1.1rem 1.25rem; border-radius: 14px; background: var(--card); box-shadow: 0 0 0 1px var(--line); text-decoration: none; color: var(--ink); }
+  a:hover { box-shadow: var(--shadow), 0 0 0 1px var(--gold); }
+  time { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); }
+  b { font-family: var(--font-display); font-size: 1.4rem; font-weight: 600; }
+  span { color: var(--ink-soft); }
+</style>

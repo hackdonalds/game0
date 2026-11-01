@@ -1,0 +1,10 @@
+{
+  "prompt": "Plate for an illustrated field guide: a large round floating meadow isle crowned by a great domed hall of pale stone and gold trim, five tall banners around a central plaza, orchards and reflecting ponds, wooden docks reaching out on four sides with small sailships moored, seen from a slight aerial angle above the clouds. Soft vignette fading to warm parchment at the edges. Style: hand-painted stylized game art, painterly, soft lighting with gentle rim light, softer muted colours with gentle saturation, epic and luminous fantasy, never grim. No text, no labels, no border, no frame.",
+  "model": "openai/gpt-image-2.5-sunburst",
+  "aspect": "1:1",
+  "quality": "medium",
+  "refs": [
+    "art/references/world-tree-floating-isle.webp"
+  ],
+  "createdAt": "2026-11-01T14:17:31.175Z"
+}

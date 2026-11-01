@@ -1,20 +1,137 @@
 ---
 import "../styles/global.css";
-interface Props { title: string; description?: string }
-const { title, description = "A sky-island MMORPG in development." } = Astro.props;
+interface Props { title: string; description?: string; section?: "home" | "chapters" | "catalogues" | "workshop" | "search" | "other" }
+const { title, description = "The game0 handbook: the world, peoples, rules and creatures of a sky-isle sandbox in design.", section = "other" } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const tabs = [
+  { id: "home", label: "Home", href: `${base}/`, icon: "M3 11.5 12 4l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z" },
+  { id: "chapters", label: "Chapters", href: `${base}/chapters/`, icon: "M4 5a2 2 0 0 1 2-2h5v17H6a2 2 0 0 0-2 2zm16 0a2 2 0 0 0-2-2h-5v17h5a2 2 0 0 1 2 2z" },
+  { id: "catalogues", label: "Catalogues", href: `${base}/catalogue/`, icon: "M4 4h7v7H4zm9 0h7v7h-7zM4 13h7v7H4zm9 0h7v7h-7z" },
+  { id: "workshop", label: "Workshop", href: `${base}/workshop/`, icon: "M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.5-.5-.5-2.5z" },
+  { id: "search", label: "Search", href: `${base}/search/`, icon: "M10.5 3a7.5 7.5 0 0 1 5.9 12.1l4.8 4.8-1.4 1.4-4.8-4.8A7.5 7.5 0 1 1 10.5 3zm0 2a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11z" },
+];
 ---
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="description" content={description} />
+    <meta name="theme-color" content="#f6efe0" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#13181f" media="(prefers-color-scheme: dark)" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <meta name="theme-color" content="#102030" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400&family=Inter:wght@400;500;600&display=swap" />
     <title>{title}</title>
+    <script is:inline>
+      try { const t = localStorage.getItem("game0-theme"); if (t) document.documentElement.dataset.theme = t; } catch {}
+    </script>
   </head>
   <body>
-    <slot />
+    <a class="skip" href="#content">Skip to content</a>
+    <header class="topbar">
+      <div class="wrap bar">
+        <a class="brand" href={`${base}/`}><span class="mark" aria-hidden="true">◈</span> game0 <span class="sub">handbook</span></a>
+        <nav class="desk" aria-label="Main">
+          {tabs.slice(1, 4).map((t) => <a href={t.href} aria-current={section === t.id ? "page" : undefined}>{t.label}</a>)}
+          <a href={`${base}/decisions/`}>Decisions</a>
+          <a href={`${base}/devlog/`}>Devlog</a>
+        </nav>
+        <div class="tools">
+          <a class="icon desk-only" href={`${base}/search/`} aria-label="Search"><svg viewBox="0 0 24 24" aria-hidden="true"><path d={tabs[4].icon} /></svg></a>
+          <button class="icon theme" type="button" aria-label="Switch light or dark">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path class="sun" d="M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0-5 1 3h-2zm0 20-1-3h2zM2 12l3-1v2zm20 0-3 1v-2zM4.9 4.9l2.8 1.4-1.4 1.4zm14.2 14.2-2.8-1.4 1.4-1.4zM4.9 19.1l1.4-2.8 1.4 1.4zM19.1 4.9l-1.4 2.8-1.4-1.4z" /><path class="moon" d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z" /></svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="content">
+      <slot />
+    </main>
+
+    <footer class="foot">
+      <div class="wrap foot-grid">
+        <div>
+          <p class="brand"><span class="mark" aria-hidden="true">◈</span> game0</p>
+          <p class="muted">The handbook of a sky-isle sandbox in design. Every page is built from the concept docs, so it always matches the latest decisions.</p>
+        </div>
+        <nav aria-label="Footer">
+          <a href={`${base}/chapters/`}>Chapters</a>
+          <a href={`${base}/catalogue/`}>Catalogues</a>
+          <a href={`${base}/workshop/`}>Workshop</a>
+          <a href={`${base}/decisions/`}>Decision log</a>
+          <a href={`${base}/devlog/`}>Devlog</a>
+          <a href="https://github.com/hackdonalds/game0">Source on GitHub</a>
+        </nav>
+      </div>
+    </footer>
+
+    <nav class="tabbar" aria-label="Sections">
+      {tabs.map((t) => (
+        <a href={t.href} aria-current={section === t.id ? "page" : undefined}>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d={t.icon} /></svg>
+          <span>{t.label}</span>
+        </a>
+      ))}
+    </nav>
+
+    <script>
+      const root = document.documentElement;
+      document.querySelector(".theme")?.addEventListener("click", () => {
+        const dark = root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+        root.dataset.theme = dark ? "light" : "dark";
+        try { localStorage.setItem("game0-theme", root.dataset.theme); } catch {}
+      });
+    </script>
   </body>
 </html>
+
+<style>
+  .skip { position: absolute; left: -999px; top: 0; padding: 0.5rem 1rem; background: var(--ink); color: var(--paper); z-index: 100; }
+  .skip:focus { left: 0; }
+  .topbar { position: sticky; top: 0; z-index: 40; background: color-mix(in srgb, var(--paper) 88%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+  .bar { display: flex; align-items: center; gap: 1.5rem; height: 3.6rem; }
+  .brand { display: inline-flex; align-items: baseline; gap: 0.35rem; font-family: var(--font-display); font-size: 1.35rem; font-weight: 600; color: var(--ink); text-decoration: none; margin: 0; }
+  .brand .mark { color: var(--gold); font-size: 1rem; }
+  .brand .sub { font-family: var(--font-body); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); }
+  .desk { display: flex; gap: 1.4rem; margin-left: auto; }
+  .desk a { color: var(--ink-soft); text-decoration: none; font-size: 0.93rem; font-weight: 500; padding: 0.3rem 0; border-bottom: 2px solid transparent; }
+  .desk a:hover, .desk a[aria-current] { color: var(--ink); border-color: var(--gold); }
+  .tools { display: flex; gap: 0.3rem; }
+  .icon { display: grid; place-items: center; width: 2.5rem; height: 2.5rem; border-radius: 50%; border: 0; background: none; color: var(--ink); cursor: pointer; }
+  .icon:hover { background: var(--line); }
+  .icon svg { width: 1.25rem; height: 1.25rem; fill: currentColor; }
+  .theme .moon { display: none; }
+  :global(:root[data-theme="dark"]) .theme .sun { display: none; }
+  :global(:root[data-theme="dark"]) .theme .moon { display: block; }
+  @media (prefers-color-scheme: dark) {
+    :global(:root:not([data-theme="light"])) .theme .sun { display: none; }
+    :global(:root:not([data-theme="light"])) .theme .moon { display: block; }
+  }
+
+  .foot { margin-top: 5rem; padding: 3rem 0 2.5rem; border-top: 1px solid var(--line); background: var(--paper-deep); }
+  .foot-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 2rem; }
+  .foot p.muted { max-width: 30rem; font-size: 0.92rem; }
+  .foot nav { display: grid; grid-template-columns: repeat(2, auto); gap: 0.5rem 2rem; align-content: start; }
+  .foot nav a { color: var(--ink-soft); text-decoration: none; font-size: 0.92rem; }
+  .foot nav a:hover { color: var(--teal); }
+
+  .tabbar { display: none; }
+  @media (max-width: 820px) {
+    :global(:root) { --tabbar: calc(3.9rem + env(safe-area-inset-bottom)); }
+    .desk, .desk-only { display: none; }
+    .tools { margin-left: auto; }
+    .brand .sub { display: none; }
+    .foot { padding-bottom: calc(2.5rem + var(--tabbar)); }
+    .foot-grid { grid-template-columns: 1fr; }
+    .tabbar {
+      display: grid; grid-template-columns: repeat(5, 1fr); position: fixed; left: 0; right: 0; bottom: 0; z-index: 50;
+      height: var(--tabbar); padding-bottom: env(safe-area-inset-bottom);
+      background: color-mix(in srgb, var(--paper) 94%, transparent); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      border-top: 1px solid var(--line);
+    }
+    .tabbar a { display: grid; justify-items: center; align-content: center; gap: 0.15rem; color: var(--ink-faint); text-decoration: none; font-size: 0.68rem; font-weight: 600; min-height: 44px; }
+    .tabbar svg { width: 1.45rem; height: 1.45rem; fill: currentColor; }
+    .tabbar a[aria-current] { color: var(--rule); }
+  }
+</style>

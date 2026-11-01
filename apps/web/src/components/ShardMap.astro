@@ -1,0 +1,196 @@
+---
+// Interactive map of the First Shard, drawn as SVG from worlds/first-shard.world.json. Pinch or scroll to zoom, drag to pan, tap an isle.
+import shard from "../../../../worlds/first-shard.world.json";
+import { isleNotes } from "../data/isles";
+import { isleSlug, peopleName, TONE } from "../lib/catalogues";
+import { base, cap } from "../lib/text";
+
+interface Props { highlight?: string; compact?: boolean }
+const { highlight, compact = false } = Astro.props;
+const S = shard.size + 80;
+const notes = new Map(isleNotes.map((n) => [n.id, n.blurb]));
+
+// Smooth a polyline into cubic Béziers (Catmull-Rom), closing loops whose ends meet
+function smooth(points: number[][]) {
+  const closed = points.length > 2 && points[0][0] === points.at(-1)![0] && points[0][1] === points.at(-1)![1];
+  const p = closed ? points.slice(0, -1) : points;
+  const at = (i: number) => (closed ? p[(i + p.length) % p.length] : p[Math.max(0, Math.min(p.length - 1, i))]);
+  let d = `M${p[0][0]},${p[0][1]}`;
+  const n = closed ? p.length : p.length - 1;
+  for (let i = 0; i < n; i++) {
+    const [a, b, c, e] = [at(i - 1), at(i), at(i + 1), at(i + 2)];
+    d += ` C${b[0] + (c[0] - a[0]) / 6},${b[1] + (c[1] - a[1]) / 6} ${c[0] - (e[0] - b[0]) / 6},${c[1] - (e[1] - b[1]) / 6} ${c[0]},${c[1]}`;
+  }
+  return d;
+}
+const isleById = new Map(shard.isles.map((i) => [i.id, i]));
+const tierColor = { safe: "var(--tier-safe)", guarded: "var(--tier-guarded)", wild: "var(--tier-wild)" } as Record<string, string>;
+---
+<figure class:list={["shard-map", { compact }]} data-map>
+  <div class="viewport">
+    <svg viewBox={`${-S} ${-S} ${S * 2} ${S * 2}`} role="img" aria-label="Map of the First Shard">
+      <defs>
+        <radialGradient id="sky" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="var(--map-sky-1)" />
+          <stop offset="100%" stop-color="var(--map-sky-2)" />
+        </radialGradient>
+      </defs>
+      <circle r={shard.size + 60} fill="url(#sky)" />
+      <circle r={shard.size} class="edge" />
+      <g class="layer-lanes">
+        {shard.winds.filter((w) => w.kind === "lane").map((w) => (
+          <g class="wind lane"><path d={smooth(w.points)} class="band" style={`stroke-width:${w.width}`} /><path d={smooth(w.points)} class="flow" /></g>
+        ))}
+      </g>
+      <g class="layer-wild">
+        {shard.winds.filter((w) => w.kind === "wild").map((w) => (
+          <g class="wind wild"><path d={smooth(w.points)} class="band" style={`stroke-width:${w.width}`} /><path d={smooth(w.points)} class="flow" /></g>
+        ))}
+      </g>
+      <g class="bridges">
+        {shard.bridges.map((b) => { const a = isleById.get(b.a)!, c = isleById.get(b.b)!; return <line x1={a.x} y1={a.z} x2={c.x} y2={c.z} />; })}
+      </g>
+      <g class="isles">
+        {shard.isles.map((i) => (
+          <a href={`${base}/catalogue/isles/${isleSlug(i.id)}/`} class:list={["isle", { hl: highlight === isleSlug(i.id), town: i.town, sinking: i.state === "sinking" }]}
+             data-name={i.name} data-tier={i.tier} data-who={i.people !== "none" ? peopleName(i.people) : i.town ? "Accord town" : "Unclaimed"}
+             data-blurb={notes.get(i.id) ?? ""} aria-label={`${i.name}, ${i.tier}`}>
+            <circle r={i.radius} class="land" style={`fill:${TONE[i.biome]}`} transform={`translate(${i.x} ${i.z})`} />
+            <circle r={i.radius * 1.25} class="ring" style={`stroke:${tierColor[i.tier]}`} transform={`translate(${i.x} ${i.z})`} />
+            {i.town && <path d="M0,-9 L2.6,-2.8 9,-2.8 3.8,1.2 5.8,8 0,4 -5.8,8 -3.8,1.2 -9,-2.8 -2.6,-2.8Z" class="star" style={`transform: translate(${i.x}px, ${i.z}px) scale(var(--k, 1))`} />}
+            <text x={i.x} y={i.z + i.radius + 4} class:list={["label", { major: i.town || i.radius >= 70 }]}>{i.name}</text>
+          </a>
+        ))}
+      </g>
+    </svg>
+  </div>
+  <div class="controls">
+    <button type="button" data-zoom="1.6" aria-label="Zoom in">+</button>
+    <button type="button" data-zoom="0.625" aria-label="Zoom out">−</button>
+    <button type="button" data-reset aria-label="Show the whole shard">⤢</button>
+  </div>
+  <div class="card" hidden aria-live="polite">
+    <button type="button" class="close" aria-label="Close">×</button>
+    <p class="who"></p>
+    <h3></h3>
+    <p class="blurb"></p>
+    <a class="open" href="#">Open entry →</a>
+  </div>
+  {!compact && (
+    <figcaption>
+      <span><i class="dot safe"></i>Safe</span><span><i class="dot guarded"></i>Guarded</span><span><i class="dot wild"></i>Wild</span>
+      <span><i class="line lane"></i>Accord lane</span><span><i class="line wildc"></i>Wild current</span><span>★ Accord town</span>
+      <label><input type="checkbox" data-layer="lanes" checked /> Lanes</label>
+      <label><input type="checkbox" data-layer="wild" checked /> Currents</label>
+    </figcaption>
+  )}
+</figure>
+
+<script>
+  for (const fig of document.querySelectorAll<HTMLElement>("[data-map]")) {
+    const svg = fig.querySelector("svg")!;
+    const [x0, y0, w0] = svg.getAttribute("viewBox")!.split(" ").map(Number);
+    let vb = { x: x0, y: y0, w: w0 };
+    const apply = () => {
+      svg.setAttribute("viewBox", `${vb.x} ${vb.y} ${vb.w} ${vb.w}`);
+      // Keep labels and markers the same size on screen at any zoom
+      const k = vb.w / svg.clientWidth;
+      svg.style.setProperty("--k", String(k));
+      svg.classList.toggle("zoomed", vb.w < w0 * 0.55);
+    };
+    const zoomAt = (f: number, cx = vb.x + vb.w / 2, cy = vb.y + vb.w / 2) => {
+      const w = Math.min(w0, Math.max(w0 / 8, vb.w / f));
+      vb = { x: cx - ((cx - vb.x) * w) / vb.w, y: cy - ((cy - vb.y) * w) / vb.w, w };
+      apply();
+    };
+    const toSvg = (cx: number, cy: number) => {
+      const r = svg.getBoundingClientRect();
+      return { x: vb.x + ((cx - r.left) / r.width) * vb.w, y: vb.y + ((cy - r.top) / r.height) * vb.w };
+    };
+    new ResizeObserver(apply).observe(svg);
+
+    // Pan with one pointer, pinch with two; a tap on an isle opens its card
+    const pts = new Map<number, { x: number; y: number }>();
+    let moved = 0, pinch = 0;
+    svg.addEventListener("pointerdown", (e) => { pts.set(e.pointerId, { x: e.clientX, y: e.clientY }); moved = 0; svg.setPointerCapture(e.pointerId); });
+    svg.addEventListener("pointermove", (e) => {
+      const p = pts.get(e.pointerId);
+      if (!p) return;
+      if (pts.size === 1) {
+        const r = svg.getBoundingClientRect(), s = vb.w / r.width;
+        vb.x -= (e.clientX - p.x) * s; vb.y -= (e.clientY - p.y) * s;
+        moved += Math.abs(e.clientX - p.x) + Math.abs(e.clientY - p.y);
+        apply();
+      }
+      pts.set(e.pointerId, { x: e.clientX, y: e.clientY });
+      if (pts.size === 2) {
+        const [a, b] = [...pts.values()];
+        const d = Math.hypot(a.x - b.x, a.y - b.y);
+        if (pinch) { const c = toSvg((a.x + b.x) / 2, (a.y + b.y) / 2); zoomAt(d / pinch, c.x, c.y); }
+        pinch = d; moved = 99;
+      }
+    });
+    const end = (e: PointerEvent) => { pts.delete(e.pointerId); if (pts.size < 2) pinch = 0; };
+    svg.addEventListener("pointerup", end);
+    svg.addEventListener("pointercancel", end);
+    svg.addEventListener("wheel", (e) => { e.preventDefault(); const c = toSvg(e.clientX, e.clientY); zoomAt(e.deltaY < 0 ? 1.2 : 1 / 1.2, c.x, c.y); }, { passive: false });
+    fig.querySelectorAll<HTMLButtonElement>("[data-zoom]").forEach((b) => b.addEventListener("click", () => zoomAt(Number(b.dataset.zoom))));
+    fig.querySelector("[data-reset]")?.addEventListener("click", () => { vb = { x: x0, y: y0, w: w0 }; apply(); });
+    fig.querySelectorAll<HTMLInputElement>("[data-layer]").forEach((c) => c.addEventListener("change", () => fig.querySelector<SVGGElement>(`.layer-${c.dataset.layer}`)!.style.display = c.checked ? "" : "none"));
+
+    const card = fig.querySelector<HTMLElement>(".card")!;
+    fig.querySelectorAll<SVGAElement>(".isle").forEach((a) => a.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (moved > 8) return;
+      card.querySelector("h3")!.textContent = a.dataset.name!;
+      card.querySelector(".who")!.textContent = `${a.dataset.who} · ${a.dataset.tier}`;
+      card.querySelector(".blurb")!.textContent = a.dataset.blurb!;
+      card.querySelector<HTMLAnchorElement>(".open")!.href = a.getAttribute("href")!;
+      card.hidden = false;
+    }));
+    card.querySelector(".close")!.addEventListener("click", () => (card.hidden = true));
+    const hl = fig.querySelector<SVGAElement>(".isle.hl .land");
+    if (hl) { const t = hl.getAttribute("transform")!.match(/-?[\d.]+/g)!.map(Number); vb = { x: t[0] - w0 / 6, y: t[1] - w0 / 6, w: w0 / 3 }; }
+    apply();
+  }
+</script>
+
+<style>
+  .shard-map { --map-sky-1: #dcebf3; --map-sky-2: #b9d3e3; position: relative; margin: 0; }
+  :global(:root[data-theme="dark"]) .shard-map { --map-sky-1: #22344a; --map-sky-2: #142030; }
+  @media (prefers-color-scheme: dark) { :global(:root:not([data-theme="light"])) .shard-map { --map-sky-1: #22344a; --map-sky-2: #142030; } }
+  .viewport { border-radius: 14px; overflow: hidden; background: var(--map-sky-2); aspect-ratio: 1; max-height: 75vh; margin: 0 auto; touch-action: none; }
+  .compact .viewport { aspect-ratio: 4 / 3; }
+  svg { display: block; width: 100%; height: 100%; cursor: grab; user-select: none; -webkit-user-select: none; }
+  svg:active { cursor: grabbing; }
+  .edge { fill: none; stroke: #fff8; stroke-dasharray: 14 10; vector-effect: non-scaling-stroke; }
+  .band { fill: none; stroke-linecap: round; opacity: 0.18; }
+  .lane .band { stroke: #fff; } .wild .band { stroke: #ff9a3c; }
+  .flow { fill: none; stroke-width: 2; stroke-dasharray: 2 10; stroke-linecap: round; vector-effect: non-scaling-stroke; animation: flow 1.6s linear infinite; }
+  .lane .flow { stroke: #2f6f9f; } .wild .flow { stroke: #d2602a; animation-duration: 0.8s; }
+  @keyframes flow { to { stroke-dashoffset: -12; } }
+  .bridges line { stroke: #8a6a45; stroke-width: 3; vector-effect: non-scaling-stroke; }
+  .isle { cursor: pointer; }
+  .land { stroke: #0003; stroke-width: 1; vector-effect: non-scaling-stroke; }
+  .ring { fill: none; stroke-width: 2.5; vector-effect: non-scaling-stroke; opacity: 0.9; }
+  .isle:hover .land, .isle:focus .land, .hl .land { stroke: #fff; stroke-width: 3; }
+  .sinking .land { opacity: 0.6; }
+  .star { fill: #fff6d8; stroke: #6b4a16; stroke-width: 1; vector-effect: non-scaling-stroke; }
+  .label { font-family: var(--font-body); font-size: calc(var(--k, 1) * 11.5px); font-weight: 600; fill: var(--ink); text-anchor: middle; dominant-baseline: hanging; paint-order: stroke; stroke: var(--map-sky-1); stroke-width: calc(var(--k, 1) * 3px); stroke-linejoin: round; pointer-events: none; display: none; }
+  .label.major, .zoomed .label { display: block; }
+  .controls { position: absolute; top: 0.6rem; right: 0.6rem; display: grid; gap: 0.35rem; }
+  .controls button { width: 2.6rem; height: 2.6rem; border-radius: 10px; border: 0; background: var(--card); color: var(--ink); font-size: 1.25rem; box-shadow: var(--shadow), 0 0 0 1px var(--line); cursor: pointer; }
+  .card { position: absolute; left: 0.6rem; right: 0.6rem; bottom: 0.6rem; max-width: 22rem; padding: 0.9rem 1rem; border-radius: 12px; background: var(--card); box-shadow: var(--shadow), 0 0 0 1px var(--line); }
+  .compact .card { bottom: 0.6rem; }
+  .card h3 { margin: 0.1rem 0 0.3rem; font-size: 1.3rem; }
+  .card .who { margin: 0; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--teal); }
+  .card .blurb { margin: 0 0 0.5rem; font-size: 0.9rem; color: var(--ink-soft); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .card .open { font-weight: 600; text-decoration: none; }
+  .card .close { position: absolute; top: 0.3rem; right: 0.4rem; width: 2.2rem; height: 2.2rem; border: 0; background: none; color: var(--ink-soft); font-size: 1.3rem; cursor: pointer; }
+  figcaption { display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; margin-top: 0.8rem; font-size: 0.82rem; color: var(--ink-soft); align-items: center; }
+  .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; border: 2.5px solid; margin-right: 5px; vertical-align: -1px; }
+  .dot.safe { border-color: var(--tier-safe); } .dot.guarded { border-color: var(--tier-guarded); } .dot.wild { border-color: var(--tier-wild); }
+  .line { display: inline-block; width: 18px; height: 4px; border-radius: 2px; margin-right: 5px; vertical-align: 2px; }
+  .line.lane { background: #2f6f9f; } .line.wildc { background: #d2602a; }
+  figcaption label { display: inline-flex; gap: 0.3rem; align-items: center; min-height: 32px; }
+</style>

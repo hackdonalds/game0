@@ -2,6 +2,11 @@
 import { peoples } from "../data/peoples";
 ---
 <canvas id="peoples-stage" data-lineup={peoples.map((p) => p.id).join(",")} aria-label="The five peoples of game0 standing in a ring, the chosen one at the front"></canvas>
+<div class="people-tabs" role="tablist" aria-label="Peoples">
+  {peoples.map((p, i) => (
+    <button type="button" role="tab" id={`tab-${p.id}`} data-index={i} aria-selected={i === Math.floor(peoples.length / 2) ? "true" : "false"}>{p.name}</button>
+  ))}
+</div>
 
 <script>
   import * as THREE from "three";
@@ -183,7 +188,20 @@ import { peoples } from "../data/peoples";
   }, { rootMargin: "300px" }).observe(canvas);
 </script>
 
+<script>
+  // The tabs turn the ring; clicking a model on the stage clicks its tab
+  const tabs = [...document.querySelectorAll<HTMLButtonElement>(".people-tabs [role=tab]")];
+  tabs.forEach((tab) => tab.addEventListener("click", () => {
+    tabs.forEach((t) => t.setAttribute("aria-selected", String(t === tab)));
+    dispatchEvent(new CustomEvent("people:focus", { detail: Number(tab.dataset.index) }));
+  }));
+</script>
+
 <style>
+  .people-tabs { position: absolute; left: 0; right: 0; bottom: 0.75rem; z-index: 2; display: flex; justify-content: center; flex-wrap: wrap; gap: 0.3rem; padding: 0 0.5rem; }
+  .people-tabs button { font: 500 0.82rem var(--font-body); padding: 0.45rem 0.85rem; min-height: 36px; border-radius: 999px; border: 0; background: #ffffffc8; color: #1d2733; box-shadow: 0 4px 14px -6px #1d273366; cursor: pointer; backdrop-filter: blur(6px); }
+  .people-tabs button[aria-selected="true"] { background: #1d2733; color: #fff; }
+
   canvas {
     position: absolute;
     inset: 0;

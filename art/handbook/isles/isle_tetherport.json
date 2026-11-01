@@ -1,0 +1,10 @@
+{
+  "prompt": "Plate for an illustrated field guide: a floating meadow isle ringed with long wooden piers and tall carved tether posts, half-built ship hulls on slipways, a harbour town of timber halls and sail lofts, a small shrine with a teal crystal on a hill, seen from a slight aerial angle. Soft vignette fading to warm parchment at the edges. Style: hand-painted stylized game art, painterly, soft lighting with gentle rim light, softer muted colours with gentle saturation, epic and luminous fantasy, never grim. No text, no labels, no border, no frame.",
+  "model": "openai/gpt-image-2.5-sunburst",
+  "aspect": "1:1",
+  "quality": "medium",
+  "refs": [
+    "art/references/world-tree-floating-isle.webp"
+  ],
+  "createdAt": "2026-11-01T14:17:32.742Z"
+}

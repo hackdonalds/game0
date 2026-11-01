@@ -1,0 +1,125 @@
+---
+// A small sail-trim toy: steer against a fixed wind and trim the sail to find the best speed.
+// The model is a simple illustration of the planned sail simulation, not the game's final numbers.
+---
+<div class="sail-toy" data-sail>
+  <svg viewBox="-160 -160 320 320" role="img" aria-label="A ship seen from above, with the wind blowing from the top">
+    <defs>
+      <marker id="wind-head" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 10,5 0,10z" fill="currentColor" /></marker>
+    </defs>
+    <circle r="150" class="dial" />
+    <path class="nogo" d="M0,0 L-51.3,-141 A150,150 0 0 1 51.3,-141 Z" />
+    <text y="-128" class="nogo-label">no-go</text>
+    <g class="wind">
+      {[-90, -30, 30, 90].map((x, i) => <line x1={x} y1="-150" x2={x} y2="-60" style={`animation-delay:${i * -0.4}s`} marker-end="url(#wind-head)" />)}
+    </g>
+    <g class="boat">
+      <path class="hull" d="M0,-58 C22,-30 24,20 16,52 L-16,52 C-24,20 -22,-30 0,-58Z" />
+      <line class="mast-line" x1="0" y1="-50" x2="0" y2="44" />
+      <g class="sail-g"><path class="sail" d="M0,0 Q14,26 0,62" /></g>
+      <circle class="mast" r="4" />
+    </g>
+  </svg>
+  <div class="panel">
+    <p class="point">Beam reach</p>
+    <p class="speed"><b>0.0</b> m/s</p>
+    <div class="meter"><span></span></div>
+    <label>Heading <output data-out="heading">90°</output>
+      <input type="range" min="0" max="359" value="90" data-in="heading" aria-label="Heading in degrees" /></label>
+    <label>Sail trim <output data-out="trim">45°</output>
+      <input type="range" min="0" max="90" value="45" data-in="trim" aria-label="Sail angle from the hull in degrees" /></label>
+    <label>Sail condition <output data-out="wear">100%</output>
+      <input type="range" min="20" max="100" value="100" data-in="wear" aria-label="Sail condition in percent" /></label>
+    <div class="winds" role="radiogroup" aria-label="Wind">
+      <button type="button" data-wind="3">Ambient 3</button>
+      <button type="button" data-wind="12" aria-pressed="true">Accord lane 12</button>
+      <button type="button" data-wind="22">Wild current 22</button>
+    </div>
+    <p class="hint">Drag the ship to steer. Ships can't sail into the wind, so tack across it.</p>
+  </div>
+</div>
+
+<script>
+  for (const el of document.querySelectorAll<HTMLElement>("[data-sail]")) {
+    const $ = <T extends Element>(s: string) => el.querySelector<T>(s)!;
+    const input = (k: string) => $<HTMLInputElement>(`[data-in="${k}"]`);
+    let wind = 12;
+    const boat = $<SVGGElement>(".boat"), sailG = $<SVGGElement>(".sail-g");
+
+    // How much drive each point of sail gives (0° = straight into the wind)
+    const polar = (a: number) => (a < 40 ? 0 : a < 110 ? Math.sin(((a - 40) / 70) * (Math.PI / 2)) : 1 - ((a - 110) / 70) * 0.28);
+    const pointName = (a: number) => (a < 40 ? "In irons" : a < 70 ? "Close-hauled" : a < 115 ? "Beam reach" : a < 155 ? "Broad reach" : "Running");
+
+    const update = () => {
+      const heading = Number(input("heading").value), trim = Number(input("trim").value), wear = Number(input("wear").value) / 100;
+      // Angle off the wind: the wind comes from heading 0 (the top)
+      const off = Math.min(heading, 360 - heading);
+      const side = heading <= 180 ? -1 : 1; // the sail swings to the leeward side
+      const best = Math.min(90, off / 2);
+      const trimEff = Math.max(0, Math.cos(((trim - best) * Math.PI) / 180 * 1.6)) ** 2;
+      const speed = wind * 0.8 * polar(off) * trimEff * (0.35 + 0.65 * wear);
+      boat.style.transform = `rotate(${heading}deg)`;
+      sailG.setAttribute("transform", `translate(0,-44) rotate(${side * trim})`);
+      $(".point").textContent = off < 40 ? "In irons: too close to the wind" : pointName(off);
+      $("b").textContent = speed.toFixed(1);
+      $<HTMLElement>(".meter span").style.width = `${Math.min(100, (speed / 20) * 100)}%`;
+      $("[data-out=heading]").textContent = `${heading}°`;
+      $("[data-out=trim]").textContent = `${trim}°`;
+      $("[data-out=wear]").textContent = `${Math.round(wear * 100)}%`;
+      el.classList.toggle("irons", off < 40);
+    };
+    el.querySelectorAll("input").forEach((i) => i.addEventListener("input", update));
+    el.querySelectorAll<HTMLButtonElement>("[data-wind]").forEach((b) => b.addEventListener("click", () => {
+      wind = Number(b.dataset.wind);
+      el.querySelectorAll("[data-wind]").forEach((o) => o.setAttribute("aria-pressed", String(o === b)));
+      el.style.setProperty("--wind-speed", `${2.4 - wind / 12}s`);
+      update();
+    }));
+
+    // Drag the ship to steer
+    const svg = $<SVGSVGElement>("svg");
+    let dragging = false;
+    const steer = (e: PointerEvent) => {
+      const r = svg.getBoundingClientRect();
+      const a = (Math.atan2(e.clientX - (r.left + r.width / 2), -(e.clientY - (r.top + r.height / 2))) * 180) / Math.PI;
+      input("heading").value = String(Math.round((a + 360) % 360));
+      update();
+    };
+    svg.addEventListener("pointerdown", (e) => { dragging = true; svg.setPointerCapture(e.pointerId); steer(e); });
+    svg.addEventListener("pointermove", (e) => dragging && steer(e));
+    svg.addEventListener("pointerup", () => (dragging = false));
+    update();
+  }
+</script>
+
+<style>
+  .sail-toy { --wind-speed: 1.4s; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1.5rem; align-items: center; }
+  svg { width: 100%; max-width: 360px; margin: 0 auto; display: block; touch-action: none; cursor: grab; }
+  .dial { fill: color-mix(in srgb, #9fd3e3 30%, var(--card)); stroke: var(--line); stroke-width: 2; }
+  .nogo { fill: color-mix(in srgb, var(--tier-wild) 14%, transparent); }
+  .nogo-label { font: 600 10px var(--font-body); fill: var(--tier-wild); text-anchor: middle; letter-spacing: 0.12em; text-transform: uppercase; }
+  .wind { color: #4f86b8; }
+  .wind line { stroke: currentColor; stroke-width: 2.5; stroke-dasharray: 8 10; animation: blow var(--wind-speed) linear infinite; }
+  @keyframes blow { to { stroke-dashoffset: -36; } }
+  .boat { transition: transform 0.15s; }
+  .hull { fill: #a77b4f; stroke: #5b3f2a; stroke-width: 2; }
+  .mast-line { stroke: #5b3f2a55; stroke-width: 2; }
+  .sail { fill: #f6efe0; stroke: #c58a2c; stroke-width: 3; stroke-linecap: round; }
+  .irons .sail { fill: #f6efe088; stroke-dasharray: 4 4; }
+  .mast { fill: #5b3f2a; }
+  .panel { display: grid; gap: 0.7rem; }
+  .point { margin: 0; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); }
+  .irons .point { color: var(--tier-wild); }
+  .speed { margin: 0; font-family: var(--font-display); font-size: 1.1rem; }
+  .speed b { font-size: 2.6rem; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .meter { height: 8px; border-radius: 4px; background: var(--line); overflow: hidden; }
+  .meter span { display: block; height: 100%; background: linear-gradient(90deg, var(--teal), var(--gold)); transition: width 0.2s; }
+  label { display: grid; grid-template-columns: 1fr auto; gap: 0.2rem 1rem; font-size: 0.88rem; font-weight: 500; }
+  output { font-variant-numeric: tabular-nums; color: var(--ink-soft); }
+  input[type="range"] { grid-column: 1 / -1; width: 100%; height: 32px; accent-color: var(--teal); }
+  .winds { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+  .winds button { font: 500 0.8rem var(--font-body); padding: 0.45rem 0.7rem; min-height: 36px; border-radius: 999px; border: 1px solid var(--line); background: var(--paper); color: var(--ink-soft); cursor: pointer; }
+  .winds button[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+  .hint { margin: 0; font-size: 0.82rem; color: var(--ink-soft); }
+  @media (max-width: 640px) { .sail-toy { grid-template-columns: 1fr; } }
+</style>

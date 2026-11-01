@@ -1,0 +1,10 @@
+{
+  "prompt": "Chapter cover illustration for a fantasy world handbook: an artist's easel on the edge of a floating isle with a half-finished painting of the sky isles, paint palette with soft muted golds teals and greens, brushes, the real vista behind it in matching colours. Wide cinematic composition with calm space in the upper third. Style: hand-painted stylized game art, painterly, soft lighting with gentle rim light, softer muted colours with gentle saturation, epic and luminous fantasy, never grim. No text, no labels, no border, no frame.",
+  "model": "openai/gpt-image-2.5-sunburst",
+  "aspect": "16:9",
+  "quality": "high",
+  "refs": [
+    "art/references/world-tree-floating-isle.webp"
+  ],
+  "createdAt": "2026-11-01T14:15:00.267Z"
+}

@@ -12,8 +12,8 @@ const { Content } = await render(post);
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 <Base title={`${post.data.title} · game0 devlog`} description={post.data.summary}>
-  <article>
-    <a class="back" href={`${base}/#devlog`}>← game0</a>
+  <article class="prose-page">
+    <a class="back" href={`${base}/devlog/`}>← Devlog</a>
     <time datetime={post.data.date.toISOString()}>{post.data.date.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}</time>
     <h1>{post.data.title}</h1>
     <Content />
@@ -21,11 +21,11 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 </Base>
 
 <style>
-  article { max-width: 44rem; margin: 0 auto; padding: 4rem clamp(16px, 6vw, 32px) 6rem; }
+  .prose-page { max-width: 44rem; margin: 0 auto; padding: 4rem clamp(16px, 6vw, 32px) 6rem; }
   h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); margin: 0.4rem 0 2rem; }
   time { color: var(--teal); font-size: 0.85rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; }
   .back { display: inline-block; margin-bottom: 3rem; text-decoration: none; font-family: var(--font-display); font-size: 1.3rem; font-weight: 600; color: var(--ink); }
   .back:hover { color: var(--teal); }
-  article :global(h2) { font-size: 1.7rem; margin-top: 2.5rem; }
-  article :global(p), article :global(li) { color: #39424d; }
+  .prose-page :global(h2) { font-size: 1.7rem; margin-top: 2.5rem; }
+  .prose-page :global(p), .prose-page :global(li) { color: var(--ink-soft); }
 </style>

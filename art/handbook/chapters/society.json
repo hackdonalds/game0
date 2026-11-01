@@ -1,0 +1,10 @@
+{
+  "prompt": "Chapter cover illustration for a fantasy world handbook: a great round hall in an Accord town with banners of five peoples hanging from the rafters, envoys of different fantasy peoples gathered around a large round table with a map, warm lantern light. Wide cinematic composition with calm space in the upper third. Style: hand-painted stylized game art, painterly, soft lighting with gentle rim light, softer muted colours with gentle saturation, epic and luminous fantasy, never grim. No text, no labels, no border, no frame.",
+  "model": "openai/gpt-image-2.5-sunburst",
+  "aspect": "16:9",
+  "quality": "high",
+  "refs": [
+    "art/references/world-tree-floating-isle.webp"
+  ],
+  "createdAt": "2026-11-01T14:14:32.623Z"
+}

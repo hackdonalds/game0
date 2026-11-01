@@ -1,0 +1,71 @@
+---
+import Base from "../layouts/Base.astro";
+import { chapters } from "../data/chapters.mjs";
+import { decisionLog } from "../lib/decisions";
+import { base } from "../lib/text";
+
+const log = await decisionLog();
+const decided = log.reduce((n, d) => n + d.decisions.length, 0);
+const open = log.reduce((n, d) => n + d.open.length, 0);
+const pct = Math.round((decided / Math.max(1, decided + open)) * 100);
+const title = (slug: string) => chapters.find((c) => c.slug === slug)!.title;
+---
+<Base title="Decision log · game0 handbook" description="Every design decision made so far, and every question still open." section="other">
+  <header class="wrap head">
+    <p class="eyebrow">Decision log</p>
+    <h1>What's decided, what's open</h1>
+    <p class="lede">Read straight from the decision tables and open questions in each chapter, so it's always current.</p>
+    <div class="progress" role="img" aria-label={`${decided} decided, ${open} open`}>
+      <span style={`width:${pct}%`}></span>
+    </div>
+    <p class="tally"><b>{decided}</b> decided · <b>{open}</b> open</p>
+    <nav class="jump"><a href="#decided">Decided</a><a href="#open">Open questions</a></nav>
+  </header>
+
+  <section class="wrap" id="decided">
+    <h2>Decided</h2>
+    {log.filter((d) => d.decisions.length).map((d) => (
+      <details open>
+        <summary><span>{title(d.chapter)}{d.title !== title(d.chapter) && ` · ${d.title}`}</span><span class="n">{d.decisions.length}</span></summary>
+        <dl>{d.decisions.map((x) => <div><dt>{x.topic}</dt><dd>{x.decision}</dd></div>)}</dl>
+        <a class="more" href={`${base}/${d.chapter}/`}>Read the chapter →</a>
+      </details>
+    ))}
+  </section>
+
+  <section class="wrap" id="open">
+    <h2>Open questions</h2>
+    {log.filter((d) => d.open.length).map((d) => (
+      <details open>
+        <summary><span>{title(d.chapter)}{d.title !== title(d.chapter) && ` · ${d.title}`}</span><span class="n open">{d.open.length}</span></summary>
+        <ul>{d.open.map((q) => <li>{q}</li>)}</ul>
+      </details>
+    ))}
+  </section>
+</Base>
+
+<style>
+  .head { padding-top: clamp(1.5rem, 5vw, 3rem); }
+  h1 { font-size: clamp(2.2rem, 6vw, 3.6rem); margin: 0.2rem 0 0.5rem; }
+  .lede { max-width: 40rem; color: var(--ink-soft); font-size: 1.1rem; }
+  .progress { height: 10px; border-radius: 5px; background: color-mix(in srgb, var(--roof) 25%, transparent); overflow: hidden; max-width: 36rem; margin-top: 1.5rem; }
+  .progress span { display: block; height: 100%; background: var(--teal); }
+  .tally { color: var(--ink-soft); margin: 0.5rem 0 0; }
+  .tally b { color: var(--ink); font-family: var(--font-display); font-size: 1.3rem; }
+  .jump { display: flex; gap: 0.5rem; margin-top: 1rem; }
+  .jump a { padding: 0.45rem 0.9rem; border-radius: 999px; border: 1px solid var(--line); background: var(--card); text-decoration: none; color: var(--ink); font-size: 0.9rem; font-weight: 500; }
+  section { scroll-margin-top: 4.5rem; }
+  h2 { font-size: clamp(1.7rem, 4vw, 2.3rem); margin: 3rem 0 1rem; }
+  details { margin-bottom: 0.8rem; border-radius: 14px; background: var(--card); box-shadow: 0 0 0 1px var(--line); }
+  summary { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 0.9rem 1.1rem; cursor: pointer; font-family: var(--font-display); font-weight: 600; font-size: 1.2rem; list-style: none; min-height: 48px; }
+  summary::-webkit-details-marker { display: none; }
+  .n { font-family: var(--font-body); font-size: 0.8rem; font-weight: 600; padding: 0.15rem 0.6rem; border-radius: 999px; background: color-mix(in srgb, var(--teal) 15%, transparent); color: var(--teal); }
+  .n.open { background: color-mix(in srgb, var(--roof) 15%, transparent); color: var(--roof); }
+  dl { margin: 0; padding: 0 1.1rem; }
+  dl div { display: grid; grid-template-columns: 11rem 1fr; gap: 1rem; padding: 0.6rem 0; border-top: 1px solid var(--line); }
+  dt { font-weight: 600; }
+  dd { margin: 0; color: var(--ink-soft); }
+  ul { margin: 0; padding: 0 1.1rem 1rem 2.4rem; display: grid; gap: 0.4rem; color: var(--ink-soft); }
+  .more { display: inline-block; margin: 0.4rem 1.1rem 1rem; font-weight: 600; font-size: 0.9rem; text-decoration: none; }
+  @media (max-width: 600px) { dl div { grid-template-columns: 1fr; gap: 0.1rem; } }
+</style>

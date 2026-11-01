@@ -11,4 +11,9 @@ const devlog = defineCollection({
   }),
 });
 
-export const collections = { devlog };
+// The concept docs are the handbook's chapters. Ids keep the path, e.g. "world/README.md"
+const concept = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "../../concept", generateId: ({ entry }) => entry }),
+});
+
+export const collections = { devlog, concept };

@@ -1,0 +1,41 @@
+---
+import Base from "../../layouts/Base.astro";
+import Plate from "../../components/Plate.astro";
+import { chapters } from "../../data/chapters.mjs";
+import { base } from "../../lib/text";
+---
+<Base title="Chapters · game0 handbook" section="chapters">
+  <header class="wrap head">
+    <p class="eyebrow">Contents</p>
+    <h1>Chapters</h1>
+    <p class="lede">Read in order for the whole game, or jump to the part you need. On a phone, swipe sideways inside a chapter to turn the page.</p>
+  </header>
+  <ol class="wrap list">
+    {chapters.map((c) => (
+      <li>
+        <a href={`${base}/${c.slug}/`}>
+          <Plate art={`chapters/${c.slug}`} name={c.title} sizes="(max-width: 640px) 34vw, 260px" wide />
+          <span class="text">
+            <span class="num">Chapter {c.number} · {c.kicker}</span>
+            <b>{c.title}</b>
+            <span class="sum">{c.summary}</span>
+          </span>
+        </a>
+      </li>
+    ))}
+  </ol>
+</Base>
+
+<style>
+  .head { padding-top: clamp(1.5rem, 5vw, 3rem); }
+  h1 { font-size: clamp(2.4rem, 7vw, 4rem); margin: 0.2rem 0 0.5rem; }
+  .lede { max-width: 40rem; margin: 0 0 2rem; color: var(--ink-soft); font-size: 1.1rem; }
+  .list { list-style: none; display: grid; gap: 0.9rem; }
+  .list a { display: grid; grid-template-columns: minmax(7rem, 16rem) 1fr; gap: clamp(0.9rem, 3vw, 1.75rem); align-items: center; padding: 0.7rem; border-radius: 16px; background: var(--card); box-shadow: 0 0 0 1px var(--line); text-decoration: none; color: var(--ink); transition: box-shadow 0.15s, transform 0.15s; }
+  .list a:hover { transform: translateY(-2px); box-shadow: var(--shadow), 0 0 0 1px var(--gold); }
+  .text { display: grid; gap: 0.25rem; padding-right: 0.5rem; }
+  .num { font-size: 0.74rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); }
+  b { font-family: var(--font-display); font-size: clamp(1.3rem, 3vw, 1.8rem); font-weight: 600; line-height: 1.1; }
+  .sum { color: var(--ink-soft); font-size: 0.95rem; }
+  @media (max-width: 560px) { .list a { grid-template-columns: 7rem 1fr; } .sum { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; font-size: 0.88rem; } }
+</style>

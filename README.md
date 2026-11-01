@@ -2,7 +2,7 @@
 
 A sky-island MMORPG, in the concept stage. This monorepo holds the game concept, concept art, 3D assets, the Godot game, and the marketing site with its playable Three.js demos.
 
-**Site:** https://hackdonalds.github.io/game0/
+**Handbook:** https://hackdonalds.github.io/game0/
 
 ## Layout
 
@@ -13,7 +13,7 @@ A sky-island MMORPG, in the concept stage. This monorepo holds the game concept,
 | `art/concept/` | Generated and painted concept art (each image has a `.json` prompt sidecar) |
 | `art/models/` | Meshy and hand-made 3D models (`.glb`) |
 | `art/textures/` | Textures and HDRIs |
-| `apps/web/` | Marketing site (Astro + Three.js) |
+| `apps/web/` | The handbook site (Astro + Three.js): chapters rendered from `concept/`, catalogues from `apps/web/src/data/`, mini demos |
 | `apps/game/` | Godot client (not started yet) |
 | `worlds/` | Shard maps (`*.world.json`) made with the world editor demo |
 | `demos/<name>/` | Standalone playable Three.js demos (Vite), published under `/demos/<name>/` |
