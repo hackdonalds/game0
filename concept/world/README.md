@@ -29,10 +29,10 @@ A fragile trade pact between all five peoples, signed after a great sinking that
 | People | Homeland | Role in the world |
 | --- | --- | --- |
 | **Rootborn** | **The Rootholds**: caverns in the roots beneath the oldest isles | Believe roots slow the sinking; tend the ancient trees |
-| **Veiled Ones** | None now. Their city, **Vael**, sank generations ago | Wander in oath-caravans; the masks are a mourning vow worn until Vael is raised |
+| **Veiled Ones** | None now. Their city, **Vael**, sank generations ago | Wander in **oath-caravans**: fleets of Veiled ships that sail the Accord lanes from town to town. The masks are a mourning vow worn until Vael is raised |
 | **Mossbacks** | **The Garden Isles**: slow, terraced farmland isles | Keepers of the Ledger, the record of every isle that has sunk |
 | **Skerrin** | **The Crag Spires**: sheer cliff isles | Miners and climbers who dig into the isles for stone and ore |
-| **Rillfolk** | **The Glimmer Lagoons**: lake isles with glowing water | Traders between all peoples, and the only divers into the drowned world |
+| **Rillfolk** | **The Glimmer Lagoons**: lake isles with glowing water | Traders between all peoples, and the boldest divers into the drowned world. Anyone can dive, but the Rillfolk know it best |
 
 ## Old grudges and ties
 
@@ -49,14 +49,14 @@ Map: [`worlds/first-shard.world.json`](../../worlds/first-shard.world.json), edi
 - **Accord Hall** sits at the centre. Four Accord towns (**Oathgate**, **Tetherport**, **Windmarket**, **Lanterncross**) sit between the homelands, joined by the clockwise **Accord Ring** wind lane, with spokes to the hub.
 - **Homelands**: the Rootholds in the north, the Garden Isles in the east, the Glimmer Lagoons in the south (lowest, nearest the storm) and the Crag Spires in the west (highest). Each has a shrine isle bridged to three smaller isles and a lane from the nearest town.
 - **Neighbours follow the ties**: Rootborn sit next to their Mossback allies, and Skerrin next to their Rillfolk trade partners. The Rootholds and Crag Spires share the contested northwest frontier.
-- **Wild rim**: **Grudgewood**, an ancient tree on rich ore between the Rootholds and the Crags; **Vael's Shadow**, ruins above where Vael sank; **Ashfall** and **Wreckrest** are sinking. Three wild currents (**The Long Gale**, **Drowned Drift**, **Grudge Wind**) are fast shortcuts through open-PvP sky.
-- The Veiled have no homeland isle; their oath-caravans travel the lanes.
+- **Wild rim**: **Grudgewood**, an ancient tree on rich ore on the northwest frontier, between the Rootholds and the Crag Spires and beyond Oathgate; **Vael's Shadow**, ruins above where Vael sank; **Ashfall** and **Wreckrest** are sinking. Three wild currents (**The Long Gale**, **Drowned Drift**, **Grudge Wind**) are fast shortcuts through open-PvP sky.
+- The Veiled have no homeland isle; their oath-caravans, fleets of Veiled ships, travel the Accord lanes and stop at every town.
 
 ## Gameplay hooks
 
 - **Isle births** are rare world events: the whole shard races to chart, settle and contest the new land.
 - **Sinking isles** can be a live event: an isle's last days, with evacuation, salvage and a race for its resources.
-- **Drowned-world dives** are high-risk, high-reward expeditions for old-world relics. The Rillfolk are the lore experts, but any player can dive.
+- **Drowned-world dives** are high-risk, high-reward expeditions for old-world relics, using the Salvage skill. Any player can dive; the Rillfolk are the most experienced divers and the lore experts.
 - **Grudges** give PvP its flavour without hard factions; the Accord towns are the safe havens.
 
 ## Time and seasons

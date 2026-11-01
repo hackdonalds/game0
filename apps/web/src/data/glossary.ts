@@ -32,7 +32,7 @@ export const glossary: Term[] = [
   { term: "Job board", chapter: "play", definition: "A town board of repeatable jobs from NPCs and players, such as hauling, gathering, hunting and escorting." },
   { term: "Ledger", chapter: "peoples", definition: "The Mossbacks' record of every isle that has sunk. It says Vael sank because of a broken oath, which the Veiled deny." },
   { term: "Living world", chapter: "vision", definition: "The game has no final boss or endgame. Isles sink and are born, NPCs live their lives and seasons turn." },
-  { term: "Oath-caravan", chapter: "peoples", definition: "A travelling caravan of the Veiled, who have no homeland. Veiled characters begin their story aboard one." },
+  { term: "Oath-caravan", chapter: "peoples", definition: "A fleet of Veiled ships that sails the Accord lanes from town to town, since the Veiled have no homeland. Veiled characters begin their story aboard one." },
   { term: "Order book", chapter: "economy", definition: "A town's local market of buy and sell orders. Each town's book is shared across shards, but goods must still be hauled there." },
   { term: "Painterly style", chapter: "art", definition: "The game's stylised, hand-painted look, with soft lighting and gentle rim light. It is grand and luminous, never grim." },
   { term: "Partial loot", chapter: "play", definition: "On death in wild space, the resources you carry drop where you fell. Your equipped gear stays with you." },

@@ -22,6 +22,7 @@ Wooden sailships carried by enchanted sails on wind currents: the way to move gr
 - **Accord lanes** are charted, steady winds between towns and homelands, in guarded space.
 - **Wild currents** are fast, gusty and shifting, in open-PvP space: shortcuts with risk.
 - Outside currents, a light **ambient wind** blows across the whole shard.
+- The Veiled **oath-caravans**, fleets of Veiled ships, sail the Accord lanes from town to town.
 - The [First Shard](../../worlds/first-shard.world.json) map defines every current's route, speed, width and gustiness.
 
 ## Open questions

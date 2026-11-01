@@ -33,7 +33,7 @@ export const peoples = [
     id: "rillfolk",
     name: "Rillfolk",
     homeland: "The Glimmer Lagoons",
-    blurb: "Otter-folk traders who move between every people, and the only divers who dare the drowned world below.",
+    blurb: "Otter-folk traders who move between every people, and the boldest divers of the drowned world below.",
     known: "Traders, divers, cooks",
   },
 ];

@@ -113,7 +113,7 @@ export const materials: Material[] = [
     tier: 4,
     summary: "Heartwood from the fallen limbs of an ancient tree.",
     description:
-      "Grudgeheart comes from the ancient tree at Grudgewood, which grows on rich ore between the Rootholds and the Crags. Only fallen limbs may be taken, and both peoples claim the tree. The wood glows faintly with green life long after it is cut.",
+      "Grudgeheart comes from the ancient tree at Grudgewood, which grows on rich ore on the northwest frontier between the Rootholds and the Crag Spires. Only fallen limbs may be taken, and both peoples claim the tree. The wood glows faintly with green life long after it is cut.",
     where: "Fallen limbs of the ancient tree at Grudgewood",
     gatheredWith: "Woodcutting (100)",
     usedFor: ["Master bows and staves", "Rare ship parts", "Gear that slowly mends itself (draft)"],

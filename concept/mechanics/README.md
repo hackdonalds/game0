@@ -74,7 +74,7 @@ Four kinds, all simple to pick up:
 
 ## First hours
 
-- New characters start on their people's **home isles**, in guarded space. Veiled characters start aboard an **oath-caravan** travelling the Accord lanes; their first steps happen on deck and at its stops.
+- New characters start on their people's **home isles**, in guarded space. Veiled characters start aboard an **oath-caravan**, a fleet of Veiled ships travelling the Accord lanes; their first steps happen on deck and at its stops.
 - Short quests teach movement, gathering, learning a first skill from a trainer, crafting, and a skiff ride to the nearest Accord town.
 - From the town, the job boards and story quests take over.
 

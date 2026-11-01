@@ -39,7 +39,7 @@ export const peopleEntries: PeopleEntry[] = [
       "Vael sank generations ago, and the Veiled have had no homeland since. They travel the sky lanes in oath-caravans, bound by sworn vows. Their masks are a mourning vow, worn until Vael is raised. An oath given by one of the Veiled is kept, and every oath kept is stitched into their cloth.",
     knownFor: "Oath-keepers, mercenaries and envoys.",
     affinities: ["Oathcraft", "Blades", "Polearms", "Wind", "Sailing", "Lore"],
-    start: "Aboard an oath-caravan travelling the Accord lanes, in guarded space. Their first steps happen on deck and at the caravan's stops, which end at an Accord town.",
+    start: "Aboard an oath-caravan, a fleet of Veiled ships travelling the Accord lanes, in guarded space. Their first steps happen on deck and at the caravan's stops, which end at an Accord town.",
     relations: [
       { with: "rillfolk", kind: "rival", text: "Rillfolk divers bring up relics from the drowned world. To the Veiled, that is robbing the dead of Vael." },
       { with: "mossback", kind: "rival", text: "The Mossback Ledger records that Vael sank because of a broken oath. The Veiled say the Ledger lies." },
@@ -105,7 +105,7 @@ export const peopleEntries: PeopleEntry[] = [
     id: "rillfolk",
     name: "Rillfolk",
     homeland: "The Glimmer Lagoons",
-    blurb: "Otter-folk traders who move between every people, and the only divers who dare the drowned world below.",
+    blurb: "Otter-folk traders who move between every people, and the boldest divers of the drowned world below.",
     look: "Sleek otter-folk with glossy fur.",
     culture:
       "The Rillfolk live on the Glimmer Lagoons, the lowest isles, where the water glows and the storm is close below. They trade between every people and cook better than any of them. They are the only people who dive into the drowned world, and they know more about it than anyone alive.",
