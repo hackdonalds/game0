@@ -1,0 +1,141 @@
+<canvas id="peoples-hero" aria-label="The five peoples of game0 standing on a floating isle"></canvas>
+
+<script>
+  import * as THREE from "three";
+  import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
+
+  type Option = { file: string; position: [number, number, number]; rotation: [number, number, number]; scale: number };
+  type Config = { base: { file: string }; slots: Record<string, { bone: string; options: Record<string, Option> }> };
+
+  // Lineup order, left to right, with Skerrin at the centre
+  const LINEUP = ["rootborn", "veiled", "skerrin", "mossback", "rillfolk"];
+  const MODELS = `${import.meta.env.BASE_URL.replace(/\/?$/, "/")}models/`;
+
+  const canvas = document.getElementById("peoples-hero") as HTMLCanvasElement;
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+  renderer.outputColorSpace = THREE.SRGBColorSpace;
+
+  const scene = new THREE.Scene();
+  scene.fog = new THREE.Fog(0x12261f, 9, 22);
+  const camera = new THREE.PerspectiveCamera(32, 1, 0.1, 60);
+  const target = new THREE.Vector3(0, 1.05, 0);
+
+  scene.add(new THREE.HemisphereLight(0xfff3d6, 0x0e5a57, 1.8));
+  const sun = new THREE.DirectionalLight(0xffe2a8, 2.4);
+  sun.position.set(3, 6, 5);
+  scene.add(sun);
+  const rim = new THREE.DirectionalLight(0x2fc4b2, 1.2);
+  rim.position.set(-4, 3, -4);
+  scene.add(rim);
+
+  // Floating isle under the lineup
+  const isle = new THREE.Group();
+  const top = new THREE.Mesh(new THREE.CylinderGeometry(4.2, 4.0, 0.35, 40), new THREE.MeshStandardMaterial({ color: 0x4f7a3a }));
+  top.position.y = -0.175;
+  const rock = new THREE.Mesh(new THREE.ConeGeometry(4.0, 4.5, 12), new THREE.MeshStandardMaterial({ color: 0x6b5a45, flatShading: true }));
+  rock.rotation.x = Math.PI;
+  rock.position.y = -2.6;
+  isle.add(top, rock);
+  scene.add(isle);
+
+  const BONE_ALIASES: Record<string, string> = { Spine02: "Spine2", Spine01: "Spine1" };
+  const findBone = (root: THREE.Object3D, name: string) =>
+    [name, `mixamorig${name}`, `mixamorig${BONE_ALIASES[name] ?? name}`].map((n) => root.getObjectByName(n)).find(Boolean);
+
+  const loader = new GLTFLoader();
+  const mixers: THREE.AnimationMixer[] = [];
+
+  async function loadPeople(people: string, index: number, count: number) {
+    const cfg: Config = await (await fetch(`${MODELS}${people}/attachments.json`)).json();
+    const gltf = await loader.loadAsync(MODELS + cfg.base.file);
+    const character = gltf.scene;
+
+    // Arc facing the camera
+    const t = count > 1 ? index / (count - 1) - 0.5 : 0;
+    const angle = t * 1.15;
+    character.position.set(Math.sin(angle) * 3.2, 0, -Math.cos(angle) * 3.2 + 3.2 - Math.abs(t) * 0.4);
+    character.rotation.y = -angle * 0.6;
+    isle.add(character);
+    const box = new THREE.Box3().setFromObject(character);
+    character.position.y -= box.min.y;
+    character.updateMatrixWorld(true);
+
+    // Default look: the first option in every slot
+    for (const { bone: boneName, options } of Object.values(cfg.slots)) {
+      const bone = findBone(character, boneName);
+      const option = Object.values(options)[0];
+      if (!bone || !option) continue;
+      const socket = new THREE.Object3D();
+      const s = bone.getWorldScale(new THREE.Vector3());
+      socket.scale.set(1 / s.x, 1 / s.y, 1 / s.z);
+      bone.add(socket);
+      const part = (await loader.loadAsync(MODELS + option.file)).scene;
+      part.position.fromArray(option.position);
+      part.rotation.set(...(option.rotation.map(THREE.MathUtils.degToRad) as [number, number, number]));
+      part.scale.setScalar(option.scale);
+      socket.add(part);
+    }
+
+    const mixer = new THREE.AnimationMixer(character);
+    const idle = gltf.animations.find((c) => /idle/i.test(c.name)) ?? gltf.animations[0];
+    if (idle) {
+      const action = mixer.clipAction(idle).play();
+      action.time = Math.random() * idle.duration;
+    }
+    mixers.push(mixer);
+  }
+
+  const available: string[] = await (await fetch(MODELS + "peoples.json")).json();
+  const lineup = LINEUP.filter((p) => available.includes(p));
+  await Promise.all(lineup.map((p, i) => loadPeople(p, i, lineup.length)));
+  canvas.classList.add("ready");
+
+  const resize = () => {
+    const { clientWidth: w, clientHeight: h } = canvas;
+    renderer.setSize(w, h, false);
+    camera.aspect = w / h;
+    // Pull the camera back on narrow screens so the whole lineup stays in frame;
+    // on wide screens shift the view so the lineup sits right of the headline
+    const portrait = w / h < 1;
+    camera.userData.distance = portrait ? 18 : 10.5;
+    // Keep the fog behind the lineup at any distance
+    const fog = scene.fog as THREE.Fog;
+    fog.near = camera.userData.distance;
+    fog.far = camera.userData.distance + 14;
+    camera.userData.offset = w / h > 1.2 ? -1.6 : 0;
+    // Portrait: aim low so the lineup sits in the upper half, above the headline
+    camera.userData.lookY = portrait ? -2.4 : target.y;
+    camera.updateProjectionMatrix();
+  };
+  new ResizeObserver(resize).observe(canvas);
+  resize();
+
+  const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const clock = new THREE.Clock();
+  renderer.setAnimationLoop(() => {
+    const dt = clock.getDelta();
+    const time = clock.elapsedTime;
+    if (!reduceMotion) mixers.forEach((m) => m.update(dt));
+    const sway = reduceMotion ? 0 : Math.sin(time * 0.12) * 0.25;
+    const d = camera.userData.distance ?? 9.5;
+    const offset = camera.userData.offset ?? 0;
+    camera.position.set(Math.sin(sway) * d + offset, 2.9, Math.cos(sway) * d);
+    camera.lookAt(target.x + offset, camera.userData.lookY ?? target.y, target.z);
+    isle.position.y = reduceMotion ? 0 : Math.sin(time * 0.6) * 0.03;
+    renderer.render(scene, camera);
+  });
+</script>
+
+<style>
+  canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    opacity: 0;
+    transition: opacity 1.2s ease;
+  }
+  canvas.ready { opacity: 1; }
+</style>

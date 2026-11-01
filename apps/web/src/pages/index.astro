@@ -1,26 +1,111 @@
 ---
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
 import Base from "../layouts/Base.astro";
-import HeroScene from "../components/HeroScene.astro";
+import PeoplesHero from "../components/PeoplesHero.astro";
+import { peoples } from "../data/peoples";
+import marketTown from "../../../../art/concept/style-test-01-market-town.png";
+import adventurer from "../../../../art/concept/style-test-02-adventurer.png";
+import sailship from "../../../../art/concept/style-test-03-airship.png";
+import lineup from "../../../../art/concept/peoples-lineup-02.png";
+import skerrinBase from "../../../../art/concept/skerrin-base-turnaround.png";
 
 type Demo = { title: string; summary: string };
 const demos = Object.entries(import.meta.glob<Demo>("../../../../demos/*/demo.json", { eager: true, import: "default" }))
   .map(([path, meta]) => ({ slug: path.split("/").at(-2)!, ...meta }));
+const posts = (await getCollection("devlog")).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+
+const features = [
+  { title: "No classes", text: "About 35 skills grow as you use them, across weapons, five schools of magic, gathering, crafting and travel. Skills you neglect fade slowly, but never below half their peak." },
+  { title: "Six techniques", text: "Learn techniques from trainers and rare scrolls, then slot any six. Change your role by changing your loadout, not your character." },
+  { title: "Risk you choose", text: "Accord towns are safe. Sky lanes and home isles are guarded. The wild isles are open PvP, and whatever you carry, you can lose." },
+  { title: "Craft and haul", text: "Every town has its own market. Craft, load your sailship and run goods between isles, the faster wild routes for more profit, the guarded lanes for safety." },
+  { title: "Sinking isles", text: "When an isle starts to sink, the whole shard races to evacuate it, salvage its riches and fight over the spoils before it drops into the storm." },
+  { title: "Make them yours", text: "Horns, masks, shell gardens, bark growths and tail rings. Each people's signature look grows and changes as you play." },
+];
+
+const gallery = [
+  { src: marketTown, alt: "Sky-island market town with bridges and a docked ship" },
+  { src: lineup, alt: "Lineup of the five playable peoples" },
+  { src: sailship, alt: "A trade ship sailing between floating isles" },
+  { src: adventurer, alt: "An adventurer looking out over the floating isles" },
+  { src: skerrinBase, alt: "Skerrin base-body turnaround for 3D modelling" },
+];
 ---
-<Base title="game0">
+<Base title="game0 · a sky-isle MMORPG">
+  <nav class="top">
+    <a class="brand" href={`${base}/`}>game0</a>
+    <a href="#world">World</a>
+    <a href="#peoples">Peoples</a>
+    <a href="#play">Play</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#devlog">Devlog</a>
+  </nav>
+
   <header class="hero">
-    <HeroScene />
+    <PeoplesHero />
     <div class="hero-copy">
-      <p class="eyebrow">Working title</p>
+      <p class="eyebrow">A sky-isle MMORPG in development</p>
       <h1>game0</h1>
-      <p>A world of floating isles, ancient trees and cities in the clouds.</p>
+      <p>The isles float above a drowned world, and one by one they are sinking. Five peoples share what is left.</p>
+      <a class="cta" href={`${base}/demos/creator/`}>Try the Peoples Creator</a>
     </div>
   </header>
 
   <main>
-    <section>
-      <h2>Playable demos</h2>
-      <ul class="demos">
+    <section id="world" class="split">
+      <div>
+        <p class="eyebrow">The world</p>
+        <h2>Above the drowned world</h2>
+        <p>Nobody knows why the isles float. Scholars argue, priests pray, and expeditions vanish looking for the answer. Below the clouds, under a storm that never ends, lie the ruins of the world that came before.</p>
+        <p>The isles are sinking. Every so often one loses its lift and settles into the storm, so land is shrinking and every isle is worth fighting for.</p>
+        <p>The five peoples hold together under the <strong>Tether Accord</strong>, a fragile pact that keeps the towns neutral and the sky lanes open. Old grudges still run deep beneath it.</p>
+      </div>
+      <Image src={marketTown} alt="A sky-island market town" widths={[640, 1024, 1536]} sizes="(max-width: 800px) 100vw, 50vw" />
+    </section>
+
+    <section id="peoples">
+      <p class="eyebrow">The peoples</p>
+      <h2>Five peoples, one sky</h2>
+      <ul class="peoples">
+        {peoples.map((p) => (
+          <li>
+            <Image src={p.image} alt={`${p.name} turnaround`} widths={[480, 960]} sizes="(max-width: 800px) 100vw, 20vw" />
+            <div>
+              <h3>{p.name}</h3>
+              <p class="homeland">{p.homeland}</p>
+              <p>{p.blurb}</p>
+              <p class="known">{p.known}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section id="play">
+      <p class="eyebrow">How you play</p>
+      <h2>A sandbox with something to lose</h2>
+      <ul class="features">
+        {features.map((f) => (
+          <li>
+            <h3>{f.title}</h3>
+            <p>{f.text}</p>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section id="gallery">
+      <p class="eyebrow">Concept art and demos</p>
+      <h2>From the studio</h2>
+      <ul class="gallery">
+        {gallery.map((g) => (
+          <li><Image src={g.src} alt={g.alt} widths={[480, 960]} sizes="(max-width: 800px) 100vw, 33vw" /></li>
+        ))}
+      </ul>
+      <h3 class="sub">Playable demos</h3>
+      <ul class="cards">
         {demos.map((d) => (
           <li>
             <a href={`${base}/demos/${d.slug}/`}>
@@ -31,18 +116,85 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
         ))}
       </ul>
     </section>
+
+    <section id="devlog">
+      <p class="eyebrow">Devlog</p>
+      <h2>Latest updates</h2>
+      <ul class="cards">
+        {posts.map((post) => (
+          <li>
+            <a href={`${base}/devlog/${post.id}/`}>
+              <time datetime={post.data.date.toISOString()}>{post.data.date.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}</time>
+              <h3>{post.data.title}</h3>
+              <p>{post.data.summary}</p>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
   </main>
+
+  <footer>game0 is in early concept development.</footer>
 </Base>
 
 <style>
-  .hero { position: relative; min-height: 88vh; display: grid; align-items: end; overflow: hidden;
-    background: radial-gradient(ellipse at 50% 30%, #1f6f62 0%, var(--ink) 70%); }
-  .hero-copy { position: relative; padding: 0 clamp(16px, 6vw, 96px) 10vh; max-width: 40rem; }
-  .hero h1 { font-size: clamp(3rem, 9vw, 7rem); margin: 0; color: var(--gold); }
-  .eyebrow { text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.8rem; color: var(--teal); margin: 0; }
-  main { padding: 4rem clamp(16px, 6vw, 96px); }
-  .demos { list-style: none; padding: 0; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr)); }
-  .demos a { display: block; padding: 1.25rem; border: 1px solid #ffffff22; border-radius: 12px; text-decoration: none; color: inherit; background: #ffffff08; }
-  .demos a:hover { border-color: var(--gold); }
-  .demos h3 { margin: 0 0 0.25rem; color: var(--gold); }
+  .top { position: fixed; top: env(safe-area-inset-top, 0px); left: 0; right: 0; z-index: 10; display: flex; gap: 1.25rem; align-items: center; padding: 0.9rem clamp(16px, 6vw, 96px); background: linear-gradient(#12261fee, #12261f00); }
+  .top a { color: var(--parchment); text-decoration: none; font-size: 0.9rem; opacity: 0.85; }
+  .top a:hover { opacity: 1; color: var(--gold); }
+  .top .brand { font-family: var(--font-display); font-size: 1.2rem; color: var(--gold); opacity: 1; margin-right: auto; }
+
+  .hero { position: relative; min-height: 92vh; display: grid; align-items: end; overflow: hidden; background: radial-gradient(ellipse at 50% 35%, #1f6f62 0%, var(--ink) 70%); }
+  .hero-copy { position: relative; padding: 0 clamp(16px, 6vw, 96px) 8vh; max-width: 38rem; pointer-events: none; }
+  .hero-copy .cta { pointer-events: auto; }
+  .hero h1 { font-size: clamp(3rem, 9vw, 6.5rem); margin: 0; color: var(--gold); text-shadow: 0 2px 24px #000a; }
+  .hero-copy p { text-shadow: 0 1px 12px #000c; }
+  .eyebrow { text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.78rem; color: var(--teal); margin: 0; }
+  .cta { display: inline-block; margin-top: 0.75rem; padding: 0.7rem 1.2rem; border-radius: 999px; background: var(--gold); color: var(--ink); font-weight: 600; text-decoration: none; }
+  .cta:hover { filter: brightness(1.1); }
+
+  main { padding: 0 clamp(16px, 6vw, 96px); }
+  section { padding: 5rem 0; border-top: 1px solid #ffffff12; }
+  section h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); margin: 0.3rem 0 1.5rem; color: var(--parchment); }
+  img { width: 100%; height: auto; border-radius: 12px; display: block; }
+
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+  .split p { max-width: 36rem; }
+
+  .peoples { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; }
+  .peoples li { background: #ffffff08; border: 1px solid #ffffff14; border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; }
+  /* Turnaround sheets: show the front view (left third) */
+  .peoples img { border-radius: 0; aspect-ratio: 3 / 4; object-fit: cover; object-position: 12% center; background: #d8d8d8; }
+  .peoples div { padding: 1rem; }
+  .peoples h3 { margin: 0; color: var(--gold); }
+  .homeland { margin: 0.1rem 0 0.6rem; color: var(--teal); font-size: 0.85rem; }
+  .known { font-size: 0.85rem; opacity: 0.7; margin-bottom: 0; }
+
+  .features { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  .features li { padding: 1.4rem; border-radius: 14px; background: #ffffff08; border: 1px solid #ffffff14; }
+  .features h3 { margin: 0 0 0.4rem; color: var(--gold); font-size: 1.15rem; }
+  .features p { margin: 0; opacity: 0.85; }
+
+  .gallery { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  .gallery li:first-child { grid-column: span 2; grid-row: span 2; }
+  .gallery li:last-child { grid-column: span 2; }
+  .gallery img { height: 100%; object-fit: cover; }
+  .sub { margin-top: 3rem; }
+
+  .cards { list-style: none; padding: 0; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr)); }
+  .cards a { display: block; height: 100%; padding: 1.25rem; border: 1px solid #ffffff22; border-radius: 12px; text-decoration: none; color: inherit; background: #ffffff08; }
+  .cards a:hover { border-color: var(--gold); }
+  .cards h3 { margin: 0.2rem 0 0.25rem; color: var(--gold); }
+  .cards time { font-size: 0.8rem; color: var(--teal); }
+
+  footer { padding: 2rem clamp(16px, 6vw, 96px) 3rem; opacity: 0.6; font-size: 0.85rem; }
+
+  @media (max-width: 1000px) {
+    .peoples { grid-template-columns: repeat(2, 1fr); }
+    .features { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 700px) {
+    .split, .features, .peoples, .gallery { grid-template-columns: 1fr; }
+    .gallery li:first-child, .gallery li:last-child { grid-column: auto; grid-row: auto; }
+    .top a:not(.brand) { display: none; }
+  }
 </style>

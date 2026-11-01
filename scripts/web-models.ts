@@ -5,6 +5,7 @@ import { $ } from "bun";
 import { basename, dirname, join } from "node:path";
 import { mkdir, stat } from "node:fs/promises";
 
+const GLTF = join(import.meta.dir, "../node_modules/.bin/gltf-transform");
 const [outDir, ...configs] = process.argv.slice(2);
 const peoples: string[] = [];
 
@@ -27,7 +28,7 @@ for (const config of configs) {
     const fresh = await stat(out).then((o) => o.mtimeMs > Bun.file(src).lastModified, () => false);
     if (fresh) continue;
     await mkdir(dirname(out), { recursive: true });
-    await $`bunx gltf-transform optimize ${src} ${out} --texture-compress webp --texture-size 1024 --simplify false --compress false`.quiet();
+    await $`${GLTF} optimize ${src} ${out} --texture-compress webp --texture-size 1024 --simplify false --compress false`.quiet();
     console.log(`${out} ${((await stat(out)).size / 1e6).toFixed(1)} MB`);
   }
 }

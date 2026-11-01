@@ -3,9 +3,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview"
+    "dev": "bun run models && astro dev",
+    "build": "bun run models && astro build",
+    "preview": "astro preview",
+    "models": "bun ../../scripts/web-models.ts public/models ../../art/models/*/attachments.json"
   },
   "dependencies": {
     "astro": "7.4.0",
