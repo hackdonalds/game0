@@ -1,6 +1,8 @@
 # Monsters
 
 > Decisions approved 2026-11-01. The bestiary below is a first draft.
+>
+> Full stat blocks: [`apps/web/src/data/bestiary.ts`](../../apps/web/src/data/bestiary.ts), published as the [Bestiary](https://hackdonalds.github.io/game0/bestiary/) on the site. Plates are generated with `bun run art:bestiary`.
 
 Creatures of the isles and the sky, the storm-touched, and world bosses.
 
