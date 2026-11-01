@@ -3,8 +3,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build"
+    "models": "bun ../../scripts/web-environment.ts public/models ../../art/models/environment/floating-island.glb ../../art/models/environment/sky-backdrop.glb",
+    "dev": "bun run models && vite",
+    "build": "bun run models && vite build"
   },
   "dependencies": {
     "three": "0.186.1"

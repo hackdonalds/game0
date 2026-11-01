@@ -12,7 +12,12 @@ art/models/
     <part>.glb        # signature parts: horns, masks, shell gardens, growths
   props/
     <name>.glb        # held items and attachments
+  environment/
+    floating-island.glb   # hand-made in Blender: island, trees, river, waterfalls (vertex colours, ~130k triangles)
+    sky-backdrop.glb      # distant mountains and cloud sea around it
 ```
+
+Environment models are colour-baked to vertex colours, so they need no textures. Waterfall meshes keep their UVs and use the `Web_Waterfall` material, which pages replace with an animated shader. `scripts/web-environment.ts` compresses them (meshopt, GPU instancing) into a demo's `public/models/`.
 
 Each `.glb` has a `.json` sidecar with the Meshy task ID, input images and credits used, and a `.thumb.png` preview.
 
