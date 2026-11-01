@@ -7,6 +7,10 @@ import { peoples } from "../data/peoples";
     <button type="button" role="tab" id={`tab-${p.id}`} data-index={i} aria-selected={i === Math.floor(peoples.length / 2) ? "true" : "false"}>{p.name}</button>
   ))}
 </div>
+<div class="stage-zoom" aria-label="Zoom">
+  <button type="button" data-zoom="in" aria-label="Zoom in">+</button>
+  <button type="button" data-zoom="out" aria-label="Zoom out">−</button>
+</div>
 
 <script>
   import * as THREE from "three";
@@ -84,6 +88,7 @@ import { peoples } from "../data/peoples";
     holders[slot] = holder;
     const box = new THREE.Box3().setFromObject(character);
     character.position.y -= box.min.y;
+    holder.userData.height = box.max.y - box.min.y;
     character.updateMatrixWorld(true);
 
     // Default look: the first option in every slot
@@ -143,6 +148,36 @@ import { peoples } from "../data/peoples";
   });
   canvas.addEventListener("pointermove", (e) => { canvas.style.cursor = pick(e) >= 0 ? "pointer" : ""; });
 
+  // Zoom: pinch (touch or trackpad), Ctrl/⌘ + wheel, or the +/− buttons. Plain wheel still scrolls the page.
+  const ZOOM_MIN = 0.4, ZOOM_MAX = 1.15;
+  let zoomTarget = 1, zoom = 1;
+  const zoomBy = (factor: number) => { zoomTarget = THREE.MathUtils.clamp(zoomTarget * factor, ZOOM_MIN, ZOOM_MAX); };
+  canvas.addEventListener("wheel", (e) => {
+    if (!e.ctrlKey && !e.metaKey) return;
+    e.preventDefault();
+    zoomBy(Math.exp(e.deltaY * 0.01));
+  }, { passive: false });
+  const touches = new Map<number, { x: number; y: number }>();
+  let pinchStart = 0;
+  const spread = () => { const [a, b] = [...touches.values()]; return Math.hypot(a.x - b.x, a.y - b.y); };
+  canvas.addEventListener("pointerdown", (e) => {
+    if (e.pointerType !== "touch") return;
+    touches.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    if (touches.size === 2) pinchStart = spread();
+  });
+  canvas.addEventListener("pointermove", (e) => {
+    if (!touches.has(e.pointerId)) return;
+    touches.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    if (touches.size !== 2 || !pinchStart) return;
+    const d = spread();
+    zoomBy(pinchStart / d);
+    pinchStart = d;
+  });
+  const lift = (e: PointerEvent) => { touches.delete(e.pointerId); pinchStart = 0; };
+  ["pointerup", "pointercancel", "pointerleave"].forEach((t) => canvas.addEventListener(t, lift as EventListener));
+  document.querySelectorAll<HTMLButtonElement>(".stage-zoom [data-zoom]").forEach((b) =>
+    b.addEventListener("click", () => zoomBy(b.dataset.zoom === "in" ? 0.75 : 1 / 0.75)));
+
   const view = { distance: 9, lookY: 1 };
   const resize = () => {
     const { clientWidth: w, clientHeight: h } = canvas;
@@ -168,9 +203,15 @@ import { peoples } from "../data/peoples";
       const s = i === focus ? FOCUS_SCALE : 1;
       h.scale.setScalar(h.scale.x + (s - h.scale.x) * ease);
     });
-    look.set(0, view.lookY, -RADIUS * 0.35);
+    zoom += (zoomTarget - zoom) * ease;
+    // Zooming in moves toward the front of the ring and lifts the gaze to the faces
+    const closeness = THREE.MathUtils.clamp((1 - zoom) / (1 - ZOOM_MIN), 0, 1);
+    const lookZ = THREE.MathUtils.lerp(-RADIUS * 0.35, 0, closeness);
+    const chest = (holders[focus]?.userData.height ?? 1.8) * FOCUS_SCALE * 0.72;
+    look.set(0, THREE.MathUtils.lerp(view.lookY, chest, closeness), lookZ);
+    const distance = view.distance * zoom;
     const sway = reduceMotion ? 0 : Math.sin(clock.elapsedTime * 0.15) * 0.06;
-    camera.position.set(Math.sin(sway) * view.distance, 2.1, Math.cos(sway) * view.distance - RADIUS * 0.35);
+    camera.position.set(Math.sin(sway) * distance, THREE.MathUtils.lerp(2.1, chest + 0.15, closeness), Math.cos(sway) * distance + lookZ);
     camera.lookAt(look);
     renderer.render(scene, camera);
   };
@@ -202,7 +243,11 @@ import { peoples } from "../data/peoples";
   .people-tabs button { font: 500 0.82rem var(--font-body); padding: 0.45rem 0.85rem; min-height: 36px; border-radius: 999px; border: 0; background: #ffffffc8; color: #1d2733; box-shadow: 0 4px 14px -6px #1d273366; cursor: pointer; backdrop-filter: blur(6px); }
   .people-tabs button[aria-selected="true"] { background: #1d2733; color: #fff; }
 
+  .stage-zoom { position: absolute; top: 0.75rem; right: 0.75rem; z-index: 2; display: flex; flex-direction: column; gap: 0.3rem; }
+  .stage-zoom button { font: 600 1.1rem/1 var(--font-body); width: 36px; height: 36px; border-radius: 999px; border: 0; background: #ffffffc8; color: #1d2733; box-shadow: 0 4px 14px -6px #1d273366; cursor: pointer; backdrop-filter: blur(6px); }
+
   canvas {
+    touch-action: pan-x pan-y;
     position: absolute;
     inset: 0;
     width: 100%;
