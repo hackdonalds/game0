@@ -1,0 +1,72 @@
+{
+  "Idle": {
+    "speed": 0.0,
+    "source": "Idle_Loop",
+    "frames": 75
+  },
+  "Walk": {
+    "speed": 0.787,
+    "source": "Walk_Loop",
+    "frames": 40
+  },
+  "Run": {
+    "speed": 4.325,
+    "source": "Jog_Fwd_Loop",
+    "frames": 28
+  },
+  "Sprint": {
+    "speed": 6.66,
+    "source": "Sprint_Loop",
+    "frames": 20
+  },
+  "JumpStart": {
+    "speed": 0.0,
+    "source": "Jump_Start",
+    "frames": 40
+  },
+  "JumpLoop": {
+    "speed": 0.0,
+    "source": "Jump_Loop",
+    "frames": 75
+  },
+  "JumpLand": {
+    "speed": 0.0,
+    "source": "Jump_Land",
+    "frames": 38
+  },
+  "HitChest": {
+    "speed": 0.0,
+    "source": "Hit_Chest",
+    "frames": 10
+  },
+  "HitHead": {
+    "speed": 0.0,
+    "source": "Hit_Head",
+    "frames": 13
+  },
+  "Punch": {
+    "speed": 0.0,
+    "source": "Punch_Cross",
+    "frames": 30
+  },
+  "Hook": {
+    "speed": 0.0,
+    "source": "Melee_Hook",
+    "frames": 14
+  },
+  "HitKnockback": {
+    "speed": 0.0,
+    "source": "Hit_Knockback",
+    "frames": 25
+  },
+  "CarryWalk": {
+    "speed": 0.525,
+    "source": "Walk_Carry_Loop",
+    "frames": 60
+  },
+  "CarryIdle": {
+    "speed": 0,
+    "source": "Idle_Loop + Walk_Carry_Loop arms",
+    "frames": 75
+  }
+}

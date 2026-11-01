@@ -1,6 +1,6 @@
 # Web app recipes (Claude in Chrome)
 
-Use these for free web operations: rigging, preset animations, standalone remesh and downloads. The user is signed in to meshy.ai on Pro in their own Chrome and has approved free web actions.
+Use these for free web operations: standalone remesh, downloads, and rigging or preset animations when the local pipeline (`local-rig.md`) can't handle the body. The user is signed in to meshy.ai on Pro in their own Chrome and has approved free web actions.
 
 ## Rules
 

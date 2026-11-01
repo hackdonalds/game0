@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rootwarden in Motion · game0 demo</title>
+    <style>
+      html, body { margin: 0; height: 100%; overflow: hidden; background: #9cc3e6; color: #1d2733; font: 13px/1.45 system-ui, sans-serif; }
+      canvas { display: block; touch-action: none; }
+      .panel { position: fixed; padding: 10px 14px; border-radius: 12px; background: #ffffffe0; box-shadow: 0 6px 20px -8px #1d273366; max-width: min(420px, calc(100vw - 24px)); }
+      #intro { top: 12px; left: 12px; }
+      #intro h1 { font-size: 15px; margin: 0 0 4px; }
+      #intro p { margin: 0 0 6px; }
+      #intro p:last-child { margin: 0; }
+      kbd { font: 600 11px ui-monospace, monospace; padding: 1px 5px; border-radius: 4px; background: #1d273314; }
+      #clips { bottom: 12px; left: 50%; transform: translateX(-50%); display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; }
+      #clips button { font: 600 13px system-ui, sans-serif; padding: 8px 12px; border: 0; border-radius: 8px; background: #1d27330f; color: inherit; cursor: pointer; }
+      #clips button:hover { background: #1d27331f; }
+      #clips button.on { background: #3d6b2f; color: #fff; }
+      #status { top: 12px; right: 12px; font-variant-numeric: tabular-nums; }
+      #status b { display: inline-block; min-width: 76px; }
+      .float { position: fixed; font: 800 22px system-ui, sans-serif; color: #e34b3b; text-shadow: 0 2px 6px #0006; pointer-events: none; transition: transform 0.9s ease-out, opacity 0.9s ease-in; }
+      @media (max-width: 700px) { #intro { display: none; } #status { left: 12px; right: auto; } }
+    </style>
+  </head>
+  <body>
+    <div id="intro" class="panel">
+      <h1>Rootwarden in Motion</h1>
+      <p>The Meshy model, rigged locally in headless Blender (skeleton found from the mesh shape) and driven by Quaternius' CC0 Universal Animation Library, retargeted onto its stockier body.</p>
+      <p><kbd>WASD</kbd> move · <kbd>Shift</kbd> run · <kbd>Space</kbd> jump · <kbd>F</kbd> attack · <kbd>H</kbd> take a hit · <kbd>C</kbd> pick up / drop the crate. Drag to orbit.</p>
+    </div>
+    <div id="status" class="panel">Loading…</div>
+    <div id="clips" class="panel">
+      <button data-loco="Walk">Walk</button>
+      <button data-loco="Run">Run</button>
+      <button data-shot="Jump">Jump</button>
+      <button data-shot="Hit">Hit</button>
+      <button data-shot="Attack">Attack</button>
+      <button data-carry>Carry</button>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
