@@ -77,5 +77,5 @@ export const docToChapter = Object.fromEntries(chapters.flatMap((c) => c.docs.ma
  *  under concept/ (outside concept/entries/) that no chapter renders. @type {Record<string, string>} */
 export const excludedDocs = {
   "README.md": "Index of the concept folder for readers on GitHub; the handbook's chapter list and home page replace it.",
-  "glossary.md": "The glossary terms; the handbook shows them as the glossary catalogue (apps/web/src/data/glossary.ts), not as a chapter.",
+  "glossary.md": "The glossary terms; the handbook shows them as the glossary catalogue, not as a chapter.",
 };

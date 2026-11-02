@@ -27,7 +27,7 @@ Stylized painterly, epic high fantasy. Grand and luminous, never grim.
 | Characters | Heroic stylized proportions: slightly larger hands, heads and shoulders, readable silhouettes at distance |
 | Reference use | The reference anchors the palette and mood; other elements stay open to exploration |
 | 3D fidelity | Hand-painted, mid detail: chunky readable shapes, with detail painted into textures rather than modelled |
-| Peoples | Near-human peoples, each with a signature trait that always reads (see [character customization](character-customization.md)), not beast-folk. The animal-folk look of [lineup 02](../../art/concept/peoples-lineup-02.png) was retired with the earlier peoples (see [peoples](../world/peoples.md#retired-concepts)) |
+| Peoples | Near-human peoples, each with a signature trait that always reads (see [character customization](character-customization.md)), not beast-folk. The animal-folk look was retired with the earlier peoples (see [peoples](../world/peoples.md#retired-concepts)) |
 | Colour and light | Softer and more muted than the first tests: gentler saturation, painterly atmosphere. The palette below is applied at lower saturation |
 | Texture lighting | Flat, unlit colour textures (Meshy 7.1). Painterly lighting comes from in-engine shaders, not baked into textures ([lighting test](../../art/models/tests/lighting-ab/compare-unlit.png)) |
 | Time | Day and night cycle and four seasons, changing light, colour and foliage |
@@ -39,9 +39,9 @@ Stylized painterly, epic high fantasy. Grand and luminous, never grim.
 
 ## Locked: landscape style
 
-Approved from the first style tests: [market town](../../art/concept/style-test-01-market-town.png) and [airship](../../art/concept/style-test-03-airship.png). These two images are the reference for environments.
+Approved from the first style tests: [market town](../../art/references/style-test-01-market-town.png) and [airship](../../art/references/style-test-03-airship.png). These two images are the reference for environments.
 
-Characters are not locked. The [adventurer test](../../art/concept/style-test-02-adventurer.png) read as a generic young sword hero, and character design needs its own pass.
+Characters are not locked. The [adventurer test](../../art/references/style-test-02-adventurer.png) read as a generic young sword hero, and character design needs its own pass.
 
 ## Palette
 
