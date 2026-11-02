@@ -16,6 +16,7 @@ import { biomes, foliage, kitTrees, pieceSize } from "../../../data/biomes";
 import { conceptGalleries } from "../../../data/concept-sheets";
 import { Image } from "astro:assets";
 import { plate } from "../../../lib/art";
+import { artStatus } from "../../../lib/art-status";
 import { catalogues, isleSlug, windSlug, peopleName, TONE, type Card } from "../../../lib/catalogues";
 import { base, cap } from "../../../lib/text";
 
@@ -78,6 +79,12 @@ const galleries = arch ? [
   ...(biome.builtSheets.length ? [{ title: "Built nature kit", note: natureKit ? `Modelled and textured in Blender: ${natureKit.pieces.length} pieces, ${natureTris.toLocaleString("en-GB")} triangles in all.` : "Modelled in Blender.", sheets: biome.builtSheets.map((s) => ({ art: `biomes/${biome.id}-${s.id}`, label: s.label })) }] : []),
 ] : conceptGalleries(kind, card.id);
 const hasPlate = kind !== "winds";
+const scene = card.art && plate(`${card.art}-scene`) ? `${card.art}-scene` : undefined;
+// The entry's art pipeline, from its files (lib/art-status.ts)
+const entryId = isle?.id ?? wind?.id ?? card.id;
+const status = ["bestiary", "peoples", "ships", "architecture", "materials", "skills", "isles", "winds"].includes(kind)
+  ? artStatus({ kind, id: entryId, bodyPlan: creature?.bodyPlan, family: material?.family, biome: isle?.biome })
+  : [];
 ---
 <Base title={`${card.name} · ${title} · game0 handbook`} description={card.summary} section="catalogues">
   <nav class="wrap crumbs" aria-label="Breadcrumb">
@@ -88,6 +95,7 @@ const hasPlate = kind !== "winds";
     <div class="art">
       {hasPlate ? <Plate art={card.art} name={card.name} tone={card.tone} sizes="(max-width: 900px) 100vw, 460px" eager /> : null}
       {kind === "winds" && <ShardMap compact />}
+      {scene && <figure class="scene"><Plate art={scene} name={`${card.name} in the world`} tone={card.tone} sizes="(max-width: 900px) 100vw, 460px" wide /><figcaption>In the world</figcaption></figure>}
       {(creature?.quote ?? people?.quote) && (
         <blockquote><p>“{(creature?.quote ?? people?.quote)!.text}”</p><footer>{(creature?.quote ?? people?.quote)!.by}</footer></blockquote>
       )}
@@ -97,6 +105,11 @@ const hasPlate = kind !== "winds";
       <p class="eyebrow">{title}</p>
       <h1>{card.name}</h1>
       {card.subtitle && <p class="subtitle">{card.subtitle}</p>}
+      {status.length ? (
+        <ol class="pipeline" aria-label="Art pipeline">
+          {status.map((st) => <li class={st.state === "n/a" ? "na" : st.state} title={st.state === "done" ? st.file : st.state === "missing" ? `To make: ${st.wanted}` : "Not needed for this kind"}><span aria-hidden="true">{st.state === "done" ? "●" : st.state === "missing" ? "○" : "–"}</span> {st.label}</li>)}
+        </ol>
+      ) : null}
       {card.badges?.length ? <p class="badges">{card.badges.map((b) => <span class:list={["chip", b.class]}>{b.label}</span>)}</p> : null}
       {(creature?.lore ?? people?.culture ?? skill?.description ?? isleNote?.blurb ?? windNote?.blurb ?? ship?.description ?? material?.description ?? card.summary)
         .split("\n\n").map((para) => <p class="lore" set:html={linkIsles(para)} />)}
@@ -377,6 +390,12 @@ const hasPlate = kind !== "winds";
   .crumbs a:hover { color: var(--teal); }
   .page { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(1.5rem, 4vw, 3.5rem); padding-top: 1.5rem; align-items: start; }
   .art { position: sticky; top: 5rem; display: grid; gap: 1.25rem; }
+  .scene { margin: 0; display: grid; gap: 0.4rem; }
+  .scene figcaption { font-size: 0.8rem; color: var(--ink-soft); }
+  .pipeline { list-style: none; padding: 0; margin: 0.5rem 0 1rem; display: flex; flex-wrap: wrap; gap: 0.35rem 0.9rem; font-size: 0.78rem; color: var(--ink-soft); }
+  .pipeline .done { color: var(--ink); }
+  .pipeline .done span { color: var(--teal); }
+  .pipeline .na { opacity: 0.5; }
   .art :global(.plate) { box-shadow: 0 30px 60px -30px #0008; }
   blockquote { margin: 0; padding-left: 1.1rem; border-left: 3px solid var(--gold); }
   blockquote p { margin: 0; font-family: var(--font-display); font-style: italic; font-size: 1.2rem; line-height: 1.4; }

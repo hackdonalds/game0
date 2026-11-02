@@ -1,7 +1,9 @@
 ---
 name: Burrow Boar
 family: Beast
+bodyPlan: quadruped
 size: medium
+height: 0.8
 temperament: neutral
 danger: 2
 region: meadow
@@ -30,6 +32,7 @@ quote:
   text: Let it eat. If it stops eating, start running.
   by: Rootwarden saying
 art: a stocky wild boar with russet bristles, short curved tusks and a mossy patch on its back, pawing the turf
+scene: "a burrow boar charging out of its turf burrow at a startled traveller on a sunny meadow isle edge, waterfalls spilling into the clouds behind, a young Rootwarden riding a tamed boar along a hedgerow in the distance"
 ---
 
 Stocky, bristle-backed pigs that dig shallow burrows under the turf of almost every green isle. They ignore travellers until cornered, then charge with surprising speed. Young Rootwardens ride them on their first trips between isles.

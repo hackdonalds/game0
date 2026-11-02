@@ -1,7 +1,10 @@
 ---
 name: Cloud Whale
 family: Sky beast
+bodyPlan: sky-swimmer
 size: colossal
+height: 12
+length: 60
 temperament: passive
 danger: 1
 region: sky

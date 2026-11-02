@@ -1,7 +1,9 @@
 ---
 name: Bark Owl
 family: Bird
+bodyPlan: bird
 size: small
+height: 0.4
 temperament: passive
 danger: 1
 region: roothold

@@ -18,7 +18,13 @@ export interface Creature {
   name: string;
   boss?: boolean;
   family: string;
+  /** A body plan id from the "Body plans" table of concept/monsters/README.md */
+  bodyPlan: string;
   size: Size;
+  /** Shoulder height (or body length for tiny creatures) in metres */
+  height?: number;
+  /** Nose-to-tail length in metres, for long flyers and swimmers */
+  length?: number;
   temperament: Temperament;
   /** 1–5; world bosses are always 5 */
   danger: 1 | 2 | 3 | 4 | 5;
@@ -44,6 +50,9 @@ export interface Creature {
   quote: { text: string; by: string };
   /** Subject brief for the bestiary plate */
   art: string;
+  /** Subject brief for the in-world scene */
+  scene?: string;
 }
 
 export const bestiary: Creature[] = concept.bestiary;
+export const bodyPlans = concept.bodyPlans;

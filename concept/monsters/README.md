@@ -65,6 +65,21 @@ Every creature is defined by the same fields; the [cliff goat](../entries/bestia
 
 Behaviour building blocks: wander, graze, flee, guard, charge, hunt, swarm, ambush, climb, fly, dive at ships, migrate, sleep by day.
 
+## Body plans
+
+Creatures are built from shared **body plans**, not modelled one by one. A body plan is one skeleton, one base body and a kit of swappable parts that snap onto fixed sockets. A species is a choice of parts, proportions and a colour mask on its plan, so one rig and one set of animations serve every creature of that plan, and new species are mostly new combinations. Each creature entry names its plan in `bodyPlan`; the members of a plan are read from the entries, not listed here.
+
+| Id | Body plan | Skeleton | Swappable parts (sockets) |
+| --- | --- | --- | --- |
+| quadruped | Four-legged | Spine, neck, four legs, tail | Head, horns or antlers, ears, tail, feet (hoof, paw, claw, digging claw), coat (smooth, shaggy, mossy, plated), gliding membrane |
+| bird | Bird | Spine, neck, two legs, two feathered wings | Head and beak, crest, wings, tail fan, talons, plumage |
+| winged | Membrane-winged | Spine, neck, four limbs, two membrane wings, tail | Head, horns, wings, tail tip, spines and plates, claws |
+| sky-swimmer | Sky swimmer | One long flexible spine, fins | Head, fins and wings, tail fluke, lights, barnacle and cloud growths |
+| shelled | Shelled | Body segments, jointed legs | Shell, claws, legs, antennae, carried growths |
+| giant | Giant humanoid | Biped spine, two arms, two legs | Head, crown or mask, arms, carried ruins and storm growths |
+
+Body-plan kit sheets live in `art/kit/bestiary/body-plans/` (`<plan>-body` and `<plan>-parts`); each species has its own sheet at `art/kit/bestiary/<id>` showing its parts on the plan. See [kit sheets](../art-direction/kit-sheets.md#sheet-types).
+
 ## The bestiary (draft)
 
 The first creatures and the three world bosses are entries in [`entries/bestiary/`](../entries/bestiary/), grouped by region on the site. Each one has a temperament, skills, actions, drops and, where it has one, a storm-touched variant.

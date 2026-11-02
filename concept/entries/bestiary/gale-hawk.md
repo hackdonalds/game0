@@ -1,7 +1,9 @@
 ---
 name: Gale Hawk
 family: Bird
+bodyPlan: bird
 size: small
+height: 0.5
 temperament: hostile
 danger: 3
 region: sky

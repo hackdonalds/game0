@@ -2,7 +2,9 @@
 name: The Drowned Colossus
 boss: true
 family: World boss
+bodyPlan: giant
 size: colossal
+height: 25
 temperament: hostile
 danger: 5
 region: storm

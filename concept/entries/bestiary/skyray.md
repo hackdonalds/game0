@@ -1,7 +1,10 @@
 ---
 name: Skyray
 family: Sky beast
+bodyPlan: sky-swimmer
 size: huge
+height: 1.2
+length: 10
 temperament: territorial
 danger: 4
 region: sky

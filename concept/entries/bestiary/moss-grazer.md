@@ -1,7 +1,9 @@
 ---
 name: Moss Grazer
 family: Beast
+bodyPlan: quadruped
 size: large
+height: 1.8
 temperament: passive
 danger: 1
 region: garden
@@ -25,6 +27,7 @@ quote:
   text: Load it, lead it, and do not rush it. It will not rush.
   by: Slowfield caravan master
 art: a large shaggy herd animal like a gentle yak whose thick coat grows green moss and small flowers, carrying woven baskets, on a terraced garden isle
+scene: "a slow herd of moss grazers on terraced garden meadows, one carrying woven harvest baskets led by a farmer holding clover, a small cutter waiting at a timber dock at the terrace edge"
 ---
 
 Shaggy, slow herd beasts whose thick coats grow living moss. Garden Isle farmers keep whole herds on their terraces and use them to carry harvests between isles. They follow anyone holding fresh clover.

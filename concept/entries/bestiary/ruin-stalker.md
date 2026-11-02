@@ -1,7 +1,9 @@
 ---
 name: Ruin Stalker
 family: Beast
+bodyPlan: quadruped
 size: medium
+height: 0.9
 temperament: hostile
 danger: 4
 region: ruin
@@ -31,6 +33,7 @@ quote:
   text: Never camp under a pillar.
   by: Salvager's first rule
 art: a lean pale grey big cat with faint stone-like stripes, crouched on top of a broken ancient pillar among overgrown ruins at night, glowing eyes
+scene: "night among overgrown old-world ruins on a wild isle: a ruin stalker crouched on a broken pillar above two treasure hunters resting by a small fire, its eyes catching the firelight, teal glow from the ancient stones"
 ---
 
 Lean, pale cats that den in the ruins of the drowned world's lost towns. They hunt alone and from above, and they love the stone pillars where treasure hunters like to rest.

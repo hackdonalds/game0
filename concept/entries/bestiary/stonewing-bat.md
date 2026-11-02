@@ -1,7 +1,9 @@
 ---
 name: Stonewing Bat
 family: Beast
+bodyPlan: winged
 size: tiny
+height: 0.12
 temperament: territorial
 danger: 2
 region: crag

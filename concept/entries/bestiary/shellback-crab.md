@@ -1,7 +1,9 @@
 ---
 name: Shellback Crab
 family: Crustacean
+bodyPlan: shelled
 size: medium
+height: 0.8
 temperament: neutral
 danger: 2
 region: lagoon

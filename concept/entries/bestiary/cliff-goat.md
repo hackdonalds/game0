@@ -1,7 +1,9 @@
 ---
 name: Cliff Goat
 family: Beast
+bodyPlan: quadruped
 size: medium
+height: 1.0
 temperament: neutral
 danger: 2
 region: crag
@@ -30,6 +32,7 @@ quote:
   text: We did not tame them. We just agreed to climb in the same direction.
   by: Gale Stair herder
 art: a muscular mountain goat with thick curling horns and shaggy grey-cream coat, standing on a narrow ledge of a sheer cliff spire
+scene: "a herd of cliff goats climbing a sheer crag spire wall high above the clouds, one tamed goat carrying a Galeborne rider straight up the rock, wind streaks and distant spires behind"
 ---
 
 Wild herds of the Crag Spires, these goats climb walls no one else can. A tamed cliff goat is the only mount that can carry a rider straight up the Crag Spires.

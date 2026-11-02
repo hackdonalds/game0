@@ -2,7 +2,9 @@
 name: The Stormmother
 boss: true
 family: World boss
+bodyPlan: giant
 size: colossal
+height: 50
 temperament: hostile
 danger: 5
 region: storm

@@ -2,7 +2,7 @@
 // scripts/handbook-sheets.ts). Sheets are discovered by file name; this file only decides which entry pages show them
 // and how they are titled, so a new sheet whose name follows the pattern appears without editing anything.
 import { plateKeys } from "../lib/art";
-import { bestiary } from "./bestiary";
+import { bestiary, bodyPlans } from "./bestiary";
 import { materials } from "./materials";
 import { skills } from "./skills";
 import shard from "../../../../worlds/first-shard.world.json";
@@ -23,6 +23,8 @@ const LABELS: Record<string, string> = {
   "world-storm-below": "The storm below", "world-drowned-vael": "Drowned Vael", "world-ancient-tree": "Ancient trees and Grudgewood",
   "world-sinking-stages": "The stages of a sinking", "world-newborn-isle": "An isle's birth", "world-relics": "Old-world relics",
 };
+const planName = (id: string) => (bodyPlans.find((b) => b.id === id)?.name ?? id).toLowerCase();
+for (const b of bodyPlans) { LABELS[`bestiary-body-plans-${b.id}-body`] = "Base body and sockets"; LABELS[`bestiary-body-plans-${b.id}-parts`] = "Parts by socket"; }
 const words = (s: string) => s.charAt(0).toUpperCase() + s.slice(1).replaceAll("-", " ");
 const label = (stem: string, prefix = "") => LABELS[stem] ?? words(stem.slice(prefix.length));
 const sheet = (stem: string, prefix = "") => ({ art: `sheets/${stem}`, label: label(stem, prefix) });
@@ -45,7 +47,10 @@ export function conceptGalleries(kind: string, id: string): Gallery[] {
     case "bestiary": {
       const c = bestiary.find((x) => x.id === id);
       return [
-        ...gallery("Turnaround", "Front, side and back for modelling, with callouts and the storm-touched variant where there is one.", [`bestiary-${id}`], "bestiary-"),
+        ...(c && has(`bestiary-body-plans-${c.bodyPlan}-body`)
+          ? gallery("Species sheet", `This creature built on the ${planName(c.bodyPlan)} body plan: its parts, colour mask and storm-touched variant where there is one.`, [`bestiary-${id}`], "bestiary-")
+          : gallery("Turnaround", "Front, side and back for modelling, with callouts and the storm-touched variant where there is one.", [`bestiary-${id}`], "bestiary-")),
+        ...(c ? gallery("Body plan kit", `Shared by every ${planName(c.bodyPlan)} creature: one base body and rig, and the parts that snap onto its sockets.`, [`bestiary-body-plans-${c.bodyPlan}-body`, `bestiary-body-plans-${c.bodyPlan}-parts`]) : []),
         ...(c?.taming ? gallery("Tack", "Saddles and harness for tamed creatures.", ["bestiary-mount-tack"]) : []),
         ...(c?.region === "storm" ? gallery(WORLD, worldNote, ["world-storm-below"]) : []),
       ];

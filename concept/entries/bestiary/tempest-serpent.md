@@ -2,7 +2,10 @@
 name: The Tempest Serpent
 boss: true
 family: World boss
+bodyPlan: sky-swimmer
 size: colossal
+height: 10
+length: 300
 temperament: hostile
 danger: 5
 region: storm

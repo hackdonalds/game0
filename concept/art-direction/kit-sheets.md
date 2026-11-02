@@ -32,6 +32,9 @@ Where a kit sheet and a painting disagree on style, the painting wins. Where eit
 | `materials` | Trim-sheet swatches, terrain textures, resource tiers | Square tiles flat-on, no perspective, seamless-looking | 16:9 | Name under each tile |
 | `turnaround` | A creature or a dressed character | Front, side and back in a neutral pose, one three-quarter action pose, callouts of head, hands or feet, and one texture swatch | 16:9 | Small callout labels |
 | `variants` | Swappable parts on one body: signature features, horns, masks, wear states, tiers | A grid of the same base with one part changed per cell | 16:9 | Variant name per cell |
+| `body-plan` | The shared base body of a creature body plan, with its sockets | Front, side, back and top views of one neutral, featureless body in a relaxed standing pose, sockets marked as small numbered rings | 16:9 | Socket names, real size |
+| `body-parts` | The swappable parts of a body plan, by socket | Each part alone in side view, in one row per socket, every part ending in the same socket cap | 16:9 | Part name under each, socket per row |
+| `species` | One creature built on its body plan | Side and three-quarter views of the assembled creature, its chosen parts pulled out with leader lines to their sockets, its colour mask swatches, and the storm-touched variant if it has one | 16:9 | Part names, plan name, real size |
 | `gear` | Props, weapons, tools, tack and stations | Each item three-quarter front, laid out in rows by family or tier | 16:9 | Name under each item |
 | `base-body` | The rig-ready base body of a people, as Meshy input | Front, side and back, side by side with wide gaps | 21:9 | None |
 | `part` | One part or prop, as Meshy input | Three-quarter front, one object only | 1:1 | None |
@@ -126,9 +129,10 @@ Kit sheets live under `art/kit/`, by the same kinds as the catalogues. Paintings
 | --- | --- | --- |
 | Architecture | `art/kit/architecture/<style>/` | `kit-structure`, `kit-roofs` (or `kit-rings`, `kit-shells`, `kit-roots`), `kit-details`, `kit-assembly`, `materials` |
 | Nature | `art/kit/biomes/<biome>/` | `nature`, `terrain` |
-| Ships | `art/kit/ships/` | `hulls`, `deck`, `sails`, `rigging` |
-| Creatures | `art/kit/bestiary/` | `<creature>` turnaround, `mount-tack` |
-| Peoples | `art/kit/peoples/<people>/` | `base-body`, `signatures`, `outfits`, single parts as `<part>` |
+| Ships | `art/kit/ships/` | `<ship>` (the ship's own sheet), shared kit `kit-hulls`, `kit-deck`, `kit-sails`, `kit-rigging` |
+| Creatures | `art/kit/bestiary/` | `<creature>` (a `species` sheet, or a `turnaround` for older sheets), `mount-tack` |
+| Body plans | `art/kit/bestiary/body-plans/` | `<plan>-body` (`body-plan`), `<plan>-parts` (`body-parts`); plans are listed in [monsters](../monsters/README.md#body-plans) |
+| Peoples | `art/kit/peoples/<people>/` | `base-turnaround` (a `base-body` sheet), `signatures`, `outfits`, single parts as `<part>` |
 | Shared gear | `art/kit/peoples/gear/` | `clothing-kit`, `armour-tiers`, `weapons-melee`, `weapons-ranged` |
 | Skills, materials | `art/kit/skills/`, `art/kit/materials/` | `gathering-tools`, `crafting-stations-<n>`, `woods`, `metals` |
 | Meshy views | `art/kit/views/` | `<subject>-front`, `-side`, `-back`: crops of a `base-body` sheet |
@@ -169,7 +173,7 @@ Game-asset reference sheet for 3D modelling, wide landscape 16:9. Plain light ne
 ### scale
 
 ```text
-A plain neutral {figure} m human silhouette labelled "{figure} m" stands on the sheet for scale, with everything at true scale to it.
+One plain neutral {figure} m human silhouette labelled "{figure} m" stands on the sheet once, for scale, with everything at true scale to it. A piece too small to read at true scale is drawn enlarged as an inset, with a small true-scale copy beside the figure and "enlarged" in its label. Write a size in a label only when the subject gives that size; never invent one.
 ```
 
 ### meshy
@@ -232,6 +236,30 @@ Please generate an image. {style} {refs} {sheet} GEAR AND PROPS sheet: {subject}
 
 ```text
 Character base-body turnaround sheet for 3D modeling and rigging: the same character shown three times side by side, evenly spaced with wide gaps, not overlapping: front view, side view, back view. The character: {subject}. Rigging A-pose: standing straight, arms straight and angled 45 degrees down and out from the body with a clear gap between each arm and the torso all the way to the armpit, elbows straight, hands open and flat with palms facing forward, all five fingers spread wide apart with a visible gap between every finger, the thumb clearly separated and pointing away from the palm, slightly oversized hands with thick fingers, legs straight with feet shoulder-width apart and a clear gap between the thighs, feet flat pointing forward, head facing forward. Hair, beard and growths stay clear of the armpits and the gap between the legs and never join an arm to the body. Wearing only simple plain fitted undershirt and short trousers, no harness, no belts, no tools, no accessories, no cape, no tail. Full body, fully visible. {meshy}
+```
+
+### body-plan
+
+**Aspect:** 16:9
+
+```text
+Please generate an image. {style} {refs} {sheet} BODY PLAN BASE BODY sheet for a modular creature kit: {subject}. Draw one neutral, featureless base body (no head detail, no horns, no ears, no tail tip, smooth plain skin) in a relaxed standing pose with the limbs apart and clear of the body, shown as front, side, back and top views in orthographic projection. Mark every socket where a swappable part attaches as a small numbered ring with a short label (for example "1 head", "2 horns", "3 tail"). Thick, solid forms; even proportions that can be stretched to make larger or smaller species. Only the base body and its socket labels: no parts, heads, horns, coats or tails anywhere on this sheet, because the parts have their own sheet. {scale} {title}
+```
+
+### body-parts
+
+**Aspect:** 16:9
+
+```text
+Please generate an image. {style} {refs} {sheet} BODY PLAN PARTS sheet for a modular creature kit: {subject}. One row per socket, labelled with the socket name at the left. Each part alone in side view, all parts in a row ending in the same round socket cap so any of them fits the same base body. Chunky readable shapes, nothing thin, colour kept to soft greyscale with painted texture so species colour can be applied as a mask. {title}
+```
+
+### species
+
+**Aspect:** 16:9
+
+```text
+Please generate an image. {style} {refs} {sheet} SPECIES sheet for a creature built from a shared body-plan kit: {subject}. Keep the base body and parts from the attached kit sheets and the creature's design from the attached plate. Show the assembled creature in side view and three-quarter view at the centre; around it, each part it uses pulled out with a thin leader line to its socket and a small label naming the part. Below: a row of four square colour mask swatches (main, secondary, accent, pattern). Show a storm-touched variant, small at the right in side view and labelled, only when the subject names one; otherwise draw no variant at all. Show only the parts this creature uses, and no description text. {scale} Place it beside the side view, at TRUE scale to the stated size. {title}
 ```
 
 ### part

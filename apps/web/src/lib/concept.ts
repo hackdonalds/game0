@@ -32,6 +32,8 @@ export interface ArchStyleText {
   biomes: string[];
 }
 
+export interface BodyPlan { id: string; name: string; skeleton: string; parts: string }
+
 export const KINDS = ["peoples", "bestiary", "skills", "materials", "ships", "isles", "winds", "architecture"] as const;
 export type Kind = (typeof KINDS)[number];
 
@@ -68,8 +70,14 @@ const schemas = {
     roles: z.array(named).min(1), stats: z.array(z.object({ label: text, value: text }).strict()), building: text, uses: texts.min(1), art,
   }).strict(),
   bestiary: z.object({
-    name: text, boss: z.boolean().optional(), family: text,
+    name: text, boss: z.boolean().optional(), family: text, bodyPlan: text,
     size: z.enum(["tiny", "small", "medium", "large", "huge", "colossal"]),
+    /** Shoulder height (or body length for tiny creatures) in metres; sets the scale on its species sheet */
+    height: z.number().positive().optional(),
+    /** Nose-to-tail length in metres, for long flyers and swimmers; sets the scale on its species sheet */
+    length: z.number().positive().optional(),
+    /** Subject brief for the in-world scene painting */
+    scene: text.optional(),
     temperament: z.enum(["passive", "neutral", "territorial", "hostile"]),
     danger: z.union([z.literal(1), z.literal(2), z.literal(3), z.literal(4), z.literal(5)]),
     region: text, tiers: z.array(z.enum(["safe", "guarded", "wild"])).min(1),
@@ -205,7 +213,11 @@ export function loadConcept(files: ConceptFiles, world: World, chapters: { slug:
     building: s.building, uses: s.uses, art: s.art,
   })).sort((a, b) => a.aboard - b.aboard);
 
+  const MONSTERS = "monsters/README.md";
+  const planRows = tableRows(sectionByAnchor(files[MONSTERS] ?? fail(`concept/${MONSTERS}`, "missing"), "body-plans") ?? fail(`concept/${MONSTERS}`, 'no "## Body plans" section')).slice(1);
+  const bodyPlans: BodyPlan[] = planRows.map(([id, name, skeleton, parts]) => ({ id: plain(id), name: plain(name), skeleton: plain(skeleton), parts: plain(parts) }));
   const bestiary: Creature[] = entries(files, "bestiary", true).map(({ id, file, data: c, body }) => {
+    if (!bodyPlans.some((b) => b.id === c.bodyPlan)) fail(file, `bodyPlan "${c.bodyPlan}" is not in the body plans table of concept/${MONSTERS}: ${bodyPlans.map((b) => b.id).join(", ")}`);
     if (!REGIONS.some((r) => r.id === c.region)) fail(file, `region "${c.region}" is not a biome in concept/art-direction/biomes.md or one of: ${OPEN_REGIONS.map((r) => r.id).join(", ")}`);
     for (const s of Object.keys(c.skills)) if (!skillNames.has(s)) fail(file, `skill "${s}" is not a skill in concept/entries/skills/`);
     if (c.boss && c.danger !== 5) fail(file, "world bosses are always danger 5");
@@ -279,7 +291,7 @@ export function loadConcept(files: ConceptFiles, world: World, chapters: { slug:
     if (path.startsWith("entries/") && !KINDS.some((k) => path.startsWith(`entries/${k}/`)))
       fail(`concept/${path}`, `is not under a known kind (${KINDS.join(", ")}), so no catalogue shows it`);
 
-  return { peopleEntries, skills, materials, ships, bestiary, REGIONS, isleNotes, windNotes, archStyles, glossary };
+  return { peopleEntries, skills, materials, ships, bestiary, bodyPlans, REGIONS, isleNotes, windNotes, archStyles, glossary };
 }
 
 export type Concept = ReturnType<typeof loadConcept>;

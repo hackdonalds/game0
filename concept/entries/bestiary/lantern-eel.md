@@ -1,7 +1,10 @@
 ---
 name: Lantern Eel
 family: Fish
+bodyPlan: sky-swimmer
 size: medium
+height: 0.3
+length: 3
 temperament: territorial
 danger: 3
 region: lagoon

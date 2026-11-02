@@ -1,7 +1,10 @@
 ---
 name: Crag Drake
 family: Drake
+bodyPlan: winged
 size: large
+height: 1.6
+length: 6
 temperament: territorial
 danger: 4
 region: crag

@@ -1,7 +1,9 @@
 ---
 name: Rootcrawler
 family: Insect
+bodyPlan: shelled
 size: small
+height: 0.5
 temperament: territorial
 danger: 2
 region: roothold

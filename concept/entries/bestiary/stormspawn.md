@@ -1,7 +1,9 @@
 ---
 name: Stormspawn
 family: Storm-touched
+bodyPlan: quadruped
 size: medium
+height: 1.0
 temperament: hostile
 danger: 3
 region: storm
@@ -25,6 +27,7 @@ quote:
   text: It had the shape of a goat. It did not have a goat's eyes.
   by: Featherfast watch report
 art: a twisted creature shaped like a goat made of dark swirling storm cloud with crackling lightning for eyes and veins, emerging from a dark stormy mist
+scene: "a storm surge reaching a wild isle: a pack of stormspawn, twisted goat and boar shapes of dark cloud with lightning eyes, pouring over the isle edge from the churning storm below while defenders hold a line with shields and lanterns"
 ---
 
 Not a creature of its own, but what the storm makes of local wildlife: twisted shapes of boars, goats and birds, wrapped in dark cloud with lightning for eyes. They pour onto isles during surges and fade when it ends.

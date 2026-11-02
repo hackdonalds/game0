@@ -11,6 +11,7 @@ import { chapters, excludedDocs } from "../apps/web/src/data/chapters.mjs";
 import { entryPage, loadConcept, type Concept } from "../apps/web/src/lib/concept";
 import { readConceptFiles } from "../apps/web/src/lib/concept-files";
 import { plateJobs, readManifest, staleness, ROOT } from "./handbook-sheets";
+import { artStatus, STAGES, type EntryRef } from "../apps/web/src/lib/art-status";
 
 const siteArg = process.argv.indexOf("--site");
 const SITE = siteArg > 0 ? join(ROOT, process.argv[siteArg + 1] ?? "dist/site/game0") : undefined;
@@ -196,6 +197,32 @@ if (SITE) {
       if (!existsSync(join(SITE, "demos", name, "index.html"))) problem(`demo ${name} was not built into ${relative(ROOT, SITE)}/demos/${name}/`);
     }
   });
+}
+
+// Art pipeline gaps are warnings, not failures: an entry may be published before all its art exists
+if (concept) {
+  const refs: EntryRef[] = [
+    ...concept.bestiary.map((b) => ({ kind: "bestiary", id: b.id, bodyPlan: b.bodyPlan })),
+    ...concept.peopleEntries.map((p) => ({ kind: "peoples", id: p.id })),
+    ...concept.ships.map((s) => ({ kind: "ships", id: s.id })),
+    ...concept.archStyles.map((a) => ({ kind: "architecture", id: a.id })),
+    ...concept.materials.map((m) => ({ kind: "materials", id: m.id, family: m.family })),
+    ...concept.skills.map((s) => ({ kind: "skills", id: s.id })),
+    ...concept.isleNotes.map((i) => ({ kind: "isles", id: i.id, biome: world.isles.find((w) => w.id === i.id)?.biome })),
+    ...concept.windNotes.map((w) => ({ kind: "winds", id: w.id })),
+  ];
+  const kinds = [...new Set(refs.map((r) => r.kind))];
+  const rows = kinds.map((kind) => {
+    const list = refs.filter((r) => r.kind === kind).map((r) => artStatus(r, (p) => existsSync(at(p))));
+    return { kind, total: list.length, cells: STAGES.slice(1).map((st) => {
+      const states = list.map((l) => l.find((x) => x.id === st.id)!.state);
+      return states.every((x) => x === "n/a") ? "–" : `${states.filter((x) => x === "done").length}/${list.length}`;
+    }) };
+  });
+  const gaps = rows.reduce((n, r) => n + r.cells.reduce((m, c) => (c === "–" ? m : m + r.total - Number(c.split("/")[0])), 0), 0);
+  console.log(`! Art pipeline: ${gaps} missing piece(s) across ${refs.length} entries (warning only; see each entry page's pipeline strip)`);
+  console.log(`    ${"kind".padEnd(13)}${STAGES.slice(1).map((s) => s.label.padEnd(12)).join("")}`);
+  for (const r of rows) console.log(`    ${r.kind.padEnd(13)}${r.cells.map((c) => c.padEnd(12)).join("")}`);
 }
 
 for (const c of checks) {
