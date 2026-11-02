@@ -1,0 +1,11 @@
+{
+  "prompt": "Please generate an image. Locked painterly style (hand-painted, chunky readable shapes, detail painted not modelled, warm golden key light, cool teal shadows, muted saturation, epic and luminous, never grim). Use the attached image(s) only as reference as described; the first attachment is always the style reference for palette, rendering and light. Game-asset concept sheet, landscape 16:9, plain light neutral grey background, no scene, no sky, soft contact shadow only, every piece isolated with clear space and a small neat label underneath. Creature TURNAROUND sheet for 3D modelling: BARK OWL, a round owl whose feathers mimic grey-brown tree bark with lichen spots, glowing amber eyes. Keep the exact design of the creature in the second attachment. Show front, side and back views in a neutral standing pose, a three-quarter action pose, and close-up callouts of head, feet or claws and a texture swatch of skin, fur, feathers or scale. Include a simple 1.8 m human silhouette for scale.",
+  "model": "openai/gpt-image-2.5-sunburst",
+  "aspect": "16:9",
+  "quality": "high",
+  "refs": [
+    "art/concept/style-test-01-market-town.png",
+    "art/bestiary/bark-owl.webp"
+  ],
+  "createdAt": "2026-11-02T17:24:14.993Z"
+}

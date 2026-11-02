@@ -1,0 +1,10 @@
+{
+  "prompt": "Please generate an image. Locked painterly style (hand-painted, chunky readable shapes, detail painted not modelled, warm golden key light, cool teal shadows, muted saturation, epic and luminous, never grim). Use the attached image(s) only as reference as described; the first attachment is always the style reference for palette, rendering and light. A concept sheet, landscape 16:9, four panels left to right with small neat labels, the same small floating isle with a village shown in each: (1) HEALTHY – level, green, waterfalls; (2) FAILING LIFT – a slight tilt, cracks across the ground, rocks and soil falling from the underside, the ancient tree fading; (3) LAST DAYS – strong tilt, the edges breaking away, settlers evacuating to sailships, ropes and chains straining; (4) THE PLUNGE – the isle sliding down into the dark storm layer, debris trailing upward, lightning around it. Warm light above, cool storm light below. The only vessels in the sky are wooden sailships with masts and canvas sails: no airships, no balloons, no zeppelins, no gasbags.",
+  "model": "openai/gpt-image-2.5-sunburst",
+  "aspect": "16:9",
+  "quality": "high",
+  "refs": [
+    "art/concept/style-test-01-market-town.png"
+  ],
+  "createdAt": "2026-11-02T17:36:59.626Z"
+}

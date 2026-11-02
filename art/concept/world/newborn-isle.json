@@ -1,0 +1,10 @@
+{
+  "prompt": "Please generate an image. Locked painterly style (hand-painted, chunky readable shapes, detail painted not modelled, warm golden key light, cool teal shadows, muted saturation, epic and luminous, never grim). Use the attached image(s) only as reference as described; the first attachment is always the style reference for palette, rendering and light. A wide environment concept painting, landscape 16:9, no text. The birth of a new isle: a raw rocky isle rising out of the dark storm layer, steaming, wet, streaming water and cloud, bare rock with the first moss, crystal outcrops glowing teal, old-world ruin fragments exposed on its surface, untouched resource veins. Dozens of small sailships racing towards it from the established isles in warm golden light. Epic and hopeful.",
+  "model": "openai/gpt-image-2.5-sunburst",
+  "aspect": "16:9",
+  "quality": "high",
+  "refs": [
+    "art/concept/style-test-01-market-town.png"
+  ],
+  "createdAt": "2026-11-02T17:23:05.401Z"
+}

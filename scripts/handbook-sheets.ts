@@ -6,6 +6,7 @@
 //   art/concept/biomes/<biome>/<sheet>.png              → art/handbook/biomes/<biome>-<sheet>.webp
 //   art/models/nature/<biome>/sheet-<s>.png             → art/handbook/biomes/<biome>-built-<s>.webp
 //   art/textures/foliage/<name>.png                     → art/handbook/foliage/<name>.webp (alpha kept)
+//   art/concept/<kind>/…/<sheet>.png                    → art/handbook/sheets/<kind>-…-<sheet>.webp (kinds in CONCEPT_KINDS)
 // Freshness: art/handbook/plates.json records a hash of each plate's source and settings, so a plate is remade
 // whenever its source changes (git checkouts reset mtimes, so mtimes alone cannot be trusted).
 // scripts/handbook-check.ts uses plateJobs() and isFresh() to fail the build when a plate lags its source.
@@ -23,6 +24,11 @@ const pngs = async (dir: string) =>
 const dirs = async (dir: string) =>
   (await readdir(join(ROOT, dir), { withFileTypes: true }).catch(() => [])).filter((d) => d.isDirectory() && !d.name.startsWith(".")).map((d) => d.name).sort();
 const stem = (f: string) => f.split("/").pop()!.replace(/\.png$/, "");
+const walkPngs = async (dir: string): Promise<string[]> =>
+  [...(await pngs(dir)), ...(await Promise.all((await dirs(dir)).map((d) => walkPngs(`${dir}/${d}`)))).flat()].sort();
+
+/** Concept sheet folders shown on catalogue entries (art/concept/<kind>/…/<sheet>.png → art/handbook/sheets/<kind>-…-<sheet>.webp) */
+export const CONCEPT_KINDS = ["ships", "bestiary", "peoples", "materials", "isles", "skills", "winds", "world"];
 
 /** Every plate the handbook should have, discovered by scanning the source folders */
 export async function plateJobs(): Promise<PlateJob[]> {
@@ -39,6 +45,8 @@ export async function plateJobs(): Promise<PlateJob[]> {
   for (const biome of await dirs("art/models/nature"))
     for (const f of await pngs(`art/models/nature/${biome}`)) if (stem(f).startsWith("sheet-")) add(f, `art/handbook/biomes/${biome}-built-${stem(f).replace(/^sheet-/, "")}.webp`);
   for (const f of await pngs("art/textures/foliage")) add(f, `art/handbook/foliage/${stem(f)}.webp`, 512);
+  for (const kind of CONCEPT_KINDS)
+    for (const f of await walkPngs(`art/concept/${kind}`)) add(f, `art/handbook/sheets/${f.slice("art/concept/".length, -4).replaceAll("/", "-")}.webp`);
   return jobs;
 }
 

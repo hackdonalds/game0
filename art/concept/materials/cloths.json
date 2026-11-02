@@ -1,0 +1,10 @@
+{
+  "prompt": "Please generate an image. Locked painterly style (hand-painted, chunky readable shapes, detail painted not modelled, warm golden key light, cool teal shadows, muted saturation, epic and luminous, never grim). Use the attached image(s) only as reference as described; the first attachment is always the style reference for palette, rendering and light. Game-asset concept sheet, landscape 16:9, plain light neutral grey background, no scene, no sky, soft contact shadow only, every piece isolated with clear space and a small neat label underneath. MATERIALS sheet – CLOTHS, four tiers from left to right, tier 1 to tier 4: Slowfield linen bolts and flax; mossweave soft green-grey wool from moss grazers; glimmersilk softly glowing woven lagoon reeds; cloudfleece drifting airy strands from cloud whales. For each tier show the raw resource, the refined form, a small crafted item made from it, and a square seamless texture swatch.",
+  "model": "openai/gpt-image-2.5-sunburst",
+  "aspect": "16:9",
+  "quality": "high",
+  "refs": [
+    "art/concept/style-test-01-market-town.png"
+  ],
+  "createdAt": "2026-11-02T17:30:11.146Z"
+}

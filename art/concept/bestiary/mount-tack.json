@@ -1,0 +1,10 @@
+{
+  "prompt": "Please generate an image. Locked painterly style (hand-painted, chunky readable shapes, detail painted not modelled, warm golden key light, cool teal shadows, muted saturation, epic and luminous, never grim). Use the attached image(s) only as reference as described; the first attachment is always the style reference for palette, rendering and light. Game-asset concept sheet, landscape 16:9, plain light neutral grey background, no scene, no sky, soft contact shadow only, every piece isolated with clear space and a small neat label underneath. MOUNT AND PACK TACK sheet: saddles, bridles and harness for tamed creatures: a burrow boar riding saddle, a cliff goat climbing saddle with stirrups and horn guards, a moss grazer pack harness with woven baskets and a cargo frame, a skyray flying saddle for one rider with a wind screen and strap rig. Show each piece alone and fitted on a simple silhouette of its creature, plus a row of tack details: buckles, a taming whistle, a feed bag, crafted leather straps. Include a simple 1.8 m human silhouette for scale.",
+  "model": "openai/gpt-image-2.5-sunburst",
+  "aspect": "16:9",
+  "quality": "high",
+  "refs": [
+    "art/concept/style-test-01-market-town.png"
+  ],
+  "createdAt": "2026-11-02T17:27:07.770Z"
+}

@@ -1,0 +1,12 @@
+{
+  "prompt": "Please generate an image. Locked painterly style (hand-painted, chunky readable shapes, detail painted not modelled, warm golden key light, cool teal shadows, muted saturation, epic and luminous, never grim). Use the attached image(s) only as reference as described; the first attachment is always the style reference for palette, rendering and light. Character action concept sheet, landscape 16:9, plain light neutral grey background, small neat labels. The three INNATE SKILLS shown as action poses: GLIDE – a Galeborne (no wings on the back: the feathered mantle grows from the shoulders and the backs of the forearms and spreads between arms and body like a cloak, as in the second attachment) with mantle spread gliding on a wind current, and riding an updraft; ANCHOR – a huge stone-skinned Anchorkin planted with feet glowing and cracks in the ground, steadying a ship's rail, and holding a breaking bridge; TAKE ROOT – a bark-skinned Rootwarden rooted with roots spreading from the feet into the ground, a soft green healing aura spreading to nearby allies. The second, third and fourth attachments show the Galeborne, Anchorkin and Rootwarden.",
+  "model": "openai/gpt-image-2.5-sunburst",
+  "aspect": "16:9",
+  "quality": "high",
+  "refs": [
+    "art/concept/galeborne-base-turnaround.png",
+    "art/concept/anchorkin-base-turnaround.png",
+    "art/concept/rootwarden-base-turnaround.png"
+  ],
+  "createdAt": "2026-11-02T17:36:59.942Z"
+}

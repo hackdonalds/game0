@@ -1,0 +1,10 @@
+{
+  "prompt": "Please generate an image. Locked painterly style (hand-painted, chunky readable shapes, detail painted not modelled, warm golden key light, cool teal shadows, muted saturation, epic and luminous, never grim). Use the attached image(s) only as reference as described; the first attachment is always the style reference for palette, rendering and light. An isle portrait concept painting, landscape 16:9, no text: one whole floating isle seen from slightly above and to the side, showing its top, the edge lip and the tapering rock underside with roots and waterfalls, sky around it. GRUDGEWOOD, a wild frontier isle dominated by one colossal ancient tree whose wood makes the finest masts, scarred by old cuttings, Rootwarden root-bindings guarding it and a Galeborne logging camp at its edge.",
+  "model": "openai/gpt-image-2.5-sunburst",
+  "aspect": "16:9",
+  "quality": "high",
+  "refs": [
+    "art/concept/style-test-01-market-town.png"
+  ],
+  "createdAt": "2026-11-02T17:31:29.226Z"
+}

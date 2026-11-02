@@ -1,0 +1,11 @@
+{
+  "prompt": "Please generate an image. Locked painterly style (hand-painted, chunky readable shapes, detail painted not modelled, warm golden key light, cool teal shadows, muted saturation, epic and luminous, never grim). Use the attached image(s) only as reference as described; the first attachment is always the style reference for palette, rendering and light. An isle portrait concept painting, landscape 16:9, no text: one whole floating isle seen from slightly above and to the side, showing its top, the edge lip and the tapering rock underside with roots and waterfalls, sky around it. VAEL'S SHADOW, a wild rim isle of old-world ruins above the drowned city of Vael, pale ruinstone rings and slabs, broken teal channels, dangerous and mysterious. Old-world look: pale precise ruinstone, alien exact geometry, bevelled slabs, concentric ring motifs, engraved channels that glow teal when alive and are dull when dead. Not Greek or Roman: no columns, no capitals, no classical carving.",
+  "model": "openai/gpt-image-2.5-sunburst",
+  "aspect": "16:9",
+  "quality": "high",
+  "refs": [
+    "art/concept/style-test-01-market-town.png",
+    "art/concept/architecture/old-world/landmark-monolith-gate.png"
+  ],
+  "createdAt": "2026-11-02T17:31:35.559Z"
+}

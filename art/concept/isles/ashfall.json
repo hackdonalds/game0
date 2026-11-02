@@ -1,0 +1,10 @@
+{
+  "prompt": "Please generate an image. Locked painterly style (hand-painted, chunky readable shapes, detail painted not modelled, warm golden key light, cool teal shadows, muted saturation, epic and luminous, never grim). Use the attached image(s) only as reference as described; the first attachment is always the style reference for palette, rendering and light. An isle portrait concept painting, landscape 16:9, no text: one whole floating isle seen from slightly above and to the side, showing its top, the edge lip and the tapering rock underside with roots and waterfalls, sky around it. The only vessels in the sky are wooden sailships with masts and canvas sails: no airships, no balloons, no zeppelins, no gasbags. ASHFALL, a sinking isle in its last days: tilted, cracked, its forest grey and ash-covered, chunks breaking from the edge, salvagers and evacuation ships around it, storm light below.",
+  "model": "openai/gpt-image-2.5-sunburst",
+  "aspect": "16:9",
+  "quality": "high",
+  "refs": [
+    "art/concept/style-test-01-market-town.png"
+  ],
+  "createdAt": "2026-11-02T17:36:59.269Z"
+}

@@ -1,0 +1,10 @@
+{
+  "prompt": "Please generate an image. Locked painterly style (hand-painted, chunky readable shapes, detail painted not modelled, warm golden key light, cool teal shadows, muted saturation, epic and luminous, never grim). Use the attached image(s) only as reference as described; the first attachment is always the style reference for palette, rendering and light. Game-asset concept sheet, landscape 16:9, plain light neutral grey background, no scene, no sky, soft contact shadow only, every piece isolated with clear space and a small neat label underneath. Subject: the ANCIENT TREES that slow an isle's sinking. Show: (1) a healthy ancient tree, colossal, twisting trunk, canopy glowing faintly at the edges, roots plunging through the isle and out of its underside; (2) the same tree failing: thinning canopy, grey bark, roots withdrawing; (3) close-up callouts of tending: carved tending marks, root-bindings, moss lanterns, offerings at the base; (4) GRUDGEWOOD, the oldest ancient tree, scarred where masts were cut from it long ago. Include a simple 1.8 m human silhouette for scale.",
+  "model": "openai/gpt-image-2.5-sunburst",
+  "aspect": "16:9",
+  "quality": "high",
+  "refs": [
+    "art/concept/style-test-01-market-town.png"
+  ],
+  "createdAt": "2026-11-02T17:23:04.771Z"
+}

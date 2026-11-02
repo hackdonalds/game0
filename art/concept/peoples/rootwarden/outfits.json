@@ -1,0 +1,11 @@
+{
+  "prompt": "Please generate an image. Locked painterly style (hand-painted, chunky readable shapes, detail painted not modelled, warm golden key light, cool teal shadows, muted saturation, epic and luminous, never grim). Use the attached image(s) only as reference as described; the first attachment is always the style reference for palette, rendering and light. Character costume concept sheet, landscape 16:9, plain light neutral grey background. Keep the exact body design of the people in the second attachment: ROOTWARDENS: broad, stocky people with bark-grained wooden skin on which moss, lichen and small flowers grow; treetenders, herbalists and healers of the root caverns. Show the same character in four full-body outfits, front view each with a smaller back view: (1) STARTING clothes (under layer and simple garment), (2) CRAFTER / gatherer work outfit with tool belt and apron, (3) LIGHT ARMOUR scout outfit in leather with a cloak, (4) HEAVY ARMOUR guard outfit in forged metal plate. Grounded handmade leather, cloth and forged metal with epic details: teal crystal, gold trim and culture motifs of this people. Heroic stylized proportions, readable silhouettes. Small neat labels.",
+  "model": "openai/gpt-image-2.5-sunburst",
+  "aspect": "16:9",
+  "quality": "high",
+  "refs": [
+    "art/concept/style-test-01-market-town.png",
+    "art/concept/rootwarden-base-turnaround.png"
+  ],
+  "createdAt": "2026-11-02T17:28:24.285Z"
+}

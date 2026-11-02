@@ -1,0 +1,10 @@
+{
+  "prompt": "Game-asset concept sheet, landscape 16:9, locked painterly style (hand-painted, chunky readable shapes, detail painted not modelled, warm golden key light, cool teal shadows, muted saturation). Plain light neutral grey background, no scene, no sky, soft contact shadow only, each view with a small neat label underneath. Subject: the CUTTER, a mid-size wooden sky sailship for up to 10 aboard, steered by one person; pure high fantasy, no engines, no balloons, no propellers. Single tall mast with a fore-and-aft gaff mainsail and a jib; sails are canvas with woven teal enchantment patterns that faintly glow; a keel-less flattened hull with small side-fins and teal-crystal lift charms at the bow; terracotta-red trim and gold fittings; a raised helm at the stern with a spoked wheel; cargo hatch amidships; rope ladders and cleats. Views: (1) side profile, (2) top-down deck plan, (3) front view, (4) three-quarter view under sail, (5) detail callouts: helm, sail rigging with enchantment pattern, crystal lift charm, cargo hatch. Include a simple 1.8 m human silhouette for scale.",
+  "model": "openai/gpt-image-2.5-sunburst",
+  "aspect": "16:9",
+  "quality": "high",
+  "refs": [
+    "art/concept/style-test-03-airship.png"
+  ],
+  "createdAt": "2026-11-02T16:15:05.495Z"
+}

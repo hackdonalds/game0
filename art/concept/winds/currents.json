@@ -1,0 +1,10 @@
+{
+  "prompt": "Please generate an image. Locked painterly style (hand-painted, chunky readable shapes, detail painted not modelled, warm golden key light, cool teal shadows, muted saturation, epic and luminous, never grim). Use the attached image(s) only as reference as described; the first attachment is always the style reference for palette, rendering and light. A visual concept sheet, landscape 16:9, no text other than small neat labels. How WIND CURRENTS look in the sky between floating isles: (1) a charted ACCORD LANE – steady, smooth parallel pale teal streaks with lantern buoys marking its edges; (2) a WILD CURRENT – fast, gusty, twisting streaks, turbulence, darker clouds, debris carried along; (3) ambient wind – faint drifting motes; (4) a sailship riding a lane with its sails catching the glow; (5) a Galeborne gliding on a current.",
+  "model": "openai/gpt-image-2.5-sunburst",
+  "aspect": "16:9",
+  "quality": "high",
+  "refs": [
+    "art/concept/style-test-01-market-town.png"
+  ],
+  "createdAt": "2026-11-02T17:34:05.107Z"
+}

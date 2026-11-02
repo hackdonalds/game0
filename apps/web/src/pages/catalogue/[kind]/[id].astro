@@ -13,6 +13,7 @@ import { ships } from "../../../data/ships";
 import { materials } from "../../../data/materials";
 import { archStyles, familyCounts } from "../../../data/architecture";
 import { biomes, foliage, kitTrees, pieceSize } from "../../../data/biomes";
+import { conceptGalleries } from "../../../data/concept-sheets";
 import { Image } from "astro:assets";
 import { plate } from "../../../lib/art";
 import { catalogues, isleSlug, windSlug, peopleName, TONE, type Card } from "../../../lib/catalogues";
@@ -75,7 +76,7 @@ const galleries = arch ? [
 ] : biome ? [
   { title: "Concept sheets", note: "The brief for the biome's nature kit and terrain materials.", sheets: biome.sheets.map((s) => ({ art: `biomes/${biome.id}-${s.id}`, label: s.label })) },
   ...(biome.builtSheets.length ? [{ title: "Built nature kit", note: natureKit ? `Modelled and textured in Blender: ${natureKit.pieces.length} pieces, ${natureTris.toLocaleString("en-GB")} triangles in all.` : "Modelled in Blender.", sheets: biome.builtSheets.map((s) => ({ art: `biomes/${biome.id}-${s.id}`, label: s.label })) }] : []),
-] : [];
+] : conceptGalleries(kind, card.id);
 const hasPlate = kind !== "winds";
 ---
 <Base title={`${card.name} · ${title} · game0 handbook`} description={card.summary} section="catalogues">

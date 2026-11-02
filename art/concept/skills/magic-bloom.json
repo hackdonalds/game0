@@ -1,0 +1,10 @@
+{
+  "prompt": "Please generate an image. Locked painterly style (hand-painted, chunky readable shapes, detail painted not modelled, warm golden key light, cool teal shadows, muted saturation, epic and luminous, never grim). Use the attached image(s) only as reference as described; the first attachment is always the style reference for palette, rendering and light. Visual effects concept sheet, landscape 16:9, on a dark ink-green background so effects read clearly. BLOOM magic: growth and roots – roots erupting to bind, a vine snare, a blossom burst heal, a growing thorn wall, pollen motes. Colours: moss green and blossom pink with golden light. Show 5 effect states in a row: cast wind-up, projectile or area, impact, lingering effect, and a combat-readability example on a simple silhouette caster and target. Clear high-contrast shapes, readable against moss and stone.",
+  "model": "openai/gpt-image-2.5-sunburst",
+  "aspect": "16:9",
+  "quality": "high",
+  "refs": [
+    "art/concept/style-test-01-market-town.png"
+  ],
+  "createdAt": "2026-11-02T17:33:24.758Z"
+}

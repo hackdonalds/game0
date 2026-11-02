@@ -1,0 +1,9 @@
+{
+  "prompt": "Please generate an image. Locked painterly style (hand-painted, chunky readable shapes, detail painted not modelled, warm golden key light, cool teal shadows, muted saturation, epic and luminous, never grim). Use the attached image(s) only as reference as described; the first attachment is always the style reference for palette, rendering and light. A wide environment concept painting, landscape 16:9, no text. A drowned old-world city, Vael, beneath the storm layer: a diver descending on a rope among vast pale ruinstone towers and ring-shaped halls half sunk in murky teal-green water and drifting cloud-mist, shafts of dim light from above, glowing teal glyph channels still alive in a few places, schools of small glowing fish, sunken relics. Old-world look: pale precise ruinstone, alien exact geometry, bevelled slabs, concentric ring motifs, engraved channels that glow teal when alive and are dull when dead. Not Greek or Roman: no columns, no capitals, no classical carving. The second attachment shows the old-world architecture style. Mysterious and beautiful, not horror.",
+  "refs": [
+    "art/concept/style-test-01-market-town.png",
+    "art/concept/architecture/old-world/landmark-monolith-gate.png"
+  ],
+  "chat_url": "https://chatgpt.com/c/6ae8bffd-e22c-83eb-80b6-7e8fc32b67dc",
+  "tool": "chatgpt.com"
+}

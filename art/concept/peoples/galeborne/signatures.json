@@ -1,0 +1,11 @@
+{
+  "prompt": "Please generate an image. Locked painterly style (hand-painted, chunky readable shapes, detail painted not modelled, warm golden key light, cool teal shadows, muted saturation, epic and luminous, never grim). Use the attached image(s) only as reference as described; the first attachment is always the style reference for palette, rendering and light. Keep the exact body design of the people in the second attachment. Character customization sheet, landscape 16:9, plain light neutral grey background, small neat labels. GALEBORNE: tall, light, hollow-boned near-humans; a feathered mantle grows from shoulders and forearms and folds like a cloak; sailors, shipwrights, scouts, couriers of the high windy Crag Spires. Show the SIGNATURE FEATURE variants as a grid of heads and shoulders: feather colours and patterns, crest shapes, mantle lengths short to long, skin tones sky-pale to dusk, face markings. Also show male, female and elder body variants full-body in a row.",
+  "model": "openai/gpt-image-2.5-sunburst",
+  "aspect": "16:9",
+  "quality": "high",
+  "refs": [
+    "art/concept/style-test-01-market-town.png",
+    "art/concept/galeborne-base-turnaround.png"
+  ],
+  "createdAt": "2026-11-02T17:27:44.661Z"
+}

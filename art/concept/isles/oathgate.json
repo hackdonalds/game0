@@ -1,0 +1,11 @@
+{
+  "prompt": "Please generate an image. Locked painterly style (hand-painted, chunky readable shapes, detail painted not modelled, warm golden key light, cool teal shadows, muted saturation, epic and luminous, never grim). Use the attached image(s) only as reference as described; the first attachment is always the style reference for palette, rendering and light. An isle portrait concept painting, landscape 16:9, no text: one whole floating isle seen from slightly above and to the side, showing its top, the edge lip and the tapering rock underside with roots and waterfalls, sky around it. OATHGATE, the Accord town where the Tether Accord was sworn: a walled neutral town around a great oath gate arch and an oath stone, banners of all three peoples, Oathcraft trainers, a market square, docks with sailships.",
+  "model": "openai/gpt-image-2.5-sunburst",
+  "aspect": "16:9",
+  "quality": "high",
+  "refs": [
+    "art/concept/style-test-01-market-town.png",
+    "art/concept/architecture/accord/landmark-accord-hall.png"
+  ],
+  "createdAt": "2026-11-02T17:30:50.737Z"
+}

@@ -126,7 +126,7 @@ await check("Plates: every source sheet has a plate that is up to date, and no p
     if (why) problem(`${j.to} is ${why === "missing" ? "missing" : `stale (${why})`}; source ${j.from}. Run bun run art:sheets`);
   }
   const made = new Set(jobs.map((j) => j.to));
-  for (const kind of ["architecture", "biomes", "foliage"])
+  for (const kind of ["architecture", "biomes", "foliage", "sheets"])
     for (const f of await files(`art/handbook/${kind}`, ".webp"))
       if (!made.has(`art/handbook/${kind}/${f}`)) problem(`art/handbook/${kind}/${f} has no source sheet any more (renamed or deleted?): delete the plate or restore the source`);
 });
