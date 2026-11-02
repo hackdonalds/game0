@@ -1,5 +1,34 @@
 {
-  "prompt": "Excellent. SHEET 5 of 5, materials: the hand-painted TRIM SHEET swatches for this Accord kit, same light grey background, flat even light, softer and less sepia, chunky painterly game-texture style. Eight large square painted tiles in a neat 4 x 2 grid, each flat-on (texture view, no perspective), with a small label and a tiny 3D sample chip beside it showing the material on a bevelled block: 1 crystal-veined basalt (dark blue-grey stone courses with glowing teal crystal veins), 2 deadwood timber (silver-grey weathered grain with gold-brown accents), 3 mossy timber joint (timber beam junction with living moss and tiny pink and white flowers), 4 plaster infill (warm cream plaster, soft cracks, light moss at edges), 5 terracotta roof tiles (overlapping rounded tiles, warm orange-red, lichen spots), 6 Galeborne sailcloth (cream canvas weave with stitched seams and rope eyelets), 7 teal-and-gold banner cloth (teal fabric with gold embroidered tree emblem border), 8 cobbled paving (rounded basalt cobbles with mossy gaps). Tiles should look seamless and tileable. Please generate the image.",
-  "chat_url": "https://chatgpt.com/c/6ae86f8f-cf24-83ed-b6f2-3ce232c43ba8",
-  "tool": "chatgpt.com"
+  "prompt": "Please generate an image. Locked painterly style: hand-painted stylized game art, chunky readable shapes, detail painted not modelled, mid-level detail, softer muted colours with gentle saturation, epic and luminous, never grim. The palette's warm gold and cool teal are painted into the surfaces, but the light is flat, even studio light: no strong key light, no cast shadows, no rim light. Use the attached images only as reference as described: the first attachment is always the style reference for palette and brushwork; later attachments are the approved designs to keep. Material swatch sheet, wide landscape 16:9, plain light neutral grey background. Square swatch tiles in a neat grid, evenly spaced, each flat-on (orthographic, no perspective, no horizon, no shadows from outside the tile), a seamless tileable painterly texture with edges that would wrap, broad clumped brushwork, no tiny high-frequency noise, a short neat label under each. Swatches: Redraw of the attached reference sheet to the current spec: keep exactly the same swatches, their order and names. Accord town trim sheet, eight square tiles in a 4 x 2 grid, flat colour under even light, no 3D sample chips: 1 \"Crystal-Veined Basalt\" (dark blue-grey stone courses with teal crystal veins), 2 \"Deadwood Timber\" (silver-grey weathered grain), 3 \"Mossy Timber Joint\" (timber beam junction with moss and small pink and white flowers), 4 \"Plaster Infill\" (warm cream plaster, soft cracks, light moss at the edges), 5 \"Terracotta Roof Tiles\" (overlapping rounded tiles, lichen spots), 6 \"Galeborne Sailcloth\" (cream canvas weave with stitched seams), 7 \"Teal-and-Gold Banner Cloth\" (teal fabric with gold tree emblem border), 8 \"Cobbled Paving\" (rounded basalt cobbles with mossy gaps). Title at the top: \"Accord kit: materials\".",
+  "kit": {
+    "type": "materials",
+    "subject": "Redraw of the attached reference sheet to the current spec: keep exactly the same swatches, their order and names. Accord town trim sheet, eight square tiles in a 4 x 2 grid, flat colour under even light, no 3D sample chips: 1 \"Crystal-Veined Basalt\" (dark blue-grey stone courses with teal crystal veins), 2 \"Deadwood Timber\" (silver-grey weathered grain), 3 \"Mossy Timber Joint\" (timber beam junction with moss and small pink and white flowers), 4 \"Plaster Infill\" (warm cream plaster, soft cracks, light moss at the edges), 5 \"Terracotta Roof Tiles\" (overlapping rounded tiles, lichen spots), 6 \"Galeborne Sailcloth\" (cream canvas weave with stitched seams), 7 \"Teal-and-Gold Banner Cloth\" (teal fabric with gold tree emblem border), 8 \"Cobbled Paving\" (rounded basalt cobbles with mossy gaps)",
+    "figure": 1.8,
+    "title": "Accord kit: materials"
+  },
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x864",
+  "aspect": "16:9",
+  "quality": "high",
+  "refs": [
+    "art/references/style-test-01-market-town.png",
+    "art/kit/architecture/accord/materials.png"
+  ],
+  "usage": {
+    "input_tokens": 3279,
+    "input_tokens_details": {
+      "image_tokens": 2832,
+      "text_tokens": 447
+    },
+    "output_tokens": 1078,
+    "output_tokens_details": {
+      "image_tokens": 1078,
+      "text_tokens": 0
+    },
+    "total_tokens": 4357
+  },
+  "costUSD": 0.0572,
+  "createdAt": "2026-11-02T19:27:07.258Z",
+  "refsNote": "Paths under art/ name the previous version of that file in git history (the sheet this one redraws)."
 }

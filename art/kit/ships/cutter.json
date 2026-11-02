@@ -1,10 +1,33 @@
 {
-  "prompt": "Game-asset concept sheet, landscape 16:9, locked painterly style (hand-painted, chunky readable shapes, detail painted not modelled, warm golden key light, cool teal shadows, muted saturation). Plain light neutral grey background, no scene, no sky, soft contact shadow only, each view with a small neat label underneath. Subject: the CUTTER, a mid-size wooden sky sailship for up to 10 aboard, steered by one person; pure high fantasy, no engines, no balloons, no propellers. Single tall mast with a fore-and-aft gaff mainsail and a jib; sails are canvas with woven teal enchantment patterns that faintly glow; a keel-less flattened hull with small side-fins and teal-crystal lift charms at the bow; terracotta-red trim and gold fittings; a raised helm at the stern with a spoked wheel; cargo hatch amidships; rope ladders and cleats. Views: (1) side profile, (2) top-down deck plan, (3) front view, (4) three-quarter view under sail, (5) detail callouts: helm, sail rigging with enchantment pattern, crystal lift charm, cargo hatch. Include a simple 1.8 m human silhouette for scale.",
-  "model": "openai/gpt-image-2.5-sunburst",
+  "prompt": "Please generate an image. Locked painterly style: hand-painted stylized game art, chunky readable shapes, detail painted not modelled, mid-level detail, softer muted colours with gentle saturation, epic and luminous, never grim. The palette's warm gold and cool teal are painted into the surfaces, but the light is flat, even studio light: no strong key light, no cast shadows, no rim light. Use the attached images only as reference as described: the first attachment is always the style reference for palette and brushwork; later attachments are the approved designs to keep. Game-asset reference sheet for 3D modelling, wide landscape 16:9. Plain light neutral grey background, no scene, no sky, no clouds, no floating rock, no ground plane, a soft contact shadow only. Every piece fully isolated with clear space around it, nothing overlapping, nothing touching the edge, arranged in tidy rows, each with a small neat hand-lettered label underneath. TURNAROUND sheet: Redraw of the attached reference sheet to the current spec: keep exactly the same design, items, their order and names. The CUTTER, a mid-size wooden sky sailship for up to 10 aboard, steered by 1; 14.0 m long, 5.8 m beam, mast 9.5 m high; pure high fantasy, no engines, no balloons, no propellers. The same ship as the second attached image: a single tall mast with a fore-and-aft gaff mainsail and a jib of cream canvas with woven teal borders and a teal tree emblem, a teal pennant at the masthead, a keel-less flattened hull with terracotta-red trim and gold fittings, small leaf-shaped teal side-fins, teal-crystal lift charms at the bow, a raised helm at the stern with a spoked wheel, a cargo hatch amidships, rope ladders and cleats. For a ship, the turnaround views are: \"Side View\" large at the top left, \"Top View (Deck Plan)\" in the middle, \"Front View\" at the top right, \"Three-Quarter View (Under Sail)\" at the bottom left; at the bottom right, detail callouts labelled \"Helm\", \"Sail Rigging\", \"Crystal Lift Charm\", \"Cargo Hatch\", each as an isolated piece; plus one small square swatch of the hull planking labelled \"Hull planks\". A small neat spec block at the top left: \"The Cutter\", \"Crew: up to 10\", \"Steered by 1\", \"Length: 14.0 m\", \"Beam: 5.8 m\", \"Height (mast): 9.5 m\"; no other description text under the callouts. No people on board. Rigging and ladders drawn as thick solid rope. Even flat light, no rim light, no cast shadows on the hull. Keep the exact design in the second attachment. Show front, side and back views in a neutral standing pose with limbs apart and clear of the body, one three-quarter action pose, close-up callouts of the head and of the hands, feet or claws, and one square texture swatch of its skin, fur, feathers or scale. A plain neutral 1.8 m human silhouette labelled \"1.8 m\" stands on the sheet for scale, with everything at true scale to it. Place it beside the side view, at TRUE scale to the stated size. Title at the top: \"The Cutter\".",
+  "kit": {
+    "type": "turnaround",
+    "subject": "Redraw of the attached reference sheet to the current spec: keep exactly the same design, items, their order and names. The CUTTER, a mid-size wooden sky sailship for up to 10 aboard, steered by 1; 14.0 m long, 5.8 m beam, mast 9.5 m high; pure high fantasy, no engines, no balloons, no propellers. The same ship as the second attached image: a single tall mast with a fore-and-aft gaff mainsail and a jib of cream canvas with woven teal borders and a teal tree emblem, a teal pennant at the masthead, a keel-less flattened hull with terracotta-red trim and gold fittings, small leaf-shaped teal side-fins, teal-crystal lift charms at the bow, a raised helm at the stern with a spoked wheel, a cargo hatch amidships, rope ladders and cleats. For a ship, the turnaround views are: \"Side View\" large at the top left, \"Top View (Deck Plan)\" in the middle, \"Front View\" at the top right, \"Three-Quarter View (Under Sail)\" at the bottom left; at the bottom right, detail callouts labelled \"Helm\", \"Sail Rigging\", \"Crystal Lift Charm\", \"Cargo Hatch\", each as an isolated piece; plus one small square swatch of the hull planking labelled \"Hull planks\". A small neat spec block at the top left: \"The Cutter\", \"Crew: up to 10\", \"Steered by 1\", \"Length: 14.0 m\", \"Beam: 5.8 m\", \"Height (mast): 9.5 m\"; no other description text under the callouts. No people on board. Rigging and ladders drawn as thick solid rope. Even flat light, no rim light, no cast shadows on the hull",
+    "figure": 1.8,
+    "title": "The Cutter"
+  },
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x864",
   "aspect": "16:9",
   "quality": "high",
   "refs": [
-    "art/concept/style-test-03-airship.png"
+    "art/references/style-test-01-market-town.png",
+    "art/kit/ships/cutter.png"
   ],
-  "createdAt": "2026-11-02T16:15:05.495Z"
+  "usage": {
+    "input_tokens": 3334,
+    "input_tokens_details": {
+      "image_tokens": 2592,
+      "text_tokens": 742
+    },
+    "output_tokens": 1078,
+    "output_tokens_details": {
+      "image_tokens": 1078,
+      "text_tokens": 0
+    },
+    "total_tokens": 4412
+  },
+  "costUSD": 0.0568,
+  "createdAt": "2026-11-02T19:32:36.982Z"
 }

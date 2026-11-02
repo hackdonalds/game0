@@ -1,5 +1,34 @@
 {
-  "prompt": "Create an image. Image 6 of 6, GARDEN BIOME TERRAIN MATERIAL SHEET, same locked hand-painted painterly style. On a flat light grey background, four large square hand-painted tileable texture swatches in a 2 by 2 grid, viewed flat-on, each with a clean label below: TILLED SOIL (furrowed warm brown earth in neat parallel rows with a few sprouts); FIELD PATH (packed earth track with grass verge and pebbles, warm tan); TERRACE WALL (pale limestone dry-stone wall, irregular fitted stones with warm clay mortar gaps and a few moss flecks); UNDERSIDE (pale limestone and warm clay rock layers darkening to cool teal shadow, with root streaks). Brushy painted detail, not photographic, seamless-looking edges, readable at game scale.",
-  "chat_url": "https://chatgpt.com/c/6ae89071-0e80-83eb-b646-f2e640b9da5e",
-  "tool": "chatgpt.com"
+  "prompt": "Please generate an image. Locked painterly style: hand-painted stylized game art, chunky readable shapes, detail painted not modelled, mid-level detail, softer muted colours with gentle saturation, epic and luminous, never grim. The palette's warm gold and cool teal are painted into the surfaces, but the light is flat, even studio light: no strong key light, no cast shadows, no rim light. Use the attached images only as reference as described: the first attachment is always the style reference for palette and brushwork; later attachments are the approved designs to keep. Material swatch sheet, wide landscape 16:9, plain light neutral grey background. Square swatch tiles in a neat grid, evenly spaced, each flat-on (orthographic, no perspective, no horizon, no shadows from outside the tile), a seamless tileable painterly texture with edges that would wrap, broad clumped brushwork, no tiny high-frequency noise, a short neat label under each. Swatches: Redraw of the attached reference sheet to the current spec: keep exactly the same swatches, their order and their materials. Garden biome terrain, four square tiles in one row, labels exactly as written in quotes: \"Tilled Soil\" (furrowed warm brown earth in neat parallel rows running straight across the tile edge to edge, a few sprouts); \"Field Path\" (warm tan packed earth covering the whole tile with small pebbles and sparse grass sprigs spread evenly, no verge band); \"Terrace Wall\" (pale limestone dry-stone wall face, irregular fitted stones with warm clay in the gaps and a few moss flecks, no turf cap); \"Clay Underside\" (pale limestone and warm orange clay layers, evenly washed with cool teal, root streaks). Each tile is one evenly spread texture filling the whole square edge to edge, seen straight on with no perspective, no horizon, no focal point, no border, no single path or band crossing it and no light gradient, so its left edge would wrap onto its right and its top onto its bottom. Title at the top: \"Garden terrain\".",
+  "kit": {
+    "type": "materials",
+    "subject": "Redraw of the attached reference sheet to the current spec: keep exactly the same swatches, their order and their materials. Garden biome terrain, four square tiles in one row, labels exactly as written in quotes: \"Tilled Soil\" (furrowed warm brown earth in neat parallel rows running straight across the tile edge to edge, a few sprouts); \"Field Path\" (warm tan packed earth covering the whole tile with small pebbles and sparse grass sprigs spread evenly, no verge band); \"Terrace Wall\" (pale limestone dry-stone wall face, irregular fitted stones with warm clay in the gaps and a few moss flecks, no turf cap); \"Clay Underside\" (pale limestone and warm orange clay layers, evenly washed with cool teal, root streaks). Each tile is one evenly spread texture filling the whole square edge to edge, seen straight on with no perspective, no horizon, no focal point, no border, no single path or band crossing it and no light gradient, so its left edge would wrap onto its right and its top onto its bottom",
+    "figure": 1.8,
+    "title": "Garden terrain"
+  },
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x864",
+  "aspect": "16:9",
+  "quality": "high",
+  "refs": [
+    "art/references/style-test-01-market-town.png",
+    "art/kit/biomes/garden/terrain.png"
+  ],
+  "usage": {
+    "input_tokens": 3234,
+    "input_tokens_details": {
+      "image_tokens": 2776,
+      "text_tokens": 458
+    },
+    "output_tokens": 1078,
+    "output_tokens_details": {
+      "image_tokens": 1078,
+      "text_tokens": 0
+    },
+    "total_tokens": 4312
+  },
+  "costUSD": 0.0568,
+  "createdAt": "2026-11-02T19:29:34.095Z",
+  "refsNote": "Paths under art/ name the previous version of that file in git history (the sheet this one redraws)."
 }

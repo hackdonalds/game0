@@ -1,10 +1,32 @@
 {
-  "prompt": "Character base-body turnaround sheet for 3D modeling and rigging: the same Anchorkin shown three times side by side, evenly spaced with wide empty gaps, not overlapping: front view, side view, back view. Rigging A-pose: standing straight, arms straight and angled 45 degrees down and out from the body with a clear gap between each arm and the torso all the way to the armpit, elbows straight, hands open and flat with palms facing forward, all five fingers spread wide apart with a visible gap between every finger, the thumb clearly separated and pointing away from the palm, slightly oversized hands with thick fingers, legs straight with feet shoulder-width apart and a clear gap between the thighs, feet flat pointing forward, head facing forward. Huge broad heavy humanoid with a clear human body plan, two arms, two legs, five fingers on each hand, same face as the reference. Smooth slate and basalt grey stone skin with the stone texture painted on, thin glowing teal crystal veins, no loose rocks attached to the body. A thick coarse beard of pale sandy-ochre stone fibres that hangs off the chin onto the upper chest, a different colour from the grey skin, clear of the arms. Bare grey stone skin clearly visible on the arms, hands, face, knees, shins and bare feet. Wearing only a plain tight fitted sleeveless top and plain tight mid-thigh shorts, both solid deep rust-red cloth, clearly not grey. No belts, no chains, no straps, no bags, no jewellery, no weapons, no armour, no apron, no loose cloth, no accessories. Full body, head to feet fully visible. Hand-painted stylized game art, mid-level detail, chunky readable shapes, softer muted colours. Plain light grey background, even soft lighting, no cast shadows, no text, no labels.",
-  "model": "openai/gpt-image-2.5-sunburst",
+  "prompt": "Character base-body turnaround sheet for 3D modeling and rigging: the same character shown three times side by side, evenly spaced with wide gaps, not overlapping: front view, side view, back view. The character: Redraw of the attached reference sheet to the current spec: keep exactly the same design, items, their order and names. Items: one Anchorkin base body shown as front view, side view and back view, left to right, identical to the second attached image in body proportions, face, beard and stone skin; the first attached image gives only palette and brushwork, so render it as hand-painted stylized game art rather than a glossy 3D render. A huge, broad, heavy humanoid 2.6 m tall with a clear human body plan, two arms, two legs, five thick fingers on each hand, massive shoulders and arms, short thick legs. Smooth slate and basalt grey stone skin with the stone plates painted on, thin glowing teal crystal veins, no loose rocks attached to the body. A thick coarse braided beard of pale sandy-ochre stone fibres hangs from the chin onto the upper chest, clear of the arms; matching braided stone-fibre hair on the head. Bare grey stone skin clearly visible on the arms, hands, face, knees, shins and bare feet. The undershirt is a plain tight sleeveless top and the short trousers are plain tight mid-thigh shorts, both solid deep rust-red cloth, clearly not grey. Drawn without chains, apron, oath-mark carvings or armour, which are swappable parts. Flat even light with no rim light. Rigging A-pose: standing straight, arms straight and angled 45 degrees down and out from the body with a clear gap between each arm and the torso all the way to the armpit, elbows straight, hands open and flat with palms facing forward, all five fingers spread wide apart with a visible gap between every finger, the thumb clearly separated and pointing away from the palm, slightly oversized hands with thick fingers, legs straight with feet shoulder-width apart and a clear gap between the thighs, feet flat pointing forward, head facing forward. Hair, beard and growths stay clear of the armpits and the gap between the legs and never join an arm to the body. Wearing only simple plain fitted undershirt and short trousers, no harness, no belts, no tools, no accessories, no cape, no tail. Full body, fully visible. Hand-painted stylized game art, mid-level detail, chunky readable shapes, softer muted colours. Plain light grey background, even soft lighting, no cast shadows, no text, no labels.",
+  "kit": {
+    "type": "base-body",
+    "subject": "Redraw of the attached reference sheet to the current spec: keep exactly the same design, items, their order and names. Items: one Anchorkin base body shown as front view, side view and back view, left to right, identical to the second attached image in body proportions, face, beard and stone skin; the first attached image gives only palette and brushwork, so render it as hand-painted stylized game art rather than a glossy 3D render. A huge, broad, heavy humanoid 2.6 m tall with a clear human body plan, two arms, two legs, five thick fingers on each hand, massive shoulders and arms, short thick legs. Smooth slate and basalt grey stone skin with the stone plates painted on, thin glowing teal crystal veins, no loose rocks attached to the body. A thick coarse braided beard of pale sandy-ochre stone fibres hangs from the chin onto the upper chest, clear of the arms; matching braided stone-fibre hair on the head. Bare grey stone skin clearly visible on the arms, hands, face, knees, shins and bare feet. The undershirt is a plain tight sleeveless top and the short trousers are plain tight mid-thigh shorts, both solid deep rust-red cloth, clearly not grey. Drawn without chains, apron, oath-mark carvings or armour, which are swappable parts. Flat even light with no rim light",
+    "figure": 1.8
+  },
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1792x768",
   "aspect": "21:9",
   "quality": "high",
   "refs": [
-    "art/handbook/peoples/anchorkin.webp"
+    "art/references/style-test-01-market-town.png",
+    "art/kit/peoples/anchorkin/base-turnaround.png"
   ],
-  "createdAt": "2026-11-02T00:05:01.509Z"
+  "usage": {
+    "input_tokens": 2873,
+    "input_tokens_details": {
+      "image_tokens": 2304,
+      "text_tokens": 569
+    },
+    "output_tokens": 851,
+    "output_tokens_details": {
+      "image_tokens": 851,
+      "text_tokens": 0
+    },
+    "total_tokens": 3724
+  },
+  "costUSD": 0.0468,
+  "createdAt": "2026-11-02T19:27:39.476Z"
 }

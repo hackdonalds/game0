@@ -1,5 +1,34 @@
 {
-  "prompt": "Perfect. SHEET 4 of 5, kit-assembly, same light grey grid background, lighting, labels and painterly style, 1.8 m human figure for scale. Purpose: prove that the buildings from the approved concept sheets (attached images 4-6) can be rebuilt ONLY from the kit pieces of sheets 1-3. LEFT HALF: an EXPLODED three-quarter view of one two-storey Accord town house, pieces pulled apart vertically with thin dashed guide lines showing where they snap: basalt plinth, ground-floor basalt arcade walls with door and window inserts and an outer corner, a deadwood timber-frame upper floor with infill panels, window and flower box, terracotta roof run with gable end, ridge cap and a dormer, a slender spire, a sailcloth awning and a chain-and-crystal lamp; small callout labels name each piece. RIGHT HALF: three assembled buildings in three-quarter view, each standing on its own basalt plinth, no scenery: A Spire Townhouse (narrow, 3 storeys, basalt ground floor, two timber-frame storeys, steep roof with a slender spire), B Terrace House (wide, 2 storeys, row of arcade arches, oriel bay, sail awning terrace), C Arcaded Market Hall (long open basalt arch arcade, timber upper gallery, terracotta hip roof with central cupola, market canopy and banners). Faint module grid visible behind them so the 2 m modules and 3 m storeys read clearly. Please generate the image.",
-  "chat_url": "https://chatgpt.com/c/6ae86f8f-cf24-83ed-b6f2-3ce232c43ba8",
-  "tool": "chatgpt.com"
+  "prompt": "Please generate an image. Locked painterly style: hand-painted stylized game art, chunky readable shapes, detail painted not modelled, mid-level detail, softer muted colours with gentle saturation, epic and luminous, never grim. The palette's warm gold and cool teal are painted into the surfaces, but the light is flat, even studio light: no strong key light, no cast shadows, no rim light. Use the attached images only as reference as described: the first attachment is always the style reference for palette and brushwork; later attachments are the approved designs to keep. Game-asset reference sheet for 3D modelling, wide landscape 16:9. Plain light neutral grey background, no scene, no sky, no clouds, no floating rock, no ground plane, a soft contact shadow only. Every piece fully isolated with clear space around it, nothing overlapping, nothing touching the edge, arranged in tidy rows, each with a small neat hand-lettered label underneath. KIT ASSEMBLY sheet: Redraw of the attached reference sheet to the current spec: keep exactly the same pieces, their order, names and sizes. Accord town kit, 2 m module, 3 m storey. Left half, exploded build \"Two-Storey Townhouse\": from bottom to top a Basalt Plinth ring, Outer Corner posts, Arcade Wall with Door Insert and window, Chain Lamp, Awning (Sailcloth), Upper-Floor Wall (Timber) with Window Insert and Flower Box, Roof Run, Gable End, Ridge Cap, Dormer Window and a slender Spire, each pulled apart vertically with thin dashed leader lines and a small label naming the piece. Right half, three finished builds, each on its own basalt plinth: \"A. Spire Townhouse\" (footprint 2 x 4 m, 3 storeys, basalt ground floor, two timber-frame storeys, steep terracotta roof with slender spire), \"B. Terrace House\" (6 x 4 m, 2 storeys, arcade arches, oriel bay, sailcloth awning terrace), \"C. Arcaded Market Hall\" (12 x 6 m, open basalt arch arcade, timber upper gallery, terracotta hip roof with central lantern cupola, teal and gold banners). No other buildings. Left half: an exploded view of one build, its kit pieces pulled apart along the module lines with thin leader lines and small piece labels. Right half: three finished builds made only from the same kit pieces, each in three-quarter view, isolated on a faint grid footprint and labelled. Use only pieces from the kit's other sheets. A plain neutral 1.8 m human silhouette labelled \"1.8 m\" stands on the sheet for scale, with everything at true scale to it. Title at the top: \"Accord kit: assembly\".",
+  "kit": {
+    "type": "assembly",
+    "subject": "Redraw of the attached reference sheet to the current spec: keep exactly the same pieces, their order, names and sizes. Accord town kit, 2 m module, 3 m storey. Left half, exploded build \"Two-Storey Townhouse\": from bottom to top a Basalt Plinth ring, Outer Corner posts, Arcade Wall with Door Insert and window, Chain Lamp, Awning (Sailcloth), Upper-Floor Wall (Timber) with Window Insert and Flower Box, Roof Run, Gable End, Ridge Cap, Dormer Window and a slender Spire, each pulled apart vertically with thin dashed leader lines and a small label naming the piece. Right half, three finished builds, each on its own basalt plinth: \"A. Spire Townhouse\" (footprint 2 x 4 m, 3 storeys, basalt ground floor, two timber-frame storeys, steep terracotta roof with slender spire), \"B. Terrace House\" (6 x 4 m, 2 storeys, arcade arches, oriel bay, sailcloth awning terrace), \"C. Arcaded Market Hall\" (12 x 6 m, open basalt arch arcade, timber upper gallery, terracotta hip roof with central lantern cupola, teal and gold banners). No other buildings",
+    "figure": 1.8,
+    "title": "Accord kit: assembly"
+  },
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x864",
+  "aspect": "16:9",
+  "quality": "high",
+  "refs": [
+    "art/references/style-test-01-market-town.png",
+    "art/kit/architecture/accord/kit-assembly.png"
+  ],
+  "usage": {
+    "input_tokens": 3439,
+    "input_tokens_details": {
+      "image_tokens": 2832,
+      "text_tokens": 607
+    },
+    "output_tokens": 1078,
+    "output_tokens_details": {
+      "image_tokens": 1078,
+      "text_tokens": 0
+    },
+    "total_tokens": 4517
+  },
+  "costUSD": 0.058,
+  "createdAt": "2026-11-02T19:27:06.226Z",
+  "refsNote": "Paths under art/ name the previous version of that file in git history (the sheet this one redraws)."
 }

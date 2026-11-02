@@ -1,0 +1,33 @@
+{
+  "prompt": "Please generate an image. Locked painterly style: hand-painted stylized game art, chunky readable shapes, detail painted not modelled, mid-level detail, softer muted colours with gentle saturation, epic and luminous, never grim. The palette's warm gold and cool teal are painted into the surfaces, but the light is flat, even studio light: no strong key light, no cast shadows, no rim light. Use the attached images only as reference as described: the first attachment is always the style reference for palette and brushwork; later attachments are the approved designs to keep. Game-asset reference sheet for 3D modelling, wide landscape 16:9. Plain light neutral grey background, no scene, no sky, no clouds, no floating rock, no ground plane, a soft contact shadow only. Every piece fully isolated with clear space around it, nothing overlapping, nothing touching the edge, arranged in tidy rows, each with a small neat hand-lettered label underneath. BODY PLAN PARTS sheet for a modular creature kit: Bird body plan, fitting the base body in the second attachment. Sockets and their parts, one row each: Head and beak (Owl head with amber eyes and hooked beak; Hawk head with sharp hooked beak), Crest (None; Owl ear tufts; Hawk crest), Wings (Rounded owl wing; Sharp hawk wing), Tail fan (Short owl tail; Long hawk tail), Talons (Owl talon; Hawk talon), Plumage (Bark plumage, grey-brown bark pattern with lichen spots; Storm-grey plumage, grey and white). Every part has its name hand-lettered under it. Only these parts, nothing else. Include the parts these species need: Bark Owl (a round owl whose feathers perfectly mimic grey-brown tree bark with lichen spots, glowing amber eyes); Gale Hawk (a fierce sharp-winged hawk with storm-grey and white feathers). One row per socket, labelled with the socket name at the left. Each part alone in side view, all parts in a row ending in the same round socket cap so any of them fits the same base body. Chunky readable shapes, nothing thin, colour kept to soft greyscale with painted texture so species colour can be applied as a mask. Title at the top: \"Body plan parts: bird\".",
+  "kit": {
+    "type": "body-parts",
+    "subject": "Bird body plan, fitting the base body in the second attachment. Sockets and their parts, one row each: Head and beak (Owl head with amber eyes and hooked beak; Hawk head with sharp hooked beak), Crest (None; Owl ear tufts; Hawk crest), Wings (Rounded owl wing; Sharp hawk wing), Tail fan (Short owl tail; Long hawk tail), Talons (Owl talon; Hawk talon), Plumage (Bark plumage, grey-brown bark pattern with lichen spots; Storm-grey plumage, grey and white). Every part has its name hand-lettered under it. Only these parts, nothing else. Include the parts these species need: Bark Owl (a round owl whose feathers perfectly mimic grey-brown tree bark with lichen spots, glowing amber eyes); Gale Hawk (a fierce sharp-winged hawk with storm-grey and white feathers)",
+    "figure": 1.8,
+    "title": "Body plan parts: bird"
+  },
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x864",
+  "aspect": "16:9",
+  "quality": "high",
+  "refs": [
+    "art/references/style-test-01-market-town.png",
+    "art/kit/bestiary/body-plans/bird-body.png"
+  ],
+  "usage": {
+    "input_tokens": 3095,
+    "input_tokens_details": {
+      "image_tokens": 2592,
+      "text_tokens": 503
+    },
+    "output_tokens": 1078,
+    "output_tokens_details": {
+      "image_tokens": 1078,
+      "text_tokens": 0
+    },
+    "total_tokens": 4173
+  },
+  "costUSD": 0.0556,
+  "createdAt": "2026-11-02T19:28:48.867Z"
+}

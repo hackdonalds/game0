@@ -1,0 +1,27 @@
+{
+  "prompt": "In-world scene illustration for a fantasy world handbook: dusk on a Garden Isle farm terrace: a burrow mole popping out of a vegetable bed with a turnip while a farmer creeps up with a lantern and a rake, rows of crops and terraces stepping down to the cloud sea. Wide cinematic composition, the subject clearly readable, people and ships at true scale. The first attachment is only a reference for palette and brushwork: do not copy its giant tree, its buildings or its composition, and add no castles, spires or giant trees the scene doesn't ask for. The second attachment is the creature's approved design: keep it exactly. Style: hand-painted stylized game art, painterly, soft lighting with gentle rim light, softer muted colours with gentle saturation, epic and luminous fantasy, never grim. No text, no labels, no border, no frame.",
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x864",
+  "aspect": "16:9",
+  "quality": "high",
+  "refs": [
+    "art/references/world-tree-floating-isle.webp",
+    "art/concept/bestiary/burrow-mole.webp"
+  ],
+  "usage": {
+    "input_tokens": 2249,
+    "input_tokens_details": {
+      "image_tokens": 2048,
+      "text_tokens": 201
+    },
+    "output_tokens": 1078,
+    "output_tokens_details": {
+      "image_tokens": 1078,
+      "text_tokens": 0
+    },
+    "total_tokens": 3327
+  },
+  "costUSD": 0.0497,
+  "createdAt": "2026-11-02T19:13:59.359Z"
+}

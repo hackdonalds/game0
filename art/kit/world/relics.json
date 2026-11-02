@@ -1,10 +1,34 @@
 {
-  "prompt": "Please generate an image. Locked painterly style (hand-painted, chunky readable shapes, detail painted not modelled, warm golden key light, cool teal shadows, muted saturation, epic and luminous, never grim). Use the attached image(s) only as reference as described; the first attachment is always the style reference for palette, rendering and light. Game-asset concept sheet, landscape 16:9, plain light neutral grey background, no scene, no sky, soft contact shadow only, every piece isolated with clear space and a small neat label underneath. Subject: OLD-WORLD RELICS recovered from the drowned world, ruins and world bosses. Show twelve items: a ring-shaped relic blade hilt, a ruinstone shield fragment with a live glyph channel, a set of relic armour plates, a sealed cylinder of unknown use, a glyph tablet, a lens of teal crystal in a precise metal frame, a relic compass that points down, a small floating stone shard, a broken mechanism like a gear without teeth, a ring of interlocking bands, a relic tool, a dead and a living version of the same glyph stone. Old-world look: pale precise ruinstone, alien exact geometry, bevelled slabs, concentric ring motifs, engraved channels that glow teal when alive and are dull when dead. Not Greek or Roman: no columns, no capitals, no classical carving. The attachment shows old-world forms. Detail painted, not modelled.",
-  "model": "openai/gpt-image-2.5-sunburst",
+  "prompt": "Please generate an image. Locked painterly style: hand-painted stylized game art, chunky readable shapes, detail painted not modelled, mid-level detail, softer muted colours with gentle saturation, epic and luminous, never grim. The palette's warm gold and cool teal are painted into the surfaces, but the light is flat, even studio light: no strong key light, no cast shadows, no rim light. Use the attached images only as reference as described: the first attachment is always the style reference for palette and brushwork; later attachments are the approved designs to keep. Game-asset reference sheet for 3D modelling, wide landscape 16:9. Plain light neutral grey background, no scene, no sky, no clouds, no floating rock, no ground plane, a soft contact shadow only. Every piece fully isolated with clear space around it, nothing overlapping, nothing touching the edge, arranged in tidy rows, each with a small neat hand-lettered label underneath. GEAR AND PROPS sheet: Redraw of the attached reference sheet to the current spec: keep the same items and names. Twelve old-world relics recovered from the drowned world, ruins and world bosses, in three tidy rows of four, each alone and labelled: \"Relic Blade Hilt\" (ring-shaped), \"Ruinstone Shield Fragment\" (with a live glyph channel), \"Relic Armour Plates\" (a set, each plate slightly apart), \"Sealed Cylinder\"; \"Glyph Tablet\", \"Teal Crystal Lens\" (a lens of teal crystal in a precise metal frame), \"Relic Compass (points down)\", \"Floating Shard\" (a small stone shard floating just above its contact shadow); \"Broken Mechanism (gear without teeth)\", \"Ring of Interlocking Bands\", \"Relic Tool\", and \"Glyph Stone (Dead)\" beside \"Glyph Stone (Living)\" (the same stone, dull and glowing). Old-world look: pale precise ruinstone and old metal, alien exact geometry, bevelled slabs, concentric ring motifs, engraved channels that glow teal when alive and are dull when dead. Not Greek or Roman: no columns, no capitals, no classical carving. No moss, no coral, no leather straps or dangling cords on any relic. Scale: the armour plates stand right beside the scale figure at true scale to it (a chest plate the size of the figure's chest); every other relic is hand-sized (a blade hilt fits one hand) and is drawn enlarged for legibility, with a small note under the title reading \"small relics shown enlarged\". Each item alone in three-quarter front view, in rows by family or tier, with thick chunky proportions: thick blades, solid rope, chunky grips, no thin parts. A plain neutral 1.8 m human silhouette labelled \"1.8 m\" stands on the sheet for scale, with everything at true scale to it. Title at the top: \"World kit: relics\".",
+  "kit": {
+    "type": "gear",
+    "subject": "Redraw of the attached reference sheet to the current spec: keep the same items and names. Twelve old-world relics recovered from the drowned world, ruins and world bosses, in three tidy rows of four, each alone and labelled: \"Relic Blade Hilt\" (ring-shaped), \"Ruinstone Shield Fragment\" (with a live glyph channel), \"Relic Armour Plates\" (a set, each plate slightly apart), \"Sealed Cylinder\"; \"Glyph Tablet\", \"Teal Crystal Lens\" (a lens of teal crystal in a precise metal frame), \"Relic Compass (points down)\", \"Floating Shard\" (a small stone shard floating just above its contact shadow); \"Broken Mechanism (gear without teeth)\", \"Ring of Interlocking Bands\", \"Relic Tool\", and \"Glyph Stone (Dead)\" beside \"Glyph Stone (Living)\" (the same stone, dull and glowing). Old-world look: pale precise ruinstone and old metal, alien exact geometry, bevelled slabs, concentric ring motifs, engraved channels that glow teal when alive and are dull when dead. Not Greek or Roman: no columns, no capitals, no classical carving. No moss, no coral, no leather straps or dangling cords on any relic. Scale: the armour plates stand right beside the scale figure at true scale to it (a chest plate the size of the figure's chest); every other relic is hand-sized (a blade hilt fits one hand) and is drawn enlarged for legibility, with a small note under the title reading \"small relics shown enlarged\"",
+    "figure": 1.8,
+    "title": "World kit: relics"
+  },
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x864",
   "aspect": "16:9",
   "quality": "high",
   "refs": [
-    "art/concept/architecture/old-world/ruin-fragments.png"
+    "art/references/style-test-01-market-town.png",
+    "art/kit/world/relics.png"
   ],
-  "createdAt": "2026-11-02T17:23:42.776Z"
+  "usage": {
+    "input_tokens": 3218,
+    "input_tokens_details": {
+      "image_tokens": 2592,
+      "text_tokens": 626
+    },
+    "output_tokens": 1078,
+    "output_tokens_details": {
+      "image_tokens": 1078,
+      "text_tokens": 0
+    },
+    "total_tokens": 4296
+  },
+  "costUSD": 0.0562,
+  "createdAt": "2026-11-02T19:32:33.253Z",
+  "refsNote": "Paths under art/ name the previous version of that file in git history (the sheet this one redraws)."
 }

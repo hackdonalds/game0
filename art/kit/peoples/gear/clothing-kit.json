@@ -1,10 +1,33 @@
 {
-  "prompt": "Please generate an image. Locked painterly style (hand-painted, chunky readable shapes, detail painted not modelled, warm golden key light, cool teal shadows, muted saturation, epic and luminous, never grim). Use the attached image(s) only as reference as described; the first attachment is always the style reference for palette, rendering and light. Game-asset concept sheet, landscape 16:9, plain light neutral grey background, no scene, no sky, soft contact shadow only, every piece isolated with clear space and a small neat label underneath. MODULAR CLOTHING KIT for one shared body: pieces laid out flat by layer: UNDER (shirts, leggings, wraps), GARMENT (tunics, robes, vests, aprons), ARMOUR (pauldrons, bracers, greaves, chest pieces, helmets), CLOAK (cloaks, capes, a cloak shown folded away for a gliding Galeborne). Also boots, belts, pouches, gloves, hats and trinkets: lanterns, feather charms, chain links. Dye swatches row showing one tunic in six dye colours.",
-  "model": "openai/gpt-image-2.5-sunburst",
+  "prompt": "Please generate an image. Locked painterly style: hand-painted stylized game art, chunky readable shapes, detail painted not modelled, mid-level detail, softer muted colours with gentle saturation, epic and luminous, never grim. The palette's warm gold and cool teal are painted into the surfaces, but the light is flat, even studio light: no strong key light, no cast shadows, no rim light. Use the attached images only as reference as described: the first attachment is always the style reference for palette and brushwork; later attachments are the approved designs to keep. Game-asset reference sheet for 3D modelling, wide landscape 16:9. Plain light neutral grey background, no scene, no sky, no clouds, no floating rock, no ground plane, a soft contact shadow only. Every piece fully isolated with clear space around it, nothing overlapping, nothing touching the edge, arranged in tidy rows, each with a small neat hand-lettered label underneath. MODULAR KIT PIECES sheet: Redraw of the attached reference sheet to the current spec: keep exactly the same design, items, their order and names. Modular clothing kit for one shared body, pieces laid out flat and front-on, each alone with clear space, grouped by layer with a small heading label per group, in the same arrangement as the second attached image: at the far left \"Shared body\" (a plain neutral 1.8 m base body in cream underclothes); \"Under (shirts, leggings, wraps)\": linen shirt, green shirt, wrap shirt, scarf wrap, brown leggings, blue leggings, cream wrap; \"Garment (tunics, robes, vests, aprons)\": cream tunic, teal robe, green vest, red tunic, leather apron, cream and teal robe; \"Armour (pauldrons, bracers, greaves, chest pieces, helmets)\": three chest pieces, three helmets, two hoods, pauldrons, bracers, gauntlets, greaves; \"Cloak (cloaks, capes, + folded for Galeborne)\": red cloak, teal cape, feather cape, cream cloak, and one cloak shown rolled and strapped up for a gliding Galeborne; \"Boots\"; \"Gloves\"; \"Belts & pouches\"; \"Hats\" (feathered hat, red hood, green hat, cloth wrap, aviator cap); \"Trinkets (lanterns, feather charms, chain links)\": lantern, feather charm, compass charm, crystal charm, chain links, small book; bottom row \"Dye swatches\": one tunic in six dye colours (cream, red, ochre, green, teal, purple). Labels give the piece name only: clothing is fitted to the shared body, so write no sizes or dimensions in any label (no \"1 x 2 m\") and no grid numbers. Only labels, no slogans or description text. Thick solid shapes, no thin straps, even flat light, no rim light. Show each piece as an orthographic front elevation (no perspective) with a small three-quarter view beside it, on faint module grid lines, with its name and size (for example \"3 x 4 m\") in the label. Thick, solid forms, no thin parts. A plain neutral 1.8 m human silhouette labelled \"1.8 m\" stands on the sheet for scale, with everything at true scale to it. Title at the top: \"Shared gear: modular clothing kit\".",
+  "kit": {
+    "type": "pieces",
+    "subject": "Redraw of the attached reference sheet to the current spec: keep exactly the same design, items, their order and names. Modular clothing kit for one shared body, pieces laid out flat and front-on, each alone with clear space, grouped by layer with a small heading label per group, in the same arrangement as the second attached image: at the far left \"Shared body\" (a plain neutral 1.8 m base body in cream underclothes); \"Under (shirts, leggings, wraps)\": linen shirt, green shirt, wrap shirt, scarf wrap, brown leggings, blue leggings, cream wrap; \"Garment (tunics, robes, vests, aprons)\": cream tunic, teal robe, green vest, red tunic, leather apron, cream and teal robe; \"Armour (pauldrons, bracers, greaves, chest pieces, helmets)\": three chest pieces, three helmets, two hoods, pauldrons, bracers, gauntlets, greaves; \"Cloak (cloaks, capes, + folded for Galeborne)\": red cloak, teal cape, feather cape, cream cloak, and one cloak shown rolled and strapped up for a gliding Galeborne; \"Boots\"; \"Gloves\"; \"Belts & pouches\"; \"Hats\" (feathered hat, red hood, green hat, cloth wrap, aviator cap); \"Trinkets (lanterns, feather charms, chain links)\": lantern, feather charm, compass charm, crystal charm, chain links, small book; bottom row \"Dye swatches\": one tunic in six dye colours (cream, red, ochre, green, teal, purple). Labels give the piece name only: clothing is fitted to the shared body, so write no sizes or dimensions in any label (no \"1 x 2 m\") and no grid numbers. Only labels, no slogans or description text. Thick solid shapes, no thin straps, even flat light, no rim light",
+    "figure": 1.8,
+    "title": "Shared gear: modular clothing kit"
+  },
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x864",
   "aspect": "16:9",
   "quality": "high",
   "refs": [
-    "art/concept/style-test-01-market-town.png"
+    "art/references/style-test-01-market-town.png",
+    "art/kit/peoples/gear/clothing-kit.png"
   ],
-  "createdAt": "2026-11-02T17:29:34.491Z"
+  "usage": {
+    "input_tokens": 3338,
+    "input_tokens_details": {
+      "image_tokens": 2592,
+      "text_tokens": 746
+    },
+    "output_tokens": 1078,
+    "output_tokens_details": {
+      "image_tokens": 1078,
+      "text_tokens": 0
+    },
+    "total_tokens": 4416
+  },
+  "costUSD": 0.0568,
+  "createdAt": "2026-11-02T19:31:34.938Z"
 }

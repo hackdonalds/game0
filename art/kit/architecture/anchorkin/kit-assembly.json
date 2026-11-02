@@ -1,5 +1,34 @@
 {
-  "prompt": "Excellent, keep exactly this material treatment (black forged iron, gold only in carved inlays). Generate sheet 4 now as an image, title \"Anchorkin Kit - Assembly\", same light grey grid background, flat even studio light, 2.6 m Anchorkin scale figure, no scenery, no floating rock, no sky. Left half: an exploded axonometric view of one squat Anchorkin dwelling being assembled from the kit pieces of sheets 1-3 (plinth, battered 3 x 4 m wall modules, corners, door insert with oath-mark doorposts, window inserts, Ledger trim band, flat terrace roof run with crenel parapet, chimney stack, chain wall anchor), pieces pulled apart vertically along dashed guide lines, each labelled with its kit name. Right half: three buildings from the concept sheets rebuilt ONLY from those kit pieces, each on its own plain stone plinth, three-quarter view, with a small footprint label in modules: (A) Terraced Home: two or three broad stepped terraces, each storey set back one module, flat roofs used as terraces with parapets, straight stairs between tiers; (B) Mooring House: a long low battered block on a cliff-edge foundation module with giant chains running from wall anchors down to a mooring ring post; (C) Grounded Blockhouse: a single heavy squat fortified block, battered walls, slit windows, crenellated flat roof, double door with chain bar. All three must read as horizontal, squat, stepped and heavy, wider than tall, with low flat or shallow stepped stone roofs - absolutely no steep pitched slate gables, no cottage look.",
-  "chat_url": "https://chatgpt.com/c/6ae86f92-74f8-83eb-9074-bca3293dd829",
-  "tool": "chatgpt.com"
+  "prompt": "Please generate an image. Locked painterly style: hand-painted stylized game art, chunky readable shapes, detail painted not modelled, mid-level detail, softer muted colours with gentle saturation, epic and luminous, never grim. The palette's warm gold and cool teal are painted into the surfaces, but the light is flat, even studio light: no strong key light, no cast shadows, no rim light. Use the attached images only as reference as described: the first attachment is always the style reference for palette and brushwork; later attachments are the approved designs to keep. Game-asset reference sheet for 3D modelling, wide landscape 16:9. Plain light neutral grey background, no scene, no sky, no clouds, no floating rock, no ground plane, a soft contact shadow only. Every piece fully isolated with clear space around it, nothing overlapping, nothing touching the edge, arranged in tidy rows, each with a small neat hand-lettered label underneath. KIT ASSEMBLY sheet: Redraw of the attached reference sheet to the current spec: keep exactly the same pieces, their order, names and sizes. Anchorkin style on a 3 m module and 4 m storey, walls 1 m thick and battered 8 degrees inward on the outer face: dark basalt and slate blocks with teal crystal veins, a little moss; all metal straps, caps, hinges, brackets and chains are black forged iron with a faint cool sheen, never gold or brass; gold appears only as thin inlay inside carved inscriptions and anchor oath-marks. Squat, horizontal, heavy. Left half, exploded build \"Anchorkin Dwelling\" (3 x 2 modules, 9 x 6 m): from top to bottom Chimney Stack, Parapet (Crenel), Flat Terrace Roof Run, Ledger Trim (Straight Run), Outer Corner, Battered Wall (Plain), Battered Wall (Window), Door Insert (Double Door), Oath-mark Doorposts, Wall Anchor (with Chain), Plinth, each pulled apart vertically with thin dashed leader lines and small labels. Right half, three finished builds: \"A. Terraced Home\" (4 x 3 modules, 12 x 9 m, 3 stepped storeys with flat terrace roofs, parapets and straight stairs), \"B. Mooring House\" (5 x 2 modules, 15 x 6 m, 2 storeys, long low block with giant chains from wall anchors to a mooring ring post), \"C. Grounded Blockhouse\" (4 x 3 modules, 12 x 9 m, 2 storeys, crenellated flat roof, slit windows, double door with chain bar). All wider than tall, no pitched roofs. No other buildings. Left half: an exploded view of one build, its kit pieces pulled apart along the module lines with thin leader lines and small piece labels. Right half: three finished builds made only from the same kit pieces, each in three-quarter view, isolated on a faint grid footprint and labelled. Use only pieces from the kit's other sheets. A plain neutral 2.6 m human silhouette labelled \"2.6 m\" stands on the sheet for scale, with everything at true scale to it. Title at the top: \"Anchorkin kit: assembly\".",
+  "kit": {
+    "type": "assembly",
+    "subject": "Redraw of the attached reference sheet to the current spec: keep exactly the same pieces, their order, names and sizes. Anchorkin style on a 3 m module and 4 m storey, walls 1 m thick and battered 8 degrees inward on the outer face: dark basalt and slate blocks with teal crystal veins, a little moss; all metal straps, caps, hinges, brackets and chains are black forged iron with a faint cool sheen, never gold or brass; gold appears only as thin inlay inside carved inscriptions and anchor oath-marks. Squat, horizontal, heavy. Left half, exploded build \"Anchorkin Dwelling\" (3 x 2 modules, 9 x 6 m): from top to bottom Chimney Stack, Parapet (Crenel), Flat Terrace Roof Run, Ledger Trim (Straight Run), Outer Corner, Battered Wall (Plain), Battered Wall (Window), Door Insert (Double Door), Oath-mark Doorposts, Wall Anchor (with Chain), Plinth, each pulled apart vertically with thin dashed leader lines and small labels. Right half, three finished builds: \"A. Terraced Home\" (4 x 3 modules, 12 x 9 m, 3 stepped storeys with flat terrace roofs, parapets and straight stairs), \"B. Mooring House\" (5 x 2 modules, 15 x 6 m, 2 storeys, long low block with giant chains from wall anchors to a mooring ring post), \"C. Grounded Blockhouse\" (4 x 3 modules, 12 x 9 m, 2 storeys, crenellated flat roof, slit windows, double door with chain bar). All wider than tall, no pitched roofs. No other buildings",
+    "figure": 2.6,
+    "title": "Anchorkin kit: assembly"
+  },
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x864",
+  "aspect": "16:9",
+  "quality": "high",
+  "refs": [
+    "art/references/style-test-01-market-town.png",
+    "art/kit/architecture/anchorkin/kit-assembly.png"
+  ],
+  "usage": {
+    "input_tokens": 3508,
+    "input_tokens_details": {
+      "image_tokens": 2804,
+      "text_tokens": 704
+    },
+    "output_tokens": 1078,
+    "output_tokens_details": {
+      "image_tokens": 1078,
+      "text_tokens": 0
+    },
+    "total_tokens": 4586
+  },
+  "costUSD": 0.0583,
+  "createdAt": "2026-11-02T19:29:38.177Z",
+  "refsNote": "Paths under art/ name the previous version of that file in git history (the sheet this one redraws)."
 }

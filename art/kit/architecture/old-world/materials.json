@@ -1,5 +1,34 @@
 {
-  "prompt": "Wonderful. Last sheet: MATERIALS, the hand-painted trim sheet for the old-world kit. Landscape, light neutral grey background, a neat 4 x 2 grid of EIGHT large square swatch tiles, each a flat, front-on, evenly lit painted texture tile (no perspective, no objects, no scenery), seamless-looking, painterly hand-painted brushwork matching my locked style, softer and less sepia than the concept sheets, with a short handwritten-style label under each: 1 \"Pale perfect stone\" (smooth, almost flawless pale stone #F3ECD9, subtle large-block seams, razor-clean); 2 \"Weathered pale stone\" (same stone with soft stains, chips and fine cracks); 3 \"Dead channel\" (a tile of pale stone with the standard inset channel running across it, dark empty groove with faint teal residue); 4 \"Lit teal channel\" (same channel glowing soft teal #2FC4B2, slight flicker bloom); 5 \"Glyph band\" (a horizontal band of precise geometric glyphs, circles, arcs and lines, carved into pale stone, not letters, not sci-fi); 6 \"Moss-overgrown stone\" (pale stone with moss #4F7A3A creeping over it); 7 \"Root-cracked stone\" (pale stone split by thin roots, cracks razor-clean); 8 \"Polished floor slab\" (smooth polished pale floor with a concentric ring inlay, faint reflections). Title \"Old World Kit: Materials\". Please generate the image.",
-  "chat_url": "https://chatgpt.com/c/6ae86f98-7bd8-83eb-a3a7-4d3fd2e1cd0f",
-  "tool": "chatgpt.com"
+  "prompt": "Please generate an image. Locked painterly style: hand-painted stylized game art, chunky readable shapes, detail painted not modelled, mid-level detail, softer muted colours with gentle saturation, epic and luminous, never grim. The palette's warm gold and cool teal are painted into the surfaces, but the light is flat, even studio light: no strong key light, no cast shadows, no rim light. Use the attached images only as reference as described: the first attachment is always the style reference for palette and brushwork; later attachments are the approved designs to keep. Material swatch sheet, wide landscape 16:9, plain light neutral grey background. Square swatch tiles in a neat grid, evenly spaced, each flat-on (orthographic, no perspective, no horizon, no shadows from outside the tile), a seamless tileable painterly texture with edges that would wrap, broad clumped brushwork, no tiny high-frequency noise, a short neat label under each. Swatches: Redraw of the attached reference sheet to the current spec: keep exactly the same swatches, their order and names. Old-world trim sheet, eight square tiles in a 4 x 2 grid, flat colour under even light: 1 \"Pale perfect stone\" (smooth near-flawless pale stone, large-block seams), 2 \"Weathered pale stone\" (soft stains, chips, fine cracks), 3 \"Dead channel\" (pale stone with the 0.5 m inset channel across it, dark empty groove with faint teal residue), 4 \"Lit teal channel\" (the same channel glowing soft teal), 5 \"Glyph band\" (a band of precise circles, arcs and lines carved into pale stone, no letters), 6 \"Moss-overgrown stone\", 7 \"Root-cracked stone\" (pale stone split by roots), 8 \"Polished floor slab\" (smooth pale floor with a concentric ring inlay). Title at the top: \"Old world kit: materials\".",
+  "kit": {
+    "type": "materials",
+    "subject": "Redraw of the attached reference sheet to the current spec: keep exactly the same swatches, their order and names. Old-world trim sheet, eight square tiles in a 4 x 2 grid, flat colour under even light: 1 \"Pale perfect stone\" (smooth near-flawless pale stone, large-block seams), 2 \"Weathered pale stone\" (soft stains, chips, fine cracks), 3 \"Dead channel\" (pale stone with the 0.5 m inset channel across it, dark empty groove with faint teal residue), 4 \"Lit teal channel\" (the same channel glowing soft teal), 5 \"Glyph band\" (a band of precise circles, arcs and lines carved into pale stone, no letters), 6 \"Moss-overgrown stone\", 7 \"Root-cracked stone\" (pale stone split by roots), 8 \"Polished floor slab\" (smooth pale floor with a concentric ring inlay)",
+    "figure": 1.8,
+    "title": "Old world kit: materials"
+  },
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x864",
+  "aspect": "16:9",
+  "quality": "high",
+  "refs": [
+    "art/references/style-test-01-market-town.png",
+    "art/kit/architecture/old-world/materials.png"
+  ],
+  "usage": {
+    "input_tokens": 3241,
+    "input_tokens_details": {
+      "image_tokens": 2804,
+      "text_tokens": 437
+    },
+    "output_tokens": 1078,
+    "output_tokens_details": {
+      "image_tokens": 1078,
+      "text_tokens": 0
+    },
+    "total_tokens": 4319
+  },
+  "costUSD": 0.057,
+  "createdAt": "2026-11-02T19:35:17.204Z",
+  "refsNote": "Paths under art/ name the previous version of that file in git history (the sheet this one redraws)."
 }

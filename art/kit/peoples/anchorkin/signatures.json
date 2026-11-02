@@ -1,11 +1,34 @@
 {
-  "prompt": "Please generate an image. Locked painterly style (hand-painted, chunky readable shapes, detail painted not modelled, warm golden key light, cool teal shadows, muted saturation, epic and luminous, never grim). Use the attached image(s) only as reference as described; the first attachment is always the style reference for palette, rendering and light. Keep the exact body design of the people in the second attachment. Character customization sheet, landscape 16:9, plain light neutral grey background, small neat labels. ANCHORKIN: huge, broad, heavy people with stone skin veined with teal crystal; a carved Ledger line across the brow and carved oath-marks on the shoulders; masons, chainsmiths, guards of the low chained Moorings. Show the SIGNATURE FEATURE variants as a grid of heads and shoulders: stone types slate, basalt, sandstone and marble, crystal vein colours, brow Ledger line carvings, shoulder oath-marks from young almost bare to elder carved brow to elbow, one struck-through broken oath-mark, stone-fibre beards. Also show male, female and elder body variants full-body in a row.",
-  "model": "openai/gpt-image-2.5-sunburst",
+  "prompt": "Please generate an image. Locked painterly style: hand-painted stylized game art, chunky readable shapes, detail painted not modelled, mid-level detail, softer muted colours with gentle saturation, epic and luminous, never grim. The palette's warm gold and cool teal are painted into the surfaces, but the light is flat, even studio light: no strong key light, no cast shadows, no rim light. Use the attached images only as reference as described: the first attachment is always the style reference for palette and brushwork; later attachments are the approved designs to keep. Game-asset reference sheet for 3D modelling, wide landscape 16:9. Plain light neutral grey background, no scene, no sky, no clouds, no floating rock, no ground plane, a soft contact shadow only. Every piece fully isolated with clear space around it, nothing overlapping, nothing touching the edge, arranged in tidy rows, each with a small neat hand-lettered label underneath. VARIANTS sheet: Redraw of the attached reference sheet to the current spec: keep exactly the same design, items, their order and names. Anchorkin signature features, on the same base as the second attached image (2.6 m tall, huge broad grey stone body with teal crystal veins, braided sandy-ochre stone-fibre beard, carved brow Ledger line, carved shoulder oath-marks). Left third: three full-body figures standing in a row in rust-red cloth, labelled \"Male\", \"Female\", \"Elder\" (the elder with a longer beard, a cream apron and more carvings). Right two thirds, a grid of head-and-shoulders busts in labelled rows, all facing the same three-quarter direction: row \"Stone types\": Slate, Basalt, Sandstone, Marble; row \"Crystal vein colours\": Teal, Amber, Violet, Emerald, Gold; row \"Ledger line variants (brow)\": Plain, Single line, Double line, Geometric, Ornate; beside it a block \"Beard styles (stone-fibre)\": Short, Braided, Bound, Long, Beaded, Wild; bottom row \"Shoulder oath-marks\" as close-ups of one shoulder, left to right progression: Young, First mark, More marks, Heavy carvings, Elder, Broken oath (one mark struck through). Each variant name is a small label under its cell; no description text, no blurb, no taglines, no rarity notes. Even flat light, no rim light. Keep the exact base design in the second attachment. Show the same base in a neat grid, one part changed per cell, everything else identical, each cell labelled with the variant name. Swappable parts are shown clearly separate from the body where they attach. Title at the top: \"Anchorkin: signature features\".",
+  "kit": {
+    "type": "variants",
+    "subject": "Redraw of the attached reference sheet to the current spec: keep exactly the same design, items, their order and names. Anchorkin signature features, on the same base as the second attached image (2.6 m tall, huge broad grey stone body with teal crystal veins, braided sandy-ochre stone-fibre beard, carved brow Ledger line, carved shoulder oath-marks). Left third: three full-body figures standing in a row in rust-red cloth, labelled \"Male\", \"Female\", \"Elder\" (the elder with a longer beard, a cream apron and more carvings). Right two thirds, a grid of head-and-shoulders busts in labelled rows, all facing the same three-quarter direction: row \"Stone types\": Slate, Basalt, Sandstone, Marble; row \"Crystal vein colours\": Teal, Amber, Violet, Emerald, Gold; row \"Ledger line variants (brow)\": Plain, Single line, Double line, Geometric, Ornate; beside it a block \"Beard styles (stone-fibre)\": Short, Braided, Bound, Long, Beaded, Wild; bottom row \"Shoulder oath-marks\" as close-ups of one shoulder, left to right progression: Young, First mark, More marks, Heavy carvings, Elder, Broken oath (one mark struck through). Each variant name is a small label under its cell; no description text, no blurb, no taglines, no rarity notes. Even flat light, no rim light",
+    "figure": 1.8,
+    "title": "Anchorkin: signature features"
+  },
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x864",
   "aspect": "16:9",
   "quality": "high",
   "refs": [
-    "art/concept/style-test-01-market-town.png",
-    "art/concept/anchorkin-base-turnaround.png"
+    "art/references/style-test-01-market-town.png",
+    "art/kit/peoples/anchorkin/signatures.png",
+    "art/concept/peoples/anchorkin.webp"
   ],
-  "createdAt": "2026-11-02T17:28:20.452Z"
+  "usage": {
+    "input_tokens": 4224,
+    "input_tokens_details": {
+      "image_tokens": 3616,
+      "text_tokens": 608
+    },
+    "output_tokens": 1078,
+    "output_tokens_details": {
+      "image_tokens": 1078,
+      "text_tokens": 0
+    },
+    "total_tokens": 5302
+  },
+  "costUSD": 0.0643,
+  "createdAt": "2026-11-02T19:29:28.005Z"
 }

@@ -1,12 +1,34 @@
 {
-  "prompt": "Please generate an image. Locked painterly style (hand-painted, chunky readable shapes, detail painted not modelled, warm golden key light, cool teal shadows, muted saturation, epic and luminous, never grim). Use the attached image(s) only as reference as described; the first attachment is always the style reference for palette, rendering and light. Game-asset concept sheet, landscape 16:9, plain light neutral grey background, no scene, no sky, soft contact shadow only, every piece isolated with clear space and a small neat label underneath. MOUNT AND PACK TACK sheet: saddles, bridles and harness for tamed creatures: a burrow boar riding saddle, a cliff goat climbing saddle with stirrups and horn guards, a moss grazer pack harness with woven baskets and a cargo frame, a skyray flying saddle for one rider with a wind screen and strap rig. Keep the creature designs from the attachments: the moss grazer is a huge shaggy yak-like beast with a mossy, flowering coat (second attachment), not a llama; the skyray is a manta ray with deep blue and violet skin and pale glowing markings (third attachment). Show each piece alone and fitted on a simple silhouette of its creature, plus a row of tack details: buckles, a taming whistle, a feed bag, crafted leather straps. Include a simple 1.8 m human silhouette for scale.",
-  "model": "openai/gpt-image-2.5-sunburst",
+  "prompt": "Please generate an image. Locked painterly style: hand-painted stylized game art, chunky readable shapes, detail painted not modelled, mid-level detail, softer muted colours with gentle saturation, epic and luminous, never grim. The palette's warm gold and cool teal are painted into the surfaces, but the light is flat, even studio light: no strong key light, no cast shadows, no rim light. Use the attached images only as reference as described: the first attachment is always the style reference for palette and brushwork; later attachments are the approved designs to keep. Game-asset reference sheet for 3D modelling, wide landscape 16:9. Plain light neutral grey background, no scene, no sky, no clouds, no floating rock, no ground plane, a soft contact shadow only. Every piece fully isolated with clear space around it, nothing overlapping, nothing touching the edge, arranged in tidy rows, each with a small neat hand-lettered label underneath. GEAR AND PROPS sheet: Redraw of the attached reference sheet to the current spec: keep exactly the same items, their order, names and sizes and the same tack designs, but show every item ALONE, off the creature, in three-quarter front view. Top row, the four large tack pieces, each with a small plain flat grey silhouette of its creature behind it showing where it sits (no painted creature): Burrow Boar riding saddle; Cliff Goat climbing saddle and horn guards; Moss Grazer pack harness with woven baskets; Skyray flying saddle and wind screen. Bottom row, tack details: Brass buckle (hardware), Leather strap (stitched), D-ring fitting, Taming whistle (bone and brass), Feed bag (grazer pellets), Bedroll straps, Cargo frame (woven basket). Keep the same names as labels; no tagline under the title. Each item alone in three-quarter front view, in rows by family or tier, with thick chunky proportions: thick blades, solid rope, chunky grips, no thin parts. A plain neutral 1.8 m human silhouette labelled \"1.8 m\" stands on the sheet for scale, with everything at true scale to it. Title at the top: \"Mount and Pack Tack\".",
+  "kit": {
+    "type": "gear",
+    "subject": "Redraw of the attached reference sheet to the current spec: keep exactly the same items, their order, names and sizes and the same tack designs, but show every item ALONE, off the creature, in three-quarter front view. Top row, the four large tack pieces, each with a small plain flat grey silhouette of its creature behind it showing where it sits (no painted creature): Burrow Boar riding saddle; Cliff Goat climbing saddle and horn guards; Moss Grazer pack harness with woven baskets; Skyray flying saddle and wind screen. Bottom row, tack details: Brass buckle (hardware), Leather strap (stitched), D-ring fitting, Taming whistle (bone and brass), Feed bag (grazer pellets), Bedroll straps, Cargo frame (woven basket). Keep the same names as labels; no tagline under the title",
+    "figure": 1.8,
+    "title": "Mount and Pack Tack"
+  },
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x864",
   "aspect": "16:9",
   "quality": "high",
   "refs": [
-    "art/concept/style-test-01-market-town.png",
-    "art/bestiary/moss-grazer.webp",
-    "art/bestiary/skyray.webp"
+    "art/references/style-test-01-market-town.png",
+    "art/kit/bestiary/mount-tack.png"
   ],
-  "createdAt": "2026-11-02T17:41:57.643Z"
+  "usage": {
+    "input_tokens": 3068,
+    "input_tokens_details": {
+      "image_tokens": 2592,
+      "text_tokens": 476
+    },
+    "output_tokens": 1078,
+    "output_tokens_details": {
+      "image_tokens": 1078,
+      "text_tokens": 0
+    },
+    "total_tokens": 4146
+  },
+  "costUSD": 0.0555,
+  "createdAt": "2026-11-02T19:40:52.965Z",
+  "refsNote": "Paths under art/ name the previous version of that file in git history (the sheet this one redraws)."
 }

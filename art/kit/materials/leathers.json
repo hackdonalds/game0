@@ -1,10 +1,34 @@
 {
-  "prompt": "Please generate an image. Locked painterly style (hand-painted, chunky readable shapes, detail painted not modelled, warm golden key light, cool teal shadows, muted saturation, epic and luminous, never grim). Use the attached image(s) only as reference as described; the first attachment is always the style reference for palette, rendering and light. Game-asset concept sheet, landscape 16:9, plain light neutral grey background, no scene, no sky, soft contact shadow only, every piece isolated with clear space and a small neat label underneath. MATERIALS sheet – LEATHERS, four tiers from left to right, tier 1 to tier 4: boar hide bristly raw hide and tanned; goat leather supple; drake leather scaled and heat-proof; skyray leather thin, light, deep blue-violet with pale glowing markings. For each tier show the raw resource, the refined form, a small crafted item made from it, and a square seamless texture swatch.",
-  "model": "openai/gpt-image-2.5-sunburst",
+  "prompt": "Please generate an image. Locked painterly style: hand-painted stylized game art, chunky readable shapes, detail painted not modelled, mid-level detail, softer muted colours with gentle saturation, epic and luminous, never grim. The palette's warm gold and cool teal are painted into the surfaces, but the light is flat, even studio light: no strong key light, no cast shadows, no rim light. Use the attached images only as reference as described: the first attachment is always the style reference for palette and brushwork; later attachments are the approved designs to keep. Game-asset reference sheet for 3D modelling, wide landscape 16:9. Plain light neutral grey background, no scene, no sky, no clouds, no floating rock, no ground plane, a soft contact shadow only. Every piece fully isolated with clear space around it, nothing overlapping, nothing touching the edge, arranged in tidy rows, each with a small neat hand-lettered label underneath. GEAR AND PROPS sheet: Redraw of the attached reference sheet to the current spec: keep the same items and names. For this materials kit a new layout replaces the old one: four rows, one per tier, top to bottom, each row with its tier label at the left; every row has four columns, left to right: the resource node as found in the world, the raw piece, the refined piece, and one flat-on square seamless texture swatch (orthographic, no perspective). The four tiers are the same meshes with a different colour and trim mask, so draw the node, the raw piece and the refined piece with matching shapes in every row, changing only colour, surface and glow. Keep the same tiers and look as the attached sheet. Row 1 \"Tier 1 Boar hide\": \"Boar hide drop\", a freshly skinned bristly russet-brown hide lying flat as a hunter finds it after skinning a burrow boar (no animal, no head, no skull, no blood); \"Raw boar hide\", the same hide rolled and tied with solid cord, russet bristles at its edge; \"Tanned boar hide\", a folded tanned sheet; \"Boar hide texture\". Row 2 \"Tier 2 Goat leather\": \"Goat hide drop\", the same flat hide shape in grey-cream goat hair; \"Raw goat hide\", rolled and tied; \"Goat leather\", soft grey-cream supple leather folded; \"Goat leather texture\". Row 3 \"Tier 3 Drake leather\": \"Drake hide drop\", the same flat shape covered in overlapping bronze scales; \"Raw drake hide\", rolled and tied; \"Drake leather\", a folded sheet of bronze-scaled leather; \"Drake leather texture\". Row 4 \"Tier 4 Skyray leather\": \"Skyray hide drop\", the same flat shape as thin translucent deep blue-violet wing leather with faint pale glowing markings; \"Raw skyray hide\", rolled and tied; \"Skyray leather\", folded; \"Skyray leather texture\". No crafted items, no animal heads or skulls, no extra pieces. Every hide is about 1 m across, drawn at true scale to the scale figure. Each item alone in three-quarter front view, in rows by family or tier, with thick chunky proportions: thick blades, solid rope, chunky grips, no thin parts. A plain neutral 1.8 m human silhouette labelled \"1.8 m\" stands on the sheet for scale, with everything at true scale to it. Title at the top: \"Materials kit: leathers\".",
+  "kit": {
+    "type": "gear",
+    "subject": "Redraw of the attached reference sheet to the current spec: keep the same items and names. For this materials kit a new layout replaces the old one: four rows, one per tier, top to bottom, each row with its tier label at the left; every row has four columns, left to right: the resource node as found in the world, the raw piece, the refined piece, and one flat-on square seamless texture swatch (orthographic, no perspective). The four tiers are the same meshes with a different colour and trim mask, so draw the node, the raw piece and the refined piece with matching shapes in every row, changing only colour, surface and glow. Keep the same tiers and look as the attached sheet. Row 1 \"Tier 1 Boar hide\": \"Boar hide drop\", a freshly skinned bristly russet-brown hide lying flat as a hunter finds it after skinning a burrow boar (no animal, no head, no skull, no blood); \"Raw boar hide\", the same hide rolled and tied with solid cord, russet bristles at its edge; \"Tanned boar hide\", a folded tanned sheet; \"Boar hide texture\". Row 2 \"Tier 2 Goat leather\": \"Goat hide drop\", the same flat hide shape in grey-cream goat hair; \"Raw goat hide\", rolled and tied; \"Goat leather\", soft grey-cream supple leather folded; \"Goat leather texture\". Row 3 \"Tier 3 Drake leather\": \"Drake hide drop\", the same flat shape covered in overlapping bronze scales; \"Raw drake hide\", rolled and tied; \"Drake leather\", a folded sheet of bronze-scaled leather; \"Drake leather texture\". Row 4 \"Tier 4 Skyray leather\": \"Skyray hide drop\", the same flat shape as thin translucent deep blue-violet wing leather with faint pale glowing markings; \"Raw skyray hide\", rolled and tied; \"Skyray leather\", folded; \"Skyray leather texture\". No crafted items, no animal heads or skulls, no extra pieces. Every hide is about 1 m across, drawn at true scale to the scale figure",
+    "figure": 1.8,
+    "title": "Materials kit: leathers"
+  },
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x864",
   "aspect": "16:9",
   "quality": "high",
   "refs": [
-    "art/concept/style-test-01-market-town.png"
+    "art/references/style-test-01-market-town.png",
+    "art/kit/materials/leathers.png"
   ],
-  "createdAt": "2026-11-02T17:30:07.246Z"
+  "usage": {
+    "input_tokens": 3356,
+    "input_tokens_details": {
+      "image_tokens": 2592,
+      "text_tokens": 764
+    },
+    "output_tokens": 1078,
+    "output_tokens_details": {
+      "image_tokens": 1078,
+      "text_tokens": 0
+    },
+    "total_tokens": 4434
+  },
+  "costUSD": 0.0569,
+  "createdAt": "2026-11-02T19:27:44.524Z",
+  "refsNote": "Paths under art/ name the previous version of that file in git history (the sheet this one redraws)."
 }

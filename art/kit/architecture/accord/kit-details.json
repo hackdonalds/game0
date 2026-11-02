@@ -1,5 +1,34 @@
 {
-  "prompt": "Great, keep exactly this sheet format and style. SHEET 3 of 5, kit-details, same rules (isolated pieces, orthographic front view plus small three-quarter view, dimension label under each, 1.8 m human figure for scale). These are inserts that drop into the standard wall openings. Row 1 doors (3): heavy basalt-arch ground-floor door in teal-painted planks with iron chain-link hinges and a mooring-ring knocker; deadwood upper-floor door with mossy frame and flowers; wide double market-hall door with gold fittings. Row 2 windows and shutters (3): round-arched leaded window with warm gold glow in a basalt surround; timber-frame window with teal shutters open; small square window with closed shutters and a flower box. Row 3: chain-and-crystal lamp brackets (iron chain hanging a teal crystal lantern from a wall bracket, 2 variants), flower boxes (2 sizes, moss and pink/white flowers), Galeborne banners (cream sailcloth with teal and gold, vertical hanging banner and a pennant on a pole), signboards (2 hanging shop signs on chains). Row 4: timber-frame infill panels (X brace, chevron, plain plaster with moss in the joints), cornice trims (basalt string course with crystal inlay, carved deadwood beam end, terracotta eave trim). Please generate the image.",
-  "chat_url": "https://chatgpt.com/c/6ae86f8f-cf24-83ed-b6f2-3ce232c43ba8",
-  "tool": "chatgpt.com"
+  "prompt": "Please generate an image. Locked painterly style: hand-painted stylized game art, chunky readable shapes, detail painted not modelled, mid-level detail, softer muted colours with gentle saturation, epic and luminous, never grim. The palette's warm gold and cool teal are painted into the surfaces, but the light is flat, even studio light: no strong key light, no cast shadows, no rim light. Use the attached images only as reference as described: the first attachment is always the style reference for palette and brushwork; later attachments are the approved designs to keep. Game-asset reference sheet for 3D modelling, wide landscape 16:9. Plain light neutral grey background, no scene, no sky, no clouds, no floating rock, no ground plane, a soft contact shadow only. Every piece fully isolated with clear space around it, nothing overlapping, nothing touching the edge, arranged in tidy rows, each with a small neat hand-lettered label underneath. MODULAR KIT PIECES sheet: Redraw of the attached reference sheet to the current spec: keep exactly the same pieces, their order, names and sizes. Accord town inserts and details. Row 1 doors: \"Basalt-Arch Door (Ground Floor) 1 x 2.5 m\" (round-topped teal plank door leaf with iron hinges and a mooring-ring knocker, the leaf only, without the stone surround, which belongs to the wall), \"Deadwood Upper-Floor Door 1 x 2.5 m\" (pointed teal door leaf in a slim mossy deadwood frame), \"Wide Double Market-Hall Door 4 x 3 m\" (with its own basalt arch, sailcloth swag and two banners). Row 2 windows, each the glazed insert only, without wall: \"Round-Arched Leaded Window 1 x 1.5 m\" (warm gold leaded glass), \"Timber-Frame Window with Open Shutters 1 x 1.5 m\" (teal shutters open to the sides), \"Small Shuttered Window with Flower Box 1 x 1.5 m\". Row 3: \"Lamp Bracket A 1 x 1.5 m\" and \"Lamp Bracket B 1 x 1.5 m\" (iron wall bracket hanging a teal crystal lantern on a short chain), \"Flower Box (Small) 1 x 0.5 m\", \"Flower Box (Large) 2 x 0.5 m\", \"Galeborne Banner (Vertical) 1 x 2 m\", \"Galeborne Pennant 0.5 x 2 m\" (on a pole), \"Shop Signboard A 1 x 1 m\", \"Shop Signboard B 1 x 1 m\" (hanging signs on chains from brackets). Row 4: \"Timber Infill \u2013 X Brace 2 x 3 m\", \"Timber Infill \u2013 Chevron 2 x 3 m\", \"Timber Infill \u2013 Plain Plaster 2 x 3 m\", \"Cornice \u2013 Basalt String Course (with Crystal Inlay) 2 m (L)\", \"Cornice \u2013 Carved Deadwood (Beam End) 2 m (L)\", \"Cornice \u2013 Terracotta Eave (Galeborne) 2 m (L)\". Draw the scale figure once only. No other pieces. Show each piece as an orthographic front elevation (no perspective) with a small three-quarter view beside it, on faint module grid lines, with its name and size (for example \"3 x 4 m\") in the label. Thick, solid forms, no thin parts. A plain neutral 1.8 m human silhouette labelled \"1.8 m\" stands on the sheet for scale, with everything at true scale to it. Title at the top: \"Accord kit: details and inserts\".",
+  "kit": {
+    "type": "pieces",
+    "subject": "Redraw of the attached reference sheet to the current spec: keep exactly the same pieces, their order, names and sizes. Accord town inserts and details. Row 1 doors: \"Basalt-Arch Door (Ground Floor) 1 x 2.5 m\" (round-topped teal plank door leaf with iron hinges and a mooring-ring knocker, the leaf only, without the stone surround, which belongs to the wall), \"Deadwood Upper-Floor Door 1 x 2.5 m\" (pointed teal door leaf in a slim mossy deadwood frame), \"Wide Double Market-Hall Door 4 x 3 m\" (with its own basalt arch, sailcloth swag and two banners). Row 2 windows, each the glazed insert only, without wall: \"Round-Arched Leaded Window 1 x 1.5 m\" (warm gold leaded glass), \"Timber-Frame Window with Open Shutters 1 x 1.5 m\" (teal shutters open to the sides), \"Small Shuttered Window with Flower Box 1 x 1.5 m\". Row 3: \"Lamp Bracket A 1 x 1.5 m\" and \"Lamp Bracket B 1 x 1.5 m\" (iron wall bracket hanging a teal crystal lantern on a short chain), \"Flower Box (Small) 1 x 0.5 m\", \"Flower Box (Large) 2 x 0.5 m\", \"Galeborne Banner (Vertical) 1 x 2 m\", \"Galeborne Pennant 0.5 x 2 m\" (on a pole), \"Shop Signboard A 1 x 1 m\", \"Shop Signboard B 1 x 1 m\" (hanging signs on chains from brackets). Row 4: \"Timber Infill \u2013 X Brace 2 x 3 m\", \"Timber Infill \u2013 Chevron 2 x 3 m\", \"Timber Infill \u2013 Plain Plaster 2 x 3 m\", \"Cornice \u2013 Basalt String Course (with Crystal Inlay) 2 m (L)\", \"Cornice \u2013 Carved Deadwood (Beam End) 2 m (L)\", \"Cornice \u2013 Terracotta Eave (Galeborne) 2 m (L)\". Draw the scale figure once only. No other pieces",
+    "figure": 1.8,
+    "title": "Accord kit: details and inserts"
+  },
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x864",
+  "aspect": "16:9",
+  "quality": "high",
+  "refs": [
+    "art/references/style-test-01-market-town.png",
+    "art/kit/architecture/accord/kit-details.png"
+  ],
+  "usage": {
+    "input_tokens": 3657,
+    "input_tokens_details": {
+      "image_tokens": 2832,
+      "text_tokens": 825
+    },
+    "output_tokens": 1078,
+    "output_tokens_details": {
+      "image_tokens": 1078,
+      "text_tokens": 0
+    },
+    "total_tokens": 4735
+  },
+  "costUSD": 0.0591,
+  "createdAt": "2026-11-02T19:26:03.955Z",
+  "refsNote": "Paths under art/ name the previous version of that file in git history (the sheet this one redraws)."
 }

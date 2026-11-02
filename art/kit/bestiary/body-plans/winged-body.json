@@ -1,0 +1,32 @@
+{
+  "prompt": "Please generate an image. Locked painterly style: hand-painted stylized game art, chunky readable shapes, detail painted not modelled, mid-level detail, softer muted colours with gentle saturation, epic and luminous, never grim. The palette's warm gold and cool teal are painted into the surfaces, but the light is flat, even studio light: no strong key light, no cast shadows, no rim light. Use the attached images only as reference as described: the first attachment is always the style reference for palette and brushwork; later attachments are the approved designs to keep. Game-asset reference sheet for 3D modelling, wide landscape 16:9. Plain light neutral grey background, no scene, no sky, no clouds, no floating rock, no ground plane, a soft contact shadow only. Every piece fully isolated with clear space around it, nothing overlapping, nothing touching the edge, arranged in tidy rows, each with a small neat hand-lettered label underneath. BODY PLAN BASE BODY sheet for a modular creature kit: Membrane-winged body plan (Spine, neck, four limbs, two membrane wings, tail). Sockets: Head, horns, wings, tail tip, spines and plates, claws. One base body shared by Crag Drake 1.6 m, Stonewing Bat 0.12 m; draw it about 1.6 m at the shoulder. Draw one neutral, featureless base body (no head detail, no horns, no ears, no tail tip, smooth plain skin) in a relaxed standing pose with the limbs apart and clear of the body, shown as front, side, back and top views in orthographic projection. Mark every socket where a swappable part attaches as a small numbered ring with a short label (for example \"1 head\", \"2 horns\", \"3 tail\"). Thick, solid forms; even proportions that can be stretched to make larger or smaller species. Only the base body and its socket labels: no parts, heads, horns, coats or tails anywhere on this sheet, because the parts have their own sheet. A plain neutral 1.8 m human silhouette labelled \"1.8 m\" stands on the sheet for scale, with everything at true scale to it. Title at the top: \"Body plan: membrane-winged\".",
+  "kit": {
+    "type": "body-plan",
+    "subject": "Membrane-winged body plan (Spine, neck, four limbs, two membrane wings, tail). Sockets: Head, horns, wings, tail tip, spines and plates, claws. One base body shared by Crag Drake 1.6 m, Stonewing Bat 0.12 m; draw it about 1.6 m at the shoulder",
+    "figure": 1.8,
+    "title": "Body plan: membrane-winged"
+  },
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x864",
+  "aspect": "16:9",
+  "quality": "high",
+  "refs": [
+    "art/references/style-test-01-market-town.png"
+  ],
+  "usage": {
+    "input_tokens": 1779,
+    "input_tokens_details": {
+      "image_tokens": 1296,
+      "text_tokens": 483
+    },
+    "output_tokens": 1078,
+    "output_tokens_details": {
+      "image_tokens": 1078,
+      "text_tokens": 0
+    },
+    "total_tokens": 2857
+  },
+  "costUSD": 0.0451,
+  "createdAt": "2026-11-02T19:25:51.892Z"
+}

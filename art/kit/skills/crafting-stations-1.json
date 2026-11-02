@@ -1,10 +1,34 @@
 {
-  "prompt": "Please generate an image. Locked painterly style (hand-painted, chunky readable shapes, detail painted not modelled, warm golden key light, cool teal shadows, muted saturation, epic and luminous, never grim). Use the attached image(s) only as reference as described; the first attachment is always the style reference for palette, rendering and light. Game-asset concept sheet, landscape 16:9, plain light neutral grey background, no scene, no sky, soft contact shadow only, every piece isolated with clear space and a small neat label underneath. CRAFTING STATIONS sheet 1: smithing forge with anvil and bellows, carpentry workbench with saw horse, leatherworking tanning rack and bench, tailoring loom and spinning wheel, stonecraft mason's block and chisels. Each as a placeable game prop. Include a simple 1.8 m human silhouette for scale.",
-  "model": "openai/gpt-image-2.5-sunburst",
+  "prompt": "Please generate an image. Locked painterly style: hand-painted stylized game art, chunky readable shapes, detail painted not modelled, mid-level detail, softer muted colours with gentle saturation, epic and luminous, never grim. The palette's warm gold and cool teal are painted into the surfaces, but the light is flat, even studio light: no strong key light, no cast shadows, no rim light. Use the attached images only as reference as described: the first attachment is always the style reference for palette and brushwork; later attachments are the approved designs to keep. Game-asset reference sheet for 3D modelling, wide landscape 16:9. Plain light neutral grey background, no scene, no sky, no clouds, no floating rock, no ground plane, a soft contact shadow only. Every piece fully isolated with clear space around it, nothing overlapping, nothing touching the edge, arranged in tidy rows, each with a small neat hand-lettered label underneath. GEAR AND PROPS sheet: Redraw of the attached reference sheet to the current spec: keep the same items and names. Five placeable crafting stations in two tidy rows, each a single clean prop with only the furniture that the station needs, no banners, no hanging clutter, no fire light thrown onto the surroundings: top row \"Smithing Forge\" (a stone forge with its hearth glow drawn as a clear separate emissive zone, an anvil on a stump and a big bellows, each set slightly apart so they read as separate pieces), \"Carpentry Workbench\" (a heavy workbench with a saw horse beside it, apart). Bottom row \"Leatherworking Station\" (a tanning rack with a stretched hide and a work bench, apart), \"Tailoring Station\" (a loom and a spinning wheel, apart), \"Stonecraft Station\" (a mason's block with chisels and mallet). Chunky timbers and stone, thick legs and frames, no thin rods, ropes or strings; loom threads and spokes painted as solid shapes. At true scale to the scale figure: a workbench about waist height (0.9 m), the forge chimney about 2.5 m. Each item alone in three-quarter front view, in rows by family or tier, with thick chunky proportions: thick blades, solid rope, chunky grips, no thin parts. A plain neutral 1.8 m human silhouette labelled \"1.8 m\" stands on the sheet for scale, with everything at true scale to it. Title at the top: \"Skills kit: crafting stations 1\".",
+  "kit": {
+    "type": "gear",
+    "subject": "Redraw of the attached reference sheet to the current spec: keep the same items and names. Five placeable crafting stations in two tidy rows, each a single clean prop with only the furniture that the station needs, no banners, no hanging clutter, no fire light thrown onto the surroundings: top row \"Smithing Forge\" (a stone forge with its hearth glow drawn as a clear separate emissive zone, an anvil on a stump and a big bellows, each set slightly apart so they read as separate pieces), \"Carpentry Workbench\" (a heavy workbench with a saw horse beside it, apart). Bottom row \"Leatherworking Station\" (a tanning rack with a stretched hide and a work bench, apart), \"Tailoring Station\" (a loom and a spinning wheel, apart), \"Stonecraft Station\" (a mason's block with chisels and mallet). Chunky timbers and stone, thick legs and frames, no thin rods, ropes or strings; loom threads and spokes painted as solid shapes. At true scale to the scale figure: a workbench about waist height (0.9 m), the forge chimney about 2.5 m",
+    "figure": 1.8,
+    "title": "Skills kit: crafting stations 1"
+  },
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x864",
   "aspect": "16:9",
   "quality": "high",
   "refs": [
-    "art/concept/style-test-01-market-town.png"
+    "art/references/style-test-01-market-town.png",
+    "art/kit/skills/crafting-stations-1.png"
   ],
-  "createdAt": "2026-11-02T17:32:12.049Z"
+  "usage": {
+    "input_tokens": 3140,
+    "input_tokens_details": {
+      "image_tokens": 2592,
+      "text_tokens": 548
+    },
+    "output_tokens": 1078,
+    "output_tokens_details": {
+      "image_tokens": 1078,
+      "text_tokens": 0
+    },
+    "total_tokens": 4218
+  },
+  "costUSD": 0.0558,
+  "createdAt": "2026-11-02T19:30:07.196Z",
+  "refsNote": "Paths under art/ name the previous version of that file in git history (the sheet this one redraws)."
 }

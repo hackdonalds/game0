@@ -1,11 +1,34 @@
 {
-  "prompt": "Please generate an image. Locked painterly style (hand-painted, chunky readable shapes, detail painted not modelled, warm golden key light, cool teal shadows, muted saturation, epic and luminous, never grim). Use the attached image(s) only as reference as described; the first attachment is always the style reference for palette, rendering and light. Keep the exact body design of the people in the second attachment. Character customization sheet, landscape 16:9, plain light neutral grey background, small neat labels. ROOTWARDENS: broad, stocky people with bark-grained wooden skin on which moss, lichen and small flowers grow; treetenders, herbalists and healers of the root caverns. Show the SIGNATURE FEATURE variants as a grid of heads and shoulders: wood types oak, birch, cedar and ashen, bark patterns, growth of moss, lichen, flowers and mushrooms, foliage beards, crystal inlays, and one character in four seasons: spring blossom, summer green, autumn leaves, winter bare. Also show male, female and elder body variants full-body in a row.",
-  "model": "openai/gpt-image-2.5-sunburst",
+  "prompt": "Please generate an image. Locked painterly style: hand-painted stylized game art, chunky readable shapes, detail painted not modelled, mid-level detail, softer muted colours with gentle saturation, epic and luminous, never grim. The palette's warm gold and cool teal are painted into the surfaces, but the light is flat, even studio light: no strong key light, no cast shadows, no rim light. Use the attached images only as reference as described: the first attachment is always the style reference for palette and brushwork; later attachments are the approved designs to keep. Game-asset reference sheet for 3D modelling, wide landscape 16:9. Plain light neutral grey background, no scene, no sky, no clouds, no floating rock, no ground plane, a soft contact shadow only. Every piece fully isolated with clear space around it, nothing overlapping, nothing touching the edge, arranged in tidy rows, each with a small neat hand-lettered label underneath. VARIANTS sheet: Redraw of the attached reference sheet to the current spec: keep exactly the same design, items, their order and names. Rootwarden signature features, on the same base as the second attached image (1.6 m tall, broad stocky oak-bark body, moss, lichen and small white flowers on the shoulders and crown, leafy foliage beard). Left third: three full-body figures standing in a row in slate-blue and cream cloth, labelled \"Male\", \"Female\", \"Elder\" (the elder in a long robe with mushrooms on the crown, holding a carved wooden staff with a teal crystal lantern). Right two thirds, a grid of head-and-shoulders busts in labelled rows, all facing the same direction: row \"Wood type\": Oak, Birch, Cedar, Ashen; row \"Bark patterns\": Plain grain, Cracked, Knotted, Twisted; beside it \"Growth & decoration\": Moss, Lichen, Flowers, Mushrooms, Crystal inlays; bottom row \"Seasons (same character)\": Spring (pink blossom), Summer (green), Autumn (orange leaves), Winter (bare twigs and frost). Each variant name is a small label under its cell; no description text, no blurb. Even flat light, no rim light. Keep the exact base design in the second attachment. Show the same base in a neat grid, one part changed per cell, everything else identical, each cell labelled with the variant name. Swappable parts are shown clearly separate from the body where they attach. Title at the top: \"Rootwarden: signature features\".",
+  "kit": {
+    "type": "variants",
+    "subject": "Redraw of the attached reference sheet to the current spec: keep exactly the same design, items, their order and names. Rootwarden signature features, on the same base as the second attached image (1.6 m tall, broad stocky oak-bark body, moss, lichen and small white flowers on the shoulders and crown, leafy foliage beard). Left third: three full-body figures standing in a row in slate-blue and cream cloth, labelled \"Male\", \"Female\", \"Elder\" (the elder in a long robe with mushrooms on the crown, holding a carved wooden staff with a teal crystal lantern). Right two thirds, a grid of head-and-shoulders busts in labelled rows, all facing the same direction: row \"Wood type\": Oak, Birch, Cedar, Ashen; row \"Bark patterns\": Plain grain, Cracked, Knotted, Twisted; beside it \"Growth & decoration\": Moss, Lichen, Flowers, Mushrooms, Crystal inlays; bottom row \"Seasons (same character)\": Spring (pink blossom), Summer (green), Autumn (orange leaves), Winter (bare twigs and frost). Each variant name is a small label under its cell; no description text, no blurb. Even flat light, no rim light",
+    "figure": 1.8,
+    "title": "Rootwarden: signature features"
+  },
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x864",
   "aspect": "16:9",
   "quality": "high",
   "refs": [
-    "art/concept/style-test-01-market-town.png",
-    "art/concept/rootwarden-base-turnaround.png"
+    "art/references/style-test-01-market-town.png",
+    "art/kit/peoples/rootwarden/signatures.png",
+    "art/concept/peoples/rootwarden.webp"
   ],
-  "createdAt": "2026-11-02T17:28:24.726Z"
+  "usage": {
+    "input_tokens": 4176,
+    "input_tokens_details": {
+      "image_tokens": 3616,
+      "text_tokens": 560
+    },
+    "output_tokens": 1078,
+    "output_tokens_details": {
+      "image_tokens": 1078,
+      "text_tokens": 0
+    },
+    "total_tokens": 5254
+  },
+  "costUSD": 0.0641,
+  "createdAt": "2026-11-02T19:29:28.356Z"
 }

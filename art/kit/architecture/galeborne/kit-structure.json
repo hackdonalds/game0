@@ -1,5 +1,34 @@
 {
-  "prompt": "The first three images are the locked rendering style for this game (stylized painterly high-fantasy sky islands). The other five are approved Galeborne architecture concept sheets (dwelling, civic shipyard, landmark beacon spire, outpost pavilion, props). Galeborne are wind-riders who build to leave: narrow tall stacked nest-houses on rock needles, cantilevered decks, sails and rigging. I now need MODULAR 3D KIT reference sheets so a 3D artist can build every one of those concept buildings from snapping pieces. Galeborne grid: 2 m horizontal module, 3 m storey, thin 0.3 m timber or stone skin, narrow tall stacks of 3 to 5 storeys, cantilevered decks. Kit-sheet rules (different from the concept sheets): landscape sheet; orthographic FRONT ELEVATION of every piece plus a small three-quarter view beside it; every piece ISOLATED (no scenery, no floating rock, no sky); light neutral grey background with faint module grid lines (2 m horizontal, 3 m storey) and a small dimension label under each piece; one human-height figure (about 1.9 m, tall and slender) for scale; consistent flat even light, softer and less sepia than the concept sheets; painterly hand-painted surfaces, chunky readable game-asset forms, detail painted not modelled. Galeborne materials (NOT the Accord look, no whitewash, NO terracotta): pale silvered weathered timber, grey-blue slate or wooden shingle roofs, cream sailcloth with teal and gold trim, rope lashings, brass fittings; more sail and rigging, less house. Generate sheet 1 of 5, KIT-STRUCTURE, titled 'Galeborne kit: structure', pieces in tidy rows: rock-needle foundation collar, cliff-edge cantilever deck bracket, deck tiles (2x2 m), timber-frame walls (plain, window, door, half-height, end cap, sailcloth panel wall), outer corner, inner corner, mast column, straight stair, spiral stair, rope-railed balcony, ladders.",
-  "chat_url": "https://chatgpt.com/c/6ae86fb2-f988-83ed-a0b2-e39c619eff17",
-  "tool": "chatgpt.com"
+  "prompt": "Please generate an image. Locked painterly style: hand-painted stylized game art, chunky readable shapes, detail painted not modelled, mid-level detail, softer muted colours with gentle saturation, epic and luminous, never grim. The palette's warm gold and cool teal are painted into the surfaces, but the light is flat, even studio light: no strong key light, no cast shadows, no rim light. Use the attached images only as reference as described: the first attachment is always the style reference for palette and brushwork; later attachments are the approved designs to keep. Game-asset reference sheet for 3D modelling, wide landscape 16:9. Plain light neutral grey background, no scene, no sky, no clouds, no floating rock, no ground plane, a soft contact shadow only. Every piece fully isolated with clear space around it, nothing overlapping, nothing touching the edge, arranged in tidy rows, each with a small neat hand-lettered label underneath. MODULAR KIT PIECES sheet: Redraw of the attached reference sheet to the current spec: keep exactly the same pieces, their order, names and sizes. Galeborne style on a 2 m module and 3 m storey with a thin 0.3 m skin: pale silvered weathered timber, grey-blue slate or silvered wooden shingle roofs, cream sailcloth with teal and gold trim, solid rope lashings, brass fittings; no terracotta, no whitewash. Row 1 foundations and deck: \"Rock-Needle Foundation Collar 4 m (\u00d8) x 1.5 m (H)\", \"Cliff-Edge Cantilever Bracket 4 m (L) x 3 m (H)\", \"Deck Tile 2 x 2 m\". Row 2 walls, each 2 m wide: \"Timber-Frame Wall (Plain) 2 x 3 m\", \"Wall (Window) 2 x 3 m\", \"Wall (Door) 2 x 3 m\", \"Half-Height Wall (Railing) 2 x 1.5 m\", \"End Cap (Gable) 2 x 3 m\", \"Sailcloth Panel Wall 2 x 3 m\". Row 3: \"Outer Corner (90\u00b0) 0.5 x 3 m\" and \"Inner Corner (90\u00b0) 0.5 x 3 m\" (slim square corner posts), \"Mast Column (with rigging points) 0.5 m (\u00d8) x 3 m\", \"Straight Stair (1 storey) 2 x 3 m (run 4 m)\", \"Spiral Stair (1 storey) 2 m (\u00d8) x 3 m\", \"Rope-Railed Balcony (Deck) 4 x 2 m\", \"Ladders (Straight / Rope) 1 x 3 m\" (two ladders side by side: one straight timber ladder, one rope ladder with thick rungs). Draw the 1.9 m tall slender scale figure once only. No other pieces. Show each piece as an orthographic front elevation (no perspective) with a small three-quarter view beside it, on faint module grid lines, with its name and size (for example \"3 x 4 m\") in the label. Thick, solid forms, no thin parts. A plain neutral 1.9 m human silhouette labelled \"1.9 m\" stands on the sheet for scale, with everything at true scale to it. Title at the top: \"Galeborne kit: structure\".",
+  "kit": {
+    "type": "pieces",
+    "subject": "Redraw of the attached reference sheet to the current spec: keep exactly the same pieces, their order, names and sizes. Galeborne style on a 2 m module and 3 m storey with a thin 0.3 m skin: pale silvered weathered timber, grey-blue slate or silvered wooden shingle roofs, cream sailcloth with teal and gold trim, solid rope lashings, brass fittings; no terracotta, no whitewash. Row 1 foundations and deck: \"Rock-Needle Foundation Collar 4 m (\u00d8) x 1.5 m (H)\", \"Cliff-Edge Cantilever Bracket 4 m (L) x 3 m (H)\", \"Deck Tile 2 x 2 m\". Row 2 walls, each 2 m wide: \"Timber-Frame Wall (Plain) 2 x 3 m\", \"Wall (Window) 2 x 3 m\", \"Wall (Door) 2 x 3 m\", \"Half-Height Wall (Railing) 2 x 1.5 m\", \"End Cap (Gable) 2 x 3 m\", \"Sailcloth Panel Wall 2 x 3 m\". Row 3: \"Outer Corner (90\u00b0) 0.5 x 3 m\" and \"Inner Corner (90\u00b0) 0.5 x 3 m\" (slim square corner posts), \"Mast Column (with rigging points) 0.5 m (\u00d8) x 3 m\", \"Straight Stair (1 storey) 2 x 3 m (run 4 m)\", \"Spiral Stair (1 storey) 2 m (\u00d8) x 3 m\", \"Rope-Railed Balcony (Deck) 4 x 2 m\", \"Ladders (Straight / Rope) 1 x 3 m\" (two ladders side by side: one straight timber ladder, one rope ladder with thick rungs). Draw the 1.9 m tall slender scale figure once only. No other pieces",
+    "figure": 1.9,
+    "title": "Galeborne kit: structure"
+  },
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x864",
+  "aspect": "16:9",
+  "quality": "high",
+  "refs": [
+    "art/references/style-test-01-market-town.png",
+    "art/kit/architecture/galeborne/kit-structure.png"
+  ],
+  "usage": {
+    "input_tokens": 3591,
+    "input_tokens_details": {
+      "image_tokens": 2832,
+      "text_tokens": 759
+    },
+    "output_tokens": 1078,
+    "output_tokens_details": {
+      "image_tokens": 1078,
+      "text_tokens": 0
+    },
+    "total_tokens": 4669
+  },
+  "costUSD": 0.0588,
+  "createdAt": "2026-11-02T19:30:27.741Z",
+  "refsNote": "Paths under art/ name the previous version of that file in git history (the sheet this one redraws)."
 }

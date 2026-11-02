@@ -1,5 +1,34 @@
 {
-  "prompt": "Excellent. Same grey kit-sheet background, grid, labels, 1.6 m scale figure and flat even light. NEXT SHEET 'kit-assembly'. Left half: an EXPLODED VIEW of one Rootwarden root dwelling assembled from the kit pieces of the previous three sheets: root segments with round socket caps, a half dome shell (radius 5 m) plus quarter shells, a living-iris burl door, two round burl windows, a moss roof cap, a hanging-root curtain, lantern fungus and a seed-pod lamp, with thin dashed guide lines showing where each piece plugs in and small callout labels naming each kit piece. Right half: three buildings from the approved concept sheets rebuilt ONLY from kit pieces, each in three-quarter view with a 1.6 m figure: 'Root Flare Home' (flare-to-ground buttresses + quarter shells + door burl between buttress roots), 'Moss Dome Home' (full dome shell + flowering moss cap + bark-curtain door burl), 'Hanging Pod Home' (hanging pod shell on a root segment + teardrop window burl + root stairs as a ladder). Openings must look grown, no planked doors or brass rings. Isolated buildings, no floating rock, no scenery. Please generate the image.",
-  "chat_url": "https://chatgpt.com/c/6ae86f8d-5bd8-83eb-8304-191fa46c8ba3",
-  "tool": "chatgpt.com"
+  "prompt": "Please generate an image. Locked painterly style: hand-painted stylized game art, chunky readable shapes, detail painted not modelled, mid-level detail, softer muted colours with gentle saturation, epic and luminous, never grim. The palette's warm gold and cool teal are painted into the surfaces, but the light is flat, even studio light: no strong key light, no cast shadows, no rim light. Use the attached images only as reference as described: the first attachment is always the style reference for palette and brushwork; later attachments are the approved designs to keep. Game-asset reference sheet for 3D modelling, wide landscape 16:9. Plain light neutral grey background, no scene, no sky, no clouds, no floating rock, no ground plane, a soft contact shadow only. Every piece fully isolated with clear space around it, nothing overlapping, nothing touching the edge, arranged in tidy rows, each with a small neat hand-lettered label underneath. KIT ASSEMBLY sheet: Redraw of the attached reference sheet to the current spec: keep exactly the same pieces, their order, names and sizes. Rootwarden style with no rectilinear grid: living root segments of painterly bark with mossy patches and a few small flowers, every root end a flat round socket cap showing heartwood growth rings; domes woven from living roots and bark; openings look grown, never carpentered, no planks, no brass rings or hinges. Left half, exploded view \"Root Dwelling\": Moss Roof Cap (R 5 m) on top, Half Dome Shell (R 5 m) between two Quarter Shells (R 5 m), Hanging-Root Curtain, Seed-Pod Lamp, two Burl Windows (Round), Burl Door (Living Iris), Root Segment (Bend 90\u00b0, \u00d8 1.6 m), straight root segments, Root Segment (Flare to Ground, \u00d8 1.6 m) and lantern fungus, pulled apart with thin dashed guide lines to where they plug in, each with a small label. Right half, three finished builds: \"A - Root Flare Home\" (\u00d8 10 m, about 6 m high: flare-to-ground buttress roots, quarter shells, living-iris door, round burl windows, moss roof cap), \"B - Moss Dome Home\" (\u00d8 10 m, about 5.2 m high: full dome shell, bark-curtain door, round burl windows, flowering-moss roof cap), \"C - Hanging Pod Home\" (about 6 m wide and 7 m high: hanging pod shell on a bend 90\u00b0 root, teardrop burl window, spiral root stairs, seed-pod lamp). No other buildings. Left half: an exploded view of one build, its kit pieces pulled apart along the module lines with thin leader lines and small piece labels. Right half: three finished builds made only from the same kit pieces, each in three-quarter view, isolated on a faint grid footprint and labelled. Use only pieces from the kit's other sheets. A plain neutral 1.6 m human silhouette labelled \"1.6 m\" stands on the sheet for scale, with everything at true scale to it. Title at the top: \"Rootwarden kit: assembly\".",
+  "kit": {
+    "type": "assembly",
+    "subject": "Redraw of the attached reference sheet to the current spec: keep exactly the same pieces, their order, names and sizes. Rootwarden style with no rectilinear grid: living root segments of painterly bark with mossy patches and a few small flowers, every root end a flat round socket cap showing heartwood growth rings; domes woven from living roots and bark; openings look grown, never carpentered, no planks, no brass rings or hinges. Left half, exploded view \"Root Dwelling\": Moss Roof Cap (R 5 m) on top, Half Dome Shell (R 5 m) between two Quarter Shells (R 5 m), Hanging-Root Curtain, Seed-Pod Lamp, two Burl Windows (Round), Burl Door (Living Iris), Root Segment (Bend 90\u00b0, \u00d8 1.6 m), straight root segments, Root Segment (Flare to Ground, \u00d8 1.6 m) and lantern fungus, pulled apart with thin dashed guide lines to where they plug in, each with a small label. Right half, three finished builds: \"A - Root Flare Home\" (\u00d8 10 m, about 6 m high: flare-to-ground buttress roots, quarter shells, living-iris door, round burl windows, moss roof cap), \"B - Moss Dome Home\" (\u00d8 10 m, about 5.2 m high: full dome shell, bark-curtain door, round burl windows, flowering-moss roof cap), \"C - Hanging Pod Home\" (about 6 m wide and 7 m high: hanging pod shell on a bend 90\u00b0 root, teardrop burl window, spiral root stairs, seed-pod lamp). No other buildings",
+    "figure": 1.6,
+    "title": "Rootwarden kit: assembly"
+  },
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x864",
+  "aspect": "16:9",
+  "quality": "high",
+  "refs": [
+    "art/references/style-test-01-market-town.png",
+    "art/kit/architecture/rootwarden/kit-assembly.png"
+  ],
+  "usage": {
+    "input_tokens": 3496,
+    "input_tokens_details": {
+      "image_tokens": 2804,
+      "text_tokens": 692
+    },
+    "output_tokens": 1078,
+    "output_tokens_details": {
+      "image_tokens": 1078,
+      "text_tokens": 0
+    },
+    "total_tokens": 4574
+  },
+  "costUSD": 0.0582,
+  "createdAt": "2026-11-02T19:36:20.094Z",
+  "refsNote": "Paths under art/ name the previous version of that file in git history (the sheet this one redraws)."
 }

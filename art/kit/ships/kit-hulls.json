@@ -1,10 +1,33 @@
 {
-  "prompt": "Please generate an image. Locked painterly style (hand-painted, chunky readable shapes, detail painted not modelled, warm golden key light, cool teal shadows, muted saturation, epic and luminous, never grim). Use the attached image(s) only as reference as described; the first attachment is always the style reference for palette, rendering and light. Game-asset concept sheet, landscape 16:9, plain light neutral grey background, no scene, no sky, soft contact shadow only, every piece isolated with clear space and a small neat label underneath. MODULAR SHIP KIT sheet 1 – HULLS: modular hull sections for skiff, cutter and galleon: bow pieces, mid sections, stern pieces, side-fins in three sizes, keel spine, hull plank texture swatch, lift-charm mounts. Show how sections snap together in one small assembly diagram. Label the ships exactly: skiff up to 5 aboard, cutter up to 10 aboard, galleon up to 100 aboard. Include a simple 1.8 m human silhouette for scale.",
-  "model": "openai/gpt-image-2.5-sunburst",
+  "prompt": "Please generate an image. Locked painterly style: hand-painted stylized game art, chunky readable shapes, detail painted not modelled, mid-level detail, softer muted colours with gentle saturation, epic and luminous, never grim. The palette's warm gold and cool teal are painted into the surfaces, but the light is flat, even studio light: no strong key light, no cast shadows, no rim light. Use the attached images only as reference as described: the first attachment is always the style reference for palette and brushwork; later attachments are the approved designs to keep. Game-asset reference sheet for 3D modelling, wide landscape 16:9. Plain light neutral grey background, no scene, no sky, no clouds, no floating rock, no ground plane, a soft contact shadow only. Every piece fully isolated with clear space around it, nothing overlapping, nothing touching the edge, arranged in tidy rows, each with a small neat hand-lettered label underneath. MODULAR KIT PIECES sheet: Redraw of the attached reference sheet to the current spec: keep exactly the same design, items, their order and names. Modular ship kit sheet 1, hulls: wooden hull sections with terracotta-red trim, gold fittings and teal accents, in the same arrangement as the second attached image. Left column: the three finished ships for reference, labelled \"Skiff – up to 5 aboard\", \"Cutter – up to 10 aboard\", \"Galleon – up to 100 aboard\". Centre rows with headings: \"Skiff hull sections\": Bow (Skiff), Mid (Skiff), Stern (Skiff); \"Cutter hull sections\": Bow (Cutter), Mid (Cutter), Stern (Cutter); \"Galleon hull sections\": Bow (Galleon), Mid (Galleon), Stern (Galleon). Right column: \"Side-fins (stabilisers)\": Small, Medium, Large; \"Keel spine (modular)\"; \"Hull plank texture (tileable)\" as a square swatch; \"Lift-charm mounts\": Side mount, Underbelly mount. Bottom: \"Assembly example (Cutter)\": Bow, Mid, Stern pulled apart with arrows, then the assembled cutter hull. Each section's open end is a flat matching joint so sections snap together. Labels give the piece name only: the ship kit has no measured sizes yet, so write NO dimensions or measurements anywhere (no \"3 x 4 m\" or similar) except \"1.8 m\" on the scale figure, which stands beside the galleon at the bottom left at true scale (the galleon is about 40 m long, the cutter 14 m, the skiff about 7 m). Even flat light, no rim light. Show each piece as an orthographic front elevation (no perspective) with a small three-quarter view beside it, on faint module grid lines, with its name and size (for example \"3 x 4 m\") in the label. Thick, solid forms, no thin parts. A plain neutral 1.8 m human silhouette labelled \"1.8 m\" stands on the sheet for scale, with everything at true scale to it. Title at the top: \"Modular ship kit 1 – hulls\".",
+  "kit": {
+    "type": "pieces",
+    "subject": "Redraw of the attached reference sheet to the current spec: keep exactly the same design, items, their order and names. Modular ship kit sheet 1, hulls: wooden hull sections with terracotta-red trim, gold fittings and teal accents, in the same arrangement as the second attached image. Left column: the three finished ships for reference, labelled \"Skiff – up to 5 aboard\", \"Cutter – up to 10 aboard\", \"Galleon – up to 100 aboard\". Centre rows with headings: \"Skiff hull sections\": Bow (Skiff), Mid (Skiff), Stern (Skiff); \"Cutter hull sections\": Bow (Cutter), Mid (Cutter), Stern (Cutter); \"Galleon hull sections\": Bow (Galleon), Mid (Galleon), Stern (Galleon). Right column: \"Side-fins (stabilisers)\": Small, Medium, Large; \"Keel spine (modular)\"; \"Hull plank texture (tileable)\" as a square swatch; \"Lift-charm mounts\": Side mount, Underbelly mount. Bottom: \"Assembly example (Cutter)\": Bow, Mid, Stern pulled apart with arrows, then the assembled cutter hull. Each section's open end is a flat matching joint so sections snap together. Labels give the piece name only: the ship kit has no measured sizes yet, so write NO dimensions or measurements anywhere (no \"3 x 4 m\" or similar) except \"1.8 m\" on the scale figure, which stands beside the galleon at the bottom left at true scale (the galleon is about 40 m long, the cutter 14 m, the skiff about 7 m). Even flat light, no rim light",
+    "figure": 1.8,
+    "title": "Modular ship kit 1 – hulls"
+  },
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x864",
   "aspect": "16:9",
   "quality": "high",
   "refs": [
-    "art/concept/style-test-03-airship.png"
+    "art/references/style-test-01-market-town.png",
+    "art/kit/ships/kit-hulls.png"
   ],
-  "createdAt": "2026-11-02T17:41:53.312Z"
+  "usage": {
+    "input_tokens": 3289,
+    "input_tokens_details": {
+      "image_tokens": 2592,
+      "text_tokens": 697
+    },
+    "output_tokens": 1078,
+    "output_tokens_details": {
+      "image_tokens": 1078,
+      "text_tokens": 0
+    },
+    "total_tokens": 4367
+  },
+  "costUSD": 0.0566,
+  "createdAt": "2026-11-02T19:34:45.711Z"
 }

@@ -1,11 +1,34 @@
 {
-  "prompt": "Please generate an image. Locked painterly style (hand-painted, chunky readable shapes, detail painted not modelled, warm golden key light, cool teal shadows, muted saturation, epic and luminous, never grim). Use the attached image(s) only as reference as described; the first attachment is always the style reference for palette, rendering and light. Character costume concept sheet, landscape 16:9, plain light neutral grey background. Keep the exact body design of the people in the second attachment: GALEBORNE: tall, light, hollow-boned near-humans; a feathered mantle grows from shoulders and forearms and folds like a cloak; sailors, shipwrights, scouts, couriers of the high windy Crag Spires. Show the same character in four full-body outfits, front view each with a smaller back view: (1) STARTING clothes (under layer and simple garment), (2) CRAFTER / gatherer work outfit with tool belt and apron, (3) LIGHT ARMOUR scout outfit in leather with a cloak, (4) HEAVY ARMOUR guard outfit in forged metal plate. Grounded handmade leather, cloth and forged metal with epic details: teal crystal, gold trim and culture motifs of this people. Heroic stylized proportions, readable silhouettes. Small neat labels.",
-  "model": "openai/gpt-image-2.5-sunburst",
+  "prompt": "Please generate an image. Locked painterly style: hand-painted stylized game art, chunky readable shapes, detail painted not modelled, mid-level detail, softer muted colours with gentle saturation, epic and luminous, never grim. The palette's warm gold and cool teal are painted into the surfaces, but the light is flat, even studio light: no strong key light, no cast shadows, no rim light. Use the attached images only as reference as described: the first attachment is always the style reference for palette and brushwork; later attachments are the approved designs to keep. Game-asset reference sheet for 3D modelling, wide landscape 16:9. Plain light neutral grey background, no scene, no sky, no clouds, no floating rock, no ground plane, a soft contact shadow only. Every piece fully isolated with clear space around it, nothing overlapping, nothing touching the edge, arranged in tidy rows, each with a small neat hand-lettered label underneath. VARIANTS sheet: Redraw of the attached reference sheet to the current spec: keep exactly the same design, items, their order and names. The same 1.9 m tall Galeborne (the body, face, spiky slate-blue and white feather crest and shoulder feathers from the second attached image) shown in four outfits, in four columns left to right, each column a full-body front view in a neutral standing pose with arms slightly away from the body, and a smaller full-body back view beside it, with clear space between all figures: \"1. Starting\" (cream linen shirt, indigo shorts, teal scarf, teal sash with a gold wind sigil, simple belt and pouches, barefoot), \"2. Crafter\" (rolled-sleeve cream shirt, brown leather work apron, leather bracers, tool belt with pouches and a hammer, indigo knee breeches, barefoot), \"3. Scout\" (light leather armour, brown leggings and wrapped leather shin guards, long tattered teal hooded cloak with gold trim, teal tabard with gold sigil), \"4. Guard\" (heavy pale gold-trimmed forged metal plate armour with a teal crystal on the chest, plated arms and greaves, teal tabard with gold sigil). Only the outfit changes between columns. Each label is just the number and name, no mottos, no description text. Even flat light, no rim light. Keep the exact base design in the second attachment. Show the same base in a neat grid, one part changed per cell, everything else identical, each cell labelled with the variant name. Swappable parts are shown clearly separate from the body where they attach. Title at the top: \"Galeborne: outfits\".",
+  "kit": {
+    "type": "variants",
+    "subject": "Redraw of the attached reference sheet to the current spec: keep exactly the same design, items, their order and names. The same 1.9 m tall Galeborne (the body, face, spiky slate-blue and white feather crest and shoulder feathers from the second attached image) shown in four outfits, in four columns left to right, each column a full-body front view in a neutral standing pose with arms slightly away from the body, and a smaller full-body back view beside it, with clear space between all figures: \"1. Starting\" (cream linen shirt, indigo shorts, teal scarf, teal sash with a gold wind sigil, simple belt and pouches, barefoot), \"2. Crafter\" (rolled-sleeve cream shirt, brown leather work apron, leather bracers, tool belt with pouches and a hammer, indigo knee breeches, barefoot), \"3. Scout\" (light leather armour, brown leggings and wrapped leather shin guards, long tattered teal hooded cloak with gold trim, teal tabard with gold sigil), \"4. Guard\" (heavy pale gold-trimmed forged metal plate armour with a teal crystal on the chest, plated arms and greaves, teal tabard with gold sigil). Only the outfit changes between columns. Each label is just the number and name, no mottos, no description text. Even flat light, no rim light",
+    "figure": 1.8,
+    "title": "Galeborne: outfits"
+  },
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x864",
   "aspect": "16:9",
   "quality": "high",
   "refs": [
-    "art/concept/style-test-01-market-town.png",
-    "art/concept/galeborne-base-turnaround.png"
+    "art/references/style-test-01-market-town.png",
+    "art/kit/peoples/galeborne/outfits.png",
+    "art/concept/peoples/galeborne.webp"
   ],
-  "createdAt": "2026-11-02T17:27:39.608Z"
+  "usage": {
+    "input_tokens": 4206,
+    "input_tokens_details": {
+      "image_tokens": 3616,
+      "text_tokens": 590
+    },
+    "output_tokens": 1078,
+    "output_tokens_details": {
+      "image_tokens": 1078,
+      "text_tokens": 0
+    },
+    "total_tokens": 5284
+  },
+  "costUSD": 0.0642,
+  "createdAt": "2026-11-02T19:25:39.347Z"
 }

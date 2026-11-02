@@ -1,5 +1,34 @@
 {
-  "prompt": "Next image, same style: ROOTHOLD BIOME, TERRAIN MATERIAL SHEET. Four square hand-painted tileable texture swatches, flat top-down (no perspective, no lighting gradient across the swatch, seamless edges), arranged in a 2 by 2 grid with even gaps on a plain light grey background, each with a small hand-lettered label underneath: GROUND (deep green moss over dark loam with scattered leaf litter and small surface roots), PATH (packed brown earth with a few flat stones and root fragments pressed in), CLIFF / LIP (mossy grey granite and slate layers with moss tufts and fine roots across the face), UNDERSIDE (grey granite wrapped in thick woven roots, darker and cooler, with hanging moss). Painterly stylized game textures: broad hand-painted brushwork, chunky readable shapes, gentle muted saturation, warm highlights and cool teal-shadow accents, not photoreal.",
-  "chat_url": "https://chatgpt.com/c/6ae89065-a4f4-83ed-8669-b83e2cf1fac1",
-  "tool": "chatgpt.com"
+  "prompt": "Please generate an image. Locked painterly style: hand-painted stylized game art, chunky readable shapes, detail painted not modelled, mid-level detail, softer muted colours with gentle saturation, epic and luminous, never grim. The palette's warm gold and cool teal are painted into the surfaces, but the light is flat, even studio light: no strong key light, no cast shadows, no rim light. Use the attached images only as reference as described: the first attachment is always the style reference for palette and brushwork; later attachments are the approved designs to keep. Material swatch sheet, wide landscape 16:9, plain light neutral grey background. Square swatch tiles in a neat grid, evenly spaced, each flat-on (orthographic, no perspective, no horizon, no shadows from outside the tile), a seamless tileable painterly texture with edges that would wrap, broad clumped brushwork, no tiny high-frequency noise, a short neat label under each. Swatches: Redraw of the attached reference sheet to the current spec: keep exactly the same swatches, their order and their materials. Roothold biome terrain, four square tiles in one row, labels exactly as written in quotes: \"Moss Ground\" (deep green moss over dark loam with scattered leaf litter and small surface roots); \"Root Path\" (a close-up of packed brown earth with a few flat stones and root fragments pressed in, filling the entire tile evenly; the tile is all earth, it is not a picture of a path, no moss strips on either side); \"Granite Cliff\" (mossy grey granite and slate layers with moss tufts and fine roots across the face); \"Root Underside\" (grey granite wrapped in thick woven roots, darker and cooler, with hanging moss). Each tile is one evenly spread texture filling the whole square edge to edge, seen straight on with no perspective, no horizon, no focal point, no border, no single path or band crossing it and no light gradient, so its left edge would wrap onto its right and its top onto its bottom. Title at the top: \"Roothold terrain\".",
+  "kit": {
+    "type": "materials",
+    "subject": "Redraw of the attached reference sheet to the current spec: keep exactly the same swatches, their order and their materials. Roothold biome terrain, four square tiles in one row, labels exactly as written in quotes: \"Moss Ground\" (deep green moss over dark loam with scattered leaf litter and small surface roots); \"Root Path\" (a close-up of packed brown earth with a few flat stones and root fragments pressed in, filling the entire tile evenly; the tile is all earth, it is not a picture of a path, no moss strips on either side); \"Granite Cliff\" (mossy grey granite and slate layers with moss tufts and fine roots across the face); \"Root Underside\" (grey granite wrapped in thick woven roots, darker and cooler, with hanging moss). Each tile is one evenly spread texture filling the whole square edge to edge, seen straight on with no perspective, no horizon, no focal point, no border, no single path or band crossing it and no light gradient, so its left edge would wrap onto its right and its top onto its bottom",
+    "figure": 1.8,
+    "title": "Roothold terrain"
+  },
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x864",
+  "aspect": "16:9",
+  "quality": "high",
+  "refs": [
+    "art/references/style-test-01-market-town.png",
+    "art/kit/biomes/roothold/terrain.png"
+  ],
+  "usage": {
+    "input_tokens": 3239,
+    "input_tokens_details": {
+      "image_tokens": 2776,
+      "text_tokens": 463
+    },
+    "output_tokens": 1078,
+    "output_tokens_details": {
+      "image_tokens": 1078,
+      "text_tokens": 0
+    },
+    "total_tokens": 4317
+  },
+  "costUSD": 0.0569,
+  "createdAt": "2026-11-02T19:34:55.553Z",
+  "refsNote": "Paths under art/ name the previous version of that file in git history (the sheet this one redraws)."
 }

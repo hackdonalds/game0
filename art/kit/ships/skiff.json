@@ -1,8 +1,33 @@
 {
-  "prompt": "Please generate an image. Use the attached image only as the style reference (palette, painterly rendering, light). Game-asset concept sheet, landscape 16:9, locked painterly style (hand-painted, chunky readable shapes, detail painted not modelled, warm golden key light, cool teal shadows, muted saturation). Plain light neutral grey background, no scene, no sky, soft contact shadow only, each view with a small neat label underneath. Subject: the SKIFF, the smallest wooden sky sailship, up to 5 aboard, one person steers and trims; pure high fantasy, no engines, no balloons, no propellers. A light open boat with a single short mast and one lateen sail of canvas with woven teal enchantment patterns that faintly glow; a slim keel-less hull with two small side-fins and one teal-crystal lift charm at the bow; terracotta-red trim and simple brass fittings; a tiller at the stern; bench thwarts; a few lashed crates. Views: (1) side profile, (2) top-down plan, (3) front view, (4) three-quarter view under sail, (5) detail callouts: tiller, sail and boom with enchantment pattern, crystal lift charm, bench and cargo lashing. Include a simple 1.8 m human silhouette for scale.",
+  "prompt": "Please generate an image. Locked painterly style: hand-painted stylized game art, chunky readable shapes, detail painted not modelled, mid-level detail, softer muted colours with gentle saturation, epic and luminous, never grim. The palette's warm gold and cool teal are painted into the surfaces, but the light is flat, even studio light: no strong key light, no cast shadows, no rim light. Use the attached images only as reference as described: the first attachment is always the style reference for palette and brushwork; later attachments are the approved designs to keep. Game-asset reference sheet for 3D modelling, wide landscape 16:9. Plain light neutral grey background, no scene, no sky, no clouds, no floating rock, no ground plane, a soft contact shadow only. Every piece fully isolated with clear space around it, nothing overlapping, nothing touching the edge, arranged in tidy rows, each with a small neat hand-lettered label underneath. TURNAROUND sheet: Redraw of the attached reference sheet to the current spec: keep exactly the same design, items, their order and names. The SKIFF, the smallest wooden sky sailship, up to 5 aboard, one person steers and trims; about 7 m long; pure high fantasy, no engines, no balloons, no propellers. The same boat as the second attached image: a light open wooden boat with a single short mast and one lateen sail of cream canvas with a woven teal tree emblem and teal knotwork border, a slim keel-less hull with terracotta-red trim and simple brass fittings, two small leaf-shaped side-fins, one teal-crystal lift charm hanging at the bow, a tiller at the stern, bench thwarts and a few lashed crates. For a ship, the turnaround views are: \"Side Profile (Orthographic)\" top left, \"Top-Down Plan\" below it, \"Front View (Orthographic)\" in the middle, \"Three-Quarter View (Under Sail)\" large at the right; along the bottom, detail callouts labelled \"Tiller\", \"Sail and Boom (with Enchantment Pattern)\", \"Crystal Lift Charm\", \"Bench and Cargo Lashing\", each callout as an isolated piece, not cropped; plus one small square swatch of the hull planking labelled \"Hull planks\". No people on board. The sail rope is drawn as thick solid rope. Even flat light, no rim light, no cast shadows on the hull. Keep the exact design in the second attachment. Show front, side and back views in a neutral standing pose with limbs apart and clear of the body, one three-quarter action pose, close-up callouts of the head and of the hands, feet or claws, and one square texture swatch of its skin, fur, feathers or scale. A plain neutral 1.8 m human silhouette labelled \"1.8 m\" stands on the sheet for scale, with everything at true scale to it. Place it beside the side view, at TRUE scale to the stated size. Title at the top: \"Skiff\".",
+  "kit": {
+    "type": "turnaround",
+    "subject": "Redraw of the attached reference sheet to the current spec: keep exactly the same design, items, their order and names. The SKIFF, the smallest wooden sky sailship, up to 5 aboard, one person steers and trims; about 7 m long; pure high fantasy, no engines, no balloons, no propellers. The same boat as the second attached image: a light open wooden boat with a single short mast and one lateen sail of cream canvas with a woven teal tree emblem and teal knotwork border, a slim keel-less hull with terracotta-red trim and simple brass fittings, two small leaf-shaped side-fins, one teal-crystal lift charm hanging at the bow, a tiller at the stern, bench thwarts and a few lashed crates. For a ship, the turnaround views are: \"Side Profile (Orthographic)\" top left, \"Top-Down Plan\" below it, \"Front View (Orthographic)\" in the middle, \"Three-Quarter View (Under Sail)\" large at the right; along the bottom, detail callouts labelled \"Tiller\", \"Sail and Boom (with Enchantment Pattern)\", \"Crystal Lift Charm\", \"Bench and Cargo Lashing\", each callout as an isolated piece, not cropped; plus one small square swatch of the hull planking labelled \"Hull planks\". No people on board. The sail rope is drawn as thick solid rope. Even flat light, no rim light, no cast shadows on the hull",
+    "figure": 1.8,
+    "title": "Skiff"
+  },
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x864",
+  "aspect": "16:9",
+  "quality": "high",
   "refs": [
-    "art/concept/style-test-03-airship.png"
+    "art/references/style-test-01-market-town.png",
+    "art/kit/ships/skiff.png"
   ],
-  "chat_url": "https://chatgpt.com/c/6ae8bb94-b2d0-83ed-8273-47fa0f1d5287",
-  "tool": "chatgpt.com"
+  "usage": {
+    "input_tokens": 3460,
+    "input_tokens_details": {
+      "image_tokens": 2804,
+      "text_tokens": 656
+    },
+    "output_tokens": 1078,
+    "output_tokens_details": {
+      "image_tokens": 1078,
+      "text_tokens": 0
+    },
+    "total_tokens": 4538
+  },
+  "costUSD": 0.0581,
+  "createdAt": "2026-11-02T19:26:31.368Z"
 }

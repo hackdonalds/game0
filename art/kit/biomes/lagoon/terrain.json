@@ -1,5 +1,34 @@
 {
-  "prompt": "Please generate an image. Sheet 3 – LAGOON biome TERRAIN MATERIAL sheet, landscape 16:9, same locked hand-painted style. On a plain light neutral grey background, four large square hand-painted seamless tileable texture swatches in a row, flat top-down (no perspective, no lighting gradient across the tile, even soft light), each with a neat label underneath: (1) GROUND – dark wet stone and dark soil with sparse tough salt grass tufts, a few small shells and pebbles, damp sheen; (2) PATH – slick dark slate paving slabs, irregular flat stones with thin wet joints and a little moss; (3) CLIFF / LIP – layered dark basalt and slate rock face, hexagonal column edges, thin glowing teal crystal veins, a little hanging moss; (4) UNDERSIDE – dark basalt streaked darker with vertical spray stains, faint teal vein flecks, drip marks. Painted brushwork like a stylized MMORPG texture, chunky readable forms, muted saturation, cool teal shadow tones, no text inside the swatches.",
-  "chat_url": "https://chatgpt.com/c/6ae8907b-de80-83ed-9c65-6300f1b7af85",
-  "tool": "chatgpt.com"
+  "prompt": "Please generate an image. Locked painterly style: hand-painted stylized game art, chunky readable shapes, detail painted not modelled, mid-level detail, softer muted colours with gentle saturation, epic and luminous, never grim. The palette's warm gold and cool teal are painted into the surfaces, but the light is flat, even studio light: no strong key light, no cast shadows, no rim light. Use the attached images only as reference as described: the first attachment is always the style reference for palette and brushwork; later attachments are the approved designs to keep. Material swatch sheet, wide landscape 16:9, plain light neutral grey background. Square swatch tiles in a neat grid, evenly spaced, each flat-on (orthographic, no perspective, no horizon, no shadows from outside the tile), a seamless tileable painterly texture with edges that would wrap, broad clumped brushwork, no tiny high-frequency noise, a short neat label under each. Swatches: Redraw of the attached reference sheet to the current spec: keep exactly the same swatches, their order and their materials. Lagoon biome terrain, four exactly square tiles in one row, labels exactly as written in quotes: \"Ground\" (dark wet stone and dark soil with sparse tough salt-grass tufts, a few small shells and pebbles); \"Path\" (slick dark slate paving, irregular flat stones with thin wet joints and a little moss, covering the whole tile); \"Cliff / Lip\" (a flat wall face seen exactly straight on, as if photographed square to the wall: no top surface, no visible block tops or sides, no ledge, no depth, no overhang: layered dark basalt and slate face with the hexagonal column pattern drawn flat, thin teal crystal veins, a little moss); \"Underside\" (dark basalt streaked darker with vertical spray stains running the full height, faint teal vein flecks and drip marks). Each tile is one evenly spread texture filling the whole square edge to edge, seen straight on with no perspective, no horizon, no focal point, no border, no single path or band crossing it and no light gradient, so its left edge would wrap onto its right and its top onto its bottom. Title at the top: \"Lagoon terrain\".",
+  "kit": {
+    "type": "materials",
+    "subject": "Redraw of the attached reference sheet to the current spec: keep exactly the same swatches, their order and their materials. Lagoon biome terrain, four exactly square tiles in one row, labels exactly as written in quotes: \"Ground\" (dark wet stone and dark soil with sparse tough salt-grass tufts, a few small shells and pebbles); \"Path\" (slick dark slate paving, irregular flat stones with thin wet joints and a little moss, covering the whole tile); \"Cliff / Lip\" (a flat wall face seen exactly straight on, as if photographed square to the wall: no top surface, no visible block tops or sides, no ledge, no depth, no overhang: layered dark basalt and slate face with the hexagonal column pattern drawn flat, thin teal crystal veins, a little moss); \"Underside\" (dark basalt streaked darker with vertical spray stains running the full height, faint teal vein flecks and drip marks). Each tile is one evenly spread texture filling the whole square edge to edge, seen straight on with no perspective, no horizon, no focal point, no border, no single path or band crossing it and no light gradient, so its left edge would wrap onto its right and its top onto its bottom",
+    "figure": 1.8,
+    "title": "Lagoon terrain"
+  },
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x864",
+  "aspect": "16:9",
+  "quality": "high",
+  "refs": [
+    "art/references/style-test-01-market-town.png",
+    "art/kit/biomes/lagoon/terrain.png"
+  ],
+  "usage": {
+    "input_tokens": 3297,
+    "input_tokens_details": {
+      "image_tokens": 2804,
+      "text_tokens": 493
+    },
+    "output_tokens": 1078,
+    "output_tokens_details": {
+      "image_tokens": 1078,
+      "text_tokens": 0
+    },
+    "total_tokens": 4375
+  },
+  "costUSD": 0.0572,
+  "createdAt": "2026-11-02T19:33:27.758Z",
+  "refsNote": "Paths under art/ name the previous version of that file in git history (the sheet this one redraws)."
 }

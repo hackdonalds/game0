@@ -1,5 +1,34 @@
 {
-  "prompt": "Great. Same kit-sheet layout, grey background, grid, labels, 1.6 m scale figure and light. NEXT SHEET 'kit-details': Rootwarden burl inserts and small attachments, each isolated with orthographic front elevation plus small three-quarter view and a dimension label. IMPORTANT: openings must look GROWN, not carpentered: NO round planked wooden doors, NO brass rings or hinges, no cosy-burrow hobbit doors. Burl = a knotted swollen bark collar that plugs into any dome shell. Row 1: three burl doors (a woven root-lattice door, a hanging bark-curtain doorway, a living-wood hatch that grows shut like an iris of root fingers). Row 2: three burl windows (round, teardrop, and small cluster of three), with amber glow behind thin woven-root lattice. Row 3: a lantern fungus cluster (teal glowing caps), root stairs (a spiral of 4 root steps), a root railing segment (2 m), a woven root floor disc (3 m diameter), and two seed-pod lamps (hanging amber seed pods). Please generate the image.",
-  "chat_url": "https://chatgpt.com/c/6ae86f8d-5bd8-83eb-8304-191fa46c8ba3",
-  "tool": "chatgpt.com"
+  "prompt": "Please generate an image. Locked painterly style: hand-painted stylized game art, chunky readable shapes, detail painted not modelled, mid-level detail, softer muted colours with gentle saturation, epic and luminous, never grim. The palette's warm gold and cool teal are painted into the surfaces, but the light is flat, even studio light: no strong key light, no cast shadows, no rim light. Use the attached images only as reference as described: the first attachment is always the style reference for palette and brushwork; later attachments are the approved designs to keep. Game-asset reference sheet for 3D modelling, wide landscape 16:9. Plain light neutral grey background, no scene, no sky, no clouds, no floating rock, no ground plane, a soft contact shadow only. Every piece fully isolated with clear space around it, nothing overlapping, nothing touching the edge, arranged in tidy rows, each with a small neat hand-lettered label underneath. MODULAR KIT PIECES sheet: Redraw of the attached reference sheet to the current spec: keep exactly the same pieces, their order, names and sizes. Rootwarden style with no rectilinear grid: living root segments of painterly bark with mossy patches and a few small flowers, every root end a flat round socket cap showing heartwood growth rings; domes woven from living roots and bark; openings look grown, never carpentered, no planks, no brass rings or hinges. Burl inserts are knotted swollen bark collars that plug into any dome shell. Row 1 burl doors: \"Burl Door A - Woven Lattice 3 x 2.5 m\", \"Burl Door B - Bark Curtain 3 x 2.5 m\", \"Burl Door C - Living Iris 3 x 2.5 m\" (root fingers that grow shut like an iris). Row 2 burl windows with amber glow behind woven-root lattice: \"Burl Window A - Round 2 x 2 m\", \"Burl Window B - Teardrop 1.5 x 2 m\", \"Burl Window C - Triple Cluster 2.5 x 2 m\". Row 3: \"Lantern Fungus Cluster 1.5 x 1 m\" (teal glowing caps), \"Root Stairs (Spiral, 4 Steps) 2.5 x 2 m\", \"Root Railing Segment 2 x 1 m\", \"Woven Root Floor Disc \u00d8 3 m (0.5 m thick)\", \"Seed-Pod Lamp (x2) 0.5 x 1 m\" (two hanging amber seed pods). Draw the 1.6 m scale figure once only. No other pieces. Show each piece as an orthographic front elevation (no perspective) with a small three-quarter view beside it, on faint module grid lines, with its name and size (for example \"3 x 4 m\") in the label. Thick, solid forms, no thin parts. A plain neutral 1.6 m human silhouette labelled \"1.6 m\" stands on the sheet for scale, with everything at true scale to it. Title at the top: \"Rootwarden kit: details\".",
+  "kit": {
+    "type": "pieces",
+    "subject": "Redraw of the attached reference sheet to the current spec: keep exactly the same pieces, their order, names and sizes. Rootwarden style with no rectilinear grid: living root segments of painterly bark with mossy patches and a few small flowers, every root end a flat round socket cap showing heartwood growth rings; domes woven from living roots and bark; openings look grown, never carpentered, no planks, no brass rings or hinges. Burl inserts are knotted swollen bark collars that plug into any dome shell. Row 1 burl doors: \"Burl Door A - Woven Lattice 3 x 2.5 m\", \"Burl Door B - Bark Curtain 3 x 2.5 m\", \"Burl Door C - Living Iris 3 x 2.5 m\" (root fingers that grow shut like an iris). Row 2 burl windows with amber glow behind woven-root lattice: \"Burl Window A - Round 2 x 2 m\", \"Burl Window B - Teardrop 1.5 x 2 m\", \"Burl Window C - Triple Cluster 2.5 x 2 m\". Row 3: \"Lantern Fungus Cluster 1.5 x 1 m\" (teal glowing caps), \"Root Stairs (Spiral, 4 Steps) 2.5 x 2 m\", \"Root Railing Segment 2 x 1 m\", \"Woven Root Floor Disc \u00d8 3 m (0.5 m thick)\", \"Seed-Pod Lamp (x2) 0.5 x 1 m\" (two hanging amber seed pods). Draw the 1.6 m scale figure once only. No other pieces",
+    "figure": 1.6,
+    "title": "Rootwarden kit: details"
+  },
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x864",
+  "aspect": "16:9",
+  "quality": "high",
+  "refs": [
+    "art/references/style-test-01-market-town.png",
+    "art/kit/architecture/rootwarden/kit-details.png"
+  ],
+  "usage": {
+    "input_tokens": 3488,
+    "input_tokens_details": {
+      "image_tokens": 2804,
+      "text_tokens": 684
+    },
+    "output_tokens": 1078,
+    "output_tokens_details": {
+      "image_tokens": 1078,
+      "text_tokens": 0
+    },
+    "total_tokens": 4566
+  },
+  "costUSD": 0.0582,
+  "createdAt": "2026-11-02T19:36:14.543Z",
+  "refsNote": "Paths under art/ name the previous version of that file in git history (the sheet this one redraws)."
 }

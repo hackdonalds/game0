@@ -1,5 +1,34 @@
 {
-  "prompt": "Good, keep exactly this kit-sheet layout, grey background, grid, labels, scale figure and light. NEXT SHEET 'kit-shells': Rootwarden dome shells grown from woven living roots and bark, matching the domes in the concept sheets. For each piece: orthographic front elevation plus a small three-quarter view, dimension label. Row 1-3 by radius 3 m, 5 m and 8 m; in each row a quarter dome shell, a half dome shell and a full dome shell (show the clean cut edges where shells join each other and the round root sockets along the base rim). Also: a hanging pod shell (teardrop woven-root pod, with its root socket at the top), a moss roof cap and a flowering-moss roof cap that sit on a dome crown, and two hanging-root curtain strips (short and long). Each piece isolated, no scenery. Please generate the image.",
-  "chat_url": "https://chatgpt.com/c/6ae86f8d-5bd8-83eb-8304-191fa46c8ba3",
-  "tool": "chatgpt.com"
+  "prompt": "Please generate an image. Locked painterly style: hand-painted stylized game art, chunky readable shapes, detail painted not modelled, mid-level detail, softer muted colours with gentle saturation, epic and luminous, never grim. The palette's warm gold and cool teal are painted into the surfaces, but the light is flat, even studio light: no strong key light, no cast shadows, no rim light. Use the attached images only as reference as described: the first attachment is always the style reference for palette and brushwork; later attachments are the approved designs to keep. Game-asset reference sheet for 3D modelling, wide landscape 16:9. Plain light neutral grey background, no scene, no sky, no clouds, no floating rock, no ground plane, a soft contact shadow only. Every piece fully isolated with clear space around it, nothing overlapping, nothing touching the edge, arranged in tidy rows, each with a small neat hand-lettered label underneath. MODULAR KIT PIECES sheet: Redraw of the attached reference sheet to the current spec: keep exactly the same pieces, their order, names and sizes. Rootwarden style with no rectilinear grid: living root segments of painterly bark with mossy patches and a few small flowers, every root end a flat round socket cap showing heartwood growth rings; domes woven from living roots and bark; openings look grown, never carpentered, no planks, no brass rings or hinges. Left part, three rows by radius, labelled \"Radius 3 m (\u00d8 6 m)\", \"Radius 5 m (\u00d8 10 m)\", \"Radius 8 m (\u00d8 16 m)\", under three column headers \"Quarter Dome Shell (90\u00b0)\", \"Half Dome Shell (180\u00b0)\", \"Full Dome Shell (360\u00b0)\"; each shell shows clean cut edges where shells join and round root sockets along the base rim, with width labels: row r 3 \"3 m\", \"6 m\", \"6 m\"; row r 5 \"5 m\", \"10 m\", \"10 m\"; row r 8 \"8 m\", \"16 m\", \"16 m\". Shells grow visibly larger row by row. Right column: \"Hanging Pod Shell 2.5 m wide, 4 m tall\" (teardrop woven-root pod, root socket at the top), \"Moss Roof Cap 6 m wide, 1.5 m tall\", \"Flowering-Moss Roof Cap 6 m wide, 2 m tall\", \"Hanging-Root Curtain (Short) 4 m wide, 1.5 m drop\", \"Hanging-Root Curtain (Long) 4 m wide, 3 m drop\". Draw the 1.6 m scale figure once only. No other pieces. Show each piece as an orthographic front elevation (no perspective) with a small three-quarter view beside it, on faint module grid lines, with its name and size (for example \"3 x 4 m\") in the label. Thick, solid forms, no thin parts. A plain neutral 1.6 m human silhouette labelled \"1.6 m\" stands on the sheet for scale, with everything at true scale to it. Title at the top: \"Rootwarden kit: shells\".",
+  "kit": {
+    "type": "pieces",
+    "subject": "Redraw of the attached reference sheet to the current spec: keep exactly the same pieces, their order, names and sizes. Rootwarden style with no rectilinear grid: living root segments of painterly bark with mossy patches and a few small flowers, every root end a flat round socket cap showing heartwood growth rings; domes woven from living roots and bark; openings look grown, never carpentered, no planks, no brass rings or hinges. Left part, three rows by radius, labelled \"Radius 3 m (\u00d8 6 m)\", \"Radius 5 m (\u00d8 10 m)\", \"Radius 8 m (\u00d8 16 m)\", under three column headers \"Quarter Dome Shell (90\u00b0)\", \"Half Dome Shell (180\u00b0)\", \"Full Dome Shell (360\u00b0)\"; each shell shows clean cut edges where shells join and round root sockets along the base rim, with width labels: row r 3 \"3 m\", \"6 m\", \"6 m\"; row r 5 \"5 m\", \"10 m\", \"10 m\"; row r 8 \"8 m\", \"16 m\", \"16 m\". Shells grow visibly larger row by row. Right column: \"Hanging Pod Shell 2.5 m wide, 4 m tall\" (teardrop woven-root pod, root socket at the top), \"Moss Roof Cap 6 m wide, 1.5 m tall\", \"Flowering-Moss Roof Cap 6 m wide, 2 m tall\", \"Hanging-Root Curtain (Short) 4 m wide, 1.5 m drop\", \"Hanging-Root Curtain (Long) 4 m wide, 3 m drop\". Draw the 1.6 m scale figure once only. No other pieces",
+    "figure": 1.6,
+    "title": "Rootwarden kit: shells"
+  },
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x864",
+  "aspect": "16:9",
+  "quality": "high",
+  "refs": [
+    "art/references/style-test-01-market-town.png",
+    "art/kit/architecture/rootwarden/kit-shells.png"
+  ],
+  "usage": {
+    "input_tokens": 3444,
+    "input_tokens_details": {
+      "image_tokens": 2748,
+      "text_tokens": 696
+    },
+    "output_tokens": 1078,
+    "output_tokens_details": {
+      "image_tokens": 1078,
+      "text_tokens": 0
+    },
+    "total_tokens": 4522
+  },
+  "costUSD": 0.0578,
+  "createdAt": "2026-11-02T19:35:47.122Z",
+  "refsNote": "Paths under art/ name the previous version of that file in git history (the sheet this one redraws)."
 }

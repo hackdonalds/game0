@@ -1,10 +1,34 @@
 {
-  "prompt": "Please generate an image. Locked painterly style (hand-painted, chunky readable shapes, detail painted not modelled, warm golden key light, cool teal shadows, muted saturation, epic and luminous, never grim). Use the attached image(s) only as reference as described; the first attachment is always the style reference for palette, rendering and light. Game-asset concept sheet, landscape 16:9, plain light neutral grey background, no scene, no sky, soft contact shadow only, every piece isolated with clear space and a small neat label underneath. Subject: the ANCIENT TREES that slow an isle's sinking. Show: (1) a healthy ancient tree, colossal, twisting trunk, canopy glowing faintly at the edges, roots plunging through the isle and out of its underside; (2) the same tree failing: thinning canopy, grey bark, roots withdrawing; (3) close-up callouts of tending: carved tending marks, root-bindings, moss lanterns, offerings at the base; (4) GRUDGEWOOD, the oldest ancient tree, scarred where masts were cut from it long ago. Include a simple 1.8 m human silhouette for scale.",
-  "model": "openai/gpt-image-2.5-sunburst",
+  "prompt": "Please generate an image. Locked painterly style: hand-painted stylized game art, chunky readable shapes, detail painted not modelled, mid-level detail, softer muted colours with gentle saturation, epic and luminous, never grim. The palette's warm gold and cool teal are painted into the surfaces, but the light is flat, even studio light: no strong key light, no cast shadows, no rim light. Use the attached images only as reference as described: the first attachment is always the style reference for palette and brushwork; later attachments are the approved designs to keep. Game-asset reference sheet for 3D modelling, wide landscape 16:9. Plain light neutral grey background, no scene, no sky, no clouds, no floating rock, no ground plane, a soft contact shadow only. Every piece fully isolated with clear space around it, nothing overlapping, nothing touching the edge, arranged in tidy rows, each with a small neat hand-lettered label underneath. MODULAR KIT PIECES sheet: Redraw of the attached reference sheet to the current spec: keep the same items and names. The ancient trees that slow an isle's sinking, as kit pieces, with no isle, no floating rock, no ruins and no ground drawn: where the roots pass through the isle, show only a dotted outline of the isle's ground line and underside. Left: \"Healthy ancient tree\", colossal, twisting trunk, a canopy of a few huge leaf clumps glowing faintly at the edges, thick roots plunging below the dotted ground line and out past the dotted underside, a faint teal glow in the roots as a clear separate zone. Middle: \"Failing ancient tree\", the same trunk and root mesh with a thinning canopy, grey bark and roots withdrawing upward. Right, top: tending pieces, each alone and labelled: \"Carved tending marks\" (a bark panel with carved marks, painted detail), \"Root-bindings\" (thick solid bound cords around a root section), \"Moss lantern\" (a chunky lantern), \"Offerings\" (a small group of offerings at a root base). Right, bottom: \"Grudgewood\", the oldest ancient tree, the same trunk type with tall, straight, mast-like limbs reaching up and big axe scars where masts were cut from it long ago (no door, no carved opening). Trees drawn as front elevations with a small three-quarter view beside the healthy tree; the 1.8 m figure stands at the base of the healthy tree at true scale, tiny against the trunk. The sizes of these trees are not set yet, so every label is the piece name only, with no metre sizes or dimensions in any label (the only number on the sheet is the \"1.8 m\" of the scale figure). Show each piece as an orthographic front elevation (no perspective) with a small three-quarter view beside it, on faint module grid lines, with its name and size (for example \"3 x 4 m\") in the label. Thick, solid forms, no thin parts. A plain neutral 1.8 m human silhouette labelled \"1.8 m\" stands on the sheet for scale, with everything at true scale to it. Title at the top: \"World kit: ancient tree\".",
+  "kit": {
+    "type": "pieces",
+    "subject": "Redraw of the attached reference sheet to the current spec: keep the same items and names. The ancient trees that slow an isle's sinking, as kit pieces, with no isle, no floating rock, no ruins and no ground drawn: where the roots pass through the isle, show only a dotted outline of the isle's ground line and underside. Left: \"Healthy ancient tree\", colossal, twisting trunk, a canopy of a few huge leaf clumps glowing faintly at the edges, thick roots plunging below the dotted ground line and out past the dotted underside, a faint teal glow in the roots as a clear separate zone. Middle: \"Failing ancient tree\", the same trunk and root mesh with a thinning canopy, grey bark and roots withdrawing upward. Right, top: tending pieces, each alone and labelled: \"Carved tending marks\" (a bark panel with carved marks, painted detail), \"Root-bindings\" (thick solid bound cords around a root section), \"Moss lantern\" (a chunky lantern), \"Offerings\" (a small group of offerings at a root base). Right, bottom: \"Grudgewood\", the oldest ancient tree, the same trunk type with tall, straight, mast-like limbs reaching up and big axe scars where masts were cut from it long ago (no door, no carved opening). Trees drawn as front elevations with a small three-quarter view beside the healthy tree; the 1.8 m figure stands at the base of the healthy tree at true scale, tiny against the trunk. The sizes of these trees are not set yet, so every label is the piece name only, with no metre sizes or dimensions in any label (the only number on the sheet is the \"1.8 m\" of the scale figure)",
+    "figure": 1.8,
+    "title": "World kit: ancient tree"
+  },
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x864",
   "aspect": "16:9",
   "quality": "high",
   "refs": [
-    "art/concept/style-test-01-market-town.png"
+    "art/references/style-test-01-market-town.png",
+    "art/kit/world/ancient-tree.png"
   ],
-  "createdAt": "2026-11-02T17:23:04.771Z"
+  "usage": {
+    "input_tokens": 3281,
+    "input_tokens_details": {
+      "image_tokens": 2592,
+      "text_tokens": 689
+    },
+    "output_tokens": 1078,
+    "output_tokens_details": {
+      "image_tokens": 1078,
+      "text_tokens": 0
+    },
+    "total_tokens": 4359
+  },
+  "costUSD": 0.0565,
+  "createdAt": "2026-11-02T19:31:41.464Z",
+  "refsNote": "Paths under art/ name the previous version of that file in git history (the sheet this one redraws)."
 }

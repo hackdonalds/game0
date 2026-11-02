@@ -1,5 +1,34 @@
 {
-  "prompt": "Good. Generate sheet 2 now as an image, same kit-sheet rules, same light grey grid background, same 2.6 m Anchorkin scale figure, same layout style and labelling. Title \"Anchorkin Kit - Roofs\". Pieces: flat terrace roof run (one 3 m module, low parapet lip, walkable stone slabs), stepped roof edge (roof dropping one shallow step down to a lower terrace), shallow hip corner (very low pitch, under 15 degrees, heavy stone slabs, NOT a steep slate gable), parapet with chunky crenels, chimney stack (squat, wide, stone with iron cap), crystal-capped crown (a heavy stone finial with a teal crystal cluster on top), and a dome segment (quarter-dome shell for civic halls, banded with a carved Ledger inscription ring). Everything squat, horizontal, heavy and battered; roofs read as low flat terraces, not cottage roofs. Iron fittings are black forged iron; gold is used only for inlaid carved inscriptions and oath-marks. Orthographic front elevation plus a small three-quarter view per piece, dimension label under each.",
-  "chat_url": "https://chatgpt.com/c/6ae86f92-74f8-83eb-9074-bca3293dd829",
-  "tool": "chatgpt.com"
+  "prompt": "Please generate an image. Locked painterly style: hand-painted stylized game art, chunky readable shapes, detail painted not modelled, mid-level detail, softer muted colours with gentle saturation, epic and luminous, never grim. The palette's warm gold and cool teal are painted into the surfaces, but the light is flat, even studio light: no strong key light, no cast shadows, no rim light. Use the attached images only as reference as described: the first attachment is always the style reference for palette and brushwork; later attachments are the approved designs to keep. Game-asset reference sheet for 3D modelling, wide landscape 16:9. Plain light neutral grey background, no scene, no sky, no clouds, no floating rock, no ground plane, a soft contact shadow only. Every piece fully isolated with clear space around it, nothing overlapping, nothing touching the edge, arranged in tidy rows, each with a small neat hand-lettered label underneath. MODULAR KIT PIECES sheet: Redraw of the attached reference sheet to the current spec: keep exactly the same pieces, their order, names and sizes. Anchorkin style on a 3 m module and 4 m storey, walls 1 m thick and battered 8 degrees inward on the outer face: dark basalt and slate blocks with teal crystal veins, a little moss; all metal straps, caps, hinges, brackets and chains are black forged iron with a faint cool sheen, never gold or brass; gold appears only as thin inlay inside carved inscriptions and anchor oath-marks. Squat, horizontal, heavy. Roofs are low flat stone terraces, never steep gables. Row 1: \"A. Flat Terrace Roof Run 3 x 3 m\" (walkable stone slabs, low lip), \"B. Stepped Roof Edge 3 x 3 m (step 1 m)\". Row 2: \"C. Shallow Hip Corner 3 x 3 m\" (under 15 degree pitch, heavy slabs), \"D. Parapet (Crenel) 3 x 1 m\" (chunky crenels). Row 3: \"E. Chimney Stack 1.5 x 1.5 m (height 2 m)\" (squat stone stack with black iron cap, no smoke), \"F. Crystal-capped Crown 2 x 2 m (height 2.5 m)\" (heavy stone finial with a teal crystal cluster), \"G. Dome Segment (Quarter) 3 x 3 m (height 1.5 m)\" (quarter-dome shell banded with a carved Ledger inscription ring). Draw the 2.6 m Anchorkin scale figure once only. No other pieces. Show each piece as an orthographic front elevation (no perspective) with a small three-quarter view beside it, on faint module grid lines, with its name and size (for example \"3 x 4 m\") in the label. Thick, solid forms, no thin parts. A plain neutral 2.6 m human silhouette labelled \"2.6 m\" stands on the sheet for scale, with everything at true scale to it. Title at the top: \"Anchorkin kit: roofs\".",
+  "kit": {
+    "type": "pieces",
+    "subject": "Redraw of the attached reference sheet to the current spec: keep exactly the same pieces, their order, names and sizes. Anchorkin style on a 3 m module and 4 m storey, walls 1 m thick and battered 8 degrees inward on the outer face: dark basalt and slate blocks with teal crystal veins, a little moss; all metal straps, caps, hinges, brackets and chains are black forged iron with a faint cool sheen, never gold or brass; gold appears only as thin inlay inside carved inscriptions and anchor oath-marks. Squat, horizontal, heavy. Roofs are low flat stone terraces, never steep gables. Row 1: \"A. Flat Terrace Roof Run 3 x 3 m\" (walkable stone slabs, low lip), \"B. Stepped Roof Edge 3 x 3 m (step 1 m)\". Row 2: \"C. Shallow Hip Corner 3 x 3 m\" (under 15 degree pitch, heavy slabs), \"D. Parapet (Crenel) 3 x 1 m\" (chunky crenels). Row 3: \"E. Chimney Stack 1.5 x 1.5 m (height 2 m)\" (squat stone stack with black iron cap, no smoke), \"F. Crystal-capped Crown 2 x 2 m (height 2.5 m)\" (heavy stone finial with a teal crystal cluster), \"G. Dome Segment (Quarter) 3 x 3 m (height 1.5 m)\" (quarter-dome shell banded with a carved Ledger inscription ring). Draw the 2.6 m Anchorkin scale figure once only. No other pieces",
+    "figure": 2.6,
+    "title": "Anchorkin kit: roofs"
+  },
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x864",
+  "aspect": "16:9",
+  "quality": "high",
+  "refs": [
+    "art/references/style-test-01-market-town.png",
+    "art/kit/architecture/anchorkin/kit-roofs.png"
+  ],
+  "usage": {
+    "input_tokens": 3493,
+    "input_tokens_details": {
+      "image_tokens": 2804,
+      "text_tokens": 689
+    },
+    "output_tokens": 1078,
+    "output_tokens_details": {
+      "image_tokens": 1078,
+      "text_tokens": 0
+    },
+    "total_tokens": 4571
+  },
+  "costUSD": 0.0582,
+  "createdAt": "2026-11-02T19:28:51.436Z",
+  "refsNote": "Paths under art/ name the previous version of that file in git history (the sheet this one redraws)."
 }

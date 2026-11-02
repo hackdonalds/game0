@@ -1,11 +1,35 @@
 {
-  "prompt": "Please generate an image. Locked painterly style (hand-painted, chunky readable shapes, detail painted not modelled, warm golden key light, cool teal shadows, muted saturation, epic and luminous, never grim). Use the attached image(s) only as reference as described; the first attachment is always the style reference for palette, rendering and light. Game-asset concept sheet, landscape 16:9, plain light neutral grey background, no scene, no sky, soft contact shadow only, every piece isolated with clear space and a small neat label underneath. Creature TURNAROUND sheet for 3D modelling: THE STORMMOTHER, a towering ethereal figure of dark storm clouds and lightning with a vague serene face. Keep the exact design of the creature in the second attachment. Show front, side and back views in a neutral standing pose, a three-quarter action pose, and close-up callouts of head, feet or claws and a texture swatch of skin, fur, feathers or scale. Add a 1.8 m human silhouette for scale beside the side view, tiny next to it.",
-  "model": "openai/gpt-image-2.5-sunburst",
+  "prompt": "Please generate an image. Locked painterly style: hand-painted stylized game art, chunky readable shapes, detail painted not modelled, mid-level detail, softer muted colours with gentle saturation, epic and luminous, never grim. The palette's warm gold and cool teal are painted into the surfaces, but the light is flat, even studio light: no strong key light, no cast shadows, no rim light. Use the attached images only as reference as described: the first attachment is always the style reference for palette and brushwork; later attachments are the approved designs to keep. Game-asset reference sheet for 3D modelling, wide landscape 16:9. Plain light neutral grey background, no scene, no sky, no clouds, no floating rock, no ground plane, a soft contact shadow only. Every piece fully isolated with clear space around it, nothing overlapping, nothing touching the edge, arranged in tidy rows, each with a small neat hand-lettered label underneath. SPECIES sheet for a creature built from a shared body-plan kit: THE STORMMOTHER, a towering ethereal figure made of dark storm clouds and lightning with a vague serene feminine face, arms spread, built on the giant humanoid body plan; about 50 m at the shoulder, about 60 m tall, her body fading into a mass of cloud below the waist instead of legs, on the plain grey background (no sea, no ships, no swarms of creatures around her), so the 1.8 m human figure beside her is a tiny speck, with a thin dimension line labelled \"60 m\". Her parts, as on the parts sheet: Stormmother head, Storm crown, Storm arm, Cloud mass (storm growth), Lightning plume (storm growth). Glow only along the lightning. It has no storm-touched variant. Keep the base body and parts from the attached kit sheets and the creature's design from the attached plate. Show the assembled creature in side view and three-quarter view at the centre; around it, each part it uses pulled out with a thin leader line to its socket and a small label naming the part. Below: a row of four square colour mask swatches (main, secondary, accent, pattern). Show a storm-touched variant, small at the right in side view and labelled, only when the subject names one; otherwise draw no variant at all. Show only the parts this creature uses, and no description text. A plain neutral 1.8 m human silhouette labelled \"1.8 m\" stands on the sheet for scale, with everything at true scale to it. Place it beside the side view, at TRUE scale to the stated size. Title at the top: \"The Stormmother\".",
+  "kit": {
+    "type": "species",
+    "subject": "THE STORMMOTHER, a towering ethereal figure made of dark storm clouds and lightning with a vague serene feminine face, arms spread, built on the giant humanoid body plan; about 50 m at the shoulder, about 60 m tall, her body fading into a mass of cloud below the waist instead of legs, on the plain grey background (no sea, no ships, no swarms of creatures around her), so the 1.8 m human figure beside her is a tiny speck, with a thin dimension line labelled \"60 m\". Her parts, as on the parts sheet: Stormmother head, Storm crown, Storm arm, Cloud mass (storm growth), Lightning plume (storm growth). Glow only along the lightning. It has no storm-touched variant",
+    "figure": 1.8,
+    "title": "The Stormmother"
+  },
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x864",
   "aspect": "16:9",
   "quality": "high",
   "refs": [
-    "art/concept/style-test-01-market-town.png",
-    "art/bestiary/stormmother.webp"
+    "art/references/style-test-01-market-town.png",
+    "art/kit/bestiary/body-plans/giant-body.png",
+    "art/kit/bestiary/body-plans/giant-parts.png",
+    "art/concept/bestiary/stormmother.webp"
   ],
-  "createdAt": "2026-11-02T17:27:08.339Z"
+  "usage": {
+    "input_tokens": 5508,
+    "input_tokens_details": {
+      "image_tokens": 4912,
+      "text_tokens": 596
+    },
+    "output_tokens": 1078,
+    "output_tokens_details": {
+      "image_tokens": 1078,
+      "text_tokens": 0
+    },
+    "total_tokens": 6586
+  },
+  "costUSD": 0.0746,
+  "createdAt": "2026-11-02T19:36:13.239Z"
 }

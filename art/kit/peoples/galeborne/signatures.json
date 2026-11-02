@@ -1,11 +1,34 @@
 {
-  "prompt": "Please generate an image. Locked painterly style (hand-painted, chunky readable shapes, detail painted not modelled, warm golden key light, cool teal shadows, muted saturation, epic and luminous, never grim). Use the attached image(s) only as reference as described; the first attachment is always the style reference for palette, rendering and light. Keep the exact body design of the people in the second attachment. Character customization sheet, landscape 16:9, plain light neutral grey background, small neat labels. GALEBORNE: tall, light, hollow-boned near-humans; a feathered mantle grows from shoulders and forearms and folds like a cloak; sailors, shipwrights, scouts, couriers of the high windy Crag Spires. Show the SIGNATURE FEATURE variants as a grid of heads and shoulders: feather colours and patterns, crest shapes, mantle lengths short to long, skin tones sky-pale to dusk, face markings. Also show male, female and elder body variants full-body in a row.",
-  "model": "openai/gpt-image-2.5-sunburst",
+  "prompt": "Please generate an image. Locked painterly style: hand-painted stylized game art, chunky readable shapes, detail painted not modelled, mid-level detail, softer muted colours with gentle saturation, epic and luminous, never grim. The palette's warm gold and cool teal are painted into the surfaces, but the light is flat, even studio light: no strong key light, no cast shadows, no rim light. Use the attached images only as reference as described: the first attachment is always the style reference for palette and brushwork; later attachments are the approved designs to keep. Game-asset reference sheet for 3D modelling, wide landscape 16:9. Plain light neutral grey background, no scene, no sky, no clouds, no floating rock, no ground plane, a soft contact shadow only. Every piece fully isolated with clear space around it, nothing overlapping, nothing touching the edge, arranged in tidy rows, each with a small neat hand-lettered label underneath. VARIANTS sheet: Redraw of the attached reference sheet to the current spec: keep exactly the same design, items, their order and names. Galeborne signature features, on the same base as the second attached image (1.9 m tall, sky-pale skin, spiky feather crest instead of hair, feathered mantle growing from shoulders and forearms). Left third: three full-body figures standing in a row, labelled \"Male\", \"Female\", \"Elder\", in indigo cloth with a few leather straps, each with its feathered mantle. Right two thirds, a grid of head-and-shoulders busts in labelled rows, all facing the same three-quarter direction: row \"Feather colours & patterns\": Snowcrest, Stormgrey, Sandgold, Seaquill, Rustwing, Nighttide; row \"Crest shapes\": Tapered, Sweep back, Upturned, Spread, Backflow, Untamed; row \"Mantle lengths\" as four small full-body back views: Short (shoulders), Mid (upper arms), Long (half cloak), Full (cloak); row \"Skin tones\": Sky-pale, Ivory, Tan, Bronze, Dusk; row \"Face markings\": None, Sky lines, Tear mark, Wind sigils, Cheek sweep, Full ritual. Each variant name is a small label under its cell; no description text, no blurb, no taglines. Even flat light, no rim light. Keep the exact base design in the second attachment. Show the same base in a neat grid, one part changed per cell, everything else identical, each cell labelled with the variant name. Swappable parts are shown clearly separate from the body where they attach. Title at the top: \"Galeborne: signature features\".",
+  "kit": {
+    "type": "variants",
+    "subject": "Redraw of the attached reference sheet to the current spec: keep exactly the same design, items, their order and names. Galeborne signature features, on the same base as the second attached image (1.9 m tall, sky-pale skin, spiky feather crest instead of hair, feathered mantle growing from shoulders and forearms). Left third: three full-body figures standing in a row, labelled \"Male\", \"Female\", \"Elder\", in indigo cloth with a few leather straps, each with its feathered mantle. Right two thirds, a grid of head-and-shoulders busts in labelled rows, all facing the same three-quarter direction: row \"Feather colours & patterns\": Snowcrest, Stormgrey, Sandgold, Seaquill, Rustwing, Nighttide; row \"Crest shapes\": Tapered, Sweep back, Upturned, Spread, Backflow, Untamed; row \"Mantle lengths\" as four small full-body back views: Short (shoulders), Mid (upper arms), Long (half cloak), Full (cloak); row \"Skin tones\": Sky-pale, Ivory, Tan, Bronze, Dusk; row \"Face markings\": None, Sky lines, Tear mark, Wind sigils, Cheek sweep, Full ritual. Each variant name is a small label under its cell; no description text, no blurb, no taglines. Even flat light, no rim light",
+    "figure": 1.8,
+    "title": "Galeborne: signature features"
+  },
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x864",
   "aspect": "16:9",
   "quality": "high",
   "refs": [
-    "art/concept/style-test-01-market-town.png",
-    "art/concept/galeborne-base-turnaround.png"
+    "art/references/style-test-01-market-town.png",
+    "art/kit/peoples/galeborne/signatures.png",
+    "art/concept/peoples/galeborne.webp"
   ],
-  "createdAt": "2026-11-02T17:27:44.661Z"
+  "usage": {
+    "input_tokens": 4211,
+    "input_tokens_details": {
+      "image_tokens": 3616,
+      "text_tokens": 595
+    },
+    "output_tokens": 1078,
+    "output_tokens_details": {
+      "image_tokens": 1078,
+      "text_tokens": 0
+    },
+    "total_tokens": 5289
+  },
+  "costUSD": 0.0642,
+  "createdAt": "2026-11-02T19:26:36.607Z"
 }

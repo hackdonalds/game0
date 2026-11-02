@@ -1,5 +1,34 @@
 {
-  "prompt": "Please generate an image. Sheet 6 – RUIN biome TERRAIN MATERIAL sheet, landscape 16:9, same locked hand-painted style and the same layout as the lagoon terrain sheet. On a plain light neutral grey background, four large square hand-painted seamless tileable texture swatches in a row, flat top-down (no perspective, even soft light), each with a neat label underneath: (1) GROUND – rubble field and broken pale ruinstone fragments with moss, grass and dark soil between; (2) PATH – cracked pale ivory-grey ruinstone paving, unnaturally smooth flat precise square slabs, a straight engraved dead dull-teal channel and part of a concentric ring motif, grass in the joints; (3) CLIFF / LIP – pale ruinstone strata sheared clean like cut glass over ordinary grey rock, cracks, a little ivy; (4) UNDERSIDE – grey rock with pale ruinstone bands and thin dead dark-teal channel lines running down it, dust streaks. Painted brushwork like a stylized MMORPG texture, chunky readable forms, muted saturation, cool teal shadow tones, no text inside the swatches.",
-  "chat_url": "https://chatgpt.com/c/6ae8907b-de80-83ed-9c65-6300f1b7af85",
-  "tool": "chatgpt.com"
+  "prompt": "Please generate an image. Locked painterly style: hand-painted stylized game art, chunky readable shapes, detail painted not modelled, mid-level detail, softer muted colours with gentle saturation, epic and luminous, never grim. The palette's warm gold and cool teal are painted into the surfaces, but the light is flat, even studio light: no strong key light, no cast shadows, no rim light. Use the attached images only as reference as described: the first attachment is always the style reference for palette and brushwork; later attachments are the approved designs to keep. Material swatch sheet, wide landscape 16:9, plain light neutral grey background. Square swatch tiles in a neat grid, evenly spaced, each flat-on (orthographic, no perspective, no horizon, no shadows from outside the tile), a seamless tileable painterly texture with edges that would wrap, broad clumped brushwork, no tiny high-frequency noise, a short neat label under each. Swatches: Redraw of the attached reference sheet to the current spec: keep exactly the same swatches, their order and their materials. Ruin biome terrain, four square tiles in one row, labels exactly as written in quotes: \"Ground\" (rubble of broken pale ruinstone fragments with moss, grass and dark soil between); \"Path\" (cracked pale ivory-grey ruinstone paving of precise square slabs in a regular grid, grass in the joints, faint straight dull-teal engraved channel lines following the slab joints); \"Cliff / Lip\" (a flat wall face seen exactly straight on, as if photographed square to the wall: no top surface, no visible block tops or sides, no ledge, no depth, no overhang: pale ruinstone strata sheared clean like cut glass over ordinary grey rock, cracks, a little ivy); \"Underside\" (grey rock with pale ruinstone bands and thin dead dark-teal channel lines running down the full height). Each tile is one evenly spread texture filling the whole square edge to edge, seen straight on with no perspective, no horizon, no focal point, no border, no single path or band crossing it and no light gradient, so its left edge would wrap onto its right and its top onto its bottom. Title at the top: \"Ruin terrain\".",
+  "kit": {
+    "type": "materials",
+    "subject": "Redraw of the attached reference sheet to the current spec: keep exactly the same swatches, their order and their materials. Ruin biome terrain, four square tiles in one row, labels exactly as written in quotes: \"Ground\" (rubble of broken pale ruinstone fragments with moss, grass and dark soil between); \"Path\" (cracked pale ivory-grey ruinstone paving of precise square slabs in a regular grid, grass in the joints, faint straight dull-teal engraved channel lines following the slab joints); \"Cliff / Lip\" (a flat wall face seen exactly straight on, as if photographed square to the wall: no top surface, no visible block tops or sides, no ledge, no depth, no overhang: pale ruinstone strata sheared clean like cut glass over ordinary grey rock, cracks, a little ivy); \"Underside\" (grey rock with pale ruinstone bands and thin dead dark-teal channel lines running down the full height). Each tile is one evenly spread texture filling the whole square edge to edge, seen straight on with no perspective, no horizon, no focal point, no border, no single path or band crossing it and no light gradient, so its left edge would wrap onto its right and its top onto its bottom",
+    "figure": 1.8,
+    "title": "Ruin terrain"
+  },
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x864",
+  "aspect": "16:9",
+  "quality": "high",
+  "refs": [
+    "art/references/style-test-01-market-town.png",
+    "art/kit/biomes/ruin/terrain.png"
+  ],
+  "usage": {
+    "input_tokens": 3302,
+    "input_tokens_details": {
+      "image_tokens": 2804,
+      "text_tokens": 498
+    },
+    "output_tokens": 1078,
+    "output_tokens_details": {
+      "image_tokens": 1078,
+      "text_tokens": 0
+    },
+    "total_tokens": 4380
+  },
+  "costUSD": 0.0573,
+  "createdAt": "2026-11-02T19:33:56.087Z",
+  "refsNote": "Paths under art/ name the previous version of that file in git history (the sheet this one redraws)."
 }

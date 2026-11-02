@@ -1,10 +1,33 @@
 {
-  "prompt": "Please generate an image. Locked painterly style (hand-painted, chunky readable shapes, detail painted not modelled, warm golden key light, cool teal shadows, muted saturation, epic and luminous, never grim). Use the attached image(s) only as reference as described; the first attachment is always the style reference for palette, rendering and light. Armour concept sheet, landscape 16:9, plain light neutral grey background, small neat labels. One neutral humanoid mannequin shown eight times in a row: LIGHT ARMOUR in boar hide, goat leather, drake leather and skyray leather; HEAVY ARMOUR in copper, iron, skysteel and relic metal. Each tier visibly richer than the last, but grounded and handmade. Show a small detail swatch of each material under each figure.",
-  "model": "openai/gpt-image-2.5-sunburst",
+  "prompt": "Please generate an image. Locked painterly style: hand-painted stylized game art, chunky readable shapes, detail painted not modelled, mid-level detail, softer muted colours with gentle saturation, epic and luminous, never grim. The palette's warm gold and cool teal are painted into the surfaces, but the light is flat, even studio light: no strong key light, no cast shadows, no rim light. Use the attached images only as reference as described: the first attachment is always the style reference for palette and brushwork; later attachments are the approved designs to keep. Game-asset reference sheet for 3D modelling, wide landscape 16:9. Plain light neutral grey background, no scene, no sky, no clouds, no floating rock, no ground plane, a soft contact shadow only. Every piece fully isolated with clear space around it, nothing overlapping, nothing touching the edge, arranged in tidy rows, each with a small neat hand-lettered label underneath. GEAR AND PROPS sheet: Redraw of the attached reference sheet to the current spec: keep exactly the same design, items, their order and names. One neutral faceless humanoid mannequin, 1.8 m tall, shown eight times in one row, each in the armour from the second attached image, in a neutral standing pose with arms slightly away from the body, front three-quarter view, with clear space between figures. Left group headed \"Light armour\": \"Boar hide\" (shaggy brown hide and fur), \"Goat leather\" (tan leather with a cream hood), \"Drake leather\" (red-brown scale leather), \"Skyray leather\" (pale shimmering leather with a teal hood). Right group headed \"Heavy armour\": \"Copper\" (warm copper plate with a red tabard), \"Iron\" (grey iron plate with chain mail and a blue tabard), \"Skysteel\" (pale faintly blue steel with a blue tabard), \"Relic metal\" (gold-and-pale old-world plate with a gold crest ring on the helm and a red tabard). Each tier visibly richer than the last but grounded and handmade, with thick chunky plates and no thin spikes. Under each figure its name label and one small square swatch of its material. Only these eight figures and swatches, no description text. Even flat light, no rim light, no shine highlights. Each item alone in three-quarter front view, in rows by family or tier, with thick chunky proportions: thick blades, solid rope, chunky grips, no thin parts. A plain neutral 1.8 m human silhouette labelled \"1.8 m\" stands on the sheet for scale, with everything at true scale to it. Title at the top: \"Shared gear: armour tiers\".",
+  "kit": {
+    "type": "gear",
+    "subject": "Redraw of the attached reference sheet to the current spec: keep exactly the same design, items, their order and names. One neutral faceless humanoid mannequin, 1.8 m tall, shown eight times in one row, each in the armour from the second attached image, in a neutral standing pose with arms slightly away from the body, front three-quarter view, with clear space between figures. Left group headed \"Light armour\": \"Boar hide\" (shaggy brown hide and fur), \"Goat leather\" (tan leather with a cream hood), \"Drake leather\" (red-brown scale leather), \"Skyray leather\" (pale shimmering leather with a teal hood). Right group headed \"Heavy armour\": \"Copper\" (warm copper plate with a red tabard), \"Iron\" (grey iron plate with chain mail and a blue tabard), \"Skysteel\" (pale faintly blue steel with a blue tabard), \"Relic metal\" (gold-and-pale old-world plate with a gold crest ring on the helm and a red tabard). Each tier visibly richer than the last but grounded and handmade, with thick chunky plates and no thin spikes. Under each figure its name label and one small square swatch of its material. Only these eight figures and swatches, no description text. Even flat light, no rim light, no shine highlights",
+    "figure": 1.8,
+    "title": "Shared gear: armour tiers"
+  },
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x864",
   "aspect": "16:9",
   "quality": "high",
   "refs": [
-    "art/concept/style-test-01-market-town.png"
+    "art/references/style-test-01-market-town.png",
+    "art/kit/peoples/gear/armour-tiers.png"
   ],
-  "createdAt": "2026-11-02T17:29:02.774Z"
+  "usage": {
+    "input_tokens": 3184,
+    "input_tokens_details": {
+      "image_tokens": 2592,
+      "text_tokens": 592
+    },
+    "output_tokens": 1078,
+    "output_tokens_details": {
+      "image_tokens": 1078,
+      "text_tokens": 0
+    },
+    "total_tokens": 4262
+  },
+  "costUSD": 0.056,
+  "createdAt": "2026-11-02T19:30:35.847Z"
 }

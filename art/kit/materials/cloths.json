@@ -1,10 +1,34 @@
 {
-  "prompt": "Please generate an image. Locked painterly style (hand-painted, chunky readable shapes, detail painted not modelled, warm golden key light, cool teal shadows, muted saturation, epic and luminous, never grim). Use the attached image(s) only as reference as described; the first attachment is always the style reference for palette, rendering and light. Game-asset concept sheet, landscape 16:9, plain light neutral grey background, no scene, no sky, soft contact shadow only, every piece isolated with clear space and a small neat label underneath. MATERIALS sheet – CLOTHS, four tiers from left to right, tier 1 to tier 4: Slowfield linen bolts and flax; mossweave soft green-grey wool from moss grazers; glimmersilk softly glowing woven lagoon reeds; cloudfleece drifting airy strands from cloud whales. For each tier show the raw resource, the refined form, a small crafted item made from it, and a square seamless texture swatch.",
-  "model": "openai/gpt-image-2.5-sunburst",
+  "prompt": "Please generate an image. Locked painterly style: hand-painted stylized game art, chunky readable shapes, detail painted not modelled, mid-level detail, softer muted colours with gentle saturation, epic and luminous, never grim. The palette's warm gold and cool teal are painted into the surfaces, but the light is flat, even studio light: no strong key light, no cast shadows, no rim light. Use the attached images only as reference as described: the first attachment is always the style reference for palette and brushwork; later attachments are the approved designs to keep. Game-asset reference sheet for 3D modelling, wide landscape 16:9. Plain light neutral grey background, no scene, no sky, no clouds, no floating rock, no ground plane, a soft contact shadow only. Every piece fully isolated with clear space around it, nothing overlapping, nothing touching the edge, arranged in tidy rows, each with a small neat hand-lettered label underneath. GEAR AND PROPS sheet: Redraw of the attached reference sheet to the current spec: keep the same items and names. For this materials kit a new layout replaces the old one: four rows, one per tier, top to bottom, each row with its tier label at the left; every row has four columns, left to right: the resource node as found in the world, the raw piece, the refined piece, and one flat-on square seamless texture swatch (orthographic, no perspective). The four tiers are the same meshes with a different colour and trim mask, so draw the node, the raw piece and the refined piece with matching shapes in every row, changing only colour, surface and glow. Keep the same tiers and look as the attached sheet. Row 1 \"Tier 1 Slowfield linen\": \"Flax plants\", a knee-high clump of golden flax as it grows in a field (gathered with Herbalism); \"Flax bundle\", golden flax stalks tied in a bundle; \"Linen bolt\", a thick rolled bolt of off-white linen; \"Linen texture\". Row 2 \"Tier 2 Mossweave\": \"Moss grazer fleece\", a fresh-shorn heap of thick green-grey wool tangled with tiny moss sprigs (shorn from a calm moss grazer; no animal drawn), the same clump silhouette as the flax plants; \"Mossweave yarn\", a bundle of spun green-grey wool in the same bundle shape; \"Mossweave bolt\", soft green-grey; \"Mossweave texture\". Row 3 \"Tier 3 Glimmersilk\": \"Glimmerreed\", the same clump shape as glowing teal lagoon reeds; \"Glimmerreed bundle\", tied reeds with a soft teal glow; \"Glimmersilk bolt\", shimmering cloth that glows softly teal; \"Glimmersilk texture\". Row 4 \"Tier 4 Cloudfleece\": \"Cloudfleece drift\", the same clump silhouette as a drifting mass of long pale luminous white strands, floating just above the ground (netted from the wake of cloud whales; no whale drawn); \"Cloudfleece bundle\", the strands gathered and tied in the same bundle shape; \"Cloudfleece bolt\", pale airy cloth; \"Cloudfleece texture\". No crafted items, no animals, no extra pieces. Glow only on glimmersilk and a faint glow on cloudfleece. Nodes stand at true scale to the scale figure (knee-high); bundles and bolts about 1 m long. Each item alone in three-quarter front view, in rows by family or tier, with thick chunky proportions: thick blades, solid rope, chunky grips, no thin parts. A plain neutral 1.8 m human silhouette labelled \"1.8 m\" stands on the sheet for scale, with everything at true scale to it. Title at the top: \"Materials kit: cloths\".",
+  "kit": {
+    "type": "gear",
+    "subject": "Redraw of the attached reference sheet to the current spec: keep the same items and names. For this materials kit a new layout replaces the old one: four rows, one per tier, top to bottom, each row with its tier label at the left; every row has four columns, left to right: the resource node as found in the world, the raw piece, the refined piece, and one flat-on square seamless texture swatch (orthographic, no perspective). The four tiers are the same meshes with a different colour and trim mask, so draw the node, the raw piece and the refined piece with matching shapes in every row, changing only colour, surface and glow. Keep the same tiers and look as the attached sheet. Row 1 \"Tier 1 Slowfield linen\": \"Flax plants\", a knee-high clump of golden flax as it grows in a field (gathered with Herbalism); \"Flax bundle\", golden flax stalks tied in a bundle; \"Linen bolt\", a thick rolled bolt of off-white linen; \"Linen texture\". Row 2 \"Tier 2 Mossweave\": \"Moss grazer fleece\", a fresh-shorn heap of thick green-grey wool tangled with tiny moss sprigs (shorn from a calm moss grazer; no animal drawn), the same clump silhouette as the flax plants; \"Mossweave yarn\", a bundle of spun green-grey wool in the same bundle shape; \"Mossweave bolt\", soft green-grey; \"Mossweave texture\". Row 3 \"Tier 3 Glimmersilk\": \"Glimmerreed\", the same clump shape as glowing teal lagoon reeds; \"Glimmerreed bundle\", tied reeds with a soft teal glow; \"Glimmersilk bolt\", shimmering cloth that glows softly teal; \"Glimmersilk texture\". Row 4 \"Tier 4 Cloudfleece\": \"Cloudfleece drift\", the same clump silhouette as a drifting mass of long pale luminous white strands, floating just above the ground (netted from the wake of cloud whales; no whale drawn); \"Cloudfleece bundle\", the strands gathered and tied in the same bundle shape; \"Cloudfleece bolt\", pale airy cloth; \"Cloudfleece texture\". No crafted items, no animals, no extra pieces. Glow only on glimmersilk and a faint glow on cloudfleece. Nodes stand at true scale to the scale figure (knee-high); bundles and bolts about 1 m long",
+    "figure": 1.8,
+    "title": "Materials kit: cloths"
+  },
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x864",
   "aspect": "16:9",
   "quality": "high",
   "refs": [
-    "art/concept/style-test-01-market-town.png"
+    "art/references/style-test-01-market-town.png",
+    "art/kit/materials/cloths.png"
   ],
-  "createdAt": "2026-11-02T17:30:11.146Z"
+  "usage": {
+    "input_tokens": 3413,
+    "input_tokens_details": {
+      "image_tokens": 2592,
+      "text_tokens": 821
+    },
+    "output_tokens": 1078,
+    "output_tokens_details": {
+      "image_tokens": 1078,
+      "text_tokens": 0
+    },
+    "total_tokens": 4491
+  },
+  "costUSD": 0.0572,
+  "createdAt": "2026-11-02T19:28:31.034Z",
+  "refsNote": "Paths under art/ name the previous version of that file in git history (the sheet this one redraws)."
 }

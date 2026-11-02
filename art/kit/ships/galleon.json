@@ -1,8 +1,33 @@
 {
-  "prompt": "Please generate an image. Locked painterly style (hand-painted, chunky readable shapes, detail painted not modelled, warm golden key light, cool teal shadows, muted saturation, epic and luminous, never grim). Use the attached image(s) only as reference as described; the first attachment is always the style reference for palette, rendering and light. Game-asset concept sheet, landscape 16:9, plain light neutral grey background, no scene, no sky, soft contact shadow only, every piece isolated with clear space and a small neat label underneath. Subject: the GALLEON, the largest wooden sky sailship, up to 100 aboard; a helmsman steers while a sailmaster works the sails. Pure high fantasy: no engines, balloons or propellers. Three masts with square sails and a fore-and-aft mizzen, canvas with woven glowing teal enchantment patterns; a broad keel-less hull with wide side-fins; a cluster of teal-crystal lift charms under the bow and stern; terracotta-red trim and gold fittings; high sterncastle with helm and a separate sail-master's station by the mainmast; cargo hold hatches, rope ladders, ship's boats hanging off the side. Views: side profile, top-down deck plan, front view, three-quarter view under sail, and detail callouts of helm, sailmaster station, lift-charm cluster, cargo hold. Include a simple 1.8 m human silhouette for scale.",
+  "prompt": "Please generate an image. Locked painterly style: hand-painted stylized game art, chunky readable shapes, detail painted not modelled, mid-level detail, softer muted colours with gentle saturation, epic and luminous, never grim. The palette's warm gold and cool teal are painted into the surfaces, but the light is flat, even studio light: no strong key light, no cast shadows, no rim light. Use the attached images only as reference as described: the first attachment is always the style reference for palette and brushwork; later attachments are the approved designs to keep. Game-asset reference sheet for 3D modelling, wide landscape 16:9. Plain light neutral grey background, no scene, no sky, no clouds, no floating rock, no ground plane, a soft contact shadow only. Every piece fully isolated with clear space around it, nothing overlapping, nothing touching the edge, arranged in tidy rows, each with a small neat hand-lettered label underneath. TURNAROUND sheet: Redraw of the attached reference sheet to the current spec: keep exactly the same design, items, their order and names. The GALLEON, the largest wooden sky sailship, up to 100 aboard; a helmsman steers while a sailmaster works the sails; about 40 m long, so the 1.8 m figure is tiny beside it; pure high fantasy, no engines, no balloons, no propellers. The same ship as the second attached image: three masts with square sails and a fore-and-aft mizzen, cream canvas with woven teal borders and teal tree emblems, teal pennants, a broad keel-less hull with terracotta-red trim and gold fittings, wide teal side-fins, clusters of teal-crystal lift charms under the bow and stern, a high sterncastle with the helm, ship's boats hanging off the side. For a ship, the turnaround views are: \"Side Profile\" large at the top left, \"Top-Down Deck Plan\" at the top right, \"Front View\" at the bottom left, \"Three-Quarter View (Under Sail)\" bottom centre; at the right, detail callouts labelled \"Helm (sterncastle)\", \"Sailmaster Station (at mainmast)\", \"Lift-Charm Cluster (bow / stern)\", \"Cargo Hold (deck hatch)\", each as an isolated piece; plus one small square swatch of the hull planking labelled \"Hull planks\", and the scale figure labelled \"Human scale (1.8 m)\" standing beside the side profile. No people on board. Rigging drawn as a few thick solid ropes, not many thin lines. Even flat light, no rim light, no cast shadows on the hull. Keep the exact design in the second attachment. Show front, side and back views in a neutral standing pose with limbs apart and clear of the body, one three-quarter action pose, close-up callouts of the head and of the hands, feet or claws, and one square texture swatch of its skin, fur, feathers or scale. A plain neutral 1.8 m human silhouette labelled \"1.8 m\" stands on the sheet for scale, with everything at true scale to it. Place it beside the side view, at TRUE scale to the stated size. Title at the top: \"The Galleon\".",
+  "kit": {
+    "type": "turnaround",
+    "subject": "Redraw of the attached reference sheet to the current spec: keep exactly the same design, items, their order and names. The GALLEON, the largest wooden sky sailship, up to 100 aboard; a helmsman steers while a sailmaster works the sails; about 40 m long, so the 1.8 m figure is tiny beside it; pure high fantasy, no engines, no balloons, no propellers. The same ship as the second attached image: three masts with square sails and a fore-and-aft mizzen, cream canvas with woven teal borders and teal tree emblems, teal pennants, a broad keel-less hull with terracotta-red trim and gold fittings, wide teal side-fins, clusters of teal-crystal lift charms under the bow and stern, a high sterncastle with the helm, ship's boats hanging off the side. For a ship, the turnaround views are: \"Side Profile\" large at the top left, \"Top-Down Deck Plan\" at the top right, \"Front View\" at the bottom left, \"Three-Quarter View (Under Sail)\" bottom centre; at the right, detail callouts labelled \"Helm (sterncastle)\", \"Sailmaster Station (at mainmast)\", \"Lift-Charm Cluster (bow / stern)\", \"Cargo Hold (deck hatch)\", each as an isolated piece; plus one small square swatch of the hull planking labelled \"Hull planks\", and the scale figure labelled \"Human scale (1.8 m)\" standing beside the side profile. No people on board. Rigging drawn as a few thick solid ropes, not many thin lines. Even flat light, no rim light, no cast shadows on the hull",
+    "figure": 1.8,
+    "title": "The Galleon"
+  },
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x864",
+  "aspect": "16:9",
+  "quality": "high",
   "refs": [
-    "art/concept/style-test-03-airship.png"
+    "art/references/style-test-01-market-town.png",
+    "art/kit/ships/galleon.png"
   ],
-  "chat_url": "https://chatgpt.com/c/6ae8bd0c-ec38-83ed-bec0-8d4177dd5c6f",
-  "tool": "chatgpt.com"
+  "usage": {
+    "input_tokens": 3508,
+    "input_tokens_details": {
+      "image_tokens": 2804,
+      "text_tokens": 704
+    },
+    "output_tokens": 1078,
+    "output_tokens_details": {
+      "image_tokens": 1078,
+      "text_tokens": 0
+    },
+    "total_tokens": 4586
+  },
+  "costUSD": 0.0583,
+  "createdAt": "2026-11-02T19:33:46.756Z"
 }

@@ -1,10 +1,32 @@
 {
-  "prompt": "Character base-body turnaround sheet for 3D modeling and rigging: the same Galeborne shown three times side by side, evenly spaced with wide empty gaps, not overlapping: front view, side view, back view. Rigging A-pose: standing straight, arms straight and angled 45 degrees down and out from the body with a clear gap between each arm and the torso all the way to the armpit, elbows straight, hands open and flat with palms facing forward, all five fingers spread wide apart with a visible gap between every finger, the thumb clearly separated and pointing away from the palm, slightly oversized hands with thick fingers, legs straight with feet shoulder-width apart and a clear gap between the thighs, feet flat pointing forward, head facing forward. Tall slender light-boned near-human, same face as the reference, sky-pale bluish-white skin, bare face, bare hands, bare shins and bare feet clearly visible. A slate-blue and white feather crest stands up from the head. Short slate-blue and white feathers grow on the outside of the shoulders and upper arms only, lying flat and close to the arm like a short feathered sleeve, never hanging below the elbow and never touching the torso, so the gap under each arm stays clear. Wearing only a plain fitted sleeveless top and plain mid-thigh shorts in deep indigo cloth, no belts, no straps, no bags, no jewellery, no weapons, no loose cloth. Full body, head to feet fully visible. Hand-painted stylized game art, mid-level detail, chunky readable shapes, softer muted colours. Plain light grey background, even soft lighting, no cast shadows, no text, no labels.",
-  "model": "openai/gpt-image-2.5-sunburst",
+  "prompt": "Character base-body turnaround sheet for 3D modeling and rigging: the same character shown three times side by side, evenly spaced with wide gaps, not overlapping: front view, side view, back view. The character: Redraw of the attached reference sheet to the current spec: keep exactly the same design, items, their order and names. Items: one Galeborne base body shown as front view, side view and back view, left to right, identical to the second attached image in body proportions, face, crest and feathers; the first attached image gives only palette and brushwork. A tall, slender, light-boned near-human, 1.9 m tall, long legs and narrow shoulders, sky-pale bluish-white skin, small pointed ears, bare face, bare forearms, bare hands, bare shins and bare feet clearly visible. A spiky crest of slate-blue and white feathers stands up from the head instead of hair. Short slate-blue and white feathers grow on the outside of the shoulders and upper arms only, lying flat and close to the arm like a short feathered sleeve, never hanging below the elbow and never touching the torso, so the gap under each arm stays clear. The undershirt is a plain fitted sleeveless top and the short trousers are plain mid-thigh shorts, both in deep indigo cloth. Drawn without the long feathered mantle, cloak, harness or satchel, which are swappable parts. Flat even light with no rim light and no shading gradients on the background. Rigging A-pose: standing straight, arms straight and angled 45 degrees down and out from the body with a clear gap between each arm and the torso all the way to the armpit, elbows straight, hands open and flat with palms facing forward, all five fingers spread wide apart with a visible gap between every finger, the thumb clearly separated and pointing away from the palm, slightly oversized hands with thick fingers, legs straight with feet shoulder-width apart and a clear gap between the thighs, feet flat pointing forward, head facing forward. Hair, beard and growths stay clear of the armpits and the gap between the legs and never join an arm to the body. Wearing only simple plain fitted undershirt and short trousers, no harness, no belts, no tools, no accessories, no cape, no tail. Full body, fully visible. Hand-painted stylized game art, mid-level detail, chunky readable shapes, softer muted colours. Plain light grey background, even soft lighting, no cast shadows, no text, no labels.",
+  "kit": {
+    "type": "base-body",
+    "subject": "Redraw of the attached reference sheet to the current spec: keep exactly the same design, items, their order and names. Items: one Galeborne base body shown as front view, side view and back view, left to right, identical to the second attached image in body proportions, face, crest and feathers; the first attached image gives only palette and brushwork. A tall, slender, light-boned near-human, 1.9 m tall, long legs and narrow shoulders, sky-pale bluish-white skin, small pointed ears, bare face, bare forearms, bare hands, bare shins and bare feet clearly visible. A spiky crest of slate-blue and white feathers stands up from the head instead of hair. Short slate-blue and white feathers grow on the outside of the shoulders and upper arms only, lying flat and close to the arm like a short feathered sleeve, never hanging below the elbow and never touching the torso, so the gap under each arm stays clear. The undershirt is a plain fitted sleeveless top and the short trousers are plain mid-thigh shorts, both in deep indigo cloth. Drawn without the long feathered mantle, cloak, harness or satchel, which are swappable parts. Flat even light with no rim light and no shading gradients on the background",
+    "figure": 1.8
+  },
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1792x768",
   "aspect": "21:9",
   "quality": "high",
   "refs": [
-    "art/handbook/peoples/galeborne.webp"
+    "art/references/style-test-01-market-town.png",
+    "art/kit/peoples/galeborne/base-turnaround.png"
   ],
-  "createdAt": "2026-11-02T00:04:59.625Z"
+  "usage": {
+    "input_tokens": 2853,
+    "input_tokens_details": {
+      "image_tokens": 2304,
+      "text_tokens": 549
+    },
+    "output_tokens": 851,
+    "output_tokens_details": {
+      "image_tokens": 851,
+      "text_tokens": 0
+    },
+    "total_tokens": 3704
+  },
+  "costUSD": 0.0467,
+  "createdAt": "2026-11-02T19:25:32.219Z"
 }

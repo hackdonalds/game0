@@ -1,10 +1,32 @@
 {
-  "prompt": "Character base-body turnaround sheet for 3D modeling and rigging: the same Rootwarden shown three times side by side, evenly spaced with wide empty gaps, not overlapping: front view, side view, back view. Rigging A-pose: standing straight, arms straight and angled 45 degrees down and out from the body with a clear gap between each arm and the torso all the way to the armpit, elbows straight, hands open and flat with palms facing forward, all five fingers spread wide apart with a visible gap between every finger, the thumb clearly separated and pointing away from the palm, slightly oversized hands with thick fingers, legs straight with feet shoulder-width apart and a clear gap between the thighs, feet flat pointing forward, head facing forward. Broad stocky humanoid with a clear human body plan, two arms, two legs, five fingers on each hand, the same face as the reference. Skin is bark-grained wood in warm oak brown, grain painted on the skin, smooth body silhouette. Bright green moss and lichen with small white flowers grow as thick raised clumps on top of both shoulders and on the crown of the head, and a full leafy green foliage beard that ends above the chest, all standing out from the body and never joining an arm to the body. Bare wooden skin clearly visible on the face, forearms, hands, shins and bare feet. Wearing only a plain fitted sleeveless top and plain fitted mid-thigh shorts in deep slate-blue cloth, no armour, no pauldrons, no gems, no crystals, no belts, no straps, no bags, no jewellery, no weapons, no loose cloth, no roots on the body. Full body, head to feet fully visible. Hand-painted stylized game art, mid-level detail, chunky readable shapes, softer muted colours. Plain light grey background, even soft lighting, no cast shadows, no text, no labels.",
-  "model": "openai/gpt-image-2.5-sunburst",
+  "prompt": "Character base-body turnaround sheet for 3D modeling and rigging: the same character shown three times side by side, evenly spaced with wide gaps, not overlapping: front view, side view, back view. The character: Redraw of the attached reference sheet to the current spec: keep exactly the same design, items, their order and names. Items: one Rootwarden base body shown as front view, side view and back view, left to right, identical to the second attached image in body proportions, face, beard and growth; the first attached image gives only palette and brushwork, so render it as hand-painted stylized game art rather than a glossy 3D render. A broad, stocky humanoid 1.6 m tall with a clear human body plan, two arms, two legs, five thick fingers on each hand. Skin is bark-grained wood in warm oak brown, grain painted on the skin, smooth body silhouette, a few thin painted moss streaks on the shins. Bright green moss and lichen with small white flowers grow as thick raised clumps on top of both shoulders and on the crown of the head, with small twig sprigs on the crown, and a full leafy green foliage beard that ends above the chest, all standing out from the body and never joining an arm to the body. Bare wooden skin clearly visible on the face, forearms, hands, shins and bare feet. The undershirt is a plain fitted sleeveless top and the short trousers are plain fitted mid-thigh shorts, both deep slate-blue cloth. Drawn without stone shoulder plates, crystal inlays, roots, belts or any gear, which are swappable parts. Flat even light with no rim light. Rigging A-pose: standing straight, arms straight and angled 45 degrees down and out from the body with a clear gap between each arm and the torso all the way to the armpit, elbows straight, hands open and flat with palms facing forward, all five fingers spread wide apart with a visible gap between every finger, the thumb clearly separated and pointing away from the palm, slightly oversized hands with thick fingers, legs straight with feet shoulder-width apart and a clear gap between the thighs, feet flat pointing forward, head facing forward. Hair, beard and growths stay clear of the armpits and the gap between the legs and never join an arm to the body. Wearing only simple plain fitted undershirt and short trousers, no harness, no belts, no tools, no accessories, no cape, no tail. Full body, fully visible. Hand-painted stylized game art, mid-level detail, chunky readable shapes, softer muted colours. Plain light grey background, even soft lighting, no cast shadows, no text, no labels.",
+  "kit": {
+    "type": "base-body",
+    "subject": "Redraw of the attached reference sheet to the current spec: keep exactly the same design, items, their order and names. Items: one Rootwarden base body shown as front view, side view and back view, left to right, identical to the second attached image in body proportions, face, beard and growth; the first attached image gives only palette and brushwork, so render it as hand-painted stylized game art rather than a glossy 3D render. A broad, stocky humanoid 1.6 m tall with a clear human body plan, two arms, two legs, five thick fingers on each hand. Skin is bark-grained wood in warm oak brown, grain painted on the skin, smooth body silhouette, a few thin painted moss streaks on the shins. Bright green moss and lichen with small white flowers grow as thick raised clumps on top of both shoulders and on the crown of the head, with small twig sprigs on the crown, and a full leafy green foliage beard that ends above the chest, all standing out from the body and never joining an arm to the body. Bare wooden skin clearly visible on the face, forearms, hands, shins and bare feet. The undershirt is a plain fitted sleeveless top and the short trousers are plain fitted mid-thigh shorts, both deep slate-blue cloth. Drawn without stone shoulder plates, crystal inlays, roots, belts or any gear, which are swappable parts. Flat even light with no rim light",
+    "figure": 1.8
+  },
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1792x768",
   "aspect": "21:9",
   "quality": "high",
   "refs": [
-    "art/handbook/peoples/rootwarden.webp"
+    "art/references/style-test-01-market-town.png",
+    "art/kit/peoples/rootwarden/base-turnaround.png"
   ],
-  "createdAt": "2026-11-02T00:05:04.824Z"
+  "usage": {
+    "input_tokens": 2892,
+    "input_tokens_details": {
+      "image_tokens": 2304,
+      "text_tokens": 588
+    },
+    "output_tokens": 851,
+    "output_tokens_details": {
+      "image_tokens": 851,
+      "text_tokens": 0
+    },
+    "total_tokens": 3743
+  },
+  "costUSD": 0.0469,
+  "createdAt": "2026-11-02T19:27:40.094Z"
 }

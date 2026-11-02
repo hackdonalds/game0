@@ -1,10 +1,34 @@
 {
-  "prompt": "Please generate an image. Locked painterly style (hand-painted, chunky readable shapes, detail painted not modelled, warm golden key light, cool teal shadows, muted saturation, epic and luminous, never grim). Use the attached image(s) only as reference as described; the first attachment is always the style reference for palette, rendering and light. Game-asset concept sheet, landscape 16:9, plain light neutral grey background, no scene, no sky, soft contact shadow only, every piece isolated with clear space and a small neat label underneath. MATERIALS sheet – METALS, four tiers from left to right, tier 1 to tier 4: copper ore and ingots; iron ore and ingots; skysteel ore that floats slightly above the anvil and its pale ingots; relic metal fragments with dead and live teal glyphs. For each tier show the raw resource, the refined form, a small crafted item made from it, and a square seamless texture swatch.",
-  "model": "openai/gpt-image-2.5-sunburst",
+  "prompt": "Please generate an image. Locked painterly style: hand-painted stylized game art, chunky readable shapes, detail painted not modelled, mid-level detail, softer muted colours with gentle saturation, epic and luminous, never grim. The palette's warm gold and cool teal are painted into the surfaces, but the light is flat, even studio light: no strong key light, no cast shadows, no rim light. Use the attached images only as reference as described: the first attachment is always the style reference for palette and brushwork; later attachments are the approved designs to keep. Game-asset reference sheet for 3D modelling, wide landscape 16:9. Plain light neutral grey background, no scene, no sky, no clouds, no floating rock, no ground plane, a soft contact shadow only. Every piece fully isolated with clear space around it, nothing overlapping, nothing touching the edge, arranged in tidy rows, each with a small neat hand-lettered label underneath. GEAR AND PROPS sheet: Redraw of the attached reference sheet to the current spec: keep the same items and names. For this materials kit a new layout replaces the old one: four rows, one per tier, top to bottom, each row with its tier label at the left (\"Tier 1 Copper\", \"Tier 2 Iron\", \"Tier 3 Skysteel\", \"Tier 4 Relic metal\"); every row has four columns, left to right: the resource node as found in the world, the raw piece, the refined piece, and one flat-on square seamless texture swatch (orthographic, no perspective). The four tiers are the same three meshes with a different colour and trim mask, so draw the node, the raw piece and the refined piece with identical shapes in every row, changing only colour, surface and glow. Row 1: \"Copper ore node\", a waist-high rough grey rock boulder (about 1 m) with bright copper seams streaked green-blue; \"Copper ore\", a rough fist-sized lump (20 cm); \"Copper ingot\", a chunky bar (25 cm); \"Copper texture\". Row 2: \"Iron ore node\", the same boulder with dark grey iron seams; \"Iron ore\"; \"Iron ingot\"; \"Iron texture\". Row 3: \"Skysteel ore node\", the same boulder with pale silver-blue ore and faint teal glow along its veins, floating a finger's width above the ground; \"Skysteel ore\", pale silver-blue, floating slightly; \"Skysteel ingot\", pale and light; \"Skysteel texture\". Row 4: \"Relic metal salvage\", the same boulder silhouette as a broken old-world block of pale precise ruinstone with corroded relic metal set in it (relic metal is salvaged, never mined); \"Relic metal fragment\", corroded with etched glyph channels, some dull and dead, some glowing teal; \"Relic metal ingot\", reforged, with faint gold and teal glyph lines; \"Relic metal texture\". No crafted items, no extra pieces. Nodes stand at true scale to the scale figure; the small raw and refined pieces are drawn enlarged for legibility and carry their real size in the label (for example \"Copper ingot 25 cm\"). Each item alone in three-quarter front view, in rows by family or tier, with thick chunky proportions: thick blades, solid rope, chunky grips, no thin parts. A plain neutral 1.8 m human silhouette labelled \"1.8 m\" stands on the sheet for scale, with everything at true scale to it. Title at the top: \"Materials kit: metals\".",
+  "kit": {
+    "type": "gear",
+    "subject": "Redraw of the attached reference sheet to the current spec: keep the same items and names. For this materials kit a new layout replaces the old one: four rows, one per tier, top to bottom, each row with its tier label at the left (\"Tier 1 Copper\", \"Tier 2 Iron\", \"Tier 3 Skysteel\", \"Tier 4 Relic metal\"); every row has four columns, left to right: the resource node as found in the world, the raw piece, the refined piece, and one flat-on square seamless texture swatch (orthographic, no perspective). The four tiers are the same three meshes with a different colour and trim mask, so draw the node, the raw piece and the refined piece with identical shapes in every row, changing only colour, surface and glow. Row 1: \"Copper ore node\", a waist-high rough grey rock boulder (about 1 m) with bright copper seams streaked green-blue; \"Copper ore\", a rough fist-sized lump (20 cm); \"Copper ingot\", a chunky bar (25 cm); \"Copper texture\". Row 2: \"Iron ore node\", the same boulder with dark grey iron seams; \"Iron ore\"; \"Iron ingot\"; \"Iron texture\". Row 3: \"Skysteel ore node\", the same boulder with pale silver-blue ore and faint teal glow along its veins, floating a finger's width above the ground; \"Skysteel ore\", pale silver-blue, floating slightly; \"Skysteel ingot\", pale and light; \"Skysteel texture\". Row 4: \"Relic metal salvage\", the same boulder silhouette as a broken old-world block of pale precise ruinstone with corroded relic metal set in it (relic metal is salvaged, never mined); \"Relic metal fragment\", corroded with etched glyph channels, some dull and dead, some glowing teal; \"Relic metal ingot\", reforged, with faint gold and teal glyph lines; \"Relic metal texture\". No crafted items, no extra pieces. Nodes stand at true scale to the scale figure; the small raw and refined pieces are drawn enlarged for legibility and carry their real size in the label (for example \"Copper ingot 25 cm\")",
+    "figure": 1.8,
+    "title": "Materials kit: metals"
+  },
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x864",
   "aspect": "16:9",
   "quality": "high",
   "refs": [
-    "art/concept/style-test-01-market-town.png"
+    "art/references/style-test-01-market-town.png",
+    "art/kit/materials/metals.png"
   ],
-  "createdAt": "2026-11-02T17:29:34.193Z"
+  "usage": {
+    "input_tokens": 3366,
+    "input_tokens_details": {
+      "image_tokens": 2592,
+      "text_tokens": 774
+    },
+    "output_tokens": 1078,
+    "output_tokens_details": {
+      "image_tokens": 1078,
+      "text_tokens": 0
+    },
+    "total_tokens": 4444
+  },
+  "costUSD": 0.0569,
+  "createdAt": "2026-11-02T19:25:13.194Z",
+  "refsNote": "Paths under art/ name the previous version of that file in git history (the sheet this one redraws)."
 }

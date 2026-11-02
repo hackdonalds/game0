@@ -1,5 +1,34 @@
 {
-  "prompt": "Attached: the first three images (market town, airship, floating isle with world tree) are the LOCKED rendering style for my game, use it for every image in this chat: stylized painterly, hand-painted, soft and luminous, gentle muted saturation, palette moss #4F7A3A, warm gold #E3B45A, teal #2FC4B2 glow, deep teal #0E5A57, pale stone #F3ECD9. Do not copy their subjects. The other three images (Monolith Gate A/B/C, Ruin Kit A/B/C, Vault Entrance A/B/C) are APPROVED concept sheets for my OLD-WORLD RUINS style; the modular 3D kit I am now designing must be able to rebuild exactly these designs. Keep their ring motif and inset channel language exactly. I will ask for one MODULAR 3D KIT REFERENCE SHEET per message (for a 3D modeller). Rules for EVERY kit sheet, different from the concept sheets: landscape; light neutral grey background with faint module grid lines; each piece isolated on its own (no scenery, no floating island rock, no sky); each piece shown as an ORTHOGRAPHIC FRONT ELEVATION plus a small three-quarter view beside it; a small dimension label under each piece (e.g. \"4 x 6 m\"); one human-height figure silhouette (1.8 m) for scale on every row; consistent flat, even light; softer and less sepia than the concept sheets; painterly hand-painted surfaces, chunky readable forms, detail painted not modelled; nothing photoreal, NOT Greek/Roman, NOT sci-fi (no panels, screws, cables). Kit grid for the old world: 4 m horizontal module, 6 m storey, walls 1 m thick with razor-clean edges; rings in radii 4, 8 and 16 m; ONE standard inset channel width everywhere, channels once glowed teal and are now dead or faintly flickering. Precise, geometric, too-perfect smooth pale stone. Every piece has three variants: intact, broken (razor-clean fracture), and tilted/overgrown (moss and roots). First sheet: KIT-STRUCTURE. Rows of pieces, each with intact and broken variants: monolith blocks 1, 2 and 3 modules tall (4x6, 4x12, 4x18 m); wall slabs 4x6 m: plain, channelled (one inset channel), window slot, doorway; corner block; column (perfect cylinder or square prism, no capital or fluting); floor slabs 4x4 m with channel patterns (straight, cross, ring inlay); steps (one module run); plinth. Handwritten-style labels with piece names. Title \"Old World Kit: Structure\". Please generate the image.",
-  "chat_url": "https://chatgpt.com/c/6ae86f98-7bd8-83eb-a3a7-4d3fd2e1cd0f",
-  "tool": "chatgpt.com"
+  "prompt": "Please generate an image. Locked painterly style: hand-painted stylized game art, chunky readable shapes, detail painted not modelled, mid-level detail, softer muted colours with gentle saturation, epic and luminous, never grim. The palette's warm gold and cool teal are painted into the surfaces, but the light is flat, even studio light: no strong key light, no cast shadows, no rim light. Use the attached images only as reference as described: the first attachment is always the style reference for palette and brushwork; later attachments are the approved designs to keep. Game-asset reference sheet for 3D modelling, wide landscape 16:9. Plain light neutral grey background, no scene, no sky, no clouds, no floating rock, no ground plane, a soft contact shadow only. Every piece fully isolated with clear space around it, nothing overlapping, nothing touching the edge, arranged in tidy rows, each with a small neat hand-lettered label underneath. MODULAR KIT PIECES sheet: Redraw of the attached reference sheet to the current spec: keep exactly the same pieces, their order, names and sizes. Old-world ruin style on a 4 m module and 6 m storey, 1 m thick razor-clean pale stone (#F3ECD9) with one standard 0.5 m inset channel, dead (dark groove) or lit (soft teal glow), a ring motif, a little moss; monumental and exact, not Greek or Roman, not sci-fi. Row 1 monoliths, each in an intact and a broken variant (one diagonal razor-clean fracture), with a vertical inset channel and circle node: \"Monolith (1 Module) 4 x 6 m (intact)\", \"Monolith (1 Module) 4 x 6 m (broken)\", \"Monolith (2 Modules) 4 x 12 m (intact)\", \"Monolith (2 Modules) 4 x 12 m (broken)\", \"Monolith (3 Modules) 4 x 18 m (intact)\", \"Monolith (3 Modules) 4 x 18 m (broken)\". Row 2: \"Wall Slab (Plain) 4 x 6 m\", \"Wall Slab (Channelled) 4 x 6 m\", \"Wall Slab (Window) 4 x 6 m\" (narrow round-topped open slot), \"Wall Slab (Doorway) 4 x 6 m\" (open round-topped doorway framed by a channel), \"Corner Block 4 x 6 m\" (L-shaped, two 1 m arms), \"Column 1 x 6 m (intact)\" (slender square prism with one channel), \"Column 1 x 6 m (broken)\". Row 3: \"Floor Slab (Straight Channel) 4 x 4 m\", \"Floor Slab (Cross Channel) 4 x 4 m\", \"Floor Slab (Ring Inlay) 4 x 4 m\", \"Steps (1 Module Run) 4 x 4 m (rise 1 m)\", \"Plinth 4 x 4 m (height 1 m)\". No other pieces. Show each piece as an orthographic front elevation (no perspective) with a small three-quarter view beside it, on faint module grid lines, with its name and size (for example \"3 x 4 m\") in the label. Thick, solid forms, no thin parts. A plain neutral 1.8 m human silhouette labelled \"1.8 m\" stands on the sheet for scale, with everything at true scale to it. Title at the top: \"Old world kit: structure\".",
+  "kit": {
+    "type": "pieces",
+    "subject": "Redraw of the attached reference sheet to the current spec: keep exactly the same pieces, their order, names and sizes. Old-world ruin style on a 4 m module and 6 m storey, 1 m thick razor-clean pale stone (#F3ECD9) with one standard 0.5 m inset channel, dead (dark groove) or lit (soft teal glow), a ring motif, a little moss; monumental and exact, not Greek or Roman, not sci-fi. Row 1 monoliths, each in an intact and a broken variant (one diagonal razor-clean fracture), with a vertical inset channel and circle node: \"Monolith (1 Module) 4 x 6 m (intact)\", \"Monolith (1 Module) 4 x 6 m (broken)\", \"Monolith (2 Modules) 4 x 12 m (intact)\", \"Monolith (2 Modules) 4 x 12 m (broken)\", \"Monolith (3 Modules) 4 x 18 m (intact)\", \"Monolith (3 Modules) 4 x 18 m (broken)\". Row 2: \"Wall Slab (Plain) 4 x 6 m\", \"Wall Slab (Channelled) 4 x 6 m\", \"Wall Slab (Window) 4 x 6 m\" (narrow round-topped open slot), \"Wall Slab (Doorway) 4 x 6 m\" (open round-topped doorway framed by a channel), \"Corner Block 4 x 6 m\" (L-shaped, two 1 m arms), \"Column 1 x 6 m (intact)\" (slender square prism with one channel), \"Column 1 x 6 m (broken)\". Row 3: \"Floor Slab (Straight Channel) 4 x 4 m\", \"Floor Slab (Cross Channel) 4 x 4 m\", \"Floor Slab (Ring Inlay) 4 x 4 m\", \"Steps (1 Module Run) 4 x 4 m (rise 1 m)\", \"Plinth 4 x 4 m (height 1 m)\". No other pieces",
+    "figure": 1.8,
+    "title": "Old world kit: structure"
+  },
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x864",
+  "aspect": "16:9",
+  "quality": "high",
+  "refs": [
+    "art/references/style-test-01-market-town.png",
+    "art/kit/architecture/old-world/kit-structure.png"
+  ],
+  "usage": {
+    "input_tokens": 3588,
+    "input_tokens_details": {
+      "image_tokens": 2804,
+      "text_tokens": 784
+    },
+    "output_tokens": 1078,
+    "output_tokens_details": {
+      "image_tokens": 1078,
+      "text_tokens": 0
+    },
+    "total_tokens": 4666
+  },
+  "costUSD": 0.0587,
+  "createdAt": "2026-11-02T19:34:08.960Z",
+  "refsNote": "Paths under art/ name the previous version of that file in git history (the sheet this one redraws)."
 }

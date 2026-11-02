@@ -1,0 +1,32 @@
+{
+  "prompt": "Please generate an image. Locked painterly style: hand-painted stylized game art, chunky readable shapes, detail painted not modelled, mid-level detail, softer muted colours with gentle saturation, epic and luminous, never grim. The palette's warm gold and cool teal are painted into the surfaces, but the light is flat, even studio light: no strong key light, no cast shadows, no rim light. Use the attached images only as reference as described: the first attachment is always the style reference for palette and brushwork; later attachments are the approved designs to keep. Game-asset reference sheet for 3D modelling, wide landscape 16:9. Plain light neutral grey background, no scene, no sky, no clouds, no floating rock, no ground plane, a soft contact shadow only. Every piece fully isolated with clear space around it, nothing overlapping, nothing touching the edge, arranged in tidy rows, each with a small neat hand-lettered label underneath. BODY PLAN BASE BODY sheet for a modular creature kit: Sky swimmer body plan (One long flexible spine, fins). Sockets: Head, fins and wings, tail fluke, lights, barnacle and cloud growths. One base body shared by Lantern Eel (3 m long), Skyray (10 m long), Cloud Whale (60 m long) and The Tempest Serpent (300 m long), which stretch or shorten it. It has no legs and does not stand: it floats horizontally above its soft contact shadow. Draw the base about 10 m long nose to tail and 1.2 m deep, so the 1.8 m human figure is small beside it, with a thin dimension line labelled \"10 m\". A plain smooth featureless elongated body: a long tapering flexible torso, no head (a head socket ring at the front), no fins, no wings, no fluke, smooth plain skin; mark socket rings for 1 head (front), 2 fins and wings (pairs along the sides), 3 tail fluke (tail end), 4 lights (small rings along the flank), 5 growths (rings along the back). Front, side, back and top views; front and back views are end-on. Draw one neutral, featureless base body (no head detail, no horns, no ears, no tail tip, smooth plain skin) in a relaxed standing pose with the limbs apart and clear of the body, shown as front, side, back and top views in orthographic projection. Mark every socket where a swappable part attaches as a small numbered ring with a short label (for example \"1 head\", \"2 horns\", \"3 tail\"). Thick, solid forms; even proportions that can be stretched to make larger or smaller species. Only the base body and its socket labels: no parts, heads, horns, coats or tails anywhere on this sheet, because the parts have their own sheet. A plain neutral 1.8 m human silhouette labelled \"1.8 m\" stands on the sheet for scale, with everything at true scale to it. Title at the top: \"Body plan: sky swimmer\".",
+  "kit": {
+    "type": "body-plan",
+    "subject": "Sky swimmer body plan (One long flexible spine, fins). Sockets: Head, fins and wings, tail fluke, lights, barnacle and cloud growths. One base body shared by Lantern Eel (3 m long), Skyray (10 m long), Cloud Whale (60 m long) and The Tempest Serpent (300 m long), which stretch or shorten it. It has no legs and does not stand: it floats horizontally above its soft contact shadow. Draw the base about 10 m long nose to tail and 1.2 m deep, so the 1.8 m human figure is small beside it, with a thin dimension line labelled \"10 m\". A plain smooth featureless elongated body: a long tapering flexible torso, no head (a head socket ring at the front), no fins, no wings, no fluke, smooth plain skin; mark socket rings for 1 head (front), 2 fins and wings (pairs along the sides), 3 tail fluke (tail end), 4 lights (small rings along the flank), 5 growths (rings along the back). Front, side, back and top views; front and back views are end-on",
+    "figure": 1.8,
+    "title": "Body plan: sky swimmer"
+  },
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x864",
+  "aspect": "16:9",
+  "quality": "high",
+  "refs": [
+    "art/references/style-test-01-market-town.png"
+  ],
+  "usage": {
+    "input_tokens": 1950,
+    "input_tokens_details": {
+      "image_tokens": 1296,
+      "text_tokens": 654
+    },
+    "output_tokens": 1078,
+    "output_tokens_details": {
+      "image_tokens": 1078,
+      "text_tokens": 0
+    },
+    "total_tokens": 3028
+  },
+  "costUSD": 0.046,
+  "createdAt": "2026-11-02T19:36:57.369Z"
+}

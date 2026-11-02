@@ -1,10 +1,33 @@
 {
-  "prompt": "Please generate an image. Locked painterly style (hand-painted, chunky readable shapes, detail painted not modelled, warm golden key light, cool teal shadows, muted saturation, epic and luminous, never grim). Use the attached image(s) only as reference as described; the first attachment is always the style reference for palette, rendering and light. Game-asset concept sheet, landscape 16:9, plain light neutral grey background, no scene, no sky, soft contact shadow only, every piece isolated with clear space and a small neat label underneath. WEAPONS sheet 1, melee: blades (sword, longsword), heavy weapons (axe, warhammer), polearms (spear, glaive), daggers (pair), unarmed (wraps and knuckle guards), shields (round buckler, kite shield, tower shield). Each weapon in four material tiers side by side: COPPER (warm, simple), IRON (grey, sturdy), SKYSTEEL (pale, light, faintly blue, elegant), RELIC (old-world pale metal with live teal glyph channels and precise ring geometry). Include a simple 1.8 m human silhouette for scale.",
-  "model": "openai/gpt-image-2.5-sunburst",
+  "prompt": "Please generate an image. Locked painterly style: hand-painted stylized game art, chunky readable shapes, detail painted not modelled, mid-level detail, softer muted colours with gentle saturation, epic and luminous, never grim. The palette's warm gold and cool teal are painted into the surfaces, but the light is flat, even studio light: no strong key light, no cast shadows, no rim light. Use the attached images only as reference as described: the first attachment is always the style reference for palette and brushwork; later attachments are the approved designs to keep. Game-asset reference sheet for 3D modelling, wide landscape 16:9. Plain light neutral grey background, no scene, no sky, no clouds, no floating rock, no ground plane, a soft contact shadow only. Every piece fully isolated with clear space around it, nothing overlapping, nothing touching the edge, arranged in tidy rows, each with a small neat hand-lettered label underneath. GEAR AND PROPS sheet: Redraw of the attached reference sheet to the current spec: keep exactly the same design, items, their order and names. Melee weapons sheet 1, each weapon standing upright in a group with a small heading label, each group showing the same weapon in four material tiers side by side, labelled under each: \"Copper\" (warm, simple), \"Iron\" (grey, sturdy), \"Skysteel\" (pale, light, faintly blue, elegant), \"Relic\" (old-world pale metal with live teal glyph channels and precise ring geometry). Top row: \"Sword\", \"Longsword\", \"Axe\", \"Warhammer\". Middle row: \"Spear\", \"Glaive\", \"Daggers (pair)\", \"Unarmed (wraps & knuckle guards)\". Bottom row: \"Shields – Buckler\", \"Shields – Kite\", \"Shields – Tower\". Blades and shafts thick and chunky, every weapon at true scale to the 1.8 m figure at the top left. Only labels, no description text. Even flat light, no rim light, no metal shine highlights. Each item alone in three-quarter front view, in rows by family or tier, with thick chunky proportions: thick blades, solid rope, chunky grips, no thin parts. A plain neutral 1.8 m human silhouette labelled \"1.8 m\" stands on the sheet for scale, with everything at true scale to it. Title at the top: \"Shared gear: weapons, sheet 1 – melee\".",
+  "kit": {
+    "type": "gear",
+    "subject": "Redraw of the attached reference sheet to the current spec: keep exactly the same design, items, their order and names. Melee weapons sheet 1, each weapon standing upright in a group with a small heading label, each group showing the same weapon in four material tiers side by side, labelled under each: \"Copper\" (warm, simple), \"Iron\" (grey, sturdy), \"Skysteel\" (pale, light, faintly blue, elegant), \"Relic\" (old-world pale metal with live teal glyph channels and precise ring geometry). Top row: \"Sword\", \"Longsword\", \"Axe\", \"Warhammer\". Middle row: \"Spear\", \"Glaive\", \"Daggers (pair)\", \"Unarmed (wraps & knuckle guards)\". Bottom row: \"Shields – Buckler\", \"Shields – Kite\", \"Shields – Tower\". Blades and shafts thick and chunky, every weapon at true scale to the 1.8 m figure at the top left. Only labels, no description text. Even flat light, no rim light, no metal shine highlights",
+    "figure": 1.8,
+    "title": "Shared gear: weapons, sheet 1 – melee"
+  },
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x864",
   "aspect": "16:9",
   "quality": "high",
   "refs": [
-    "art/concept/style-test-01-market-town.png"
+    "art/references/style-test-01-market-town.png",
+    "art/kit/peoples/gear/weapons-melee.png"
   ],
-  "createdAt": "2026-11-02T17:28:57.549Z"
+  "usage": {
+    "input_tokens": 3136,
+    "input_tokens_details": {
+      "image_tokens": 2592,
+      "text_tokens": 544
+    },
+    "output_tokens": 1078,
+    "output_tokens_details": {
+      "image_tokens": 1078,
+      "text_tokens": 0
+    },
+    "total_tokens": 4214
+  },
+  "costUSD": 0.0558,
+  "createdAt": "2026-11-02T19:31:31.249Z"
 }

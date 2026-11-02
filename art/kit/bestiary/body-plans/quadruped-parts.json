@@ -1,0 +1,33 @@
+{
+  "prompt": "Please generate an image. Locked painterly style: hand-painted stylized game art, chunky readable shapes, detail painted not modelled, mid-level detail, softer muted colours with gentle saturation, epic and luminous, never grim. The palette's warm gold and cool teal are painted into the surfaces, but the light is flat, even studio light: no strong key light, no cast shadows, no rim light. Use the attached images only as reference as described: the first attachment is always the style reference for palette and brushwork; later attachments are the approved designs to keep. Game-asset reference sheet for 3D modelling, wide landscape 16:9. Plain light neutral grey background, no scene, no sky, no clouds, no floating rock, no ground plane, a soft contact shadow only. Every piece fully isolated with clear space around it, nothing overlapping, nothing touching the edge, arranged in tidy rows, each with a small neat hand-lettered label underneath. BODY PLAN PARTS sheet for a modular creature kit: Four-legged body plan, fitting the base body in the second attachment. Sockets and their parts: Head, horns or antlers, ears, tail, feet (hoof, paw, claw, digging claw), coat (smooth, shaggy, mossy, plated), gliding membrane. Include the parts these species need: Cliff Goat (a muscular mountain goat with thick curling horns and shaggy grey-cream coat, standing on a narrow ledge of a sheer cliff spire); Burrow Boar (a stocky wild boar with russet bristles, short curved tusks and a mossy patch on its back, pawing the turf); Burrow Mole (a plump mole with velvety dark fur, large pink digging claws and a stolen turnip, popping out of a vegetable bed); Moss Grazer (a large shaggy herd animal like a gentle yak whose thick coat grows green moss and small flowers, carrying woven baskets, on a terraced garden isle); Glider Squirrel (a small fluffy squirrel with big eyes and wide gliding membranes spread between its legs, mid-glide); Ruin Stalker (a lean pale grey big cat with faint stone-like stripes, crouched on top of a broken ancient pillar among overgrown ruins at night, glowing eyes); Stormspawn (a twisted creature shaped like a goat made of dark swirling storm cloud with crackling lightning for eyes and veins, emerging from a dark stormy mist). One row per socket, labelled with the socket name at the left. Each part alone in side view, all parts in a row ending in the same round socket cap so any of them fits the same base body. Chunky readable shapes, nothing thin, colour kept to soft greyscale with painted texture so species colour can be applied as a mask. Title at the top: \"Body plan parts: four-legged\".",
+  "kit": {
+    "type": "body-parts",
+    "subject": "Four-legged body plan, fitting the base body in the second attachment. Sockets and their parts: Head, horns or antlers, ears, tail, feet (hoof, paw, claw, digging claw), coat (smooth, shaggy, mossy, plated), gliding membrane. Include the parts these species need: Cliff Goat (a muscular mountain goat with thick curling horns and shaggy grey-cream coat, standing on a narrow ledge of a sheer cliff spire); Burrow Boar (a stocky wild boar with russet bristles, short curved tusks and a mossy patch on its back, pawing the turf); Burrow Mole (a plump mole with velvety dark fur, large pink digging claws and a stolen turnip, popping out of a vegetable bed); Moss Grazer (a large shaggy herd animal like a gentle yak whose thick coat grows green moss and small flowers, carrying woven baskets, on a terraced garden isle); Glider Squirrel (a small fluffy squirrel with big eyes and wide gliding membranes spread between its legs, mid-glide); Ruin Stalker (a lean pale grey big cat with faint stone-like stripes, crouched on top of a broken ancient pillar among overgrown ruins at night, glowing eyes); Stormspawn (a twisted creature shaped like a goat made of dark swirling storm cloud with crackling lightning for eyes and veins, emerging from a dark stormy mist)",
+    "figure": 1.8,
+    "title": "Body plan parts: four-legged"
+  },
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x864",
+  "aspect": "16:9",
+  "quality": "high",
+  "refs": [
+    "art/references/style-test-01-market-town.png",
+    "art/kit/bestiary/body-plans/quadruped-body.png"
+  ],
+  "usage": {
+    "input_tokens": 3203,
+    "input_tokens_details": {
+      "image_tokens": 2592,
+      "text_tokens": 611
+    },
+    "output_tokens": 1078,
+    "output_tokens_details": {
+      "image_tokens": 1078,
+      "text_tokens": 0
+    },
+    "total_tokens": 4281
+  },
+  "costUSD": 0.0561,
+  "createdAt": "2026-11-02T19:05:30.759Z"
+}

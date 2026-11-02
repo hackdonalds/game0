@@ -1,5 +1,34 @@
 {
-  "prompt": "Excellent, keep exactly this kit-sheet style (grey grid background, isolated pieces, orthographic front elevation plus small three-quarter view, dimension labels, 1.8 m figure per row, same pale stone and channel language). Next sheet: KIT-RINGS, ring and arch segments for the old-world kit. Rows by radius: radius 4 m, radius 8 m, radius 16 m; in each row a 90 degree ring segment and a 45 degree ring segment (square cross-section 1 m thick, perfect circular arcs, the one standard inset channel running along the face), shown intact, broken (razor-clean fracture) and tilted/overgrown (moss and roots). Plus: a full ring gate (radius 8 m, standing on its edge on a small plinth, as in Monolith Gate A), a half-ring arch (radius 4 m) and a keystone block where segments meet, each in intact, broken and tilted variants. Segment ends must be flat and cut exactly on radial lines so they snap together. Perfect circular arcs, NOT Roman arches, no voussoirs or decoration. Handwritten-style labels with piece names and radius, e.g. \"Ring 90 deg, r 8 m\". Title \"Old World Kit: Rings\". Please generate the image.",
-  "chat_url": "https://chatgpt.com/c/6ae86f98-7bd8-83eb-a3a7-4d3fd2e1cd0f",
-  "tool": "chatgpt.com"
+  "prompt": "Please generate an image. Locked painterly style: hand-painted stylized game art, chunky readable shapes, detail painted not modelled, mid-level detail, softer muted colours with gentle saturation, epic and luminous, never grim. The palette's warm gold and cool teal are painted into the surfaces, but the light is flat, even studio light: no strong key light, no cast shadows, no rim light. Use the attached images only as reference as described: the first attachment is always the style reference for palette and brushwork; later attachments are the approved designs to keep. Game-asset reference sheet for 3D modelling, wide landscape 16:9. Plain light neutral grey background, no scene, no sky, no clouds, no floating rock, no ground plane, a soft contact shadow only. Every piece fully isolated with clear space around it, nothing overlapping, nothing touching the edge, arranged in tidy rows, each with a small neat hand-lettered label underneath. MODULAR KIT PIECES sheet: Redraw of the attached reference sheet to the current spec: keep exactly the same pieces, their order, names and sizes. Old-world ruin style on a 4 m module and 6 m storey, 1 m thick razor-clean pale stone (#F3ECD9) with one standard 0.5 m inset channel, dead (dark groove) or lit (soft teal glow), a ring motif, a little moss; monumental and exact, not Greek or Roman, not sci-fi. Ring and arch segments: perfect circular arcs with a square 1 x 1 m cross-section, the inset channel along the face, flat ends cut exactly on radial lines, no voussoirs. Each piece shown three times: intact, broken (razor-clean fracture) and overgrown (moss and roots). Row 1 radius 4 m: \"Ring 90 deg, r 4 m 4 x 4 m\", \"Ring 45 deg, r 4 m 2.83 x 1.88 m\". Row 2 radius 8 m: \"Ring 90 deg, r 8 m 8 x 8 m\", \"Ring 45 deg, r 8 m 5.66 x 3.05 m\". Row 3 radius 16 m: \"Ring 90 deg, r 16 m 16 x 16 m\", \"Ring 45 deg, r 16 m 11.31 x 5.39 m\". Row 4: \"Full Ring Gate (r 8 m) 16 x 16 m (outer \u00d8 16 m, inner \u00d8 14 m)\" standing on its edge, \"Half-Ring Arch (r 4 m) 8 x 4 m\", \"Keystone Block 4 x 6 x 1 m\". Segments of one radius drawn at the same scale as each other. No other pieces. Show each piece as an orthographic front elevation (no perspective) with a small three-quarter view beside it, on faint module grid lines, with its name and size (for example \"3 x 4 m\") in the label. Thick, solid forms, no thin parts. A plain neutral 1.8 m human silhouette labelled \"1.8 m\" stands on the sheet for scale, with everything at true scale to it. Title at the top: \"Old world kit: rings\".",
+  "kit": {
+    "type": "pieces",
+    "subject": "Redraw of the attached reference sheet to the current spec: keep exactly the same pieces, their order, names and sizes. Old-world ruin style on a 4 m module and 6 m storey, 1 m thick razor-clean pale stone (#F3ECD9) with one standard 0.5 m inset channel, dead (dark groove) or lit (soft teal glow), a ring motif, a little moss; monumental and exact, not Greek or Roman, not sci-fi. Ring and arch segments: perfect circular arcs with a square 1 x 1 m cross-section, the inset channel along the face, flat ends cut exactly on radial lines, no voussoirs. Each piece shown three times: intact, broken (razor-clean fracture) and overgrown (moss and roots). Row 1 radius 4 m: \"Ring 90 deg, r 4 m 4 x 4 m\", \"Ring 45 deg, r 4 m 2.83 x 1.88 m\". Row 2 radius 8 m: \"Ring 90 deg, r 8 m 8 x 8 m\", \"Ring 45 deg, r 8 m 5.66 x 3.05 m\". Row 3 radius 16 m: \"Ring 90 deg, r 16 m 16 x 16 m\", \"Ring 45 deg, r 16 m 11.31 x 5.39 m\". Row 4: \"Full Ring Gate (r 8 m) 16 x 16 m (outer \u00d8 16 m, inner \u00d8 14 m)\" standing on its edge, \"Half-Ring Arch (r 4 m) 8 x 4 m\", \"Keystone Block 4 x 6 x 1 m\". Segments of one radius drawn at the same scale as each other. No other pieces",
+    "figure": 1.8,
+    "title": "Old world kit: rings"
+  },
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x864",
+  "aspect": "16:9",
+  "quality": "high",
+  "refs": [
+    "art/references/style-test-01-market-town.png",
+    "art/kit/architecture/old-world/kit-rings.png"
+  ],
+  "usage": {
+    "input_tokens": 3523,
+    "input_tokens_details": {
+      "image_tokens": 2804,
+      "text_tokens": 719
+    },
+    "output_tokens": 1078,
+    "output_tokens_details": {
+      "image_tokens": 1078,
+      "text_tokens": 0
+    },
+    "total_tokens": 4601
+  },
+  "costUSD": 0.0584,
+  "createdAt": "2026-11-02T19:34:43.880Z",
+  "refsNote": "Paths under art/ name the previous version of that file in git history (the sheet this one redraws)."
 }

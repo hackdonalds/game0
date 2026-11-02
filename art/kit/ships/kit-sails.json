@@ -1,6 +1,33 @@
 {
-  "prompt": "Please generate an image. Locked painterly style (hand-painted, chunky readable shapes, detail painted not modelled, warm golden key light, cool teal shadows, muted saturation, epic and luminous, never grim). Use the attached image(s) only as reference as described; the first attachment is always the style reference for palette, rendering and light. Same style as before. Game-asset concept sheet, landscape 16:9, plain light neutral grey background, no scene, no sky, soft contact shadow only, every piece isolated with clear space and a small neat label underneath. MODULAR SHIP KIT sheet 3 – SAILS AND SAIL WEAR: lateen, gaff, jib and square sails of canvas with woven teal enchantment patterns, each shown in four wear states left to right: freshly enchanted (bright glow), worn (faded glow, patches), torn (rips, frayed edges, flickering glow), spent (dull grey canvas, no glow). Add a small row of sail emblem variants: a tree for the Accord, a feather for the Galeborne, a chain link for the Anchorkin, a root knot for the Rootwardens.",
-  "refs": [],
-  "chat_url": "https://chatgpt.com/c/6ae8bd0c-ec38-83ed-bec0-8d4177dd5c6f",
-  "tool": "chatgpt.com"
+  "prompt": "Please generate an image. Locked painterly style: hand-painted stylized game art, chunky readable shapes, detail painted not modelled, mid-level detail, softer muted colours with gentle saturation, epic and luminous, never grim. The palette's warm gold and cool teal are painted into the surfaces, but the light is flat, even studio light: no strong key light, no cast shadows, no rim light. Use the attached images only as reference as described: the first attachment is always the style reference for palette and brushwork; later attachments are the approved designs to keep. Game-asset reference sheet for 3D modelling, wide landscape 16:9. Plain light neutral grey background, no scene, no sky, no clouds, no floating rock, no ground plane, a soft contact shadow only. Every piece fully isolated with clear space around it, nothing overlapping, nothing touching the edge, arranged in tidy rows, each with a small neat hand-lettered label underneath. MODULAR KIT PIECES sheet: Redraw of the attached reference sheet to the current spec: keep exactly the same design, items, their order and names. Modular ship kit sheet 3, sails and sail wear, in the same arrangement as the second attached image: one row per sail type, each row headed at the left by a small diagram and the label: \"Lateen sail (aft-raked)\", \"Gaff sail (fore-and-aft)\", \"Jib sail (fore triangle)\", \"Square sail (main sail)\"; each sail of cream canvas with a woven teal tree emblem, on its wooden spar with gold fittings, shown flat-on in four wear states in columns headed \"Freshly enchanted (bright glow)\", \"Worn (faded glow)\", \"Torn (rips & frayed)\", \"Spent (dull, no glow)\": freshly enchanted with bright teal glow patterns, worn with faded glow and patches, torn with large chunky rips and broad frayed edges and flickering glow, spent as dull grey patched canvas with no glow. Right column headed \"Sail emblem variants\": \"Accord\" (a tree), \"Galeborne\" (a feather), \"Anchorkin\" (a chain link), \"Rootwardens\" (a root knot), each on a small cream canvas panel. Rips are big readable shapes, no fine fraying threads. Labels give the name only, no dimensions, no subtitle, except \"1.8 m\" on the scale figure at the bottom left. Glow only in the teal enchantment patterns. Even flat light, no rim light. Show each piece as an orthographic front elevation (no perspective) with a small three-quarter view beside it, on faint module grid lines, with its name and size (for example \"3 x 4 m\") in the label. Thick, solid forms, no thin parts. A plain neutral 1.8 m human silhouette labelled \"1.8 m\" stands on the sheet for scale, with everything at true scale to it. Title at the top: \"Modular ship kit 3 – sails and sail wear\".",
+  "kit": {
+    "type": "pieces",
+    "subject": "Redraw of the attached reference sheet to the current spec: keep exactly the same design, items, their order and names. Modular ship kit sheet 3, sails and sail wear, in the same arrangement as the second attached image: one row per sail type, each row headed at the left by a small diagram and the label: \"Lateen sail (aft-raked)\", \"Gaff sail (fore-and-aft)\", \"Jib sail (fore triangle)\", \"Square sail (main sail)\"; each sail of cream canvas with a woven teal tree emblem, on its wooden spar with gold fittings, shown flat-on in four wear states in columns headed \"Freshly enchanted (bright glow)\", \"Worn (faded glow)\", \"Torn (rips & frayed)\", \"Spent (dull, no glow)\": freshly enchanted with bright teal glow patterns, worn with faded glow and patches, torn with large chunky rips and broad frayed edges and flickering glow, spent as dull grey patched canvas with no glow. Right column headed \"Sail emblem variants\": \"Accord\" (a tree), \"Galeborne\" (a feather), \"Anchorkin\" (a chain link), \"Rootwardens\" (a root knot), each on a small cream canvas panel. Rips are big readable shapes, no fine fraying threads. Labels give the name only, no dimensions, no subtitle, except \"1.8 m\" on the scale figure at the bottom left. Glow only in the teal enchantment patterns. Even flat light, no rim light",
+    "figure": 1.8,
+    "title": "Modular ship kit 3 – sails and sail wear"
+  },
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x864",
+  "aspect": "16:9",
+  "quality": "high",
+  "refs": [
+    "art/references/style-test-01-market-town.png",
+    "art/kit/ships/kit-sails.png"
+  ],
+  "usage": {
+    "input_tokens": 3459,
+    "input_tokens_details": {
+      "image_tokens": 2804,
+      "text_tokens": 655
+    },
+    "output_tokens": 1078,
+    "output_tokens_details": {
+      "image_tokens": 1078,
+      "text_tokens": 0
+    },
+    "total_tokens": 4537
+  },
+  "costUSD": 0.058,
+  "createdAt": "2026-11-02T19:39:13.331Z"
 }

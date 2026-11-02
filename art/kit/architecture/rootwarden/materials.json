@@ -1,5 +1,34 @@
 {
-  "prompt": "Perfect. FINAL SHEET 'materials': a Rootwarden trim-sheet swatch board on the same light neutral grey background with faint grid and small labels, same flat even light, softer and less sepia. 8 large square hand-painted tileable texture swatches in a 4 x 2 grid, each flat-on (no perspective), painterly with chunky readable brush strokes, matching the colours of the kit pieces above: 1 root bark, 2 smooth heartwood (cut socket face with growth rings), 3 moss, 4 flowering moss (small pink, white and yellow flowers), 5 woven root lattice, 6 lichen stone, 7 glowing fungus (teal bioluminescent cap surface), 8 packed earth path. Under each swatch a small label and 3 small colour chips of its key palette. No objects, no scenery. Please generate the image.",
-  "chat_url": "https://chatgpt.com/c/6ae86f8d-5bd8-83eb-8304-191fa46c8ba3",
-  "tool": "chatgpt.com"
+  "prompt": "Please generate an image. Locked painterly style: hand-painted stylized game art, chunky readable shapes, detail painted not modelled, mid-level detail, softer muted colours with gentle saturation, epic and luminous, never grim. The palette's warm gold and cool teal are painted into the surfaces, but the light is flat, even studio light: no strong key light, no cast shadows, no rim light. Use the attached images only as reference as described: the first attachment is always the style reference for palette and brushwork; later attachments are the approved designs to keep. Material swatch sheet, wide landscape 16:9, plain light neutral grey background. Square swatch tiles in a neat grid, evenly spaced, each flat-on (orthographic, no perspective, no horizon, no shadows from outside the tile), a seamless tileable painterly texture with edges that would wrap, broad clumped brushwork, no tiny high-frequency noise, a short neat label under each. Swatches: Redraw of the attached reference sheet to the current spec: keep exactly the same swatches, their order and names. Rootwarden trim sheet, eight square tiles in a 4 x 2 grid, flat colour under even light, no colour chips: 1 \"Root Bark\", 2 \"Smooth Heartwood\" (cut socket face with growth rings), 3 \"Moss\", 4 \"Flowering Moss\" (small pink, white and yellow flowers), 5 \"Woven Root Lattice\", 6 \"Lichen Stone\", 7 \"Glowing Fungus\" (teal bioluminescent cap surface), 8 \"Packed Earth\" (packed earth path). Title at the top: \"Rootwarden kit: materials\".",
+  "kit": {
+    "type": "materials",
+    "subject": "Redraw of the attached reference sheet to the current spec: keep exactly the same swatches, their order and names. Rootwarden trim sheet, eight square tiles in a 4 x 2 grid, flat colour under even light, no colour chips: 1 \"Root Bark\", 2 \"Smooth Heartwood\" (cut socket face with growth rings), 3 \"Moss\", 4 \"Flowering Moss\" (small pink, white and yellow flowers), 5 \"Woven Root Lattice\", 6 \"Lichen Stone\", 7 \"Glowing Fungus\" (teal bioluminescent cap surface), 8 \"Packed Earth\" (packed earth path)",
+    "figure": 1.8,
+    "title": "Rootwarden kit: materials"
+  },
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x864",
+  "aspect": "16:9",
+  "quality": "high",
+  "refs": [
+    "art/references/style-test-01-market-town.png",
+    "art/kit/architecture/rootwarden/materials.png"
+  ],
+  "usage": {
+    "input_tokens": 3182,
+    "input_tokens_details": {
+      "image_tokens": 2804,
+      "text_tokens": 378
+    },
+    "output_tokens": 1078,
+    "output_tokens_details": {
+      "image_tokens": 1078,
+      "text_tokens": 0
+    },
+    "total_tokens": 4260
+  },
+  "costUSD": 0.0567,
+  "createdAt": "2026-11-02T19:36:47.811Z",
+  "refsNote": "Paths under art/ name the previous version of that file in git history (the sheet this one redraws)."
 }

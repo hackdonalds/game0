@@ -1,5 +1,34 @@
 {
-  "prompt": "Great. Generate the final sheet 5 now as an image, title \"Anchorkin Kit - Materials\": a hand-painted trim sheet of 8 square swatch tiles in a neat 4 x 2 grid on the same light grey background, each tile flat-on (orthographic, no perspective), evenly lit, seamless-looking painterly texture, with a small label under each: (1) basalt blocks - dark grey-black squared ashlar with chunky bevelled edges; (2) slate courses - layered thin dark slate bands; (3) crystal-veined stone - basalt with glowing teal crystal veins; (4) carved Ledger band - a horizontal strip of carved inscription glyphs with thin gold inlay; (5) black iron - dark forged iron plate with rivets and a faint cool sheen; (6) chain - a tiling run of giant black iron chain links; (7) weathered oak - heavy grey-brown planks with iron nails; (8) moss-on-stone - basalt with soft green moss cushions on the top edges. Match the colours and brushwork of sheets 1-4 exactly; softer and less sepia than the concept sheets. No scale figure needed on this sheet.",
-  "chat_url": "https://chatgpt.com/c/6ae86f92-74f8-83eb-9074-bca3293dd829",
-  "tool": "chatgpt.com"
+  "prompt": "Please generate an image. Locked painterly style: hand-painted stylized game art, chunky readable shapes, detail painted not modelled, mid-level detail, softer muted colours with gentle saturation, epic and luminous, never grim. The palette's warm gold and cool teal are painted into the surfaces, but the light is flat, even studio light: no strong key light, no cast shadows, no rim light. Use the attached images only as reference as described: the first attachment is always the style reference for palette and brushwork; later attachments are the approved designs to keep. Material swatch sheet, wide landscape 16:9, plain light neutral grey background. Square swatch tiles in a neat grid, evenly spaced, each flat-on (orthographic, no perspective, no horizon, no shadows from outside the tile), a seamless tileable painterly texture with edges that would wrap, broad clumped brushwork, no tiny high-frequency noise, a short neat label under each. Swatches: Redraw of the attached reference sheet to the current spec: keep exactly the same swatches, their order and names. Anchorkin trim sheet, eight square tiles in a 4 x 2 grid, flat colour under even light: 1 \"Basalt Blocks\" (dark grey-black squared ashlar with chunky bevelled edges), 2 \"Slate Courses\" (layered dark slate bands), 3 \"Crystal-Veined Stone\" (basalt with teal crystal veins), 4 \"Carved Ledger Band\" (a strip of carved inscription glyphs with thin gold inlay), 5 \"Black Iron\" (dark forged iron plate with rivets, faint cool sheen), 6 \"Chain\" (a tiling run of giant black iron chain links), 7 \"Weathered Oak\" (heavy grey-brown planks with iron nails), 8 \"Moss-on-Stone\" (basalt with soft green moss cushions on the top edges). Title at the top: \"Anchorkin kit: materials\".",
+  "kit": {
+    "type": "materials",
+    "subject": "Redraw of the attached reference sheet to the current spec: keep exactly the same swatches, their order and names. Anchorkin trim sheet, eight square tiles in a 4 x 2 grid, flat colour under even light: 1 \"Basalt Blocks\" (dark grey-black squared ashlar with chunky bevelled edges), 2 \"Slate Courses\" (layered dark slate bands), 3 \"Crystal-Veined Stone\" (basalt with teal crystal veins), 4 \"Carved Ledger Band\" (a strip of carved inscription glyphs with thin gold inlay), 5 \"Black Iron\" (dark forged iron plate with rivets, faint cool sheen), 6 \"Chain\" (a tiling run of giant black iron chain links), 7 \"Weathered Oak\" (heavy grey-brown planks with iron nails), 8 \"Moss-on-Stone\" (basalt with soft green moss cushions on the top edges)",
+    "figure": 1.8,
+    "title": "Anchorkin kit: materials"
+  },
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x864",
+  "aspect": "16:9",
+  "quality": "high",
+  "refs": [
+    "art/references/style-test-01-market-town.png",
+    "art/kit/architecture/anchorkin/materials.png"
+  ],
+  "usage": {
+    "input_tokens": 3239,
+    "input_tokens_details": {
+      "image_tokens": 2804,
+      "text_tokens": 435
+    },
+    "output_tokens": 1078,
+    "output_tokens_details": {
+      "image_tokens": 1078,
+      "text_tokens": 0
+    },
+    "total_tokens": 4317
+  },
+  "costUSD": 0.0569,
+  "createdAt": "2026-11-02T19:30:24.620Z",
+  "refsNote": "Paths under art/ name the previous version of that file in git history (the sheet this one redraws)."
 }

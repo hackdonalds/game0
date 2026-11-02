@@ -1,5 +1,34 @@
 {
-  "prompt": "Same style. FOREST BIOME, TERRAIN MATERIAL SHEET. Four square hand-painted tileable texture swatches, flat top-down (no perspective, no lighting gradient across the swatch, seamless edges), arranged in a 2 by 2 grid with even gaps on a plain light grey background, each with a small hand-lettered label underneath: GROUND (brown pine-needle and leaf litter with moss patches, small ferns and twigs, darker and cooler than a meadow), PATH (a faint game trail of trampled needles and dark earth with roots crossing it), CLIFF / LIP (dark mossy near-black stone with ferns and roots growing from cracks), UNDERSIDE (dark mossy stone with hanging moss and trailing roots, coolest and darkest of the four). Painterly stylized game textures: broad hand-painted brushwork, chunky readable shapes, gentle muted saturation, warm highlights and cool teal-shadow accents, not photoreal.",
-  "chat_url": "https://chatgpt.com/c/6ae89065-a4f4-83ed-8669-b83e2cf1fac1",
-  "tool": "chatgpt.com"
+  "prompt": "Please generate an image. Locked painterly style: hand-painted stylized game art, chunky readable shapes, detail painted not modelled, mid-level detail, softer muted colours with gentle saturation, epic and luminous, never grim. The palette's warm gold and cool teal are painted into the surfaces, but the light is flat, even studio light: no strong key light, no cast shadows, no rim light. Use the attached images only as reference as described: the first attachment is always the style reference for palette and brushwork; later attachments are the approved designs to keep. Material swatch sheet, wide landscape 16:9, plain light neutral grey background. Square swatch tiles in a neat grid, evenly spaced, each flat-on (orthographic, no perspective, no horizon, no shadows from outside the tile), a seamless tileable painterly texture with edges that would wrap, broad clumped brushwork, no tiny high-frequency noise, a short neat label under each. Swatches: Redraw of the attached reference sheet to the current spec: keep exactly the same swatches, their order and their materials. Forest biome terrain, four square tiles in one row, labels exactly as written in quotes: \"Needle Ground\" (brown pine-needle and leaf litter with moss patches, small fern sprigs and twigs, darker and cooler than a meadow); \"Forest Path\" (trampled needles and dark packed earth covering the whole tile, a few small roots pressed in, spread evenly); \"Mossy Stone Cliff\" (dark near-black mossy stone face with small ferns and roots in the cracks); \"Root Underside\" (dark mossy stone laced with hanging moss and trailing roots, the coolest and darkest of the four). Each tile is one evenly spread texture filling the whole square edge to edge, seen straight on with no perspective, no horizon, no focal point, no border, no single path or band crossing it and no light gradient, so its left edge would wrap onto its right and its top onto its bottom. Title at the top: \"Forest terrain\".",
+  "kit": {
+    "type": "materials",
+    "subject": "Redraw of the attached reference sheet to the current spec: keep exactly the same swatches, their order and their materials. Forest biome terrain, four square tiles in one row, labels exactly as written in quotes: \"Needle Ground\" (brown pine-needle and leaf litter with moss patches, small fern sprigs and twigs, darker and cooler than a meadow); \"Forest Path\" (trampled needles and dark packed earth covering the whole tile, a few small roots pressed in, spread evenly); \"Mossy Stone Cliff\" (dark near-black mossy stone face with small ferns and roots in the cracks); \"Root Underside\" (dark mossy stone laced with hanging moss and trailing roots, the coolest and darkest of the four). Each tile is one evenly spread texture filling the whole square edge to edge, seen straight on with no perspective, no horizon, no focal point, no border, no single path or band crossing it and no light gradient, so its left edge would wrap onto its right and its top onto its bottom",
+    "figure": 1.8,
+    "title": "Forest terrain"
+  },
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x864",
+  "aspect": "16:9",
+  "quality": "high",
+  "refs": [
+    "art/references/style-test-01-market-town.png",
+    "art/kit/biomes/forest/terrain.png"
+  ],
+  "usage": {
+    "input_tokens": 3226,
+    "input_tokens_details": {
+      "image_tokens": 2776,
+      "text_tokens": 450
+    },
+    "output_tokens": 1078,
+    "output_tokens_details": {
+      "image_tokens": 1078,
+      "text_tokens": 0
+    },
+    "total_tokens": 4304
+  },
+  "costUSD": 0.0568,
+  "createdAt": "2026-11-02T19:29:07.683Z",
+  "refsNote": "Paths under art/ name the previous version of that file in git history (the sheet this one redraws)."
 }

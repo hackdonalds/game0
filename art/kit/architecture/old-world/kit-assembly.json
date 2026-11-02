@@ -1,5 +1,34 @@
 {
-  "prompt": "Perfect, keep exactly this kit-sheet style (light grey grid background, isolated, no scenery or floating island rock, 1.8 m figures for scale, flat even light, same pale stone, rings and channel language). Next sheet: KIT-ASSEMBLY. Left half: an EXPLODED VIEW of Monolith Gate A being assembled from the kit pieces shown on the previous sheets: stepped plinth and steps at the bottom, two monolith blocks as flanks, four 90 degree ring segments of radius 8 m plus a keystone forming the full ring gate, channel inlays and a circle node, moss drapes and root clusters; each piece pulled apart along dotted assembly lines with a small label naming the kit piece. Right half, three small assembled buildings, three-quarter view, each standing on a plain grid floor (no island rock), rebuilt ONLY from kit pieces, with a few callout labels naming the pieces used: \"Monolith Gate A\" (single tall perfect ring on a stepped plinth), \"Vault Entrance B\" (razor-clean rectangular monolith doorway half-sunk and tilted, ramp down, cantilevered slab lintel hovering over it, faint teal glow inside), \"Ruin Kit C\" (tilted and half-sunk pieces: broken column, channelled wall slab, ring segment, floor slab with ring inlay, with a few floating fragments hovering). They must match my approved concept sheets. Title \"Old World Kit: Assembly\". Please generate the image.",
-  "chat_url": "https://chatgpt.com/c/6ae86f98-7bd8-83eb-a3a7-4d3fd2e1cd0f",
-  "tool": "chatgpt.com"
+  "prompt": "Please generate an image. Locked painterly style: hand-painted stylized game art, chunky readable shapes, detail painted not modelled, mid-level detail, softer muted colours with gentle saturation, epic and luminous, never grim. The palette's warm gold and cool teal are painted into the surfaces, but the light is flat, even studio light: no strong key light, no cast shadows, no rim light. Use the attached images only as reference as described: the first attachment is always the style reference for palette and brushwork; later attachments are the approved designs to keep. Game-asset reference sheet for 3D modelling, wide landscape 16:9. Plain light neutral grey background, no scene, no sky, no clouds, no floating rock, no ground plane, a soft contact shadow only. Every piece fully isolated with clear space around it, nothing overlapping, nothing touching the edge, arranged in tidy rows, each with a small neat hand-lettered label underneath. KIT ASSEMBLY sheet: Redraw of the attached reference sheet to the current spec: keep exactly the same pieces, their order, names and sizes. Old-world ruin style on a 4 m module and 6 m storey, 1 m thick razor-clean pale stone (#F3ECD9) with one standard 0.5 m inset channel, dead (dark groove) or lit (soft teal glow), a ring motif, a little moss; monumental and exact, not Greek or Roman, not sci-fi. Left half, exploded view of \"Monolith Gate A\": Keystone Block (4 x 6 x 1 m) with Circle Node Inlay at the top, four Ring Segments (90 deg, r 8 m), Moss Drape, Root Cluster, Channel Inlay, two Monolith Blocks (1 module, 4 x 6 x 1 m), Steps (4 x 4 m, rise 1 m), Floor Slab (straight channel), Plinth (4 x 4 x 1 m), pulled apart along dotted assembly lines with small labels. Right half, three finished builds on a plain faint grid floor, no island rock: \"Monolith Gate A\" (r 8 m, outer \u00d8 16 m, one perfect ring on a stepped plinth), \"Vault Entrance B\" (razor-clean rectangular monolith doorway half-sunk and tilted, ramp down, a hovering floor slab with ring inlay as lintel, faint teal glow inside), \"Ruin Kit C\" (tilted and half-sunk broken column, channelled wall slab, ring segment and ring-inlay floor slab, with a few floating fragments). No other buildings. Left half: an exploded view of one build, its kit pieces pulled apart along the module lines with thin leader lines and small piece labels. Right half: three finished builds made only from the same kit pieces, each in three-quarter view, isolated on a faint grid footprint and labelled. Use only pieces from the kit's other sheets. A plain neutral 1.8 m human silhouette labelled \"1.8 m\" stands on the sheet for scale, with everything at true scale to it. Title at the top: \"Old world kit: assembly\".",
+  "kit": {
+    "type": "assembly",
+    "subject": "Redraw of the attached reference sheet to the current spec: keep exactly the same pieces, their order, names and sizes. Old-world ruin style on a 4 m module and 6 m storey, 1 m thick razor-clean pale stone (#F3ECD9) with one standard 0.5 m inset channel, dead (dark groove) or lit (soft teal glow), a ring motif, a little moss; monumental and exact, not Greek or Roman, not sci-fi. Left half, exploded view of \"Monolith Gate A\": Keystone Block (4 x 6 x 1 m) with Circle Node Inlay at the top, four Ring Segments (90 deg, r 8 m), Moss Drape, Root Cluster, Channel Inlay, two Monolith Blocks (1 module, 4 x 6 x 1 m), Steps (4 x 4 m, rise 1 m), Floor Slab (straight channel), Plinth (4 x 4 x 1 m), pulled apart along dotted assembly lines with small labels. Right half, three finished builds on a plain faint grid floor, no island rock: \"Monolith Gate A\" (r 8 m, outer \u00d8 16 m, one perfect ring on a stepped plinth), \"Vault Entrance B\" (razor-clean rectangular monolith doorway half-sunk and tilted, ramp down, a hovering floor slab with ring inlay as lintel, faint teal glow inside), \"Ruin Kit C\" (tilted and half-sunk broken column, channelled wall slab, ring segment and ring-inlay floor slab, with a few floating fragments). No other buildings",
+    "figure": 1.8,
+    "title": "Old world kit: assembly"
+  },
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x864",
+  "aspect": "16:9",
+  "quality": "high",
+  "refs": [
+    "art/references/style-test-01-market-town.png",
+    "art/kit/architecture/old-world/kit-assembly.png"
+  ],
+  "usage": {
+    "input_tokens": 3483,
+    "input_tokens_details": {
+      "image_tokens": 2804,
+      "text_tokens": 679
+    },
+    "output_tokens": 1078,
+    "output_tokens_details": {
+      "image_tokens": 1078,
+      "text_tokens": 0
+    },
+    "total_tokens": 4561
+  },
+  "costUSD": 0.0582,
+  "createdAt": "2026-11-02T19:35:15.672Z",
+  "refsNote": "Paths under art/ name the previous version of that file in git history (the sheet this one redraws)."
 }

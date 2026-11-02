@@ -1,5 +1,34 @@
 {
-  "prompt": "Next image, sheet 4 of 5, landscape, titled 'Galeborne kit: assembly'. Same light neutral grey background with faint module grid lines (2 m horizontal, 3 m storey), same flat even light, same materials and the same 1.9 m tall slender human figure for scale. LEFT half: an exploded view of one narrow 4-storey stacked nest-house assembled from the kit pieces on the previous three sheets (rock-needle foundation collar, deck tiles, timber-frame walls, corners, mast column, rope-railed balcony, shingle roof run, gable end, ridge cap, cupola lookout, sail arc, weathervane), pieces pulled apart vertically along the module lines with thin leader lines and small piece labels. RIGHT half: three buildings from the concept sheets rebuilt ONLY from those kit pieces, each in three-quarter view, isolated (no scenery, no floating rock, no sky) on a faint grid footprint, each labelled: the Stacked Nest, the Cliff Perch (a house cantilevered out on deck brackets), and the Mast Pavilion. Painterly hand-painted surfaces, chunky readable game-asset forms, softer and less sepia than the concept sheets. Galeborne materials only: pale silvered weathered timber, grey-blue slate or wooden shingle roofs, cream sailcloth with teal and gold trim, rope lashings, brass fittings; NO terracotta, no whitewash; more sail and rigging, less house.",
-  "chat_url": "https://chatgpt.com/c/6ae86fb2-f988-83ed-a0b2-e39c619eff17",
-  "tool": "chatgpt.com"
+  "prompt": "Please generate an image. Locked painterly style: hand-painted stylized game art, chunky readable shapes, detail painted not modelled, mid-level detail, softer muted colours with gentle saturation, epic and luminous, never grim. The palette's warm gold and cool teal are painted into the surfaces, but the light is flat, even studio light: no strong key light, no cast shadows, no rim light. Use the attached images only as reference as described: the first attachment is always the style reference for palette and brushwork; later attachments are the approved designs to keep. Game-asset reference sheet for 3D modelling, wide landscape 16:9. Plain light neutral grey background, no scene, no sky, no clouds, no floating rock, no ground plane, a soft contact shadow only. Every piece fully isolated with clear space around it, nothing overlapping, nothing touching the edge, arranged in tidy rows, each with a small neat hand-lettered label underneath. KIT ASSEMBLY sheet: Redraw of the attached reference sheet to the current spec: keep exactly the same pieces, their order, names and sizes. Galeborne style on a 2 m module and 3 m storey with a thin 0.3 m skin: pale silvered weathered timber, grey-blue slate or silvered wooden shingle roofs, cream sailcloth with teal and gold trim, solid rope lashings, brass fittings; no terracotta, no whitewash. Left half, exploded build \"4-Storey Nest-House\" (4 m, 2 modules wide): from top to bottom Weathervane (Feather), Cupola Lookout, Ridge Cap, Roof Run (Shingle), Gable End, Timber-Frame Wall (with Window), Corner (Outer), Deck Tile (2 x 2 m), Cantilever Bracket, Rope-Railed Balcony, Wall (Door), Straight Stair (1 storey), Foundation Collar (Rock-Needle), each pulled apart vertically with thin leader lines and small labels, with storey marks at the side. Right half, three finished builds, each on a faint grid footprint: \"A. The Stacked Nest\" (narrow vertical home, 4 storeys, 4 x 6 m, 12 m high), \"B. The Cliff Perch\" (house cantilevered out on deck brackets, 3 storeys, 6 x 8 m, 9 m high), \"C. The Mast Pavilion\" (open pavilion under sail arcs, 2 storeys, 8 x 6 m, 9 m high). More sail and rigging, less house. No other buildings. Left half: an exploded view of one build, its kit pieces pulled apart along the module lines with thin leader lines and small piece labels. Right half: three finished builds made only from the same kit pieces, each in three-quarter view, isolated on a faint grid footprint and labelled. Use only pieces from the kit's other sheets. A plain neutral 1.9 m human silhouette labelled \"1.9 m\" stands on the sheet for scale, with everything at true scale to it. Title at the top: \"Galeborne kit: assembly\".",
+  "kit": {
+    "type": "assembly",
+    "subject": "Redraw of the attached reference sheet to the current spec: keep exactly the same pieces, their order, names and sizes. Galeborne style on a 2 m module and 3 m storey with a thin 0.3 m skin: pale silvered weathered timber, grey-blue slate or silvered wooden shingle roofs, cream sailcloth with teal and gold trim, solid rope lashings, brass fittings; no terracotta, no whitewash. Left half, exploded build \"4-Storey Nest-House\" (4 m, 2 modules wide): from top to bottom Weathervane (Feather), Cupola Lookout, Ridge Cap, Roof Run (Shingle), Gable End, Timber-Frame Wall (with Window), Corner (Outer), Deck Tile (2 x 2 m), Cantilever Bracket, Rope-Railed Balcony, Wall (Door), Straight Stair (1 storey), Foundation Collar (Rock-Needle), each pulled apart vertically with thin leader lines and small labels, with storey marks at the side. Right half, three finished builds, each on a faint grid footprint: \"A. The Stacked Nest\" (narrow vertical home, 4 storeys, 4 x 6 m, 12 m high), \"B. The Cliff Perch\" (house cantilevered out on deck brackets, 3 storeys, 6 x 8 m, 9 m high), \"C. The Mast Pavilion\" (open pavilion under sail arcs, 2 storeys, 8 x 6 m, 9 m high). More sail and rigging, less house. No other buildings",
+    "figure": 1.9,
+    "title": "Galeborne kit: assembly"
+  },
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x864",
+  "aspect": "16:9",
+  "quality": "high",
+  "refs": [
+    "art/references/style-test-01-market-town.png",
+    "art/kit/architecture/galeborne/kit-assembly.png"
+  ],
+  "usage": {
+    "input_tokens": 3513,
+    "input_tokens_details": {
+      "image_tokens": 2832,
+      "text_tokens": 681
+    },
+    "output_tokens": 1078,
+    "output_tokens_details": {
+      "image_tokens": 1078,
+      "text_tokens": 0
+    },
+    "total_tokens": 4591
+  },
+  "costUSD": 0.0584,
+  "createdAt": "2026-11-02T19:32:29.972Z",
+  "refsNote": "Paths under art/ name the previous version of that file in git history (the sheet this one redraws)."
 }

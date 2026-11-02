@@ -1,5 +1,34 @@
 {
-  "prompt": "Next image, sheet 5 of 5, titled 'Galeborne kit: materials'. A hand-painted trim sheet: 8 square swatch tiles in a neat 4x2 grid on the same light neutral grey background, each labelled: silvered timber, wood shingles, grey-blue slate, sailcloth, teal-and-gold trim, rope, brass, pale cliff stone. Flat even light, painterly brush texture, stylized game-texture look, tileable where it makes sense, no perspective, no scenery. Same palette as the previous kit sheets, softer and less sepia than the concept sheets, NO terracotta, NO whitewash.",
-  "chat_url": "https://chatgpt.com/c/6ae86fb2-f988-83ed-a0b2-e39c619eff17",
-  "tool": "chatgpt.com"
+  "prompt": "Please generate an image. Locked painterly style: hand-painted stylized game art, chunky readable shapes, detail painted not modelled, mid-level detail, softer muted colours with gentle saturation, epic and luminous, never grim. The palette's warm gold and cool teal are painted into the surfaces, but the light is flat, even studio light: no strong key light, no cast shadows, no rim light. Use the attached images only as reference as described: the first attachment is always the style reference for palette and brushwork; later attachments are the approved designs to keep. Material swatch sheet, wide landscape 16:9, plain light neutral grey background. Square swatch tiles in a neat grid, evenly spaced, each flat-on (orthographic, no perspective, no horizon, no shadows from outside the tile), a seamless tileable painterly texture with edges that would wrap, broad clumped brushwork, no tiny high-frequency noise, a short neat label under each. Swatches: Redraw of the attached reference sheet to the current spec: keep exactly the same swatches, their order and names. Galeborne trim sheet, eight square tiles in a 4 x 2 grid, flat colour under even light: 1 \"Silvered Timber\" (pale weathered grey planks), 2 \"Wood Shingles\" (silvered overlapping shingles), 3 \"Grey-Blue Slate\" (overlapping slate tiles), 4 \"Sailcloth\" (cream canvas weave with stitched seams), 5 \"Teal-and-Gold Trim\" (teal band with gold pattern), 6 \"Rope\" (tiling coils of thick rope), 7 \"Brass\" (brass plate with rivets), 8 \"Pale Cliff Stone\" (pale cliff stone blocks). No terracotta, no whitewash. Title at the top: \"Galeborne kit: materials\".",
+  "kit": {
+    "type": "materials",
+    "subject": "Redraw of the attached reference sheet to the current spec: keep exactly the same swatches, their order and names. Galeborne trim sheet, eight square tiles in a 4 x 2 grid, flat colour under even light: 1 \"Silvered Timber\" (pale weathered grey planks), 2 \"Wood Shingles\" (silvered overlapping shingles), 3 \"Grey-Blue Slate\" (overlapping slate tiles), 4 \"Sailcloth\" (cream canvas weave with stitched seams), 5 \"Teal-and-Gold Trim\" (teal band with gold pattern), 6 \"Rope\" (tiling coils of thick rope), 7 \"Brass\" (brass plate with rivets), 8 \"Pale Cliff Stone\" (pale cliff stone blocks). No terracotta, no whitewash",
+    "figure": 1.8,
+    "title": "Galeborne kit: materials"
+  },
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x864",
+  "aspect": "16:9",
+  "quality": "high",
+  "refs": [
+    "art/references/style-test-01-market-town.png",
+    "art/kit/architecture/galeborne/materials.png"
+  ],
+  "usage": {
+    "input_tokens": 3246,
+    "input_tokens_details": {
+      "image_tokens": 2832,
+      "text_tokens": 414
+    },
+    "output_tokens": 1078,
+    "output_tokens_details": {
+      "image_tokens": 1078,
+      "text_tokens": 0
+    },
+    "total_tokens": 4324
+  },
+  "costUSD": 0.0571,
+  "createdAt": "2026-11-02T19:34:08.050Z",
+  "refsNote": "Paths under art/ name the previous version of that file in git history (the sheet this one redraws)."
 }

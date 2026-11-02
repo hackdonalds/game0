@@ -1,11 +1,34 @@
 {
-  "prompt": "Please generate an image. Locked painterly style (hand-painted, chunky readable shapes, detail painted not modelled, warm golden key light, cool teal shadows, muted saturation, epic and luminous, never grim). Use the attached image(s) only as reference as described; the first attachment is always the style reference for palette, rendering and light. Character costume concept sheet, landscape 16:9, plain light neutral grey background. Keep the exact body design of the people in the second attachment: ROOTWARDENS: broad, stocky people with bark-grained wooden skin on which moss, lichen and small flowers grow; treetenders, herbalists and healers of the root caverns. Show the same character in four full-body outfits, front view each with a smaller back view: (1) STARTING clothes (under layer and simple garment), (2) CRAFTER / gatherer work outfit with tool belt and apron, (3) LIGHT ARMOUR scout outfit in leather with a cloak, (4) HEAVY ARMOUR guard outfit in forged metal plate. Grounded handmade leather, cloth and forged metal with epic details: teal crystal, gold trim and culture motifs of this people. Heroic stylized proportions, readable silhouettes. Small neat labels.",
-  "model": "openai/gpt-image-2.5-sunburst",
+  "prompt": "Please generate an image. Locked painterly style: hand-painted stylized game art, chunky readable shapes, detail painted not modelled, mid-level detail, softer muted colours with gentle saturation, epic and luminous, never grim. The palette's warm gold and cool teal are painted into the surfaces, but the light is flat, even studio light: no strong key light, no cast shadows, no rim light. Use the attached images only as reference as described: the first attachment is always the style reference for palette and brushwork; later attachments are the approved designs to keep. Game-asset reference sheet for 3D modelling, wide landscape 16:9. Plain light neutral grey background, no scene, no sky, no clouds, no floating rock, no ground plane, a soft contact shadow only. Every piece fully isolated with clear space around it, nothing overlapping, nothing touching the edge, arranged in tidy rows, each with a small neat hand-lettered label underneath. VARIANTS sheet: Redraw of the attached reference sheet to the current spec: keep exactly the same design, items, their order and names. The same 1.6 m tall Rootwarden (broad stocky oak-bark body, moss and lichen with small white flowers on the shoulders and crown, leafy foliage beard, from the second attached image) shown in four outfits, in four columns left to right, each column a full-body front view in a neutral standing pose with arms slightly away from the body, and a smaller full-body back view below it, with clear space between all figures: \"1. Starting\" (slate-blue sleeveless tunic with a cream tabard bearing a gold tree emblem, rope belt with a pouch, cloth shin wraps, barefoot), \"2. Crafter / Gatherer\" (brown leather herbalist apron with a gold tree motif over a cream shirt, tool belt with potion vials, pouches and a pruning knife, leather boots), \"3. Light Armour\" (brown leather scout armour with straps, a knife at the chest, long green hooded cloak with gold trim and a gold tree emblem on the back, leather boots), \"4. Heavy Armour\" (carved bronze-and-gold plate armour with a teal crystal on the chest and shoulders, teal tabard with a gold tree emblem, long teal cloak). Only the outfit changes between columns. Each label is just the number and name, no description text. Even flat light, no rim light. Keep the exact base design in the second attachment. Show the same base in a neat grid, one part changed per cell, everything else identical, each cell labelled with the variant name. Swappable parts are shown clearly separate from the body where they attach. Title at the top: \"Rootwarden: outfits\".",
+  "kit": {
+    "type": "variants",
+    "subject": "Redraw of the attached reference sheet to the current spec: keep exactly the same design, items, their order and names. The same 1.6 m tall Rootwarden (broad stocky oak-bark body, moss and lichen with small white flowers on the shoulders and crown, leafy foliage beard, from the second attached image) shown in four outfits, in four columns left to right, each column a full-body front view in a neutral standing pose with arms slightly away from the body, and a smaller full-body back view below it, with clear space between all figures: \"1. Starting\" (slate-blue sleeveless tunic with a cream tabard bearing a gold tree emblem, rope belt with a pouch, cloth shin wraps, barefoot), \"2. Crafter / Gatherer\" (brown leather herbalist apron with a gold tree motif over a cream shirt, tool belt with potion vials, pouches and a pruning knife, leather boots), \"3. Light Armour\" (brown leather scout armour with straps, a knife at the chest, long green hooded cloak with gold trim and a gold tree emblem on the back, leather boots), \"4. Heavy Armour\" (carved bronze-and-gold plate armour with a teal crystal on the chest and shoulders, teal tabard with a gold tree emblem, long teal cloak). Only the outfit changes between columns. Each label is just the number and name, no description text. Even flat light, no rim light",
+    "figure": 1.8,
+    "title": "Rootwarden: outfits"
+  },
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x864",
   "aspect": "16:9",
   "quality": "high",
   "refs": [
-    "art/concept/style-test-01-market-town.png",
-    "art/concept/rootwarden-base-turnaround.png"
+    "art/references/style-test-01-market-town.png",
+    "art/kit/peoples/rootwarden/outfits.png",
+    "art/concept/peoples/rootwarden.webp"
   ],
-  "createdAt": "2026-11-02T17:28:24.285Z"
+  "usage": {
+    "input_tokens": 4217,
+    "input_tokens_details": {
+      "image_tokens": 3616,
+      "text_tokens": 601
+    },
+    "output_tokens": 1078,
+    "output_tokens_details": {
+      "image_tokens": 1078,
+      "text_tokens": 0
+    },
+    "total_tokens": 5295
+  },
+  "costUSD": 0.0643,
+  "createdAt": "2026-11-02T19:28:37.171Z"
 }
