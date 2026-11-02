@@ -20,7 +20,7 @@ Players build distinct characters within each of the [peoples](../world/peoples.
 | People | Customizable | Locked |
 | --- | --- | --- |
 | **Galeborne** | Feather colour and pattern, crest shape, mantle length, skin tone (sky-pale to dusk), eye colour, face markings | Feathered mantle |
-| **Anchorkin** | Stone type (slate, basalt, sandstone, marble), crystal vein colour, carved marks, build, beard of stone fibres | Stone skin, great weight |
+| **Anchorkin** | Stone type (slate, basalt, sandstone, marble), crystal vein colour, brow Ledger line (home isle and lost isles, chosen at creation), shoulder oath-marks, build, beard of stone fibres | Stone skin, great weight |
 | **Rootwardens** | Wood type (oak, birch, cedar, ashen), bark pattern, growth (moss, lichen, flowers, mushrooms), beard foliage, crystal inlays | Bark skin, plant growth |
 
 ## Design rules
@@ -30,7 +30,7 @@ Players build distinct characters within each of the [peoples](../world/peoples.
 3. **Appearance is separate from stats.** Players save outfit looks (transmog), so their identity survives gear swaps. This matters in a classless game with partial-loot PvP.
 4. **Customization ties into the economy and progression.**
    - Dyes are crafted items and act as a gold sink.
-   - Anchorkin carved marks are added for deeds and kept posts.
+   - Anchorkin oath-marks are carved on the shoulders for deeds and kept posts. A broken oath leaves its mark struck through, never removed. The brow Ledger line is set at creation and doesn't change.
    - Galeborne mantles grow longer as Glide rises.
    - Rootwarden growth changes with the seasons.
 

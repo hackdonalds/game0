@@ -32,6 +32,10 @@ The Galeborne nest on the sheer Crag Spires, the highest isles on the shard, whe
 
 The Anchorkin live on the Moorings, the lowest isles on the shard, so close to the storm that the sky below them flickers. They are made heavy, as their name says. Generations ago they chained their isles together with great forged links, and they say the Moorings have held because they refuse to let go. They keep the **Ledger**, carved in stone, which records every isle that has ever sunk and why. Anchorkin take a long time to decide and never change their minds. A post given to an Anchorkin is held.
 
+Every Anchorkin carries the stone's record on their body. When a child comes of age, their **Ledger line** is carved into their brow: their name, the isle they are moored to, and the isles their family has lost to the storm. The same line is cut into the Ledger itself, so each Anchorkin is a walking page of it. Some carry the names of isles that no one else remembers.
+
+The shoulders are kept for **oath-marks**. Each post taken or vow sworn is carved there, and because an Anchorkin never changes their mind, the marks never come off. A broken oath can't be erased, only struck through, and a struck mark is the deepest shame an Anchorkin can wear. Elders are carved from brow to elbow; the young are almost bare.
+
 ### Rootwardens
 
 The Rootwardens live in caverns among the roots of the oldest isles. They tend the ancient trees day and night, because tending slows an isle's sinking. Anyone can learn **Treetending**, but no one is better at it. They are right that tending helps, though no tending can save an isle once it starts to fall. They age slowly, think slowly and hold a grudge for a very long time.
