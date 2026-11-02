@@ -1,3 +1,14 @@
+---
+chapter:
+  slug: society
+  number: 8
+  title: Society
+  kicker: Guilds, grudges, reputation
+  summary: "How players and peoples relate: guilds, reputation, old grudges and new friendships. Built to grow as new peoples join."
+  catalogues: [ peoples, glossary ]
+  art: a great round hall in an Accord town with banners of three peoples hanging from the rafters, envoys of different fantasy peoples gathered around a large round table with a map, warm lantern light
+---
+
 # Social
 
 > To be planned in its own session.

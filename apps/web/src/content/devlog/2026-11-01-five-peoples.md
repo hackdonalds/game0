@@ -1,7 +1,7 @@
 ---
 title: Five peoples, one world
 date: 2026-11-01
-summary: The world premise is set, the five peoples are modelled and rigged, and the peoples are rigged.
+summary: The world premise is set, and the five peoples are modelled and rigged.
 ---
 
 The isles float above the drowned old world, and nobody knows why. What everyone does know is that the isles are sinking. Every so often one loses its lift and settles into the storm layer below, so land is shrinking and every isle is worth fighting for.

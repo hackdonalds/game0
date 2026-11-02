@@ -17,7 +17,7 @@
 //   --pbr                 also generate metallic/roughness/normal maps (off for the hand-painted look)
 //   --enhance             let Meshy enhance the input images (off: keep concept art as drawn)
 //
-// <out> is a path without extension, e.g. art/models/skerrin/base
+// <out> is a path without extension, e.g. art/models/galeborne/base
 import { parseArgs } from "node:util";
 import { appendFile, mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, extname } from "node:path";

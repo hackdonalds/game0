@@ -27,7 +27,11 @@ function handbookLinks() {
       const abs = resolve(from, path);
       const inConcept = relative(CONCEPT, abs);
       const chapter = !inConcept.startsWith("..") && docToChapter[inConcept];
+      // Catalogue entries (concept/entries/<kind>/<id>.md, or the kind's folder) and the glossary link to their catalogue pages
+      const entry = !inConcept.startsWith("..") && inConcept.match(/^entries\/([a-z]+)(?:\/([^/]+)\.md)?\/?$/);
       if (chapter) node.properties.href = `${BASE}/${chapter}/${hash ? `#${hash}` : ""}`;
+      else if (entry) node.properties.href = `${BASE}/catalogue/${entry[1]}/${entry[2] ? `${entry[2].replace(/^(isle|wind)_/, "")}/` : ""}`;
+      else if (inConcept === "glossary.md") node.properties.href = `${BASE}/catalogue/glossary/`;
       else if (abs.startsWith(join(REPO, "worlds"))) node.properties.href = `${BASE}/catalogue/isles/`;
       else if (abs.startsWith(join(REPO, "demos")) && !abs.includes("/src")) node.properties.href = `${BASE}/workshop/`;
       else node.properties.href = GITHUB + relative(REPO, abs);

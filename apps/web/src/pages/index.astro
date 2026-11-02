@@ -5,7 +5,8 @@ import Plate from "../components/Plate.astro";
 import { chapters } from "../data/chapters.mjs";
 import { catalogues } from "../lib/catalogues";
 import { decisionLog } from "../lib/decisions";
-import { base } from "../lib/text";
+import { base, cap, count } from "../lib/text";
+import { peopleEntries } from "../data/peoples-handbook";
 
 const log = await decisionLog();
 const decided = log.reduce((n, d) => n + d.decisions.length, 0);
@@ -15,7 +16,7 @@ const posts = (await getCollection("devlog")).sort((a, b) => b.data.date.valueOf
 const fmt = (d: Date) => d.toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
 const demos = [
   { title: "The First Shard", text: "Pan and pinch the world map; tap any isle.", href: `${base}/world/#explore`, art: "chapters/world" },
-  { title: "Meet the peoples", text: "Turn the three peoples on a carousel.", href: `${base}/peoples/`, art: "chapters/peoples" },
+  { title: "Meet the peoples", text: `Turn the ${count(peopleEntries.length)} peoples on a carousel.`, href: `${base}/peoples/`, art: "chapters/peoples" },
   { title: "Trim a sail", text: "Steer against the wind and find your best speed.", href: `${base}/sailing/`, art: "chapters/sailing" },
   { title: "Roam the Rootholds", text: "Walk, run and jump across the bridged Rootwarden isles.", href: `${base}/demos/roam/`, art: "architecture/rootwarden-landmark-root-village" },
   { title: "A living shard", text: "5,000 NPCs at three levels of detail.", href: `${base}/simulation/`, art: "chapters/simulation" },
@@ -26,7 +27,7 @@ const demos = [
     <Plate art="chapters/vision" name="The sky isles" sizes="100vw" wide eager class="cover-art" />
     <div class="wrap cover-text">
       <p class="kicker">The handbook</p>
-      <h1>The isles are sinking.<br /><em>Three peoples share what is left.</em></h1>
+      <h1>The isles are sinking.<br /><em>{cap(count(peopleEntries.length))} peoples share what is left.</em></h1>
       <p class="lede">The world, the peoples, the rules and the creatures of game0, a sandbox of floating isles above a drowned world. Written down before a line of game code, so whatever we build it with, this is the game.</p>
       <div class="actions">
         <a class="btn primary" href={`${base}/vision/`}>Start reading</a>

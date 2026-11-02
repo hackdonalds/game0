@@ -18,7 +18,7 @@
 | --- | --- | --- | --- | --- |
 | Anchorkin | 3 m | 4 m | 1 m thick, battered 8° inward | Wide and low; doors 2 × 3.2 m for huge folk |
 | Galeborne | 2 m | 3 m | 0.3 m timber or stone skin | Narrow and tall; stacks of 3–5 storeys, cantilevered decks |
-| Accord | 2 m | 3 m | 0.5 m | Anchorkin-style stone ground floor, timber upper floors, sail awnings |
+| Accord towns | 2 m | 3 m | 0.5 m | Anchorkin-style stone ground floor, timber upper floors, sail awnings |
 | Rootwardens | No rectilinear grid | — | — | Sockets instead: root segments end in standard round caps (0.6, 1.0, 1.6 m, and 2.5 m great roots), tapers step between sizes, dome shells come in radii 3, 5 and 8 m with root anchors on their surface, openings are cut by azimuth and take burl inserts |
 | Old world | 4 m | 6 m | 1 m, razor-clean | Monumental and exact; rings come in radii 4, 8 and 16 m, with one standard inset channel width |
 

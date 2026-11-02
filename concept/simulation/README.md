@@ -1,3 +1,15 @@
+---
+chapter:
+  slug: simulation
+  number: 9
+  title: Simulation
+  kicker: A living shard
+  summary: Thousands of NPCs and bot characters at three levels of detail, so the world feels lived in from day one.
+  catalogues: []
+  demo: shard
+  art: a floating isle town at dusk seen from above, hundreds of tiny lantern-carrying townsfolk in the streets, caravans of small ships with lights leaving along a glowing wind lane toward distant isles
+---
+
 # Simulation
 
 How a shard fills its world with thousands of NPCs and bot characters while staying fast. Prototype: [`demos/npc-lod`](../../demos/npc-lod).

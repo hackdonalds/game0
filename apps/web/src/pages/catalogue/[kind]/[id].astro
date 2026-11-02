@@ -98,7 +98,8 @@ const hasPlate = kind !== "winds";
       <h1>{card.name}</h1>
       {card.subtitle && <p class="subtitle">{card.subtitle}</p>}
       {card.badges?.length ? <p class="badges">{card.badges.map((b) => <span class:list={["chip", b.class]}>{b.label}</span>)}</p> : null}
-      <p class="lore" set:html={linkIsles(creature?.lore ?? people?.culture ?? skill?.description ?? isleNote?.blurb ?? windNote?.blurb ?? ship?.description ?? material?.description ?? card.summary)} />
+      {(creature?.lore ?? people?.culture ?? skill?.description ?? isleNote?.blurb ?? windNote?.blurb ?? ship?.description ?? material?.description ?? card.summary)
+        .split("\n\n").map((para) => <p class="lore" set:html={linkIsles(para)} />)}
 
       {creature && (
         <article class="stat">

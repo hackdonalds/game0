@@ -1,8 +1,20 @@
+---
+chapter:
+  slug: world
+  number: 2
+  title: The World
+  kicker: Above the drowned world
+  summary: Why the isles float is a mystery. That they sink is not. The storm below, the Tether Accord, the seasons and the First Shard.
+  catalogues: [ isles, winds, glossary ]
+  demo: map
+  art: a dramatic view down past the edge of a floating isle into a churning living storm layer far below with lightning, ancient drowned ruins faintly visible through gaps in the clouds, and an isle slowly sinking into it
+---
+
 # World
 
 > Approved 2026-11-01.
 
-- [Peoples](peoples.md): the three playable peoples
+- [Peoples](peoples.md): the playable peoples
 
 ## Premise
 
@@ -22,23 +34,13 @@ Pure high fantasy: swords, bows, spells and craft. No guns or engines. Ships are
 
 ## The Tether Accord
 
-A fragile trade pact between the three peoples, sworn at Oathgate after a great sinking that nearly broke every people at once. It keeps the sky lanes open and the towns neutral. Under it, old grudges still run deep, and open-world PvP lives in the gaps between Accord towns.
+A fragile trade pact between the peoples, sworn at Oathgate after a great sinking that nearly broke every people at once. It keeps the sky lanes open and the towns neutral. Under it, old grudges still run deep, and open-world PvP lives in the gaps between Accord towns.
 
 ## Homelands
 
-| People | Homeland | Role in the world |
-| --- | --- | --- |
-| **Galeborne** | **The Crag Spires**: sheer cliff isles, the highest on the shard | Sailors and shipwrights; their couriers link every town |
-| **Anchorkin** | **The Moorings**: the lowest isles, chained together near the storm | Keepers of the **Ledger**, the record in stone of every isle that has sunk |
-| **Rootwardens** | **The Rootholds**: caverns in the roots beneath the oldest isles | Tend the ancient trees, which slows the sinking |
+Each playable people has a homeland on the First Shard: the Crag Spires, the Moorings and the Rootholds. Who lives where, and what they do there, is on each people's entry (see [Peoples](peoples.md)); their [old grudges and ties](peoples.md#old-grudges-and-ties) are written there too.
 
 The **Garden Isles** in the east belong to no people: terraced farmland open for player plots, and room for a future people.
-
-## Old grudges and ties
-
-- **Galeborne vs Rootwardens:** the Galeborne need ancient wood for masts and hulls; the Rootwardens say every old tree felled hastens the sinking.
-- **Rootwardens and Anchorkin:** old allies who hold the land, one with roots and the other with chains.
-- **Galeborne and Anchorkin:** wary trade partners. The Anchorkin don't trust a people who can leave any isle the moment it starts to fall.
 
 ## The First Shard
 
