@@ -41,7 +41,7 @@
       ],
       "pivot": "bottom-center",
       "free": true,
-      "tris": 14000,
+      "tris": 15000,
       "variants": [
         "intact",
         "mossy",
@@ -87,7 +87,7 @@
       ],
       "pivot": "bottom-center",
       "free": true,
-      "tris": 2400,
+      "tris": 2900,
       "variants": [
         "intact",
         "mossy"
@@ -109,7 +109,7 @@
       ],
       "pivot": "bottom-center",
       "free": true,
-      "tris": 2000,
+      "tris": 2400,
       "variants": [
         "intact",
         "mossy"
@@ -131,7 +131,7 @@
       ],
       "pivot": "bottom-center",
       "free": true,
-      "tris": 2600,
+      "tris": 3000,
       "variants": [
         "intact",
         "mossy"
@@ -153,7 +153,7 @@
       ],
       "pivot": "bottom-center",
       "free": true,
-      "tris": 1800,
+      "tris": 2400,
       "variants": [
         "intact",
         "mossy"
@@ -240,7 +240,7 @@
       ],
       "pivot": "bottom-center",
       "free": true,
-      "tris": 500,
+      "tris": 600,
       "ref": {
         "sheet": "nature",
         "label": "Glowing Mushrooms"
@@ -276,7 +276,7 @@
       ],
       "pivot": "bottom-center",
       "free": true,
-      "tris": 500,
+      "tris": 600,
       "variants": [
         "intact",
         "mossy"

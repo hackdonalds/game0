@@ -22,8 +22,8 @@ const cache = new Map<string, THREE.MeshStandardMaterial>();
  * Painterly standard material: vertex colours, roughness 1, wrapped/stepped sun diffuse and a soft
  * warm-over-teal rim. Foliage sways in the wind; glow is self-lit by its vertex colour.
  */
-export function painterly(kind: PaintKind, vertexColors: boolean, color = 0xffffff, map: THREE.Texture | null = null): THREE.MeshStandardMaterial {
-  const key = `${kind}|${vertexColors}|${color}|${map?.uuid ?? ""}`;
+export function painterly(kind: PaintKind, vertexColors: boolean, color = 0xffffff, map: THREE.Texture | null = null, cutout = false): THREE.MeshStandardMaterial {
+  const key = `${kind}|${vertexColors}|${color}|${map?.uuid ?? ""}|${cutout}`;
   const hit = cache.get(key);
   if (hit) return hit;
   const m = new THREE.MeshStandardMaterial({
@@ -31,8 +31,9 @@ export function painterly(kind: PaintKind, vertexColors: boolean, color = 0xffff
     vertexColors,
     roughness: 1,
     metalness: 0,
-    side: kind === "foliage" ? THREE.DoubleSide : THREE.FrontSide,
+    side: kind === "foliage" || cutout ? THREE.DoubleSide : THREE.FrontSide,
     map,
+    alphaTest: cutout ? 0.5 : 0,
   });
   if (kind === "glow") {
     m.emissive.set(vertexColors ? 0x000000 : map ? 0xffffff : color);
@@ -58,6 +59,13 @@ export function painterly(kind: PaintKind, vertexColors: boolean, color = 0xffff
         transformed.z += ( cos( ph * 0.83 ) + 0.3 * sin( ph * 3.1 ) ) * amp * 0.7;`,
       );
     }
+    if (cutout) {
+      // Card normals point away from the crown centre, so both faces must use them as they are
+      shader.fragmentShader = shader.fragmentShader.replace(
+        "#include <normal_fragment_begin>",
+        THREE.ShaderChunk.normal_fragment_begin.replace("float faceDirection = gl_FrontFacing ? 1.0 : - 1.0;", "float faceDirection = 1.0;"),
+      );
+    }
     shader.fragmentShader = "uniform vec3 uRimWarm;\nuniform vec3 uRimCool;\n" + shader.fragmentShader
       .replace("#include <lights_physical_pars_fragment>", WRAPPED_LIGHTS)
       .replace(
@@ -72,7 +80,7 @@ export function painterly(kind: PaintKind, vertexColors: boolean, color = 0xffff
         }`,
       );
   };
-  m.customProgramCacheKey = () => `painterly-${kind}-${vertexColors}`;
+  m.customProgramCacheKey = () => `painterly-${kind}-${vertexColors}-${cutout}`;
   cache.set(key, m);
   return m;
 }
@@ -85,9 +93,11 @@ export function kitMaterial(src: THREE.Material, hasColors: boolean): THREE.Mesh
   const s = src as THREE.MeshStandardMaterial;
   const name = s.name ?? "";
   const kind: PaintKind = /glow|fungus|amber/i.test(name) ? "glow" : /foliage/i.test(name) ? "foliage" : "kit";
+  // Leaf, grass and ivy cards: alpha-cutout sprites (glTF alphaMode MASK)
+  const cutout = /card/i.test(name) || s.alphaTest > 0;
   if (s.map) {
     s.map.colorSpace = THREE.SRGBColorSpace;
-    return painterly(kind, false, 0xffffff, s.map);
+    return painterly(kind, false, 0xffffff, s.map, cutout);
   }
   return painterly(kind, hasColors, hasColors ? 0xffffff : s.color ? s.color.getHex() : 0xcccccc);
 }

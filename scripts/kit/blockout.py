@@ -8,7 +8,8 @@ from mathutils import Vector, Matrix
 _args = sys.argv[sys.argv.index("--") + 1:] if "--" in sys.argv else []
 STYLE = _args[0] if _args and not _args[0].startswith("-") else "rootwarden"
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "../.."))
-KIT_DIR = os.path.join(ROOT, "art/models/architecture", STYLE)
+BIOMES = {"roothold", "crag", "meadow", "garden", "forest", "lagoon", "ruin"}
+KIT_DIR = os.path.join(ROOT, "art/models/nature" if STYLE in BIOMES else "art/models/architecture", STYLE)
 OUT = os.path.join(KIT_DIR, "blockout")
 kit = json.load(open(os.path.join(KIT_DIR, "kit.json")))
 PIECES = {p["id"]: p for p in kit["pieces"]}

@@ -13,6 +13,8 @@ OUT = B.KIT_DIR
 PREFAB_OUT = os.path.join(OUT, "prefabs")
 
 # Style scripts set these: the material list and what tube end caps and moss use
+# Materials whose name contains "Card" are alpha-cutout sprites (leaf cards, grass, ivy): their texture's alpha
+# drives a 0.5 clip that the glTF exporter writes as alphaMode MASK, and they render double-sided.
 MATS = []          # [(name, texture file | (r, g, b), emission strength)]
 TEX = ""           # folder of the style's textures
 CAP_MAT = 0        # material index for tube end caps (end grain)
@@ -37,6 +39,16 @@ def make_materials():
             t.image = bpy.data.images.load(os.path.join(TEX, tex), check_existing=True)
             t.extension = "MIRROR"  # mirrored tiling hides the seams of painted swatches
             nt.links.new(t.outputs["Color"], bsdf.inputs["Base Color"])
+            if "Card" in name:
+                clip = nt.nodes.new("ShaderNodeMath")
+                clip.operation = "ROUND"  # the glTF exporter reads Round as an alpha clip at 0.5
+                nt.links.new(t.outputs["Alpha"], clip.inputs[0])
+                nt.links.new(clip.outputs[0], bsdf.inputs["Alpha"])
+                m.use_backface_culling = False
+                if hasattr(m, "blend_method"):
+                    m.blend_method = "CLIP"
+                if hasattr(m, "surface_render_method"):
+                    m.surface_render_method = "DITHERED"
             if emit:
                 nt.links.new(t.outputs["Color"], bsdf.inputs["Emission Color"])
                 bsdf.inputs["Emission Strength"].default_value = emit
@@ -60,6 +72,8 @@ class Mesh:
         self.bm = bmesh.new()
         self.uv = self.bm.loops.layers.uv.new("UVMap")
         self.project = []  # faces whose UVs are box-projected when the object is made
+        self.normals = {}  # vertex -> normal hint (glTF), e.g. crown-centred normals so leaf cards shade as one mass
+        self.keep = set()  # faces whose winding is deliberate (cards) and must not be flipped by normal recalculation
 
     def vert(self, p):
         return self.bm.verts.new(V(*p))
@@ -78,7 +92,9 @@ class Mesh:
         bm = self.bm
         bmesh.ops.remove_doubles(bm, verts=bm.verts, dist=1e-5)  # weld UV seams; UVs live on loops and survive
         self.project = [(f, t) for f, t in self.project if f.is_valid]
-        bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
+        bm.verts.index_update()
+        hints = {v.index: V(*n).normalized() for v, n in self.normals.items() if v.is_valid}
+        bmesh.ops.recalc_face_normals(bm, faces=[f for f in bm.faces if f not in self.keep])
         bm.normal_update()
         for f, tile in self.project:
             box_uv(f, self.uv, tile)
@@ -95,6 +111,8 @@ class Mesh:
             me.materials.append(m)
         for poly in me.polygons:
             poly.use_smooth = smooth
+        if hints:
+            me.normals_split_custom_set_from_vertices([hints.get(i, v.normal) for i, v in enumerate(me.vertices)])
         ob = bpy.data.objects.new(name, me)
         bpy.context.scene.collection.objects.link(ob)
         return ob

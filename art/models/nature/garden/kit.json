@@ -43,7 +43,7 @@
         5
       ],
       "pivot": "bottom-center",
-      "tris": 2000,
+      "tris": 2400,
       "free": true,
       "ref": {
         "sheet": "nature",
@@ -61,7 +61,7 @@
         5
       ],
       "pivot": "bottom-center",
-      "tris": 2000,
+      "tris": 2400,
       "free": true,
       "ref": {
         "sheet": "nature",
@@ -79,7 +79,7 @@
         3
       ],
       "pivot": "bottom-center",
-      "tris": 1500,
+      "tris": 2200,
       "free": true,
       "ref": {
         "sheet": "nature",
@@ -97,7 +97,7 @@
         3
       ],
       "pivot": "bottom-center",
-      "tris": 1500,
+      "tris": 2400,
       "free": true,
       "ref": {
         "sheet": "nature",
@@ -208,7 +208,7 @@
         2
       ],
       "pivot": "bottom-left-front",
-      "tris": 500,
+      "tris": 570,
       "ref": {
         "sheet": "nature",
         "label": "Vegetables (Cabbage)"
@@ -225,7 +225,7 @@
         2
       ],
       "pivot": "bottom-left-front",
-      "tris": 500,
+      "tris": 570,
       "ref": {
         "sheet": "nature",
         "label": "Vegetables (Leeks)"
@@ -443,7 +443,7 @@
         2
       ],
       "pivot": "bottom-left-front",
-      "tris": 600,
+      "tris": 700,
       "variants": [
         "intact",
         "mossy",
@@ -610,7 +610,7 @@
         1
       ],
       "pivot": "bottom-center",
-      "tris": 300,
+      "tris": 500,
       "free": true,
       "ref": {
         "sheet": "isle-portrait",

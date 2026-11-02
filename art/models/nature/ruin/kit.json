@@ -51,7 +51,7 @@
       "size": [7, 7, 5.5],
       "pivot": "bottom-center",
       "free": true,
-      "tris": 2800,
+      "tris": 2900,
       "variants": ["intact", "mossy", "overgrown", "sinking"],
       "ref": {
         "sheet": "nature",
@@ -111,7 +111,7 @@
       "size": [1.2, 1.2, 0.9],
       "pivot": "bottom-center",
       "free": true,
-      "tris": 500,
+      "tris": 550,
       "variants": ["intact", "sinking"],
       "ref": {
         "sheet": "nature",
@@ -141,7 +141,7 @@
       "size": [0.7, 1.8, 0.3],
       "pivot": "bottom-center",
       "free": true,
-      "tris": 400,
+      "tris": 450,
       "variants": ["intact", "sinking"],
       "ref": {
         "sheet": "nature",
@@ -198,7 +198,7 @@
       "size": [1.6, 1.6, 1.6],
       "pivot": "bottom-center",
       "free": true,
-      "tris": 400,
+      "tris": 600,
       "variants": ["intact", "mossy", "overgrown", "sinking"],
       "ref": {
         "sheet": "nature",
@@ -243,7 +243,7 @@
       "size": [2, 0.4, 2],
       "pivot": "bottom-center",
       "free": true,
-      "tris": 400,
+      "tris": 600,
       "variants": ["intact", "mossy", "overgrown", "sinking"],
       "ref": {
         "sheet": "nature",
@@ -288,7 +288,7 @@
       "size": [8, 4, 5],
       "pivot": "bottom-center",
       "free": true,
-      "tris": 1300,
+      "tris": 1500,
       "variants": ["intact", "mossy", "overgrown", "sinking"],
       "ref": {
         "sheet": "nature",

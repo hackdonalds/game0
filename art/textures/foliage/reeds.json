@@ -1,0 +1,5 @@
+{
+  "prompt": "Next atlas, same spec (square 2x2 sprite atlas, transparent PNG with fully transparent background / real alpha, four separate, different sprites each centred in its quadrant with clear empty margin at the sides and top, same painterly style as the references, light from the top with warm sunlit tops and cooler blue undersides, no outlines, no ground, no soil, no water, no text, no shadow on the background). Content: reed and cattail clumps seen from the side, four different clumps (tall reeds with feathery plumes, a cattail clump with brown velvet heads, a mixed reed-and-cattail clump, a short rush clump), like the waterside plants in the lagoon reference. Each clump's roots sit on a flat line near the bottom edge of its quadrant with only a small margin below.",
+  "chat_url": "https://chatgpt.com/c/6ae8a70c-3d24-83eb-a616-2bffa75a8133",
+  "tool": "chatgpt.com"
+}

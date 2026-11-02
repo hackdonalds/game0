@@ -1,0 +1,392 @@
+[
+  {
+    "id": "gd-orchard-a",
+    "file": "gd-orchard-a.glb",
+    "category": "tree",
+    "biomes": [
+      "garden"
+    ],
+    "radius": 2.5,
+    "height": 5,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "gd-orchard-b",
+    "file": "gd-orchard-b.glb",
+    "category": "tree",
+    "biomes": [
+      "garden"
+    ],
+    "radius": 2.75,
+    "height": 5,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "gd-poplar-a",
+    "file": "gd-poplar-a.glb",
+    "category": "tree",
+    "biomes": [
+      "garden"
+    ],
+    "radius": 1.5,
+    "height": 12,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "gd-poplar-b",
+    "file": "gd-poplar-b.glb",
+    "category": "tree",
+    "biomes": [
+      "garden"
+    ],
+    "radius": 1.5,
+    "height": 13,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "gd-hedgerow-4m",
+    "file": "gd-hedgerow-4m.glb",
+    "category": "bush",
+    "biomes": [
+      "garden"
+    ],
+    "radius": 2.0,
+    "height": 1.5,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "gd-hedgerow-corner",
+    "file": "gd-hedgerow-corner.glb",
+    "category": "bush",
+    "biomes": [
+      "garden"
+    ],
+    "radius": 1.0,
+    "height": 1.5,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "gd-plot-furrows",
+    "file": "gd-plot-furrows.glb",
+    "category": "crop",
+    "biomes": [
+      "garden"
+    ],
+    "radius": 1.0,
+    "height": 0.5,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "gd-crop-wheat",
+    "file": "gd-crop-wheat.glb",
+    "category": "crop",
+    "biomes": [
+      "garden"
+    ],
+    "radius": 1.0,
+    "height": 1,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "gd-crop-flax",
+    "file": "gd-crop-flax.glb",
+    "category": "crop",
+    "biomes": [
+      "garden"
+    ],
+    "radius": 1.0,
+    "height": 1,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "gd-crop-cabbage",
+    "file": "gd-crop-cabbage.glb",
+    "category": "crop",
+    "biomes": [
+      "garden"
+    ],
+    "radius": 1.0,
+    "height": 0.5,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "gd-crop-leeks",
+    "file": "gd-crop-leeks.glb",
+    "category": "crop",
+    "biomes": [
+      "garden"
+    ],
+    "radius": 1.0,
+    "height": 0.5,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "gd-herb-bed",
+    "file": "gd-herb-bed.glb",
+    "category": "crop",
+    "biomes": [
+      "garden"
+    ],
+    "radius": 1.0,
+    "height": 0.9,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "gd-flower-bed",
+    "file": "gd-flower-bed.glb",
+    "category": "crop",
+    "biomes": [
+      "garden"
+    ],
+    "radius": 1.0,
+    "height": 1.2,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "gd-fence-2m",
+    "file": "gd-fence-2m.glb",
+    "category": "wall",
+    "biomes": [
+      "garden"
+    ],
+    "radius": 1.0,
+    "height": 1,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "gd-scarecrow",
+    "file": "gd-scarecrow.glb",
+    "category": "prop",
+    "biomes": [
+      "garden"
+    ],
+    "radius": 0.75,
+    "height": 2.2,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "gd-haystack",
+    "file": "gd-haystack.glb",
+    "category": "prop",
+    "biomes": [
+      "garden"
+    ],
+    "radius": 1.5,
+    "height": 2.5,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "gd-well",
+    "file": "gd-well.glb",
+    "category": "prop",
+    "biomes": [
+      "garden"
+    ],
+    "radius": 1.1,
+    "height": 3,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "gd-grass-tuft",
+    "file": "gd-grass-tuft.glb",
+    "category": "ground",
+    "biomes": [
+      "garden"
+    ],
+    "radius": 0.4,
+    "height": 0.7,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "gd-clover",
+    "file": "gd-clover.glb",
+    "category": "ground",
+    "biomes": [
+      "garden"
+    ],
+    "radius": 0.25,
+    "height": 0.2,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "gd-wildflower-clump",
+    "file": "gd-wildflower-clump.glb",
+    "category": "ground",
+    "biomes": [
+      "garden"
+    ],
+    "radius": 0.3,
+    "height": 0.5,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "gd-wall-straight-2m",
+    "file": "gd-wall-straight-2m.glb",
+    "category": "wall",
+    "biomes": [
+      "garden"
+    ],
+    "radius": 1.0,
+    "height": 1,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "gd-wall-corner",
+    "file": "gd-wall-corner.glb",
+    "category": "wall",
+    "biomes": [
+      "garden"
+    ],
+    "radius": 1.0,
+    "height": 1,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "gd-terrace-wall-stepped",
+    "file": "gd-terrace-wall-stepped.glb",
+    "category": "wall",
+    "biomes": [
+      "garden"
+    ],
+    "radius": 2.0,
+    "height": 2,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "gd-wall-broken",
+    "file": "gd-wall-broken.glb",
+    "category": "wall",
+    "biomes": [
+      "garden"
+    ],
+    "radius": 1.0,
+    "height": 1,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "gd-clay-bank",
+    "file": "gd-clay-bank.glb",
+    "category": "rock",
+    "biomes": [
+      "garden"
+    ],
+    "radius": 1.25,
+    "height": 1.5,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "gd-lip-terrace",
+    "file": "gd-lip-terrace.glb",
+    "category": "lip",
+    "biomes": [
+      "garden"
+    ],
+    "radius": 4.0,
+    "height": 2.5,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "gd-underside-terrace",
+    "file": "gd-underside-terrace.glb",
+    "category": "underside",
+    "biomes": [
+      "garden"
+    ],
+    "radius": 4.0,
+    "height": 12,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "gd-fishpond",
+    "file": "gd-fishpond.glb",
+    "category": "water",
+    "biomes": [
+      "garden"
+    ],
+    "radius": 3.0,
+    "height": 0.5,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "gd-channel-2m",
+    "file": "gd-channel-2m.glb",
+    "category": "water",
+    "biomes": [
+      "garden"
+    ],
+    "radius": 1.0,
+    "height": 0.5,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "gd-trickle",
+    "file": "gd-trickle.glb",
+    "category": "water",
+    "biomes": [
+      "garden"
+    ],
+    "radius": 0.5,
+    "height": 10,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  }
+]

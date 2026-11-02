@@ -65,7 +65,7 @@
       ],
       "pivot": "bottom-center",
       "free": true,
-      "tris": 2400,
+      "tris": 2800,
       "variants": [
         "intact",
         "mossy"
@@ -87,7 +87,7 @@
       ],
       "pivot": "bottom-center",
       "free": true,
-      "tris": 2000,
+      "tris": 2200,
       "variants": [
         "intact",
         "mossy"
@@ -109,7 +109,7 @@
       ],
       "pivot": "bottom-center",
       "free": true,
-      "tris": 2400,
+      "tris": 2600,
       "variants": [
         "intact",
         "mossy"
@@ -131,7 +131,7 @@
       ],
       "pivot": "bottom-center",
       "free": true,
-      "tris": 2000,
+      "tris": 2200,
       "variants": [
         "intact",
         "mossy"
@@ -175,7 +175,7 @@
       ],
       "pivot": "bottom-center",
       "free": true,
-      "tris": 2200,
+      "tris": 2400,
       "variants": [
         "intact",
         "mossy"
@@ -280,7 +280,7 @@
       ],
       "pivot": "bottom-center",
       "free": true,
-      "tris": 500,
+      "tris": 550,
       "variants": [
         "intact",
         "mossy"
@@ -302,7 +302,7 @@
       ],
       "pivot": "bottom-center",
       "free": true,
-      "tris": 400,
+      "tris": 600,
       "ref": {
         "sheet": "nature",
         "label": "Mushroom Cluster"
@@ -338,7 +338,7 @@
       ],
       "pivot": "bottom-center",
       "free": true,
-      "tris": 200,
+      "tris": 250,
       "ref": {
         "sheet": "nature",
         "label": "Needle Litter"

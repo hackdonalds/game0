@@ -1,0 +1,262 @@
+[
+  {
+    "id": "ru-slab-splitter-a",
+    "file": "ru-slab-splitter-a.glb",
+    "category": "tree",
+    "biomes": [
+      "ruin"
+    ],
+    "radius": 4.5,
+    "height": 8,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "ru-slab-splitter-b",
+    "file": "ru-slab-splitter-b.glb",
+    "category": "tree",
+    "biomes": [
+      "ruin"
+    ],
+    "radius": 3.5,
+    "height": 7,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "ru-root-gripped-block",
+    "file": "ru-root-gripped-block.glb",
+    "category": "tree",
+    "biomes": [
+      "ruin"
+    ],
+    "radius": 1.5,
+    "height": 3.5,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "ru-sapling-a",
+    "file": "ru-sapling-a.glb",
+    "category": "bush",
+    "biomes": [
+      "ruin"
+    ],
+    "radius": 0.45,
+    "height": 1.4,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "ru-sapling-b",
+    "file": "ru-sapling-b.glb",
+    "category": "bush",
+    "biomes": [
+      "ruin"
+    ],
+    "radius": 0.6,
+    "height": 1.7,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "ru-sapling-c",
+    "file": "ru-sapling-c.glb",
+    "category": "bush",
+    "biomes": [
+      "ruin"
+    ],
+    "radius": 0.6,
+    "height": 1.2,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "ru-ivy-a",
+    "file": "ru-ivy-a.glb",
+    "category": "bush",
+    "biomes": [
+      "ruin"
+    ],
+    "radius": 0.65,
+    "height": 1,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "ru-ivy-b",
+    "file": "ru-ivy-b.glb",
+    "category": "bush",
+    "biomes": [
+      "ruin"
+    ],
+    "radius": 0.35,
+    "height": 1.8,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "ru-grass-joint",
+    "file": "ru-grass-joint.glb",
+    "category": "ground",
+    "biomes": [
+      "ruin"
+    ],
+    "radius": 0.4,
+    "height": 0.5,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "ru-moss-patch",
+    "file": "ru-moss-patch.glb",
+    "category": "ground",
+    "biomes": [
+      "ruin"
+    ],
+    "radius": 0.5,
+    "height": 0.25,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "ru-rubble-scatter",
+    "file": "ru-rubble-scatter.glb",
+    "category": "ground",
+    "biomes": [
+      "ruin"
+    ],
+    "radius": 0.6,
+    "height": 0.25,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "ru-rock-a",
+    "file": "ru-rock-a.glb",
+    "category": "rock",
+    "biomes": [
+      "ruin"
+    ],
+    "radius": 0.8,
+    "height": 1.6,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "ru-rock-b",
+    "file": "ru-rock-b.glb",
+    "category": "rock",
+    "biomes": [
+      "ruin"
+    ],
+    "radius": 0.8,
+    "height": 1.1,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "ru-rock-c",
+    "file": "ru-rock-c.glb",
+    "category": "rock",
+    "biomes": [
+      "ruin"
+    ],
+    "radius": 1.2,
+    "height": 2,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "ru-rock-d",
+    "file": "ru-rock-d.glb",
+    "category": "rock",
+    "biomes": [
+      "ruin"
+    ],
+    "radius": 1.0,
+    "height": 0.4,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "ru-rock-e",
+    "file": "ru-rock-e.glb",
+    "category": "rock",
+    "biomes": [
+      "ruin"
+    ],
+    "radius": 0.8,
+    "height": 0.9,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "ru-lip-crumble",
+    "file": "ru-lip-crumble.glb",
+    "category": "lip",
+    "biomes": [
+      "ruin"
+    ],
+    "radius": 4.0,
+    "height": 4,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "ru-lip-paved",
+    "file": "ru-lip-paved.glb",
+    "category": "lip",
+    "biomes": [
+      "ruin"
+    ],
+    "radius": 4.0,
+    "height": 4,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "ru-underside-a",
+    "file": "ru-underside-a.glb",
+    "category": "underside",
+    "biomes": [
+      "ruin"
+    ],
+    "radius": 4.0,
+    "height": 12,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "ru-underside-b",
+    "file": "ru-underside-b.glb",
+    "category": "underside",
+    "biomes": [
+      "ruin"
+    ],
+    "radius": 3.0,
+    "height": 7,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  }
+]

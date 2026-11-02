@@ -1,0 +1,5 @@
+{
+  "prompt": "Next atlas, same spec (square 2x2 sprite atlas, transparent PNG with fully transparent background / real alpha, four separate, different sprites each centred in its quadrant with clear empty margin, same painterly style as the references, light from the top with warm sunlit tops and cooler blue undersides, no outlines, no ground, no text, no shadow on the background). Content: single fern fronds, four different fronds (e.g. a broad lush forest fern, a slender lady fern, a curling fiddlehead-tipped frond, a feathery fern with golden-lit tips), each a full frond from stem base to tip, pointing upward with a gentle arch, stem base near the bottom of the quadrant, fresh green like the ferns in the roothold reference.",
+  "chat_url": "https://chatgpt.com/c/6ae8a70c-3d24-83eb-a616-2bffa75a8133",
+  "tool": "chatgpt.com"
+}

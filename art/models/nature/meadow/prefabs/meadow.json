@@ -1,0 +1,340 @@
+[
+  {
+    "id": "md-birch-a",
+    "file": "md-birch-a.glb",
+    "category": "tree",
+    "biomes": [
+      "meadow"
+    ],
+    "radius": 2.0,
+    "height": 8,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "md-birch-b",
+    "file": "md-birch-b.glb",
+    "category": "tree",
+    "biomes": [
+      "meadow"
+    ],
+    "radius": 2.25,
+    "height": 9.5,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "md-orchard-a",
+    "file": "md-orchard-a.glb",
+    "category": "tree",
+    "biomes": [
+      "meadow"
+    ],
+    "radius": 2.5,
+    "height": 4.5,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "md-orchard-b",
+    "file": "md-orchard-b.glb",
+    "category": "tree",
+    "biomes": [
+      "meadow"
+    ],
+    "radius": 2.25,
+    "height": 5,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "md-oak-a",
+    "file": "md-oak-a.glb",
+    "category": "hero",
+    "biomes": [
+      "meadow"
+    ],
+    "radius": 9.0,
+    "height": 14,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "md-oak-b",
+    "file": "md-oak-b.glb",
+    "category": "hero",
+    "biomes": [
+      "meadow"
+    ],
+    "radius": 7.5,
+    "height": 13,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "md-wildflower-drift",
+    "file": "md-wildflower-drift.glb",
+    "category": "bush",
+    "biomes": [
+      "meadow"
+    ],
+    "radius": 1.25,
+    "height": 0.9,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "md-flowering-bush",
+    "file": "md-flowering-bush.glb",
+    "category": "bush",
+    "biomes": [
+      "meadow"
+    ],
+    "radius": 0.8,
+    "height": 1.4,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "md-hedgerow-4m",
+    "file": "md-hedgerow-4m.glb",
+    "category": "bush",
+    "biomes": [
+      "meadow"
+    ],
+    "radius": 2.0,
+    "height": 1.5,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "md-standing-stone",
+    "file": "md-standing-stone.glb",
+    "category": "rock",
+    "biomes": [
+      "meadow"
+    ],
+    "radius": 0.5,
+    "height": 3,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "md-wall-straight-2m",
+    "file": "md-wall-straight-2m.glb",
+    "category": "wall",
+    "biomes": [
+      "meadow"
+    ],
+    "radius": 1.0,
+    "height": 1,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "md-wall-corner",
+    "file": "md-wall-corner.glb",
+    "category": "wall",
+    "biomes": [
+      "meadow"
+    ],
+    "radius": 1.0,
+    "height": 1,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "md-grass-long",
+    "file": "md-grass-long.glb",
+    "category": "ground",
+    "biomes": [
+      "meadow"
+    ],
+    "radius": 0.4,
+    "height": 0.7,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "md-grass-short",
+    "file": "md-grass-short.glb",
+    "category": "ground",
+    "biomes": [
+      "meadow"
+    ],
+    "radius": 0.3,
+    "height": 0.2,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "md-clover",
+    "file": "md-clover.glb",
+    "category": "ground",
+    "biomes": [
+      "meadow"
+    ],
+    "radius": 0.25,
+    "height": 0.15,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "md-flower-clump",
+    "file": "md-flower-clump.glb",
+    "category": "ground",
+    "biomes": [
+      "meadow"
+    ],
+    "radius": 0.3,
+    "height": 0.5,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "md-rock-a",
+    "file": "md-rock-a.glb",
+    "category": "rock",
+    "biomes": [
+      "meadow"
+    ],
+    "radius": 1.25,
+    "height": 1.8,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "md-rock-b",
+    "file": "md-rock-b.glb",
+    "category": "rock",
+    "biomes": [
+      "meadow"
+    ],
+    "radius": 1.0,
+    "height": 0.8,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "md-rock-c",
+    "file": "md-rock-c.glb",
+    "category": "rock",
+    "biomes": [
+      "meadow"
+    ],
+    "radius": 0.8,
+    "height": 2,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "md-rock-d",
+    "file": "md-rock-d.glb",
+    "category": "rock",
+    "biomes": [
+      "meadow"
+    ],
+    "radius": 0.75,
+    "height": 0.8,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "md-rock-e",
+    "file": "md-rock-e.glb",
+    "category": "rock",
+    "biomes": [
+      "meadow"
+    ],
+    "radius": 0.8,
+    "height": 0.6,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "md-lip-ledge",
+    "file": "md-lip-ledge.glb",
+    "category": "lip",
+    "biomes": [
+      "meadow"
+    ],
+    "radius": 4.0,
+    "height": 3,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "md-underside",
+    "file": "md-underside.glb",
+    "category": "underside",
+    "biomes": [
+      "meadow"
+    ],
+    "radius": 4.0,
+    "height": 10,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "md-pond",
+    "file": "md-pond.glb",
+    "category": "water",
+    "biomes": [
+      "meadow"
+    ],
+    "radius": 4.0,
+    "height": 0.5,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "md-stream",
+    "file": "md-stream.glb",
+    "category": "water",
+    "biomes": [
+      "meadow"
+    ],
+    "radius": 2.0,
+    "height": 0.4,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "md-waterfall",
+    "file": "md-waterfall.glb",
+    "category": "water",
+    "biomes": [
+      "meadow"
+    ],
+    "radius": 1.0,
+    "height": 10,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  }
+]

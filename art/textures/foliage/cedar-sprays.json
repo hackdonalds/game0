@@ -1,0 +1,5 @@
+{
+  "prompt": "Great. Next atlas, same spec: a new square 2x2 sprite atlas as a transparent PNG with a fully transparent background (real alpha), four separate, different sprites, each centred in its quadrant with clear empty margin so nothing touches the quadrant edges, same hand-painted stylized painterly style as the references, light from the top (warm sunlit tops, cooler blue undersides), soft painted detail, no outlines, no ground, no text, no shadow on the background. Content: flat, layered cedar / fir foliage sprays seen from slightly above, spreading as horizontal fans with tiered flat layers of scale-like foliage on thin woody twigs, deep green with warm sunlit upper surfaces.",
+  "chat_url": "https://chatgpt.com/c/6ae8a70c-3d24-83eb-a616-2bffa75a8133",
+  "tool": "chatgpt.com"
+}

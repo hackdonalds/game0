@@ -1,0 +1,5 @@
+{
+  "prompt": "These four images are the painterly style and foliage reference for my stylized high-fantasy sky-island game. I need foliage SPRITE ATLASES for alpha-cutout cards on 3D trees and plants. Please generate an image: a square 2x2 sprite atlas, transparent PNG with a fully TRANSPARENT background (real alpha channel, no checkerboard pattern, no backdrop colour). Four separate, different sprites, one centred in each quadrant, each with clear empty margin so nothing touches the quadrant edges or the other sprites. Content: drooping pine needle sprays seen from the side and slightly above, deep blue-green with warm golden-lit tips, like the pines in the crag reference. Style: hand-painted stylized painterly foliage matching the references, soft painted brush detail, light from the top (warm sunlit tops, cooler blue-shadowed undersides), no outlines, no ground, no text, no labels, no drop shadow on the background.",
+  "chat_url": "https://chatgpt.com/c/6ae8a70c-3d24-83eb-a616-2bffa75a8133",
+  "tool": "chatgpt.com"
+}

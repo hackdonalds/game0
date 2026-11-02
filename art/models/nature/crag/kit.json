@@ -19,7 +19,10 @@
     "Cragslate",
     "Cinder Rock",
     "Ore Seam",
-    "Water Spray"
+    "Water Spray",
+    "Pine Needle Cards",
+    "Juniper Cards",
+    "Grass Cards"
   ],
   "terrain": {
     "ground": "ground.png",
@@ -35,7 +38,7 @@
       "size": [8, 6.5, 5],
       "pivot": "bottom-center",
       "free": true,
-      "tris": 2600,
+      "tris": 3000,
       "variants": ["intact", "sinking"],
       "ref": { "sheet": "nature", "label": "wind-bent pine A" },
       "notes": "Broad flat-topped crown: three or four layered needle pads swept to one side (+X downwind). Thick twisted brown-grey trunk leaning hard over, gnarled root flare gripping a few small cragslate stones and a tuft of turf. Needles olive-green with gold-lit tops, teal-shadowed undersides."
@@ -47,7 +50,7 @@
       "size": [7, 6, 4.5],
       "pivot": "bottom-center",
       "free": true,
-      "tris": 2400,
+      "tris": 2800,
       "variants": ["intact", "sinking"],
       "ref": { "sheet": "nature", "label": "wind-bent pine B" },
       "notes": "Taller S-curved trunk, bonsai silhouette: a high main pad plus two or three smaller pads stepping down the downwind side. Same bark and needles as pine A, roots over a low rock chunk. Lean matches pine A so scatter can keep every tree leaning one way."
@@ -59,7 +62,7 @@
       "size": [4, 2, 2.5],
       "pivot": "bottom-center",
       "free": true,
-      "tris": 1600,
+      "tris": 2300,
       "variants": ["intact", "sinking"],
       "ref": { "sheet": "nature", "label": "juniper A" },
       "notes": "Stunted, low and wind-combed: twisted pale silver-grey limbs crawling along the ground downwind, dense bright green foliage clumps on top, a few bare dead branch tips at the trailing end."
@@ -284,7 +287,7 @@
       "size": [3, 10, 2],
       "pivot": "bottom-center",
       "free": true,
-      "tris": 300,
+      "tris": 400,
       "ref": { "sheet": "isle-portrait", "label": "thin waterfall off the lip, blown to spray" },
       "notes": "Thin white ribbon of water off the lip that frays into drifting mist downwind as it falls; scrolling alpha cards. Also shown on the nature sheet's underside piece."
     }

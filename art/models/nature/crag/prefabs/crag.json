@@ -1,0 +1,288 @@
+[
+  {
+    "id": "cg-pine-a",
+    "file": "cg-pine-a.glb",
+    "category": "tree",
+    "biomes": [
+      "crag"
+    ],
+    "radius": 4.0,
+    "height": 6.5,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "cg-pine-b",
+    "file": "cg-pine-b.glb",
+    "category": "tree",
+    "biomes": [
+      "crag"
+    ],
+    "radius": 3.5,
+    "height": 6,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "cg-juniper-a",
+    "file": "cg-juniper-a.glb",
+    "category": "tree",
+    "biomes": [
+      "crag"
+    ],
+    "radius": 2.0,
+    "height": 2,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "cg-juniper-b",
+    "file": "cg-juniper-b.glb",
+    "category": "tree",
+    "biomes": [
+      "crag"
+    ],
+    "radius": 1.75,
+    "height": 3,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "cg-cushion-plant",
+    "file": "cg-cushion-plant.glb",
+    "category": "bush",
+    "biomes": [
+      "crag"
+    ],
+    "radius": 0.5,
+    "height": 0.4,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "cg-alpine-flowers",
+    "file": "cg-alpine-flowers.glb",
+    "category": "bush",
+    "biomes": [
+      "crag"
+    ],
+    "radius": 0.35,
+    "height": 0.45,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "cg-grass-clump",
+    "file": "cg-grass-clump.glb",
+    "category": "ground",
+    "biomes": [
+      "crag"
+    ],
+    "radius": 0.7,
+    "height": 0.6,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "cg-turf-patch",
+    "file": "cg-turf-patch.glb",
+    "category": "ground",
+    "biomes": [
+      "crag"
+    ],
+    "radius": 0.9,
+    "height": 0.2,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "cg-scree-pile",
+    "file": "cg-scree-pile.glb",
+    "category": "ground",
+    "biomes": [
+      "crag"
+    ],
+    "radius": 0.8,
+    "height": 0.8,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "cg-rock-lichen",
+    "file": "cg-rock-lichen.glb",
+    "category": "rock",
+    "biomes": [
+      "crag"
+    ],
+    "radius": 0.7,
+    "height": 0.9,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "cg-rock-boulder",
+    "file": "cg-rock-boulder.glb",
+    "category": "rock",
+    "biomes": [
+      "crag"
+    ],
+    "radius": 1.2,
+    "height": 1.6,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "cg-rock-split",
+    "file": "cg-rock-split.glb",
+    "category": "rock",
+    "biomes": [
+      "crag"
+    ],
+    "radius": 0.9,
+    "height": 1.9,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "cg-rock-ledge",
+    "file": "cg-rock-ledge.glb",
+    "category": "rock",
+    "biomes": [
+      "crag"
+    ],
+    "radius": 1.5,
+    "height": 1.5,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "cg-rock-stair",
+    "file": "cg-rock-stair.glb",
+    "category": "rock",
+    "biomes": [
+      "crag"
+    ],
+    "radius": 1.5,
+    "height": 1.8,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "cg-rock-spire",
+    "file": "cg-rock-spire.glb",
+    "category": "rock",
+    "biomes": [
+      "crag"
+    ],
+    "radius": 1.0,
+    "height": 4,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "cg-rock-cinder",
+    "file": "cg-rock-cinder.glb",
+    "category": "rock",
+    "biomes": [
+      "crag"
+    ],
+    "radius": 1.1,
+    "height": 1.6,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "cg-rock-ore",
+    "file": "cg-rock-ore.glb",
+    "category": "rock",
+    "biomes": [
+      "crag"
+    ],
+    "radius": 1.1,
+    "height": 1.7,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "cg-lip",
+    "file": "cg-lip.glb",
+    "category": "lip",
+    "biomes": [
+      "crag"
+    ],
+    "radius": 4.0,
+    "height": 5,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "cg-lip-wild",
+    "file": "cg-lip-wild.glb",
+    "category": "lip",
+    "biomes": [
+      "crag"
+    ],
+    "radius": 4.0,
+    "height": 5,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "cg-underside",
+    "file": "cg-underside.glb",
+    "category": "underside",
+    "biomes": [
+      "crag"
+    ],
+    "radius": 4.0,
+    "height": 10,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "cg-underside-wild",
+    "file": "cg-underside-wild.glb",
+    "category": "underside",
+    "biomes": [
+      "crag"
+    ],
+    "radius": 4.0,
+    "height": 10,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "cg-fall-spray",
+    "file": "cg-fall-spray.glb",
+    "category": "water",
+    "biomes": [
+      "crag"
+    ],
+    "radius": 1.5,
+    "height": 10,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  }
+]

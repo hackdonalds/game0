@@ -1,0 +1,288 @@
+[
+  {
+    "id": "lg-salt-tree-a",
+    "file": "lg-salt-tree-a.glb",
+    "category": "tree",
+    "biomes": [
+      "lagoon"
+    ],
+    "radius": 4.0,
+    "height": 6,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "lg-salt-tree-b",
+    "file": "lg-salt-tree-b.glb",
+    "category": "tree",
+    "biomes": [
+      "lagoon"
+    ],
+    "radius": 3.0,
+    "height": 7,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "lg-salt-tree-c",
+    "file": "lg-salt-tree-c.glb",
+    "category": "tree",
+    "biomes": [
+      "lagoon"
+    ],
+    "radius": 3.25,
+    "height": 4.5,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "lg-dead-snag-a",
+    "file": "lg-dead-snag-a.glb",
+    "category": "tree",
+    "biomes": [
+      "lagoon"
+    ],
+    "radius": 2.5,
+    "height": 6,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "lg-dead-snag-b",
+    "file": "lg-dead-snag-b.glb",
+    "category": "tree",
+    "biomes": [
+      "lagoon"
+    ],
+    "radius": 1.75,
+    "height": 4,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "lg-reed-bed",
+    "file": "lg-reed-bed.glb",
+    "category": "bush",
+    "biomes": [
+      "lagoon"
+    ],
+    "radius": 1.25,
+    "height": 2,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "lg-glowweed",
+    "file": "lg-glowweed.glb",
+    "category": "bush",
+    "biomes": [
+      "lagoon"
+    ],
+    "radius": 0.6,
+    "height": 1,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "lg-drift-timber",
+    "file": "lg-drift-timber.glb",
+    "category": "bush",
+    "biomes": [
+      "lagoon"
+    ],
+    "radius": 1.75,
+    "height": 1,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "lg-shells",
+    "file": "lg-shells.glb",
+    "category": "ground",
+    "biomes": [
+      "lagoon"
+    ],
+    "radius": 0.75,
+    "height": 0.3,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "lg-salt-grass-a",
+    "file": "lg-salt-grass-a.glb",
+    "category": "ground",
+    "biomes": [
+      "lagoon"
+    ],
+    "radius": 0.35,
+    "height": 0.6,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "lg-salt-grass-b",
+    "file": "lg-salt-grass-b.glb",
+    "category": "ground",
+    "biomes": [
+      "lagoon"
+    ],
+    "radius": 0.2,
+    "height": 0.35,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "lg-moss-wet",
+    "file": "lg-moss-wet.glb",
+    "category": "ground",
+    "biomes": [
+      "lagoon"
+    ],
+    "radius": 0.6,
+    "height": 0.2,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "lg-rock-a",
+    "file": "lg-rock-a.glb",
+    "category": "rock",
+    "biomes": [
+      "lagoon"
+    ],
+    "radius": 0.9,
+    "height": 1.5,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "lg-rock-b",
+    "file": "lg-rock-b.glb",
+    "category": "rock",
+    "biomes": [
+      "lagoon"
+    ],
+    "radius": 1.0,
+    "height": 0.8,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "lg-rock-c",
+    "file": "lg-rock-c.glb",
+    "category": "rock",
+    "biomes": [
+      "lagoon"
+    ],
+    "radius": 0.75,
+    "height": 3,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "lg-rock-d",
+    "file": "lg-rock-d.glb",
+    "category": "rock",
+    "biomes": [
+      "lagoon"
+    ],
+    "radius": 0.9,
+    "height": 1.6,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "lg-rock-e",
+    "file": "lg-rock-e.glb",
+    "category": "rock",
+    "biomes": [
+      "lagoon"
+    ],
+    "radius": 1.0,
+    "height": 3.5,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "lg-mere-edge",
+    "file": "lg-mere-edge.glb",
+    "category": "water",
+    "biomes": [
+      "lagoon"
+    ],
+    "radius": 3.0,
+    "height": 1.2,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "lg-lip-ledge-trickle",
+    "file": "lg-lip-ledge-trickle.glb",
+    "category": "lip",
+    "biomes": [
+      "lagoon"
+    ],
+    "radius": 4.0,
+    "height": 4,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "lg-lip-ledge",
+    "file": "lg-lip-ledge.glb",
+    "category": "lip",
+    "biomes": [
+      "lagoon"
+    ],
+    "radius": 4.0,
+    "height": 4,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "lg-underside-a",
+    "file": "lg-underside-a.glb",
+    "category": "underside",
+    "biomes": [
+      "lagoon"
+    ],
+    "radius": 4.0,
+    "height": 12,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "lg-underside-b",
+    "file": "lg-underside-b.glb",
+    "category": "underside",
+    "biomes": [
+      "lagoon"
+    ],
+    "radius": 3.0,
+    "height": 7,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  }
+]

@@ -1,0 +1,314 @@
+[
+  {
+    "id": "rh-ancient-tree",
+    "file": "rh-ancient-tree.glb",
+    "category": "hero",
+    "biomes": [
+      "roothold"
+    ],
+    "radius": 17.0,
+    "height": 36,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "rh-oak-b",
+    "file": "rh-oak-b.glb",
+    "category": "tree",
+    "biomes": [
+      "roothold"
+    ],
+    "radius": 7.0,
+    "height": 15,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "rh-elder-a",
+    "file": "rh-elder-a.glb",
+    "category": "tree",
+    "biomes": [
+      "roothold"
+    ],
+    "radius": 4.5,
+    "height": 8,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "rh-elder-b",
+    "file": "rh-elder-b.glb",
+    "category": "tree",
+    "biomes": [
+      "roothold"
+    ],
+    "radius": 3.0,
+    "height": 8,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "rh-cedar-a",
+    "file": "rh-cedar-a.glb",
+    "category": "tree",
+    "biomes": [
+      "roothold"
+    ],
+    "radius": 4.5,
+    "height": 18,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "rh-cedar-b",
+    "file": "rh-cedar-b.glb",
+    "category": "tree",
+    "biomes": [
+      "roothold"
+    ],
+    "radius": 2.5,
+    "height": 12,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "rh-fern-clump",
+    "file": "rh-fern-clump.glb",
+    "category": "bush",
+    "biomes": [
+      "roothold"
+    ],
+    "radius": 0.8,
+    "height": 1.1,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "rh-root-arch",
+    "file": "rh-root-arch.glb",
+    "category": "ground",
+    "biomes": [
+      "roothold"
+    ],
+    "radius": 2.25,
+    "height": 2.8,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "rh-fallen-trunk",
+    "file": "rh-fallen-trunk.glb",
+    "category": "ground",
+    "biomes": [
+      "roothold"
+    ],
+    "radius": 3.0,
+    "height": 1.5,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "rh-glow-mushrooms",
+    "file": "rh-glow-mushrooms.glb",
+    "category": "ground",
+    "biomes": [
+      "roothold"
+    ],
+    "radius": 0.6,
+    "height": 0.9,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "rh-seedling",
+    "file": "rh-seedling.glb",
+    "category": "ground",
+    "biomes": [
+      "roothold"
+    ],
+    "radius": 0.4,
+    "height": 1.2,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "rh-lichen-stump",
+    "file": "rh-lichen-stump.glb",
+    "category": "ground",
+    "biomes": [
+      "roothold"
+    ],
+    "radius": 0.8,
+    "height": 1.4,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "rh-deep-moss",
+    "file": "rh-deep-moss.glb",
+    "category": "ground",
+    "biomes": [
+      "roothold"
+    ],
+    "radius": 0.7,
+    "height": 0.4,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "rh-leaf-litter",
+    "file": "rh-leaf-litter.glb",
+    "category": "ground",
+    "biomes": [
+      "roothold"
+    ],
+    "radius": 0.6,
+    "height": 0.15,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "rh-surface-roots",
+    "file": "rh-surface-roots.glb",
+    "category": "ground",
+    "biomes": [
+      "roothold"
+    ],
+    "radius": 0.9,
+    "height": 0.35,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "rh-fern-moss-tuft",
+    "file": "rh-fern-moss-tuft.glb",
+    "category": "ground",
+    "biomes": [
+      "roothold"
+    ],
+    "radius": 0.45,
+    "height": 0.5,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "rh-granite-boulder-a",
+    "file": "rh-granite-boulder-a.glb",
+    "category": "rock",
+    "biomes": [
+      "roothold"
+    ],
+    "radius": 1.1,
+    "height": 1.6,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "rh-granite-boulder-b",
+    "file": "rh-granite-boulder-b.glb",
+    "category": "rock",
+    "biomes": [
+      "roothold"
+    ],
+    "radius": 0.8,
+    "height": 1.1,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "rh-slate-slab",
+    "file": "rh-slate-slab.glb",
+    "category": "rock",
+    "biomes": [
+      "roothold"
+    ],
+    "radius": 1.0,
+    "height": 0.6,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "rh-slate-step-block",
+    "file": "rh-slate-step-block.glb",
+    "category": "rock",
+    "biomes": [
+      "roothold"
+    ],
+    "radius": 0.8,
+    "height": 0.8,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "rh-mossy-outcrop",
+    "file": "rh-mossy-outcrop.glb",
+    "category": "rock",
+    "biomes": [
+      "roothold"
+    ],
+    "radius": 1.1,
+    "height": 3.2,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "rh-lip-edge",
+    "file": "rh-lip-edge.glb",
+    "category": "lip",
+    "biomes": [
+      "roothold"
+    ],
+    "radius": 4.0,
+    "height": 4,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "rh-spring-fall",
+    "file": "rh-spring-fall.glb",
+    "category": "water",
+    "biomes": [
+      "roothold"
+    ],
+    "radius": 0.6,
+    "height": 6,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "rh-underside-roots",
+    "file": "rh-underside-roots.glb",
+    "category": "underside",
+    "biomes": [
+      "roothold"
+    ],
+    "radius": 4.0,
+    "height": 10,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  }
+]

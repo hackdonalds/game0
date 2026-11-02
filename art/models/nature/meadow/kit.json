@@ -55,7 +55,7 @@
         4.5
       ],
       "pivot": "bottom-center",
-      "tris": 2000,
+      "tris": 2200,
       "free": true,
       "ref": {
         "sheet": "nature",
@@ -73,7 +73,7 @@
         5
       ],
       "pivot": "bottom-center",
-      "tris": 2000,
+      "tris": 2400,
       "free": true,
       "ref": {
         "sheet": "nature",
@@ -91,7 +91,7 @@
         4.5
       ],
       "pivot": "bottom-center",
-      "tris": 2000,
+      "tris": 2400,
       "free": true,
       "ref": {
         "sheet": "nature",
@@ -163,7 +163,7 @@
         1.6
       ],
       "pivot": "bottom-center",
-      "tris": 500,
+      "tris": 600,
       "free": true,
       "ref": {
         "sheet": "nature",
@@ -202,7 +202,7 @@
         0.8
       ],
       "pivot": "bottom-center",
-      "tris": 400,
+      "tris": 550,
       "free": true,
       "variants": [
         "intact",
@@ -249,7 +249,7 @@
         2
       ],
       "pivot": "bottom-left-front",
-      "tris": 600,
+      "tris": 720,
       "variants": [
         "intact",
         "mossy",
@@ -519,7 +519,7 @@
         1.5
       ],
       "pivot": "bottom-center",
-      "tris": 500,
+      "tris": 600,
       "free": true,
       "ref": {
         "sheet": "isle-portrait",
