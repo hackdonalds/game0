@@ -58,8 +58,10 @@ Taken from the reference.
 
 - How each season looks, weather, and how the sky looks below the isles
 - UI style: parchment and gold, or minimal glass
-- Visual identity for each biome and isle type
+- Visual identity for each biome and isle type: drafted in [Biomes](biomes.md)
 
 ## Related
 
 - [Character customization](character-customization.md)
+- [Architecture](architecture.md) and the [modular kit](modular-kit.md)
+- [Biomes](biomes.md)
