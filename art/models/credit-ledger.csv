@@ -38,3 +38,6 @@ date,session,kind,output,credits,model,task_id
 2026-11-01T19:57:47Z,races-2026-11-02,web-animate,art/models/galeborne/base-rigged,0,web-presets: Idle 1; Regular Jump; Attack; Dead,
 2026-11-01T20:00:28Z,races-2026-11-02,web-rig,art/models/anchorkin/base-rigged,0,web-humanoid,
 2026-11-01T20:05:20Z,races-2026-11-02,web-rig,art/models/rootwarden/base-rigged,0,web-humanoid,
+2026-11-02T00:10:54.392Z,2026-11-02,model,art/models/galeborne/base,30,meshy-7.1,01a19996-2d24-742f-a95a-6d2285d45c82
+2026-11-02T00:11:12.561Z,2026-11-02,model,art/models/anchorkin/base,30,meshy-7.1,01a19996-253b-7296-bc01-7638527ec6c8
+2026-11-02T00:13:02.373Z,2026-11-02,model,art/models/rootwarden/base,30,meshy-7.1,01a19996-1dad-7567-b9bf-1183b7087dbf

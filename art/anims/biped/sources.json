@@ -1,0 +1,362 @@
+[
+  {
+    "id": "quaternius-ual1",
+    "name": "Universal Animation Library (Standard) by Quaternius",
+    "url": "https://quaternius.itch.io/universal-animation-library",
+    "license": "CC0-1.0",
+    "credit": null,
+    "fetch": "manual",
+    "files": [
+      {
+        "path": "UAL1_Standard.glb",
+        "sha256": "69591853d817488edaa8fd9bf8fc1d821eaeaf789f8627b3cd23b41c4ed67997",
+        "size": 7618436
+      }
+    ]
+  },
+  {
+    "id": "quaternius-ual2",
+    "name": "Universal Animation Library 2 (Standard) by Quaternius",
+    "url": "https://quaternius.itch.io/universal-animation-library-2",
+    "license": "CC0-1.0",
+    "credit": null,
+    "fetch": "manual",
+    "files": [
+      {
+        "path": "UAL2_Standard.glb",
+        "sha256": "8cee20ab1bc55130092447e810e26df22dd2803eccc54f52137a7d54d7ab88a8",
+        "size": 8091444
+      }
+    ]
+  },
+  {
+    "id": "kaykit-anims",
+    "name": "KayKit Character Animations 1.1 (free) by Kay Lousberg",
+    "url": "https://kaylousberg.itch.io/kaykit-character-animations",
+    "license": "CC0-1.0",
+    "credit": null,
+    "fetch": "manual",
+    "files": [
+      {
+        "path": "KayKit_Character_Animations_1.1.zip",
+        "sha256": "65882f31f905ad2e953819648a59287cdeab8f623908d5ef701971d3758be20f",
+        "size": 14858957
+      }
+    ]
+  },
+  {
+    "id": "100style",
+    "name": "The 100STYLE Dataset - Ian Mason",
+    "url": "https://zenodo.org/records/8127870",
+    "license": "CC-BY-4.0",
+    "credit": "The 100STYLE Dataset - Ian Mason (https://ianxmason.github.io/100style/), CC BY 4.0",
+    "fetch": "zip-range",
+    "archive": "https://zenodo.org/records/8127870/files/100STYLE.zip?download=1",
+    "files": [
+      {
+        "path": "Akimbo/Akimbo_ID.bvh",
+        "entry": "100STYLE/Akimbo/Akimbo_ID.bvh",
+        "sha256": "5669e8987c17ea66beb54e575ed670fcc88b1d55f344e33d1c4ce7fe4e4c3e29",
+        "size": 1158297
+      },
+      {
+        "path": "Angry/Angry_FW.bvh",
+        "entry": "100STYLE/Angry/Angry_FW.bvh",
+        "sha256": "8b9972926e14b73134abced127be068c9d99b6b9fd77fdbf585ae26bdd6739e4",
+        "size": 3479959
+      },
+      {
+        "path": "BeatChest/BeatChest_FW.bvh",
+        "entry": "100STYLE/BeatChest/BeatChest_FW.bvh",
+        "sha256": "267caccc5a6572779515f47ac47c9f4dce1d43f14e2ca86af3304d7a89fd794b",
+        "size": 6181132
+      },
+      {
+        "path": "Crouched/Crouched_FW.bvh",
+        "entry": "100STYLE/Crouched/Crouched_FW.bvh",
+        "sha256": "e4242640c94810a6c5f1df0d0d0bb78c8ffaed4bb79a7569ba3391e57a34ac8a",
+        "size": 5142442
+      },
+      {
+        "path": "Drunk/Drunk_FW.bvh",
+        "entry": "100STYLE/Drunk/Drunk_FW.bvh",
+        "sha256": "ffcb19aeedce9a0667ff0a6dc9473b203a529fc8dcc931c45abb367bced72b9a",
+        "size": 5423782
+      },
+      {
+        "path": "Followed/Followed_FW.bvh",
+        "entry": "100STYLE/Followed/Followed_FW.bvh",
+        "sha256": "33d529585e60e92799bc9104314bdc6e5c0e3f6f50013cd8574d277ec9210c61",
+        "size": 3825053
+      },
+      {
+        "path": "Frame_Cuts.csv",
+        "entry": "100STYLE/Frame_Cuts.csv",
+        "sha256": "e3c1d2beab6486e083622cef6a5402fe9b20edc75a9963ea30675c67ec29ee82",
+        "size": 10036
+      },
+      {
+        "path": "HandsInPockets/HandsInPockets_FW.bvh",
+        "entry": "100STYLE/HandsInPockets/HandsInPockets_FW.bvh",
+        "sha256": "3847a48fb088f846643608eebceb7999c92347d0bb09c07cc8a556f819d341da",
+        "size": 5207429
+      },
+      {
+        "path": "HandsInPockets/HandsInPockets_ID.bvh",
+        "entry": "100STYLE/HandsInPockets/HandsInPockets_ID.bvh",
+        "sha256": "27d182eac9439b5356dddc3f6d1a72eff3114ae4ea9eb3b5302f6826e2757b88",
+        "size": 1478478
+      },
+      {
+        "path": "Heavyset/Heavyset_FW.bvh",
+        "entry": "100STYLE/Heavyset/Heavyset_FW.bvh",
+        "sha256": "852619771cc9155891c6b42abc1c289a6d866dbbe363674e151ff70bd5fe72af",
+        "size": 5244947
+      },
+      {
+        "path": "LimpLeft/LimpLeft_FW.bvh",
+        "entry": "100STYLE/LimpLeft/LimpLeft_FW.bvh",
+        "sha256": "89821601d4ec3bf15f8657bba0afc0c79f270b56fe33f2b48cbbac209bdefc1d",
+        "size": 6626938
+      },
+      {
+        "path": "Neutral/Neutral_BW.bvh",
+        "entry": "100STYLE/Neutral/Neutral_BW.bvh",
+        "sha256": "cfa225ff3a29a38d11ecd1b72fa0d917ca6c3dc3b24b3d09a4cb5c28ee9dc5b9",
+        "size": 6072424
+      },
+      {
+        "path": "Neutral/Neutral_FR.bvh",
+        "entry": "100STYLE/Neutral/Neutral_FR.bvh",
+        "sha256": "f46ca526027a3654c8939a0123413f6008906fb32125d5e885eafcaa830831cb",
+        "size": 3262894
+      },
+      {
+        "path": "Neutral/Neutral_FW.bvh",
+        "entry": "100STYLE/Neutral/Neutral_FW.bvh",
+        "sha256": "2f28800baa299547c42c257d1c926172542a1e69b46a3d3e6aa0aded0e9b40f6",
+        "size": 5504825
+      },
+      {
+        "path": "Neutral/Neutral_ID.bvh",
+        "entry": "100STYLE/Neutral/Neutral_ID.bvh",
+        "sha256": "71aead2e3246bdb47a5b839cb3e60e0574e9a1a046c071cc147e2922a35f259f",
+        "size": 1465227
+      },
+      {
+        "path": "Old/Old_FW.bvh",
+        "entry": "100STYLE/Old/Old_FW.bvh",
+        "sha256": "382d2685a3cc928c696974d79fc6d710a154830beff39e2239270ec15b5e3a84",
+        "size": 11222463
+      },
+      {
+        "path": "Penguin/Penguin_FW.bvh",
+        "entry": "100STYLE/Penguin/Penguin_FW.bvh",
+        "sha256": "8d5d38de3b803efd92a8edd8a6980e1b68895adaf6ad3bdabaf81752bd275cb3",
+        "size": 12413766
+      },
+      {
+        "path": "Proud/Proud_FW.bvh",
+        "entry": "100STYLE/Proud/Proud_FW.bvh",
+        "sha256": "dde403f6e8a64f1ff13689354d6b3e495c41c295fe364c620965ba98beeb7dca",
+        "size": 4608339
+      },
+      {
+        "path": "ShieldedLeft/ShieldedLeft_BW.bvh",
+        "entry": "100STYLE/ShieldedLeft/ShieldedLeft_BW.bvh",
+        "sha256": "11e6ec5a49139b9c87f30be70b32f39ac2b9ddad54320ef99c4789a73b7661ef",
+        "size": 4977756
+      },
+      {
+        "path": "ShieldedLeft/ShieldedLeft_FW.bvh",
+        "entry": "100STYLE/ShieldedLeft/ShieldedLeft_FW.bvh",
+        "sha256": "f0c6ec17dc3595c96a1d4d7f75ab531e693657777e416b555caa4c031f648376",
+        "size": 4478809
+      },
+      {
+        "path": "Strutting/Strutting_FW.bvh",
+        "entry": "100STYLE/Strutting/Strutting_FW.bvh",
+        "sha256": "bd56c27cbc6a40a6626f45cd28a7fd805f08ea09eeaf9645fb487dc8c2ba49d6",
+        "size": 6268736
+      },
+      {
+        "path": "Zombie/Zombie_FW.bvh",
+        "entry": "100STYLE/Zombie/Zombie_FW.bvh",
+        "sha256": "de7e80f07d879e7541aa75cc7eac2e3a6318d1b116bec9376ae309e024028d12",
+        "size": 7299438
+      }
+    ]
+  },
+  {
+    "id": "cmu",
+    "name": "CMU Graphics Lab Motion Capture Database (FBX conversion by RancidMilk of the cgspeed BVH release)",
+    "url": "http://mocap.cs.cmu.edu",
+    "license": "CMU-mocap: free to use, modify and redistribute, including commercially; the motion files themselves may not be sold",
+    "credit": "Motion capture data from mocap.cs.cmu.edu, created with funding from NSF EIA-0196217",
+    "fetch": "http",
+    "files": [
+      {
+        "path": "104_03.fbx",
+        "url": "https://huggingface.co/datasets/gbionics/cmu-fbx/resolve/main/animations/104_03.fbx",
+        "sha256": "dfac9e4cf64fd4583eb079d1762e4844041f7f3ad4bded0f11b24c4c7418ba36",
+        "size": 263724
+      },
+      {
+        "path": "104_13.fbx",
+        "url": "https://huggingface.co/datasets/gbionics/cmu-fbx/resolve/main/animations/104_13.fbx",
+        "sha256": "fd2fa978186ce1128bd51d292433f7b6d4e1a5fafc8764d8d50b66651a62a3c8",
+        "size": 150380
+      },
+      {
+        "path": "111_02.fbx",
+        "url": "https://huggingface.co/datasets/gbionics/cmu-fbx/resolve/main/animations/111_02.fbx",
+        "sha256": "3a04d17192299175beeee8b669c42e0ad28b2c09059ee79f9ee5c3449f1ee313",
+        "size": 126604
+      },
+      {
+        "path": "111_03.fbx",
+        "url": "https://huggingface.co/datasets/gbionics/cmu-fbx/resolve/main/animations/111_03.fbx",
+        "sha256": "d46c134706b931812e0eac935305fba8470f56d7cc192f84e37345253365cd61",
+        "size": 256364
+      },
+      {
+        "path": "111_06.fbx",
+        "url": "https://huggingface.co/datasets/gbionics/cmu-fbx/resolve/main/animations/111_06.fbx",
+        "sha256": "7e12a851fabbc20b8bd33d5fc5a5f573c3295ed67d2cb4ecf07c88b1fe227d75",
+        "size": 253020
+      },
+      {
+        "path": "111_25.fbx",
+        "url": "https://huggingface.co/datasets/gbionics/cmu-fbx/resolve/main/animations/111_25.fbx",
+        "sha256": "2b0ca92ff6ae9ea98ac8bd061cd07a8301d7be78076134b739b458ac3137e3df",
+        "size": 109916
+      },
+      {
+        "path": "111_32.fbx",
+        "url": "https://huggingface.co/datasets/gbionics/cmu-fbx/resolve/main/animations/111_32.fbx",
+        "sha256": "a7da417cbea46c693f08e40cb9d05d1a1378b31ef2ab32893b69d36c2060b300",
+        "size": 147548
+      },
+      {
+        "path": "113_02.fbx",
+        "url": "https://huggingface.co/datasets/gbionics/cmu-fbx/resolve/main/animations/113_02.fbx",
+        "sha256": "5ae01866f38f6b116b903546a62b661d3bd6c14f9179a31872e94f0884240c10",
+        "size": 141180
+      },
+      {
+        "path": "113_27.fbx",
+        "url": "https://huggingface.co/datasets/gbionics/cmu-fbx/resolve/main/animations/113_27.fbx",
+        "sha256": "2dee5009a463b2010de08a81c56a1d09eb731d51a1225f5bae4030952d08542c",
+        "size": 113388
+      },
+      {
+        "path": "114_02.fbx",
+        "url": "https://huggingface.co/datasets/gbionics/cmu-fbx/resolve/main/animations/114_02.fbx",
+        "sha256": "9086db92aa6fc1cca70cfa67e261e27eadfc80ecb682e0fa2f6f65fa3653b717",
+        "size": 257916
+      },
+      {
+        "path": "115_02.fbx",
+        "url": "https://huggingface.co/datasets/gbionics/cmu-fbx/resolve/main/animations/115_02.fbx",
+        "sha256": "d1beea5432fa22bdcbdc13766f184e9e0fc6b62231b0b1c9fa8c9c76d05e32f2",
+        "size": 128556
+      },
+      {
+        "path": "120_02.fbx",
+        "url": "https://huggingface.co/datasets/gbionics/cmu-fbx/resolve/main/animations/120_02.fbx",
+        "sha256": "e422da96718c1671d8847d42218aa94a3c9b5176a04ca8b850052dfe571ffd49",
+        "size": 250556
+      },
+      {
+        "path": "127_15.fbx",
+        "url": "https://huggingface.co/datasets/gbionics/cmu-fbx/resolve/main/animations/127_15.fbx",
+        "sha256": "17842363edb00eaebb210495deedaac3999fceaad5e617db518241b9a6f16616",
+        "size": 102796
+      },
+      {
+        "path": "127_16.fbx",
+        "url": "https://huggingface.co/datasets/gbionics/cmu-fbx/resolve/main/animations/127_16.fbx",
+        "sha256": "085bfba7a1a02aa1cf09bde13d72c0a86879da7465788edb0c97f7819014f2ae",
+        "size": 114732
+      },
+      {
+        "path": "139_16.fbx",
+        "url": "https://huggingface.co/datasets/gbionics/cmu-fbx/resolve/main/animations/139_16.fbx",
+        "sha256": "927102f2489d646e9df88c3486ba765b7d2326d5751b66d82c34217c28c8fc78",
+        "size": 158844
+      },
+      {
+        "path": "13_09.fbx",
+        "url": "https://huggingface.co/datasets/gbionics/cmu-fbx/resolve/main/animations/13_09.fbx",
+        "sha256": "c893370098b1fe55ae5a0f9bcf8463be49006cb54a3850eda2aa2f59653029c9",
+        "size": 183772
+      },
+      {
+        "path": "13_26.fbx",
+        "url": "https://huggingface.co/datasets/gbionics/cmu-fbx/resolve/main/animations/13_26.fbx",
+        "sha256": "793b476bb549b730772959d13ba6244f17dc78a0c82ded3fd905efb478c039ad",
+        "size": 433628
+      },
+      {
+        "path": "140_01.fbx",
+        "url": "https://huggingface.co/datasets/gbionics/cmu-fbx/resolve/main/animations/140_01.fbx",
+        "sha256": "2fa67d14dcdc7342b78870d1fdb1ab37397c41f90decfebef1a6733b77a4e3fe",
+        "size": 178588
+      },
+      {
+        "path": "140_03.fbx",
+        "url": "https://huggingface.co/datasets/gbionics/cmu-fbx/resolve/main/animations/140_03.fbx",
+        "sha256": "20247a30a0041c40823552d4c6523dd8fd543dd248e1c1a4f53dc3e59c66dd83",
+        "size": 201484
+      },
+      {
+        "path": "140_08.fbx",
+        "url": "https://huggingface.co/datasets/gbionics/cmu-fbx/resolve/main/animations/140_08.fbx",
+        "sha256": "10c216e71012ae3dd2f93313bbf1e6eeb2156029e2a600e8b9e17218b3f0b774",
+        "size": 187196
+      },
+      {
+        "path": "141_16.fbx",
+        "url": "https://huggingface.co/datasets/gbionics/cmu-fbx/resolve/main/animations/141_16.fbx",
+        "sha256": "9d70db658791943371eabed073ba60b5d69cd8019bd3f998d969210767b7825f",
+        "size": 118604
+      },
+      {
+        "path": "141_21.fbx",
+        "url": "https://huggingface.co/datasets/gbionics/cmu-fbx/resolve/main/animations/141_21.fbx",
+        "sha256": "a2ecff7398cb5e1498c9836aa8b7af67658fb127c420e31dee95247e424f2471",
+        "size": 112524
+      },
+      {
+        "path": "144_20.fbx",
+        "url": "https://huggingface.co/datasets/gbionics/cmu-fbx/resolve/main/animations/144_20.fbx",
+        "sha256": "2728c97ba89338482dd4790743245bd51fd687a4c65e68270e3958a347796592",
+        "size": 348540
+      },
+      {
+        "path": "18_08.fbx",
+        "url": "https://huggingface.co/datasets/gbionics/cmu-fbx/resolve/main/animations/18_08.fbx",
+        "sha256": "a9e6b6781cc0df1605016b5e5f51a9da86bb4df16a0e3f87e37c2147c010e98b",
+        "size": 311388
+      },
+      {
+        "path": "18_10.fbx",
+        "url": "https://huggingface.co/datasets/gbionics/cmu-fbx/resolve/main/animations/18_10.fbx",
+        "sha256": "3de675e52d0e498860c0cf6601dc4a871e253534fec5eed9342e6422555dbbee",
+        "size": 294540
+      },
+      {
+        "path": "90_16.fbx",
+        "url": "https://huggingface.co/datasets/gbionics/cmu-fbx/resolve/main/animations/90_16.fbx",
+        "sha256": "ed988117ce33f0b2139f6d5377b11662eaaca539ca85af8f94f6853bddf912d1",
+        "size": 158636
+      },
+      {
+        "path": "90_18.fbx",
+        "url": "https://huggingface.co/datasets/gbionics/cmu-fbx/resolve/main/animations/90_18.fbx",
+        "sha256": "9437aca5d6c2568cf0e0f510a8e14e4e0a7740cdbdec367299cf9b5ad6dd3a03",
+        "size": 126892
+      }
+    ]
+  }
+]

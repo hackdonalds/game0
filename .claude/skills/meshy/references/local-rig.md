@@ -7,17 +7,17 @@
 1. `scripts/rig/autorig.py` (headless Blender) finds the joints from the mesh shape, builds a 52-bone game skeleton (with three bones per finger) and skins it.
    - Joints come from evenly sampled surface points, not vertices: Meshy meshes have big faces, so vertex slices leave holes.
    - The crotch is found by scanning up the legs until the gap closes, the armpit by scanning up until the arms merge with the torso, and the shoulder by extending the arm's centre line. Beards, moss and crowns don't fool this.
-   - Fingers come from slices across each hand: past the knuckles the slices split into four tracks, and the thumb is the cluster beside them nearer the wrist. With fingers closed together (no four separate tracks) it falls back to a mitten: four finger bones spread evenly across the palm and a thumb on the palm edge nearest the front. Without a separate thumb it keeps the detected fingers and places the thumb the same way.
+   - Wrists are the first narrowing of the arm when walking back from the fingertips (hand lengths vary too much for a fixed fraction). The hand axis is aimed at the middle of the hand, not at the fingertip that sticks out most.
+   - Fingers come from slices across the hand: the middle of the stretch where slices cross four separate fingers, traced out to the tips and back to the knuckles. The thumb is the second blob in 2D cross-sections between wrist and knuckles (it can stick out of the palm's face, not just its edge). Closed fingers fall back to a mitten. Spread fingers in the concept are what make this work: the old "fingers together" prompts produced mitten hands.
    - Weights come from Blender's automatic (bone-heat) weights on a voxel-remeshed, watertight copy, copied back to the real mesh. Thin bits the copy loses (twigs, leaf tips) take weights from the nearest weighted vertex.
-   - Finger weights are not bone heat (finger gaps are thinner than the proxy's voxels, which glues fingers together): each vertex's hand weight is shared among the hand and finger bones by distance to each bone.
+   - Finger weights are not bone heat (finger gaps are thinner than the proxy's voxels, which glues fingers together): each vertex's hand weight is shared among the hand and finger bones by distance measured along the surface, so a curled finger can't grab its neighbour.
    - The skeleton includes a non-deforming `carry` bone in front of the chest for props.
-2. `scripts/rig/retarget.py` copies clips from Quaternius' Universal Animation Library (CC0, `art/references/anims/quaternius/`, free Standard editions of UAL1 and UAL2) onto the rig.
-   - Each bone copies its source bone's world-space rotation change. The library's T-pose rest is turned onto our A-pose rest first, so the arms aren't 45° off.
-   - Forearms, hands and fingers are also matched on palm facing (index-to-pinky knuckle line), not only bone direction, so fists and grips curl the right way.
-   - Hip motion and ground speeds are scaled by the hip-height ratio (0.81 for the Rootwarden).
-   - The clip list (`CLIPS` in the script) is Idle, Walk, Run (jog), Sprint, JumpStart/JumpLoop/JumpLand, HitChest, HitHead, HitKnockback, Punch, Hook, CarryWalk, plus CarryIdle built from Idle legs and CarryWalk arms. To add a clip, add a row there. The source names are listed by importing the library GLB in Blender.
-   - Source ground speeds in `CLIPS` were measured from the root-motion exports (`*_RM.glb`, not stored). Re-measure if you add locomotion clips.
-3. gltf-transform compresses it (meshopt, 1024 px WebP textures): about 1.35 MB for a 20k-poly body with 14 clips.
+2. `scripts/rig/retarget.py` plays the biped animation library (`art/anims/biped/`, 188 clips in 9 sets, built from CC0/CC BY sources by `bun run anim:build biped`; contract in `art/anims/README.md`) on the new rig. `--sets idle,locomotion,...` picks sets (default all, about 6 MB with the body).
+   - Each bone copies the library skeleton's world-space rotation change. Limbs are first matched on bone direction (T-pose library, A-pose bodies); spine, neck, head and feet copy the change as is, because their bone directions are conventions (CMU's head bone points 45 degrees forward, which used to tip heads onto chests).
+   - Finger motion is not played yet: the finger bones exist and are skinned, but when a thumb side is misread the palm flips and the wrist twists, so hands keep the model's open shape for now.
+   - Hip motion and ground speeds are scaled by leg length. Speeds per clip land in `<out>.clips.json` with the catalog entry.
+   - To add or change clips, edit `art/anims/biped/recipes.json` and rebuild the library (`art/anims/biped/README.md`), then re-rig.
+3. gltf-transform compresses it (meshopt, 1024 px WebP textures): about 6 MB for a 20k-poly body with 142 clips (`--sets` trims it).
 
 ## Checking the result
 
@@ -27,6 +27,7 @@ Debug renders: `blender -b --factory-startup -P scripts/rig/render.py -- <file.b
 
 - GLTFLoader strips dots from names: `hand.L` becomes `handL`.
 - The jump clips are in place. Drive the height in code: launch about 0.1 s into JumpStart, loop JumpLoop while airborne, play JumpLand from 0.05 s on touchdown.
+- Clip names are the library ids (`walk`, `jump_start`, `carry_idle`…); browse them with `bun run dev:demo anim-library`.
 - The carry clips hold the load between the palms: place props at the hands' midpoint each frame, not on a fixed socket.
 - Move characters at the `speed` in `<out>.clips.json`, or the feet skate.
 - Example: `demos/rootwarden-anim/src/main.ts`.
@@ -35,4 +36,4 @@ Debug renders: `blender -b --factory-startup -P scripts/rig/render.py -- <file.b
 
 - Verified on the Rootwarden (open hands), Anchorkin and Galeborne (closed hands, mitten fallback).
 - Humanoids in A-pose only. Use the web rig (`web-recipes.md`) for quadrupeds or anything else.
-- Bulky bodies: the library was animated on a slim mannequin, so arms can pass slightly into a wide torso.
+- Bulky bodies: most source clips were animated on slim bodies, so arms can pass slightly into a wide torso.

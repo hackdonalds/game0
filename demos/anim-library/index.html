@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Animation Library · game0 demo</title>
+    <style>
+      html, body { margin: 0; height: 100%; overflow: hidden; background: #9cc3e6; color: #1d2733; font: 13px/1.45 system-ui, sans-serif; }
+      canvas { display: block; touch-action: none; }
+      .panel { position: fixed; padding: 10px 14px; border-radius: 12px; background: #ffffffe8; box-shadow: 0 6px 20px -8px #1d273366; }
+      #list { top: 12px; left: 12px; bottom: 12px; width: 280px; display: flex; flex-direction: column; padding: 10px 0 6px; }
+      #list h1 { font-size: 15px; margin: 0 14px 6px; }
+      #list input { margin: 0 14px 8px; padding: 6px 9px; border: 1px solid #1d273326; border-radius: 8px; font: inherit; background: #fff; color: inherit; }
+      #clips { overflow-y: auto; flex: 1; padding: 0 6px; }
+      #clips h2 { font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; opacity: 0.55; margin: 10px 8px 4px; }
+      #clips button { display: flex; justify-content: space-between; gap: 8px; width: 100%; text-align: left; border: 0; background: none; padding: 5px 8px; border-radius: 6px; font: inherit; color: inherit; cursor: pointer; }
+      #clips button:hover { background: #1d273312; }
+      #clips button.on { background: #3d6b2f; color: #fff; }
+      #clips button small { opacity: 0.6; white-space: nowrap; }
+      #info { right: 12px; bottom: 12px; width: min(340px, calc(100vw - 24px)); }
+      #info h2 { font-size: 15px; margin: 0 0 4px; }
+      #info dl { display: grid; grid-template-columns: auto 1fr; gap: 2px 10px; margin: 6px 0; }
+      #info dt { opacity: 0.6; }
+      #info dd { margin: 0; overflow-wrap: anywhere; }
+      #info .note { margin: 6px 0 0; padding: 6px 8px; border-radius: 6px; background: #f3e7c9; }
+      #controls { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+      #controls label { display: flex; gap: 5px; align-items: center; cursor: pointer; }
+      #credits { top: 12px; right: 12px; max-width: 340px; font-size: 12px; }
+      @media (max-width: 760px) {
+        #list { bottom: auto; height: 42vh; width: auto; right: 12px; }
+        #credits { display: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="list" class="panel">
+      <h1>Animation Library</h1>
+      <input id="search" type="search" placeholder="Search clips, sets, tags…" />
+      <div id="clips">Loading…</div>
+    </div>
+    <div id="credits" class="panel">Biped clips retargeted from Quaternius and KayKit (CC0), the 100STYLE dataset by Ian Mason (CC BY 4.0) and CMU's motion capture database. ↑/↓ steps through clips.</div>
+    <div id="info" class="panel">
+      <h2 id="title">–</h2>
+      <dl id="meta"></dl>
+      <div id="controls">
+        <label><input id="move" type="checkbox" checked /> Move at clip speed</label>
+        <label><input id="slow" type="checkbox" /> Half speed</label>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

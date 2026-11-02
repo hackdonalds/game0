@@ -23,6 +23,7 @@ art/anims/
   CREDITS.md                generated: credit lines for every source that needs one
   families/<family>.json    skeleton contract (see below)
   <family>/sources.json     sources used by the family (see below)
+  <family>/recipes.json     what to build: one entry per clip (see below)
   <family>/catalog.json     every built clip (see below)
   <family>/clips/<set>.glb  built clips on the canonical skeleton, one GLB per set, meshopt-compressed
   <family>/reference.glb    the canonical body the clips were built on (for previews)
@@ -69,6 +70,21 @@ Bone names use `.L` / `.R` suffixes (three.js drops the dot: `hand.L` becomes `h
 
 Only commercial-use licences: CC0, CC BY (with `credit` set), or explicitly free-for-any-use (CMU). Never non-commercial or research-only data, nor anything that forbids redistributing the built clips.
 
+## `<family>/recipes.json` (retargeted families)
+
+```json
+{ "id": "walk_elderly", "name": "Elderly Shaky Walk", "set": "locomotion", "source": "100style",
+  "file": "Old/Old_FW.bvh", "cut": "FW", "loop": true, "autoLoop": [30, 90] }
+```
+
+- `source` is a `sources.json` id. Name the clip with `clip` (GLB/FBX action name) and, for packs split over several files, `file`.
+- `cut` (100STYLE): use the dataset's trim points for that movement. `range`: `[start, end]` frames at 30 fps.
+- `autoLoop`: `[min, max]` loop length in frames; the builder picks the most seamless straight stretch of a long mocap take and turns it in place, keeping the travel as `speed`.
+- `mirror`: swap left and right (cheap variants). `reverse`: play backwards. `frame`: keep one frame (poses such as Dead).
+- `upper`: a second source for everything above the hips (`hold` to freeze one of its frames), e.g. sitting legs with drinking arms.
+- `speed`: ground speed in m/s measured on the source's own body (root-motion exports); otherwise it is measured from the clip.
+- `note`: shown in the catalog and the browser when a clip only approximates its name.
+
 ## `<family>/catalog.json`
 
 ```json
@@ -101,6 +117,7 @@ Only commercial-use licences: CC0, CC BY (with `credit` set), or explicitly free
 - `bun run anim:fetch <family>`: fill the source cache.
 - `bun run anim:build <family> [--set <set>]`: retarget or generate clips onto the canonical skeleton, write `clips/<set>.glb` and `catalog.json`, then regenerate `CREDITS.md`.
 - `bun run art:rig <in.glb> <out.glb> [--family biped] [--sets locomotion,combat] [--check]`: rig a model to its family and attach the chosen sets.
+- Browse a family's clips: `bun run dev:demo anim-library` (biped today).
 
 ## Checks before a family counts as done
 

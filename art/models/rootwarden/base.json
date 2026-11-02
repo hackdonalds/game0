@@ -1,5 +1,5 @@
 {
-  "taskId": "01a1989f-1a37-7416-b6ea-ddb51eba20e0",
+  "taskId": "01a19996-1dad-7567-b9bf-1183b7087dbf",
   "endpoint": "/multi-image-to-3d",
   "images": [
     "art/concept/views/rootwarden-base-front.png",
@@ -11,5 +11,5 @@
   "polycount": 20000,
   "pose": "a-pose",
   "credits": 30,
-  "createdAt": "2026-11-01T19:41:52.758Z"
+  "createdAt": "2026-11-02T00:13:02.372Z"
 }

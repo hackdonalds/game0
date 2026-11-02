@@ -1,72 +1,240 @@
 {
-  "Idle": {
+  "attack": {
+    "id": "attack",
+    "name": "Attack",
+    "set": "combat",
+    "tags": [],
+    "loop": false,
     "speed": 0.0,
-    "source": "Idle_Loop",
-    "frames": 75
+    "frames": 32,
+    "fps": 30,
+    "source": "kaykit-anims",
+    "sourceClip": "Melee_1H_Attack_Chop",
+    "license": "CC0-1.0"
   },
-  "Walk": {
-    "speed": 0.787,
-    "source": "Walk_Loop",
-    "frames": 40
-  },
-  "Run": {
-    "speed": 4.325,
-    "source": "Jog_Fwd_Loop",
-    "frames": 28
-  },
-  "Sprint": {
-    "speed": 6.66,
-    "source": "Sprint_Loop",
-    "frames": 20
-  },
-  "JumpStart": {
+  "kick": {
+    "id": "kick",
+    "name": "Kick",
+    "set": "combat",
+    "tags": [],
+    "loop": false,
     "speed": 0.0,
-    "source": "Jump_Start",
-    "frames": 40
+    "frames": 28,
+    "fps": 30,
+    "source": "kaykit-anims",
+    "sourceClip": "Melee_Unarmed_Attack_Kick",
+    "license": "CC0-1.0"
   },
-  "JumpLoop": {
+  "punch_combo_1": {
+    "id": "punch_combo_1",
+    "name": "Punch Combo 1",
+    "set": "combat",
+    "tags": [],
+    "loop": false,
     "speed": 0.0,
-    "source": "Jump_Loop",
-    "frames": 75
+    "frames": 26,
+    "fps": 30,
+    "source": "quaternius-ual1",
+    "sourceClip": "Punch_Jab",
+    "license": "CC0-1.0"
   },
-  "JumpLand": {
+  "punch_combo_2": {
+    "id": "punch_combo_2",
+    "name": "Punch Combo 2",
+    "set": "combat",
+    "tags": [],
+    "variantOf": "punch_combo_1",
+    "loop": false,
     "speed": 0.0,
-    "source": "Jump_Land",
-    "frames": 38
+    "frames": 30,
+    "fps": 30,
+    "source": "quaternius-ual1",
+    "sourceClip": "Punch_Cross",
+    "license": "CC0-1.0"
   },
-  "HitChest": {
+  "punch_combo_3": {
+    "id": "punch_combo_3",
+    "name": "Punch Combo 3",
+    "set": "combat",
+    "tags": [],
+    "variantOf": "punch_combo_1",
+    "loop": false,
     "speed": 0.0,
-    "source": "Hit_Chest",
-    "frames": 10
+    "frames": 14,
+    "fps": 30,
+    "source": "quaternius-ual2",
+    "sourceClip": "Melee_Hook",
+    "license": "CC0-1.0"
   },
-  "HitHead": {
+  "idle": {
+    "id": "idle",
+    "name": "Idle",
+    "set": "idle",
+    "tags": [],
+    "loop": true,
     "speed": 0.0,
-    "source": "Hit_Head",
-    "frames": 13
+    "frames": 75,
+    "fps": 30,
+    "source": "quaternius-ual1",
+    "sourceClip": "Idle_Loop",
+    "license": "CC0-1.0"
   },
-  "Punch": {
+  "jump_land": {
+    "id": "jump_land",
+    "name": "Jump Land",
+    "set": "locomotion",
+    "tags": [],
+    "loop": false,
     "speed": 0.0,
-    "source": "Punch_Cross",
-    "frames": 30
+    "frames": 38,
+    "fps": 30,
+    "source": "quaternius-ual1",
+    "sourceClip": "Jump_Land",
+    "license": "CC0-1.0"
   },
-  "Hook": {
+  "jump_loop": {
+    "id": "jump_loop",
+    "name": "Jump Airborne",
+    "set": "locomotion",
+    "tags": [],
+    "loop": true,
+    "speed": 0.018,
+    "frames": 75,
+    "fps": 30,
+    "source": "quaternius-ual1",
+    "sourceClip": "Jump_Loop",
+    "license": "CC0-1.0"
+  },
+  "jump_start": {
+    "id": "jump_start",
+    "name": "Jump Start",
+    "set": "locomotion",
+    "tags": [],
+    "loop": false,
     "speed": 0.0,
-    "source": "Melee_Hook",
-    "frames": 14
+    "frames": 40,
+    "fps": 30,
+    "source": "quaternius-ual1",
+    "sourceClip": "Jump_Start",
+    "license": "CC0-1.0"
   },
-  "HitKnockback": {
+  "run": {
+    "id": "run",
+    "name": "Running",
+    "set": "locomotion",
+    "tags": [],
+    "loop": true,
+    "speed": 4.144,
+    "frames": 28,
+    "fps": 30,
+    "source": "quaternius-ual1",
+    "sourceClip": "Jog_Fwd_Loop",
+    "license": "CC0-1.0"
+  },
+  "walk": {
+    "id": "walk",
+    "name": "Walking",
+    "set": "locomotion",
+    "tags": [],
+    "loop": true,
+    "speed": 0.754,
+    "frames": 40,
+    "fps": 30,
+    "source": "quaternius-ual1",
+    "sourceClip": "Walk_Loop",
+    "license": "CC0-1.0"
+  },
+  "face_punch_0": {
+    "id": "face_punch_0",
+    "name": "Face Punch Reaction 0",
+    "set": "reaction",
+    "tags": [],
+    "loop": false,
     "speed": 0.0,
-    "source": "Hit_Knockback",
-    "frames": 25
+    "frames": 13,
+    "fps": 30,
+    "source": "quaternius-ual1",
+    "sourceClip": "Hit_Head",
+    "license": "CC0-1.0"
   },
-  "CarryWalk": {
-    "speed": 0.525,
-    "source": "Walk_Carry_Loop",
-    "frames": 60
+  "gunshot_reaction": {
+    "id": "gunshot_reaction",
+    "name": "Gunshot Reaction",
+    "set": "reaction",
+    "tags": [],
+    "loop": false,
+    "speed": 0.0,
+    "frames": 25,
+    "fps": 30,
+    "source": "quaternius-ual2",
+    "sourceClip": "Hit_Knockback",
+    "license": "CC0-1.0"
   },
-  "CarryIdle": {
-    "speed": 0,
-    "source": "Idle_Loop + Walk_Carry_Loop arms",
-    "frames": 75
+  "hit_reaction_0": {
+    "id": "hit_reaction_0",
+    "name": "Hit Reaction 0",
+    "set": "reaction",
+    "tags": [],
+    "loop": false,
+    "speed": 0.0,
+    "frames": 20,
+    "fps": 30,
+    "source": "kaykit-anims",
+    "sourceClip": "Hit_A",
+    "license": "CC0-1.0"
+  },
+  "hit_reaction_1": {
+    "id": "hit_reaction_1",
+    "name": "Hit Reaction 1",
+    "set": "reaction",
+    "tags": [],
+    "variantOf": "hit_reaction_0",
+    "loop": false,
+    "speed": 0.0,
+    "frames": 26,
+    "fps": 30,
+    "source": "kaykit-anims",
+    "sourceClip": "Hit_B",
+    "license": "CC0-1.0"
+  },
+  "hit_waist": {
+    "id": "hit_waist",
+    "name": "Hit Reaction to Waist",
+    "set": "reaction",
+    "tags": [],
+    "loop": false,
+    "speed": 0.0,
+    "frames": 10,
+    "fps": 30,
+    "source": "quaternius-ual1",
+    "sourceClip": "Hit_Chest",
+    "license": "CC0-1.0"
+  },
+  "carry_idle": {
+    "id": "carry_idle",
+    "name": "Carry Idle",
+    "set": "social",
+    "tags": [],
+    "loop": true,
+    "speed": 0.0,
+    "frames": 75,
+    "fps": 30,
+    "source": "quaternius-ual1",
+    "sourceClip": "Idle_Loop",
+    "upperSource": "quaternius-ual2:Walk_Carry_Loop",
+    "license": "CC0-1.0"
+  },
+  "carry_walk": {
+    "id": "carry_walk",
+    "name": "Carry Heavy Object Walk",
+    "set": "social",
+    "tags": [],
+    "loop": true,
+    "speed": 0.503,
+    "frames": 60,
+    "fps": 30,
+    "source": "quaternius-ual2",
+    "sourceClip": "Walk_Carry_Loop",
+    "license": "CC0-1.0"
   }
 }

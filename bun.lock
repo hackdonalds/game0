@@ -20,6 +20,16 @@
         "@types/three": "0.186.0",
       },
     },
+    "demos/anim-library": {
+      "name": "@game0/demo-anim-library",
+      "dependencies": {
+        "three": "0.186.1",
+      },
+      "devDependencies": {
+        "@types/three": "0.186.0",
+        "vite": "8.3.4",
+      },
+    },
     "demos/floating-isle": {
       "name": "@game0/demo-floating-isle",
       "dependencies": {
@@ -34,6 +44,16 @@
       "name": "@game0/demo-npc-lod",
       "dependencies": {
         "lil-gui": "0.21.0",
+        "three": "0.186.1",
+      },
+      "devDependencies": {
+        "@types/three": "0.186.0",
+        "vite": "8.3.4",
+      },
+    },
+    "demos/peoples-anim": {
+      "name": "@game0/demo-peoples-anim",
+      "dependencies": {
         "three": "0.186.1",
       },
       "devDependencies": {
@@ -144,9 +164,13 @@
 
     "@emnapi/wasi-threads": ["@emnapi/wasi-threads@1.2.3", "", { "dependencies": { "tslib": "^2.4.0" } }, "sha512-ELEBe8PsLvvJ6QMr0zLt8ffvOHW/dc1m3CEzNMg7aJUv3bMaoDtw2TXyDAwkYBuroxxuHEwhRTLJSe5sya547g=="],
 
+    "@game0/demo-anim-library": ["@game0/demo-anim-library@workspace:demos/anim-library"],
+
     "@game0/demo-floating-isle": ["@game0/demo-floating-isle@workspace:demos/floating-isle"],
 
     "@game0/demo-npc-lod": ["@game0/demo-npc-lod@workspace:demos/npc-lod"],
+
+    "@game0/demo-peoples-anim": ["@game0/demo-peoples-anim@workspace:demos/peoples-anim"],
 
     "@game0/demo-rootwarden-anim": ["@game0/demo-rootwarden-anim@workspace:demos/rootwarden-anim"],
 

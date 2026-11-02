@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Three Peoples in Motion · game0 demo</title>
+    <style>
+      html, body { margin: 0; height: 100%; overflow: hidden; background: #9cc3e6; color: #1d2733; font: 13px/1.45 system-ui, sans-serif; }
+      canvas { display: block; touch-action: none; }
+      .panel { position: fixed; padding: 10px 14px; border-radius: 12px; background: #ffffffe8; box-shadow: 0 6px 20px -8px #1d273366; }
+      #intro { top: 12px; left: 12px; max-width: min(400px, calc(100vw - 24px)); }
+      #intro h1 { font-size: 15px; margin: 0 0 4px; }
+      #intro p { margin: 0; }
+      #clips { bottom: 12px; left: 50%; transform: translateX(-50%); display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; width: max-content; max-width: calc(100vw - 48px); }
+      #clips button { font: 600 13px system-ui, sans-serif; padding: 8px 12px; border: 0; border-radius: 8px; background: #1d27330f; color: inherit; cursor: pointer; }
+      #clips button:hover { background: #1d27331f; }
+      #clips button.on { background: #3d6b2f; color: #fff; }
+      .label { position: fixed; transform: translate(-50%, 0); font: 600 13px system-ui, sans-serif; color: #fff; text-shadow: 0 1px 3px #000a; white-space: nowrap; pointer-events: none; text-align: center; }
+      .label small { display: block; font-weight: 500; opacity: 0.9; }
+      @media (max-width: 700px) { #intro { display: none; } }
+    </style>
+  </head>
+  <body>
+    <div id="intro" class="panel">
+      <h1>Three Peoples in Motion</h1>
+      <p>Each Meshy model is rigged locally from its shape and plays the same ten library clips, retargeted to its own proportions. The ground under each one scrolls at that body's own walking and running speed. Drag to orbit, ←/→ to switch clips.</p>
+    </div>
+    <div id="clips" class="panel"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

@@ -107,6 +107,27 @@ def find_landmarks(P):
         return sel.mean(axis=0) if len(sel) else a + d * t * L
 
     notes = {"armpit_samples": min(len(arm_pts[1]), len(arm_pts[-1])), "crotch": crotch / H, "armpit": armpit_z / H}
+    def wrist(sh, tip):
+        """Walking back from the fingertips, the first narrowing of the arm: the hand is wide, the
+        wrist narrow, the forearm wider again (hands vary a lot in length, so no fixed fraction)."""
+        d = tip - sh
+        L = np.linalg.norm(d)
+        d = d / L
+        rel = P - sh
+        along = rel @ d
+        perp = np.linalg.norm(rel - np.outer(along, d), axis=1)
+        ts = np.arange(0.92, 0.5, -0.01)
+        widths = []
+        for t in ts:
+            sel = (np.abs(along - t * L) < 0.006 * H) & (perp < 0.08 * H)
+            widths.append(np.percentile(perp[sel], 90) if sel.sum() > 20 else np.inf)
+        w = np.convolve(np.nan_to_num(widths, posinf=1.0), np.ones(5) / 5, mode="same")
+        start = int(np.argmax(w[: len(w) // 2]))  # widest part of the hand
+        for i in range(start + 1, len(w) - 3):
+            if w[i] <= w[i - 1] and w[i] < w[i + 1] and w[i] < w[i + 3]:
+                return axis_centroid(sh, tip, ts[i], 0.05 * H)
+        return axis_centroid(sh, tip, 0.77, 0.05 * H)
+
     J = {}
     J["hips"] = np.array([0, centre_y(crotch + 0.05 * H, -0.1 * H, 0.1 * H), crotch + 0.05 * H])
     spine_z = J["hips"][2] + (neck_z - J["hips"][2]) * 0.3
@@ -124,7 +145,7 @@ def find_landmarks(P):
         tip = arm[np.argmax(arm[:, 0] * sgn - 0.5 * arm[:, 2])]  # outermost, lowest fingertip
         J[f"upper_arm.{side}"] = sh
         J[f"forearm.{side}"] = axis_centroid(sh, tip, 0.44, 0.07 * H)
-        J[f"hand.{side}"] = axis_centroid(sh, tip, 0.77, 0.05 * H)
+        J[f"hand.{side}"] = wrist(sh, tip)
         J[f"hand_end.{side}"] = tip
         fingers, notes[f"hands.{side}"] = find_fingers(P, J, side)
         J.update(fingers)
@@ -181,6 +202,12 @@ def find_fingers(P, J, side):
     L = np.linalg.norm(a)
     a = a / L
     rel = P - w0
+    for _ in range(2):  # aim down the middle of the hand, not at whichever fingertip sticks out most
+        t = rel @ a
+        hand = (t > 0.05 * L) & (np.linalg.norm(rel, axis=1) < 1.3 * L)
+        a = rel[hand].mean(axis=0)
+        a = a / np.linalg.norm(a)
+        L = float(np.percentile(rel[hand] @ a, 99))
     t = rel @ a
     perp = rel - np.outer(t, a)
     near = (t > -0.1 * L) & (t < 1.2 * L) & (np.linalg.norm(perp, axis=1) < 0.8 * L)
@@ -202,7 +229,9 @@ def find_fingers(P, J, side):
     def point(f, wc, nc):
         return w0 + f * a + wc * w + nc * n
 
-    ref = next((f for f in np.linspace(0.56, 0.76, 6) * L if len(slice_at(f)) == 4), None)
+    # The middle of the stretch where slices cross four separate fingers
+    fours = [f for f in np.arange(0.3, 1.0, 0.03) * L if len(slice_at(f)) == 4]
+    ref = float(np.median(fours)) if fours else None
     joints = {}
     if ref is None:
         return mitten(slice_at, point, w0, w, L, side), "mitten"
@@ -221,54 +250,80 @@ def find_fingers(P, J, side):
         f, cur, knuckle = ref, wc, ref
         while (f := f - step) > 0:  # back to where the finger merges into the palm
             c = min(slice_at(f), key=lambda c: abs(c[0] - cur))
-            if c[2] > 1.7 * width:
+            if c[2] > 2.5 * width or abs(c[0] - cur) > width:
                 break
             track[f], cur, knuckle = (c[0], c[1]), c[0], f
         fs = sorted(track)
         ws, ns = [track[k][0] for k in fs], [track[k][1] for k in fs]
         tracks.append((knuckle, end, fs, ws, ns))
 
-    # The thumb sticks out beyond one end of the finger row, nearer the wrist
-    lo_w, hi_w = tracks[0][3][0], tracks[-1][3][0]
-    margin = 0.1 * L
-    thumb = {}
-    for f in np.arange(0.02, 0.7, 0.02) * L:
-        for wc, nc, _ in slice_at(f):
-            if wc < lo_w - margin or wc > hi_w + margin:
-                thumb[f] = (wc, nc)
-    if not thumb:
+    # The thumb: in cross-sections between the wrist and the knuckles the hand splits into two blobs,
+    # palm and thumb. Blobs are found in 2D (across and through the palm) because a thumb may stick
+    # out of the palm's face rather than its edge.
+    kn = min(tr[0] for tr in tracks)
+    cell = 0.035 * L
+    pts = w0 + T[:, None] * a + Q
+
+    def blobs(f):
+        m = np.where(np.abs(T - f) < half)[0]
+        cells = {}
+        for i, key in zip(m, map(tuple, np.floor(np.c_[W[m], N[m]] / cell).astype(int))):
+            cells.setdefault(key, []).append(i)
+        seen, out = set(), []
+        for start in cells:
+            if start in seen:
+                continue
+            stack, members = [start], []
+            seen.add(start)
+            while stack:
+                c = stack.pop()
+                members += cells[c]
+                for dx in (-1, 0, 1):
+                    for dy in (-1, 0, 1):
+                        nb = (c[0] + dx, c[1] + dy)
+                        if nb in cells and nb not in seen:
+                            seen.add(nb)
+                            stack.append(nb)
+            out.append(np.array(members))
+        return sorted(out, key=len, reverse=True)
+
+    thumb_pts = []
+    for f in np.arange(-0.1, 1.0, 0.04) * L:
+        if f > kn - 0.02 * L:
+            break
+        bs = [b for b in blobs(f) if len(b) > 15]
+        if len(bs) == 2:
+            thumb_pts.append(bs[1])
+    if not thumb_pts:
         mitt = mitten(slice_at, point, w0, w, L, side)
-        thumb_joints = {k: v for k, v in mitt.items() if k.startswith("thumb")}
-        # Keep the detected fingers, ordered so the index sits on the mitten thumb's side
-        thumb_low = mitt[f"index_01.{side}"] @ w < mitt[f"pinky_01.{side}"] @ w
-        if not thumb_low:
-            tracks.reverse()
-        for name, (knuckle, end, fs, ws, ns) in zip(FINGERS[1:], tracks):
-            for i, frac in enumerate((0, 0.45, 0.75, 1), start=1):
-                f = knuckle + frac * (end - knuckle)
-                key = f"{name}_0{i}.{side}" if i < 4 else f"{name}_tip.{side}"
-                joints[key] = point(f, np.interp(f, fs, ws), np.interp(f, fs, ns))
-        return {**joints, **thumb_joints}, "no-thumb"
-    thumb_low = np.mean([v[0] for v in thumb.values()]) < lo_w
+        joints.update({k: v for k, v in mitt.items() if k.startswith("thumb")})
+        mode = "no-thumb"
+        tip = mitt[f"thumb_tip.{side}"]
+        base = mitt[f"thumb_01.{side}"]
+    else:
+        mode = "fingers"
+        cloud = pts[np.concatenate(thumb_pts)]
+        base = w0 + max(0.0, min(0.12 * L, float((cloud.mean(axis=0) - w0) @ a) - 0.25 * L)) * a
+        d = cloud.mean(axis=0) - base
+        d = d / np.linalg.norm(d)
+        rel_b = pts - base
+        along = rel_b @ d
+        cone = (along > 0) & (np.linalg.norm(rel_b - np.outer(along, d), axis=1) < 0.12 * L)
+        tip = pts[cone][np.argmax(along[cone])]
+        inward = (cloud.mean(axis=0) - tip) * 0.15  # the tip point is on the surface; pull the chain inside
+    thumb_low = (tip - w0) @ w < np.mean([tr[3][0] for tr in tracks])
     if not thumb_low:
         tracks.reverse()  # index first: the finger next to the thumb
-    names = FINGERS[1:]
-    for name, (knuckle, end, fs, ws, ns) in zip(names, tracks):
+    for name, (knuckle, end, fs, ws, ns) in zip(FINGERS[1:], tracks):
         for i, frac in enumerate((0, 0.45, 0.75, 1), start=1):
             f = knuckle + frac * (end - knuckle)
             key = f"{name}_0{i}.{side}" if i < 4 else f"{name}_tip.{side}"
             joints[key] = point(f, np.interp(f, fs, ws), np.interp(f, fs, ns))
-
-    tf = sorted(thumb)
-    t_base, t_end = tf[0], tf[-1]
-    tw, tn = np.interp(tf, tf, [thumb[k][0] for k in tf]), [thumb[k][1] for k in tf]
-    palm_edge = lo_w if thumb_low else hi_w
-    joints[f"thumb_01.{side}"] = point(0.05 * L, (thumb[t_base][0] + palm_edge) / 2, thumb[t_base][1])
-    joints[f"thumb_02.{side}"] = point(t_base, thumb[t_base][0], thumb[t_base][1])
-    mid = t_base + 0.55 * (t_end - t_base)
-    joints[f"thumb_03.{side}"] = point(mid, np.interp(mid, tf, tw), np.interp(mid, tf, tn))
-    joints[f"thumb_tip.{side}"] = point(t_end, thumb[t_end][0], thumb[t_end][1])
-    return joints, "fingers"
+    if mode == "fingers":
+        for i, frac in enumerate((0.15, 0.45, 0.72, 1.0), start=1):
+            key = f"thumb_0{i}.{side}" if i < 4 else f"thumb_tip.{side}"
+            joints[key] = base + frac * (tip - base) + inward * frac
+    return joints, mode
 
 
 def mitten(slice_at, point, w0, w, L, side):
@@ -368,12 +423,52 @@ def fill_unweighted(mesh):
     print("FILLED", len(empty), "unweighted vertices")
 
 
-def split_hand_weights(mesh, rig):
-    """Share each vertex's hand weight among the hand and finger bones by distance.
+def surface_distances(co, edges, members, seeds):
+    """Shortest distance along the mesh surface from seed vertices (with start costs) to every member.
 
-    Finger gaps are thinner than the voxel proxy, so bone heat would glue neighbouring fingers together."""
+    Vertices sharing a position are joined first: glTF import splits the surface at every UV seam."""
+    import heapq
+    keys = {}
+    node = np.array([keys.setdefault(tuple(np.round(c, 5)), len(keys)) for c in co[members]])
+    local = {int(v): i for i, v in enumerate(members)}
+    adj = [[] for _ in range(len(keys))]
+    for a, b in edges:
+        if a in local and b in local:
+            na, nb = node[local[a]], node[local[b]]
+            if na != nb:
+                w = float(np.linalg.norm(co[a] - co[b]))
+                adj[na].append((nb, w))
+                adj[nb].append((na, w))
+    dist = np.full(len(keys), np.inf)
+    heap = []
+    for v, cost in seeds:
+        n = node[local[v]]
+        if cost < dist[n]:
+            dist[n] = cost
+            heap.append((cost, n))
+    heapq.heapify(heap)
+    while heap:
+        d, n = heapq.heappop(heap)
+        if d > dist[n]:
+            continue
+        for m, w in adj[n]:
+            if d + w < dist[m]:
+                dist[m] = d + w
+                heapq.heappush(heap, (d + w, m))
+    return dist[node]
+
+
+def split_hand_weights(mesh, rig):
+    """Share each vertex's hand weight among the hand and finger bones by distance along the surface.
+
+    Finger gaps are thinner than the voxel proxy, so bone heat would glue neighbouring fingers together,
+    and straight-line distance lets a curled finger grab its neighbour; along the surface a finger is
+    only reachable through the palm."""
     bones = rig.data.bones
     co = np.array([v.co for v in mesh.data.vertices])
+    ev = np.empty(len(mesh.data.edges) * 2, dtype=np.int64)
+    mesh.data.edges.foreach_get("vertices", ev)
+    edges = ev.reshape(-1, 2).tolist()
     for side in "LR":
         names = [f"hand.{side}"] + [n for n in FINGER_BONES if n.endswith(side)]
         heads = np.array([bones[n].head_local for n in names])
@@ -389,7 +484,17 @@ def split_hand_weights(mesh, rig):
         p = co[idx][:, None, :]
         d = tails - heads
         u = np.clip(((p - heads) * d).sum(-1) / (d * d).sum(-1), 0, 1)
-        dist = np.linalg.norm(p - (heads + u[..., None] * d), axis=-1)
+        straight = np.linalg.norm(p - (heads + u[..., None] * d), axis=-1)  # (verts, bones)
+        nearest = straight.argmin(axis=1)
+        dist = np.empty_like(straight)
+        for k in range(len(names)):
+            own = np.where(nearest == k)[0]
+            if not len(own):
+                dist[:, k] = straight[:, k]
+                continue
+            close = own[straight[own, k] <= np.percentile(straight[own, k], 25)]
+            geo = surface_distances(co, edges, idx, [(int(idx[i]), straight[i, k]) for i in close])
+            dist[:, k] = np.where(np.isfinite(geo), geo, straight[:, k] * 3)
         share = 1 / (dist + 1e-4) ** 4
         share[share < np.sort(share, axis=1)[:, [-2]]] = 0  # two nearest bones blend
         share /= share.sum(axis=1, keepdims=True)

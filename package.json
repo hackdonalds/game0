@@ -15,7 +15,9 @@
     "art:3d": "bun scripts/meshy.ts",
     "art:bestiary": "bun scripts/handbook-art.ts --only bestiary",
     "art:handbook": "bun scripts/handbook-art.ts",
-    "art:rig": "bun scripts/rig.ts"
+    "art:rig": "bun scripts/rig.ts",
+    "anim:fetch": "bun scripts/anims/fetch.ts",
+    "anim:build": "bun scripts/anims/build.ts"
   },
   "devDependencies": {
     "@gltf-transform/cli": "4.5.1",

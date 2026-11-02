@@ -1,0 +1,1705 @@
+[
+ {
+  "id": "idle",
+  "name": "Idle",
+  "set": "idle",
+  "source": "quaternius-ual1",
+  "clip": "Idle_Loop",
+  "loop": true
+ },
+ {
+  "id": "idle_1",
+  "name": "Idle 1",
+  "set": "idle",
+  "source": "kaykit-anims",
+  "file": "General",
+  "clip": "Idle_A",
+  "loop": true,
+  "variantOf": "idle"
+ },
+ {
+  "id": "idle_2",
+  "name": "Idle 2",
+  "set": "idle",
+  "source": "kaykit-anims",
+  "file": "General",
+  "clip": "Idle_B",
+  "loop": true,
+  "variantOf": "idle"
+ },
+ {
+  "id": "idle_3",
+  "name": "Idle 3",
+  "set": "idle",
+  "source": "quaternius-ual2",
+  "clip": "Idle_FoldArms_Loop",
+  "loop": true,
+  "variantOf": "idle"
+ },
+ {
+  "id": "idle_4",
+  "name": "Idle 4",
+  "set": "idle",
+  "source": "100style",
+  "file": "Neutral/Neutral_ID.bvh",
+  "cut": "ID",
+  "variantOf": "idle",
+  "loop": true,
+  "autoLoop": [
+   60,
+   150
+  ]
+ },
+ {
+  "id": "idle_5",
+  "name": "Idle 5",
+  "set": "idle",
+  "source": "100style",
+  "file": "HandsInPockets/HandsInPockets_ID.bvh",
+  "cut": "ID",
+  "variantOf": "idle",
+  "loop": true,
+  "autoLoop": [
+   60,
+   150
+  ]
+ },
+ {
+  "id": "walk",
+  "name": "Walking",
+  "set": "locomotion",
+  "source": "quaternius-ual1",
+  "clip": "Walk_Loop",
+  "loop": true,
+  "speed": 0.975
+ },
+ {
+  "id": "walk_casual",
+  "name": "Casual Walk",
+  "set": "locomotion",
+  "source": "100style",
+  "file": "HandsInPockets/HandsInPockets_FW.bvh",
+  "cut": "FW",
+  "variantOf": "walk",
+  "loop": true,
+  "autoLoop": [
+   24,
+   60
+  ]
+ },
+ {
+  "id": "walk_look_around",
+  "name": "Walk Slowly and Look Around",
+  "set": "locomotion",
+  "source": "100style",
+  "file": "Followed/Followed_FW.bvh",
+  "cut": "FW",
+  "variantOf": "walk",
+  "loop": true,
+  "autoLoop": [
+   60,
+   150
+  ]
+ },
+ {
+  "id": "walk_woman",
+  "name": "Walking Woman",
+  "set": "locomotion",
+  "source": "kaykit-anims",
+  "file": "MovementBasic",
+  "clip": "Walking_C",
+  "loop": true,
+  "variantOf": "walk",
+  "note": "KayKit's third walk; no dedicated feminine walk in the free sources"
+ },
+ {
+  "id": "walk_2",
+  "name": "Walk (KayKit A)",
+  "set": "locomotion",
+  "source": "kaykit-anims",
+  "file": "MovementBasic",
+  "clip": "Walking_A",
+  "loop": true,
+  "variantOf": "walk"
+ },
+ {
+  "id": "walk_3",
+  "name": "Walk (KayKit B)",
+  "set": "locomotion",
+  "source": "kaykit-anims",
+  "file": "MovementBasic",
+  "clip": "Walking_B",
+  "loop": true,
+  "variantOf": "walk"
+ },
+ {
+  "id": "walk_mocap",
+  "name": "Walk (mocap)",
+  "set": "locomotion",
+  "source": "100style",
+  "file": "Neutral/Neutral_FW.bvh",
+  "cut": "FW",
+  "variantOf": "walk",
+  "loop": true,
+  "autoLoop": [
+   24,
+   60
+  ]
+ },
+ {
+  "id": "run",
+  "name": "Running",
+  "set": "locomotion",
+  "source": "quaternius-ual1",
+  "clip": "Jog_Fwd_Loop",
+  "loop": true,
+  "speed": 5.357
+ },
+ {
+  "id": "run_fast",
+  "name": "Run Fast",
+  "set": "locomotion",
+  "source": "quaternius-ual1",
+  "clip": "Sprint_Loop",
+  "loop": true,
+  "speed": 8.25
+ },
+ {
+  "id": "run_fast_2",
+  "name": "Run Fast 2",
+  "set": "locomotion",
+  "source": "kaykit-anims",
+  "file": "MovementBasic",
+  "clip": "Running_A",
+  "loop": true,
+  "variantOf": "run_fast"
+ },
+ {
+  "id": "run_fast_3",
+  "name": "Run Fast 3",
+  "set": "locomotion",
+  "source": "kaykit-anims",
+  "file": "MovementBasic",
+  "clip": "Running_B",
+  "loop": true,
+  "variantOf": "run_fast"
+ },
+ {
+  "id": "run_fast_4",
+  "name": "Run Fast 4",
+  "set": "locomotion",
+  "source": "100style",
+  "file": "Neutral/Neutral_FR.bvh",
+  "cut": "FR",
+  "variantOf": "run_fast",
+  "loop": true,
+  "autoLoop": [
+   14,
+   36
+  ]
+ },
+ {
+  "id": "run_turn_left",
+  "name": "Run Turn Left",
+  "set": "locomotion",
+  "source": "cmu",
+  "file": "127_15.fbx"
+ },
+ {
+  "id": "run_turn_right",
+  "name": "Run Turn Right",
+  "set": "locomotion",
+  "source": "cmu",
+  "file": "127_16.fbx"
+ },
+ {
+  "id": "walk_backward",
+  "name": "Walk Backward",
+  "set": "locomotion",
+  "source": "kaykit-anims",
+  "file": "MovementAdvanced",
+  "clip": "Walking_Backwards",
+  "loop": true
+ },
+ {
+  "id": "walk_backward_2",
+  "name": "Walk Backward (mocap)",
+  "set": "locomotion",
+  "source": "100style",
+  "file": "Neutral/Neutral_BW.bvh",
+  "cut": "BW",
+  "variantOf": "walk_backward",
+  "loop": true,
+  "autoLoop": [
+   24,
+   60
+  ]
+ },
+ {
+  "id": "strafe_left",
+  "name": "Strafe Left",
+  "set": "locomotion",
+  "source": "kaykit-anims",
+  "file": "MovementAdvanced",
+  "clip": "Running_Strafe_Left",
+  "loop": true
+ },
+ {
+  "id": "strafe_right",
+  "name": "Strafe Right",
+  "set": "locomotion",
+  "source": "kaykit-anims",
+  "file": "MovementAdvanced",
+  "clip": "Running_Strafe_Right",
+  "loop": true
+ },
+ {
+  "id": "walk_sneaky",
+  "name": "Sneaky Walk",
+  "set": "locomotion",
+  "source": "kaykit-anims",
+  "file": "MovementAdvanced",
+  "clip": "Sneaking",
+  "loop": true
+ },
+ {
+  "id": "walk_sneaky_2",
+  "name": "Sneaky Walk 2",
+  "set": "locomotion",
+  "source": "100style",
+  "file": "Crouched/Crouched_FW.bvh",
+  "cut": "FW",
+  "variantOf": "walk_sneaky",
+  "loop": true,
+  "autoLoop": [
+   24,
+   60
+  ]
+ },
+ {
+  "id": "walk_limp",
+  "name": "Limping Walk",
+  "set": "locomotion",
+  "source": "100style",
+  "file": "LimpLeft/LimpLeft_FW.bvh",
+  "cut": "FW",
+  "loop": true,
+  "autoLoop": [
+   24,
+   60
+  ]
+ },
+ {
+  "id": "walk_elderly",
+  "name": "Elderly Shaky Walk",
+  "set": "locomotion",
+  "source": "100style",
+  "file": "Old/Old_FW.bvh",
+  "cut": "FW",
+  "loop": true,
+  "autoLoop": [
+   30,
+   90
+  ]
+ },
+ {
+  "id": "walk_stumble",
+  "name": "Stumble Walk",
+  "set": "locomotion",
+  "source": "100style",
+  "file": "Drunk/Drunk_FW.bvh",
+  "cut": "FW",
+  "loop": true,
+  "autoLoop": [
+   40,
+   120
+  ]
+ },
+ {
+  "id": "walk_stumble_2",
+  "name": "Stumble Walk 2",
+  "set": "locomotion",
+  "source": "cmu",
+  "file": "104_13.fbx",
+  "variantOf": "walk_stumble"
+ },
+ {
+  "id": "crawl",
+  "name": "Crawl",
+  "set": "locomotion",
+  "source": "kaykit-anims",
+  "file": "MovementAdvanced",
+  "clip": "Crawling",
+  "loop": true
+ },
+ {
+  "id": "jump_start",
+  "name": "Jump Start",
+  "set": "locomotion",
+  "source": "quaternius-ual1",
+  "clip": "Jump_Start"
+ },
+ {
+  "id": "jump_loop",
+  "name": "Jump Airborne",
+  "set": "locomotion",
+  "source": "quaternius-ual1",
+  "clip": "Jump_Loop",
+  "loop": true
+ },
+ {
+  "id": "jump_land",
+  "name": "Jump Land",
+  "set": "locomotion",
+  "source": "quaternius-ual1",
+  "clip": "Jump_Land"
+ },
+ {
+  "id": "jump_short",
+  "name": "Jump (short)",
+  "set": "locomotion",
+  "source": "kaykit-anims",
+  "file": "MovementBasic",
+  "clip": "Jump_Full_Short"
+ },
+ {
+  "id": "jump_long",
+  "name": "Jump (long)",
+  "set": "locomotion",
+  "source": "kaykit-anims",
+  "file": "MovementBasic",
+  "clip": "Jump_Full_Long"
+ },
+ {
+  "id": "stand_chat",
+  "name": "Stand and Chat",
+  "set": "social",
+  "source": "quaternius-ual1",
+  "clip": "Idle_Talking_Loop",
+  "loop": true
+ },
+ {
+  "id": "talk_hands_open",
+  "name": "Talk with Hands Open",
+  "set": "social",
+  "source": "cmu",
+  "file": "18_08.fbx",
+  "loop": true,
+  "autoLoop": [
+   90,
+   240
+  ]
+ },
+ {
+  "id": "talk_passionate",
+  "name": "Talk Passionately",
+  "set": "social",
+  "source": "cmu",
+  "file": "18_10.fbx",
+  "loop": true,
+  "autoLoop": [
+   90,
+   240
+  ]
+ },
+ {
+  "id": "listening",
+  "name": "Listening Gesture",
+  "set": "social",
+  "source": "quaternius-ual2",
+  "clip": "Yes"
+ },
+ {
+  "id": "call_gesture",
+  "name": "Call Gesture",
+  "set": "social",
+  "source": "cmu",
+  "file": "13_26.fbx",
+  "note": "CMU 'direct traffic, wave, point': check the take"
+ },
+ {
+  "id": "wave",
+  "name": "Wave One Hand",
+  "set": "social",
+  "source": "cmu",
+  "file": "141_16.fbx"
+ },
+ {
+  "id": "wave_left",
+  "name": "Wave One Hand (left)",
+  "set": "social",
+  "source": "cmu",
+  "file": "141_16.fbx",
+  "mirror": true,
+  "variantOf": "wave"
+ },
+ {
+  "id": "wave_help_1",
+  "name": "Wave for Help 1",
+  "set": "social",
+  "source": "kaykit-anims",
+  "file": "Simulation",
+  "clip": "Waving"
+ },
+ {
+  "id": "wave_help_2",
+  "name": "Wave for Help 2",
+  "set": "social",
+  "source": "kaykit-anims",
+  "file": "Simulation",
+  "clip": "Waving",
+  "mirror": true,
+  "variantOf": "wave_help_1"
+ },
+ {
+  "id": "wave_help_3",
+  "name": "Wave for Help 3",
+  "set": "social",
+  "source": "cmu",
+  "file": "113_27.fbx",
+  "variantOf": "wave_help_1"
+ },
+ {
+  "id": "wave_help_4",
+  "name": "Wave for Help 4",
+  "set": "social",
+  "source": "cmu",
+  "file": "113_27.fbx",
+  "mirror": true,
+  "variantOf": "wave_help_1"
+ },
+ {
+  "id": "bow_formal",
+  "name": "Formal Bow",
+  "set": "social",
+  "source": "cmu",
+  "file": "111_02.fbx"
+ },
+ {
+  "id": "bow_gentleman",
+  "name": "Gentlemans Bow",
+  "set": "social",
+  "source": "cmu",
+  "file": "113_02.fbx"
+ },
+ {
+  "id": "shrug",
+  "name": "Shrug",
+  "set": "social",
+  "source": "cmu",
+  "file": "111_25.fbx"
+ },
+ {
+  "id": "shrug_2",
+  "name": "Shrug 2",
+  "set": "social",
+  "source": "cmu",
+  "file": "141_21.fbx",
+  "variantOf": "shrug"
+ },
+ {
+  "id": "finger_wag_no",
+  "name": "Finger Wag No",
+  "set": "social",
+  "source": "quaternius-ual2",
+  "clip": "Idle_No_Loop",
+  "note": "a head-shake 'no', no finger wag"
+ },
+ {
+  "id": "hand_on_hip",
+  "name": "Hand on Hip Gesture",
+  "set": "social",
+  "source": "100style",
+  "file": "Akimbo/Akimbo_ID.bvh",
+  "cut": "ID",
+  "loop": true,
+  "autoLoop": [
+   60,
+   150
+  ]
+ },
+ {
+  "id": "stand_drink",
+  "name": "Stand and Drink",
+  "set": "social",
+  "source": "cmu",
+  "file": "13_09.fbx"
+ },
+ {
+  "id": "stand_drink_2",
+  "name": "Stand and Drink 2",
+  "set": "social",
+  "source": "quaternius-ual2",
+  "clip": "Consume",
+  "variantOf": "stand_drink"
+ },
+ {
+  "id": "sit_drink",
+  "name": "Sit and Drink",
+  "set": "social",
+  "source": "kaykit-anims",
+  "file": "Simulation",
+  "clip": "Sit_Chair_Idle",
+  "upper": {
+   "source": "cmu",
+   "file": "13_09.fbx"
+  }
+ },
+ {
+  "id": "sit_cross_legged",
+  "name": "Sit Cross-legged",
+  "set": "social",
+  "source": "kaykit-anims",
+  "file": "Simulation",
+  "clip": "Sit_Floor_Idle",
+  "loop": true
+ },
+ {
+  "id": "sit_floor_down",
+  "name": "Sit Down on Floor",
+  "set": "social",
+  "source": "kaykit-anims",
+  "file": "Simulation",
+  "clip": "Sit_Floor_Down"
+ },
+ {
+  "id": "sit_floor_up",
+  "name": "Stand Up from Floor Sit",
+  "set": "social",
+  "source": "kaykit-anims",
+  "file": "Simulation",
+  "clip": "Sit_Floor_StandUp"
+ },
+ {
+  "id": "chair_sit_idle",
+  "name": "Chair Sit Idle",
+  "set": "social",
+  "source": "kaykit-anims",
+  "file": "Simulation",
+  "clip": "Sit_Chair_Idle",
+  "loop": true
+ },
+ {
+  "id": "chair_sit_idle_2",
+  "name": "Chair Sit Idle 2",
+  "set": "social",
+  "source": "quaternius-ual1",
+  "clip": "Sitting_Idle_Loop",
+  "loop": true,
+  "variantOf": "chair_sit_idle"
+ },
+ {
+  "id": "chair_sit_down",
+  "name": "Sit Down on Chair",
+  "set": "social",
+  "source": "kaykit-anims",
+  "file": "Simulation",
+  "clip": "Sit_Chair_Down"
+ },
+ {
+  "id": "chair_stand_up",
+  "name": "Stand Up from Chair",
+  "set": "social",
+  "source": "kaykit-anims",
+  "file": "Simulation",
+  "clip": "Sit_Chair_StandUp"
+ },
+ {
+  "id": "chair_talk",
+  "name": "Chair Sit and Talk",
+  "set": "social",
+  "source": "quaternius-ual1",
+  "clip": "Sitting_Talking_Loop",
+  "loop": true
+ },
+ {
+  "id": "sit_arms_crossed",
+  "name": "Sit on Chair Arms Crossed",
+  "set": "social",
+  "source": "kaykit-anims",
+  "file": "Simulation",
+  "clip": "Sit_Chair_Idle",
+  "loop": true,
+  "upper": {
+   "source": "quaternius-ual2",
+   "clip": "Idle_FoldArms_Loop"
+  }
+ },
+ {
+  "id": "collect_object",
+  "name": "Collect Object",
+  "set": "social",
+  "source": "kaykit-anims",
+  "file": "General",
+  "clip": "PickUp"
+ },
+ {
+  "id": "bend_pick_up",
+  "name": "Bend Over Pick Up",
+  "set": "social",
+  "source": "cmu",
+  "file": "115_02.fbx"
+ },
+ {
+  "id": "pick_up_table",
+  "name": "Pick Up from Table",
+  "set": "social",
+  "source": "quaternius-ual1",
+  "clip": "PickUp_Table"
+ },
+ {
+  "id": "carry_walk",
+  "name": "Carry Heavy Object Walk",
+  "set": "social",
+  "source": "quaternius-ual2",
+  "clip": "Walk_Carry_Loop",
+  "loop": true,
+  "speed": 0.65
+ },
+ {
+  "id": "carry_idle",
+  "name": "Carry Idle",
+  "set": "social",
+  "source": "quaternius-ual1",
+  "clip": "Idle_Loop",
+  "loop": true,
+  "upper": {
+   "source": "quaternius-ual2",
+   "clip": "Walk_Carry_Loop",
+   "hold": 0
+  }
+ },
+ {
+  "id": "open_door_1",
+  "name": "Open Door 1",
+  "set": "social",
+  "source": "kaykit-anims",
+  "file": "General",
+  "clip": "Interact"
+ },
+ {
+  "id": "open_door_2",
+  "name": "Open Door 2",
+  "set": "social",
+  "source": "kaykit-anims",
+  "file": "General",
+  "clip": "Interact",
+  "mirror": true,
+  "variantOf": "open_door_1"
+ },
+ {
+  "id": "open_door_3",
+  "name": "Open Door 3",
+  "set": "social",
+  "source": "quaternius-ual1",
+  "clip": "Interact",
+  "variantOf": "open_door_1"
+ },
+ {
+  "id": "open_door_4",
+  "name": "Open Door 4",
+  "set": "social",
+  "source": "quaternius-ual1",
+  "clip": "Interact",
+  "mirror": true,
+  "variantOf": "open_door_1"
+ },
+ {
+  "id": "strut_confident",
+  "name": "Confident Strut",
+  "set": "social",
+  "source": "100style",
+  "file": "Strutting/Strutting_FW.bvh",
+  "cut": "FW",
+  "loop": true,
+  "autoLoop": [
+   24,
+   60
+  ]
+ },
+ {
+  "id": "strut_proud",
+  "name": "Proud Strut",
+  "set": "social",
+  "source": "100style",
+  "file": "Proud/Proud_FW.bvh",
+  "cut": "FW",
+  "loop": true,
+  "autoLoop": [
+   24,
+   60
+  ]
+ },
+ {
+  "id": "cheer",
+  "name": "Cheer with Both Hands",
+  "set": "social",
+  "source": "kaykit-anims",
+  "file": "Simulation",
+  "clip": "Cheering"
+ },
+ {
+  "id": "stretch_yawn",
+  "name": "Stretch and Yawn",
+  "set": "social",
+  "source": "cmu",
+  "file": "111_32.fbx"
+ },
+ {
+  "id": "dance",
+  "name": "Dance",
+  "set": "social",
+  "source": "quaternius-ual1",
+  "clip": "Dance_Loop",
+  "loop": true
+ },
+ {
+  "id": "lie_down",
+  "name": "Lie Down",
+  "set": "social",
+  "source": "kaykit-anims",
+  "file": "Simulation",
+  "clip": "Lie_Down"
+ },
+ {
+  "id": "lie_idle",
+  "name": "Lie Idle",
+  "set": "social",
+  "source": "kaykit-anims",
+  "file": "Simulation",
+  "clip": "Lie_Idle",
+  "loop": true
+ },
+ {
+  "id": "attack",
+  "name": "Attack",
+  "set": "combat",
+  "source": "kaykit-anims",
+  "file": "CombatMelee",
+  "clip": "Melee_1H_Attack_Chop"
+ },
+ {
+  "id": "combat_idle",
+  "name": "Combat Idle",
+  "set": "combat",
+  "source": "kaykit-anims",
+  "file": "CombatMelee",
+  "clip": "Melee_Unarmed_Idle",
+  "loop": true
+ },
+ {
+  "id": "combat_idle_2h",
+  "name": "Combat Idle (two-handed)",
+  "set": "combat",
+  "source": "kaykit-anims",
+  "file": "CombatMelee",
+  "clip": "Melee_2H_Idle",
+  "loop": true,
+  "variantOf": "combat_idle"
+ },
+ {
+  "id": "sword_idle",
+  "name": "Sword Idle",
+  "set": "combat",
+  "source": "quaternius-ual1",
+  "clip": "Sword_Idle",
+  "loop": true,
+  "variantOf": "combat_idle"
+ },
+ {
+  "id": "shield_idle",
+  "name": "Shield Idle",
+  "set": "combat",
+  "source": "quaternius-ual2",
+  "clip": "Idle_Shield_Loop",
+  "loop": true,
+  "variantOf": "combat_idle"
+ },
+ {
+  "id": "punch_combo_1",
+  "name": "Punch Combo 1",
+  "set": "combat",
+  "source": "quaternius-ual1",
+  "clip": "Punch_Jab"
+ },
+ {
+  "id": "punch_combo_2",
+  "name": "Punch Combo 2",
+  "set": "combat",
+  "source": "quaternius-ual1",
+  "clip": "Punch_Cross",
+  "variantOf": "punch_combo_1"
+ },
+ {
+  "id": "punch_combo_3",
+  "name": "Punch Combo 3",
+  "set": "combat",
+  "source": "quaternius-ual2",
+  "clip": "Melee_Hook",
+  "variantOf": "punch_combo_1"
+ },
+ {
+  "id": "punch_combo_4",
+  "name": "Punch Combo 4",
+  "set": "combat",
+  "source": "kaykit-anims",
+  "file": "CombatMelee",
+  "clip": "Melee_Unarmed_Attack_Punch_A",
+  "variantOf": "punch_combo_1"
+ },
+ {
+  "id": "punch_combo_5",
+  "name": "Punch Combo 5",
+  "set": "combat",
+  "source": "cmu",
+  "file": "144_20.fbx",
+  "variantOf": "punch_combo_1"
+ },
+ {
+  "id": "kick",
+  "name": "Kick",
+  "set": "combat",
+  "source": "kaykit-anims",
+  "file": "CombatMelee",
+  "clip": "Melee_Unarmed_Attack_Kick"
+ },
+ {
+  "id": "weapon_combo_1",
+  "name": "Weapon Combo 1",
+  "set": "combat",
+  "source": "quaternius-ual2",
+  "clip": "Sword_Heavy_Combo"
+ },
+ {
+  "id": "weapon_combo_2",
+  "name": "Weapon Combo 2",
+  "set": "combat",
+  "source": "kaykit-anims",
+  "file": "CombatMelee",
+  "clip": "Melee_2H_Attack_Spin",
+  "variantOf": "weapon_combo_1"
+ },
+ {
+  "id": "triple_combo",
+  "name": "Triple Combo Attack",
+  "set": "combat",
+  "source": "quaternius-ual2",
+  "clip": "Sword_Regular_Combo"
+ },
+ {
+  "id": "double_combo",
+  "name": "Double Combo Attack",
+  "set": "combat",
+  "source": "kaykit-anims",
+  "file": "CombatMelee",
+  "clip": "Melee_Dualwield_Attack_Chop"
+ },
+ {
+  "id": "hammer_swing",
+  "name": "Heavy Hammer Swing",
+  "set": "combat",
+  "source": "kaykit-anims",
+  "file": "CombatMelee",
+  "clip": "Melee_2H_Attack_Chop"
+ },
+ {
+  "id": "thrust_slash",
+  "name": "Thrust Slash",
+  "set": "combat",
+  "source": "kaykit-anims",
+  "file": "CombatMelee",
+  "clip": "Melee_1H_Attack_Stab"
+ },
+ {
+  "id": "slash_left",
+  "name": "Left Slash",
+  "set": "combat",
+  "source": "kaykit-anims",
+  "file": "CombatMelee",
+  "clip": "Melee_1H_Attack_Slice_Horizontal",
+  "mirror": true
+ },
+ {
+  "id": "slash_right",
+  "name": "Right-hand Sword Slash",
+  "set": "combat",
+  "source": "kaykit-anims",
+  "file": "CombatMelee",
+  "clip": "Melee_1H_Attack_Slice_Diagonal"
+ },
+ {
+  "id": "sword_slash",
+  "name": "Sword Slash",
+  "set": "combat",
+  "source": "quaternius-ual1",
+  "clip": "Sword_Attack",
+  "variantOf": "slash_right"
+ },
+ {
+  "id": "parry",
+  "name": "Sword Parry",
+  "set": "combat",
+  "source": "quaternius-ual2",
+  "clip": "Sword_Block"
+ },
+ {
+  "id": "parry_back",
+  "name": "Sword Parry Backward",
+  "set": "combat",
+  "source": "kaykit-anims",
+  "file": "CombatMelee",
+  "clip": "Melee_Block_Hit"
+ },
+ {
+  "id": "walk_fight_forward",
+  "name": "Walk Fight Forward",
+  "set": "combat",
+  "source": "100style",
+  "file": "ShieldedLeft/ShieldedLeft_FW.bvh",
+  "cut": "FW",
+  "loop": true,
+  "autoLoop": [
+   24,
+   60
+  ]
+ },
+ {
+  "id": "walk_fight_back",
+  "name": "Walk Fight Back",
+  "set": "combat",
+  "source": "100style",
+  "file": "ShieldedLeft/ShieldedLeft_BW.bvh",
+  "cut": "BW",
+  "loop": true,
+  "autoLoop": [
+   24,
+   60
+  ]
+ },
+ {
+  "id": "counterstrike",
+  "name": "Counterstrike",
+  "set": "combat",
+  "source": "kaykit-anims",
+  "file": "CombatMelee",
+  "clip": "Melee_Block_Attack"
+ },
+ {
+  "id": "block_1",
+  "name": "Block 1",
+  "set": "combat",
+  "source": "kaykit-anims",
+  "file": "CombatMelee",
+  "clip": "Melee_Block"
+ },
+ {
+  "id": "block_2",
+  "name": "Block 2",
+  "set": "combat",
+  "source": "kaykit-anims",
+  "file": "CombatMelee",
+  "clip": "Melee_Blocking",
+  "variantOf": "block_1",
+  "loop": true
+ },
+ {
+  "id": "block_3",
+  "name": "Block 3",
+  "set": "combat",
+  "source": "quaternius-ual2",
+  "clip": "Sword_Block",
+  "mirror": true,
+  "variantOf": "block_1"
+ },
+ {
+  "id": "block_4",
+  "name": "Block 4",
+  "set": "combat",
+  "source": "quaternius-ual2",
+  "clip": "Shield_OneShot",
+  "variantOf": "block_1"
+ },
+ {
+  "id": "block_5",
+  "name": "Block 5",
+  "set": "combat",
+  "source": "quaternius-ual2",
+  "clip": "Idle_Shield_Break",
+  "variantOf": "block_1"
+ },
+ {
+  "id": "block_6",
+  "name": "Block 6",
+  "set": "combat",
+  "source": "kaykit-anims",
+  "file": "CombatMelee",
+  "clip": "Melee_Block",
+  "mirror": true,
+  "variantOf": "block_1"
+ },
+ {
+  "id": "block_7",
+  "name": "Block 7",
+  "set": "combat",
+  "source": "kaykit-anims",
+  "file": "CombatMelee",
+  "clip": "Melee_Block_Hit",
+  "mirror": true,
+  "variantOf": "block_1"
+ },
+ {
+  "id": "block_8",
+  "name": "Block 8",
+  "set": "combat",
+  "source": "quaternius-ual2",
+  "clip": "Shield_OneShot",
+  "mirror": true,
+  "variantOf": "block_1"
+ },
+ {
+  "id": "block_9",
+  "name": "Block 9",
+  "set": "combat",
+  "source": "quaternius-ual2",
+  "clip": "Idle_Shield_Break",
+  "mirror": true,
+  "variantOf": "block_1"
+ },
+ {
+  "id": "roll_dodge_1",
+  "name": "Roll Dodge 1",
+  "set": "combat",
+  "source": "quaternius-ual1",
+  "clip": "Roll"
+ },
+ {
+  "id": "roll_dodge_2",
+  "name": "Dodge Forward",
+  "set": "combat",
+  "source": "kaykit-anims",
+  "file": "MovementAdvanced",
+  "clip": "Dodge_Forward",
+  "variantOf": "roll_dodge_1"
+ },
+ {
+  "id": "roll_dodge_3",
+  "name": "Dodge Backward",
+  "set": "combat",
+  "source": "kaykit-anims",
+  "file": "MovementAdvanced",
+  "clip": "Dodge_Backward",
+  "variantOf": "roll_dodge_1"
+ },
+ {
+  "id": "roll_dodge_4",
+  "name": "Dodge Left",
+  "set": "combat",
+  "source": "kaykit-anims",
+  "file": "MovementAdvanced",
+  "clip": "Dodge_Left",
+  "variantOf": "roll_dodge_1"
+ },
+ {
+  "id": "roll_dodge_5",
+  "name": "Dodge Right",
+  "set": "combat",
+  "source": "kaykit-anims",
+  "file": "MovementAdvanced",
+  "clip": "Dodge_Right",
+  "variantOf": "roll_dodge_1"
+ },
+ {
+  "id": "shield_dash",
+  "name": "Shield Dash",
+  "set": "combat",
+  "source": "quaternius-ual2",
+  "clip": "Shield_Dash"
+ },
+ {
+  "id": "bow_idle",
+  "name": "Bow Idle",
+  "set": "ranged",
+  "source": "kaykit-anims",
+  "file": "CombatRanged",
+  "clip": "Ranged_Bow_Idle",
+  "loop": true
+ },
+ {
+  "id": "bow_aim",
+  "name": "Bow Aim",
+  "set": "ranged",
+  "source": "kaykit-anims",
+  "file": "CombatRanged",
+  "clip": "Ranged_Bow_Aiming_Idle",
+  "loop": true
+ },
+ {
+  "id": "archery_shot_0",
+  "name": "Archery Shot 0",
+  "set": "ranged",
+  "source": "kaykit-anims",
+  "file": "CombatRanged",
+  "clip": "Ranged_Bow_Draw"
+ },
+ {
+  "id": "archery_shot_1",
+  "name": "Archery Shot 1",
+  "set": "ranged",
+  "source": "kaykit-anims",
+  "file": "CombatRanged",
+  "clip": "Ranged_Bow_Release"
+ },
+ {
+  "id": "archery_shot_2",
+  "name": "Archery Shot 2",
+  "set": "ranged",
+  "source": "kaykit-anims",
+  "file": "CombatRanged",
+  "clip": "Ranged_Bow_Draw_Up"
+ },
+ {
+  "id": "archery_shot_3",
+  "name": "Archery Shot 3",
+  "set": "ranged",
+  "source": "kaykit-anims",
+  "file": "CombatRanged",
+  "clip": "Ranged_Bow_Release_Up"
+ },
+ {
+  "id": "run_with_bow",
+  "name": "Run Holding Bow",
+  "set": "ranged",
+  "source": "kaykit-anims",
+  "file": "MovementAdvanced",
+  "clip": "Running_HoldingBow",
+  "loop": true
+ },
+ {
+  "id": "walk_back_bow",
+  "name": "Walk Backward with Bow",
+  "set": "ranged",
+  "source": "kaykit-anims",
+  "file": "MovementAdvanced",
+  "clip": "Walking_Backwards",
+  "loop": true,
+  "upper": {
+   "source": "kaykit-anims",
+   "file": "CombatRanged",
+   "clip": "Ranged_Bow_Aiming_Idle"
+  }
+ },
+ {
+  "id": "throw",
+  "name": "Throw",
+  "set": "ranged",
+  "source": "kaykit-anims",
+  "file": "General",
+  "clip": "Throw"
+ },
+ {
+  "id": "spell_cast_1",
+  "name": "Mage Spell Cast 1",
+  "set": "magic",
+  "source": "quaternius-ual1",
+  "clip": "Spell_Simple_Enter"
+ },
+ {
+  "id": "spell_cast_2",
+  "name": "Mage Spell Cast 2",
+  "set": "magic",
+  "source": "quaternius-ual1",
+  "clip": "Spell_Simple_Idle_Loop",
+  "loop": true,
+  "variantOf": "spell_cast_1"
+ },
+ {
+  "id": "spell_cast_3",
+  "name": "Mage Spell Cast 3",
+  "set": "magic",
+  "source": "quaternius-ual1",
+  "clip": "Spell_Simple_Shoot",
+  "variantOf": "spell_cast_1"
+ },
+ {
+  "id": "spell_cast_4",
+  "name": "Mage Spell Cast 4",
+  "set": "magic",
+  "source": "quaternius-ual1",
+  "clip": "Spell_Simple_Exit",
+  "variantOf": "spell_cast_1"
+ },
+ {
+  "id": "spell_cast_5",
+  "name": "Mage Spell Cast 5",
+  "set": "magic",
+  "source": "kaykit-anims",
+  "file": "CombatRanged",
+  "clip": "Ranged_Magic_Raise",
+  "variantOf": "spell_cast_1"
+ },
+ {
+  "id": "spell_cast_6",
+  "name": "Mage Spell Cast 6",
+  "set": "magic",
+  "source": "kaykit-anims",
+  "file": "CombatRanged",
+  "clip": "Ranged_Magic_Shoot",
+  "variantOf": "spell_cast_1"
+ },
+ {
+  "id": "spell_cast_7",
+  "name": "Mage Spell Cast 7",
+  "set": "magic",
+  "source": "kaykit-anims",
+  "file": "CombatRanged",
+  "clip": "Ranged_Magic_Spellcasting",
+  "loop": true,
+  "variantOf": "spell_cast_1"
+ },
+ {
+  "id": "spell_cast_8",
+  "name": "Mage Spell Cast 8",
+  "set": "magic",
+  "source": "kaykit-anims",
+  "file": "CombatRanged",
+  "clip": "Ranged_Magic_Spellcasting_Long",
+  "variantOf": "spell_cast_1"
+ },
+ {
+  "id": "charged_cast_0",
+  "name": "Charged Spell Cast 0",
+  "set": "magic",
+  "source": "kaykit-anims",
+  "file": "CombatRanged",
+  "clip": "Ranged_Magic_Summon"
+ },
+ {
+  "id": "charged_cast_1",
+  "name": "Charged Spell Cast 1",
+  "set": "magic",
+  "source": "kaykit-anims",
+  "file": "CombatRanged",
+  "clip": "Ranged_Magic_Summon",
+  "mirror": true,
+  "variantOf": "charged_cast_0"
+ },
+ {
+  "id": "hit_reaction_0",
+  "name": "Hit Reaction 0",
+  "set": "reaction",
+  "source": "kaykit-anims",
+  "file": "General",
+  "clip": "Hit_A"
+ },
+ {
+  "id": "hit_reaction_1",
+  "name": "Hit Reaction 1",
+  "set": "reaction",
+  "source": "kaykit-anims",
+  "file": "General",
+  "clip": "Hit_B",
+  "variantOf": "hit_reaction_0"
+ },
+ {
+  "id": "hit_waist",
+  "name": "Hit Reaction to Waist",
+  "set": "reaction",
+  "source": "quaternius-ual1",
+  "clip": "Hit_Chest"
+ },
+ {
+  "id": "face_punch_0",
+  "name": "Face Punch Reaction 0",
+  "set": "reaction",
+  "source": "quaternius-ual1",
+  "clip": "Hit_Head"
+ },
+ {
+  "id": "face_punch_1",
+  "name": "Face Punch Reaction 1",
+  "set": "reaction",
+  "source": "quaternius-ual1",
+  "clip": "Hit_Head",
+  "mirror": true,
+  "variantOf": "face_punch_0"
+ },
+ {
+  "id": "face_punch_2",
+  "name": "Face Punch Reaction 2",
+  "set": "reaction",
+  "source": "kaykit-anims",
+  "file": "General",
+  "clip": "Hit_B",
+  "mirror": true,
+  "variantOf": "face_punch_0"
+ },
+ {
+  "id": "slap_reaction",
+  "name": "Slap Reaction",
+  "set": "reaction",
+  "source": "kaykit-anims",
+  "file": "General",
+  "clip": "Hit_A",
+  "mirror": true
+ },
+ {
+  "id": "gunshot_reaction",
+  "name": "Gunshot Reaction",
+  "set": "reaction",
+  "source": "quaternius-ual2",
+  "clip": "Hit_Knockback"
+ },
+ {
+  "id": "knock_down",
+  "name": "Knock Down",
+  "set": "reaction",
+  "source": "cmu",
+  "file": "90_18.fbx"
+ },
+ {
+  "id": "fall_down",
+  "name": "Fall Down",
+  "set": "reaction",
+  "source": "cmu",
+  "file": "90_16.fbx"
+ },
+ {
+  "id": "stand_up_1",
+  "name": "Stand Up 1",
+  "set": "reaction",
+  "source": "cmu",
+  "file": "140_01.fbx"
+ },
+ {
+  "id": "stand_up_2",
+  "name": "Stand Up 2",
+  "set": "reaction",
+  "source": "cmu",
+  "file": "140_03.fbx",
+  "variantOf": "stand_up_1"
+ },
+ {
+  "id": "stand_up_3",
+  "name": "Stand Up 3",
+  "set": "reaction",
+  "source": "cmu",
+  "file": "140_08.fbx",
+  "variantOf": "stand_up_1"
+ },
+ {
+  "id": "stand_up_4",
+  "name": "Stand Up 4",
+  "set": "reaction",
+  "source": "cmu",
+  "file": "139_16.fbx",
+  "variantOf": "stand_up_1"
+ },
+ {
+  "id": "stand_up_5",
+  "name": "Stand Up 5",
+  "set": "reaction",
+  "source": "cmu",
+  "file": "111_06.fbx",
+  "variantOf": "stand_up_1"
+ },
+ {
+  "id": "stand_up_6",
+  "name": "Stand Up 6",
+  "set": "reaction",
+  "source": "cmu",
+  "file": "114_02.fbx",
+  "variantOf": "stand_up_1"
+ },
+ {
+  "id": "stand_up_7",
+  "name": "Stand Up 7",
+  "set": "reaction",
+  "source": "kaykit-anims",
+  "file": "Simulation",
+  "clip": "Lie_StandUp",
+  "variantOf": "stand_up_1"
+ },
+ {
+  "id": "stand_up_8",
+  "name": "Stand Up 8",
+  "set": "reaction",
+  "source": "kaykit-anims",
+  "file": "Simulation",
+  "clip": "Sit_Floor_StandUp",
+  "variantOf": "stand_up_1"
+ },
+ {
+  "id": "stand_up_9",
+  "name": "Stand Up 9",
+  "set": "reaction",
+  "source": "kaykit-anims",
+  "file": "Special",
+  "clip": "Skeletons_Awaken_Floor",
+  "variantOf": "stand_up_1"
+ },
+ {
+  "id": "stand_up_10",
+  "name": "Stand Up 10",
+  "set": "reaction",
+  "source": "quaternius-ual2",
+  "clip": "LayToIdle",
+  "variantOf": "stand_up_1"
+ },
+ {
+  "id": "kneel_and_stand",
+  "name": "Kneel on One Knee and Stand",
+  "set": "reaction",
+  "source": "quaternius-ual1",
+  "clip": "Fixing_Kneeling",
+  "note": "a kneeling repair loop, not a kneel-then-stand"
+ },
+ {
+  "id": "shot_fall_backward",
+  "name": "Shot and Fall Backward",
+  "set": "death",
+  "source": "quaternius-ual1",
+  "clip": "Death01"
+ },
+ {
+  "id": "shot_fall_forward",
+  "name": "Shot and Fall Forward",
+  "set": "death",
+  "source": "cmu",
+  "file": "90_16.fbx"
+ },
+ {
+  "id": "falling_down",
+  "name": "Falling Down",
+  "set": "death",
+  "source": "kaykit-anims",
+  "file": "Special",
+  "clip": "Skeletons_Death"
+ },
+ {
+  "id": "dying_backwards",
+  "name": "Dying Backwards",
+  "set": "death",
+  "source": "kaykit-anims",
+  "file": "General",
+  "clip": "Death_B"
+ },
+ {
+  "id": "death_a",
+  "name": "Death",
+  "set": "death",
+  "source": "kaykit-anims",
+  "file": "General",
+  "clip": "Death_A"
+ },
+ {
+  "id": "dead",
+  "name": "Dead",
+  "set": "death",
+  "source": "kaykit-anims",
+  "file": "General",
+  "clip": "Death_A_Pose",
+  "frame": 0
+ },
+ {
+  "id": "dead_2",
+  "name": "Dead 2",
+  "set": "death",
+  "source": "kaykit-anims",
+  "file": "General",
+  "clip": "Death_B_Pose",
+  "frame": 0,
+  "variantOf": "dead"
+ },
+ {
+  "id": "chest_pound",
+  "name": "Chest Pound Taunt",
+  "set": "monster",
+  "source": "100style",
+  "file": "BeatChest/BeatChest_FW.bvh",
+  "cut": "FW",
+  "loop": true,
+  "autoLoop": [
+   24,
+   60
+  ]
+ },
+ {
+  "id": "angry_stomp",
+  "name": "Angry Stomp",
+  "set": "monster",
+  "source": "100style",
+  "file": "Angry/Angry_FW.bvh",
+  "cut": "FW",
+  "loop": true,
+  "autoLoop": [
+   24,
+   60
+  ]
+ },
+ {
+  "id": "shout_angry",
+  "name": "Shouting Angrily",
+  "set": "monster",
+  "source": "kaykit-anims",
+  "file": "Special",
+  "clip": "Skeletons_Taunt"
+ },
+ {
+  "id": "taunt_long",
+  "name": "Taunt (long)",
+  "set": "monster",
+  "source": "kaykit-anims",
+  "file": "Special",
+  "clip": "Skeletons_Taunt_Longer"
+ },
+ {
+  "id": "ground_slam",
+  "name": "Charged Ground Slam",
+  "set": "monster",
+  "source": "kaykit-anims",
+  "file": "CombatMelee",
+  "clip": "Melee_2H_Attack_Chop",
+  "note": "same motion as Heavy Hammer Swing"
+ },
+ {
+  "id": "jump_attack",
+  "name": "Jump Attack",
+  "set": "monster",
+  "source": "kaykit-anims",
+  "file": "CombatMelee",
+  "clip": "Melee_1H_Attack_Jump_Chop"
+ },
+ {
+  "id": "zombie_walk",
+  "name": "Zombie Walk",
+  "set": "monster",
+  "source": "quaternius-ual2",
+  "clip": "Zombie_Walk_Fwd_Loop",
+  "loop": true
+ },
+ {
+  "id": "zombie_idle",
+  "name": "Zombie Idle",
+  "set": "monster",
+  "source": "quaternius-ual2",
+  "clip": "Zombie_Idle_Loop",
+  "loop": true
+ },
+ {
+  "id": "zombie_scratch",
+  "name": "Zombie Scratch",
+  "set": "monster",
+  "source": "quaternius-ual2",
+  "clip": "Zombie_Scratch"
+ },
+ {
+  "id": "mummy_stagger",
+  "name": "Mummy Stagger",
+  "set": "monster",
+  "source": "100style",
+  "file": "Zombie/Zombie_FW.bvh",
+  "cut": "FW",
+  "loop": true,
+  "autoLoop": [
+   24,
+   60
+  ]
+ },
+ {
+  "id": "orc_walk",
+  "name": "Slow Orc Walk",
+  "set": "monster",
+  "source": "100style",
+  "file": "Heavyset/Heavyset_FW.bvh",
+  "cut": "FW",
+  "loop": true,
+  "autoLoop": [
+   24,
+   60
+  ]
+ },
+ {
+  "id": "frankenstein_walk",
+  "name": "Frankenstein Walk",
+  "set": "monster",
+  "source": "cmu",
+  "file": "104_03.fbx",
+  "loop": true,
+  "autoLoop": [
+   24,
+   60
+  ]
+ },
+ {
+  "id": "penguin_walk",
+  "name": "Penguin Walk",
+  "set": "monster",
+  "source": "100style",
+  "file": "Penguin/Penguin_FW.bvh",
+  "cut": "FW",
+  "loop": true,
+  "autoLoop": [
+   24,
+   60
+  ]
+ },
+ {
+  "id": "crawl_backward",
+  "name": "Crawl Backward",
+  "set": "monster",
+  "source": "kaykit-anims",
+  "file": "MovementAdvanced",
+  "clip": "Crawling",
+  "loop": true,
+  "reverse": true
+ },
+ {
+  "id": "crawl_look_back",
+  "name": "Crawl and Look Back",
+  "set": "monster",
+  "source": "cmu",
+  "file": "111_03.fbx",
+  "note": "CMU crawl take; check for a look back"
+ },
+ {
+  "id": "gorilla",
+  "name": "Gorilla",
+  "set": "monster",
+  "source": "cmu",
+  "file": "120_02.fbx"
+ },
+ {
+  "id": "skeleton_walk",
+  "name": "Skeleton Walk",
+  "set": "monster",
+  "source": "kaykit-anims",
+  "file": "Special",
+  "clip": "Skeletons_Walking",
+  "loop": true
+ },
+ {
+  "id": "skeleton_idle",
+  "name": "Skeleton Idle",
+  "set": "monster",
+  "source": "kaykit-anims",
+  "file": "Special",
+  "clip": "Skeletons_Idle",
+  "loop": true
+ },
+ {
+  "id": "skeleton_awaken",
+  "name": "Skeleton Awaken",
+  "set": "monster",
+  "source": "kaykit-anims",
+  "file": "Special",
+  "clip": "Skeletons_Awaken_Standing"
+ },
+ {
+  "id": "skeleton_resurrect",
+  "name": "Skeleton Resurrect",
+  "set": "monster",
+  "source": "kaykit-anims",
+  "file": "Special",
+  "clip": "Skeletons_Death_Resurrect"
+ }
+]

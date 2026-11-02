@@ -11,8 +11,8 @@ const FADE = 0.2;
 const GRAVITY = 14;
 const JUMP_SPEED = 4.6;
 const TAKEOFF = 0.1; // seconds into JumpStart when the feet leave the ground
-const HITS = ["HitChest", "HitHead", "HitKnockback"];
-const ATTACKS = ["Punch", "Hook"];
+const HITS = ["hit_reaction_0", "hit_reaction_1", "face_punch_0", "hit_waist", "gunshot_reaction"];
+const ATTACKS = ["punch_combo_1", "punch_combo_2", "punch_combo_3", "kick", "attack"];
 
 // ---------- Scene ----------
 
@@ -103,12 +103,12 @@ hero.traverse((o) => {
 
 const mixer = new THREE.AnimationMixer(hero);
 const actions = Object.fromEntries(gltf.animations.map((clip) => [clip.name, mixer.clipAction(clip)]));
-for (const name of ["JumpStart", "JumpLand", ...HITS, ...ATTACKS]) {
+for (const name of ["jump_start", "jump_land", ...HITS, ...ATTACKS]) {
   actions[name].setLoop(THREE.LoopOnce, 1);
   actions[name].clampWhenFinished = true;
 }
 
-let current = actions.Idle;
+let current = actions.idle;
 current.play();
 function fadeTo(name: string, restart = false, fade = FADE, startAt = 0) {
   const next = actions[name];
@@ -133,8 +133,8 @@ let heading = 0;
 let flash = 0;
 
 function locomotion(moving: boolean, running: boolean) {
-  if (carrying) return moving ? "CarryWalk" : "CarryIdle";
-  return moving ? (running ? "Run" : "Walk") : "Idle";
+  if (carrying) return moving ? "carry_walk" : "carry_idle";
+  return moving ? (running ? "run" : "walk") : "idle";
 }
 
 function play(shot: "Jump" | "Hit" | "Attack") {
@@ -142,7 +142,7 @@ function play(shot: "Jump" | "Hit" | "Attack") {
     if (jump || oneShot) return;
     jump = "start";
     jumpTime = 0;
-    fadeTo("JumpStart", true, 0.08);
+    fadeTo("jump_start", true, 0.08);
     return;
   }
   if (jump || ATTACKS.includes(oneShot ?? "")) return;
@@ -171,13 +171,13 @@ function updateJump(dt: number) {
   if (jump !== "air") return;
   vy -= GRAVITY * dt;
   hero.position.y += vy * dt;
-  if (current === actions.JumpStart && jumpTime > 0.5) fadeTo("JumpLoop", false, 0.25);
+  if (current === actions.jump_start && jumpTime > 0.5) fadeTo("jump_loop", false, 0.25);
   if (hero.position.y <= 0) {
     hero.position.y = 0;
     jump = null;
-    oneShot = "JumpLand";
-    fadeTo("JumpLand", true, 0.08, 0.05);
-    setTimeout(() => oneShot === "JumpLand" && (oneShot = null), 600);
+    oneShot = "jump_land";
+    fadeTo("jump_land", true, 0.08, 0.05);
+    setTimeout(() => oneShot === "jump_land" && (oneShot = null), 600);
   }
 }
 
