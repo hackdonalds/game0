@@ -61,8 +61,8 @@ export const chapters = [
   },
   {
     slug: "art", number: 10, title: "Art Direction", kicker: "Painterly and luminous",
-    summary: "Stylized painterly, epic and never grim. The palette, the visual rules and how art becomes game assets.",
-    docs: ["art-direction/README.md"], catalogues: [],
+    summary: "Stylized painterly, epic and never grim. The palette, the visual rules, how each people builds, the modular kits and the seven biomes.",
+    docs: ["art-direction/README.md", "art-direction/architecture.md", "art-direction/modular-kit.md", "art-direction/biomes.md"], catalogues: ["architecture", "biomes"],
     art: "an artist's easel on the edge of a floating isle with a half-finished painting of the sky isles, paint palette with soft muted golds teals and greens, brushes, the real vista behind it in matching colours",
   },
 ];

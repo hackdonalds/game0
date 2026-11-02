@@ -11,6 +11,10 @@ import { isleNotes } from "../../../data/isles";
 import { windNotes } from "../../../data/winds";
 import { ships } from "../../../data/ships";
 import { materials } from "../../../data/materials";
+import { archStyles, familyCounts } from "../../../data/architecture";
+import { biomes } from "../../../data/biomes";
+import { Image } from "astro:assets";
+import { plate } from "../../../lib/art";
 import { catalogues, isleSlug, windSlug, peopleName, TONE, type Card } from "../../../lib/catalogues";
 import { base, cap } from "../../../lib/text";
 
@@ -52,6 +56,22 @@ const windEnds = wind ? [wind.points[0], wind.points.at(-1)!].map(([x, z]) => sh
 const windLength = wind ? Math.round(wind.points.slice(1).reduce((s, p, i) => s + Math.hypot(p[0] - wind.points[i][0], p[1] - wind.points[i][1]), 0)) : 0;
 const kin = creature ? bestiary.filter((o) => o.region === creature.region && o.id !== creature.id) : [];
 const homeIsles = people ? shard.isles.filter((i) => i.people === people.id) : [];
+const arch = kind === "architecture" ? archStyles.find((a) => a.id === card.id) : undefined;
+const biome = kind === "biomes" ? biomes.find((b) => b.id === card.id) : undefined;
+const biomeIsles = biome ? shard.isles.filter((i) => i.biome === biome.id).sort((a, b) => a.name.localeCompare(b.name)) : [];
+const archBiomes = arch ? biomes.filter((b) => arch.biomes.includes(b.id)) : [];
+const biomeStyles = biome ? archStyles.filter((a) => biome.styles.includes(a.id)) : [];
+const archTris = arch ? arch.kit.pieces.reduce((n, p) => n + p.tris, 0) : 0;
+// Full sheets shown at their own aspect below the entry
+const galleries = arch ? [
+  { title: "Concept sheets", note: "Three variants per sheet, from the architecture brief.", sheets: arch.concept.map((s) => ({ art: `architecture/${arch.id}-${s.id}`, label: s.label })) },
+  { title: "Kit reference sheets", note: "The modular pieces the buildings are assembled from.", sheets: arch.kitSheets.map((s) => ({ art: `architecture/${arch.id}-${s.id}`, label: s.label })) },
+  { title: "Built kit", note: `Modelled and textured in Blender: ${arch.kit.pieces.length} pieces and ${arch.kit.prefabs.length} prefab buildings.`, sheets: [
+    { art: `architecture/${arch.id}-built-prefabs`, label: "Prefabs assembled from the kit" }, { art: `architecture/${arch.id}-built-pieces`, label: "Every piece" },
+  ] },
+] : biome ? [
+  { title: "Concept sheets", note: "The brief for the biome's nature kit and terrain materials.", sheets: biome.sheets.map((s) => ({ art: `biomes/${biome.id}-${s.id}`, label: s.label })) },
+] : [];
 const hasPlate = kind !== "winds";
 ---
 <Base title={`${card.name} · ${title} · game0 handbook`} description={card.summary} section="catalogues">
@@ -166,7 +186,7 @@ const hasPlate = kind !== "winds";
         <article class="stat">
           <dl class="core">
             <div><dt>Tier</dt><dd>{cap(isle.tier)}</dd></div>
-            <div><dt>Biome</dt><dd>{cap(isle.biome)}</dd></div>
+            <div><dt>Biome</dt><dd><a href={`${base}/catalogue/biomes/${isle.biome}/`}>{cap(isle.biome)}</a></dd></div>
             <div><dt>Altitude</dt><dd>{isle.y} m</dd></div>
             <div><dt>Radius</dt><dd>{isle.radius} m</dd></div>
           </dl>
@@ -221,6 +241,55 @@ const hasPlate = kind !== "winds";
         </article>
       )}
 
+      {arch && (
+        <article class="stat">
+          <dl class="core">
+            <div><dt>Pieces</dt><dd>{arch.kit.pieces.length}</dd></div>
+            <div><dt>Prefabs</dt><dd>{arch.kit.prefabs.length}</dd></div>
+            <div><dt>Triangles</dt><dd>{archTris.toLocaleString("en-GB")}</dd></div>
+            <div><dt>Prefix</dt><dd><code>{arch.kit.prefix}-</code></dd></div>
+          </dl>
+          <hr />
+          <dl class="lines">
+            {arch.people && <div><dt>Built by</dt><dd><a href={`${base}/catalogue/peoples/${arch.people}/`}>{peopleName(arch.people)}</a></dd></div>}
+            {arch.traits.map((t) => <div><dt>{t.label}</dt><dd>{t.value}</dd></div>)}
+            {archBiomes.length > 0 && <div><dt>Found in</dt><dd>{archBiomes.map((b, i) => <>{i > 0 && ", "}<a href={`${base}/catalogue/biomes/${b.id}/`}>{b.name}</a></>)}</dd></div>}
+          </dl>
+          <hr />
+          <h3>Modular grid</h3>
+          <p>{arch.grid}</p>
+          <h3>Pieces by family</h3>
+          <p class="tags">{familyCounts(arch.kit).map(([f, n]) => <span class="chip">{cap(f)} {n}</span>)}</p>
+          <h3>Prefabs</h3>
+          <ul class="list">{arch.kit.prefabs.map((p) => <li>{p.name}</li>)}</ul>
+          <h3>Materials</h3>
+          <p class="tags">{arch.kit.materials.map((m) => <span class="chip">{m}</span>)}</p>
+          <p class="note">Read the <a href={`${base}/art/#architecture`}>architecture brief</a> and the <a href={`${base}/art/#modular-architecture-kit`}>modular kit rules</a>.</p>
+        </article>
+      )}
+
+      {biome && (
+        <article class="stat">
+          <dl class="core">
+            <div><dt>Altitude</dt><dd>{biome.altitude}</dd></div>
+            <div><dt>Isles</dt><dd>{biomeIsles.length}</dd></div>
+          </dl>
+          <hr />
+          <dl class="lines">
+            {biome.look.map((l) => <div><dt>{l.label}</dt><dd>{l.value}</dd></div>)}
+            <div><dt>Creatures</dt><dd>{biome.creatures}</dd></div>
+            <div><dt>Architecture</dt><dd>{biomeStyles.length ? biomeStyles.map((a, i) => <>{i > 0 && ", "}<a href={`${base}/catalogue/architecture/${a.id}/`}>{a.name}</a></>) : "None yet"}</dd></div>
+          </dl>
+          <hr />
+          <h3>Signature</h3>
+          <p>{biome.signature}</p>
+          {biome.open && <p class="note"><b>Open:</b> {biome.open}</p>}
+          <h3>Isles</h3>
+          <p class="tags">{biomeIsles.map((i) => <a class="chip" href={`${base}/catalogue/isles/${isleSlug(i.id)}/`}>{i.name}</a>)}</p>
+          <p class="note">Read the full <a href={`${base}/art/#biomes`}>biome brief</a>.</p>
+        </article>
+      )}
+
       {material && (
         <article class="stat">
           <dl class="core">
@@ -239,6 +308,24 @@ const hasPlate = kind !== "winds";
       )}
     </div>
   </div>
+
+  {galleries.map((g) => (
+    <section class="wrap sheets">
+      <h2>{g.title}</h2>
+      <p class="note">{g.note}</p>
+      <ul>
+        {g.sheets.map((s) => {
+          const src = plate(s.art);
+          return src && (
+            <li><figure>
+              <a href={src.src}><Image class="sheet" src={src} alt={`${card.name}: ${s.label}`} widths={[480, 960, 1600]} sizes="(max-width: 900px) 100vw, 50vw" /></a>
+              <figcaption>{s.label}</figcaption>
+            </figure></li>
+          );
+        })}
+      </ul>
+    </section>
+  ))}
 
   {kin.length > 0 && (
     <section class="wrap kin">
@@ -313,6 +400,13 @@ const hasPlate = kind !== "winds";
   .viewer { margin-top: 2.5rem; }
   .viewer h2 { font-size: 1.4rem; }
 
+  .sheets { margin-top: 3rem; }
+  .sheets h2 { font-size: 1.4rem; margin-bottom: 0.2rem; }
+  .sheets ul { list-style: none; margin: 1rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 26rem), 1fr)); gap: 1.25rem; }
+  .sheets figure { margin: 0; }
+  .sheets :global(img.sheet) { display: block; width: 100%; height: auto; border-radius: 10px; background: var(--paper-deep); box-shadow: 0 0 0 1px var(--line); transition: box-shadow 0.15s; }
+  .sheets a:hover :global(img.sheet) { box-shadow: var(--shadow), 0 0 0 1px var(--gold); }
+  .sheets figcaption { margin-top: 0.4rem; font-size: 0.9rem; color: var(--ink-soft); }
   .kin { margin-top: 3rem; }
   .kin h2 { font-size: 1.4rem; }
   .kin ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 1rem; }

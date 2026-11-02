@@ -8,6 +8,8 @@ import { windNotes } from "../data/winds";
 import { ships } from "../data/ships";
 import { materials } from "../data/materials";
 import { glossary } from "../data/glossary";
+import { archStyles } from "../data/architecture";
+import { biomes } from "../data/biomes";
 import { base, cap, sortName } from "./text";
 
 export interface Card {
@@ -43,7 +45,7 @@ export const TONE: Record<string, string> = {
   meadow: "#5d8a3a", forest: "#3f7a3a", roothold: "#6b4e36", crag: "#7d766c", garden: "#7fa84a", lagoon: "#178f84", ruin: "#a5835a",
   meadows: "#5d8a3a", rootholds: "#6b4e36", gardens: "#7fa84a", crags: "#7d766c", sky: "#4f86b8", rim: "#b8552f", storm: "#4b3f78",
   galeborne: "#4f86b8", anchorkin: "#6c6a78", rootwarden: "#6b4e36",
-  moorings: "#178f84", mooring: "#178f84",
+  moorings: "#178f84", mooring: "#178f84", accord: "#a5772c", "old-world": "#a5835a",
   Metal: "#7d766c", Wood: "#7a5d44", Leather: "#9a5b3a", Cloth: "#5b6fa0", Stone: "#8c857c",
   Weapons: "#9b3f24", Arcane: "#5b4a86", "Defence and survival": "#3f6f8f", Gathering: "#5d8a3a", Crafting: "#a5772c", "Travel and lore": "#178f84", Innate: "#b08a2e",
 };
@@ -116,6 +118,19 @@ const glossaryCards: Card[] = [...glossary].sort((a, b) => sortName(a.term).loca
   href: `${base}/catalogue/glossary/#${t.term.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`, facets: { Chapter: t.chapter }, search: words(t.term, t.definition),
 }));
 
+const archCards: Card[] = archStyles.map((a) => ({
+  id: a.id, name: a.name, subtitle: `${a.motto} · ${a.kit.pieces.length} pieces, ${a.kit.prefabs.length} prefabs`, summary: a.summary,
+  art: `architecture/${a.id}-${a.concept[0].id}`, tone: TONE[a.id], href: href("architecture", a.id),
+  facets: {},
+  search: words(a.name, a.motto, a.summary, a.traits.map((t) => t.value), a.kit.materials, a.kit.prefabs.map((p) => p.name)),
+}));
+
+const biomeCards: Card[] = biomes.map((b) => ({
+  id: b.id, name: b.name, subtitle: `${b.altitude} up · ${shard.isles.filter((i) => i.biome === b.id).length} isles`, summary: b.summary,
+  art: `biomes/${b.id}-isle-portrait`, tone: TONE[b.id], href: href("biomes", b.id), facets: {},
+  search: words(b.name, b.summary, b.look.map((l) => l.value), b.signature, b.creatures, shard.isles.filter((i) => i.biome === b.id).map((i) => i.name)),
+}));
+
 export const catalogues: Catalogue[] = [
   { slug: "peoples", title: "Peoples", kicker: "Three peoples, one sky", summary: "The three playable peoples: look, culture, homeland, innate skill, starting point and old grudges.", filters: [], cards: peopleCards, cover: "peoples/galeborne", pages: true },
   { slug: "bestiary", title: "Bestiary", kicker: "Field guide", summary: "Every creature and world boss, with stats, habitats, actions and lore.", filters: ["Region", "Temperament", "Tameable"], cards: bestiaryCards, cover: "bestiary/crag-drake", pages: true },
@@ -124,6 +139,8 @@ export const catalogues: Catalogue[] = [
   { slug: "winds", title: "Wind currents", kicker: "Lanes and currents", summary: "The charted Accord lanes and the fast, dangerous wild currents.", filters: ["Kind"], cards: windCards, cover: "", pages: true },
   { slug: "ships", title: "Ships", kicker: "Skiff, cutter, galleon", summary: "The three ship sizes: crew, steering, cargo and wear.", filters: [], cards: shipCards, cover: "ships/galleon", pages: true },
   { slug: "materials", title: "Materials and gear", kicker: "Tiers by material", summary: "Material tiers set gear tiers. Where each is found and what it makes.", filters: ["Family", "Tier"], cards: materialCards, cover: "materials/skysteel", pages: true },
+  { slug: "architecture", title: "Architecture", kicker: "How each people builds", summary: "The five building styles: concept sheets, modular kit references and the built kits, piece by piece.", filters: [], cards: archCards, cover: "architecture/rootwarden-landmark-root-village", pages: true },
+  { slug: "biomes", title: "Biomes", kicker: "Seven kinds of isle", summary: "The look of every biome from crag to lagoon: ground, rock, plants, water and the isles that wear it.", filters: [], cards: biomeCards, cover: "biomes/meadow-isle-portrait", pages: true },
   { slug: "glossary", title: "Glossary", kicker: "Words of the sky", summary: "Every term in the handbook, in a sentence or two.", filters: ["Chapter"], cards: glossaryCards, cover: "", pages: false },
 ];
 
