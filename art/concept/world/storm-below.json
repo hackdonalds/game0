@@ -1,8 +1,11 @@
 {
-  "prompt": "Please generate an image. Locked painterly style (hand-painted, chunky readable shapes, detail painted not modelled, warm golden key light, cool teal shadows, muted saturation, epic and luminous, never grim). Use the attached image(s) only as reference as described; the first attachment is always the style reference for palette, rendering and light. A wide environment concept painting, landscape 16:9, no text. View from the crumbling edge of a floating isle looking straight down and out: below the isles a sea of soft clouds, and beneath it a permanent dark storm layer lit from within by teal and violet lightning, slowly churning; far below through gaps, glimpses of drowned ruins. Rocky isle undersides with hanging roots in the foreground, other isles floating at different heights, warm golden sunlight above, cool teal storm light below. Epic and awe-inspiring, never horror.",
+  "prompt": "Please generate an image. Locked painterly style (hand-painted, chunky readable shapes, detail painted not modelled, warm golden key light, cool teal shadows, muted saturation, epic and luminous, never grim). Use the attached image(s) only as reference as described; the first attachment is always the style reference for palette, rendering and light. A wide environment concept painting, landscape 16:9, no text. View from the crumbling edge of a floating isle looking straight down and out: below the isles a sea of soft clouds, and beneath it a permanent dark storm layer lit from within by teal and violet lightning, slowly churning; far below through gaps, glimpses of drowned old-world ruins: pale ruinstone towers, great rings and bevelled slabs, as in the second attachment, not Roman arches, no columns. Rocky isle undersides with hanging roots in the foreground, other isles floating at different heights, warm golden sunlight above, cool teal storm light below. Epic and awe-inspiring, never horror.",
+  "model": "openai/gpt-image-2.5-sunburst",
+  "aspect": "16:9",
+  "quality": "high",
   "refs": [
-    "art/concept/style-test-01-market-town.png"
+    "art/concept/style-test-01-market-town.png",
+    "art/concept/architecture/old-world/landmark-monolith-gate.png"
   ],
-  "chat_url": "https://chatgpt.com/c/6ae8bffd-e22c-83eb-80b6-7e8fc32b67dc",
-  "tool": "chatgpt.com"
+  "createdAt": "2026-11-02T17:42:02.809Z"
 }
