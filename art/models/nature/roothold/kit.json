@@ -1,0 +1,538 @@
+{
+  "style": "roothold",
+  "prefix": "rh",
+  "grid": {
+    "base": 0.5
+  },
+  "scaleFigure": 1.8,
+  "materials": [
+    "Moss Ground",
+    "Root Path",
+    "Granite Cliff",
+    "Root Underside",
+    "Root Bark",
+    "Cedar Bark",
+    "Oak Foliage",
+    "Elder Blossom",
+    "Cedar Foliage",
+    "Fern",
+    "Moss",
+    "Lichen Granite",
+    "Slate",
+    "Glowing Fungus",
+    "Leaf Litter",
+    "Water"
+  ],
+  "terrain": {
+    "ground": "ground.png",
+    "path": "path.png",
+    "cliff": "cliff.png",
+    "underside": "underside.png"
+  },
+  "pieces": [
+    {
+      "id": "rh-ancient-tree",
+      "family": "hero",
+      "name": "Ancient tree",
+      "size": [
+        34,
+        36,
+        34
+      ],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 14000,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown"
+      ],
+      "ref": {
+        "sheet": "nature",
+        "label": "Ancient Oak A"
+      },
+      "notes": "The shrine-isle landmark (one per shrine isle), drawn as Ancient Oak A but built at landmark scale, as in the isle portrait: 36 m tall, trunk about 6 m across at chest height, twisted braided trunk splitting into a few huge limbs; root flare about 18 m wide of buttress roots that dive into the ground and over the lip. Broad clumped canopy about 34 m across in warm yellow-green masses, grey-brown ridged Root Bark with moss on the north side and on the flare. Leave a flat clearing between two buttress roots for a shrine door. Hollowgrain's hollow, open-topped version is a later variant, not on the sheet."
+    },
+    {
+      "id": "rh-oak-b",
+      "family": "tree",
+      "name": "Oak",
+      "size": [
+        14,
+        15,
+        14
+      ],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 3000,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown"
+      ],
+      "ref": {
+        "sheet": "nature",
+        "label": "Ancient Oak B"
+      },
+      "notes": "Big old oak for scatter around the landmark, 15 m: short gnarled trunk about 1.6 m across with buttress roots flaring to 5 m, crown leaning to one side, clumped yellow-green leaf masses. Same bark and foliage as the ancient tree so they read as one species."
+    },
+    {
+      "id": "rh-elder-a",
+      "family": "tree",
+      "name": "Elder, broad",
+      "size": [
+        9,
+        8,
+        9
+      ],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 2400,
+      "variants": [
+        "intact",
+        "mossy"
+      ],
+      "ref": {
+        "sheet": "nature",
+        "label": "Elder A"
+      },
+      "notes": "Multi-stem elder, 8 m, five or six grey-brown stems from one root boss, rounded light-green canopy studded with cream blossom clusters (Elder Blossom foliage); small roots flaring at the base."
+    },
+    {
+      "id": "rh-elder-b",
+      "family": "tree",
+      "name": "Elder, slender",
+      "size": [
+        6,
+        8,
+        6
+      ],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 2000,
+      "variants": [
+        "intact",
+        "mossy"
+      ],
+      "ref": {
+        "sheet": "nature",
+        "label": "Elder B"
+      },
+      "notes": "Narrower elder, 8 m, three or four stems, open upright canopy with cream blossom clusters; reads as the younger silhouette of Elder A."
+    },
+    {
+      "id": "rh-cedar-a",
+      "family": "tree",
+      "name": "Cedar, tall",
+      "size": [
+        9,
+        18,
+        9
+      ],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 2600,
+      "variants": [
+        "intact",
+        "mossy"
+      ],
+      "ref": {
+        "sheet": "nature",
+        "label": "Cedar A"
+      },
+      "notes": "Tall cedar, 18 m: straight reddish-brown fibrous trunk with strong root flare, layered flat tiers of dark blue-green foliage narrowing to a pointed top."
+    },
+    {
+      "id": "rh-cedar-b",
+      "family": "tree",
+      "name": "Cedar, young",
+      "size": [
+        5,
+        12,
+        5
+      ],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 1800,
+      "variants": [
+        "intact",
+        "mossy"
+      ],
+      "ref": {
+        "sheet": "nature",
+        "label": "Cedar B"
+      },
+      "notes": "Younger, narrower cedar, 12 m, fewer and shorter flat tiers of dark blue-green foliage, slim trunk with small root flare."
+    },
+    {
+      "id": "rh-fern-clump",
+      "family": "plant",
+      "name": "Fern clump",
+      "size": [
+        1.6,
+        1.1,
+        1.6
+      ],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 400,
+      "ref": {
+        "sheet": "nature",
+        "label": "Fern Clump"
+      },
+      "notes": "Rosette of 10 to 14 arching fronds as alpha cards on bent strips, bright yellow-green at the tips, darker at the centre."
+    },
+    {
+      "id": "rh-root-arch",
+      "family": "plant",
+      "name": "Root arch",
+      "size": [
+        4.5,
+        2.8,
+        1.8
+      ],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 600,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown"
+      ],
+      "ref": {
+        "sheet": "nature",
+        "label": "Root Arch"
+      },
+      "notes": "A single root looping out of the ground and back, high enough to walk under (2.2 m clear); twisted Root Bark, moss and hanging moss strands on top, a few white flowers at the feet. Can span a path."
+    },
+    {
+      "id": "rh-fallen-trunk",
+      "family": "plant",
+      "name": "Fallen trunk",
+      "size": [
+        6,
+        1.5,
+        1.6
+      ],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 600,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "nature",
+        "label": "Fallen Trunk"
+      },
+      "notes": "Hollow fallen oak trunk, 6 m, open at one end, splintered at the other; moss blanket on top with small pale mushrooms and white flowers. Walkable top."
+    },
+    {
+      "id": "rh-glow-mushrooms",
+      "family": "plant",
+      "name": "Glowing mushroom cluster",
+      "size": [
+        1.2,
+        0.9,
+        1.0
+      ],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 500,
+      "ref": {
+        "sheet": "nature",
+        "label": "Glowing Mushrooms"
+      },
+      "notes": "Four to six teal-capped mushrooms of mixed heights on a moss pad; caps and gills glow teal (Glowing Fungus, emissive, brightest at dusk), pale stems. A point of interest: the only saturated colour on the ground."
+    },
+    {
+      "id": "rh-seedling",
+      "family": "plant",
+      "name": "Seedling sapling",
+      "size": [
+        0.8,
+        1.2,
+        0.8
+      ],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 250,
+      "ref": {
+        "sheet": "nature",
+        "label": "Seedling Sapling"
+      },
+      "notes": "Thin sapling with a few bright lime leaves on a moss tuft; used in rows on Rootmother's seedling terraces."
+    },
+    {
+      "id": "rh-lichen-stump",
+      "family": "plant",
+      "name": "Lichen stump",
+      "size": [
+        1.6,
+        1.4,
+        1.6
+      ],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 500,
+      "variants": [
+        "intact",
+        "mossy"
+      ],
+      "ref": {
+        "sheet": "nature",
+        "label": "Lichen Stump"
+      },
+      "notes": "Old cut stump with flared roots, pale lichen patches on the bark, moss cap on top and a few small tan mushrooms at the foot."
+    },
+    {
+      "id": "rh-deep-moss",
+      "family": "ground",
+      "name": "Deep moss clump",
+      "size": [
+        1.4,
+        0.4,
+        1.2
+      ],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 250,
+      "ref": {
+        "sheet": "nature",
+        "label": "Deep Moss"
+      },
+      "notes": "Low mound of cushion moss in clumped yellow-green lobes over dark loam, one or two small grey stones poking through."
+    },
+    {
+      "id": "rh-leaf-litter",
+      "family": "ground",
+      "name": "Leaf litter",
+      "size": [
+        1.2,
+        0.15,
+        1.0
+      ],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 200,
+      "ref": {
+        "sheet": "nature",
+        "label": "Leaf Litter"
+      },
+      "notes": "Flat drift of tan and orange oak leaves as a few overlapping cards; decal-like, almost flat."
+    },
+    {
+      "id": "rh-surface-roots",
+      "family": "ground",
+      "name": "Surface roots",
+      "size": [
+        1.8,
+        0.35,
+        1.4
+      ],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 300,
+      "ref": {
+        "sheet": "nature",
+        "label": "Surface Roots"
+      },
+      "notes": "Tangle of thin roots breaking the surface, half buried, Root Bark with moss in the gaps."
+    },
+    {
+      "id": "rh-fern-moss-tuft",
+      "family": "ground",
+      "name": "Fern and moss tuft",
+      "size": [
+        0.9,
+        0.5,
+        0.8
+      ],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 280,
+      "ref": {
+        "sheet": "nature",
+        "label": "Fern & Moss Tuft"
+      },
+      "notes": "Small fern sprigs rising from a moss cushion with a few white flowers; the scatter filler between bigger plants."
+    },
+    {
+      "id": "rh-granite-boulder-a",
+      "family": "rock",
+      "name": "Granite boulder, large",
+      "size": [
+        2.2,
+        1.6,
+        1.8
+      ],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 600,
+      "variants": [
+        "intact",
+        "mossy",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "nature",
+        "label": "Granite Boulder A"
+      },
+      "notes": "Rounded grey granite boulder with pale lichen rosettes and a moss cap on top."
+    },
+    {
+      "id": "rh-granite-boulder-b",
+      "family": "rock",
+      "name": "Granite boulder, small",
+      "size": [
+        1.6,
+        1.1,
+        1.3
+      ],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 500,
+      "variants": [
+        "intact",
+        "mossy",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "nature",
+        "label": "Granite Boulder B"
+      },
+      "notes": "Smaller, blockier granite boulder, lichen and moss, a few white flowers at the foot."
+    },
+    {
+      "id": "rh-slate-slab",
+      "family": "rock",
+      "name": "Slate slab",
+      "size": [
+        2.0,
+        0.6,
+        1.4
+      ],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 300,
+      "ref": {
+        "sheet": "nature",
+        "label": "Slate Slab"
+      },
+      "notes": "Two or three stacked flat slate plates, blue-grey, split edges, moss in the joints."
+    },
+    {
+      "id": "rh-slate-step-block",
+      "family": "rock",
+      "name": "Quarried slate step block",
+      "size": [
+        1.6,
+        0.8,
+        1.2
+      ],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 400,
+      "variants": [
+        "intact",
+        "mossy",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "nature",
+        "label": "Slate Step Block"
+      },
+      "notes": "Stepped quarried slate block, three cut steps with straight edges softened by moss (Deephold's quarry steps)."
+    },
+    {
+      "id": "rh-mossy-outcrop",
+      "family": "rock",
+      "name": "Mossy outcrop",
+      "size": [
+        2.2,
+        3.2,
+        2.0
+      ],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 800,
+      "variants": [
+        "intact",
+        "mossy",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "nature",
+        "label": "Mossy Outcrop"
+      },
+      "notes": "Tall jagged outcrop of stacked granite and slate, moss on every ledge."
+    },
+    {
+      "id": "rh-lip-edge",
+      "family": "lip",
+      "name": "Root-wrapped isle edge",
+      "size": [
+        8,
+        4,
+        3
+      ],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 1500,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "nature",
+        "label": "Lip Piece (Isle Edge)"
+      },
+      "notes": "8 m edge segment: rounded moss-and-turf top flush with the ground, grey granite face below, wrapped in thick roots that spill over the edge, hanging moss strands. The thin spring waterfall is the separate rh-spring-fall piece so the edge tiles without it; leave a notch in the turf where the fall can sit."
+    },
+    {
+      "id": "rh-spring-fall",
+      "family": "water",
+      "name": "Spring waterfall",
+      "size": [
+        1.2,
+        6,
+        1.0
+      ],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 400,
+      "ref": {
+        "sheet": "nature",
+        "label": "Lip Piece (Isle Edge)"
+      },
+      "notes": "Thin pale ribbon of falling water (scrolling alpha) from a seep in the roots at the lip, with a small foam lip at the top; drawn as part of the lip piece, split out so any lip segment can carry one. Sheet draws no pool, brook or spring source; those still need sheets."
+    },
+    {
+      "id": "rh-underside-roots",
+      "family": "underside",
+      "name": "Root-wrapped underside taper",
+      "size": [
+        8,
+        10,
+        8
+      ],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 2000,
+      "variants": [
+        "intact",
+        "mossy",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "nature",
+        "label": "Underside Piece (Isle Underside)"
+      },
+      "notes": "Inverted cone of grey granite plates tapering to a point, wrapped in huge braided roots that trail below the tip, hanging moss. Teal glowing mushrooms in the root pockets, as in the isle portrait. Stack and rotate under the lip ring."
+    }
+  ]
+}

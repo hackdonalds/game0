@@ -1,0 +1,549 @@
+{
+  "style": "meadow",
+  "prefix": "md",
+  "grid": {
+    "base": 0.5
+  },
+  "scaleFigure": 1.8,
+  "materials": [
+    "Meadow Ground",
+    "Meadow Path",
+    "Limestone Cliff / Lip",
+    "Limestone Underside",
+    "Birch Bark",
+    "Oak Bark",
+    "Fruitwood Bark",
+    "Foliage",
+    "Blossom",
+    "Wildflowers",
+    "Limestone",
+    "Ivy",
+    "Water"
+  ],
+  "terrain": {
+    "ground": "ground.png",
+    "path": "path.png",
+    "cliff": "cliff.png",
+    "underside": "underside.png"
+  },
+  "pieces": [
+    {
+      "id": "md-birch-a",
+      "family": "tree",
+      "name": "Meadow birch A",
+      "size": [
+        4,
+        8,
+        4
+      ],
+      "pivot": "bottom-center",
+      "tris": 1800,
+      "free": true,
+      "ref": {
+        "sheet": "nature",
+        "label": "Meadow Birch A"
+      },
+      "notes": "Single slender white trunk with dark bark flecks, light airy canopy in 4 to 5 yellow-green clumps, open gaps to the sky. Spring fresh green, autumn yellow, winter bare."
+    },
+    {
+      "id": "md-birch-b",
+      "family": "tree",
+      "name": "Meadow birch B",
+      "size": [
+        4.5,
+        9.5,
+        4.5
+      ],
+      "pivot": "bottom-center",
+      "tris": 2000,
+      "free": true,
+      "ref": {
+        "sheet": "nature",
+        "label": "Meadow Birch B"
+      },
+      "notes": "Twin trunk forking low, taller and narrower than A, canopy clumps staggered up both stems."
+    },
+    {
+      "id": "md-orchard-a",
+      "family": "tree",
+      "name": "Orchard tree A (apple)",
+      "size": [
+        5,
+        4.5,
+        5
+      ],
+      "pivot": "bottom-center",
+      "tris": 2000,
+      "free": true,
+      "ref": {
+        "sheet": "nature",
+        "label": "Orchard Tree A"
+      },
+      "notes": "Short gnarled twisting trunk, round dome canopy with white and pale pink blossom clumps over green (spring); green with small fruit in summer. A few stones at the root."
+    },
+    {
+      "id": "md-orchard-b",
+      "family": "tree",
+      "name": "Orchard tree B (pear)",
+      "size": [
+        4.5,
+        5,
+        4.5
+      ],
+      "pivot": "bottom-center",
+      "tris": 2000,
+      "free": true,
+      "ref": {
+        "sheet": "nature",
+        "label": "Orchard Tree B"
+      },
+      "notes": "Like A but leaning trunk and slightly taller, denser pink blossom. Pear variant of the orchard pair."
+    },
+    {
+      "id": "md-oak-a",
+      "family": "hero",
+      "name": "Landmark oak A",
+      "size": [
+        18,
+        14,
+        16
+      ],
+      "pivot": "bottom-center",
+      "tris": 12000,
+      "free": true,
+      "ref": {
+        "sheet": "nature",
+        "label": "Oak (Landmark) A"
+      },
+      "notes": "Lone broad oak: very thick buttressed trunk with exposed roots over a small mound and stones, low wide-spreading limbs, broad flat crown of clumped olive-to-yellow-green masses, wider than tall."
+    },
+    {
+      "id": "md-oak-b",
+      "family": "hero",
+      "name": "Landmark oak B",
+      "size": [
+        15,
+        13,
+        14
+      ],
+      "pivot": "bottom-center",
+      "tris": 10000,
+      "free": true,
+      "ref": {
+        "sheet": "nature",
+        "label": "Oak (Landmark) B"
+      },
+      "notes": "Rounder, more compact crown than A, trunk splits into three main limbs, small hollow knot on the trunk."
+    },
+    {
+      "id": "md-wildflower-drift",
+      "family": "plant",
+      "name": "Wildflower drift",
+      "size": [
+        2.5,
+        0.9,
+        1.5
+      ],
+      "pivot": "bottom-center",
+      "tris": 500,
+      "free": true,
+      "ref": {
+        "sheet": "nature",
+        "label": "Wildflower Drift"
+      },
+      "notes": "Low mound of grass with white daisies, yellow buttercups, pink clover and tall soft-violet lupin spikes rising at the back. Cards; the brightest colour on the isle."
+    },
+    {
+      "id": "md-flowering-bush",
+      "family": "plant",
+      "name": "Flowering bush",
+      "size": [
+        1.6,
+        1.4,
+        1.6
+      ],
+      "pivot": "bottom-center",
+      "tris": 500,
+      "free": true,
+      "ref": {
+        "sheet": "nature",
+        "label": "Flowering Bush"
+      },
+      "notes": "Round bush of clumped leaves with white and pink wild-rose flowers, a pale stone at the foot."
+    },
+    {
+      "id": "md-hedgerow-4m",
+      "family": "plant",
+      "name": "Hedgerow, 4 m",
+      "size": [
+        4,
+        1.5,
+        1
+      ],
+      "pivot": "bottom-left-front",
+      "tris": 600,
+      "variants": [
+        "intact",
+        "overgrown"
+      ],
+      "ref": {
+        "sheet": "nature",
+        "label": "Hedgerow (Segment)"
+      },
+      "notes": "Modular straight run, 4 m: dense clumped yellow-green leaf mass, a few small violet flowers and stones at the foot. Ends soft so runs butt together."
+    },
+    {
+      "id": "md-standing-stone",
+      "family": "rock",
+      "name": "Standing stone",
+      "size": [
+        1,
+        3,
+        0.8
+      ],
+      "pivot": "bottom-center",
+      "tris": 400,
+      "free": true,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "nature",
+        "label": "Standing Stone"
+      },
+      "notes": "Weathered cream limestone menhir, tapering and slightly leaning, carved spiral and star sigil on the front face, ivy climbing one side, grass and pebbles at the base."
+    },
+    {
+      "id": "md-wall-straight-2m",
+      "family": "rock",
+      "name": "Dry-stone wall, straight 2 m",
+      "size": [
+        2,
+        1,
+        0.5
+      ],
+      "pivot": "bottom-left-front",
+      "tris": 500,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "nature",
+        "label": "Dry-Stone Wall (Straight)"
+      },
+      "notes": "Modular low field wall, 2 m: three to four courses of rough pale cream blocks, moss on the top course, a few fallen stones. Sheet draws a longer, stepped-down run; build it as 2 m pieces."
+    },
+    {
+      "id": "md-wall-corner",
+      "family": "rock",
+      "name": "Dry-stone wall, corner",
+      "size": [
+        2,
+        1,
+        2
+      ],
+      "pivot": "bottom-left-front",
+      "tris": 600,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "nature",
+        "label": "Dry-Stone Wall (Corner)"
+      },
+      "notes": "Modular L corner, 2 m legs, same courses as the straight wall; the corner post courses stand one block higher."
+    },
+    {
+      "id": "md-grass-long",
+      "family": "ground",
+      "name": "Long grass tuft",
+      "size": [
+        0.8,
+        0.7,
+        0.8
+      ],
+      "pivot": "bottom-center",
+      "tris": 200,
+      "free": true,
+      "ref": {
+        "sheet": "nature",
+        "label": "Long Grass Tuft"
+      },
+      "notes": "Arching long blades with a few seed heads, yellow-green tips; isle edges and wild ground."
+    },
+    {
+      "id": "md-grass-short",
+      "family": "ground",
+      "name": "Short grass tuft",
+      "size": [
+        0.6,
+        0.2,
+        0.6
+      ],
+      "pivot": "bottom-center",
+      "tris": 120,
+      "free": true,
+      "ref": {
+        "sheet": "nature",
+        "label": "Short Grass Tuft"
+      },
+      "notes": "Low mown-grass tuft for towns and safe isles."
+    },
+    {
+      "id": "md-clover",
+      "family": "ground",
+      "name": "Clover patch",
+      "size": [
+        0.5,
+        0.15,
+        0.5
+      ],
+      "pivot": "bottom-center",
+      "tris": 150,
+      "free": true,
+      "ref": {
+        "sheet": "nature",
+        "label": "Clover Patch"
+      },
+      "notes": "Flat trefoil leaves with white clover heads."
+    },
+    {
+      "id": "md-flower-clump",
+      "family": "ground",
+      "name": "Flower clump",
+      "size": [
+        0.6,
+        0.5,
+        0.6
+      ],
+      "pivot": "bottom-center",
+      "tris": 250,
+      "free": true,
+      "ref": {
+        "sheet": "nature",
+        "label": "Flower Clump"
+      },
+      "notes": "Small clump: yellow buttercups, white daisies, two violet lupin spikes."
+    },
+    {
+      "id": "md-rock-a",
+      "family": "rock",
+      "name": "Limestone rock A",
+      "size": [
+        2.5,
+        1.8,
+        2.2
+      ],
+      "pivot": "bottom-center",
+      "tris": 700,
+      "free": true,
+      "variants": [
+        "intact",
+        "mossy"
+      ],
+      "ref": {
+        "sheet": "nature",
+        "label": "Limestone Rock A"
+      },
+      "notes": "Large rounded boulder, pale warm cream with soft weathering, yellow lichen and moss on top."
+    },
+    {
+      "id": "md-rock-b",
+      "family": "rock",
+      "name": "Limestone rock B",
+      "size": [
+        2,
+        0.8,
+        1.5
+      ],
+      "pivot": "bottom-center",
+      "tris": 500,
+      "free": true,
+      "variants": [
+        "intact",
+        "mossy"
+      ],
+      "ref": {
+        "sheet": "nature",
+        "label": "Limestone Rock B"
+      },
+      "notes": "Low layered slabs, stacked flat beds with square edges."
+    },
+    {
+      "id": "md-rock-c",
+      "family": "rock",
+      "name": "Limestone rock C",
+      "size": [
+        1.6,
+        2,
+        1.4
+      ],
+      "pivot": "bottom-center",
+      "tris": 600,
+      "free": true,
+      "variants": [
+        "intact",
+        "mossy"
+      ],
+      "ref": {
+        "sheet": "nature",
+        "label": "Limestone Rock C"
+      },
+      "notes": "Cluster of upright pointed shards around one tall spike."
+    },
+    {
+      "id": "md-rock-d",
+      "family": "rock",
+      "name": "Limestone rock D",
+      "size": [
+        1.5,
+        0.8,
+        1.3
+      ],
+      "pivot": "bottom-center",
+      "tris": 450,
+      "free": true,
+      "variants": [
+        "intact",
+        "mossy"
+      ],
+      "ref": {
+        "sheet": "nature",
+        "label": "Limestone Rock D"
+      },
+      "notes": "Low dome, heavily mossed on top."
+    },
+    {
+      "id": "md-rock-e",
+      "family": "rock",
+      "name": "Limestone rock E",
+      "size": [
+        1.6,
+        0.6,
+        1.2
+      ],
+      "pivot": "bottom-center",
+      "tris": 400,
+      "free": true,
+      "variants": [
+        "intact",
+        "mossy"
+      ],
+      "ref": {
+        "sheet": "nature",
+        "label": "Limetone Rock E"
+      },
+      "notes": "Flat cluster of small blocks half sunk in turf. (Sheet label is misspelt 'Limetone'.)"
+    },
+    {
+      "id": "md-lip-ledge",
+      "family": "lip",
+      "name": "Limestone lip / ledge",
+      "size": [
+        8,
+        3,
+        3
+      ],
+      "pivot": "bottom-center",
+      "tris": 1400,
+      "free": true,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "nature",
+        "label": "Limestone Lip / Ledge"
+      },
+      "notes": "Isle edge segment ~8 m: rounded turf cap with grass and a few flowers over a band of pale cream limestone blocks, ivy and grass hanging over the face. Turf top at y = 3; tiles side by side along the edge."
+    },
+    {
+      "id": "md-underside",
+      "family": "underside",
+      "name": "Limestone underside taper",
+      "size": [
+        8,
+        10,
+        6
+      ],
+      "pivot": "bottom-center",
+      "tris": 1800,
+      "free": true,
+      "variants": [
+        "intact",
+        "overgrown",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "nature",
+        "label": "Limestone Underside"
+      },
+      "notes": "Inverted wedge of pale layered limestone tapering to a point, cool teal in the shade, turf rim on top, ivy curtains and long hanging roots."
+    },
+    {
+      "id": "md-pond",
+      "family": "water",
+      "name": "Sky-pond edge",
+      "size": [
+        8,
+        0.5,
+        6
+      ],
+      "pivot": "bottom-center",
+      "tris": 800,
+      "free": true,
+      "ref": {
+        "sheet": "isle-portrait",
+        "label": "Sky-pond (portrait, centre right)"
+      },
+      "notes": "Oval reflecting pond: soft grass rim, a few stones, lily pads and reeds. Water surface is a separate plane."
+    },
+    {
+      "id": "md-stream",
+      "family": "water",
+      "name": "Stream channel",
+      "size": [
+        4,
+        0.4,
+        1.5
+      ],
+      "pivot": "bottom-center",
+      "tris": 500,
+      "free": true,
+      "ref": {
+        "sheet": "isle-portrait",
+        "label": "Stream to the lip (portrait)"
+      },
+      "notes": "Short shallow stream bed with rounded stones on both banks, runs from the pond to the lip."
+    },
+    {
+      "id": "md-waterfall",
+      "family": "water",
+      "name": "Waterfall off the lip",
+      "size": [
+        2,
+        10,
+        1.5
+      ],
+      "pivot": "bottom-center",
+      "tris": 600,
+      "free": true,
+      "ref": {
+        "sheet": "isle-portrait",
+        "label": "Waterfall (portrait)"
+      },
+      "notes": "Thin fall from the stream mouth over the lip, ribbon cards turning to mist at the bottom."
+    }
+  ]
+}

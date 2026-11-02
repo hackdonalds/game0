@@ -1,14 +1,18 @@
-// Check architecture kit manifests (art/models/architecture/<style>/kit.json) against the modular-kit rules.
-// Usage: bun scripts/kit/validate.ts [kit.json ...]   (default: every style)
+// Check kit manifests against the modular-kit rules: architecture (art/models/architecture/<style>/kit.json) and
+// nature (art/models/nature/<biome>/kit.json).
+// Usage: bun scripts/kit/validate.ts [kit.json ...]   (default: every kit)
 import { Glob } from "bun";
 import { dirname, join } from "node:path";
 import { existsSync } from "node:fs";
 
 const ROOT = join(import.meta.dir, "../..");
 const STYLES = ["rootwarden", "anchorkin", "galeborne", "accord", "old-world"];
+const BIOMES = ["roothold", "crag", "meadow", "garden", "forest", "lagoon", "ruin"];
 const BUDGET: Record<string, number> = {
   foundation: 600, wall: 600, corner: 400, floor: 300, access: 600, roof: 600, crown: 1500, insert: 400,
   trim: 300, attachment: 800, root: 800, shell: 1500, ring: 800, block: 600, prop: 800,
+  // nature kits
+  tree: 3000, hero: 15000, plant: 600, ground: 300, rock: 800, lip: 1500, underside: 2000, water: 800,
 };
 const VARIANTS = new Set(["intact", "mossy", "broken", "overgrown", "sinking", "lit", "dead"]);
 const SOCKETS = new Set([0.6, 1.0, 1.6, 2.5]);
@@ -16,7 +20,7 @@ const RADII: Record<string, number[]> = { rootwarden: [3, 5, 8], "old-world": [4
 
 const files = process.argv.length > 2
   ? process.argv.slice(2)
-  : [...new Glob("art/models/architecture/*/kit.json").scanSync(ROOT)].map((f) => join(ROOT, f));
+  : [...new Glob("art/models/{architecture,nature}/*/kit.json").scanSync(ROOT)].map((f) => join(ROOT, f));
 
 const onGrid = (v: number, step: number) => Math.abs(v / step - Math.round(v / step)) < 1e-6;
 let failed = 0;
@@ -25,11 +29,12 @@ for (const file of files) {
   const kit = await Bun.file(file).json();
   const errors: string[] = [];
   const err = (id: string, msg: string) => errors.push(`${id}: ${msg}`);
-  if (!STYLES.includes(kit.style)) err("kit", `unknown style ${kit.style}`);
+  const nature = file.includes("/nature/");
+  if (!(nature ? BIOMES : STYLES).includes(kit.style)) err("kit", `unknown ${nature ? "biome" : "style"} ${kit.style}`);
   if (dirname(file).split("/").pop() !== kit.style) err("kit", `folder does not match style ${kit.style}`);
   const base = kit.grid?.base ?? 0.5;
   const ids = new Set<string>();
-  const refDir = join(ROOT, "art/concept/architecture", kit.style, "kit");
+  const refDir = nature ? join(ROOT, "art/concept/biomes", kit.style) : join(ROOT, "art/concept/architecture", kit.style, "kit");
 
   for (const p of kit.pieces ?? []) {
     const id = p.id ?? "?";

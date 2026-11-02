@@ -71,4 +71,21 @@ Optional piece fields:
 | `block` | old-world monoliths, slabs and columns | 600 |
 | `prop` | props in the style's language | 800 |
 
+## Nature kits
+
+Biome nature kits use the same manifest at `art/models/nature/<biome>/kit.json` (`style` is the biome: roothold, crag, meadow, garden, forest, lagoon, ruin), with references in `art/concept/biomes/<biome>/` (`ref.sheet` is `nature`, `terrain` or `isle-portrait`). Nature pieces sit on the ground at `bottom-center` and are usually `free: true`; scatter places them, so they have no sockets. Their families:
+
+| Family | What | Budget (triangles) |
+| --- | --- | --- |
+| `tree` | trees and their silhouette variants | 3000 |
+| `hero` | landmark trees (ancient tree, Grudge Tree) | 15000 |
+| `plant` | understory: bushes, ferns, flowers, reeds, crops | 600 |
+| `ground` | ground-cover clumps scattered by the thousand | 300 |
+| `rock` | boulders, outcrops, ledges, walls | 800 |
+| `lip` | isle edge pieces: overhangs, ledges, terrace edges | 1500 |
+| `underside` | rock tapers, hanging roots and growth | 2000 |
+| `water` | pond, mere and channel edges, falls | 800 |
+
+A nature kit also lists its terrain textures under `terrain`: `{ "ground", "path", "cliff", "underside" }`, file names in `art/textures/biomes/<biome>/`.
+
 Variants are named states of the same piece that share its size and sockets: `intact`, `mossy`, `broken`, `overgrown`, `sinking` (tilted and cracked), `lit` and `dead` (old-world channels).

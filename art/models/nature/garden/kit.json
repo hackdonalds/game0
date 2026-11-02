@@ -1,0 +1,622 @@
+{
+  "style": "garden",
+  "prefix": "gd",
+  "grid": {
+    "base": 0.5
+  },
+  "scaleFigure": 1.8,
+  "materials": [
+    "Tilled Soil",
+    "Field Path",
+    "Terrace Wall",
+    "Clay Underside",
+    "Fruitwood Bark",
+    "Poplar Bark",
+    "Foliage",
+    "Blossom",
+    "Fruit",
+    "Wheat",
+    "Flax",
+    "Vegetables",
+    "Herbs",
+    "Flowers",
+    "Straw",
+    "Weathered Wood",
+    "Limestone",
+    "Warm Clay",
+    "Water"
+  ],
+  "terrain": {
+    "ground": "ground.png",
+    "path": "path.png",
+    "cliff": "cliff.png",
+    "underside": "underside.png"
+  },
+  "pieces": [
+    {
+      "id": "gd-orchard-a",
+      "family": "tree",
+      "name": "Apple tree A",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "pivot": "bottom-center",
+      "tris": 2000,
+      "free": true,
+      "ref": {
+        "sheet": "nature",
+        "label": "Orchard (Apple) A"
+      },
+      "notes": "Pruned apple: short twisting trunk, round open canopy of clumped leaves with red apples (summer/autumn); white-pink blossom in spring, bare in winter."
+    },
+    {
+      "id": "gd-orchard-b",
+      "family": "tree",
+      "name": "Apple tree B",
+      "size": [
+        5.5,
+        5,
+        5
+      ],
+      "pivot": "bottom-center",
+      "tris": 2000,
+      "free": true,
+      "ref": {
+        "sheet": "nature",
+        "label": "Orchard (Apple) B"
+      },
+      "notes": "Wider, leaning trunk splitting low, flatter crown than A."
+    },
+    {
+      "id": "gd-poplar-a",
+      "family": "tree",
+      "name": "Windbreak poplar A",
+      "size": [
+        3,
+        12,
+        3
+      ],
+      "pivot": "bottom-center",
+      "tris": 1500,
+      "free": true,
+      "ref": {
+        "sheet": "nature",
+        "label": "Poplar (Windbreak) A"
+      },
+      "notes": "Tall narrow columnar crown of stacked clumps, olive green with yellow tips, short straight trunk. Planted in rows."
+    },
+    {
+      "id": "gd-poplar-b",
+      "family": "tree",
+      "name": "Windbreak poplar B",
+      "size": [
+        3,
+        13,
+        3
+      ],
+      "pivot": "bottom-center",
+      "tris": 1500,
+      "free": true,
+      "ref": {
+        "sheet": "nature",
+        "label": "Poplar (Windbreak) B"
+      },
+      "notes": "Slightly fuller and blunter top than A."
+    },
+    {
+      "id": "gd-hedgerow-4m",
+      "family": "plant",
+      "name": "Hedgerow, straight 4 m",
+      "size": [
+        4,
+        1.5,
+        1
+      ],
+      "pivot": "bottom-left-front",
+      "tris": 600,
+      "variants": [
+        "intact",
+        "overgrown"
+      ],
+      "ref": {
+        "sheet": "nature",
+        "label": "Hedgerow (Straight)"
+      },
+      "notes": "Modular run, 4 m: dense clumped leaves with white and pink flowers, soft ends."
+    },
+    {
+      "id": "gd-hedgerow-corner",
+      "family": "plant",
+      "name": "Hedgerow, corner",
+      "size": [
+        2,
+        1.5,
+        2
+      ],
+      "pivot": "bottom-left-front",
+      "tris": 600,
+      "variants": [
+        "intact",
+        "overgrown"
+      ],
+      "ref": {
+        "sheet": "nature",
+        "label": "Hedgerow (Corner)"
+      },
+      "notes": "Modular L corner, 2 m legs."
+    },
+    {
+      "id": "gd-plot-furrows",
+      "family": "plant",
+      "name": "Furrowed plot, 2 m",
+      "size": [
+        2,
+        0.5,
+        2
+      ],
+      "pivot": "bottom-left-front",
+      "tris": 400,
+      "ref": {
+        "sheet": "nature",
+        "label": "Spring (Seedlings)"
+      },
+      "notes": "Modular 2 x 2 m plot of brown furrows, tiles into fields. Seasons are texture and card swaps on the same mesh: spring green seedlings in rows, autumn short golden stubble ('Autumn (Harvested)'), winter frost on the ridges ('Winter (Frosted)')."
+    },
+    {
+      "id": "gd-crop-wheat",
+      "family": "plant",
+      "name": "Wheat, 2 m plot",
+      "size": [
+        2,
+        1,
+        2
+      ],
+      "pivot": "bottom-left-front",
+      "tris": 600,
+      "ref": {
+        "sheet": "nature",
+        "label": "Summer (Wheat)"
+      },
+      "notes": "Modular 2 x 2 m plot of dense golden wheat ears over furrows. Spring: short green blades. Autumn: falls back to the furrow plot as stubble."
+    },
+    {
+      "id": "gd-crop-flax",
+      "family": "plant",
+      "name": "Flax, 2 m plot",
+      "size": [
+        2,
+        1,
+        2
+      ],
+      "pivot": "bottom-left-front",
+      "tris": 600,
+      "ref": {
+        "sheet": "nature",
+        "label": "Summer (Flax)"
+      },
+      "notes": "Modular 2 x 2 m plot of slender stems topped with soft blue flowers. Spring: green shoots; autumn: brown seed heads."
+    },
+    {
+      "id": "gd-crop-cabbage",
+      "family": "plant",
+      "name": "Cabbages, 2 m plot",
+      "size": [
+        2,
+        0.5,
+        2
+      ],
+      "pivot": "bottom-left-front",
+      "tris": 500,
+      "ref": {
+        "sheet": "nature",
+        "label": "Vegetables (Cabbage)"
+      },
+      "notes": "Modular 2 x 2 m plot, 3 x 3 round pale-green cabbage heads on furrows. Spring smaller heads; winter frosted."
+    },
+    {
+      "id": "gd-crop-leeks",
+      "family": "plant",
+      "name": "Leeks, 2 m plot",
+      "size": [
+        2,
+        0.5,
+        2
+      ],
+      "pivot": "bottom-left-front",
+      "tris": 500,
+      "ref": {
+        "sheet": "nature",
+        "label": "Vegetables (Leeks)"
+      },
+      "notes": "Modular 2 x 2 m plot, rows of upright blue-green leek fans with pale stems."
+    },
+    {
+      "id": "gd-herb-bed",
+      "family": "plant",
+      "name": "Herb bed",
+      "size": [
+        2,
+        0.9,
+        1.2
+      ],
+      "pivot": "bottom-center",
+      "tris": 600,
+      "free": true,
+      "variants": [
+        "intact",
+        "overgrown"
+      ],
+      "ref": {
+        "sheet": "nature",
+        "label": "Herb Bed"
+      },
+      "notes": "Raised bed in a low pale dry-stone box: lavender spikes, sage, rosemary, tall feathery herbs."
+    },
+    {
+      "id": "gd-flower-bed",
+      "family": "plant",
+      "name": "Flowering bed",
+      "size": [
+        2,
+        1.2,
+        1.2
+      ],
+      "pivot": "bottom-center",
+      "tris": 600,
+      "free": true,
+      "variants": [
+        "intact",
+        "overgrown"
+      ],
+      "ref": {
+        "sheet": "nature",
+        "label": "Flowering Bed"
+      },
+      "notes": "Same stone box: daisies, yellow flowers and pink hollyhock spikes at the back."
+    },
+    {
+      "id": "gd-fence-2m",
+      "family": "rock",
+      "name": "Post-and-rail fence, 2 m",
+      "size": [
+        2,
+        1,
+        0.5
+      ],
+      "pivot": "bottom-left-front",
+      "tris": 300,
+      "variants": [
+        "intact",
+        "mossy",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "nature",
+        "label": "Post-and-Rail Fence"
+      },
+      "notes": "Prop. Modular 2 m section: rough split-wood posts at both ends, two rails lashed with rope, grass and stones at the feet."
+    },
+    {
+      "id": "gd-scarecrow",
+      "family": "plant",
+      "name": "Scarecrow",
+      "size": [
+        1.5,
+        2.2,
+        0.5
+      ],
+      "pivot": "bottom-center",
+      "tris": 500,
+      "free": true,
+      "ref": {
+        "sheet": "nature",
+        "label": "Scarecrow"
+      },
+      "notes": "Prop. Pole with crossbar, straw hat, cream shirt, red sash, straw tufts at the cuffs."
+    },
+    {
+      "id": "gd-haystack",
+      "family": "plant",
+      "name": "Haystack",
+      "size": [
+        3,
+        2.5,
+        3
+      ],
+      "pivot": "bottom-center",
+      "tris": 400,
+      "free": true,
+      "ref": {
+        "sheet": "nature",
+        "label": "Haystack"
+      },
+      "notes": "Prop. Round conical straw stack, golden, a few props leaning against it."
+    },
+    {
+      "id": "gd-well",
+      "family": "rock",
+      "name": "Stone well",
+      "size": [
+        2.2,
+        3,
+        2.2
+      ],
+      "pivot": "bottom-center",
+      "tris": 800,
+      "free": true,
+      "variants": [
+        "intact",
+        "mossy"
+      ],
+      "ref": {
+        "sheet": "nature",
+        "label": "Stone Well"
+      },
+      "notes": "Prop. Round pale dry-stone well wall, two timber posts carrying a shingled roof, rope and pulley with a hanging bucket, wooden pail beside it."
+    },
+    {
+      "id": "gd-grass-tuft",
+      "family": "ground",
+      "name": "Meadow strip grass tuft",
+      "size": [
+        0.8,
+        0.7,
+        0.8
+      ],
+      "pivot": "bottom-center",
+      "tris": 200,
+      "free": true,
+      "ref": {
+        "sheet": "nature",
+        "label": "Meadow Grass Tuft"
+      },
+      "notes": "Arching long grass with seed heads, for the strips between plots."
+    },
+    {
+      "id": "gd-clover",
+      "family": "ground",
+      "name": "Clover patch",
+      "size": [
+        0.5,
+        0.2,
+        0.5
+      ],
+      "pivot": "bottom-center",
+      "tris": 150,
+      "free": true,
+      "ref": {
+        "sheet": "nature",
+        "label": "Clover Patch"
+      },
+      "notes": "Flat trefoil leaves with white clover heads."
+    },
+    {
+      "id": "gd-wildflower-clump",
+      "family": "ground",
+      "name": "Wildflower clump",
+      "size": [
+        0.6,
+        0.5,
+        0.6
+      ],
+      "pivot": "bottom-center",
+      "tris": 250,
+      "free": true,
+      "ref": {
+        "sheet": "nature",
+        "label": "Wildflower Clump"
+      },
+      "notes": "Daisies, yellow flowers, pink clover and violet spikes."
+    },
+    {
+      "id": "gd-wall-straight-2m",
+      "family": "rock",
+      "name": "Dry-stone wall, straight 2 m",
+      "size": [
+        2,
+        1,
+        0.5
+      ],
+      "pivot": "bottom-left-front",
+      "tris": 500,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "nature",
+        "label": "Dry-Stone Wall (Straight)"
+      },
+      "notes": "Modular field wall, 2 m: four courses of pale limestone with warm clay in the gaps, moss on top."
+    },
+    {
+      "id": "gd-wall-corner",
+      "family": "rock",
+      "name": "Dry-stone wall, corner",
+      "size": [
+        2,
+        1,
+        2
+      ],
+      "pivot": "bottom-left-front",
+      "tris": 600,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "nature",
+        "label": "Dry-Stone Wall (Corner)"
+      },
+      "notes": "Modular L corner, 2 m legs."
+    },
+    {
+      "id": "gd-terrace-wall-stepped",
+      "family": "rock",
+      "name": "Terrace wall, stepped 4 m",
+      "size": [
+        4,
+        2,
+        1
+      ],
+      "pivot": "bottom-left-front",
+      "tris": 800,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "nature",
+        "label": "Terrace Wall (Stepped)"
+      },
+      "notes": "Modular retaining wall, 4 m, stepping from 2 m to 1 m high halfway along, turf cap; the piece that builds the terraces."
+    },
+    {
+      "id": "gd-wall-broken",
+      "family": "rock",
+      "name": "Dry-stone wall, broken 2 m",
+      "size": [
+        2,
+        1,
+        0.5
+      ],
+      "pivot": "bottom-left-front",
+      "tris": 400,
+      "variants": [
+        "mossy",
+        "overgrown"
+      ],
+      "ref": {
+        "sheet": "nature",
+        "label": "Wall (Broken)"
+      },
+      "notes": "Modular 2 m: collapsed rubble of loose blocks, slots into a straight run as a gap."
+    },
+    {
+      "id": "gd-clay-bank",
+      "family": "rock",
+      "name": "Clay bank",
+      "size": [
+        2.5,
+        1.5,
+        2
+      ],
+      "pivot": "bottom-center",
+      "tris": 600,
+      "free": true,
+      "ref": {
+        "sheet": "nature",
+        "label": "Clay Bank"
+      },
+      "notes": "Crumbling warm orange clay mound with turf and daisies on top, loose clods at the foot."
+    },
+    {
+      "id": "gd-lip-terrace",
+      "family": "lip",
+      "name": "Lip / terrace edge",
+      "size": [
+        8,
+        2.5,
+        2
+      ],
+      "pivot": "bottom-center",
+      "tris": 1400,
+      "free": true,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "nature",
+        "label": "Lip / Terrace Edge"
+      },
+      "notes": "Isle edge segment ~8 m: the terrace wall carried round the edge, pale limestone courses with turf cap, grass and ivy hanging over. Turf top at y = 2.5."
+    },
+    {
+      "id": "gd-underside-terrace",
+      "family": "underside",
+      "name": "Underside (terrace)",
+      "size": [
+        8,
+        12,
+        6
+      ],
+      "pivot": "bottom-center",
+      "tris": 2000,
+      "free": true,
+      "variants": [
+        "intact",
+        "overgrown",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "nature",
+        "label": "Underside (Terrace)"
+      },
+      "notes": "Tapering limestone and warm clay chunk; the top shows two or three terrace wall courses stepping down into the rock, orange clay layers below, cool teal shadow at the point, hanging roots and grass."
+    },
+    {
+      "id": "gd-fishpond",
+      "family": "water",
+      "name": "Fishpond edge",
+      "size": [
+        6,
+        0.5,
+        4
+      ],
+      "pivot": "bottom-center",
+      "tris": 700,
+      "free": true,
+      "ref": {
+        "sheet": "isle-portrait",
+        "label": "Fishpond (portrait, right)"
+      },
+      "notes": "Rectangular-ish pond with a low stone kerb on one side and reeds on the other. Water surface separate."
+    },
+    {
+      "id": "gd-channel-2m",
+      "family": "water",
+      "name": "Irrigation channel, 2 m",
+      "size": [
+        2,
+        0.5,
+        0.5
+      ],
+      "pivot": "bottom-left-front",
+      "tris": 300,
+      "ref": {
+        "sheet": "isle-portrait",
+        "label": "Irrigation channel (portrait)"
+      },
+      "notes": "Modular narrow stone-lined channel, 2 m, flat cap stones along both edges."
+    },
+    {
+      "id": "gd-trickle",
+      "family": "water",
+      "name": "Trickle off the lip",
+      "size": [
+        1,
+        10,
+        1
+      ],
+      "pivot": "bottom-center",
+      "tris": 300,
+      "free": true,
+      "ref": {
+        "sheet": "isle-portrait",
+        "label": "Channel trickle (portrait)"
+      },
+      "notes": "Thin ribbon of water falling from a channel mouth over the lip, fading to mist."
+    }
+  ]
+}

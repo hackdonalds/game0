@@ -1,0 +1,330 @@
+{
+  "style": "ruin",
+  "prefix": "ru",
+  "grid": {
+    "base": 0.5
+  },
+  "scaleFigure": 1.8,
+  "materials": [
+    "Ground",
+    "Path",
+    "Cliff / Lip",
+    "Underside",
+    "Ruinstone",
+    "Ruinstone, sheared",
+    "Dead channel",
+    "Bark",
+    "Ruin-tree foliage",
+    "Ivy",
+    "Moss",
+    "Grass",
+    "Wilted grass",
+    "Grey rock"
+  ],
+  "terrain": {
+    "ground": "ground.png",
+    "path": "path.png",
+    "cliff": "cliff.png",
+    "underside": "underside.png"
+  },
+  "notes": "The built stone of ruin isles lives in the old-world kit (art/models/architecture/old-world/kit.json): monoliths, wall slabs, floor slabs, rings, arches, inlays, glyph plates, and also old-fragment-small/medium/large (floating fragments), old-moss-drape, old-moss-cap, old-root-cluster and old-sapling. This kit holds only the natural layer and loose ruinstone rubble; the sheet's Moss Drapes and Floating Fragments are not repeated here. Channels in ruin biome pieces are dead: dull, unlit dark teal, never emissive (the sheet paints them brighter than intended). Rainwater standing in channels is a shader on the old-world floor slabs, so the kit has no water pieces.",
+  "pieces": [
+    {
+      "id": "ru-slab-splitter-a",
+      "family": "tree",
+      "name": "Slab-splitter tree, broad",
+      "size": [9, 8, 7],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 3000,
+      "variants": ["intact", "mossy", "overgrown", "sinking"],
+      "ref": {
+        "sheet": "nature",
+        "label": "Slab-Splitter Tree (2 Variants)"
+      },
+      "notes": "Lone gnarled tree, thick twisting light-brown trunk; its roots have split a thick pale ruinstone slab into broken halves and grip the pieces, roots running out over the paving. Wide crown of clumped yellow-green to olive foliage masses."
+    },
+    {
+      "id": "ru-slab-splitter-b",
+      "family": "tree",
+      "name": "Slab-splitter tree, slender",
+      "size": [7, 7, 5.5],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 2800,
+      "variants": ["intact", "mossy", "overgrown", "sinking"],
+      "ref": {
+        "sheet": "nature",
+        "label": "Slab-Splitter Tree (2 Variants)"
+      },
+      "notes": "Narrower variant: leaning twisted trunk, a smaller higher crown, roots clasping two cracked slabs."
+    },
+    {
+      "id": "ru-root-gripped-block",
+      "family": "tree",
+      "name": "Root-gripped block",
+      "size": [3, 3.5, 2.5],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 2400,
+      "variants": ["intact", "mossy", "overgrown"],
+      "ref": {
+        "sheet": "nature",
+        "label": "Root-Gripped Block"
+      },
+      "notes": "Precise pale ruinstone cube (about 2 m) with an engraved dead-teal channel and concentric ring motif, toppled; a young tree's roots wrap over and around it, a small leafy crown on top. Matches the cube of ru-rock-a."
+    },
+    {
+      "id": "ru-sapling-a",
+      "family": "plant",
+      "name": "Sapling in split block",
+      "size": [0.9, 1.4, 0.9],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 500,
+      "variants": ["intact", "sinking"],
+      "ref": {
+        "sheet": "nature",
+        "label": "Saplings (3 Variants)"
+      },
+      "notes": "Young sapling with a few yellow-green leaves growing from a split small ruinstone block with a dead channel line."
+    },
+    {
+      "id": "ru-sapling-b",
+      "family": "plant",
+      "name": "Sapling in paving crack",
+      "size": [1.2, 1.7, 1],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 600,
+      "variants": ["intact", "sinking"],
+      "ref": {
+        "sheet": "nature",
+        "label": "Saplings (3 Variants)"
+      },
+      "notes": "Taller sapling with broad bright leaves rising from cracked paving shards, moss at the root. Freestanding counterpart of old-sapling."
+    },
+    {
+      "id": "ru-sapling-c",
+      "family": "plant",
+      "name": "Sapling among shards",
+      "size": [1.2, 1.2, 0.9],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 500,
+      "variants": ["intact", "sinking"],
+      "ref": {
+        "sheet": "nature",
+        "label": "Saplings (3 Variants)"
+      },
+      "notes": "Low branching sapling among a few tilted ruinstone shards."
+    },
+    {
+      "id": "ru-ivy-a",
+      "family": "plant",
+      "name": "Ivy clump",
+      "size": [1.3, 1, 1.3],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 600,
+      "variants": ["intact", "sinking"],
+      "ref": {
+        "sheet": "nature",
+        "label": "Ivy (2 Variants)"
+      },
+      "notes": "Rounded bush of five-lobed ivy leaves, dark green with yellow-green new growth."
+    },
+    {
+      "id": "ru-ivy-b",
+      "family": "plant",
+      "name": "Trailing ivy",
+      "size": [0.7, 1.8, 0.3],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 400,
+      "variants": ["intact", "sinking"],
+      "ref": {
+        "sheet": "nature",
+        "label": "Ivy (2 Variants)"
+      },
+      "notes": "Long trailing ivy strand that hangs from a block or lip edge; the pivot is the bottom of its box, the placer snaps its top to an edge."
+    },
+    {
+      "id": "ru-grass-joint",
+      "family": "ground",
+      "name": "Joint grass tufts",
+      "size": [0.8, 0.5, 0.6],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 200,
+      "ref": {
+        "sheet": "nature",
+        "label": "Ground Cover (Grass, Moss & Rubble)"
+      },
+      "notes": "Thin tufts of yellow-green grass with seed heads, sized to sit in paving joints and cracks. Alpha cards."
+    },
+    {
+      "id": "ru-moss-patch",
+      "family": "ground",
+      "name": "Moss patch",
+      "size": [1, 0.25, 0.8],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 250,
+      "ref": {
+        "sheet": "nature",
+        "label": "Ground Cover (Grass, Moss & Rubble)"
+      },
+      "notes": "Mounded olive-green moss cushion dotted with tiny white flowers, plus a few leafy weeds."
+    },
+    {
+      "id": "ru-rubble-scatter",
+      "family": "ground",
+      "name": "Rubble scatter",
+      "size": [1.2, 0.25, 0.8],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 300,
+      "ref": {
+        "sheet": "nature",
+        "label": "Ground Cover (Grass, Moss & Rubble)"
+      },
+      "notes": "Small precise pale ruinstone shards and cubes, sharp edges, scattered loose."
+    },
+    {
+      "id": "ru-rock-a",
+      "family": "rock",
+      "name": "Perfect cube",
+      "size": [1.6, 1.6, 1.6],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 400,
+      "variants": ["intact", "mossy", "overgrown", "sinking"],
+      "ref": {
+        "sheet": "nature",
+        "label": "Rocks – Ruinstone (5 Variants)"
+      },
+      "notes": "Unnaturally smooth pale ivory-grey cube, engraved straight dead-teal channels crossing each face and a ring motif at the centre, hairline cracks, moss at the foot. Loose rubble, not the 4 m old-corner-block."
+    },
+    {
+      "id": "ru-rock-b",
+      "family": "rock",
+      "name": "Sheared slab",
+      "size": [1.6, 1.1, 1.2],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 300,
+      "variants": ["intact", "mossy", "overgrown", "sinking"],
+      "ref": {
+        "sheet": "nature",
+        "label": "Rocks – Ruinstone (5 Variants)"
+      },
+      "notes": "Thick bevelled ruinstone slab broken off at an angle, the break sheared clean and flat like cut glass."
+    },
+    {
+      "id": "ru-rock-c",
+      "family": "rock",
+      "name": "Fallen ring segment",
+      "size": [2.4, 2, 1],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 700,
+      "variants": ["intact", "mossy", "overgrown", "sinking"],
+      "ref": {
+        "sheet": "nature",
+        "label": "Rocks – Ruinstone (5 Variants)"
+      },
+      "notes": "Toppled broken piece of a large ring (about a quarter to a half arc, square section) with a dead channel along its face, cracked through, moss in the joints. Rubble version of the old-world ring segments, not on their radius grid."
+    },
+    {
+      "id": "ru-rock-d",
+      "family": "rock",
+      "name": "Cracked paving slab",
+      "size": [2, 0.4, 2],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 400,
+      "variants": ["intact", "mossy", "overgrown", "sinking"],
+      "ref": {
+        "sheet": "nature",
+        "label": "Rocks – Ruinstone (5 Variants)"
+      },
+      "notes": "Square flat ruinstone paving slab, cracked into pieces, engraved dead-teal channels and part of a concentric ring motif, grass in the cracks."
+    },
+    {
+      "id": "ru-rock-e",
+      "family": "rock",
+      "name": "Shard rubble pile",
+      "size": [1.6, 0.9, 1.4],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 700,
+      "variants": ["intact", "mossy", "overgrown", "sinking"],
+      "ref": {
+        "sheet": "nature",
+        "label": "Rocks – Ruinstone (5 Variants)"
+      },
+      "notes": "Heaped pile of precise pale ruinstone shards and broken blocks, moss growing between."
+    },
+    {
+      "id": "ru-lip-crumble",
+      "family": "lip",
+      "name": "Crumbling lip",
+      "size": [8, 4, 5],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 1500,
+      "variants": ["intact", "mossy", "overgrown", "sinking"],
+      "ref": {
+        "sheet": "nature",
+        "label": "Lip / Ledge (Crumbling Edge)"
+      },
+      "notes": "Isle edge segment where pale cracked paving with a dead channel crumbles over ordinary grey rock: broken slab ends, blocks dropping away, wilted browning orange grass on top, pebbles falling from the face."
+    },
+    {
+      "id": "ru-lip-paved",
+      "family": "lip",
+      "name": "Paved lip",
+      "size": [8, 4, 5],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 1300,
+      "variants": ["intact", "mossy", "overgrown", "sinking"],
+      "ref": {
+        "sheet": "nature",
+        "label": "Lip / Ledge (Crumbling Edge)"
+      },
+      "notes": "Intact counterpart: clean edge of pale ruinstone paving and strata over grey rock, a dead channel turning down the face, ivy over the edge. Derived from the sheet piece and the isle portrait."
+    },
+    {
+      "id": "ru-underside-a",
+      "family": "underside",
+      "name": "Underside spire, large",
+      "size": [8, 12, 7],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 2000,
+      "variants": ["intact", "overgrown", "sinking"],
+      "ref": {
+        "sheet": "nature",
+        "label": "Underside (Tapering Spire)"
+      },
+      "notes": "Inverted tapering spike: pale ruinstone strata and blocks on top grading into faceted grey rock, a dead dark-teal channel stepping down one face, hanging ivy from the rim, trailing dust and pebbles at the point."
+    },
+    {
+      "id": "ru-underside-b",
+      "family": "underside",
+      "name": "Underside spire, small",
+      "size": [6, 7, 5],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 1600,
+      "variants": ["intact", "overgrown", "sinking"],
+      "ref": {
+        "sheet": "nature",
+        "label": "Underside (Tapering Spire)"
+      },
+      "notes": "Shorter, stubbier taper of the same rock for narrow edges and small isles. Derived from the sheet piece."
+    }
+  ]
+}

@@ -1,0 +1,600 @@
+{
+  "style": "forest",
+  "prefix": "fo",
+  "grid": {
+    "base": 0.5
+  },
+  "scaleFigure": 1.8,
+  "materials": [
+    "Needle Ground",
+    "Forest Path",
+    "Mossy Stone Cliff",
+    "Root Underside",
+    "Pine Bark",
+    "Birch Bark",
+    "Duskcrown Bark",
+    "Pine Needles",
+    "Birch Foliage",
+    "Duskcrown Leaf",
+    "Fern",
+    "Bramble",
+    "Moss",
+    "Dark Stone",
+    "Needle Litter",
+    "Leaf Litter",
+    "Mushroom",
+    "Water"
+  ],
+  "terrain": {
+    "ground": "ground.png",
+    "path": "path.png",
+    "cliff": "cliff.png",
+    "underside": "underside.png"
+  },
+  "pieces": [
+    {
+      "id": "fo-grudge-tree",
+      "family": "hero",
+      "name": "Grudge Tree",
+      "size": [
+        26,
+        30,
+        26
+      ],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 15000,
+      "variants": [
+        "intact",
+        "mossy"
+      ],
+      "ref": {
+        "sheet": "nature",
+        "label": "Duskcrown Yew A"
+      },
+      "notes": "Not drawn on the nature sheet; ref is the closest broadleaf silhouette. Grudgewood's ancient landmark, 30 m: massive gnarled broadleaf trunk about 5 m across, root flare about 16 m, deep axe scars cut into the trunk (pale raw wood in the scars, dark old bark around them), a broad, partly dead crown of dark green clumped foliage with bare broken limbs. Needs its own concept sheet before modelling."
+    },
+    {
+      "id": "fo-pine-a",
+      "family": "tree",
+      "name": "Forest pine, tall",
+      "size": [
+        7,
+        16,
+        7
+      ],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 2400,
+      "variants": [
+        "intact",
+        "mossy"
+      ],
+      "ref": {
+        "sheet": "nature",
+        "label": "Forest Pine A"
+      },
+      "notes": "Tall forest pine, 16 m: straight reddish-brown trunk with exposed roots, dense dark green clumped needle masses in tiers to a pointed top."
+    },
+    {
+      "id": "fo-pine-b",
+      "family": "tree",
+      "name": "Forest pine, slim",
+      "size": [
+        5,
+        12,
+        5
+      ],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 2000,
+      "variants": [
+        "intact",
+        "mossy"
+      ],
+      "ref": {
+        "sheet": "nature",
+        "label": "Forest Pine B"
+      },
+      "notes": "Slimmer, sparser pine, 12 m; the filler silhouette for dense Ferrymoor stands."
+    },
+    {
+      "id": "fo-birch-a",
+      "family": "tree",
+      "name": "Birch, broad",
+      "size": [
+        7,
+        13,
+        7
+      ],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 2400,
+      "variants": [
+        "intact",
+        "mossy"
+      ],
+      "ref": {
+        "sheet": "nature",
+        "label": "Birch A"
+      },
+      "notes": "Birch, 13 m: slender white trunk with black bark marks, light yellow-green clumped canopy, small exposed roots on a stony base."
+    },
+    {
+      "id": "fo-birch-b",
+      "family": "tree",
+      "name": "Birch, slender",
+      "size": [
+        5,
+        10,
+        5
+      ],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 2000,
+      "variants": [
+        "intact",
+        "mossy"
+      ],
+      "ref": {
+        "sheet": "nature",
+        "label": "Birch B"
+      },
+      "notes": "Thinner birch, 10 m, narrower open canopy; same bark and foliage as Birch A."
+    },
+    {
+      "id": "fo-duskcrown-a",
+      "family": "tree",
+      "name": "Duskcrown tree, broad",
+      "size": [
+        15,
+        13,
+        15
+      ],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 3000,
+      "variants": [
+        "intact",
+        "mossy"
+      ],
+      "ref": {
+        "sheet": "nature",
+        "label": "Duskcrown Yew A"
+      },
+      "notes": "The Duskcrown tree: a broadleaf (despite the 'yew' label and its yew timber), 13 m, thick twisting trunk with exposed roots, wide umbrella crown of red and violet clumped leaf masses that glow softly at dusk (Duskcrown Leaf, emissive mask on leaf tips). Duskcrown isle's signature tree."
+    },
+    {
+      "id": "fo-duskcrown-b",
+      "family": "tree",
+      "name": "Duskcrown tree, young",
+      "size": [
+        8,
+        8,
+        8
+      ],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 2200,
+      "variants": [
+        "intact",
+        "mossy"
+      ],
+      "ref": {
+        "sheet": "nature",
+        "label": "Duskcrown Yew B"
+      },
+      "notes": "Younger Duskcrown, 8 m, single leaning trunk, smaller red-to-violet crown with the same dusk glow."
+    },
+    {
+      "id": "fo-giant-pine",
+      "family": "tree",
+      "name": "Giant pine (old growth)",
+      "size": [
+        14,
+        18,
+        14
+      ],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 3000,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown"
+      ],
+      "ref": {
+        "sheet": "nature",
+        "label": "Giant Pine (Old Growth)"
+      },
+      "notes": "Old-growth giant for Hollowsky, 18 m as modelled (scale up to about 25 m in placement): massive buttressed trunk about 3 m across, shelf fungus on the bark, sparse layered dark green crown high up. Kept as tree, not hero, since it repeats across the isle."
+    },
+    {
+      "id": "fo-fern-clump",
+      "family": "plant",
+      "name": "Fern clump",
+      "size": [
+        1.6,
+        1.0,
+        1.6
+      ],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 400,
+      "ref": {
+        "sheet": "nature",
+        "label": "Fern Clump"
+      },
+      "notes": "Rosette of arching fronds, yellow-green tips, darker centre."
+    },
+    {
+      "id": "fo-bramble",
+      "family": "plant",
+      "name": "Bramble thicket",
+      "size": [
+        2.0,
+        1.2,
+        1.6
+      ],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 600,
+      "ref": {
+        "sheet": "nature",
+        "label": "Bramble Thicket"
+      },
+      "notes": "Dense mound of thorny dark-green bramble with red berries; blocks movement."
+    },
+    {
+      "id": "fo-fallen-log",
+      "family": "plant",
+      "name": "Fallen log",
+      "size": [
+        5,
+        1.3,
+        1.4
+      ],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 600,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "nature",
+        "label": "Fallen Log"
+      },
+      "notes": "Hollow pine log, 5 m, splintered end, moss along the top, small orange-tan mushrooms and ferns along its sides."
+    },
+    {
+      "id": "fo-broken-stump",
+      "family": "plant",
+      "name": "Broken stump",
+      "size": [
+        1.8,
+        2.2,
+        1.8
+      ],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 500,
+      "variants": [
+        "intact",
+        "mossy"
+      ],
+      "ref": {
+        "sheet": "nature",
+        "label": "Broken Stump"
+      },
+      "notes": "Tall jagged snapped trunk, splintered top, flared roots, moss and shelf fungus at the base."
+    },
+    {
+      "id": "fo-mushroom-cluster",
+      "family": "plant",
+      "name": "Mushroom cluster",
+      "size": [
+        1.0,
+        0.8,
+        0.8
+      ],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 400,
+      "ref": {
+        "sheet": "nature",
+        "label": "Mushroom Cluster"
+      },
+      "notes": "Five or six tan-capped mushrooms of mixed heights, cream stems, on a moss pad. Not glowing (the teal glow is roothold's)."
+    },
+    {
+      "id": "fo-fireflies-fern",
+      "family": "plant",
+      "name": "Fern with fireflies",
+      "size": [
+        1.4,
+        1.2,
+        1.2
+      ],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 450,
+      "ref": {
+        "sheet": "nature",
+        "label": "Fireflies & Fern"
+      },
+      "notes": "Smaller fern clump with an attached firefly emitter (a few warm gold glowing points, particles at runtime, night only)."
+    },
+    {
+      "id": "fo-needle-litter",
+      "family": "ground",
+      "name": "Needle litter",
+      "size": [
+        1.2,
+        0.15,
+        1.0
+      ],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 200,
+      "ref": {
+        "sheet": "nature",
+        "label": "Needle Litter"
+      },
+      "notes": "Flat drift of rust-brown pine needles with three or four pine cones; almost flat."
+    },
+    {
+      "id": "fo-leaf-litter",
+      "family": "ground",
+      "name": "Leaf litter",
+      "size": [
+        1.2,
+        0.15,
+        1.0
+      ],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 200,
+      "ref": {
+        "sheet": "nature",
+        "label": "Leaf Litter"
+      },
+      "notes": "Flat drift of orange-brown oak leaves as overlapping cards."
+    },
+    {
+      "id": "fo-moss-clump",
+      "family": "ground",
+      "name": "Moss clump",
+      "size": [
+        1.3,
+        0.4,
+        1.1
+      ],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 250,
+      "ref": {
+        "sheet": "nature",
+        "label": "Moss Clump"
+      },
+      "notes": "Low mound of lumpy yellow-green moss with a small dark stone."
+    },
+    {
+      "id": "fo-surface-roots",
+      "family": "ground",
+      "name": "Surface roots",
+      "size": [
+        1.8,
+        0.35,
+        1.4
+      ],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 300,
+      "ref": {
+        "sheet": "nature",
+        "label": "Surface Roots"
+      },
+      "notes": "Exposed root tangle, grey-brown bark, half buried in needle litter."
+    },
+    {
+      "id": "fo-boulder-a",
+      "family": "rock",
+      "name": "Forest boulder, large",
+      "size": [
+        2.0,
+        1.5,
+        1.7
+      ],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 600,
+      "variants": [
+        "intact",
+        "mossy",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "nature",
+        "label": "Forest Boulder A"
+      },
+      "notes": "Rounded dark grey-black stone with green moss caps and pale ochre lichen."
+    },
+    {
+      "id": "fo-boulder-b",
+      "family": "rock",
+      "name": "Forest boulder, cluster",
+      "size": [
+        2.0,
+        1.2,
+        1.6
+      ],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 600,
+      "variants": [
+        "intact",
+        "mossy",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "nature",
+        "label": "Forest Boulder B"
+      },
+      "notes": "Cluster of three or four smaller dark mossy stones."
+    },
+    {
+      "id": "fo-split-rock",
+      "family": "rock",
+      "name": "Split rock",
+      "size": [
+        1.8,
+        1.8,
+        1.4
+      ],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 600,
+      "variants": [
+        "intact",
+        "mossy",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "nature",
+        "label": "Split Rock"
+      },
+      "notes": "Upright dark stone cracked into three leaning slabs, moss in the cracks and on top."
+    },
+    {
+      "id": "fo-slate-slab",
+      "family": "rock",
+      "name": "Slate slab",
+      "size": [
+        2.0,
+        0.6,
+        1.3
+      ],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 300,
+      "ref": {
+        "sheet": "nature",
+        "label": "Slate Slab"
+      },
+      "notes": "Low stack of flat dark slate plates, moss in the joints."
+    },
+    {
+      "id": "fo-hollow-outcrop",
+      "family": "rock",
+      "name": "Hollow outcrop",
+      "size": [
+        2.4,
+        2.0,
+        1.6
+      ],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 800,
+      "variants": [
+        "intact",
+        "mossy",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "nature",
+        "label": "Hollow Outcrop"
+      },
+      "notes": "Ring of stacked dark mossy blocks around a round hole, the Hollowsky motif at ground scale; sky or light shows through."
+    },
+    {
+      "id": "fo-lip-edge",
+      "family": "lip",
+      "name": "Fern-hung isle edge",
+      "size": [
+        8,
+        4,
+        3
+      ],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 1500,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "nature",
+        "label": "Lip Piece (Isle Edge)"
+      },
+      "notes": "8 m edge segment: needle litter, ferns and red-leaved shrubs on top, dark mossy stone face below, roots and long curtains of hanging moss and ferns. The fallen trunk jutting over the edge is the separate fo-lip-fallen-trunk piece and the brook fall is fo-brook-fall, so the edge tiles without them."
+    },
+    {
+      "id": "fo-lip-fallen-trunk",
+      "family": "lip",
+      "name": "Fallen trunk over the edge",
+      "size": [
+        7,
+        1.4,
+        1.6
+      ],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 600,
+      "variants": [
+        "intact",
+        "mossy"
+      ],
+      "ref": {
+        "sheet": "nature",
+        "label": "Lip Piece (Isle Edge)"
+      },
+      "notes": "Dead branching trunk jutting about 3 m out over the lip, mossy, bare broken branches at the tip; drawn on the lip piece and split out as an add-on."
+    },
+    {
+      "id": "fo-brook-fall",
+      "family": "water",
+      "name": "Brook waterfall",
+      "size": [
+        1.6,
+        8,
+        1.2
+      ],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 500,
+      "ref": {
+        "sheet": "nature",
+        "label": "Lip Piece (Isle Edge)"
+      },
+      "notes": "Brook falling off the lip: a wider white-blue ribbon (scrolling alpha) with foam at the top; drawn on the lip piece. Brooks and still pools appear in the isle portrait but are not on the nature sheet; they still need a sheet."
+    },
+    {
+      "id": "fo-underside-hollow",
+      "family": "underside",
+      "name": "Hollow underside taper",
+      "size": [
+        8,
+        10,
+        8
+      ],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 2000,
+      "variants": [
+        "intact",
+        "mossy",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "nature",
+        "label": "Underside Piece (Isle Underside)"
+      },
+      "notes": "Inverted cone of dark mossy stone tapering to a point, pierced by a round hole that shows sky (Hollowsky), roots coiling around the hole and trailing below the tip, curtains of hanging moss."
+    }
+  ]
+}

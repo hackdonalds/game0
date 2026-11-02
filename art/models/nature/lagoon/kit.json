@@ -1,0 +1,362 @@
+{
+  "style": "lagoon",
+  "prefix": "lg",
+  "grid": {
+    "base": 0.5
+  },
+  "scaleFigure": 1.8,
+  "materials": [
+    "Ground",
+    "Path",
+    "Cliff / Lip",
+    "Underside",
+    "Salt-twisted bark",
+    "Salt-tree foliage",
+    "Bleached snag wood",
+    "Drift timber",
+    "Reeds",
+    "Salt grass",
+    "Wet moss",
+    "Basalt",
+    "Slate",
+    "Teal crystal vein",
+    "Glowweed",
+    "Mere water",
+    "Shell"
+  ],
+  "terrain": {
+    "ground": "ground.png",
+    "path": "path.png",
+    "cliff": "cliff.png",
+    "underside": "underside.png"
+  },
+  "notes": "The great Moorings chain and its anchor plates are architecture (Anchorkin kit), not nature, and are not in this kit. Teal glow (glowweed, crystal veins, mere water) is emissive and reserved for points of interest; everything else stays dark and muted.",
+  "pieces": [
+    {
+      "id": "lg-salt-tree-a",
+      "family": "tree",
+      "name": "Salt-twisted tree, broad",
+      "size": [8, 6, 6.5],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 2800,
+      "variants": ["intact", "mossy", "sinking"],
+      "ref": {
+        "sheet": "nature",
+        "label": "Salt-Twisted Tree (3 Variants)"
+      },
+      "notes": "Thick gnarled dark-brown trunk bent hard to one side by the wind, buttress roots splayed over dark stone; one wide flat-topped crown of clumped dull olive-green foliage masses."
+    },
+    {
+      "id": "lg-salt-tree-b",
+      "family": "tree",
+      "name": "Salt-twisted tree, tall S-bend",
+      "size": [6, 7, 5],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 2800,
+      "variants": ["intact", "mossy", "sinking"],
+      "ref": {
+        "sheet": "nature",
+        "label": "Salt-Twisted Tree (3 Variants)"
+      },
+      "notes": "Twisting S-curved trunk, a high main crown and a lower side branch with its own small crown pad; dull olive-green clumps, dark bark with grey salt streaks."
+    },
+    {
+      "id": "lg-salt-tree-c",
+      "family": "tree",
+      "name": "Salt-twisted tree, low",
+      "size": [6.5, 4.5, 5],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 2400,
+      "variants": ["intact", "mossy", "sinking"],
+      "ref": {
+        "sheet": "nature",
+        "label": "Salt-Twisted Tree (3 Variants)"
+      },
+      "notes": "Low, almost creeping tree: trunk sprawls sideways along the ground, then rises into a single wide shallow crown. Same bark and foliage as a and b."
+    },
+    {
+      "id": "lg-dead-snag-a",
+      "family": "tree",
+      "name": "Dead snag, tall",
+      "size": [5, 6, 3.5],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 2200,
+      "variants": ["intact", "mossy", "sinking"],
+      "ref": {
+        "sheet": "nature",
+        "label": "Dead Snag (2 Variants)"
+      },
+      "notes": "Bleached silver-grey dead trunk leaning away from the storm, split base, bare forked branches reaching up and sideways; deep cracks and stripped grain, a little moss at the foot."
+    },
+    {
+      "id": "lg-dead-snag-b",
+      "family": "tree",
+      "name": "Dead snag, broken",
+      "size": [3.5, 4, 2.5],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 1800,
+      "variants": ["intact", "mossy", "sinking"],
+      "ref": {
+        "sheet": "nature",
+        "label": "Dead Snag (2 Variants)"
+      },
+      "notes": "Shorter snapped-off bleached trunk leaning hard, jagged top, two or three short dead branches."
+    },
+    {
+      "id": "lg-reed-bed",
+      "family": "plant",
+      "name": "Reed bed",
+      "size": [2.5, 2, 2],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 600,
+      "variants": ["intact", "sinking"],
+      "ref": {
+        "sheet": "nature",
+        "label": "Reed Bed"
+      },
+      "notes": "Dense clump of tall straight reeds in olive and straw green with tawny-gold seed heads, a dark stone at the base. Alpha-card blades in a few crossed clusters."
+    },
+    {
+      "id": "lg-glowweed",
+      "family": "plant",
+      "name": "Glowweed",
+      "size": [1.2, 1, 1.2],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 500,
+      "variants": ["intact", "sinking"],
+      "ref": {
+        "sheet": "nature",
+        "label": "Glowweed"
+      },
+      "notes": "Low dark-green leafy clump with a fan of slender stalks ending in bulb-tipped fronds that glow soft teal (emissive). Grows among dark pebbles at water edges."
+    },
+    {
+      "id": "lg-drift-timber",
+      "family": "plant",
+      "name": "Drift timber pile",
+      "size": [3.5, 1, 2],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 600,
+      "variants": ["intact", "mossy"],
+      "ref": {
+        "sheet": "nature",
+        "label": "Drift Timber"
+      },
+      "notes": "Pile of crossed grey weathered logs and sticks, silver driftwood grain, a strand of olive weed draped over one end. Deadfall rather than understory; placed by hand on shores and in chain pools."
+    },
+    {
+      "id": "lg-shells",
+      "family": "ground",
+      "name": "Shells and crab shells",
+      "size": [1.5, 0.3, 1],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 300,
+      "ref": {
+        "sheet": "nature",
+        "label": "Shells and Crab Shells"
+      },
+      "notes": "Scatter of cream and pale-pink spiral and scallop shells, plus an empty rust-orange shellback crab carapace and loose claws. Shore and sand scatter."
+    },
+    {
+      "id": "lg-salt-grass-a",
+      "family": "ground",
+      "name": "Salt grass tuft, tall",
+      "size": [0.7, 0.6, 0.7],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 200,
+      "ref": {
+        "sheet": "nature",
+        "label": "Ground Cover (Salt Grass & Wet Moss)"
+      },
+      "notes": "Sparse tough tuft of thin olive-yellow blades, splayed. Alpha cards."
+    },
+    {
+      "id": "lg-salt-grass-b",
+      "family": "ground",
+      "name": "Salt grass tuft, short",
+      "size": [0.4, 0.35, 0.4],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 120,
+      "ref": {
+        "sheet": "nature",
+        "label": "Ground Cover (Salt Grass & Wet Moss)"
+      },
+      "notes": "Small low tuft of the same salt grass, for thinning out the tall tufts."
+    },
+    {
+      "id": "lg-moss-wet",
+      "family": "ground",
+      "name": "Wet moss patch",
+      "size": [1.2, 0.2, 1],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 250,
+      "ref": {
+        "sheet": "nature",
+        "label": "Ground Cover (Salt Grass & Wet Moss)"
+      },
+      "notes": "Flat cushion of damp olive moss with small fleshy succulent-like leaf rosettes at the edge; slight wet sheen."
+    },
+    {
+      "id": "lg-rock-a",
+      "family": "rock",
+      "name": "Basalt boulder, veined",
+      "size": [1.8, 1.5, 1.6],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 600,
+      "variants": ["intact", "mossy", "sinking"],
+      "ref": {
+        "sheet": "nature",
+        "label": "Rocks (5 Variants)"
+      },
+      "notes": "Rounded dark grey basalt boulder, moss on the crown, thin glowing teal crystal veins across one face."
+    },
+    {
+      "id": "lg-rock-b",
+      "family": "rock",
+      "name": "Low column slab",
+      "size": [2, 0.8, 1.4],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 500,
+      "variants": ["intact", "mossy", "sinking"],
+      "ref": {
+        "sheet": "nature",
+        "label": "Rocks (5 Variants)"
+      },
+      "notes": "Low broken run of hexagonal basalt column tops, flat stepped faces, moss in the joints."
+    },
+    {
+      "id": "lg-rock-c",
+      "family": "rock",
+      "name": "Column outcrop",
+      "size": [1.5, 3, 1.3],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 700,
+      "variants": ["intact", "mossy", "sinking"],
+      "ref": {
+        "sheet": "nature",
+        "label": "Rocks (5 Variants)"
+      },
+      "notes": "Cluster of upright hexagonal basalt columns of stepped heights, flat tops capped with moss."
+    },
+    {
+      "id": "lg-rock-d",
+      "family": "rock",
+      "name": "Leaning boulder",
+      "size": [1.8, 1.6, 1.4],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 600,
+      "variants": ["intact", "mossy", "sinking"],
+      "ref": {
+        "sheet": "nature",
+        "label": "Rocks (5 Variants)"
+      },
+      "notes": "Angular dark slate boulder tilted to one side, layered faces, a few faint teal flecks, moss on the upper edge."
+    },
+    {
+      "id": "lg-rock-e",
+      "family": "rock",
+      "name": "Slanted slate spire",
+      "size": [2, 3.5, 1.5],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 800,
+      "variants": ["intact", "mossy", "sinking"],
+      "ref": {
+        "sheet": "nature",
+        "label": "Rocks (5 Variants)"
+      },
+      "notes": "Tall sheared slab of dark layered slate rising at a slant, sharp top edge, several glowing teal crystal veins running up the face, moss in the ledges."
+    },
+    {
+      "id": "lg-mere-edge",
+      "family": "water",
+      "name": "Mere edge",
+      "size": [6, 1.2, 4],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 800,
+      "variants": ["intact", "mossy", "sinking"],
+      "ref": {
+        "sheet": "nature",
+        "label": "Mere Edge (Water + Reeds)"
+      },
+      "notes": "Curved section of a round mere rim: dark stacked basalt blocks stepping down into still teal-glowing water (emissive water surface with faint swirl, lily pads), reeds and salt grass on the bank. Rim pieces chain into a full circle."
+    },
+    {
+      "id": "lg-lip-ledge-trickle",
+      "family": "lip",
+      "name": "Lip ledge with trickle",
+      "size": [8, 4, 5],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 1500,
+      "variants": ["intact", "mossy", "sinking"],
+      "ref": {
+        "sheet": "nature",
+        "label": "Lip / Ledge (Overhang + Trickle)"
+      },
+      "notes": "Isle edge segment: slick dark basalt ledges stepping out over the edge, tufted salt grass and reeds on top, long olive moss and weed hanging over the face, a thin waterfall trickle spilling from a notch, teal vein glints."
+    },
+    {
+      "id": "lg-lip-ledge",
+      "family": "lip",
+      "name": "Lip ledge",
+      "size": [8, 4, 5],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 1400,
+      "variants": ["intact", "mossy", "sinking"],
+      "ref": {
+        "sheet": "nature",
+        "label": "Lip / Ledge (Overhang + Trickle)"
+      },
+      "notes": "Same edge segment without the trickle and notch, for the long runs between falls. Derived from the sheet piece."
+    },
+    {
+      "id": "lg-underside-a",
+      "family": "underside",
+      "name": "Underside spire, large",
+      "size": [8, 12, 7],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 2000,
+      "variants": ["intact", "sinking"],
+      "ref": {
+        "sheet": "nature",
+        "label": "Underside (Tapering Spire)"
+      },
+      "notes": "Inverted tapering spike of dark basalt, near-vertical column facets, streaked darker by spray, olive weed strands hanging from the top rim, teal vein flecks and water drips at the point."
+    },
+    {
+      "id": "lg-underside-b",
+      "family": "underside",
+      "name": "Underside spire, small",
+      "size": [6, 7, 5],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 1600,
+      "variants": ["intact", "sinking"],
+      "ref": {
+        "sheet": "nature",
+        "label": "Underside (Tapering Spire)"
+      },
+      "notes": "Shorter, stubbier taper of the same rock for narrow edges and small isles. Derived from the sheet piece."
+    }
+  ]
+}
