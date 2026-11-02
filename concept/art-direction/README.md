@@ -1,3 +1,19 @@
+---
+chapter:
+  slug: art
+  number: 10
+  title: Art Direction
+  kicker: Painterly and luminous
+  summary: Stylized painterly, epic and never grim. The palette, the visual rules, how each people builds, the modular kits and the biomes.
+  docs:
+    - art-direction/architecture.md
+    - art-direction/modular-kit.md
+    - art-direction/kit-sheets.md
+    - art-direction/biomes.md
+  catalogues: [ architecture, biomes ]
+  art: an artist's easel on the edge of a floating isle with a half-finished painting of the sky isles, paint palette with soft muted golds teals and greens, brushes, the real vista behind it in matching colours
+---
+
 # Art Direction
 
 Stylized painterly, epic high fantasy. Grand and luminous, never grim.
@@ -11,7 +27,7 @@ Stylized painterly, epic high fantasy. Grand and luminous, never grim.
 | Characters | Heroic stylized proportions: slightly larger hands, heads and shoulders, readable silhouettes at distance |
 | Reference use | The reference anchors the palette and mood; other elements stay open to exploration |
 | 3D fidelity | Hand-painted, mid detail: chunky readable shapes, with detail painted into textures rather than modelled |
-| Animal folk | Animal heads and fur on humanoid bodies, with clothing and gear on top (as in [lineup 02](../../art/concept/peoples-lineup-02.png)) |
+| Peoples | Near-human peoples, each with a signature trait that always reads (see [character customization](character-customization.md)), not beast-folk. The animal-folk look of [lineup 02](../../art/concept/peoples-lineup-02.png) was retired with the earlier peoples (see [peoples](../world/peoples.md#retired-concepts)) |
 | Colour and light | Softer and more muted than the first tests: gentler saturation, painterly atmosphere. The palette below is applied at lower saturation |
 | Texture lighting | Flat, unlit colour textures (Meshy 7.1). Painterly lighting comes from in-engine shaders, not baked into textures ([lighting test](../../art/models/tests/lighting-ab/compare-unlit.png)) |
 | Time | Day and night cycle and four seasons, changing light, colour and foliage |

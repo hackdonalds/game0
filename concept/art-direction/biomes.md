@@ -2,7 +2,7 @@
 
 > Draft. Concept sheets in `art/concept/biomes/<biome>/`. The look of each of the seven biomes in `worlds/first-shard.world.json`: ground, rock, plants, water and what makes each one recognisable. It is the brief for the nature and terrain concept sheets and kits, as [architecture](architecture.md) is for buildings.
 
-Sources: the isle notes and paintings (`apps/web/src/data/isles.ts`, `art/handbook/isles/`), materials (`materials.ts`) and creatures (`bestiary.ts`). Where the paintings disagree with this doc, this doc wins.
+Sources: the isle entries and paintings ([`entries/isles/`](../entries/isles/), `art/concept/isles/`), [materials](../entries/materials/) and [creatures](../entries/bestiary/). Where the paintings disagree with this doc, this doc wins.
 
 ## Shared rules
 
@@ -124,7 +124,7 @@ Sources: the isle notes and paintings (`apps/web/src/data/isles.ts`, `art/handbo
 - **Understory:** moss drapes, ivy, saplings in cracks, floating stone fragments.
 - **Water:** rainwater in the channels; nothing flows.
 - **Signature:** perfect geometry being reclaimed: the old-world ruin kit placed on the land.
-- **Creatures:** prowlers in the arches; storm creatures during surges.
+- **Creatures:** ruin stalkers in the arches; storm creatures during surges.
 
 ## What to make
 

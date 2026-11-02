@@ -1,3 +1,14 @@
+---
+chapter:
+  slug: vision
+  number: 1
+  title: Vision
+  kicker: What the game is
+  summary: A sandbox of floating isles with no classes, no endgame and a world that keeps moving. The pillars every other decision answers to.
+  catalogues: [ glossary ]
+  art: a sweeping vista of many floating isles at golden hour, waterfalls spilling from their edges into a sea of clouds, small sailing ships with glowing enchanted sails crossing between them, an enormous ancient tree on the central isle
+---
+
 # Vision
 
 ## Pitch

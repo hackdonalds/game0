@@ -1,44 +1,28 @@
+---
+chapter:
+  slug: peoples
+  number: 3
+  title: Peoples
+  kicker: Who shares the sky
+  summary: Who the playable peoples are, where they live, their innate skills, what they hold against each other, and how players shape them.
+  docs:
+    - art-direction/character-customization.md
+  catalogues: [ peoples ]
+  demo: peoples
+  art: "three fantasy travellers standing together on a cliff edge at dawn seen from behind: a tall slender figure with a folded feathered mantle, a huge broad figure with grey stone skin veined with teal crystal, and a stocky bark-skinned figure with moss and small flowers on its shoulders, looking out over floating isles"
+---
+
 # Peoples
 
-Three playable peoples at launch: **Galeborne**, **Anchorkin** and **Rootwardens**. More peoples are planned for later, and everything about peoples is built so a new one can be added without changing the others (see [Adding a people](#adding-a-people)).
+The playable peoples at launch are the [Galeborne](../entries/peoples/galeborne.md), the [Anchorkin](../entries/peoples/anchorkin.md) and the [Rootwardens](../entries/peoples/rootwarden.md). More peoples are planned for later, and everything about peoples is built so a new one can be added without changing the others (see [Adding a people](#adding-a-people)).
 
-Characters read first by people, then by gear. There are no classes: any people can follow any path. Each people has a **homeland**, cultural affinities, and one **innate skill** that only it can learn.
+Characters read first by people, then by gear. There are no classes: any people can follow any path. Each people has a **homeland**, cultural affinities, and one **innate skill** that only it can learn. Each people's look, homeland, culture, first hours, relations and signature features are written on its entry in [`entries/peoples/`](../entries/peoples/).
 
 Outfit tone for all peoples: grounded, handmade leather, cloth and forged metal, with epic details such as teal crystal, gold trim and culture motifs.
 
-| People | Look | Homeland | Known for | Innate skill |
-| --- | --- | --- | --- | --- |
-| **Galeborne** | Tall, light, hollow-boned near-humans. A feathered mantle grows from their shoulders and forearms and folds like a cloak | **The Crag Spires** (west, the highest isles) | Sailors, shipwrights, scouts, couriers | **Glide** |
-| **Anchorkin** | Huge, broad and heavy, with stone skin veined with crystal | **The Moorings** (south, the lowest isles, chained together near the storm) | Masons, chainsmiths, guards, keepers of the Ledger | **Anchor** |
-| **Rootwardens** | Broad and stocky, with bark-grained wooden skin. Moss, lichen and small flowers grow on them | **The Rootholds** (north, caverns in the roots of the oldest isles) | Treetenders, herbalists, healers, keepers of the old trees | **Take Root** |
-
 ## Innate skills
 
-Innate skills follow the same rules as every other [skill](../mechanics/README.md#skills): they start low, rise with use (0–100) and unlock techniques. The only difference is that no other people can learn them. Each one has a clear strength and a clear limit.
-
-| Skill | People | What it does | Limit |
-| --- | --- | --- | --- |
-| **Glide** | Galeborne | Spread the mantle to glide down from any height without fall damage. Riding a wind current, a Galeborne can glide between nearby isles without a ship. Higher skill gives longer glides and lets them catch updrafts | Costs stamina. Can't gain height without an updraft. Can't glide while carrying a heavy load |
-| **Anchor** | Anchorkin | Plant your feet: you can't be knocked back, pushed or pulled. On a ship, an anchored Anchorkin steadies it against gusts and rams. During a sinking event they can hold a breaking bridge or ledge for a while | Can't move while anchored. Too heavy to swim, and they take extra fall damage |
-| **Take Root** | Rootwardens | Stand still to take root and regenerate health and stamina. Near an ancient tree, rooting also speeds regeneration for nearby allies | Can't move or dodge while rooted, and pulling free takes a moment. Weak to fire |
-
-## The peoples
-
-### Galeborne
-
-The Galeborne nest on the sheer Crag Spires, the highest isles on the shard, where the wind never stops. Their bones are hollow and their feathered mantle is part of their body. A Galeborne child learns to glide before they learn to swim. They are the best sailors and shipwrights in the sky, and their couriers carry word between every town. They build masts and hulls from the ancient wood that the Rootwardens guard, and they don't see why a tree should outlive the people who need it. When an isle sinks, the Galeborne are the first off it and the last to mourn it.
-
-### Anchorkin
-
-The Anchorkin live on the Moorings, the lowest isles on the shard, so close to the storm that the sky below them flickers. They are made heavy, as their name says. Generations ago they chained their isles together with great forged links, and they say the Moorings have held because they refuse to let go. They keep the **Ledger**, carved in stone, which records every isle that has ever sunk and why. Anchorkin take a long time to decide and never change their minds. A post given to an Anchorkin is held.
-
-Every Anchorkin carries the stone's record on their body. When a child comes of age, their **Ledger line** is carved into their brow: their name, the isle they are moored to, and the isles their family has lost to the storm. The same line is cut into the Ledger itself, so each Anchorkin is a walking page of it. Some carry the names of isles that no one else remembers.
-
-The shoulders are kept for **oath-marks**. Each post taken or vow sworn is carved there, and because an Anchorkin never changes their mind, the marks never come off. A broken oath can't be erased, only struck through, and a struck mark is the deepest shame an Anchorkin can wear. Elders are carved from brow to elbow; the young are almost bare.
-
-### Rootwardens
-
-The Rootwardens live in caverns among the roots of the oldest isles. They tend the ancient trees day and night, because tending slows an isle's sinking. Anyone can learn **Treetending**, but no one is better at it. They are right that tending helps, though no tending can save an isle once it starts to fall. They age slowly, think slowly and hold a grudge for a very long time.
+Innate skills follow the same rules as every other [skill](../mechanics/README.md#skills): they start low, rise with use (0–100) and unlock techniques. The only difference is that no other people can learn them. Each one has a clear strength and a clear limit, written on its skill entry: [Glide](../entries/skills/glide.md) for the Galeborne, [Anchor](../entries/skills/anchor.md) for the Anchorkin and [Take Root](../entries/skills/take-root.md) for the Rootwardens.
 
 ## Old grudges and ties
 
@@ -48,11 +32,11 @@ The Rootwardens live in caverns among the roots of the oldest isles. They tend t
 
 ## Adding a people
 
-A new people needs:
+A new people is one entry file, `entries/peoples/<id>.md`, plus its innate skill as `entries/skills/<skill>.md` with `innateTo: <id>`. It needs:
 
 - a look and a signature layer for [customization](../art-direction/character-customization.md);
 - a homeland or a reason to have none (the **Garden Isles** in the east of the First Shard are unclaimed, kept for this);
-- cultural affinities with existing skills;
+- cultural affinities with existing skills (the `affinity` list of those skill entries);
 - one innate skill with a strength and a limit;
 - a tie or grudge with at least one existing people.
 

@@ -11,9 +11,10 @@ const devlog = defineCollection({
   }),
 });
 
-// The concept docs are the handbook's chapters. Ids keep the path, e.g. "world/README.md"
+// The concept docs are the handbook's chapters. Ids keep the path, e.g. "world/README.md". Catalogue entries
+// (concept/entries/) are read by src/data/concept.ts instead.
 const concept = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "../../concept", generateId: ({ entry }) => entry }),
+  loader: glob({ pattern: ["**/*.md", "!entries/**"], base: "../../concept", generateId: ({ entry }) => entry }),
 });
 
 export const collections = { devlog, concept };

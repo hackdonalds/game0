@@ -1,3 +1,14 @@
+---
+chapter:
+  slug: play
+  number: 4
+  title: How You Play
+  kicker: Everything is a skill
+  summary: Classless skills learned at their source, six technique slots, stamina and cooldowns, risk tiers, death and loot, quests and the first hours.
+  catalogues: [ skills, materials ]
+  art: an open old book of skills on a wooden table in a trainer's workshop, glowing wind runes rising from its pages, surrounded by a sword, a pickaxe, a cooking pot, a coil of rope and a sailmaker's needle, warm window light
+---
+
 # Mechanics
 
 Classless, skill-based progression with action combat, open-world risk and a player-run economy. **Mechanics stay simple**: few systems, each easy to grasp. See the [vision](../vision.md) for the pillars.
@@ -10,7 +21,7 @@ Classless, skill-based progression with action combat, open-world risk and a pla
 | Everything is a skill | No separation between magic and other skills. Wind magic, swordplay, cooking and sailing all work the same way |
 | Resources | **No mana.** One **stamina** bar for everything (swinging, casting, dodging, sprinting), refilling quickly at rest. Strong techniques also have their own **cooldowns** |
 | Learning | Skills are learned at a **source**: a trainer, a book, or a place tied to the skill. At **75** a player can **become a trainer**; at **100** they can **write books** that teach the skill |
-| Skill count | 37 shared skills across combat, magic, gathering, crafting and travel (list below), plus one innate skill per people |
+| Skill count | A fixed list of shared skills across combat, magic, gathering, crafting and travel (see [skills](#skills)), plus one innate skill per people |
 | Abilities | **Learned techniques** from trainers and books, unlocked at skill thresholds. **6 technique slots**, swapped outside combat |
 | Controls | **Hybrid**: free-aim attacks by default, with an optional soft lock-on toggle (good for gamepad) |
 | Risk zones | **Three tiers**, see below |
@@ -21,7 +32,7 @@ Classless, skill-based progression with action combat, open-world risk and a pla
 | Gear | Wears down with use, as well as on death. Worn gear is repaired by crafters or replaced |
 | Ships | Three sizes; can be attacked and cargo looted. Sails wear from attacks, weather and distance travelled. See [sailing](../sailing/README.md) |
 | Quests and achievements | Quests give direction and story; achievements record what a character has done. No endgame. See [quests](#quests) |
-| Gear tiers | Set by **material** (for example copper, iron, skysteel, relic). Crafting skill sets the **quality** within a tier |
+| Gear tiers | Set by **material**; crafting skill sets the **quality** within a tier. See [economy](../economy/README.md) |
 | First hours | Start in your people's homeland. See [first hours](#first-hours) |
 | Long-term goals | Mastery and rare techniques, rare drowned-world relic gear, ships and trade empires, reputation and customization |
 
@@ -35,18 +46,9 @@ Classless, skill-based progression with action combat, open-world risk and a pla
 
 ## Skills
 
-37 shared skills (approved 2026-11-01; Treetending added 2026-11-01). Every skill is learned at a source, rises by use and decays slowly when unused. The groups are only for reading the list: an arcane skill works like any other.
+Approved 2026-11-01 (Treetending added 2026-11-01). Every skill is learned at a source, rises by use and decays slowly when unused. Each skill, with its sources, affinities and what it unlocks at 25, 50, 75 and 100, is an entry in [`entries/skills/`](../entries/skills/). The groups (weapons, arcane, defence and survival, gathering, crafting, travel and lore) are only for reading the list: an arcane skill works like any other.
 
-| Group | Skills |
-| --- | --- |
-| **Weapons (8)** | Blades, Heavy Weapons (axes, hammers), Polearms, Daggers, Bows, Thrown, Shields, Unarmed |
-| **Arcane (5)** | Wind (movement, gusts), Stone (wards, quakes), Tide (healing, water), Bloom (growth, roots), Oathcraft (bindings and buffs, taught at Oathgate) |
-| **Defence and survival (4)** | Light Armour, Heavy Armour, Evasion, Field Medicine |
-| **Gathering (7)** | Mining, Woodcutting, Herbalism, Fishing, Hunting, Salvage (diving and recovering relics), Treetending (tending ancient trees to slow an isle's sinking) |
-| **Crafting (9)** | Smithing, Carpentry, Leatherworking, Tailoring, Stonecraft, Alchemy, Cooking, Shipwright, Sailweaving (enchanting sails) |
-| **Travel and lore (4)** | Sailing, Climbing, Taming (mounts and pack animals), Lore (identifying relics, reading the Ledger) |
-
-Each people has cultural affinities but no restrictions. For example, Galeborne lean towards Sailing and Shipwright, and Rootwardens towards Treetending and Herbalism. Each people also has one **innate skill** only it can learn: Glide, Anchor or Take Root (see [peoples](../world/peoples.md#innate-skills)).
+Each people has cultural affinities but no restrictions: a skill entry's `affinity` lists the peoples known for it, and any people can learn it. Each people also has one **innate skill** only it can learn (see [peoples](../world/peoples.md#innate-skills)).
 
 ## Techniques
 

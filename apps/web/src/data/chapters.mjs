@@ -1,77 +1,81 @@
-// The handbook's chapters, in reading order. Each chapter renders one or more concept docs (paths relative to concept/).
-// Plain JS so astro.config.mjs can use it to rewrite links between concept docs into handbook URLs.
+// The handbook's chapters, in reading order, read from the `chapter:` frontmatter of each chapter's primary concept doc.
+// A chapter renders its primary doc, then the docs it lists under `docs` (paths relative to concept/).
+// Plain JS so astro.config.mjs can use it to rewrite links between concept docs into handbook URLs; it reads the docs
+// from disk so it works the same in astro.config.mjs, in the site and in Bun scripts.
+import { existsSync, readdirSync, readFileSync } from "node:fs";
+import { dirname, join, relative } from "node:path";
+import { splitFrontmatter } from "../lib/frontmatter.mjs";
 
 /** @typedef {{ slug: string; number: number; title: string; kicker: string; summary: string; docs: string[]; catalogues: string[]; demo?: "map" | "peoples" | "sail" | "shard"; art: string }} Chapter */
 
+const DEMOS = ["map", "peoples", "sail", "shard"];
+const CATALOGUES = ["peoples", "bestiary", "skills", "isles", "winds", "ships", "materials", "architecture", "biomes", "glossary"];
+
+/** The repo root: the nearest folder at or above the working directory that has concept/ and worlds/ */
+function repoRoot() {
+  for (let dir = process.cwd(); ; dir = dirname(dir)) {
+    if (existsSync(join(dir, "concept")) && existsSync(join(dir, "worlds"))) return dir;
+    if (dirname(dir) === dir) throw new Error(`chapters.mjs: no concept/ folder at or above ${process.cwd()}`);
+  }
+}
+const CONCEPT = join(repoRoot(), "concept");
+
+/** Concept docs (paths relative to concept/), without the catalogue entries */
+function conceptDocs(dir = CONCEPT) {
+  return readdirSync(dir, { withFileTypes: true }).flatMap((e) => {
+    const p = join(dir, e.name);
+    if (e.isDirectory()) return e.name === "entries" && dir === CONCEPT ? [] : conceptDocs(p);
+    return e.name.endsWith(".md") ? [relative(CONCEPT, p)] : [];
+  }).sort();
+}
+
+function readChapters() {
+  const fail = (doc, msg) => { throw new Error(`concept/${doc}: chapter frontmatter ${msg}. See apps/web/src/data/chapters.mjs.`); };
+  const docs = conceptDocs();
+  /** @type {Chapter[]} */
+  const out = [];
+  for (const doc of docs) {
+    const { data } = splitFrontmatter(readFileSync(join(CONCEPT, doc), "utf8"), `concept/${doc}`);
+    const c = data.chapter;
+    if (c === undefined) continue;
+    if (typeof c !== "object" || !c) fail(doc, "must be a mapping");
+    const known = ["slug", "number", "title", "kicker", "summary", "docs", "catalogues", "demo", "art"];
+    for (const k of Object.keys(c)) if (!known.includes(k)) fail(doc, `has an unknown field "${k}" (known: ${known.join(", ")})`);
+    for (const k of ["slug", "title", "kicker", "summary", "art"]) if (typeof c[k] !== "string" || !c[k].trim()) fail(doc, `needs a "${k}" (text)`);
+    if (!/^[a-z][a-z0-9-]*$/.test(c.slug)) fail(doc, `"slug" must be lower-case letters, digits and dashes`);
+    if (!Number.isInteger(c.number) || c.number < 1) fail(doc, `needs a "number" (1, 2, 3...)`);
+    const more = c.docs ?? [];
+    if (!Array.isArray(more) || more.some((d) => typeof d !== "string")) fail(doc, `"docs" must be a list of doc paths relative to concept/`);
+    for (const d of more) if (!docs.includes(d)) fail(doc, `"docs" lists ${d}, which does not exist`);
+    const cats = c.catalogues ?? [];
+    if (!Array.isArray(cats) || cats.some((x) => !CATALOGUES.includes(x))) fail(doc, `"catalogues" must be a list from: ${CATALOGUES.join(", ")}`);
+    if (c.demo !== undefined && !DEMOS.includes(c.demo)) fail(doc, `"demo" must be one of: ${DEMOS.join(", ")}`);
+    out.push({ slug: c.slug, number: c.number, title: c.title.trim(), kicker: c.kicker.trim(), summary: c.summary.trim(), docs: [doc, ...more], catalogues: cats, ...(c.demo ? { demo: c.demo } : {}), art: c.art.trim() });
+  }
+  out.sort((a, b) => a.number - b.number);
+  out.forEach((c, i) => {
+    if (c.number !== i + 1) throw new Error(`Chapter numbers must run 1, 2, 3... without gaps: "${c.slug}" (concept/${c.docs[0]}) is ${c.number}, expected ${i + 1}`);
+    const dup = out.find((o) => o !== c && o.slug === c.slug);
+    if (dup) throw new Error(`Two chapters use the slug "${c.slug}": concept/${c.docs[0]} and concept/${dup.docs[0]}`);
+  });
+  const seen = new Map();
+  for (const c of out) for (const d of c.docs) {
+    if (seen.has(d)) throw new Error(`concept/${d} is in two chapters: ${seen.get(d)} and ${c.slug}`);
+    seen.set(d, c.slug);
+  }
+  if (!out.length) throw new Error("No concept doc has chapter frontmatter, so the handbook would have no chapters");
+  return out;
+}
+
 /** @type {Chapter[]} */
-export const chapters = [
-  {
-    slug: "vision", number: 1, title: "Vision", kicker: "What the game is",
-    summary: "A sandbox of floating isles with no classes, no endgame and a world that keeps moving. The pillars every other decision answers to.",
-    docs: ["vision.md"], catalogues: ["glossary"],
-    art: "a sweeping vista of many floating isles at golden hour, waterfalls spilling from their edges into a sea of clouds, small sailing ships with glowing enchanted sails crossing between them, an enormous ancient tree on the central isle",
-  },
-  {
-    slug: "world", number: 2, title: "The World", kicker: "Above the drowned world",
-    summary: "Why the isles float is a mystery. That they sink is not. The storm below, the Tether Accord, the seasons and the First Shard.",
-    docs: ["world/README.md"], catalogues: ["isles", "winds", "glossary"], demo: "map",
-    art: "a dramatic view down past the edge of a floating isle into a churning living storm layer far below with lightning, ancient drowned ruins faintly visible through gaps in the clouds, and an isle slowly sinking into it",
-  },
-  {
-    slug: "peoples", number: 3, title: "Peoples", kicker: "Three peoples, one sky",
-    summary: "Galeborne, Anchorkin and Rootwardens: who they are, where they live, their innate skills, what they hold against each other, and how players shape them.",
-    docs: ["world/peoples.md", "art-direction/character-customization.md"], catalogues: ["peoples"], demo: "peoples",
-    art: "three fantasy travellers standing together on a cliff edge at dawn seen from behind: a tall slender figure with a folded feathered mantle, a huge broad figure with grey stone skin veined with teal crystal, and a stocky bark-skinned figure with moss and small flowers on its shoulders, looking out over floating isles",
-  },
-  {
-    slug: "play", number: 4, title: "How You Play", kicker: "Everything is a skill",
-    summary: "Classless skills learned at their source, six technique slots, stamina and cooldowns, risk tiers, death and loot, quests and the first hours.",
-    docs: ["mechanics/README.md"], catalogues: ["skills", "materials"],
-    art: "an open old book of skills on a wooden table in a trainer's workshop, glowing wind runes rising from its pages, surrounded by a sword, a pickaxe, a cooking pot, a coil of rope and a sailmaker's needle, warm window light",
-  },
-  {
-    slug: "sailing", number: 5, title: "Sailing", kicker: "Sail, wind and wear",
-    summary: "Skiffs, cutters and galleons trimmed against enchanted wind currents. Charted Accord lanes, wild shortcuts, and sails that wear thin.",
-    docs: ["sailing/README.md"], catalogues: ["ships", "winds"], demo: "sail",
-    art: "a wooden sailing galleon with glowing enchanted sails heeling hard into a visible stream of wind current between floating isles, crew working the rigging, wind streaks in the air",
-  },
-  {
-    slug: "economy", number: 6, title: "Economy and Crafting", kicker: "Gather, craft, haul",
-    summary: "One gold currency, town markets shared across shards, gear that wears out, crafters at the centre, and cargo worth fighting for.",
-    docs: ["economy/README.md"], catalogues: ["materials", "skills"],
-    art: "a bustling floating market town dock at morning, traders unloading crates and barrels from a cutter, stalls with ore, timber, cloth and glowing crystals, scales and coins on a counter",
-  },
-  {
-    slug: "creatures", number: 7, title: "Creatures", kicker: "The bestiary",
-    summary: "Wildlife of the isles, the storm-touched, taming, living populations, and the world bosses that rise with the storm.",
-    docs: ["monsters/README.md"], catalogues: ["bestiary"],
-    art: "a field naturalist's view of sky wildlife: a cloud whale drifting past a floating isle, a crag drake on a spire, gale hawks circling, a herd of mossy grazers below, all in soft morning light",
-  },
-  {
-    slug: "society", number: 8, title: "Society", kicker: "Guilds, grudges, reputation",
-    summary: "How players and peoples relate: guilds, reputation, old grudges and new friendships. Built to grow as new peoples join.",
-    docs: ["social/README.md"], catalogues: ["peoples", "glossary"],
-    art: "a great round hall in an Accord town with banners of three peoples hanging from the rafters, envoys of different fantasy peoples gathered around a large round table with a map, warm lantern light",
-  },
-  {
-    slug: "simulation", number: 9, title: "Simulation", kicker: "A living shard",
-    summary: "Thousands of NPCs and bot characters at three levels of detail, so the world feels lived in from day one.",
-    docs: ["simulation/README.md"], catalogues: [], demo: "shard",
-    art: "a floating isle town at dusk seen from above, hundreds of tiny lantern-carrying townsfolk in the streets, caravans of small ships with lights leaving along a glowing wind lane toward distant isles",
-  },
-  {
-    slug: "art", number: 10, title: "Art Direction", kicker: "Painterly and luminous",
-    summary: "Stylized painterly, epic and never grim. The palette, the visual rules, how each people builds, the modular kits and the seven biomes.",
-    docs: ["art-direction/README.md", "art-direction/architecture.md", "art-direction/modular-kit.md", "art-direction/biomes.md"], catalogues: ["architecture", "biomes"],
-    art: "an artist's easel on the edge of a floating isle with a half-finished painting of the sky isles, paint palette with soft muted golds teals and greens, brushes, the real vista behind it in matching colours",
-  },
-];
+export const chapters = readChapters();
 
 /** Map a concept doc path (relative to concept/) to its chapter slug. */
 export const docToChapter = Object.fromEntries(chapters.flatMap((c) => c.docs.map((d) => [d, c.slug])));
 
 /** Concept docs deliberately not rendered as chapters, with the reason. scripts/handbook-check.ts fails on any other doc
- *  under concept/ that no chapter renders. @type {Record<string, string>} */
+ *  under concept/ (outside concept/entries/) that no chapter renders. @type {Record<string, string>} */
 export const excludedDocs = {
   "README.md": "Index of the concept folder for readers on GitHub; the handbook's chapter list and home page replace it.",
+  "glossary.md": "The glossary terms; the handbook shows them as the glossary catalogue (apps/web/src/data/glossary.ts), not as a chapter.",
 };

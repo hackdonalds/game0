@@ -1,3 +1,14 @@
+---
+chapter:
+  slug: economy
+  number: 6
+  title: Economy and Crafting
+  kicker: Gather, craft, haul
+  summary: One gold currency, town markets shared across shards, gear that wears out, crafters at the centre, and cargo worth fighting for.
+  catalogues: [ materials, skills ]
+  art: a bustling floating market town dock at morning, traders unloading crates and barrels from a cutter, stalls with ore, timber, cloth and glowing crystals, scales and coins on a counter
+---
+
 # Economy
 
 A single-gold, player-driven economy. Local markets and sailship hauling create trade routes, and partial-loot PvP keeps goods leaving the world.
@@ -7,7 +18,7 @@ A single-gold, player-driven economy. Local markets and sailship hauling create 
 | Topic | Decision |
 | --- | --- |
 | Gear source | **Crafting first.** Monsters mostly drop materials, recipes and books. Finished gear drops are rare and still need crafters to repair |
-| Gear tiers | Set by material (copper, iron, skysteel, relic and so on); crafting skill sets quality within a tier |
+| Gear tiers | Set by material: each [material entry](../entries/materials/) gives its family and tier. Crafting skill sets quality within a tier |
 | Housing | Town plots are **rented weekly** with gold. If rent stops, after a warning the plot is freed and its contents go to storage |
 | Currency | Single gold currency |
 | Markets | Local order books per town. **Each town's book is the same on every shard**: Windmarket's orders are shared by Windmarket on all shards. Goods still have to be hauled there on the shard you're on. Prices differ between towns, not between shards |

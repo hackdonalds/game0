@@ -1,14 +1,22 @@
+---
+chapter:
+  slug: sailing
+  number: 5
+  title: Sailing
+  kicker: Sail, wind and wear
+  summary: Ships from the one-handed skiff to the crewed galleon, trimmed against enchanted wind currents. Charted Accord lanes, wild shortcuts, and sails that wear thin.
+  catalogues: [ ships, winds ]
+  demo: sail
+  art: a wooden sailing galleon with glowing enchanted sails heeling hard into a visible stream of wind current between floating isles, crew working the rigging, wind streaks in the air
+---
+
 # Sailing
 
 Wooden sailships carried by enchanted sails on wind currents: the way to move groups and cargo between isles. See the [economy](../economy/README.md) for hauling and the [world](../world/README.md) for the wind lanes.
 
 ## Ships
 
-| Ship | Aboard | Steered by |
-| --- | --- | --- |
-| **Skiff** | Up to 5 | 1: one person steers and trims the sails |
-| **Cutter** | Up to 10 | 1: one person steers and trims the sails |
-| **Galleon** | Up to 100 | 2: a helmsman steers while a sailmaster works the sails |
+Ships come in sizes from a skiff one person can sail to a galleon that needs a crew to steer it. Each ship's crew, steering, cargo, wear and building cost is on its entry in [`entries/ships/`](../entries/ships/).
 
 ## How sailing works
 

@@ -2,13 +2,14 @@
 // Usage: bun scripts/handbook-check.ts [--site dist/site/game0]
 //   Without --site it checks the sources the site is built from; `bun run build` runs it before building.
 //   With --site it also checks the built pages; `bun run build` runs that after building, before anything deploys.
-// Everything is discovered by scanning folders, so a new style, biome, doc, demo or sheet is caught without editing this file.
+// Everything is discovered by scanning folders, so a new style, biome, doc, entry, demo or sheet is caught without editing this file.
 import { readdir } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import { join, relative } from "node:path";
 import { parseBiomes, foliageUse, type BiomeDoc } from "../apps/web/src/data/biomes-doc";
 import { chapters, excludedDocs } from "../apps/web/src/data/chapters.mjs";
-import { archStyles } from "../apps/web/src/data/architecture";
+import { entryPage, loadConcept, type Concept } from "../apps/web/src/lib/concept";
+import { readConceptFiles } from "../apps/web/src/lib/concept-files";
 import { plateJobs, readManifest, staleness, ROOT } from "./handbook-sheets";
 
 const siteArg = process.argv.indexOf("--site");
@@ -38,8 +39,19 @@ const walk = async (dir: string, ext: string): Promise<string[]> => {
   return out;
 };
 
-const world = await Bun.file(at("worlds/first-shard.world.json")).json() as { isles: { name: string; biome: string }[] };
+const world = await Bun.file(at("worlds/first-shard.world.json")).json() as { isles: { id: string; name: string; biome: string }[]; winds: { id: string; name: string }[] };
 let biomes: BiomeDoc[] = [];
+// Every catalogue entry, from concept/entries/ and concept/glossary.md (undefined when they don't load; reported below)
+const conceptFiles = readConceptFiles(ROOT);
+let concept: Concept | undefined;
+const archStyles = () => concept?.archStyles ?? [];
+
+await check("Entries: every concept/entries/<kind>/<id>.md and concept/glossary.md loads, and every isle and wind has an entry", async () => {
+  try { concept = loadConcept(conceptFiles, world, chapters); } catch (e) { return problem((e as Error).message); }
+  const isles = new Set(concept.isleNotes.map((n) => n.id)), winds = new Set(concept.windNotes.map((n) => n.id));
+  for (const i of world.isles) if (!isles.has(i.id)) problem(`isle "${i.name}" (worlds/first-shard.world.json) has no concept/entries/isles/${i.id}.md, so its page has no text`);
+  for (const w of world.winds) if (!winds.has(w.id)) problem(`wind "${w.name}" (worlds/first-shard.world.json) has no concept/entries/winds/${w.id}.md, so its page has no text`);
+});
 
 await check("Biomes: concept/art-direction/biomes.md parses and matches the world file and concept art", async () => {
   biomes = parseBiomes(await Bun.file(at("concept/art-direction/biomes.md")).text());
@@ -63,20 +75,20 @@ await check("Biomes: concept/art-direction/biomes.md parses and matches the worl
 });
 
 await check("Kits: every architecture and nature kit.json is shown by a catalogue", async () => {
-  const styles = new Set(archStyles.map((a) => a.id));
+  const styles = new Set(archStyles().map((a) => a.id));
   for (const style of await dirs("art/models/architecture"))
     if (existsSync(at(`art/models/architecture/${style}/kit.json`)) && !styles.has(style))
-      problem(`art/models/architecture/${style}/kit.json has no entry in apps/web/src/data/architecture.ts`);
+      problem(`art/models/architecture/${style}/kit.json has no concept/entries/architecture/${style}.md`);
   for (const style of await dirs("art/concept/architecture"))
-    if (!styles.has(style)) problem(`art/concept/architecture/${style}/ has no entry in apps/web/src/data/architecture.ts`);
-  for (const a of archStyles) {
-    if (!existsSync(at(`art/models/architecture/${a.id}/kit.json`))) problem(`architecture.ts style "${a.id}" has no art/models/architecture/${a.id}/kit.json`);
+    if (!styles.has(style)) problem(`art/concept/architecture/${style}/ has no concept/entries/architecture/${style}.md`);
+  for (const a of archStyles()) {
+    const entry = `concept/entries/architecture/${a.id}.md`;
+    if (!existsSync(at(`art/models/architecture/${a.id}/kit.json`))) problem(`${entry} has no art/models/architecture/${a.id}/kit.json`);
     // Every concept and kit sheet in art/ is listed (so it is shown), and every listed sheet exists
     const listed = new Map([...a.concept.map((s) => [s.id, `art/concept/architecture/${a.id}/${s.id}.png`]), ...a.kitSheets.map((s) => [s.id, `art/concept/architecture/${a.id}/kit/${s.id}.png`])] as [string, string][]);
-    for (const f of await files(`art/concept/architecture/${a.id}`, ".png")) if (!listed.has(f.replace(".png", ""))) problem(`art/concept/architecture/${a.id}/${f} is not listed in architecture.ts "${a.id}".concept`);
-    for (const f of await files(`art/concept/architecture/${a.id}/kit`, ".png")) if (!listed.has(f.replace(".png", ""))) problem(`art/concept/architecture/${a.id}/kit/${f} is not listed in architecture.ts "${a.id}".kitSheets`);
-    for (const [id, src] of listed) if (!existsSync(at(src))) problem(`architecture.ts "${a.id}" lists sheet "${id}", but ${src} does not exist`);
-    for (const b of a.biomes) if (biomes.length && !biomes.some((x) => x.id === b)) problem(`architecture.ts "${a.id}" is built in unknown biome "${b}"`);
+    for (const f of await files(`art/concept/architecture/${a.id}`, ".png")) if (!listed.has(f.replace(".png", ""))) problem(`art/concept/architecture/${a.id}/${f} is not listed under "concept" in ${entry}`);
+    for (const f of await files(`art/concept/architecture/${a.id}/kit`, ".png")) if (!listed.has(f.replace(".png", ""))) problem(`art/concept/architecture/${a.id}/kit/${f} is not listed under "kitSheets" in ${entry}`);
+    for (const [id, src] of listed) if (!existsSync(at(src))) problem(`${entry} lists sheet "${id}", but ${src} does not exist`);
   }
   const ids = new Set(biomes.map((b) => b.id));
   if (!ids.size) return; // biomes.md did not parse; reported above
@@ -93,12 +105,12 @@ await check("Kits: every kit manifest validates (scripts/kit/validate.ts)", asyn
   }
 });
 
-await check("Chapters: every concept/ doc is a handbook chapter or excluded with a reason", async () => {
-  const docs = (await walk("concept", ".md")).map((p) => relative("concept", p)).sort();
+await check("Chapters: every concept/ doc (outside concept/entries/) is a handbook chapter or excluded with a reason", async () => {
+  const docs = (await walk("concept", ".md")).map((p) => relative("concept", p)).filter((d) => !d.startsWith("entries/")).sort();
   const inChapters = new Map(chapters.flatMap((c) => c.docs.map((d) => [d, c.slug])));
   for (const d of docs)
     if (!inChapters.has(d) && !(d in excludedDocs))
-      problem(`concept/${d} is in no chapter: add it to a chapter's docs in apps/web/src/data/chapters.mjs, or to excludedDocs there with a reason`);
+      problem(`concept/${d} is in no chapter: list it under "chapter: docs:" in the frontmatter of a chapter's first doc, give it its own "chapter:" frontmatter, or add it to excludedDocs in apps/web/src/data/chapters.mjs with a reason`);
   for (const [d, slug] of inChapters) if (!docs.includes(d)) problem(`chapter "${slug}" renders concept/${d}, which does not exist`);
   for (const [d, why] of Object.entries(excludedDocs)) {
     if (!docs.includes(d)) problem(`excludedDocs lists concept/${d}, which does not exist`);
@@ -142,10 +154,25 @@ if (SITE) {
   await check(`Site: the built pages in ${relative(ROOT, SITE)} show every chapter, catalogue entry, kit, plate and demo`, async () => {
     if (!existsSync(SITE)) return problem(`${relative(ROOT, SITE)} does not exist; build first`);
     for (const c of chapters) if (!(await page(c.slug))) problem(`chapter page /${c.slug}/ was not built`);
-    for (const a of archStyles) {
-      const html = await page(`catalogue/architecture/${a.id}`);
-      if (!html) problem(`architecture page /catalogue/architecture/${a.id}/ was not built`);
+    // Every entry file has a built page that shows its text, and every glossary term is on the glossary page
+    const flat = (html: string) => html.replace(/<[^>]+>/g, " ").replace(/&#39;|&#x27;|&[a-z]+;|&#\d+;/g, " ").replace(/[^\w\s]/g, " ").replace(/\s+/g, " ");
+    const opening = (text: string) => text.replace(/[^\w\s]/g, " ").split(/\s+/).filter(Boolean).slice(0, 6).join(" ");
+    const shown: Record<string, (id: string) => string | undefined> = {
+      peoples: (id) => concept?.peopleEntries.find((x) => x.id === id)?.culture, skills: (id) => concept?.skills.find((x) => x.id === id)?.description,
+      materials: (id) => concept?.materials.find((x) => x.id === id)?.description, ships: (id) => concept?.ships.find((x) => x.id === id)?.description,
+      bestiary: (id) => concept?.bestiary.find((x) => x.id === id)?.lore, isles: (id) => concept?.isleNotes.find((x) => x.id === id)?.blurb,
+      winds: (id) => concept?.windNotes.find((x) => x.id === id)?.blurb, architecture: (id) => concept?.archStyles.find((x) => x.id === id)?.summary,
+    };
+    for (const path of Object.keys(conceptFiles).filter((p) => p.startsWith("entries/")).sort()) {
+      const where = entryPage(path)!;
+      const html = await page(`catalogue/${where}`);
+      if (!html) { problem(`concept/${path} has no built page /catalogue/${where}/`); continue; }
+      const [kind, id] = [path.split("/")[1], path.split("/")[2].replace(/\.md$/, "")];
+      const text = shown[kind]?.(id);
+      if (text && !flat(html).includes(opening(text))) problem(`/catalogue/${where}/ does not show the text of concept/${path} ("${opening(text)}…")`);
     }
+    const glossaryPage = flat((await page("catalogue/glossary")) ?? "");
+    for (const t of concept?.glossary ?? []) if (!glossaryPage.includes(opening(t.definition))) problem(`the glossary page does not show "${t.term}" from concept/glossary.md`);
     for (const b of biomes) {
       const html = await page(`catalogue/biomes/${b.id}`);
       if (!html) { problem(`biome page /catalogue/biomes/${b.id}/ was not built`); continue; }

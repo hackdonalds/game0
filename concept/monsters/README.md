@@ -1,8 +1,19 @@
+---
+chapter:
+  slug: creatures
+  number: 7
+  title: Creatures
+  kicker: The bestiary
+  summary: Wildlife of the isles, the storm-touched, taming, living populations, and the world bosses that rise with the storm.
+  catalogues: [ bestiary ]
+  art: "a field naturalist's view of sky wildlife: a cloud whale drifting past a floating isle, a crag drake on a spire, gale hawks circling, a herd of mossy grazers below, all in soft morning light"
+---
+
 # Monsters
 
-> Decisions approved 2026-11-01. The bestiary below is a first draft.
+> Decisions approved 2026-11-01. The bestiary is a first draft.
 >
-> Full stat blocks: [`apps/web/src/data/bestiary.ts`](../../apps/web/src/data/bestiary.ts), published as the [Bestiary](https://hackdonalds.github.io/game0/bestiary/) on the site. Plates are generated with `bun run art:bestiary`.
+> Every creature and world boss is an entry in [`entries/bestiary/`](../entries/bestiary/), with its full stat block, published as the [Bestiary](https://hackdonalds.github.io/game0/catalogue/bestiary/) on the site. Plates are generated from each entry's `art` brief with `bun run art:bestiary`.
 
 Creatures of the isles and the sky, the storm-touched, and world bosses.
 
@@ -38,54 +49,30 @@ Ships stay the way to move groups and cargo.
 
 New creatures, and new peoples later, are added as data without changing the game's systems.
 
-Every creature is defined by:
+Every creature is defined by the same fields; the [cliff goat](../entries/bestiary/cliff-goat.md) is a full example:
 
-| Field | Example (cliff goat) |
+| Field | What it holds |
 | --- | --- |
 | Body | Model, size, animations |
-| Skills | The same skills players use, at fixed levels: Unarmed 30, Climbing 70 |
-| Temperament | Neutral |
-| Behaviours | Shared building blocks combined per creature: graze, flee, charge, climb |
-| Habitat | Crag biome, guarded and wild tiers, all seasons, day and night |
-| Population | 12 per isle, refills in 2 hours |
-| Drops | Meat, hide, horn |
-| Taming | Ground mount, Taming 40 |
-| Storm-touched variant | Stormhorn goat: hostile, adds a lightning charge |
+| Skills | The same skills players use, at fixed levels |
+| Temperament | One of the four above |
+| Behaviours | Shared building blocks combined per creature (below) |
+| Habitat | Region (a biome, the open sky or the storm), risk tiers, seasons, time of day |
+| Population | How many live on an isle and how fast they refill |
+| Drops | What it leaves when killed or gathered |
+| Taming | Whether it can be tamed, as what, and at what Taming skill |
+| Storm-touched variant | Its storm-twisted form, if it has one |
 
 Behaviour building blocks: wander, graze, flee, guard, charge, hunt, swarm, ambush, climb, fly, dive at ships, migrate, sleep by day.
 
-## First bestiary (draft)
+## The bestiary (draft)
 
-| Where | Creature | Temperament | Notes |
-| --- | --- | --- | --- |
-| Meadows and forests | **Burrow boar** | Neutral | Meat and hide. Tameable ground mount |
-| | **Glider squirrel** | Passive | Fur. Glides between trees |
-| Rootholds | **Rootcrawler** | Territorial | Beetles in the roots. Chitin |
-| | **Bark owl** | Passive | Night only. Feathers |
-| Garden Isles | **Moss grazer** | Passive | Slow herd beast. Tameable pack animal |
-| | **Burrow mole** | Neutral | Digs up crops. A job-board favourite |
-| Crag Spires | **Cliff goat** | Neutral | Tameable ground mount |
-| | **Crag drake** | Territorial | Small drake that nests on spires. Flies |
-| | **Stonewing bat** | Territorial | Night swarms in caves |
-| Moorings | **Lantern eel** | Territorial | Glows at night. Prized by cooks |
-| | **Shellback crab** | Neutral | Shell and meat |
-| Open sky | **Cloud whale** | Passive | Huge, migrates with the seasons. Ships follow its wake |
-| | **Gale hawk** | Hostile | Flocks that harass skiffs on wild routes |
-| | **Skyray** | Territorial | Attacks ships. Rare flying mount at high Taming |
-| Wild rim and ruins | **Ruin stalker** | Hostile | Ambushes in old-world ruins |
-| Storm surges | **Stormspawn** | Hostile | Storm-touched versions of local creatures |
-
-## World bosses (draft)
-
-| Boss | Where | Fight |
-| --- | --- | --- |
-| **The Tempest Serpent** | Rises during surges on the sky lanes near the rim | Coils around isles and attacks ships. Fought from decks and isle edges |
-| **The Drowned Colossus** | Climbs onto a sinking isle | An old-world construct, walking ruins. Carries relics |
-| **The Stormmother** | Rare surge at the deepest wild isles | Calls stormspawn waves. Drops rare techniques and relics |
+The first creatures and the three world bosses are entries in [`entries/bestiary/`](../entries/bestiary/), grouped by region on the site. Each one has a temperament, skills, actions, drops and, where it has one, a storm-touched variant.
 
 ## Open questions
 
 - Final names and looks, after concept art.
+- The crag drake: the first bestiary draft called it a small drake, but its entry makes it large (420 health, nests on the highest spires). Which is it?
 - How often storm surges happen, and how much warning players get.
 - Flying mount limits (above).
 - How dangerous dives into the drowned world are, and how long they last.

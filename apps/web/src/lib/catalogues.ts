@@ -10,7 +10,7 @@ import { materials } from "../data/materials";
 import { glossary } from "../data/glossary";
 import { archStyles } from "../data/architecture";
 import { biomes } from "../data/biomes";
-import { base, cap, sortName } from "./text";
+import { base, cap, count, sortName } from "./text";
 
 export interface Card {
   id: string;
@@ -43,9 +43,9 @@ export interface Catalogue {
 
 export const TONE: Record<string, string> = {
   meadow: "#5d8a3a", forest: "#3f7a3a", roothold: "#6b4e36", crag: "#7d766c", garden: "#7fa84a", lagoon: "#178f84", ruin: "#a5835a",
-  meadows: "#5d8a3a", rootholds: "#6b4e36", gardens: "#7fa84a", crags: "#7d766c", sky: "#4f86b8", rim: "#b8552f", storm: "#4b3f78",
+  sky: "#4f86b8", storm: "#4b3f78",
   galeborne: "#4f86b8", anchorkin: "#6c6a78", rootwarden: "#6b4e36",
-  moorings: "#178f84", mooring: "#178f84", accord: "#a5772c", "old-world": "#a5835a",
+  accord: "#a5772c", "old-world": "#a5835a",
   Metal: "#7d766c", Wood: "#7a5d44", Leather: "#9a5b3a", Cloth: "#5b6fa0", Stone: "#8c857c",
   Weapons: "#9b3f24", Arcane: "#5b4a86", "Defence and survival": "#3f6f8f", Gathering: "#5d8a3a", Crafting: "#a5772c", "Travel and lore": "#178f84", Innate: "#b08a2e",
 };
@@ -57,6 +57,8 @@ export const windSlug = (id: string) => id.replace(/^wind_/, "");
 export const peopleName = (id: string) => peopleEntries.find((p) => p.id === id)?.name ?? cap(id);
 
 const region = (id: string) => REGIONS.find((r) => r.id === id)!.name;
+const Count = (n: number) => cap(count(n));
+const listed = (names: string[]) => names.map((n, i) => (i ? n.toLowerCase() : n)).join(", ");
 const href = (kind: string, id: string) => `${base}/catalogue/${kind}/${id}/`;
 const words = (...xs: (string | string[] | undefined)[]) => xs.flat().filter(Boolean).join(" ").toLowerCase();
 
@@ -132,15 +134,15 @@ const biomeCards: Card[] = biomes.map((b) => ({
 }));
 
 export const catalogues: Catalogue[] = [
-  { slug: "peoples", title: "Peoples", kicker: "Three peoples, one sky", summary: "The three playable peoples: look, culture, homeland, innate skill, starting point and old grudges.", filters: [], cards: peopleCards, cover: "peoples/galeborne", pages: true },
+  { slug: "peoples", title: "Peoples", kicker: `${Count(peopleEntries.length)} peoples, one sky`, summary: `The ${count(peopleEntries.length)} playable peoples: look, culture, homeland, innate skill, starting point and old grudges.`, filters: [], cards: peopleCards, cover: "peoples/galeborne", pages: true },
   { slug: "bestiary", title: "Bestiary", kicker: "Field guide", summary: "Every creature and world boss, with stats, habitats, actions and lore.", filters: ["Region", "Temperament", "Tameable"], cards: bestiaryCards, cover: "bestiary/crag-drake", pages: true },
   { slug: "skills", title: "Skills", kicker: "Everything is a skill", summary: "All the skills, where to learn them, and what each unlocks at 25, 50, 75 and 100.", filters: ["Group"], cards: skillCards, cover: "skills/wind", pages: true },
   { slug: "isles", title: "Isles and places", kicker: "The First Shard", summary: "Every isle of the First Shard: who lives there, its risk tier, landmarks and resources.", filters: ["Tier", "Biome", "State"], cards: isleCards, cover: "isles/isle_accord-hall", pages: true },
   { slug: "winds", title: "Wind currents", kicker: "Lanes and currents", summary: "The charted Accord lanes and the fast, dangerous wild currents.", filters: ["Kind"], cards: windCards, cover: "", pages: true },
-  { slug: "ships", title: "Ships", kicker: "Skiff, cutter, galleon", summary: "The three ship sizes: crew, steering, cargo and wear.", filters: [], cards: shipCards, cover: "ships/galleon", pages: true },
+  { slug: "ships", title: "Ships", kicker: listed(ships.map((s) => s.name)), summary: `The ${count(ships.length)} ship sizes: crew, steering, cargo and wear.`, filters: [], cards: shipCards, cover: "ships/galleon", pages: true },
   { slug: "materials", title: "Materials and gear", kicker: "Tiers by material", summary: "Material tiers set gear tiers. Where each is found and what it makes.", filters: ["Family", "Tier"], cards: materialCards, cover: "materials/skysteel", pages: true },
-  { slug: "architecture", title: "Architecture", kicker: "How each people builds", summary: "The five building styles: concept sheets, modular kit references and the built kits, piece by piece.", filters: [], cards: archCards, cover: "architecture/rootwarden-landmark-root-village", pages: true },
-  { slug: "biomes", title: "Biomes", kicker: "Seven kinds of isle", summary: "The look of every biome from crag to lagoon: ground, rock, plants, water and the isles that wear it.", filters: [], cards: biomeCards, cover: "biomes/meadow-isle-portrait", pages: true },
+  { slug: "architecture", title: "Architecture", kicker: "How each people builds", summary: `The ${count(archStyles.length)} building styles: concept sheets, modular kit references and the built kits, piece by piece.`, filters: [], cards: archCards, cover: "architecture/rootwarden-landmark-root-village", pages: true },
+  { slug: "biomes", title: "Biomes", kicker: `${Count(biomes.length)} kinds of isle`, summary: "The look of every biome from crag to lagoon: ground, rock, plants, water and the isles that wear it.", filters: [], cards: biomeCards, cover: "biomes/meadow-isle-portrait", pages: true },
   { slug: "glossary", title: "Glossary", kicker: "Words of the sky", summary: "Every term in the handbook, in a sentence or two.", filters: ["Chapter"], cards: glossaryCards, cover: "", pages: false },
 ];
 

@@ -1,9 +1,11 @@
-// Shapes of the handbook's catalogue data. Each catalogue lives in its own file in this folder.
-// Every entry with an `art` prompt gets a painted plate from scripts/handbook-art.ts.
+// Shapes of the handbook's catalogue data, read from concept/entries/ by ../lib/concept.ts.
+// Every entry with an `art` subject brief gets a painted plate from scripts/handbook-art.ts.
+import type { SKILL_GROUPS } from "../lib/concept";
 
-export type PeopleId = "galeborne" | "anchorkin" | "rootwarden";
+/** A file name in concept/entries/peoples/ */
+export type PeopleId = string;
 
-export type SkillGroup = "Weapons" | "Arcane" | "Defence and survival" | "Gathering" | "Crafting" | "Travel and lore" | "Innate";
+export type SkillGroup = (typeof SKILL_GROUPS)[number];
 
 export interface Skill {
   id: string;
@@ -22,6 +24,10 @@ export interface Skill {
   /** What unlocks at 25 / 50 / 75 / 100. Techniques for combat and arcane skills; recipes, abilities or access for the rest */
   milestones: { level: 25 | 50 | 75 | 100; name: string; text: string }[];
   art: string;
+  /** Innate skills only: the one people that can learn it, what it does, and its limit */
+  innateTo?: PeopleId;
+  text?: string;
+  limit?: string;
 }
 
 export interface Ship {
