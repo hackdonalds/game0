@@ -1,5 +1,5 @@
 // Generate concept art via OpenRouter and save it into the repo with a prompt sidecar.
-// Usage: bun run art:image "prompt" [--out art/concept/name] [--ref path.webp ...] [--aspect 16:9] [--quality high] [--model id]
+// Usage: bun run art:image "prompt" [--out art/concept/<kind>/<name> | art/kit/<kind>/<name>] [--ref path.webp ...] [--aspect 16:9] [--quality high] [--model id]
 import { parseArgs } from "node:util";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, extname } from "node:path";
@@ -47,7 +47,7 @@ const images: { url?: string; b64_json?: string }[] = data.data ?? [];
 if (!images.length) throw new Error(`No image returned: ${JSON.stringify(data).slice(0, 500)}`);
 
 const slug = prompt.toLowerCase().replace(/[^a-z0-9]+/g, "-").slice(0, 48).replace(/-+$/, "");
-const base = values.out ?? `art/concept/${new Date().toISOString().slice(0, 10)}-${slug}`;
+const base = values.out ?? `art/concept/drafts/${new Date().toISOString().slice(0, 10)}-${slug}`;
 await mkdir(dirname(base), { recursive: true });
 
 for (const [i, img] of images.entries()) {

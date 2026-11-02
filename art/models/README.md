@@ -25,7 +25,7 @@ Each `.glb` has a `.json` sidecar with the Meshy task ID, input images and credi
 
 The step-by-step workflow, cost routing and guardrails are in the project's Meshy skill (`.claude/skills/meshy/SKILL.md`). In short:
 
-1. **Concept:** base-body turnaround with `bun run art:image`, cropped into views in `art/concept/views/`.
+1. **Concept:** base-body turnaround with `bun run art:image`, saved to `art/kit/peoples/<people>/base-turnaround.png` and cropped into views in `art/kit/views/` (not committed).
 2. **Mesh first:** `bun run art:3d model <out> <images...> --model <model> --polycount <n>`. It dry-runs and prints the cost; add `--yes` to spend.
 3. **Texture:** rerun with `--texture` once the geometry is accepted, or `bun run art:3d retexture` for variants.
 4. **Rig and animate:** on the Meshy web app (free), or `bun run art:3d rig` (5 credits).

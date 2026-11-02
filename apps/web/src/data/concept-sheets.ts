@@ -1,4 +1,4 @@
-// Concept and kit reference sheets for catalogue entries, read from the plates of art/concept/<kind>/ (see
+// Concept and kit reference sheets for catalogue entries, read from the plates of art/concept/<kind>/ and art/kit/<kind>/ (see
 // scripts/handbook-sheets.ts). Sheets are discovered by file name; this file only decides which entry pages show them
 // and how they are titled, so a new sheet whose name follows the pattern appears without editing anything.
 import { plateKeys } from "../lib/art";
@@ -52,7 +52,8 @@ export function conceptGalleries(kind: string, id: string): Gallery[] {
     }
     case "peoples":
       return [
-        ...gallery("Costume and customization sheets", "Outfits from starting clothes to heavy armour, and the signature features players customize.", starting(`peoples-${id}-`), `peoples-${id}-`),
+        ...gallery("Base body", "Front, side and back in the rigging A-pose: the input for the 3D base model.", [`peoples-${id}-base-turnaround`], `peoples-${id}-`),
+        ...gallery("Costume and customization sheets", "Outfits from starting clothes to heavy armour, and the signature features players customize.", starting(`peoples-${id}-`).filter((s) => s !== `peoples-${id}-base-turnaround`), `peoples-${id}-`),
         ...gallery("Shared gear sheets", "Made once and fitted to every people.", starting("peoples-gear-")),
       ];
     case "materials": {
@@ -66,9 +67,9 @@ export function conceptGalleries(kind: string, id: string): Gallery[] {
     }
     case "isles": {
       const isle = shard.isles.find((i) => i.id === `isle_${id}`) as { name: string; state?: string } | undefined;
-      if (isle) LABELS[`isles-${id}`] ??= isle.name;
+      if (isle) LABELS[`isles-${id}-portrait`] ??= isle.name;
       return [
-        ...gallery("Isle portrait", "Top, edge and underside together.", [`isles-${id}`], "isles-"),
+        ...gallery("Isle portrait", "Top, edge and underside together.", [`isles-${id}-portrait`], "isles-"),
         ...gallery(WORLD, worldNote, [
           ...(isle?.state === "sinking" ? ["world-sinking-stages"] : []),
           ...(id === "grudgewood" ? ["world-ancient-tree"] : []),
