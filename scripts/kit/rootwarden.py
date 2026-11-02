@@ -1,145 +1,22 @@
 # Detailed Rootwarden kit: textured, hand-shaped pieces built from kit.json on the blockout's sizes and sockets,
 # joined prefabs from each prefab's layout, a demo catalogue, and contact-sheet renders.
-# Textures are the painted swatches in art/textures/rootwarden (mirrored tiling hides their seams).
-# Usage: Blender --background --python scripts/kit/rootwarden.py
-import bpy, bmesh, json, math, os, random, sys
+# Textures are the painted swatches in art/textures/rootwarden.
+# Usage: Blender --background --python scripts/kit/rootwarden.py -- rootwarden
+import bmesh, math, os, sys
 from mathutils import Vector, noise
 
 sys.path.insert(0, os.path.dirname(__file__))
-import blockout as B  # noqa: E402  (kit, PIECES, V, frames, hermite, cut_openings, render helpers)
-
-V = B.V
-TEX = os.path.join(B.ROOT, "art/textures/rootwarden")
-OUT = B.KIT_DIR
-PREFAB_OUT = os.path.join(OUT, "prefabs")
+import blockout as B  # noqa: E402
+import kitlib as K  # noqa: E402
+from kitlib import Mesh, V, arch, circle, disc, fill, hermite, inside, join, path_between, teardrop, tube  # noqa: E402
 
 # Material slots, in order; every object carries the full list so joined prefabs keep one material set
 MATS = [("RW_Bark", "bark.png", 0), ("RW_Heartwood", "heartwood.png", 0), ("RW_Moss", "moss.png", 0),
         ("RW_FlowerMoss", "flowering-moss.png", 0), ("RW_Lattice", "lattice.png", 0), ("RW_Stone", "lichen-stone.png", 0),
         ("RW_Fungus", "fungus.png", 2.5), ("RW_Earth", "earth.png", 0), ("RW_Amber", (1.0, 0.6, 0.22), 3.0)]
 BARK, HEART, MOSS, FLOWER, LATTICE, STONE, FUNGUS, EARTH, AMBER = range(len(MATS))
-
-
-def make_materials():
-    out = []
-    for name, tex, emit in MATS:
-        m = bpy.data.materials.new(name)
-        m.use_nodes = True
-        nt = m.node_tree
-        bsdf = nt.nodes["Principled BSDF"]
-        bsdf.inputs["Roughness"].default_value = 1.0
-        if isinstance(tex, str):
-            t = nt.nodes.new("ShaderNodeTexImage")
-            t.image = bpy.data.images.load(os.path.join(TEX, tex), check_existing=True)
-            t.extension = "MIRROR"
-            nt.links.new(t.outputs["Color"], bsdf.inputs["Base Color"])
-            if emit:
-                nt.links.new(t.outputs["Color"], bsdf.inputs["Emission Color"])
-                bsdf.inputs["Emission Strength"].default_value = emit
-        else:
-            bsdf.inputs["Base Color"].default_value = (*tex, 1)
-            bsdf.inputs["Emission Color"].default_value = (*tex, 1)
-            bsdf.inputs["Emission Strength"].default_value = emit
-        out.append(m)
-    return out
-
-
-def reset():
-    B.reset()
-    return make_materials()
-
-
-class Mesh:
-    """bmesh with a UV layer; all coordinates are glTF (Y up) and converted on the way in."""
-
-    def __init__(self):
-        self.bm = bmesh.new()
-        self.uv = self.bm.loops.layers.uv.new("UVMap")
-
-    def vert(self, p):
-        return self.bm.verts.new(V(*p))
-
-    def face(self, verts, uvs, mat):
-        f = self.bm.faces.new(verts)
-        f.material_index = mat
-        for loop, uv in zip(f.loops, uvs):
-            loop[self.uv].uv = uv
-        return f
-
-    def object(self, name, mats, moss=0.62, seed=0.0):
-        bm = self.bm
-        bmesh.ops.remove_doubles(bm, verts=bm.verts, dist=1e-5)  # weld UV seams; UVs live on loops and survive
-        bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
-        bm.normal_update()
-        # Moss settles on upward-facing bark, broken up by noise
-        if moss is not None:
-            for f in bm.faces:
-                if f.material_index == BARK and f.normal.z > moss and noise.noise(f.calc_center_median() * 0.9 + Vector((seed, 0, 0))) > -0.15:
-                    f.material_index = MOSS
-        me = bpy.data.meshes.new(name)
-        bm.to_mesh(me)
-        bm.free()
-        for m in mats:
-            me.materials.append(m)
-        for poly in me.polygons:
-            poly.use_smooth = True
-        ob = bpy.data.objects.new(name, me)
-        bpy.context.scene.collection.objects.link(ob)
-        return ob
-
-
-# ---------- primitives ----------
-
-def tube(m, pts, radii, mat, sides=10, twist=0.0, rough=0.0, seed=0.0, caps=(True, True), tile=1.2, closed=False, flat=1.0, planar=False):
-    """Swept tube with UVs (u around, v along, `tile` metres per texture repeat), surface noise that fades out
-    near both ends so socket caps stay exact, and heartwood end caps."""
-    pts = [Vector(p) for p in pts]
-    fr = B.frames(pts)
-    seg = [0.0] + [(pts[i + 1] - pts[i]).length for i in range(len(pts) - 1)]
-    s = [sum(seg[: i + 1]) for i in range(len(pts))]
-    L = max(s[-1], 1e-6)
-    ravg = sum(radii) / len(radii)
-    urep = max(1, round(2 * math.pi * ravg / tile))
-    rings = []
-    for i, (p, r, (t, n, b)) in enumerate(zip(pts, radii, fr)):
-        fade = 1.0 if closed else min(1.0, s[i] / (0.15 * L + 1e-6), (L - s[i]) / (0.15 * L + 1e-6))
-        ring = []
-        for k in range(sides + 1):
-            a = 2 * math.pi * k / sides + twist * s[i] / L
-            d = n * math.cos(a) * flat + b * math.sin(a)
-            disp = rough * r * noise.noise(p * 1.3 + d * 0.9 + Vector((seed, seed * 0.7, 0))) * fade
-            q = p + d * (r + disp)
-            ring.append((m.vert(q), (q.x / tile, q.z / tile) if planar else (k / sides * urep, s[i] / tile)))
-        rings.append(ring)
-    for r0, r1 in zip(rings, rings[1:]):
-        for k in range(sides):
-            m.face((r0[k][0], r0[k + 1][0], r1[k + 1][0], r1[k][0]),
-                   (r0[k][1], r0[k + 1][1], r1[k + 1][1], r1[k][1]), mat)
-    for end, ring, flip in ((caps[0], rings[0], True), (caps[1], rings[-1], False)):
-        if not end or closed:
-            continue
-        verts = [v for v, _ in ring[:-1]]
-        c = sum((v.co for v in verts), Vector()) / len(verts)
-        uvs = [(0.5 + 0.5 * math.cos(2 * math.pi * k / sides), 0.5 + 0.5 * math.sin(2 * math.pi * k / sides)) for k in range(sides)]
-        if flip:
-            verts, uvs = verts[::-1], uvs[::-1]
-        f = m.bm.faces.new(verts)
-        f.material_index = HEART
-        for loop, uv in zip(f.loops, uvs):
-            loop[m.uv].uv = uv
-    return rings
-
-
-def hermite(p0, t0, p1, t1, n=20):
-    return B.hermite(Vector(p0), Vector(t0), Vector(p1), Vector(t1), n)
-
-
-def path_between(sa, sb, height=None, n=20):
-    pa, pb = Vector(sa["pos"]), Vector(sb["pos"])
-    k = (pb - pa).length
-    if height is not None and sa["dir"][1] < -0.9 and sb["dir"][1] < -0.9:
-        k = 4 * height
-    return hermite(pa, -Vector(sa["dir"]) * k, pb, Vector(sb["dir"]) * k, n)
+# Root ends show heartwood end grain; moss settles on upward-facing bark
+K.configure(MATS, os.path.join(B.ROOT, "art/textures/rootwarden"), cap_mat=HEART, moss=(BARK, MOSS, 0.62))
 
 
 def strands(m, pts, r, count=2, turns=1.3, rel=0.17, seed=0.0, start=0.12, end=0.9):
@@ -155,56 +32,6 @@ def strands(m, pts, r, count=2, turns=1.3, rel=0.17, seed=0.0, start=0.12, end=0
             sub.append(pts[i] + (nn * math.cos(phi) + bb * math.sin(phi)) * r * 0.93)
         if len(sub) > 3:
             tube(m, sub, [r * rel * (1.1 - 0.6 * i / len(sub)) for i in range(len(sub))], BARK, 6, rough=0.15, seed=seed + j)
-
-
-def disc(m, centre, R, h, top_mat, side_mat, sides=16, rough=0.0, seed=0.0):
-    c = Vector(centre)
-    top, bot = [], []
-    for k in range(sides):
-        a = 2 * math.pi * k / sides
-        rr = R * (1 + rough * noise.noise(Vector((math.cos(a) * 2, math.sin(a) * 2, seed))))
-        top.append((m.vert(c + Vector((math.cos(a) * rr, h, math.sin(a) * rr))), (0.5 + 0.5 * math.cos(a), 0.5 + 0.5 * math.sin(a))))
-        bot.append(m.vert(c + Vector((math.cos(a) * rr, 0, math.sin(a) * rr))))
-    m.face([v for v, _ in top][::-1], [uv for _, uv in top][::-1], top_mat)
-    m.face(bot, [(0, 0)] * sides, top_mat)
-    for k in range(sides):
-        k1 = (k + 1) % sides
-        m.face((bot[k], bot[k1], top[k1][0], top[k][0]), ((k / sides * 3, 0), ((k + 1) / sides * 3, 0), ((k + 1) / sides * 3, h), (k / sides * 3, h)), side_mat)
-
-
-def fill(m, outline, z, mat):
-    """Flat glowing or wooden panel filling a 2D outline (x, y) at depth z."""
-    xs = [x for x, _ in outline]
-    ys = [y for _, y in outline]
-    w, h = max(xs) - min(xs) or 1, max(ys) - min(ys) or 1
-    verts = [m.vert((x, y, z)) for x, y in outline]
-    m.face(verts[::-1], [((x - min(xs)) / w, (y - min(ys)) / h) for x, y in outline][::-1], mat)
-
-
-# ---------- 2D outlines for openings and inserts ----------
-
-def arch(w, h, n=12):
-    return [(-w / 2, 0)] + [(math.cos(a) * w / 2, h - w / 2 + math.sin(a) * w / 2) for a in
-                            (math.pi - math.pi * k / n for k in range(n + 1))] + [(w / 2, 0)]
-
-
-def circle(cx, cy, R, n=16):
-    return [(cx + R * math.cos(2 * math.pi * k / n), cy + R * math.sin(2 * math.pi * k / n)) for k in range(n)]
-
-
-def teardrop(w, h, n=14):
-    R = w / 2
-    lower = [(R * math.cos(a), R + R * math.sin(a)) for a in (math.radians(-40 - 260 * k / n) for k in range(n + 1))]
-    return lower[::-1] + [(0, h)]
-
-
-def inside(pt, poly):
-    x, y = pt
-    hit = False
-    for (x1, y1), (x2, y2) in zip(poly, poly[1:] + poly[:1]):
-        if (y1 > y) != (y2 > y) and x < (x2 - x1) * (y - y1) / (y2 - y1 + 1e-12) + x1:
-            hit = not hit
-    return hit
 
 
 def frame(m, outline, z, r, closed=True, seed=0.0):
@@ -476,16 +303,6 @@ def build_misc(p, m, seed):
         bmesh.ops.create_cube(m.bm, size=1)
 
 
-def join(objs, name):
-    bpy.ops.object.select_all(action="DESELECT")
-    for o in objs:
-        o.select_set(True)
-    bpy.context.view_layer.objects.active = objs[0]
-    if len(objs) > 1:
-        bpy.ops.object.join()
-    ob = bpy.context.view_layer.objects.active
-    ob.name = name
-    return ob
 
 
 def build_piece(p, mats):
@@ -503,96 +320,9 @@ def build_piece(p, mats):
     return m.object(p["id"], mats, seed=seed)
 
 
-def tris(ob):
-    return sum(len(poly.vertices) - 2 for poly in ob.data.polygons)
 
 
-def export(ob, path):
-    bpy.ops.object.select_all(action="DESELECT")
-    ob.select_set(True)
-    bpy.ops.export_scene.gltf(filepath=path, export_format="GLB", use_selection=True, export_yup=True, export_apply=True,
-                              export_image_format="JPEG", export_jpeg_quality=88)
 
 
-def main():
-    os.makedirs(PREFAB_OUT, exist_ok=True)
-    counts = {}
-    for p in B.kit["pieces"]:
-        mats = reset()
-        ob = build_piece(p, mats)
-        counts[p["id"]] = tris(ob)
-        export(ob, os.path.join(OUT, f"{p['id']}.glb"))
-    json.dump(counts, open(os.path.join(OUT, "tris.json"), "w"), indent=2)
-
-    catalogue = []
-    for f in B.kit["prefabs"]:
-        mats = reset()
-        parts = []
-        for e in f["layout"]:
-            ob = build_piece(B.PIECES[e["id"]], mats)
-            ob.rotation_euler = (0, 0, math.radians(e.get("rotY", 0)))
-            ob.location = V(*e["pos"])
-            parts.append(ob)
-        bpy.context.view_layer.update()
-        bpy.ops.object.select_all(action="DESELECT")
-        for o in parts:
-            o.select_set(True)
-        bpy.context.view_layer.objects.active = parts[0]
-        bpy.ops.object.transform_apply(location=True, rotation=True, scale=True)
-        ob = join(parts, f["id"])
-        lo, hi = B.bounds([ob])
-        export(ob, os.path.join(PREFAB_OUT, f"{f['id']}.glb"))
-        catalogue.append({"id": f["id"], "file": f"{f['id']}.glb", "category": "building", "biomes": ["roothold"],
-                          "radius": round(max(hi.x - lo.x, hi.y - lo.y) / 2, 2), "height": round(hi.z - lo.z, 2),
-                          "minScale": 0.9, "maxScale": 1.1, "collide": True, "tris": tris(ob)})
-    for pid, cat in (("rw-fungus-lantern", "prop"), ("rw-lamp-seedpod", "hanging"), ("rw-root-arch-d1.0", "decor"), ("rw-root-flare-d1.6", "decor")):
-        p = B.PIECES[pid]
-        catalogue.append({"id": pid, "file": f"{pid}.glb", "category": cat, "biomes": ["roothold"], "radius": round(p["size"][0] / 2, 2),
-                          "height": p["size"][1], "minScale": 0.9, "maxScale": 1.2, "collide": cat == "decor"})
-        mats = reset()
-        export(build_piece(p, mats), os.path.join(PREFAB_OUT, f"{pid}.glb"))
-    json.dump(catalogue, open(os.path.join(PREFAB_OUT, "rootwarden.json"), "w"), indent=2)
-
-    # Contact sheets in textured workbench shading
-    for name, items in (("sheet-pieces", None), ("sheet-prefabs", "prefabs")):
-        mats = reset()
-        objs = []
-        x = y = row = 0.0
-        if items is None:
-            for p in B.kit["pieces"]:
-                w, _, d = p["size"]
-                if x + w > 60:
-                    x, y, row = 0.0, y - row - 3, 0.0
-                ob = build_piece(p, mats)
-                ob.location += Vector((x + w / 2, y, 0))
-                objs.append(ob)
-                B.label(p["id"].removeprefix("rw-"), Vector((x + w / 2, y - d / 2 - 1.2, 0)), 0.45)
-                x += w + 2.5
-                row = max(row, d)
-        else:
-            for f in B.kit["prefabs"]:
-                group = []
-                for e in f["layout"]:
-                    ob = build_piece(B.PIECES[e["id"]], mats)
-                    ob.rotation_euler = (0, 0, math.radians(e.get("rotY", 0)))
-                    ob.location = V(*e["pos"])
-                    group.append(ob)
-                bpy.context.view_layer.update()
-                lo, hi = B.bounds(group)
-                for o in group:
-                    o.location.x += x - lo.x
-                bpy.context.view_layer.update()
-                lo, hi = B.bounds(group)
-                objs += group
-                objs.append(B.figure(Vector((hi.x + 1, lo.y, 0))))
-                B.label(f["name"], Vector(((lo.x + hi.x) / 2, lo.y - 3, 0)), 1.0)
-                x = hi.x + 6
-        objs.append(B.figure(Vector((-3, 0, 0))))
-        bpy.context.view_layer.update()
-        B.render(os.path.join(OUT, f"{name}.png"), B.bounds(objs), "TEXTURE")
-    print("[rootwarden] built", len(counts), "pieces,", len(catalogue), "catalogue entries")
-    over = {k: v for k, v in counts.items() if v > B.PIECES[k]["tris"]}
-    print("[rootwarden] over manifest tris:", json.dumps(over))
-
-
-main()
+K.build_all(build_piece, extras=[("rw-fungus-lantern", "prop"), ("rw-lamp-seedpod", "hanging"),
+                                 ("rw-root-arch-d1.0", "decor"), ("rw-root-flare-d1.6", "decor")], biome="roothold")

@@ -1,0 +1,136 @@
+[
+  {
+    "id": "gal-prefab-nest-house",
+    "file": "gal-prefab-nest-house.glb",
+    "category": "building",
+    "biomes": [
+      "galeborne"
+    ],
+    "radius": 4.11,
+    "height": 24.2,
+    "minScale": 0.9,
+    "maxScale": 1.1,
+    "collide": true,
+    "tris": 46412
+  },
+  {
+    "id": "gal-prefab-stacked-nest",
+    "file": "gal-prefab-stacked-nest.glb",
+    "category": "building",
+    "biomes": [
+      "galeborne"
+    ],
+    "radius": 6.04,
+    "height": 22.52,
+    "minScale": 0.9,
+    "maxScale": 1.1,
+    "collide": true,
+    "tris": 62040
+  },
+  {
+    "id": "gal-prefab-cliff-perch",
+    "file": "gal-prefab-cliff-perch.glb",
+    "category": "building",
+    "biomes": [
+      "galeborne"
+    ],
+    "radius": 4.06,
+    "height": 9.5,
+    "minScale": 0.9,
+    "maxScale": 1.1,
+    "collide": true,
+    "tris": 32435
+  },
+  {
+    "id": "gal-prefab-mast-pavilion",
+    "file": "gal-prefab-mast-pavilion.glb",
+    "category": "building",
+    "biomes": [
+      "galeborne"
+    ],
+    "radius": 5.71,
+    "height": 13.52,
+    "minScale": 0.9,
+    "maxScale": 1.1,
+    "collide": true,
+    "tris": 31888
+  },
+  {
+    "id": "gal-lantern-large",
+    "file": "gal-lantern-large.glb",
+    "category": "hanging",
+    "biomes": [
+      "galeborne"
+    ],
+    "radius": 0.4,
+    "height": 1.5,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "gal-lantern-small",
+    "file": "gal-lantern-small.glb",
+    "category": "hanging",
+    "biomes": [
+      "galeborne"
+    ],
+    "radius": 0.25,
+    "height": 1,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "gal-chime",
+    "file": "gal-chime.glb",
+    "category": "hanging",
+    "biomes": [
+      "galeborne"
+    ],
+    "radius": 0.7,
+    "height": 1.8,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "gal-sail-furled",
+    "file": "gal-sail-furled.glb",
+    "category": "decor",
+    "biomes": [
+      "galeborne"
+    ],
+    "radius": 2.0,
+    "height": 0.6,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": true
+  },
+  {
+    "id": "gal-weathervane-feather",
+    "file": "gal-weathervane-feather.glb",
+    "category": "prop",
+    "biomes": [
+      "galeborne"
+    ],
+    "radius": 0.8,
+    "height": 1.6,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "gal-crown-beacon",
+    "file": "gal-crown-beacon.glb",
+    "category": "decor",
+    "biomes": [
+      "galeborne"
+    ],
+    "radius": 1.0,
+    "height": 5,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": true
+  }
+]

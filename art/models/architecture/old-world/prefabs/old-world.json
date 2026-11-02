@@ -1,0 +1,109 @@
+[
+  {
+    "id": "old-prefab-monolith-gate-a",
+    "file": "old-prefab-monolith-gate-a.glb",
+    "category": "building",
+    "biomes": [
+      "ruin"
+    ],
+    "radius": 8.0,
+    "height": 18.5,
+    "minScale": 0.9,
+    "maxScale": 1.1,
+    "collide": true,
+    "tris": 9044
+  },
+  {
+    "id": "old-prefab-vault-entrance-b",
+    "file": "old-prefab-vault-entrance-b.glb",
+    "category": "building",
+    "biomes": [
+      "ruin"
+    ],
+    "radius": 6.2,
+    "height": 9.4,
+    "minScale": 0.9,
+    "maxScale": 1.1,
+    "collide": true,
+    "tris": 10240
+  },
+  {
+    "id": "old-prefab-ruin-kit-c",
+    "file": "old-prefab-ruin-kit-c.glb",
+    "category": "building",
+    "biomes": [
+      "ruin"
+    ],
+    "radius": 6.21,
+    "height": 10.93,
+    "minScale": 0.9,
+    "maxScale": 1.1,
+    "collide": true,
+    "tris": 4894
+  },
+  {
+    "id": "old-fragment-large",
+    "file": "old-fragment-large.glb",
+    "category": "decor",
+    "biomes": [
+      "ruin"
+    ],
+    "radius": 1.0,
+    "height": 2,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": true
+  },
+  {
+    "id": "old-fragment-medium",
+    "file": "old-fragment-medium.glb",
+    "category": "prop",
+    "biomes": [
+      "ruin"
+    ],
+    "radius": 0.5,
+    "height": 1,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "old-fragment-small",
+    "file": "old-fragment-small.glb",
+    "category": "prop",
+    "biomes": [
+      "ruin"
+    ],
+    "radius": 0.25,
+    "height": 0.5,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "old-sapling",
+    "file": "old-sapling.glb",
+    "category": "prop",
+    "biomes": [
+      "ruin"
+    ],
+    "radius": 0.5,
+    "height": 2,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "old-monolith-2",
+    "file": "old-monolith-2.glb",
+    "category": "decor",
+    "biomes": [
+      "ruin"
+    ],
+    "radius": 2.0,
+    "height": 12,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": true
+  }
+]

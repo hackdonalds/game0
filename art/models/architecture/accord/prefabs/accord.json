@@ -1,0 +1,149 @@
+[
+  {
+    "id": "acc-prefab-townhouse-exploded",
+    "file": "acc-prefab-townhouse-exploded.glb",
+    "category": "building",
+    "biomes": [
+      "accord"
+    ],
+    "radius": 3.04,
+    "height": 14.51,
+    "minScale": 0.9,
+    "maxScale": 1.1,
+    "collide": true,
+    "tris": 35399
+  },
+  {
+    "id": "acc-prefab-spire-townhouse",
+    "file": "acc-prefab-spire-townhouse.glb",
+    "category": "building",
+    "biomes": [
+      "accord"
+    ],
+    "radius": 3.04,
+    "height": 18.01,
+    "minScale": 0.9,
+    "maxScale": 1.1,
+    "collide": true,
+    "tris": 40426
+  },
+  {
+    "id": "acc-prefab-terrace-house",
+    "file": "acc-prefab-terrace-house.glb",
+    "category": "building",
+    "biomes": [
+      "accord"
+    ],
+    "radius": 3.34,
+    "height": 10.11,
+    "minScale": 0.9,
+    "maxScale": 1.1,
+    "collide": true,
+    "tris": 49224
+  },
+  {
+    "id": "acc-prefab-market-hall",
+    "file": "acc-prefab-market-hall.glb",
+    "category": "building",
+    "biomes": [
+      "accord"
+    ],
+    "radius": 6.88,
+    "height": 12.51,
+    "minScale": 0.9,
+    "maxScale": 1.1,
+    "collide": true,
+    "tris": 102858
+  },
+  {
+    "id": "acc-canopy-sailcloth-galeborne",
+    "file": "acc-canopy-sailcloth-galeborne.glb",
+    "category": "decor",
+    "biomes": [
+      "accord"
+    ],
+    "radius": 2.0,
+    "height": 3,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": true
+  },
+  {
+    "id": "acc-lamp-bracket-b",
+    "file": "acc-lamp-bracket-b.glb",
+    "category": "hanging",
+    "biomes": [
+      "accord"
+    ],
+    "radius": 0.5,
+    "height": 1.5,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "acc-flowerbox-large",
+    "file": "acc-flowerbox-large.glb",
+    "category": "prop",
+    "biomes": [
+      "accord"
+    ],
+    "radius": 1.0,
+    "height": 0.5,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "acc-sign-shop-a",
+    "file": "acc-sign-shop-a.glb",
+    "category": "hanging",
+    "biomes": [
+      "accord"
+    ],
+    "radius": 0.5,
+    "height": 1,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "acc-sign-shop-b",
+    "file": "acc-sign-shop-b.glb",
+    "category": "hanging",
+    "biomes": [
+      "accord"
+    ],
+    "radius": 0.5,
+    "height": 1,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "acc-banner-galeborne",
+    "file": "acc-banner-galeborne.glb",
+    "category": "hanging",
+    "biomes": [
+      "accord"
+    ],
+    "radius": 0.5,
+    "height": 2,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "acc-pennant-galeborne",
+    "file": "acc-pennant-galeborne.glb",
+    "category": "decor",
+    "biomes": [
+      "accord"
+    ],
+    "radius": 0.25,
+    "height": 2,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": true
+  }
+]

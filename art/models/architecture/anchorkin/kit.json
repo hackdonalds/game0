@@ -1,7 +1,13 @@
 {
   "style": "anchorkin",
   "prefix": "ank",
-  "grid": { "base": 0.5, "module": 3, "storey": 4, "wall": 1, "batter": 8 },
+  "grid": {
+    "base": 0.5,
+    "module": 3,
+    "storey": 4,
+    "wall": 1,
+    "batter": 8
+  },
   "scaleFigure": 2.6,
   "trimSheet": "ank-trim",
   "notes": [
@@ -29,447 +35,885 @@
       "id": "ank-plinth",
       "family": "foundation",
       "name": "Plinth (base module)",
-      "size": [3, 1, 3],
+      "size": [
+        3,
+        1,
+        3
+      ],
       "pivot": "bottom-left-front",
       "tris": 300,
-      "variants": ["intact", "mossy", "sinking"],
-      "ref": { "sheet": "kit-structure", "label": "Plinth (Base Module)" }
+      "variants": [
+        "intact",
+        "mossy",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "kit-structure",
+        "label": "Plinth (Base Module)"
+      }
     },
     {
       "id": "ank-slope-step",
       "family": "foundation",
       "name": "Slope step, ramp 1:3",
-      "size": [3, 1, 3],
+      "size": [
+        3,
+        1,
+        3
+      ],
       "pivot": "bottom-left-front",
       "tris": 300,
-      "variants": ["intact", "mossy", "sinking"],
-      "ref": { "sheet": "kit-structure", "label": "Slope Step (Ramp 1:3)" },
+      "variants": [
+        "intact",
+        "mossy",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "kit-structure",
+        "label": "Slope Step (Ramp 1:3)"
+      },
       "notes": "Rises 1.0 m over the 3 m module."
     },
     {
       "id": "ank-foundation-cliff",
       "family": "foundation",
       "name": "Cliff-edge foundation with chain anchors",
-      "size": [3, 4, 3],
+      "size": [
+        3,
+        4,
+        3
+      ],
       "pivot": "bottom-left-front",
       "tris": 600,
-      "variants": ["intact", "mossy", "sinking"],
-      "ref": { "sheet": "kit-structure", "label": "Cliff-edge Foundation (with Chain Anchors)" },
+      "variants": [
+        "intact",
+        "mossy",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "kit-structure",
+        "label": "Cliff-edge Foundation (with Chain Anchors)"
+      },
       "notes": "Two forged chain anchors on the outer face; chains attach with ank-chain-run."
     },
     {
       "id": "ank-wall-plain",
       "family": "wall",
       "name": "Battered wall, plain",
-      "size": [3, 4, 1],
+      "size": [
+        3,
+        4,
+        1
+      ],
       "pivot": "bottom-left-front",
       "tris": 400,
-      "variants": ["intact", "mossy", "sinking"],
-      "ref": { "sheet": "kit-structure", "label": "Battered Wall (Plain)" },
+      "variants": [
+        "intact",
+        "mossy",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "kit-structure",
+        "label": "Battered Wall (Plain)"
+      },
       "notes": "Batter 8° inward on the outer face only."
     },
     {
       "id": "ank-wall-window",
       "family": "wall",
       "name": "Battered wall, window",
-      "size": [3, 4, 1],
+      "size": [
+        3,
+        4,
+        1
+      ],
       "pivot": "bottom-left-front",
       "tris": 600,
-      "variants": ["intact", "mossy", "sinking"],
-      "opening": { "kind": "window", "size": [2, 2], "offset": [0.5, 1], "accepts": "ank-window-" },
-      "ref": { "sheet": "kit-structure", "label": "Battered Wall (Window)" }
+      "variants": [
+        "intact",
+        "mossy",
+        "sinking"
+      ],
+      "opening": {
+        "kind": "window",
+        "size": [
+          2,
+          2
+        ],
+        "offset": [
+          0.5,
+          1
+        ],
+        "accepts": "ank-window-"
+      },
+      "ref": {
+        "sheet": "kit-structure",
+        "label": "Battered Wall (Window)"
+      }
     },
     {
       "id": "ank-wall-door",
       "family": "wall",
       "name": "Battered wall, door opening",
-      "size": [3, 4, 1],
+      "size": [
+        3,
+        4,
+        1
+      ],
       "pivot": "bottom-left-front",
       "tris": 600,
-      "variants": ["intact", "mossy", "sinking"],
-      "opening": { "kind": "door", "size": [2, 3.2], "offset": [0.5, 0], "accepts": "ank-door-" },
-      "ref": { "sheet": "kit-structure", "label": "Battered Wall (Door Opening)" },
+      "variants": [
+        "intact",
+        "mossy",
+        "sinking"
+      ],
+      "opening": {
+        "kind": "door",
+        "size": [
+          2,
+          3.2
+        ],
+        "offset": [
+          0.5,
+          0
+        ],
+        "accepts": "ank-door-"
+      },
+      "ref": {
+        "sheet": "kit-structure",
+        "label": "Battered Wall (Door Opening)"
+      },
       "notes": "Arched 2 x 3.2 m opening; the 0.5 m jambs take ank-doorpost-oath."
     },
     {
       "id": "ank-wall-half",
       "family": "wall",
       "name": "Half-height wall",
-      "size": [3, 2, 1],
+      "size": [
+        3,
+        2,
+        1
+      ],
       "pivot": "bottom-left-front",
       "tris": 300,
-      "variants": ["intact", "mossy", "sinking"],
-      "ref": { "sheet": "kit-structure", "label": "Half-height Wall" }
+      "variants": [
+        "intact",
+        "mossy",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "kit-structure",
+        "label": "Half-height Wall"
+      }
     },
     {
       "id": "ank-wall-endcap",
       "family": "wall",
       "name": "End cap (wall termination)",
-      "size": [1, 4, 1],
+      "size": [
+        1,
+        4,
+        1
+      ],
       "pivot": "bottom-left-front",
       "tris": 300,
-      "variants": ["intact", "mossy", "sinking"],
-      "ref": { "sheet": "kit-structure", "label": "End Cap (Wall Termination)" },
+      "variants": [
+        "intact",
+        "mossy",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "kit-structure",
+        "label": "End Cap (Wall Termination)"
+      },
       "notes": "Sheet label says 3.0 x 4.0 m; drawn as a narrow pier closing the 1 m wall thickness, so 1 x 4 x 1 m."
     },
     {
       "id": "ank-wall-ledger",
       "family": "wall",
       "name": "Ledger-band wall (inscription panel)",
-      "size": [3, 4, 1],
+      "size": [
+        3,
+        4,
+        1
+      ],
       "pivot": "bottom-left-front",
       "tris": 600,
-      "variants": ["intact", "mossy", "sinking"],
-      "ref": { "sheet": "kit-structure", "label": "Ledger-band Wall (Inscription Panel)" },
+      "variants": [
+        "intact",
+        "mossy",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "kit-structure",
+        "label": "Ledger-band Wall (Inscription Panel)"
+      },
       "notes": "Signature wall: carved Ledger inscription band, gold inlay only in the glyphs."
     },
     {
       "id": "ank-corner-outer",
       "family": "corner",
       "name": "Outer corner, 90°",
-      "size": [1, 4, 1],
+      "size": [
+        1,
+        4,
+        1
+      ],
       "pivot": "bottom-left-front",
       "tris": 300,
-      "variants": ["intact", "mossy", "sinking"],
-      "ref": { "sheet": "kit-structure", "label": "Outer Corner (90°)" },
+      "variants": [
+        "intact",
+        "mossy",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "kit-structure",
+        "label": "Outer Corner (90°)"
+      },
       "notes": "Sheet label says 3.0 x 4.0 m; drawn as a pier carrying an oath-mark, filling the 1 x 1 m overlap where two walls meet, so 1 x 4 x 1 m. Battered on both outer faces."
     },
     {
       "id": "ank-corner-inner",
       "family": "corner",
       "name": "Inner corner, 90°",
-      "size": [3, 4, 3],
+      "size": [
+        3,
+        4,
+        3
+      ],
       "pivot": "bottom-left-front",
       "tris": 400,
-      "variants": ["intact", "mossy", "sinking"],
-      "ref": { "sheet": "kit-structure", "label": "Inner Corner (90°)" },
+      "variants": [
+        "intact",
+        "mossy",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "kit-structure",
+        "label": "Inner Corner (90°)"
+      },
       "notes": "L-shaped, each wing 3.0 m."
     },
     {
       "id": "ank-buttress",
       "family": "corner",
       "name": "Buttress column (structural)",
-      "size": [1, 4, 1],
+      "size": [
+        1,
+        4,
+        1
+      ],
       "pivot": "bottom-left-front",
       "tris": 300,
-      "variants": ["intact", "mossy", "sinking"],
-      "ref": { "sheet": "kit-structure", "label": "Buttress Column (Structural)" }
+      "variants": [
+        "intact",
+        "mossy",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "kit-structure",
+        "label": "Buttress Column (Structural)"
+      }
     },
     {
       "id": "ank-floor-tile",
       "family": "floor",
       "name": "Floor tile (terrace / platform)",
-      "size": [3, 0.5, 3],
+      "size": [
+        3,
+        0.5,
+        3
+      ],
       "pivot": "bottom-left-front",
       "tris": 150,
-      "variants": ["intact", "mossy", "sinking"],
-      "ref": { "sheet": "kit-structure", "label": "Floor Tile (Terrace / Platform)" },
+      "variants": [
+        "intact",
+        "mossy",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "kit-structure",
+        "label": "Floor Tile (Terrace / Platform)"
+      },
       "notes": "Thickness not labelled; 0.5 m slab."
     },
     {
       "id": "ank-terrace-step",
       "family": "floor",
       "name": "Terrace step (platform edge)",
-      "size": [3, 0.5, 1],
+      "size": [
+        3,
+        0.5,
+        1
+      ],
       "pivot": "bottom-left-front",
       "tris": 150,
-      "variants": ["intact", "mossy", "sinking"],
-      "ref": { "sheet": "kit-structure", "label": "Terrace Step (Platform Edge)" }
+      "variants": [
+        "intact",
+        "mossy",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "kit-structure",
+        "label": "Terrace Step (Platform Edge)"
+      }
     },
     {
       "id": "ank-stairs-straight",
       "family": "access",
       "name": "Straight stairs, 3 m wide",
-      "size": [3, 2, 3],
+      "size": [
+        3,
+        2,
+        3
+      ],
       "pivot": "bottom-left-front",
       "tris": 500,
-      "variants": ["intact", "mossy", "sinking"],
-      "ref": { "sheet": "kit-structure", "label": "Straight Stairs (3.0 m wide)" },
+      "variants": [
+        "intact",
+        "mossy",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "kit-structure",
+        "label": "Straight Stairs (3.0 m wide)"
+      },
       "notes": "Rises 2.0 m (half a storey); two flights climb one 4 m storey. Run depth not labelled; one 3 m module."
     },
-
     {
       "id": "ank-roof-flat",
       "family": "roof",
       "name": "Flat terrace roof run (walkable)",
-      "size": [3, 1, 3],
+      "size": [
+        3,
+        1,
+        3
+      ],
       "pivot": "bottom-left-front",
       "tris": 400,
-      "variants": ["intact", "mossy", "sinking"],
-      "ref": { "sheet": "kit-roofs", "label": "A. Flat Terrace Roof Run" },
+      "variants": [
+        "intact",
+        "mossy",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "kit-roofs",
+        "label": "A. Flat Terrace Roof Run"
+      },
       "notes": "One module of walkable stone slabs with a low parapet lip."
     },
     {
       "id": "ank-roof-step",
       "family": "roof",
       "name": "Stepped roof edge, terrace to terrace",
-      "size": [3, 1, 3],
+      "size": [
+        3,
+        1,
+        3
+      ],
       "pivot": "bottom-left-front",
       "tris": 500,
-      "variants": ["intact", "mossy", "sinking"],
-      "ref": { "sheet": "kit-roofs", "label": "B. Stepped Roof Edge" },
+      "variants": [
+        "intact",
+        "mossy",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "kit-roofs",
+        "label": "B. Stepped Roof Edge"
+      },
       "notes": "Drops one 1.0 m step down to the lower terrace."
     },
     {
       "id": "ank-roof-hip",
       "family": "roof",
       "name": "Shallow hip corner",
-      "size": [3, 1, 3],
+      "size": [
+        3,
+        1,
+        3
+      ],
       "pivot": "bottom-left-front",
       "tris": 400,
-      "variants": ["intact", "mossy", "sinking"],
-      "ref": { "sheet": "kit-roofs", "label": "C. Shallow Hip Corner" },
+      "variants": [
+        "intact",
+        "mossy",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "kit-roofs",
+        "label": "C. Shallow Hip Corner"
+      },
       "notes": "Pitch 15° or less, 90° corner, heavy stone slabs. Never a steep slate gable."
     },
     {
       "id": "ank-roof-parapet",
       "family": "roof",
       "name": "Parapet, crenel",
-      "size": [3, 1, 1],
+      "size": [
+        3,
+        1,
+        1
+      ],
       "pivot": "bottom-left-front",
       "tris": 400,
-      "variants": ["intact", "mossy", "sinking"],
-      "ref": { "sheet": "kit-roofs", "label": "D. Parapet (Crenel)" },
+      "variants": [
+        "intact",
+        "mossy",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "kit-roofs",
+        "label": "D. Parapet (Crenel)"
+      },
       "notes": "Terrace railing / battlement, 1.0 m tall."
     },
     {
       "id": "ank-roof-chimney",
       "family": "roof",
       "name": "Chimney stack (wide, squat)",
-      "size": [1.5, 2, 1.5],
+      "size": [
+        1.5,
+        2,
+        1.5
+      ],
       "pivot": "bottom-center",
       "tris": 400,
-      "variants": ["intact", "mossy", "sinking"],
-      "ref": { "sheet": "kit-roofs", "label": "E. Chimney Stack" },
+      "variants": [
+        "intact",
+        "mossy",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "kit-roofs",
+        "label": "E. Chimney Stack"
+      },
       "notes": "Black forged iron cap."
     },
     {
       "id": "ank-crown-crystal",
       "family": "crown",
       "name": "Crystal-capped crown (civic / landmark finial)",
-      "size": [2, 2.5, 2],
+      "size": [
+        2,
+        2.5,
+        2
+      ],
       "pivot": "bottom-center",
       "tris": 1200,
-      "variants": ["intact", "mossy", "sinking"],
-      "ref": { "sheet": "kit-roofs", "label": "F. Crystal-capped Crown" },
+      "variants": [
+        "intact",
+        "mossy",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "kit-roofs",
+        "label": "F. Crystal-capped Crown"
+      },
       "notes": "Teal crystal cluster in a black iron collar."
     },
     {
       "id": "ank-crown-dome",
       "family": "crown",
       "name": "Dome segment, quarter (civic hall)",
-      "size": [3, 1.5, 3],
+      "size": [
+        3,
+        1.5,
+        3
+      ],
       "pivot": "bottom-left-front",
       "tris": 1500,
-      "variants": ["intact", "mossy", "sinking"],
+      "variants": [
+        "intact",
+        "mossy",
+        "sinking"
+      ],
       "radius": 3,
       "arc": 90,
-      "ref": { "sheet": "kit-roofs", "label": "G. Dome Segment (Quarter)" },
+      "ref": {
+        "sheet": "kit-roofs",
+        "label": "G. Dome Segment (Quarter)"
+      },
       "notes": "Radius 3.0 m, flattened to 1.5 m tall, banded with a carved Ledger inscription ring."
     },
-
     {
       "id": "ank-door-oak",
       "family": "insert",
       "name": "Oak plank door (single, heavy straps)",
-      "size": [2, 3.2, 0.5],
+      "size": [
+        2,
+        3.2,
+        0.5
+      ],
       "free": true,
       "pivot": "bottom-left-front",
       "tris": 300,
-      "variants": ["intact", "mossy"],
-      "ref": { "sheet": "kit-details", "label": "A. Oak Plank Door" }
+      "variants": [
+        "intact",
+        "mossy"
+      ],
+      "ref": {
+        "sheet": "kit-details",
+        "label": "A. Oak Plank Door"
+      }
     },
     {
       "id": "ank-door-ledger",
       "family": "insert",
       "name": "Ledger door (basalt slab, carved inscription)",
-      "size": [2, 3.2, 0.5],
+      "size": [
+        2,
+        3.2,
+        0.5
+      ],
       "free": true,
       "pivot": "bottom-left-front",
       "tris": 250,
-      "variants": ["intact", "mossy"],
-      "ref": { "sheet": "kit-details", "label": "B. Ledger Door" }
+      "variants": [
+        "intact",
+        "mossy"
+      ],
+      "ref": {
+        "sheet": "kit-details",
+        "label": "B. Ledger Door"
+      }
     },
     {
       "id": "ank-door-double",
       "family": "insert",
       "name": "Double door with chain bar",
-      "size": [2, 3.2, 0.5],
+      "size": [
+        2,
+        3.2,
+        0.5
+      ],
       "free": true,
       "pivot": "bottom-left-front",
       "tris": 400,
-      "variants": ["intact", "mossy"],
-      "ref": { "sheet": "kit-details", "label": "C. Double Door with Chain Bar" },
+      "variants": [
+        "intact",
+        "mossy"
+      ],
+      "ref": {
+        "sheet": "kit-details",
+        "label": "C. Double Door with Chain Bar"
+      },
       "notes": "Twin oak leaves with a black iron locking chain."
     },
     {
       "id": "ank-window-slit",
       "family": "insert",
       "name": "Slit window with iron grille",
-      "size": [1, 2, 1],
+      "size": [
+        1,
+        2,
+        1
+      ],
       "free": true,
       "pivot": "bottom-left-front",
       "tris": 250,
-      "variants": ["intact", "mossy"],
-      "ref": { "sheet": "kit-details", "label": "D. Slit Window (Grille)" },
+      "variants": [
+        "intact",
+        "mossy"
+      ],
+      "ref": {
+        "sheet": "kit-details",
+        "label": "D. Slit Window (Grille)"
+      },
       "notes": "Deep-set; carries stone infill to fill the 2 x 2 m opening."
     },
     {
       "id": "ank-window-arched",
       "family": "insert",
       "name": "Arched window with oak shutters",
-      "size": [2, 2, 1],
+      "size": [
+        2,
+        2,
+        1
+      ],
       "free": true,
       "pivot": "bottom-left-front",
       "tris": 400,
-      "variants": ["intact", "mossy"],
-      "ref": { "sheet": "kit-details", "label": "E. Arched Window with Shutters" }
+      "variants": [
+        "intact",
+        "mossy"
+      ],
+      "ref": {
+        "sheet": "kit-details",
+        "label": "E. Arched Window with Shutters"
+      }
     },
     {
       "id": "ank-window-wide",
       "family": "insert",
       "name": "Wide window, triple stone mullion",
-      "size": [2, 1, 1],
+      "size": [
+        2,
+        1,
+        1
+      ],
       "free": true,
       "pivot": "bottom-left-front",
       "tris": 350,
-      "variants": ["intact", "mossy"],
-      "ref": { "sheet": "kit-details", "label": "F. Wide Window (Triple Mullion)" },
+      "variants": [
+        "intact",
+        "mossy"
+      ],
+      "ref": {
+        "sheet": "kit-details",
+        "label": "F. Wide Window (Triple Mullion)"
+      },
       "notes": "Sheet label says 3.0 x 1.0 m; fitted to the 2 m window opening (spec wins), with stone infill below."
     },
     {
       "id": "ank-trim-ledger-straight",
       "family": "trim",
       "name": "Ledger trim, straight run",
-      "size": [3, 0.5, 0.5],
+      "size": [
+        3,
+        0.5,
+        0.5
+      ],
       "pivot": "bottom-left-front",
       "tris": 200,
-      "variants": ["intact", "mossy"],
-      "ref": { "sheet": "kit-details", "label": "G. Ledger Trim - Straight Run" }
+      "variants": [
+        "intact",
+        "mossy"
+      ],
+      "ref": {
+        "sheet": "kit-details",
+        "label": "G. Ledger Trim - Straight Run"
+      }
     },
     {
       "id": "ank-trim-ledger-corner",
       "family": "trim",
       "name": "Ledger trim, 90° corner",
-      "size": [1, 0.5, 1],
+      "size": [
+        1,
+        0.5,
+        1
+      ],
       "pivot": "bottom-left-front",
       "tris": 200,
-      "variants": ["intact", "mossy"],
-      "ref": { "sheet": "kit-details", "label": "H. Ledger Trim - Corner (90°)" },
+      "variants": [
+        "intact",
+        "mossy"
+      ],
+      "ref": {
+        "sheet": "kit-details",
+        "label": "H. Ledger Trim - Corner (90°)"
+      },
       "notes": "Sheet label says 1.0 x 2.0 m (each wing); band height matches the 0.5 m straight run, so 1.0 m wings x 0.5 m tall."
     },
     {
       "id": "ank-trim-ledger-end",
       "family": "trim",
       "name": "Ledger trim, end cap",
-      "size": [0.5, 0.5, 0.5],
+      "size": [
+        0.5,
+        0.5,
+        0.5
+      ],
       "pivot": "bottom-left-front",
       "tris": 100,
-      "variants": ["intact", "mossy"],
-      "ref": { "sheet": "kit-details", "label": "I. Ledger Trim - End Cap" },
+      "variants": [
+        "intact",
+        "mossy"
+      ],
+      "ref": {
+        "sheet": "kit-details",
+        "label": "I. Ledger Trim - End Cap"
+      },
       "notes": "Sheet label says 0.5 x 0.0 m; spec wins: 0.5 m cube matching the band."
     },
     {
       "id": "ank-doorpost-oath",
       "family": "insert",
       "name": "Oath-mark doorpost (one of a pair)",
-      "size": [0.5, 3.2, 1],
+      "size": [
+        0.5,
+        3.2,
+        1
+      ],
       "free": true,
       "pivot": "bottom-left-front",
       "tris": 200,
-      "variants": ["intact", "mossy", "sinking"],
-      "ref": { "sheet": "kit-details", "label": "J. Oath-mark Doorposts (Pair)" },
+      "variants": [
+        "intact",
+        "mossy",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "kit-details",
+        "label": "J. Oath-mark Doorposts (Pair)"
+      },
       "notes": "Carved stone jamb with anchor oath-mark, gold inlay; one per side of the 2 m door opening (place mirrored)."
     },
     {
       "id": "ank-chain-run",
       "family": "attachment",
       "name": "Chain run, straight (4 giant links)",
-      "size": [3, 0.6, 0.6],
+      "size": [
+        3,
+        0.6,
+        0.6
+      ],
       "free": true,
       "pivot": "bottom-left-front",
       "tris": 600,
-      "variants": ["intact"],
-      "ref": { "sheet": "kit-details", "label": "K. Chain Run (Straight)" }
+      "variants": [
+        "intact"
+      ],
+      "ref": {
+        "sheet": "kit-details",
+        "label": "K. Chain Run (Straight)"
+      }
     },
     {
       "id": "ank-chain-bend",
       "family": "attachment",
       "name": "Chain bend, 90° over an edge",
-      "size": [1.5, 1.5, 0.6],
+      "size": [
+        1.5,
+        1.5,
+        0.6
+      ],
       "free": true,
       "pivot": "bottom-left-front",
       "tris": 500,
-      "variants": ["intact"],
-      "ref": { "sheet": "kit-details", "label": "L. Chain Bend (90° Over Edge)" }
+      "variants": [
+        "intact"
+      ],
+      "ref": {
+        "sheet": "kit-details",
+        "label": "L. Chain Bend (90° Over Edge)"
+      }
     },
     {
       "id": "ank-chain-anchor",
       "family": "attachment",
       "name": "Wall anchor (plate and ring)",
-      "size": [1, 1, 0.6],
+      "size": [
+        1,
+        1,
+        0.6
+      ],
       "free": true,
       "pivot": "bottom-left-front",
       "tris": 300,
-      "variants": ["intact"],
-      "ref": { "sheet": "kit-details", "label": "M. Wall Anchor (Plate + Ring)" }
+      "variants": [
+        "intact"
+      ],
+      "ref": {
+        "sheet": "kit-details",
+        "label": "M. Wall Anchor (Plate + Ring)"
+      }
     },
     {
       "id": "ank-mooring-ring",
       "family": "attachment",
       "name": "Mooring ring on a heavy post",
-      "size": [1.5, 1.5, 1.5],
+      "size": [
+        1.5,
+        1.5,
+        1.5
+      ],
       "free": true,
       "pivot": "bottom-center",
       "tris": 500,
-      "variants": ["intact", "mossy", "sinking"],
-      "ref": { "sheet": "kit-details", "label": "N. Mooring Ring (Post)" }
+      "variants": [
+        "intact",
+        "mossy",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "kit-details",
+        "label": "N. Mooring Ring (Post)"
+      }
     },
     {
       "id": "ank-lantern-wall",
       "family": "attachment",
       "name": "Crystal lantern, wall mount",
-      "size": [0.8, 1.4, 1.2],
+      "size": [
+        0.8,
+        1.4,
+        1.2
+      ],
       "free": true,
       "pivot": "bottom-center",
       "tris": 400,
-      "variants": ["intact"],
-      "ref": { "sheet": "kit-details", "label": "O. Crystal Lantern (Wall Mount)" },
+      "variants": [
+        "intact"
+      ],
+      "ref": {
+        "sheet": "kit-details",
+        "label": "O. Crystal Lantern (Wall Mount)"
+      },
       "notes": "Teal crystal in a black iron cage, projects 1.2 m."
     },
     {
       "id": "ank-lantern-post",
       "family": "attachment",
       "name": "Crystal lantern, post",
-      "size": [1, 3, 1],
+      "size": [
+        1,
+        3,
+        1
+      ],
       "free": true,
       "pivot": "bottom-center",
       "tris": 500,
-      "variants": ["intact", "mossy"],
-      "ref": { "sheet": "kit-details", "label": "P. Crystal Lantern (Post)" }
+      "variants": [
+        "intact",
+        "mossy"
+      ],
+      "ref": {
+        "sheet": "kit-details",
+        "label": "P. Crystal Lantern (Post)"
+      }
     },
     {
       "id": "ank-bracket-wall",
       "family": "attachment",
       "name": "Wall bracket (utility)",
-      "size": [1.5, 1, 1.5],
+      "size": [
+        1.5,
+        1,
+        1.5
+      ],
       "free": true,
       "pivot": "bottom-left-front",
       "tris": 200,
-      "variants": ["intact"],
-      "ref": { "sheet": "kit-details", "label": "Q. Wall Bracket (Utility)" },
+      "variants": [
+        "intact"
+      ],
+      "ref": {
+        "sheet": "kit-details",
+        "label": "Q. Wall Bracket (Utility)"
+      },
       "notes": "Projects 1.5 m."
     },
     {
       "id": "ank-bracket-roof",
       "family": "attachment",
       "name": "Roof-edge bracket",
-      "size": [1.5, 0.8, 1.5],
+      "size": [
+        1.5,
+        0.8,
+        1.5
+      ],
       "free": true,
       "pivot": "bottom-left-front",
       "tris": 200,
-      "variants": ["intact"],
-      "ref": { "sheet": "kit-details", "label": "R. Roof-edge Bracket" },
+      "variants": [
+        "intact"
+      ],
+      "ref": {
+        "sheet": "kit-details",
+        "label": "R. Roof-edge Bracket"
+      },
       "notes": "Projects 1.5 m."
     }
   ],
@@ -477,91 +921,4065 @@
     {
       "id": "ank-dwelling",
       "name": "Anchorkin Dwelling (exploded assembly)",
-      "footprint": [3, 2],
+      "footprint": [
+        3,
+        2
+      ],
       "storeys": 1,
       "pieces": [
-        { "id": "ank-plinth", "count": 6 },
-        { "id": "ank-corner-outer", "count": 4 },
-        { "id": "ank-wall-door", "count": 1 },
-        { "id": "ank-door-double", "count": 1 },
-        { "id": "ank-doorpost-oath", "count": 2 },
-        { "id": "ank-wall-window", "count": 2 },
-        { "id": "ank-window-arched", "count": 2 },
-        { "id": "ank-wall-plain", "count": 7 },
-        { "id": "ank-trim-ledger-straight", "count": 10 },
-        { "id": "ank-trim-ledger-corner", "count": 4 },
-        { "id": "ank-roof-flat", "count": 6 },
-        { "id": "ank-roof-parapet", "count": 10 },
-        { "id": "ank-roof-chimney", "count": 1 },
-        { "id": "ank-chain-anchor", "count": 1 },
-        { "id": "ank-chain-run", "count": 1 }
+        {
+          "id": "ank-plinth",
+          "count": 6
+        },
+        {
+          "id": "ank-wall-plain",
+          "count": 3
+        },
+        {
+          "id": "ank-wall-window",
+          "count": 2
+        },
+        {
+          "id": "ank-wall-door",
+          "count": 1
+        },
+        {
+          "id": "ank-corner-outer",
+          "count": 4
+        },
+        {
+          "id": "ank-roof-flat",
+          "count": 2
+        },
+        {
+          "id": "ank-roof-parapet",
+          "count": 6
+        },
+        {
+          "id": "ank-roof-chimney",
+          "count": 1
+        },
+        {
+          "id": "ank-door-double",
+          "count": 1
+        },
+        {
+          "id": "ank-window-arched",
+          "count": 2
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "count": 6
+        },
+        {
+          "id": "ank-trim-ledger-corner",
+          "count": 4
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "count": 8
+        },
+        {
+          "id": "ank-doorpost-oath",
+          "count": 2
+        },
+        {
+          "id": "ank-chain-run",
+          "count": 1
+        },
+        {
+          "id": "ank-chain-anchor",
+          "count": 1
+        }
+      ],
+      "layout": [
+        {
+          "id": "ank-plinth",
+          "pos": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-plinth",
+          "pos": [
+            0.0,
+            0.0,
+            -3.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-plinth",
+          "pos": [
+            3.0,
+            0.0,
+            0.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-plinth",
+          "pos": [
+            3.0,
+            0.0,
+            -3.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-plinth",
+          "pos": [
+            6.0,
+            0.0,
+            0.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-plinth",
+          "pos": [
+            6.0,
+            0.0,
+            -3.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-wall-door",
+          "pos": [
+            1.5,
+            1,
+            -0.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-door-double",
+          "pos": [
+            2.0,
+            1,
+            -0.85
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-doorpost-oath",
+          "pos": [
+            1.5,
+            1,
+            -0.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-doorpost-oath",
+          "pos": [
+            4.0,
+            1,
+            -0.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-wall-window",
+          "pos": [
+            4.5,
+            1,
+            -0.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-window-arched",
+          "pos": [
+            5.0,
+            2,
+            -0.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-wall-window",
+          "pos": [
+            4.5,
+            1,
+            -5.5
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-window-arched",
+          "pos": [
+            4.0,
+            2,
+            -5.5
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-wall-plain",
+          "pos": [
+            7.5,
+            1,
+            -5.5
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-wall-plain",
+          "pos": [
+            0.5,
+            1,
+            -4.5
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-wall-plain",
+          "pos": [
+            8.5,
+            1,
+            -1.5
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-corner-outer",
+          "pos": [
+            0.5,
+            1,
+            -0.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-corner-outer",
+          "pos": [
+            8.5,
+            1,
+            -0.5
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-corner-outer",
+          "pos": [
+            8.5,
+            1,
+            -5.5
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-corner-outer",
+          "pos": [
+            0.5,
+            1,
+            -5.5
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            1.5,
+            5,
+            -1.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-roof-parapet",
+          "pos": [
+            1.5,
+            5.5,
+            -1.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            4.5,
+            5,
+            -1.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-roof-parapet",
+          "pos": [
+            4.5,
+            5.5,
+            -1.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            4.5,
+            5,
+            -5.0
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-roof-parapet",
+          "pos": [
+            4.5,
+            5.5,
+            -5.0
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            7.5,
+            5,
+            -5.0
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-roof-parapet",
+          "pos": [
+            7.5,
+            5.5,
+            -5.0
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            1.0,
+            5,
+            -4.5
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-roof-parapet",
+          "pos": [
+            1.0,
+            5.5,
+            -4.5
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            8.0,
+            5,
+            -1.5
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-roof-parapet",
+          "pos": [
+            8.0,
+            5.5,
+            -1.5
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-trim-ledger-corner",
+          "pos": [
+            0.5,
+            5,
+            -0.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            1.0,
+            5.5,
+            -1.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            1.0,
+            6.0,
+            -1.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-trim-ledger-corner",
+          "pos": [
+            8.5,
+            5,
+            -0.5
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            8.0,
+            5.5,
+            -1.0
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            8.0,
+            6.0,
+            -1.0
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-trim-ledger-corner",
+          "pos": [
+            8.5,
+            5,
+            -5.5
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            8.0,
+            5.5,
+            -5.0
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            8.0,
+            6.0,
+            -5.0
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-trim-ledger-corner",
+          "pos": [
+            0.5,
+            5,
+            -5.5
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            1.0,
+            5.5,
+            -5.0
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            1.0,
+            6.0,
+            -5.0
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-roof-flat",
+          "pos": [
+            1.5,
+            5,
+            -1.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-roof-flat",
+          "pos": [
+            4.5,
+            5,
+            -1.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-roof-chimney",
+          "pos": [
+            5.25,
+            5.5,
+            -3.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-chain-anchor",
+          "pos": [
+            6.9,
+            0.05,
+            0.53
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-chain-run",
+          "pos": [
+            7.1,
+            0.0,
+            0.42
+          ],
+          "rotY": 270
+        }
       ]
     },
     {
       "id": "ank-terraced-home",
       "name": "Terraced Home",
-      "footprint": [4, 3],
+      "footprint": [
+        4,
+        3
+      ],
       "storeys": 3,
       "pieces": [
-        { "id": "ank-plinth", "count": 12 },
-        { "id": "ank-corner-outer", "count": 12 },
-        { "id": "ank-wall-door", "count": 1 },
-        { "id": "ank-door-double", "count": 1 },
-        { "id": "ank-doorpost-oath", "count": 2 },
-        { "id": "ank-wall-window", "count": 6 },
-        { "id": "ank-window-arched", "count": 6 },
-        { "id": "ank-wall-plain", "count": 23 },
-        { "id": "ank-floor-tile", "count": 8 },
-        { "id": "ank-roof-flat", "count": 12 },
-        { "id": "ank-roof-parapet", "count": 24 },
-        { "id": "ank-stairs-straight", "count": 4 },
-        { "id": "ank-trim-ledger-straight", "count": 14 },
-        { "id": "ank-trim-ledger-corner", "count": 8 },
-        { "id": "ank-roof-chimney", "count": 1 }
+        {
+          "id": "ank-plinth",
+          "count": 18
+        },
+        {
+          "id": "ank-wall-plain",
+          "count": 9
+        },
+        {
+          "id": "ank-wall-window",
+          "count": 4
+        },
+        {
+          "id": "ank-wall-door",
+          "count": 1
+        },
+        {
+          "id": "ank-corner-outer",
+          "count": 8
+        },
+        {
+          "id": "ank-floor-tile",
+          "count": 1
+        },
+        {
+          "id": "ank-stairs-straight",
+          "count": 2
+        },
+        {
+          "id": "ank-roof-flat",
+          "count": 6
+        },
+        {
+          "id": "ank-roof-parapet",
+          "count": 8
+        },
+        {
+          "id": "ank-roof-chimney",
+          "count": 1
+        },
+        {
+          "id": "ank-door-double",
+          "count": 1
+        },
+        {
+          "id": "ank-window-arched",
+          "count": 4
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "count": 20
+        },
+        {
+          "id": "ank-trim-ledger-corner",
+          "count": 8
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "count": 18
+        },
+        {
+          "id": "ank-doorpost-oath",
+          "count": 2
+        }
+      ],
+      "layout": [
+        {
+          "id": "ank-plinth",
+          "pos": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-plinth",
+          "pos": [
+            0.0,
+            0.0,
+            -3.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-plinth",
+          "pos": [
+            0.0,
+            0.0,
+            -6.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-plinth",
+          "pos": [
+            3.0,
+            0.0,
+            0.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-plinth",
+          "pos": [
+            3.0,
+            0.0,
+            -3.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-plinth",
+          "pos": [
+            3.0,
+            0.0,
+            -6.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-plinth",
+          "pos": [
+            6.0,
+            0.0,
+            0.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-plinth",
+          "pos": [
+            6.0,
+            0.0,
+            -3.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-plinth",
+          "pos": [
+            6.0,
+            0.0,
+            -6.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-plinth",
+          "pos": [
+            9.0,
+            0.0,
+            0.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-plinth",
+          "pos": [
+            9.0,
+            0.0,
+            -3.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-plinth",
+          "pos": [
+            9.0,
+            0.0,
+            -6.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-stairs-straight",
+          "pos": [
+            0.5,
+            1,
+            0.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-plinth",
+          "pos": [
+            0.5,
+            1,
+            -3.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-plinth",
+          "pos": [
+            0.5,
+            2,
+            -3.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-stairs-straight",
+          "pos": [
+            0.5,
+            3,
+            -3.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-plinth",
+          "pos": [
+            0.5,
+            1,
+            -6.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-plinth",
+          "pos": [
+            0.5,
+            2,
+            -6.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-plinth",
+          "pos": [
+            0.5,
+            3,
+            -6.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-plinth",
+          "pos": [
+            0.5,
+            4,
+            -6.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-floor-tile",
+          "pos": [
+            0.5,
+            5,
+            -6.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-wall-door",
+          "pos": [
+            4.5,
+            1,
+            -0.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-door-double",
+          "pos": [
+            5.0,
+            1,
+            -0.85
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-doorpost-oath",
+          "pos": [
+            4.5,
+            1,
+            -0.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-doorpost-oath",
+          "pos": [
+            7.0,
+            1,
+            -0.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-wall-window",
+          "pos": [
+            7.5,
+            1,
+            -0.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-window-arched",
+          "pos": [
+            8.0,
+            2,
+            -0.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-wall-plain",
+          "pos": [
+            7.5,
+            1,
+            -8.5
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-wall-plain",
+          "pos": [
+            10.5,
+            1,
+            -8.5
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-wall-plain",
+          "pos": [
+            3.5,
+            1,
+            -4.5
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-wall-plain",
+          "pos": [
+            3.5,
+            1,
+            -7.5
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-wall-window",
+          "pos": [
+            11.5,
+            1,
+            -1.5
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-window-arched",
+          "pos": [
+            11.5,
+            2,
+            -2.0
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-wall-plain",
+          "pos": [
+            11.5,
+            1,
+            -4.5
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-corner-outer",
+          "pos": [
+            3.5,
+            1,
+            -0.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-corner-outer",
+          "pos": [
+            11.5,
+            1,
+            -0.5
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-corner-outer",
+          "pos": [
+            11.5,
+            1,
+            -8.5
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-corner-outer",
+          "pos": [
+            3.5,
+            1,
+            -8.5
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            4.5,
+            5,
+            -1.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-roof-parapet",
+          "pos": [
+            4.5,
+            5.5,
+            -1.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            7.5,
+            5,
+            -1.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-roof-parapet",
+          "pos": [
+            7.5,
+            5.5,
+            -1.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            7.5,
+            5,
+            -8.0
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            7.5,
+            5,
+            -8.5
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            10.5,
+            5,
+            -8.0
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            10.5,
+            5,
+            -8.5
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            4.0,
+            5,
+            -4.5
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            3.5,
+            5,
+            -4.5
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            4.0,
+            5,
+            -7.5
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            3.5,
+            5,
+            -7.5
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            11.0,
+            5,
+            -1.5
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            11.5,
+            5,
+            -1.5
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            11.0,
+            5,
+            -4.5
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            11.5,
+            5,
+            -4.5
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-trim-ledger-corner",
+          "pos": [
+            3.5,
+            5,
+            -0.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            4.0,
+            5.5,
+            -1.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            4.0,
+            6.0,
+            -1.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-trim-ledger-corner",
+          "pos": [
+            11.5,
+            5,
+            -0.5
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            11.0,
+            5.5,
+            -1.0
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            11.0,
+            6.0,
+            -1.0
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-trim-ledger-corner",
+          "pos": [
+            11.5,
+            5,
+            -8.5
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            11.5,
+            5,
+            -8.5
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            11.0,
+            5,
+            -8.5
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            11.5,
+            5,
+            -8.0
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-trim-ledger-corner",
+          "pos": [
+            3.5,
+            5,
+            -8.5
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            3.5,
+            5,
+            -8.5
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            3.5,
+            5,
+            -8.0
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            4.0,
+            5,
+            -8.5
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-roof-flat",
+          "pos": [
+            4.5,
+            5,
+            -1.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-roof-flat",
+          "pos": [
+            4.5,
+            5,
+            -4.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-roof-flat",
+          "pos": [
+            7.5,
+            5,
+            -1.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-roof-flat",
+          "pos": [
+            7.5,
+            5,
+            -4.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-wall-window",
+          "pos": [
+            4.5,
+            5.5,
+            -3.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-window-arched",
+          "pos": [
+            5.0,
+            6.5,
+            -3.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-wall-window",
+          "pos": [
+            7.5,
+            5.5,
+            -3.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-window-arched",
+          "pos": [
+            8.0,
+            6.5,
+            -3.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-wall-plain",
+          "pos": [
+            7.5,
+            5.5,
+            -8.5
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-wall-plain",
+          "pos": [
+            10.5,
+            5.5,
+            -8.5
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-wall-plain",
+          "pos": [
+            3.5,
+            5.5,
+            -7.5
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-wall-plain",
+          "pos": [
+            11.5,
+            5.5,
+            -4.5
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-corner-outer",
+          "pos": [
+            3.5,
+            5.5,
+            -3.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-corner-outer",
+          "pos": [
+            11.5,
+            5.5,
+            -3.5
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-corner-outer",
+          "pos": [
+            11.5,
+            5.5,
+            -8.5
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-corner-outer",
+          "pos": [
+            3.5,
+            5.5,
+            -8.5
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            4.5,
+            9.5,
+            -4.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-roof-parapet",
+          "pos": [
+            4.5,
+            10.0,
+            -4.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            7.5,
+            9.5,
+            -4.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-roof-parapet",
+          "pos": [
+            7.5,
+            10.0,
+            -4.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            7.5,
+            9.5,
+            -8.0
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-roof-parapet",
+          "pos": [
+            7.5,
+            10.0,
+            -8.0
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            10.5,
+            9.5,
+            -8.0
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-roof-parapet",
+          "pos": [
+            10.5,
+            10.0,
+            -8.0
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            4.0,
+            9.5,
+            -7.5
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-roof-parapet",
+          "pos": [
+            4.0,
+            10.0,
+            -7.5
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            11.0,
+            9.5,
+            -4.5
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-roof-parapet",
+          "pos": [
+            11.0,
+            10.0,
+            -4.5
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-trim-ledger-corner",
+          "pos": [
+            3.5,
+            9.5,
+            -3.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            4.0,
+            10.0,
+            -4.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            4.0,
+            10.5,
+            -4.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-trim-ledger-corner",
+          "pos": [
+            11.5,
+            9.5,
+            -3.5
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            11.0,
+            10.0,
+            -4.0
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            11.0,
+            10.5,
+            -4.0
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-trim-ledger-corner",
+          "pos": [
+            11.5,
+            9.5,
+            -8.5
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            11.0,
+            10.0,
+            -8.0
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            11.0,
+            10.5,
+            -8.0
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-trim-ledger-corner",
+          "pos": [
+            3.5,
+            9.5,
+            -8.5
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            4.0,
+            10.0,
+            -8.0
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            4.0,
+            10.5,
+            -8.0
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-roof-flat",
+          "pos": [
+            4.5,
+            9.5,
+            -4.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-roof-flat",
+          "pos": [
+            7.5,
+            9.5,
+            -4.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-roof-chimney",
+          "pos": [
+            9.0,
+            10.0,
+            -6.0
+          ],
+          "rotY": 0
+        }
       ]
     },
     {
       "id": "ank-mooring-house",
       "name": "Mooring House",
-      "footprint": [5, 2],
+      "footprint": [
+        5,
+        3
+      ],
       "storeys": 2,
       "pieces": [
-        { "id": "ank-foundation-cliff", "count": 5 },
-        { "id": "ank-plinth", "count": 5 },
-        { "id": "ank-corner-outer", "count": 8 },
-        { "id": "ank-wall-door", "count": 1 },
-        { "id": "ank-door-double", "count": 1 },
-        { "id": "ank-doorpost-oath", "count": 2 },
-        { "id": "ank-wall-window", "count": 4 },
-        { "id": "ank-window-wide", "count": 4 },
-        { "id": "ank-wall-ledger", "count": 5 },
-        { "id": "ank-wall-plain", "count": 18 },
-        { "id": "ank-roof-flat", "count": 10 },
-        { "id": "ank-roof-parapet", "count": 14 },
-        { "id": "ank-chain-anchor", "count": 2 },
-        { "id": "ank-chain-run", "count": 4 },
-        { "id": "ank-chain-bend", "count": 2 },
-        { "id": "ank-mooring-ring", "count": 1 }
+        {
+          "id": "ank-plinth",
+          "count": 10
+        },
+        {
+          "id": "ank-foundation-cliff",
+          "count": 5
+        },
+        {
+          "id": "ank-wall-plain",
+          "count": 12
+        },
+        {
+          "id": "ank-wall-window",
+          "count": 4
+        },
+        {
+          "id": "ank-wall-door",
+          "count": 1
+        },
+        {
+          "id": "ank-wall-ledger",
+          "count": 3
+        },
+        {
+          "id": "ank-corner-outer",
+          "count": 8
+        },
+        {
+          "id": "ank-roof-flat",
+          "count": 4
+        },
+        {
+          "id": "ank-roof-parapet",
+          "count": 10
+        },
+        {
+          "id": "ank-door-double",
+          "count": 1
+        },
+        {
+          "id": "ank-window-wide",
+          "count": 4
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "count": 30
+        },
+        {
+          "id": "ank-trim-ledger-corner",
+          "count": 8
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "count": 20
+        },
+        {
+          "id": "ank-doorpost-oath",
+          "count": 2
+        },
+        {
+          "id": "ank-chain-run",
+          "count": 2
+        },
+        {
+          "id": "ank-chain-bend",
+          "count": 2
+        },
+        {
+          "id": "ank-chain-anchor",
+          "count": 2
+        },
+        {
+          "id": "ank-mooring-ring",
+          "count": 1
+        },
+        {
+          "id": "ank-lantern-post",
+          "count": 1
+        }
+      ],
+      "layout": [
+        {
+          "id": "ank-foundation-cliff",
+          "pos": [
+            0.0,
+            -3,
+            0.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-foundation-cliff",
+          "pos": [
+            3.0,
+            -3,
+            0.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-foundation-cliff",
+          "pos": [
+            6.0,
+            -3,
+            0.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-foundation-cliff",
+          "pos": [
+            9.0,
+            -3,
+            0.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-foundation-cliff",
+          "pos": [
+            12.0,
+            -3,
+            0.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-plinth",
+          "pos": [
+            0.0,
+            0.0,
+            -3.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-plinth",
+          "pos": [
+            0.0,
+            0.0,
+            -6.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-plinth",
+          "pos": [
+            3.0,
+            0.0,
+            -3.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-plinth",
+          "pos": [
+            3.0,
+            0.0,
+            -6.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-plinth",
+          "pos": [
+            6.0,
+            0.0,
+            -3.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-plinth",
+          "pos": [
+            6.0,
+            0.0,
+            -6.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-plinth",
+          "pos": [
+            9.0,
+            0.0,
+            -3.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-plinth",
+          "pos": [
+            9.0,
+            0.0,
+            -6.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-plinth",
+          "pos": [
+            12.0,
+            0.0,
+            -3.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-plinth",
+          "pos": [
+            12.0,
+            0.0,
+            -6.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-wall-window",
+          "pos": [
+            1.5,
+            1,
+            -3.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-window-wide",
+          "pos": [
+            2.0,
+            2,
+            -3.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-wall-door",
+          "pos": [
+            4.5,
+            1,
+            -3.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-door-double",
+          "pos": [
+            5.0,
+            1,
+            -3.85
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-doorpost-oath",
+          "pos": [
+            4.5,
+            1,
+            -3.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-doorpost-oath",
+          "pos": [
+            7.0,
+            1,
+            -3.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-wall-ledger",
+          "pos": [
+            7.5,
+            1,
+            -3.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-wall-window",
+          "pos": [
+            10.5,
+            1,
+            -3.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-window-wide",
+          "pos": [
+            11.0,
+            2,
+            -3.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-wall-plain",
+          "pos": [
+            4.5,
+            1,
+            -8.5
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-wall-plain",
+          "pos": [
+            7.5,
+            1,
+            -8.5
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-wall-plain",
+          "pos": [
+            10.5,
+            1,
+            -8.5
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-wall-plain",
+          "pos": [
+            13.5,
+            1,
+            -8.5
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-wall-plain",
+          "pos": [
+            0.5,
+            1,
+            -7.5
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-wall-plain",
+          "pos": [
+            14.5,
+            1,
+            -4.5
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-corner-outer",
+          "pos": [
+            0.5,
+            1,
+            -3.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-corner-outer",
+          "pos": [
+            14.5,
+            1,
+            -3.5
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-corner-outer",
+          "pos": [
+            14.5,
+            1,
+            -8.5
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-corner-outer",
+          "pos": [
+            0.5,
+            1,
+            -8.5
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            1.5,
+            5,
+            -4.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            1.5,
+            5,
+            -3.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            4.5,
+            5,
+            -4.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            4.5,
+            5,
+            -3.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            7.5,
+            5,
+            -4.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            7.5,
+            5,
+            -3.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            10.5,
+            5,
+            -4.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            10.5,
+            5,
+            -3.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            4.5,
+            5,
+            -8.0
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            4.5,
+            5,
+            -8.5
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            7.5,
+            5,
+            -8.0
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            7.5,
+            5,
+            -8.5
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            10.5,
+            5,
+            -8.0
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            10.5,
+            5,
+            -8.5
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            13.5,
+            5,
+            -8.0
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            13.5,
+            5,
+            -8.5
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            1.0,
+            5,
+            -7.5
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            0.5,
+            5,
+            -7.5
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            14.0,
+            5,
+            -4.5
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            14.5,
+            5,
+            -4.5
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-trim-ledger-corner",
+          "pos": [
+            0.5,
+            5,
+            -3.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            0.5,
+            5,
+            -3.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            1.0,
+            5,
+            -3.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            0.5,
+            5,
+            -4.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-trim-ledger-corner",
+          "pos": [
+            14.5,
+            5,
+            -3.5
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            14.5,
+            5,
+            -3.5
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            14.5,
+            5,
+            -4.0
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            14.0,
+            5,
+            -3.5
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-trim-ledger-corner",
+          "pos": [
+            14.5,
+            5,
+            -8.5
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            14.5,
+            5,
+            -8.5
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            14.0,
+            5,
+            -8.5
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            14.5,
+            5,
+            -8.0
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-trim-ledger-corner",
+          "pos": [
+            0.5,
+            5,
+            -8.5
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            0.5,
+            5,
+            -8.5
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            0.5,
+            5,
+            -8.0
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            1.0,
+            5,
+            -8.5
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-wall-ledger",
+          "pos": [
+            1.5,
+            5.5,
+            -3.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-wall-window",
+          "pos": [
+            4.5,
+            5.5,
+            -3.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-window-wide",
+          "pos": [
+            5.0,
+            6.5,
+            -3.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-wall-window",
+          "pos": [
+            7.5,
+            5.5,
+            -3.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-window-wide",
+          "pos": [
+            8.0,
+            6.5,
+            -3.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-wall-ledger",
+          "pos": [
+            10.5,
+            5.5,
+            -3.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-wall-plain",
+          "pos": [
+            4.5,
+            5.5,
+            -8.5
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-wall-plain",
+          "pos": [
+            7.5,
+            5.5,
+            -8.5
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-wall-plain",
+          "pos": [
+            10.5,
+            5.5,
+            -8.5
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-wall-plain",
+          "pos": [
+            13.5,
+            5.5,
+            -8.5
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-wall-plain",
+          "pos": [
+            0.5,
+            5.5,
+            -7.5
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-wall-plain",
+          "pos": [
+            14.5,
+            5.5,
+            -4.5
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-corner-outer",
+          "pos": [
+            0.5,
+            5.5,
+            -3.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-corner-outer",
+          "pos": [
+            14.5,
+            5.5,
+            -3.5
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-corner-outer",
+          "pos": [
+            14.5,
+            5.5,
+            -8.5
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-corner-outer",
+          "pos": [
+            0.5,
+            5.5,
+            -8.5
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            1.5,
+            9.5,
+            -4.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-roof-parapet",
+          "pos": [
+            1.5,
+            10.0,
+            -4.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            4.5,
+            9.5,
+            -4.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-roof-parapet",
+          "pos": [
+            4.5,
+            10.0,
+            -4.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            7.5,
+            9.5,
+            -4.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-roof-parapet",
+          "pos": [
+            7.5,
+            10.0,
+            -4.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            10.5,
+            9.5,
+            -4.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-roof-parapet",
+          "pos": [
+            10.5,
+            10.0,
+            -4.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            4.5,
+            9.5,
+            -8.0
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-roof-parapet",
+          "pos": [
+            4.5,
+            10.0,
+            -8.0
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            7.5,
+            9.5,
+            -8.0
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-roof-parapet",
+          "pos": [
+            7.5,
+            10.0,
+            -8.0
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            10.5,
+            9.5,
+            -8.0
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-roof-parapet",
+          "pos": [
+            10.5,
+            10.0,
+            -8.0
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            13.5,
+            9.5,
+            -8.0
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-roof-parapet",
+          "pos": [
+            13.5,
+            10.0,
+            -8.0
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            1.0,
+            9.5,
+            -7.5
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-roof-parapet",
+          "pos": [
+            1.0,
+            10.0,
+            -7.5
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            14.0,
+            9.5,
+            -4.5
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-roof-parapet",
+          "pos": [
+            14.0,
+            10.0,
+            -4.5
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-trim-ledger-corner",
+          "pos": [
+            0.5,
+            9.5,
+            -3.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            1.0,
+            10.0,
+            -4.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            1.0,
+            10.5,
+            -4.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-trim-ledger-corner",
+          "pos": [
+            14.5,
+            9.5,
+            -3.5
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            14.0,
+            10.0,
+            -4.0
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            14.0,
+            10.5,
+            -4.0
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-trim-ledger-corner",
+          "pos": [
+            14.5,
+            9.5,
+            -8.5
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            14.0,
+            10.0,
+            -8.0
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            14.0,
+            10.5,
+            -8.0
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-trim-ledger-corner",
+          "pos": [
+            0.5,
+            9.5,
+            -8.5
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            1.0,
+            10.0,
+            -8.0
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            1.0,
+            10.5,
+            -8.0
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-roof-flat",
+          "pos": [
+            1.5,
+            9.5,
+            -4.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-roof-flat",
+          "pos": [
+            4.5,
+            9.5,
+            -4.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-roof-flat",
+          "pos": [
+            7.5,
+            9.5,
+            -4.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-roof-flat",
+          "pos": [
+            10.5,
+            9.5,
+            -4.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-chain-anchor",
+          "pos": [
+            3.3,
+            1.0,
+            -3.04
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-chain-run",
+          "pos": [
+            3.5,
+            1.0,
+            -3.6
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-chain-bend",
+          "pos": [
+            3.5,
+            0.1,
+            -0.9
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-chain-anchor",
+          "pos": [
+            9.3,
+            1.0,
+            -3.04
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-chain-run",
+          "pos": [
+            9.5,
+            1.0,
+            -3.6
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-chain-bend",
+          "pos": [
+            9.5,
+            0.1,
+            -0.9
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-mooring-ring",
+          "pos": [
+            13.2,
+            1.0,
+            -1.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-lantern-post",
+          "pos": [
+            1.8,
+            1.0,
+            -1.5
+          ],
+          "rotY": 0
+        }
       ]
     },
     {
       "id": "ank-grounded-blockhouse",
       "name": "Grounded Blockhouse",
-      "footprint": [4, 3],
+      "footprint": [
+        4,
+        3
+      ],
       "storeys": 2,
       "pieces": [
-        { "id": "ank-plinth", "count": 12 },
-        { "id": "ank-corner-outer", "count": 8 },
-        { "id": "ank-wall-door", "count": 1 },
-        { "id": "ank-door-double", "count": 1 },
-        { "id": "ank-doorpost-oath", "count": 2 },
-        { "id": "ank-wall-window", "count": 4 },
-        { "id": "ank-window-slit", "count": 4 },
-        { "id": "ank-wall-plain", "count": 23 },
-        { "id": "ank-trim-ledger-straight", "count": 14 },
-        { "id": "ank-trim-ledger-corner", "count": 4 },
-        { "id": "ank-roof-flat", "count": 12 },
-        { "id": "ank-roof-parapet", "count": 14 }
+        {
+          "id": "ank-plinth",
+          "count": 12
+        },
+        {
+          "id": "ank-wall-plain",
+          "count": 11
+        },
+        {
+          "id": "ank-wall-window",
+          "count": 7
+        },
+        {
+          "id": "ank-wall-door",
+          "count": 1
+        },
+        {
+          "id": "ank-wall-ledger",
+          "count": 1
+        },
+        {
+          "id": "ank-corner-outer",
+          "count": 8
+        },
+        {
+          "id": "ank-roof-flat",
+          "count": 6
+        },
+        {
+          "id": "ank-roof-parapet",
+          "count": 10
+        },
+        {
+          "id": "ank-door-double",
+          "count": 1
+        },
+        {
+          "id": "ank-window-slit",
+          "count": 7
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "count": 30
+        },
+        {
+          "id": "ank-trim-ledger-corner",
+          "count": 8
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "count": 20
+        },
+        {
+          "id": "ank-doorpost-oath",
+          "count": 2
+        },
+        {
+          "id": "ank-lantern-wall",
+          "count": 1
+        }
+      ],
+      "layout": [
+        {
+          "id": "ank-plinth",
+          "pos": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-plinth",
+          "pos": [
+            0.0,
+            0.0,
+            -3.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-plinth",
+          "pos": [
+            0.0,
+            0.0,
+            -6.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-plinth",
+          "pos": [
+            3.0,
+            0.0,
+            0.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-plinth",
+          "pos": [
+            3.0,
+            0.0,
+            -3.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-plinth",
+          "pos": [
+            3.0,
+            0.0,
+            -6.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-plinth",
+          "pos": [
+            6.0,
+            0.0,
+            0.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-plinth",
+          "pos": [
+            6.0,
+            0.0,
+            -3.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-plinth",
+          "pos": [
+            6.0,
+            0.0,
+            -6.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-plinth",
+          "pos": [
+            9.0,
+            0.0,
+            0.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-plinth",
+          "pos": [
+            9.0,
+            0.0,
+            -3.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-plinth",
+          "pos": [
+            9.0,
+            0.0,
+            -6.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-wall-window",
+          "pos": [
+            1.5,
+            1,
+            -0.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-window-slit",
+          "pos": [
+            2.0,
+            2,
+            -0.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-wall-door",
+          "pos": [
+            4.5,
+            1,
+            -0.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-door-double",
+          "pos": [
+            5.0,
+            1,
+            -0.85
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-doorpost-oath",
+          "pos": [
+            4.5,
+            1,
+            -0.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-doorpost-oath",
+          "pos": [
+            7.0,
+            1,
+            -0.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-wall-window",
+          "pos": [
+            7.5,
+            1,
+            -0.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-window-slit",
+          "pos": [
+            8.0,
+            2,
+            -0.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-wall-plain",
+          "pos": [
+            4.5,
+            1,
+            -8.5
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-wall-window",
+          "pos": [
+            7.5,
+            1,
+            -8.5
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-window-slit",
+          "pos": [
+            7.0,
+            2,
+            -8.5
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-wall-plain",
+          "pos": [
+            10.5,
+            1,
+            -8.5
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-wall-plain",
+          "pos": [
+            0.5,
+            1,
+            -4.5
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-wall-plain",
+          "pos": [
+            0.5,
+            1,
+            -7.5
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-wall-plain",
+          "pos": [
+            11.5,
+            1,
+            -1.5
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-wall-plain",
+          "pos": [
+            11.5,
+            1,
+            -4.5
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-corner-outer",
+          "pos": [
+            0.5,
+            1,
+            -0.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-corner-outer",
+          "pos": [
+            11.5,
+            1,
+            -0.5
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-corner-outer",
+          "pos": [
+            11.5,
+            1,
+            -8.5
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-corner-outer",
+          "pos": [
+            0.5,
+            1,
+            -8.5
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            1.5,
+            5,
+            -1.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            1.5,
+            5,
+            -0.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            4.5,
+            5,
+            -1.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            4.5,
+            5,
+            -0.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            7.5,
+            5,
+            -1.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            7.5,
+            5,
+            -0.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            4.5,
+            5,
+            -8.0
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            4.5,
+            5,
+            -8.5
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            7.5,
+            5,
+            -8.0
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            7.5,
+            5,
+            -8.5
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            10.5,
+            5,
+            -8.0
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            10.5,
+            5,
+            -8.5
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            1.0,
+            5,
+            -4.5
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            0.5,
+            5,
+            -4.5
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            1.0,
+            5,
+            -7.5
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            0.5,
+            5,
+            -7.5
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            11.0,
+            5,
+            -1.5
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            11.5,
+            5,
+            -1.5
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            11.0,
+            5,
+            -4.5
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            11.5,
+            5,
+            -4.5
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-trim-ledger-corner",
+          "pos": [
+            0.5,
+            5,
+            -0.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            0.5,
+            5,
+            -0.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            1.0,
+            5,
+            -0.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            0.5,
+            5,
+            -1.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-trim-ledger-corner",
+          "pos": [
+            11.5,
+            5,
+            -0.5
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            11.5,
+            5,
+            -0.5
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            11.5,
+            5,
+            -1.0
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            11.0,
+            5,
+            -0.5
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-trim-ledger-corner",
+          "pos": [
+            11.5,
+            5,
+            -8.5
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            11.5,
+            5,
+            -8.5
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            11.0,
+            5,
+            -8.5
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            11.5,
+            5,
+            -8.0
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-trim-ledger-corner",
+          "pos": [
+            0.5,
+            5,
+            -8.5
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            0.5,
+            5,
+            -8.5
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            0.5,
+            5,
+            -8.0
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            1.0,
+            5,
+            -8.5
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-wall-window",
+          "pos": [
+            1.5,
+            5.5,
+            -0.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-window-slit",
+          "pos": [
+            2.0,
+            6.5,
+            -0.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-wall-ledger",
+          "pos": [
+            4.5,
+            5.5,
+            -0.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-wall-window",
+          "pos": [
+            7.5,
+            5.5,
+            -0.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-window-slit",
+          "pos": [
+            8.0,
+            6.5,
+            -0.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-wall-plain",
+          "pos": [
+            4.5,
+            5.5,
+            -8.5
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-wall-plain",
+          "pos": [
+            7.5,
+            5.5,
+            -8.5
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-wall-plain",
+          "pos": [
+            10.5,
+            5.5,
+            -8.5
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-wall-window",
+          "pos": [
+            0.5,
+            5.5,
+            -4.5
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-window-slit",
+          "pos": [
+            0.5,
+            6.5,
+            -4.0
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-wall-plain",
+          "pos": [
+            0.5,
+            5.5,
+            -7.5
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-wall-plain",
+          "pos": [
+            11.5,
+            5.5,
+            -1.5
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-wall-window",
+          "pos": [
+            11.5,
+            5.5,
+            -4.5
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-window-slit",
+          "pos": [
+            11.5,
+            6.5,
+            -5.0
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-corner-outer",
+          "pos": [
+            0.5,
+            5.5,
+            -0.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-corner-outer",
+          "pos": [
+            11.5,
+            5.5,
+            -0.5
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-corner-outer",
+          "pos": [
+            11.5,
+            5.5,
+            -8.5
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-corner-outer",
+          "pos": [
+            0.5,
+            5.5,
+            -8.5
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            1.5,
+            9.5,
+            -1.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-roof-parapet",
+          "pos": [
+            1.5,
+            10.0,
+            -1.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            4.5,
+            9.5,
+            -1.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-roof-parapet",
+          "pos": [
+            4.5,
+            10.0,
+            -1.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            7.5,
+            9.5,
+            -1.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-roof-parapet",
+          "pos": [
+            7.5,
+            10.0,
+            -1.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            4.5,
+            9.5,
+            -8.0
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-roof-parapet",
+          "pos": [
+            4.5,
+            10.0,
+            -8.0
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            7.5,
+            9.5,
+            -8.0
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-roof-parapet",
+          "pos": [
+            7.5,
+            10.0,
+            -8.0
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            10.5,
+            9.5,
+            -8.0
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-roof-parapet",
+          "pos": [
+            10.5,
+            10.0,
+            -8.0
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            1.0,
+            9.5,
+            -4.5
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-roof-parapet",
+          "pos": [
+            1.0,
+            10.0,
+            -4.5
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            1.0,
+            9.5,
+            -7.5
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-roof-parapet",
+          "pos": [
+            1.0,
+            10.0,
+            -7.5
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            11.0,
+            9.5,
+            -1.5
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-roof-parapet",
+          "pos": [
+            11.0,
+            10.0,
+            -1.5
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-trim-ledger-straight",
+          "pos": [
+            11.0,
+            9.5,
+            -4.5
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-roof-parapet",
+          "pos": [
+            11.0,
+            10.0,
+            -4.5
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-trim-ledger-corner",
+          "pos": [
+            0.5,
+            9.5,
+            -0.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            1.0,
+            10.0,
+            -1.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            1.0,
+            10.5,
+            -1.0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-trim-ledger-corner",
+          "pos": [
+            11.5,
+            9.5,
+            -0.5
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            11.0,
+            10.0,
+            -1.0
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            11.0,
+            10.5,
+            -1.0
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "ank-trim-ledger-corner",
+          "pos": [
+            11.5,
+            9.5,
+            -8.5
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            11.0,
+            10.0,
+            -8.0
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            11.0,
+            10.5,
+            -8.0
+          ],
+          "rotY": 180
+        },
+        {
+          "id": "ank-trim-ledger-corner",
+          "pos": [
+            0.5,
+            9.5,
+            -8.5
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            1.0,
+            10.0,
+            -8.0
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-trim-ledger-end",
+          "pos": [
+            1.0,
+            10.5,
+            -8.0
+          ],
+          "rotY": 270
+        },
+        {
+          "id": "ank-roof-flat",
+          "pos": [
+            1.5,
+            9.5,
+            -1.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-roof-flat",
+          "pos": [
+            1.5,
+            9.5,
+            -4.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-roof-flat",
+          "pos": [
+            4.5,
+            9.5,
+            -1.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-roof-flat",
+          "pos": [
+            4.5,
+            9.5,
+            -4.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-roof-flat",
+          "pos": [
+            7.5,
+            9.5,
+            -1.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-roof-flat",
+          "pos": [
+            7.5,
+            9.5,
+            -4.5
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "ank-lantern-wall",
+          "pos": [
+            1.75,
+            2.4,
+            -0.25
+          ],
+          "rotY": 0
+        }
       ]
     }
   ]

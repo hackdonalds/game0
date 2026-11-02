@@ -1,672 +1,1880 @@
 {
   "style": "accord",
   "prefix": "acc",
-  "grid": { "base": 0.5, "module": 2, "storey": 3, "wall": 0.5 },
+  "grid": {
+    "base": 0.5,
+    "module": 2,
+    "storey": 3,
+    "wall": 0.5
+  },
   "scaleFigure": 1.8,
   "trimSheet": "acc-trim",
-  "materials": ["Crystal-Veined Basalt", "Deadwood Timber", "Mossy Timber Joint", "Plaster Infill", "Terracotta Roof Tiles", "Galeborne Sailcloth", "Teal-and-Gold Banner Cloth", "Cobbled Paving"],
+  "materials": [
+    "Crystal-Veined Basalt",
+    "Deadwood Timber",
+    "Mossy Timber Joint",
+    "Plaster Infill",
+    "Terracotta Roof Tiles",
+    "Galeborne Sailcloth",
+    "Teal-and-Gold Banner Cloth",
+    "Cobbled Paving"
+  ],
   "pieces": [
     {
       "id": "acc-plinth-basalt",
       "family": "foundation",
       "name": "Basalt plinth (Anchorkin)",
-      "size": [2, 1, 1],
+      "size": [
+        2,
+        1,
+        1
+      ],
       "pivot": "bottom-left-front",
       "tris": 300,
-      "variants": ["intact", "mossy", "sinking"],
-      "ref": { "sheet": "kit-structure", "label": "Basalt Plinth" },
+      "variants": [
+        "intact",
+        "mossy",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "kit-structure",
+        "label": "Basalt Plinth"
+      },
       "notes": "Anchorkin crystal-veined basalt, teal glowing veins. Runs under ground-floor walls; 2 m per piece."
     },
     {
       "id": "acc-step-basalt-slope",
       "family": "foundation",
       "name": "Basalt slope step (Anchorkin)",
-      "size": [2, 1, 1.5],
+      "size": [
+        2,
+        1,
+        1.5
+      ],
       "pivot": "bottom-left-front",
       "tris": 400,
-      "variants": ["intact", "mossy", "sinking"],
-      "ref": { "sheet": "kit-structure", "label": "Slope Step" },
+      "variants": [
+        "intact",
+        "mossy",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "kit-structure",
+        "label": "Slope Step"
+      },
       "notes": "Sheet says h 0.75 m, which is off the 0.5 m grid; spec wins: rise 1 m so it climbs exactly to plinth height."
     },
     {
       "id": "acc-foundation-basalt-dock",
       "family": "foundation",
       "name": "Basalt dock-edge foundation with mooring ring (Anchorkin)",
-      "size": [2, 1, 1],
+      "size": [
+        2,
+        1,
+        1
+      ],
       "pivot": "bottom-left-front",
       "tris": 500,
-      "variants": ["intact", "mossy", "sinking"],
-      "ref": { "sheet": "kit-structure", "label": "Dock-edge Foundation" },
+      "variants": [
+        "intact",
+        "mossy",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "kit-structure",
+        "label": "Dock-edge Foundation"
+      },
       "notes": "Iron mooring ring and brass straps on the outer face; ring overhangs up to 0.25 m."
     },
     {
       "id": "acc-wall-basalt-plain",
       "family": "wall",
       "name": "Basalt arcade wall, plain (Anchorkin)",
-      "size": [2, 3, 0.5],
+      "size": [
+        2,
+        3,
+        0.5
+      ],
       "pivot": "bottom-left-front",
       "tris": 400,
-      "variants": ["intact", "mossy", "sinking"],
-      "ref": { "sheet": "kit-structure", "label": "Arcade Wall – Plain" },
+      "variants": [
+        "intact",
+        "mossy",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "kit-structure",
+        "label": "Arcade Wall – Plain"
+      },
       "notes": "Blind round arch relief on the outer face."
     },
     {
       "id": "acc-wall-basalt-window",
       "family": "wall",
       "name": "Basalt arcade wall, window (Anchorkin)",
-      "size": [2, 3, 0.5],
+      "size": [
+        2,
+        3,
+        0.5
+      ],
       "pivot": "bottom-left-front",
       "tris": 550,
-      "variants": ["intact", "mossy", "sinking"],
-      "opening": { "kind": "window", "size": [1, 1.5], "offset": [0.5, 1], "accepts": "acc-window-" },
-      "ref": { "sheet": "kit-structure", "label": "Arcade Wall – Window" },
+      "variants": [
+        "intact",
+        "mossy",
+        "sinking"
+      ],
+      "opening": {
+        "kind": "window",
+        "size": [
+          1,
+          1.5
+        ],
+        "offset": [
+          0.5,
+          1
+        ],
+        "accepts": "acc-window-"
+      },
+      "ref": {
+        "sheet": "kit-structure",
+        "label": "Arcade Wall – Window"
+      },
       "notes": "Round-arched opening with a voussoir surround; the leaded glass is an insert."
     },
     {
       "id": "acc-wall-basalt-door",
       "family": "wall",
       "name": "Basalt arcade wall, door (Anchorkin)",
-      "size": [2, 3, 0.5],
+      "size": [
+        2,
+        3,
+        0.5
+      ],
       "pivot": "bottom-left-front",
       "tris": 550,
-      "variants": ["intact", "mossy", "sinking"],
-      "opening": { "kind": "door", "size": [1, 2.5], "offset": [0.5, 0], "accepts": "acc-door-" },
-      "ref": { "sheet": "kit-structure", "label": "Arcade Wall – Door" },
+      "variants": [
+        "intact",
+        "mossy",
+        "sinking"
+      ],
+      "opening": {
+        "kind": "door",
+        "size": [
+          1,
+          2.5
+        ],
+        "offset": [
+          0.5,
+          0
+        ],
+        "accepts": "acc-door-"
+      },
+      "ref": {
+        "sheet": "kit-structure",
+        "label": "Arcade Wall – Door"
+      },
       "notes": "Round-arched doorway with crystal keystone; the door leaf is an insert."
     },
     {
       "id": "acc-wall-basalt-arch",
       "family": "wall",
       "name": "Basalt arcade wall, arch opening (Anchorkin)",
-      "size": [2, 3, 0.5],
+      "size": [
+        2,
+        3,
+        0.5
+      ],
       "pivot": "bottom-left-front",
       "tris": 450,
-      "variants": ["intact", "mossy", "sinking"],
-      "opening": { "kind": "arch", "size": [1, 2.5], "offset": [0.5, 0], "accepts": "acc-door-" },
-      "ref": { "sheet": "kit-structure", "label": "Arcade Wall – Arch Opening" },
+      "variants": [
+        "intact",
+        "mossy",
+        "sinking"
+      ],
+      "opening": {
+        "kind": "arch",
+        "size": [
+          1,
+          2.5
+        ],
+        "offset": [
+          0.5,
+          0
+        ],
+        "accepts": "acc-door-"
+      },
+      "ref": {
+        "sheet": "kit-structure",
+        "label": "Arcade Wall – Arch Opening"
+      },
       "notes": "Open arcade bay with crystal keystone; normally left open (market stalls), can be closed with a door insert."
     },
     {
       "id": "acc-wall-basalt-endcap",
       "family": "wall",
       "name": "Basalt arcade wall, end cap with chain (Anchorkin)",
-      "size": [2, 3, 0.5],
+      "size": [
+        2,
+        3,
+        0.5
+      ],
       "pivot": "bottom-left-front",
       "tris": 450,
-      "variants": ["intact", "mossy", "sinking"],
-      "ref": { "sheet": "kit-structure", "label": "Arcade Wall – End Cap" },
+      "variants": [
+        "intact",
+        "mossy",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "kit-structure",
+        "label": "Arcade Wall – End Cap"
+      },
       "notes": "Terminates an arcade run; iron chain swag on the face."
     },
     {
       "id": "acc-wall-deadwood-plain",
       "family": "wall",
       "name": "Deadwood timber-frame wall, plain (Rootwarden)",
-      "size": [2, 3, 0.5],
+      "size": [
+        2,
+        3,
+        0.5
+      ],
       "pivot": "bottom-left-front",
       "tris": 400,
-      "variants": ["intact", "mossy", "sinking"],
-      "ref": { "sheet": "kit-structure", "label": "Timber Wall – Plain" },
+      "variants": [
+        "intact",
+        "mossy",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "kit-structure",
+        "label": "Timber Wall – Plain"
+      },
       "notes": "Silver-grey deadwood frame, X brace, plaster infill, moss and flowers at the joints."
     },
     {
       "id": "acc-wall-deadwood-window",
       "family": "wall",
       "name": "Deadwood timber-frame wall, window (Rootwarden)",
-      "size": [2, 3, 0.5],
+      "size": [
+        2,
+        3,
+        0.5
+      ],
       "pivot": "bottom-left-front",
       "tris": 550,
-      "variants": ["intact", "mossy", "sinking"],
-      "opening": { "kind": "window", "size": [1, 1.5], "offset": [0.5, 1], "accepts": "acc-window-" },
-      "ref": { "sheet": "kit-structure", "label": "Timber Wall – Window" },
+      "variants": [
+        "intact",
+        "mossy",
+        "sinking"
+      ],
+      "opening": {
+        "kind": "window",
+        "size": [
+          1,
+          1.5
+        ],
+        "offset": [
+          0.5,
+          1
+        ],
+        "accepts": "acc-window-"
+      },
+      "ref": {
+        "sheet": "kit-structure",
+        "label": "Timber Wall – Window"
+      },
       "notes": "Pointed-arch frame; glazing and flower box come from the window inserts."
     },
     {
       "id": "acc-wall-deadwood-door",
       "family": "wall",
       "name": "Deadwood timber-frame wall, door (Rootwarden)",
-      "size": [2, 3, 0.5],
+      "size": [
+        2,
+        3,
+        0.5
+      ],
       "pivot": "bottom-left-front",
       "tris": 550,
-      "variants": ["intact", "mossy", "sinking"],
-      "opening": { "kind": "door", "size": [1, 2.5], "offset": [0.5, 0], "accepts": "acc-door-" },
-      "ref": { "sheet": "kit-structure", "label": "Timber Wall – Door" },
+      "variants": [
+        "intact",
+        "mossy",
+        "sinking"
+      ],
+      "opening": {
+        "kind": "door",
+        "size": [
+          1,
+          2.5
+        ],
+        "offset": [
+          0.5,
+          0
+        ],
+        "accepts": "acc-door-"
+      },
+      "ref": {
+        "sheet": "kit-structure",
+        "label": "Timber Wall – Door"
+      },
       "notes": "Upper-floor door onto a balcony or terrace."
     },
     {
       "id": "acc-wall-deadwood-oriel",
       "family": "wall",
       "name": "Deadwood oriel bay window with terracotta hood (Rootwarden)",
-      "size": [2, 3, 1.5],
+      "size": [
+        2,
+        3,
+        1.5
+      ],
       "pivot": "bottom-left-front",
       "tris": 600,
-      "variants": ["intact", "mossy", "sinking"],
-      "ref": { "sheet": "kit-structure", "label": "Oriel Bay – Window" },
+      "variants": [
+        "intact",
+        "mossy",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "kit-structure",
+        "label": "Oriel Bay – Window"
+      },
       "notes": "Bay projects 1 m beyond the 0.5 m wall, so depth 1.5 m. Glazing, flower box and small terracotta hood are part of the piece."
     },
     {
       "id": "acc-corner-outer",
       "family": "corner",
       "name": "Outer corner post, basalt base and deadwood top (Anchorkin / Rootwarden)",
-      "size": [0.5, 3, 0.5],
+      "size": [
+        0.5,
+        3,
+        0.5
+      ],
       "pivot": "bottom-left-front",
       "tris": 300,
-      "variants": ["intact", "mossy", "sinking"],
-      "ref": { "sheet": "kit-structure", "label": "Outer Corner" },
+      "variants": [
+        "intact",
+        "mossy",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "kit-structure",
+        "label": "Outer Corner"
+      },
       "notes": "Sheet labels it 2 x 3 m; spec wins: a corner is the 0.5 x 0.5 m post where two 0.5 m walls meet, one 3 m storey high. Drawn half basalt, half deadwood; the trim sheet maps the lower half to basalt on ground storeys."
     },
     {
       "id": "acc-corner-inner",
       "family": "corner",
       "name": "Inner corner post, basalt base and deadwood top (Anchorkin / Rootwarden)",
-      "size": [0.5, 3, 0.5],
+      "size": [
+        0.5,
+        3,
+        0.5
+      ],
       "pivot": "bottom-left-front",
       "tris": 250,
-      "variants": ["intact", "mossy", "sinking"],
-      "ref": { "sheet": "kit-structure", "label": "Inner Corner" },
+      "variants": [
+        "intact",
+        "mossy",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "kit-structure",
+        "label": "Inner Corner"
+      },
       "notes": "Sheet labels it 2 x 3 m; spec wins: 0.5 x 0.5 m post, one storey high."
     },
     {
       "id": "acc-corner-tower-basalt",
       "family": "corner",
       "name": "Corner tower segment, basalt with deadwood windows (Anchorkin / Rootwarden)",
-      "size": [2, 3, 2],
+      "size": [
+        2,
+        3,
+        2
+      ],
       "pivot": "bottom-left-front",
       "tris": 400,
-      "variants": ["intact", "mossy", "sinking"],
+      "variants": [
+        "intact",
+        "mossy",
+        "sinking"
+      ],
       "radius": 1,
-      "ref": { "sheet": "kit-structure", "label": "Corner Tower Segment" },
+      "ref": {
+        "sheet": "kit-structure",
+        "label": "Corner Tower Segment"
+      },
       "notes": "Sheet says r ≈ 2 m, which would not fit its own 2 x 2 m footprint; spec wins: radius 1 m. Stacks one storey per segment; takes the Corner Tower Cap."
     },
     {
       "id": "acc-floor-tile-paving",
       "family": "floor",
       "name": "Cobbled paving floor tile",
-      "size": [2, 0.5, 2],
+      "size": [
+        2,
+        0.5,
+        2
+      ],
       "pivot": "bottom-left-front",
       "tris": 150,
-      "variants": ["intact", "mossy", "sinking"],
-      "ref": { "sheet": "kit-structure", "label": "Floor Tile" },
+      "variants": [
+        "intact",
+        "mossy",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "kit-structure",
+        "label": "Floor Tile"
+      },
       "notes": "Thickness not given on the sheet; set to 0.5 m (one grid step, matching the wall) so it doubles as the slab between storeys."
     },
     {
       "id": "acc-stairs-basalt-straight",
       "family": "access",
       "name": "Straight basalt stairs (Anchorkin)",
-      "size": [2, 3, 4],
+      "size": [
+        2,
+        3,
+        4
+      ],
       "pivot": "bottom-left-front",
       "tris": 500,
-      "variants": ["intact", "mossy", "sinking"],
-      "ref": { "sheet": "kit-structure", "label": "Straight Stairs" },
+      "variants": [
+        "intact",
+        "mossy",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "kit-structure",
+        "label": "Straight Stairs"
+      },
       "notes": "2 m wide, 3 m rise (one storey); run not given on the sheet, set to 4 m (2 modules)."
     },
     {
       "id": "acc-balcony-deadwood",
       "family": "access",
       "name": "Deadwood balcony with railing (Rootwarden)",
-      "size": [2, 1, 1],
+      "size": [
+        2,
+        1,
+        1
+      ],
       "pivot": "bottom-left-front",
       "tris": 450,
-      "variants": ["intact", "mossy", "sinking"],
-      "ref": { "sheet": "kit-structure", "label": "Balcony (Railing)" },
+      "variants": [
+        "intact",
+        "mossy",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "kit-structure",
+        "label": "Balcony (Railing)"
+      },
       "notes": "Deck projects 1 m on deadwood brackets; railing 1 m high with brass finials. The hanging banner is the separate Galeborne banner."
     },
     {
       "id": "acc-roof-run",
       "family": "roof",
       "name": "Terracotta roof run, straight",
-      "size": [2, 2, 2],
+      "size": [
+        2,
+        2,
+        2
+      ],
       "pivot": "bottom-left-front",
       "tris": 300,
-      "variants": ["intact", "mossy"],
-      "ref": { "sheet": "kit-roofs", "label": "Roof Run – Straight" },
+      "variants": [
+        "intact",
+        "mossy"
+      ],
+      "ref": {
+        "sheet": "kit-roofs",
+        "label": "Roof Run – Straight"
+      },
       "notes": "One slope: 2 m along the eave, 2 m in plan, 2 m rise. Drawn as a closed A-frame; built as a single slope so two back to back span a 4 m deep building."
     },
     {
       "id": "acc-roof-hip",
       "family": "roof",
       "name": "Terracotta roof hip corner",
-      "size": [2, 2, 2],
+      "size": [
+        2,
+        2,
+        2
+      ],
       "pivot": "bottom-left-front",
       "tris": 350,
-      "variants": ["intact", "mossy"],
-      "ref": { "sheet": "kit-roofs", "label": "Roof – Hip Corner" },
+      "variants": [
+        "intact",
+        "mossy"
+      ],
+      "ref": {
+        "sheet": "kit-roofs",
+        "label": "Roof – Hip Corner"
+      },
       "notes": "Quarter pyramid matching the run's pitch; brass finial at the apex."
     },
     {
       "id": "acc-roof-gable-deadwood",
       "family": "roof",
       "name": "Gable end with deadwood truss (Rootwarden)",
-      "size": [2, 2, 0.5],
+      "size": [
+        2,
+        2,
+        0.5
+      ],
       "pivot": "bottom-left-front",
       "tris": 400,
-      "variants": ["intact", "mossy"],
-      "ref": { "sheet": "kit-roofs", "label": "Roof – Gable End" },
+      "variants": [
+        "intact",
+        "mossy"
+      ],
+      "ref": {
+        "sheet": "kit-roofs",
+        "label": "Roof – Gable End"
+      },
       "notes": "Half gable per piece (one slope's end), mirrored for the other side; exposed deadwood truss with moss and flowers, finial at the peak."
     },
     {
       "id": "acc-roof-ridge",
       "family": "roof",
       "name": "Terracotta ridge cap",
-      "size": [2, 0.5, 0.5],
+      "size": [
+        2,
+        0.5,
+        0.5
+      ],
       "pivot": "bottom-left-front",
       "tris": 150,
-      "variants": ["intact", "mossy"],
-      "ref": { "sheet": "kit-roofs", "label": "Ridge Cap" },
+      "variants": [
+        "intact",
+        "mossy"
+      ],
+      "ref": {
+        "sheet": "kit-roofs",
+        "label": "Ridge Cap"
+      },
       "notes": "2 m long, brass ball finials at the ends."
     },
     {
       "id": "acc-roof-dormer",
       "family": "roof",
       "name": "Dormer window with terracotta hood",
-      "size": [2, 2, 2],
+      "size": [
+        2,
+        2,
+        2
+      ],
       "pivot": "bottom-left-front",
       "tris": 550,
-      "variants": ["intact", "mossy"],
-      "ref": { "sheet": "kit-roofs", "label": "Dormer Window" },
+      "variants": [
+        "intact",
+        "mossy"
+      ],
+      "ref": {
+        "sheet": "kit-roofs",
+        "label": "Dormer Window"
+      },
       "notes": "Sits on a roof run; glazing is built in, not an insert."
     },
     {
       "id": "acc-crown-spire-galeborne",
       "family": "crown",
       "name": "Slender spire (Galeborne)",
-      "size": [2, 6, 2],
+      "size": [
+        2,
+        6,
+        2
+      ],
       "pivot": "bottom-left-front",
       "tris": 1200,
-      "variants": ["intact", "mossy"],
-      "ref": { "sheet": "kit-roofs", "label": "Spire – Slender" },
+      "variants": [
+        "intact",
+        "mossy"
+      ],
+      "ref": {
+        "sheet": "kit-roofs",
+        "label": "Spire – Slender"
+      },
       "notes": "Teal-and-gold slate spire on a small stone and deadwood lantern base with pinnacles. The flag on top is the separate Galeborne pennant."
     },
     {
       "id": "acc-crown-cupola-galeborne",
       "family": "crown",
       "name": "Lantern cupola with crystal (Galeborne)",
-      "size": [2, 4, 2],
+      "size": [
+        2,
+        4,
+        2
+      ],
       "pivot": "bottom-left-front",
       "tris": 1400,
-      "variants": ["intact", "mossy"],
-      "ref": { "sheet": "kit-roofs", "label": "Cupola – Lantern" },
+      "variants": [
+        "intact",
+        "mossy"
+      ],
+      "ref": {
+        "sheet": "kit-roofs",
+        "label": "Cupola – Lantern"
+      },
       "notes": "Open colonnade on a carved basalt drum, hanging teal crystal, teal dome with gold ribs."
     },
     {
       "id": "acc-crown-towercap-galeborne",
       "family": "crown",
       "name": "Corner tower cap (Galeborne)",
-      "size": [2, 3.5, 2],
+      "size": [
+        2,
+        3.5,
+        2
+      ],
       "pivot": "bottom-left-front",
       "tris": 1000,
-      "variants": ["intact", "mossy"],
-      "ref": { "sheet": "kit-roofs", "label": "Corner Tower Cap" },
+      "variants": [
+        "intact",
+        "mossy"
+      ],
+      "ref": {
+        "sheet": "kit-roofs",
+        "label": "Corner Tower Cap"
+      },
       "notes": "Terracotta conical cap over a lit lantern storey; caps the corner tower segment."
     },
     {
       "id": "acc-awning-sailcloth-galeborne",
       "family": "attachment",
       "name": "Sailcloth awning (Galeborne)",
-      "size": [2, 1.5, 1.5],
+      "size": [
+        2,
+        1.5,
+        1.5
+      ],
       "pivot": "bottom-left-front",
       "tris": 400,
-      "variants": ["intact"],
-      "ref": { "sheet": "kit-roofs", "label": "Awning – Sailcloth" },
+      "variants": [
+        "intact"
+      ],
+      "ref": {
+        "sheet": "kit-roofs",
+        "label": "Awning – Sailcloth"
+      },
       "notes": "Cream sailcloth with teal and gold scalloped valance on a deadwood frame and chain stays; projects 1.5 m."
     },
     {
       "id": "acc-canopy-sailcloth-galeborne",
       "family": "attachment",
       "name": "Market canopy, sailcloth on four posts (Galeborne)",
-      "size": [4, 3, 4],
+      "size": [
+        4,
+        3,
+        4
+      ],
       "pivot": "bottom-center",
       "tris": 800,
-      "variants": ["intact"],
-      "ref": { "sheet": "kit-roofs", "label": "Market Canopy – Sailcloth" },
+      "variants": [
+        "intact"
+      ],
+      "ref": {
+        "sheet": "kit-roofs",
+        "label": "Market Canopy – Sailcloth"
+      },
       "notes": "Free-standing 4 x 4 m on brass-capped posts, with two banners and two lamps built in."
     },
     {
       "id": "acc-door-basalt-arch",
       "family": "insert",
       "name": "Round-arch door leaf, teal (ground floor)",
-      "size": [1, 2.5, 0.5],
+      "size": [
+        1,
+        2.5,
+        0.5
+      ],
       "pivot": "bottom-left-front",
       "tris": 300,
-      "variants": ["intact", "mossy"],
-      "ref": { "sheet": "kit-details", "label": "Basalt-Arch Door (Ground Floor)" },
+      "variants": [
+        "intact",
+        "mossy"
+      ],
+      "ref": {
+        "sheet": "kit-details",
+        "label": "Basalt-Arch Door (Ground Floor)"
+      },
       "notes": "Sheet labels it 2 x 3 m with its basalt surround; spec wins: the surround belongs to the wall, the insert fills the standard 1 x 2.5 m door opening."
     },
     {
       "id": "acc-door-deadwood",
       "family": "insert",
       "name": "Deadwood upper-floor door leaf (Rootwarden)",
-      "size": [1, 2.5, 0.5],
+      "size": [
+        1,
+        2.5,
+        0.5
+      ],
       "pivot": "bottom-left-front",
       "tris": 250,
-      "variants": ["intact", "mossy"],
-      "ref": { "sheet": "kit-details", "label": "Deadwood Upper-Floor Door" },
+      "variants": [
+        "intact",
+        "mossy"
+      ],
+      "ref": {
+        "sheet": "kit-details",
+        "label": "Deadwood Upper-Floor Door"
+      },
       "notes": "Sheet labels it 2 x 3 m with its timber surround; spec wins: fills the 1 x 2.5 m door opening."
     },
     {
       "id": "acc-door-market-double",
       "family": "insert",
       "name": "Wide double market-hall door with basalt surround",
-      "size": [4, 3, 0.5],
+      "size": [
+        4,
+        3,
+        0.5
+      ],
       "pivot": "bottom-left-front",
       "tris": 400,
-      "variants": ["intact", "mossy"],
-      "ref": { "sheet": "kit-details", "label": "Wide Double Market-Hall Door" },
+      "variants": [
+        "intact",
+        "mossy"
+      ],
+      "ref": {
+        "sheet": "kit-details",
+        "label": "Wide Double Market-Hall Door"
+      },
       "notes": "Exception to the opening rule: 4 x 3 m as drawn, with its own basalt arch, sailcloth swag and banners; replaces two arcade wall modules instead of dropping into an opening."
     },
     {
       "id": "acc-window-basalt-leaded",
       "family": "insert",
       "name": "Round-arched leaded window (ground floor)",
-      "size": [1, 1.5, 0.5],
+      "size": [
+        1,
+        1.5,
+        0.5
+      ],
       "pivot": "bottom-left-front",
       "tris": 200,
-      "variants": ["intact", "mossy"],
-      "ref": { "sheet": "kit-details", "label": "Round-Arched Leaded Window" },
+      "variants": [
+        "intact",
+        "mossy"
+      ],
+      "ref": {
+        "sheet": "kit-details",
+        "label": "Round-Arched Leaded Window"
+      },
       "notes": "Sheet labels it 2 x 3 m with its basalt surround; spec wins: fills the standard 1 x 1.5 m window opening."
     },
     {
       "id": "acc-window-deadwood-shutters",
       "family": "insert",
       "name": "Timber-frame window with open shutters (Rootwarden)",
-      "size": [1, 1.5, 0.5],
+      "size": [
+        1,
+        1.5,
+        0.5
+      ],
       "pivot": "bottom-left-front",
       "tris": 300,
-      "variants": ["intact", "mossy"],
-      "ref": { "sheet": "kit-details", "label": "Timber-Frame Window with Open Shutters" },
+      "variants": [
+        "intact",
+        "mossy"
+      ],
+      "ref": {
+        "sheet": "kit-details",
+        "label": "Timber-Frame Window with Open Shutters"
+      },
       "notes": "Sheet labels it 2 x 3 m; spec wins: fills the 1 x 1.5 m opening, the open teal shutters overhang 0.5 m each side."
     },
     {
       "id": "acc-window-deadwood-flowerbox",
       "family": "insert",
       "name": "Small shuttered window with flower box (Rootwarden)",
-      "size": [1, 1.5, 0.5],
+      "size": [
+        1,
+        1.5,
+        0.5
+      ],
       "pivot": "bottom-left-front",
       "tris": 350,
-      "variants": ["intact", "mossy"],
-      "ref": { "sheet": "kit-details", "label": "Small Shuttered Window with Flower Box" },
+      "variants": [
+        "intact",
+        "mossy"
+      ],
+      "ref": {
+        "sheet": "kit-details",
+        "label": "Small Shuttered Window with Flower Box"
+      },
       "notes": "Matches the opening as labelled (1 x 1.5 m); flower box overhangs the sill."
     },
     {
       "id": "acc-lamp-bracket-a",
       "family": "attachment",
       "name": "Lamp bracket A, crystal lantern",
-      "size": [1, 1.5, 1],
+      "size": [
+        1,
+        1.5,
+        1
+      ],
       "pivot": "bottom-center",
       "tris": 300,
-      "variants": ["intact"],
+      "variants": [
+        "intact"
+      ],
       "free": true,
-      "ref": { "sheet": "kit-details", "label": "Lamp Bracket A" },
+      "ref": {
+        "sheet": "kit-details",
+        "label": "Lamp Bracket A"
+      },
       "notes": "Iron wall bracket with a teal crystal lantern on a chain."
     },
     {
       "id": "acc-lamp-bracket-b",
       "family": "attachment",
       "name": "Lamp bracket B, scrolled",
-      "size": [1, 1.5, 1],
+      "size": [
+        1,
+        1.5,
+        1
+      ],
       "pivot": "bottom-center",
       "tris": 350,
-      "variants": ["intact"],
+      "variants": [
+        "intact"
+      ],
       "free": true,
-      "ref": { "sheet": "kit-details", "label": "Lamp Bracket B" },
+      "ref": {
+        "sheet": "kit-details",
+        "label": "Lamp Bracket B"
+      },
       "notes": "Brass scrolled bracket, chain lantern."
     },
     {
       "id": "acc-flowerbox-small",
       "family": "attachment",
       "name": "Flower box, small (Rootwarden)",
-      "size": [1, 0.5, 0.5],
+      "size": [
+        1,
+        0.5,
+        0.5
+      ],
       "pivot": "bottom-center",
       "tris": 250,
-      "variants": ["intact", "mossy"],
+      "variants": [
+        "intact",
+        "mossy"
+      ],
       "free": true,
-      "ref": { "sheet": "kit-details", "label": "Flower Box (Small)" }
+      "ref": {
+        "sheet": "kit-details",
+        "label": "Flower Box (Small)"
+      }
     },
     {
       "id": "acc-flowerbox-large",
       "family": "attachment",
       "name": "Flower box, large (Rootwarden)",
-      "size": [2, 0.5, 0.5],
+      "size": [
+        2,
+        0.5,
+        0.5
+      ],
       "pivot": "bottom-center",
       "tris": 350,
-      "variants": ["intact", "mossy"],
+      "variants": [
+        "intact",
+        "mossy"
+      ],
       "free": true,
-      "ref": { "sheet": "kit-details", "label": "Flower Box (Large)" }
+      "ref": {
+        "sheet": "kit-details",
+        "label": "Flower Box (Large)"
+      }
     },
     {
       "id": "acc-banner-galeborne",
       "family": "attachment",
       "name": "Vertical banner (Galeborne)",
-      "size": [1, 2, 0.25],
+      "size": [
+        1,
+        2,
+        0.25
+      ],
       "pivot": "bottom-center",
       "tris": 150,
-      "variants": ["intact"],
+      "variants": [
+        "intact"
+      ],
       "free": true,
-      "ref": { "sheet": "kit-details", "label": "Galeborne Banner (Vertical)" },
+      "ref": {
+        "sheet": "kit-details",
+        "label": "Galeborne Banner (Vertical)"
+      },
       "notes": "Cream cloth with teal tree emblem and gold rod."
     },
     {
       "id": "acc-pennant-galeborne",
       "family": "attachment",
       "name": "Pennant on pole (Galeborne)",
-      "size": [0.5, 2, 0.25],
+      "size": [
+        0.5,
+        2,
+        0.25
+      ],
       "pivot": "bottom-center",
       "tris": 150,
-      "variants": ["intact"],
+      "variants": [
+        "intact"
+      ],
       "free": true,
-      "ref": { "sheet": "kit-details", "label": "Galeborne Pennant" },
+      "ref": {
+        "sheet": "kit-details",
+        "label": "Galeborne Pennant"
+      },
       "notes": "Label is 0.5 x 2 m; the flying tail extends past the bounding box when animated."
     },
     {
       "id": "acc-sign-shop-a",
       "family": "attachment",
       "name": "Shop signboard A, cup",
-      "size": [1, 1, 1],
+      "size": [
+        1,
+        1,
+        1
+      ],
       "pivot": "bottom-center",
       "tris": 250,
-      "variants": ["intact"],
+      "variants": [
+        "intact"
+      ],
       "free": true,
-      "ref": { "sheet": "kit-details", "label": "Shop Signboard A" },
+      "ref": {
+        "sheet": "kit-details",
+        "label": "Shop Signboard A"
+      },
       "notes": "Hanging teal board on an iron bracket."
     },
     {
       "id": "acc-sign-shop-b",
       "family": "attachment",
       "name": "Shop signboard B, hammers",
-      "size": [1, 1, 1],
+      "size": [
+        1,
+        1,
+        1
+      ],
       "pivot": "bottom-center",
       "tris": 250,
-      "variants": ["intact"],
+      "variants": [
+        "intact"
+      ],
       "free": true,
-      "ref": { "sheet": "kit-details", "label": "Shop Signboard B" }
+      "ref": {
+        "sheet": "kit-details",
+        "label": "Shop Signboard B"
+      }
     },
     {
       "id": "acc-infill-deadwood-xbrace",
       "family": "trim",
       "name": "Timber infill, X brace (Rootwarden)",
-      "size": [2, 3, 0.5],
+      "size": [
+        2,
+        3,
+        0.5
+      ],
       "pivot": "bottom-left-front",
       "tris": 250,
-      "variants": ["intact", "mossy", "sinking"],
-      "ref": { "sheet": "kit-details", "label": "Timber Infill – X Brace" },
+      "variants": [
+        "intact",
+        "mossy",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "kit-details",
+        "label": "Timber Infill – X Brace"
+      },
       "notes": "Swappable infill panel for the deadwood frame."
     },
     {
       "id": "acc-infill-deadwood-chevron",
       "family": "trim",
       "name": "Timber infill, chevron (Rootwarden)",
-      "size": [2, 3, 0.5],
+      "size": [
+        2,
+        3,
+        0.5
+      ],
       "pivot": "bottom-left-front",
       "tris": 250,
-      "variants": ["intact", "mossy", "sinking"],
-      "ref": { "sheet": "kit-details", "label": "Timber Infill – Chevron" }
+      "variants": [
+        "intact",
+        "mossy",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "kit-details",
+        "label": "Timber Infill – Chevron"
+      }
     },
     {
       "id": "acc-infill-deadwood-plaster",
       "family": "trim",
       "name": "Timber infill, plain plaster (Rootwarden)",
-      "size": [2, 3, 0.5],
+      "size": [
+        2,
+        3,
+        0.5
+      ],
       "pivot": "bottom-left-front",
       "tris": 150,
-      "variants": ["intact", "mossy", "sinking"],
-      "ref": { "sheet": "kit-details", "label": "Timber Infill – Plain Plaster" }
+      "variants": [
+        "intact",
+        "mossy",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "kit-details",
+        "label": "Timber Infill – Plain Plaster"
+      }
     },
     {
       "id": "acc-cornice-basalt",
       "family": "trim",
       "name": "Basalt string course with crystal inlay (Anchorkin)",
-      "size": [2, 0.5, 0.5],
+      "size": [
+        2,
+        0.5,
+        0.5
+      ],
       "pivot": "bottom-left-front",
       "tris": 200,
-      "variants": ["intact", "mossy", "sinking"],
-      "ref": { "sheet": "kit-details", "label": "Cornice – Basalt String Course (with Crystal Inlay)" },
+      "variants": [
+        "intact",
+        "mossy",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "kit-details",
+        "label": "Cornice – Basalt String Course (with Crystal Inlay)"
+      },
       "notes": "Caps the basalt ground storey."
     },
     {
       "id": "acc-cornice-deadwood",
       "family": "trim",
       "name": "Carved deadwood cornice, beam end (Rootwarden)",
-      "size": [2, 0.5, 0.5],
+      "size": [
+        2,
+        0.5,
+        0.5
+      ],
       "pivot": "bottom-left-front",
       "tris": 250,
-      "variants": ["intact", "mossy"],
-      "ref": { "sheet": "kit-details", "label": "Cornice – Carved Deadwood (Beam End)" }
+      "variants": [
+        "intact",
+        "mossy"
+      ],
+      "ref": {
+        "sheet": "kit-details",
+        "label": "Cornice – Carved Deadwood (Beam End)"
+      }
     },
     {
       "id": "acc-cornice-terracotta-galeborne",
       "family": "trim",
       "name": "Terracotta eave with sailcloth valance (Galeborne)",
-      "size": [2, 0.5, 0.5],
+      "size": [
+        2,
+        0.5,
+        0.5
+      ],
       "pivot": "bottom-left-front",
       "tris": 250,
-      "variants": ["intact", "mossy"],
-      "ref": { "sheet": "kit-details", "label": "Cornice – Terracotta Eave (Galeborne)" }
+      "variants": [
+        "intact",
+        "mossy"
+      ],
+      "ref": {
+        "sheet": "kit-details",
+        "label": "Cornice – Terracotta Eave (Galeborne)"
+      }
     }
   ],
   "prefabs": [
     {
       "id": "acc-prefab-townhouse-exploded",
       "name": "Two-Storey Townhouse (exploded build)",
-      "footprint": [2, 2],
+      "footprint": [
+        2,
+        2
+      ],
       "storeys": 2,
       "pieces": [
-        { "id": "acc-plinth-basalt", "count": 8 },
-        { "id": "acc-wall-basalt-door", "count": 1 },
-        { "id": "acc-wall-basalt-window", "count": 1 },
-        { "id": "acc-wall-basalt-plain", "count": 6 },
-        { "id": "acc-door-basalt-arch", "count": 1 },
-        { "id": "acc-window-basalt-leaded", "count": 1 },
-        { "id": "acc-corner-outer", "count": 8 },
-        { "id": "acc-floor-tile-paving", "count": 4 },
-        { "id": "acc-wall-deadwood-window", "count": 1 },
-        { "id": "acc-wall-deadwood-plain", "count": 7 },
-        { "id": "acc-window-deadwood-flowerbox", "count": 1 },
-        { "id": "acc-roof-run", "count": 4 },
-        { "id": "acc-roof-gable-deadwood", "count": 4 },
-        { "id": "acc-roof-ridge", "count": 2 },
-        { "id": "acc-roof-dormer", "count": 1 },
-        { "id": "acc-crown-spire-galeborne", "count": 1 },
-        { "id": "acc-awning-sailcloth-galeborne", "count": 1 },
-        { "id": "acc-lamp-bracket-a", "count": 1 }
+        {
+          "id": "acc-plinth-basalt",
+          "count": 8
+        },
+        {
+          "id": "acc-wall-basalt-door",
+          "count": 1
+        },
+        {
+          "id": "acc-wall-basalt-window",
+          "count": 1
+        },
+        {
+          "id": "acc-wall-basalt-plain",
+          "count": 6
+        },
+        {
+          "id": "acc-corner-outer",
+          "count": 8
+        },
+        {
+          "id": "acc-door-basalt-arch",
+          "count": 1
+        },
+        {
+          "id": "acc-window-basalt-leaded",
+          "count": 1
+        },
+        {
+          "id": "acc-floor-tile-paving",
+          "count": 4
+        },
+        {
+          "id": "acc-wall-deadwood-plain",
+          "count": 7
+        },
+        {
+          "id": "acc-wall-deadwood-window",
+          "count": 1
+        },
+        {
+          "id": "acc-window-deadwood-flowerbox",
+          "count": 1
+        },
+        {
+          "id": "acc-roof-run",
+          "count": 4
+        },
+        {
+          "id": "acc-roof-ridge",
+          "count": 2
+        },
+        {
+          "id": "acc-roof-dormer",
+          "count": 1
+        },
+        {
+          "id": "acc-roof-gable-deadwood",
+          "count": 4
+        },
+        {
+          "id": "acc-crown-spire-galeborne",
+          "count": 1
+        },
+        {
+          "id": "acc-awning-sailcloth-galeborne",
+          "count": 1
+        },
+        {
+          "id": "acc-step-basalt-slope",
+          "count": 1
+        },
+        {
+          "id": "acc-lamp-bracket-a",
+          "count": 1
+        }
       ],
-      "notes": "Footprint not written on the sheet; estimated 4 x 4 m from the plinth ring and two-bay front."
+      "notes": "Footprint not written on the sheet; estimated 4 x 4 m from the plinth ring and two-bay front.",
+      "layout": [
+        { "id": "acc-plinth-basalt", "pos": [0.0, 0.0, 0.0], "rotY": 0 },
+        { "id": "acc-plinth-basalt", "pos": [2.0, 0.0, 0.0], "rotY": 0 },
+        { "id": "acc-plinth-basalt", "pos": [4.0, 0.0, 0.0], "rotY": 90 },
+        { "id": "acc-plinth-basalt", "pos": [4.0, 0.0, -2.0], "rotY": 90 },
+        { "id": "acc-plinth-basalt", "pos": [4.0, 0.0, -4.0], "rotY": 180 },
+        { "id": "acc-plinth-basalt", "pos": [2.0, 0.0, -4.0], "rotY": 180 },
+        { "id": "acc-plinth-basalt", "pos": [0.0, 0.0, -4.0], "rotY": -90 },
+        { "id": "acc-plinth-basalt", "pos": [0.0, 0.0, -2.0], "rotY": -90 },
+        { "id": "acc-wall-basalt-door", "pos": [0.0, 1.0, 0.0], "rotY": 0 },
+        { "id": "acc-wall-basalt-window", "pos": [2.0, 1.0, 0.0], "rotY": 0 },
+        { "id": "acc-wall-basalt-plain", "pos": [4.0, 1.0, 0.0], "rotY": 90 },
+        { "id": "acc-wall-basalt-plain", "pos": [4.0, 1.0, -2.0], "rotY": 90 },
+        { "id": "acc-wall-basalt-plain", "pos": [4.0, 1.0, -4.0], "rotY": 180 },
+        { "id": "acc-wall-basalt-plain", "pos": [2.0, 1.0, -4.0], "rotY": 180 },
+        { "id": "acc-wall-basalt-plain", "pos": [0.0, 1.0, -4.0], "rotY": -90 },
+        { "id": "acc-wall-basalt-plain", "pos": [0.0, 1.0, -2.0], "rotY": -90 },
+        { "id": "acc-corner-outer", "pos": [0.0, 1.0, 0.0], "rotY": 0 },
+        { "id": "acc-corner-outer", "pos": [4.0, 1.0, 0.0], "rotY": 90 },
+        { "id": "acc-corner-outer", "pos": [4.0, 1.0, -4.0], "rotY": 180 },
+        { "id": "acc-corner-outer", "pos": [0.0, 1.0, -4.0], "rotY": -90 },
+        { "id": "acc-door-basalt-arch", "pos": [0.5, 1.0, 0.0], "rotY": 0 },
+        { "id": "acc-window-basalt-leaded", "pos": [2.5, 2.0, 0.0], "rotY": 0 },
+        { "id": "acc-floor-tile-paving", "pos": [0.0, 4.0, -2.0], "rotY": 0 },
+        { "id": "acc-floor-tile-paving", "pos": [0.0, 4.0, 0.0], "rotY": 0 },
+        { "id": "acc-floor-tile-paving", "pos": [2.0, 4.0, -2.0], "rotY": 0 },
+        { "id": "acc-floor-tile-paving", "pos": [2.0, 4.0, 0.0], "rotY": 0 },
+        { "id": "acc-wall-deadwood-plain", "pos": [0.0, 4.5, 0.0], "rotY": 0 },
+        { "id": "acc-wall-deadwood-window", "pos": [2.0, 4.5, 0.0], "rotY": 0 },
+        { "id": "acc-wall-deadwood-plain", "pos": [4.0, 4.5, 0.0], "rotY": 90 },
+        { "id": "acc-wall-deadwood-plain", "pos": [4.0, 4.5, -2.0], "rotY": 90 },
+        { "id": "acc-wall-deadwood-plain", "pos": [4.0, 4.5, -4.0], "rotY": 180 },
+        { "id": "acc-wall-deadwood-plain", "pos": [2.0, 4.5, -4.0], "rotY": 180 },
+        { "id": "acc-wall-deadwood-plain", "pos": [0.0, 4.5, -4.0], "rotY": -90 },
+        { "id": "acc-wall-deadwood-plain", "pos": [0.0, 4.5, -2.0], "rotY": -90 },
+        { "id": "acc-corner-outer", "pos": [0.0, 4.5, 0.0], "rotY": 0 },
+        { "id": "acc-corner-outer", "pos": [4.0, 4.5, 0.0], "rotY": 90 },
+        { "id": "acc-corner-outer", "pos": [4.0, 4.5, -4.0], "rotY": 180 },
+        { "id": "acc-corner-outer", "pos": [0.0, 4.5, -4.0], "rotY": -90 },
+        { "id": "acc-window-deadwood-flowerbox", "pos": [2.5, 5.5, 0.0], "rotY": 0 },
+        { "id": "acc-roof-run", "pos": [0.0, 7.5, 0.0], "rotY": 0 },
+        { "id": "acc-roof-run", "pos": [2.0, 7.5, -4.0], "rotY": 180 },
+        { "id": "acc-roof-ridge", "pos": [0.0, 9.5, -1.75], "rotY": 0 },
+        { "id": "acc-roof-run", "pos": [2.0, 7.5, 0.0], "rotY": 0 },
+        { "id": "acc-roof-run", "pos": [4.0, 7.5, -4.0], "rotY": 180 },
+        { "id": "acc-roof-dormer", "pos": [2.0, 7.5, 0.0], "rotY": 0 },
+        { "id": "acc-roof-ridge", "pos": [2.0, 9.5, -1.75], "rotY": 0 },
+        { "id": "acc-roof-gable-deadwood", "pos": [0.5, 7.5, 0.0], "rotY": 90 },
+        { "id": "acc-roof-gable-deadwood", "pos": [0.0, 7.5, -4.0], "rotY": -90 },
+        { "id": "acc-roof-gable-deadwood", "pos": [4.0, 7.5, 0.0], "rotY": 90 },
+        { "id": "acc-roof-gable-deadwood", "pos": [3.5, 7.5, -4.0], "rotY": -90 },
+        { "id": "acc-crown-spire-galeborne", "pos": [0.0, 8.5, -1.0], "rotY": 0 },
+        { "id": "acc-awning-sailcloth-galeborne", "pos": [0.0, 2.6, 1.5], "rotY": 0 },
+        { "id": "acc-step-basalt-slope", "pos": [0.0, 0.0, 1.5], "rotY": 0 },
+        { "id": "acc-lamp-bracket-a", "pos": [-0.5, 2.4, -3.0], "rotY": -90 }
+      ]
     },
     {
       "id": "acc-prefab-spire-townhouse",
       "name": "Spire Townhouse",
-      "footprint": [1, 2],
+      "footprint": [
+        1,
+        2
+      ],
       "storeys": 3,
       "pieces": [
-        { "id": "acc-plinth-basalt", "count": 6 },
-        { "id": "acc-wall-basalt-door", "count": 1 },
-        { "id": "acc-wall-basalt-window", "count": 1 },
-        { "id": "acc-wall-basalt-plain", "count": 4 },
-        { "id": "acc-door-basalt-arch", "count": 1 },
-        { "id": "acc-window-basalt-leaded", "count": 1 },
-        { "id": "acc-cornice-basalt", "count": 3 },
-        { "id": "acc-corner-outer", "count": 12 },
-        { "id": "acc-floor-tile-paving", "count": 4 },
-        { "id": "acc-wall-deadwood-window", "count": 4 },
-        { "id": "acc-wall-deadwood-plain", "count": 8 },
-        { "id": "acc-window-deadwood-flowerbox", "count": 1 },
-        { "id": "acc-window-deadwood-shutters", "count": 3 },
-        { "id": "acc-roof-run", "count": 2 },
-        { "id": "acc-roof-gable-deadwood", "count": 4 },
-        { "id": "acc-roof-ridge", "count": 1 },
-        { "id": "acc-roof-dormer", "count": 1 },
-        { "id": "acc-crown-spire-galeborne", "count": 1 },
-        { "id": "acc-awning-sailcloth-galeborne", "count": 1 },
-        { "id": "acc-banner-galeborne", "count": 1 },
-        { "id": "acc-lamp-bracket-a", "count": 1 }
+        {
+          "id": "acc-plinth-basalt",
+          "count": 6
+        },
+        {
+          "id": "acc-wall-basalt-door",
+          "count": 1
+        },
+        {
+          "id": "acc-wall-basalt-plain",
+          "count": 4
+        },
+        {
+          "id": "acc-wall-basalt-window",
+          "count": 1
+        },
+        {
+          "id": "acc-corner-outer",
+          "count": 12
+        },
+        {
+          "id": "acc-door-basalt-arch",
+          "count": 1
+        },
+        {
+          "id": "acc-window-basalt-leaded",
+          "count": 1
+        },
+        {
+          "id": "acc-floor-tile-paving",
+          "count": 4
+        },
+        {
+          "id": "acc-cornice-basalt",
+          "count": 6
+        },
+        {
+          "id": "acc-wall-deadwood-window",
+          "count": 4
+        },
+        {
+          "id": "acc-wall-deadwood-plain",
+          "count": 8
+        },
+        {
+          "id": "acc-window-deadwood-shutters",
+          "count": 3
+        },
+        {
+          "id": "acc-window-deadwood-flowerbox",
+          "count": 1
+        },
+        {
+          "id": "acc-roof-run",
+          "count": 2
+        },
+        {
+          "id": "acc-roof-ridge",
+          "count": 1
+        },
+        {
+          "id": "acc-roof-gable-deadwood",
+          "count": 4
+        },
+        {
+          "id": "acc-crown-spire-galeborne",
+          "count": 1
+        },
+        {
+          "id": "acc-awning-sailcloth-galeborne",
+          "count": 1
+        },
+        {
+          "id": "acc-step-basalt-slope",
+          "count": 1
+        },
+        {
+          "id": "acc-banner-galeborne",
+          "count": 1
+        },
+        {
+          "id": "acc-lamp-bracket-a",
+          "count": 1
+        }
       ],
-      "notes": "Sheet: 2 x 4 m (1 module wide), 3 storeys (9 m)."
+      "notes": "Sheet: 2 x 4 m (1 module wide), 3 storeys (9 m).",
+      "layout": [
+        { "id": "acc-plinth-basalt", "pos": [0.0, 0.0, 0.0], "rotY": 0 },
+        { "id": "acc-plinth-basalt", "pos": [2.0, 0.0, 0.0], "rotY": 90 },
+        { "id": "acc-plinth-basalt", "pos": [2.0, 0.0, -2.0], "rotY": 90 },
+        { "id": "acc-plinth-basalt", "pos": [2.0, 0.0, -4.0], "rotY": 180 },
+        { "id": "acc-plinth-basalt", "pos": [0.0, 0.0, -4.0], "rotY": -90 },
+        { "id": "acc-plinth-basalt", "pos": [0.0, 0.0, -2.0], "rotY": -90 },
+        { "id": "acc-wall-basalt-door", "pos": [0.0, 1.0, 0.0], "rotY": 0 },
+        { "id": "acc-wall-basalt-plain", "pos": [2.0, 1.0, 0.0], "rotY": 90 },
+        { "id": "acc-wall-basalt-plain", "pos": [2.0, 1.0, -2.0], "rotY": 90 },
+        { "id": "acc-wall-basalt-plain", "pos": [2.0, 1.0, -4.0], "rotY": 180 },
+        { "id": "acc-wall-basalt-window", "pos": [0.0, 1.0, -4.0], "rotY": -90 },
+        { "id": "acc-wall-basalt-plain", "pos": [0.0, 1.0, -2.0], "rotY": -90 },
+        { "id": "acc-corner-outer", "pos": [0.0, 1.0, 0.0], "rotY": 0 },
+        { "id": "acc-corner-outer", "pos": [2.0, 1.0, 0.0], "rotY": 90 },
+        { "id": "acc-corner-outer", "pos": [2.0, 1.0, -4.0], "rotY": 180 },
+        { "id": "acc-corner-outer", "pos": [0.0, 1.0, -4.0], "rotY": -90 },
+        { "id": "acc-door-basalt-arch", "pos": [0.5, 1.0, 0.0], "rotY": 0 },
+        { "id": "acc-window-basalt-leaded", "pos": [0.0, 2.0, -3.5], "rotY": -90 },
+        { "id": "acc-floor-tile-paving", "pos": [0.0, 4.0, -2.0], "rotY": 0 },
+        { "id": "acc-floor-tile-paving", "pos": [0.0, 4.0, 0.0], "rotY": 0 },
+        { "id": "acc-cornice-basalt", "pos": [0.0, 4.0, 0.5], "rotY": 0 },
+        { "id": "acc-cornice-basalt", "pos": [2.5, 4.0, 0.0], "rotY": 90 },
+        { "id": "acc-cornice-basalt", "pos": [2.5, 4.0, -2.0], "rotY": 90 },
+        { "id": "acc-cornice-basalt", "pos": [2.0, 4.0, -4.5], "rotY": 180 },
+        { "id": "acc-cornice-basalt", "pos": [-0.5, 4.0, -4.0], "rotY": -90 },
+        { "id": "acc-cornice-basalt", "pos": [-0.5, 4.0, -2.0], "rotY": -90 },
+        { "id": "acc-wall-deadwood-window", "pos": [0.0, 4.5, 0.0], "rotY": 0 },
+        { "id": "acc-wall-deadwood-window", "pos": [2.0, 4.5, 0.0], "rotY": 90 },
+        { "id": "acc-wall-deadwood-plain", "pos": [2.0, 4.5, -2.0], "rotY": 90 },
+        { "id": "acc-wall-deadwood-plain", "pos": [2.0, 4.5, -4.0], "rotY": 180 },
+        { "id": "acc-wall-deadwood-plain", "pos": [0.0, 4.5, -4.0], "rotY": -90 },
+        { "id": "acc-wall-deadwood-plain", "pos": [0.0, 4.5, -2.0], "rotY": -90 },
+        { "id": "acc-corner-outer", "pos": [0.0, 4.5, 0.0], "rotY": 0 },
+        { "id": "acc-corner-outer", "pos": [2.0, 4.5, 0.0], "rotY": 90 },
+        { "id": "acc-corner-outer", "pos": [2.0, 4.5, -4.0], "rotY": 180 },
+        { "id": "acc-corner-outer", "pos": [0.0, 4.5, -4.0], "rotY": -90 },
+        { "id": "acc-window-deadwood-shutters", "pos": [0.5, 5.5, 0.0], "rotY": 0 },
+        { "id": "acc-window-deadwood-shutters", "pos": [2.0, 5.5, -0.5], "rotY": 90 },
+        { "id": "acc-floor-tile-paving", "pos": [0.0, 7.5, -2.0], "rotY": 0 },
+        { "id": "acc-floor-tile-paving", "pos": [0.0, 7.5, 0.0], "rotY": 0 },
+        { "id": "acc-wall-deadwood-window", "pos": [0.0, 8.0, 0.0], "rotY": 0 },
+        { "id": "acc-wall-deadwood-plain", "pos": [2.0, 8.0, 0.0], "rotY": 90 },
+        { "id": "acc-wall-deadwood-plain", "pos": [2.0, 8.0, -2.0], "rotY": 90 },
+        { "id": "acc-wall-deadwood-plain", "pos": [2.0, 8.0, -4.0], "rotY": 180 },
+        { "id": "acc-wall-deadwood-window", "pos": [0.0, 8.0, -4.0], "rotY": -90 },
+        { "id": "acc-wall-deadwood-plain", "pos": [0.0, 8.0, -2.0], "rotY": -90 },
+        { "id": "acc-corner-outer", "pos": [0.0, 8.0, 0.0], "rotY": 0 },
+        { "id": "acc-corner-outer", "pos": [2.0, 8.0, 0.0], "rotY": 90 },
+        { "id": "acc-corner-outer", "pos": [2.0, 8.0, -4.0], "rotY": 180 },
+        { "id": "acc-corner-outer", "pos": [0.0, 8.0, -4.0], "rotY": -90 },
+        { "id": "acc-window-deadwood-flowerbox", "pos": [0.5, 9.0, 0.0], "rotY": 0 },
+        { "id": "acc-window-deadwood-shutters", "pos": [0.0, 9.0, -3.5], "rotY": -90 },
+        { "id": "acc-roof-run", "pos": [0.0, 11.0, 0.0], "rotY": 0 },
+        { "id": "acc-roof-run", "pos": [2.0, 11.0, -4.0], "rotY": 180 },
+        { "id": "acc-roof-ridge", "pos": [0.0, 13.0, -1.75], "rotY": 0 },
+        { "id": "acc-roof-gable-deadwood", "pos": [0.5, 11.0, 0.0], "rotY": 90 },
+        { "id": "acc-roof-gable-deadwood", "pos": [0.0, 11.0, -4.0], "rotY": -90 },
+        { "id": "acc-roof-gable-deadwood", "pos": [2.0, 11.0, 0.0], "rotY": 90 },
+        { "id": "acc-roof-gable-deadwood", "pos": [1.5, 11.0, -4.0], "rotY": -90 },
+        { "id": "acc-crown-spire-galeborne", "pos": [0.0, 12.0, -1.0], "rotY": 0 },
+        { "id": "acc-awning-sailcloth-galeborne", "pos": [0.0, 2.6, 1.5], "rotY": 0 },
+        { "id": "acc-step-basalt-slope", "pos": [0.0, 0.0, 1.5], "rotY": 0 },
+        { "id": "acc-banner-galeborne", "pos": [-0.125, 5.1, -1.0], "rotY": -90 },
+        { "id": "acc-lamp-bracket-a", "pos": [-0.5, 2.4, -1.0], "rotY": -90 }
+      ]
     },
     {
       "id": "acc-prefab-terrace-house",
       "name": "Terrace House",
-      "footprint": [3, 2],
+      "footprint": [
+        3,
+        2
+      ],
       "storeys": 2,
       "pieces": [
-        { "id": "acc-plinth-basalt", "count": 10 },
-        { "id": "acc-wall-basalt-door", "count": 1 },
-        { "id": "acc-wall-basalt-window", "count": 2 },
-        { "id": "acc-wall-basalt-plain", "count": 7 },
-        { "id": "acc-door-basalt-arch", "count": 1 },
-        { "id": "acc-window-basalt-leaded", "count": 2 },
-        { "id": "acc-flowerbox-large", "count": 1 },
-        { "id": "acc-cornice-basalt", "count": 5 },
-        { "id": "acc-corner-outer", "count": 8 },
-        { "id": "acc-corner-inner", "count": 1 },
-        { "id": "acc-floor-tile-paving", "count": 6 },
-        { "id": "acc-wall-deadwood-window", "count": 3 },
-        { "id": "acc-wall-deadwood-door", "count": 1 },
-        { "id": "acc-wall-deadwood-oriel", "count": 1 },
-        { "id": "acc-wall-deadwood-plain", "count": 3 },
-        { "id": "acc-window-deadwood-flowerbox", "count": 2 },
-        { "id": "acc-window-deadwood-shutters", "count": 1 },
-        { "id": "acc-door-deadwood", "count": 1 },
-        { "id": "acc-balcony-deadwood", "count": 3 },
-        { "id": "acc-roof-run", "count": 4 },
-        { "id": "acc-roof-gable-deadwood", "count": 4 },
-        { "id": "acc-roof-ridge", "count": 2 },
-        { "id": "acc-roof-dormer", "count": 1 },
-        { "id": "acc-awning-sailcloth-galeborne", "count": 1 },
-        { "id": "acc-banner-galeborne", "count": 1 },
-        { "id": "acc-lamp-bracket-a", "count": 1 },
-        { "id": "acc-lamp-bracket-b", "count": 1 }
+        {
+          "id": "acc-plinth-basalt",
+          "count": 10
+        },
+        {
+          "id": "acc-wall-basalt-window",
+          "count": 2
+        },
+        {
+          "id": "acc-wall-basalt-door",
+          "count": 1
+        },
+        {
+          "id": "acc-wall-basalt-plain",
+          "count": 7
+        },
+        {
+          "id": "acc-corner-outer",
+          "count": 8
+        },
+        {
+          "id": "acc-window-basalt-leaded",
+          "count": 2
+        },
+        {
+          "id": "acc-door-basalt-arch",
+          "count": 1
+        },
+        {
+          "id": "acc-floor-tile-paving",
+          "count": 6
+        },
+        {
+          "id": "acc-cornice-basalt",
+          "count": 5
+        },
+        {
+          "id": "acc-wall-deadwood-window",
+          "count": 3
+        },
+        {
+          "id": "acc-wall-deadwood-door",
+          "count": 1
+        },
+        {
+          "id": "acc-wall-deadwood-plain",
+          "count": 3
+        },
+        {
+          "id": "acc-window-deadwood-shutters",
+          "count": 1
+        },
+        {
+          "id": "acc-door-deadwood",
+          "count": 1
+        },
+        {
+          "id": "acc-window-deadwood-flowerbox",
+          "count": 2
+        },
+        {
+          "id": "acc-wall-deadwood-oriel",
+          "count": 1
+        },
+        {
+          "id": "acc-balcony-deadwood",
+          "count": 3
+        },
+        {
+          "id": "acc-roof-run",
+          "count": 4
+        },
+        {
+          "id": "acc-roof-dormer",
+          "count": 1
+        },
+        {
+          "id": "acc-roof-ridge",
+          "count": 2
+        },
+        {
+          "id": "acc-roof-gable-deadwood",
+          "count": 4
+        },
+        {
+          "id": "acc-flowerbox-large",
+          "count": 1
+        },
+        {
+          "id": "acc-awning-sailcloth-galeborne",
+          "count": 2
+        },
+        {
+          "id": "acc-step-basalt-slope",
+          "count": 1
+        },
+        {
+          "id": "acc-lamp-bracket-a",
+          "count": 1
+        },
+        {
+          "id": "acc-lamp-bracket-b",
+          "count": 1
+        },
+        {
+          "id": "acc-banner-galeborne",
+          "count": 1
+        }
       ],
-      "notes": "Sheet: 6 x 4 m (3 modules), 2 storeys (6 m). Upper storey covers 2 x 2 modules; the third module is a railed roof terrace under a sailcloth awning."
+      "notes": "Sheet: 6 x 4 m (3 modules), 2 storeys (6 m). Upper storey covers 2 x 2 modules; the third module is a railed roof terrace under a sailcloth awning.",
+      "layout": [
+        { "id": "acc-plinth-basalt", "pos": [0.0, 0.0, 0.0], "rotY": 0 },
+        { "id": "acc-plinth-basalt", "pos": [2.0, 0.0, 0.0], "rotY": 0 },
+        { "id": "acc-plinth-basalt", "pos": [4.0, 0.0, 0.0], "rotY": 0 },
+        { "id": "acc-plinth-basalt", "pos": [6.0, 0.0, 0.0], "rotY": 90 },
+        { "id": "acc-plinth-basalt", "pos": [6.0, 0.0, -2.0], "rotY": 90 },
+        { "id": "acc-plinth-basalt", "pos": [6.0, 0.0, -4.0], "rotY": 180 },
+        { "id": "acc-plinth-basalt", "pos": [4.0, 0.0, -4.0], "rotY": 180 },
+        { "id": "acc-plinth-basalt", "pos": [2.0, 0.0, -4.0], "rotY": 180 },
+        { "id": "acc-plinth-basalt", "pos": [0.0, 0.0, -4.0], "rotY": -90 },
+        { "id": "acc-plinth-basalt", "pos": [0.0, 0.0, -2.0], "rotY": -90 },
+        { "id": "acc-wall-basalt-window", "pos": [0.0, 1.0, 0.0], "rotY": 0 },
+        { "id": "acc-wall-basalt-door", "pos": [2.0, 1.0, 0.0], "rotY": 0 },
+        { "id": "acc-wall-basalt-window", "pos": [4.0, 1.0, 0.0], "rotY": 0 },
+        { "id": "acc-wall-basalt-plain", "pos": [6.0, 1.0, 0.0], "rotY": 90 },
+        { "id": "acc-wall-basalt-plain", "pos": [6.0, 1.0, -2.0], "rotY": 90 },
+        { "id": "acc-wall-basalt-plain", "pos": [6.0, 1.0, -4.0], "rotY": 180 },
+        { "id": "acc-wall-basalt-plain", "pos": [4.0, 1.0, -4.0], "rotY": 180 },
+        { "id": "acc-wall-basalt-plain", "pos": [2.0, 1.0, -4.0], "rotY": 180 },
+        { "id": "acc-wall-basalt-plain", "pos": [0.0, 1.0, -4.0], "rotY": -90 },
+        { "id": "acc-wall-basalt-plain", "pos": [0.0, 1.0, -2.0], "rotY": -90 },
+        { "id": "acc-corner-outer", "pos": [0.0, 1.0, 0.0], "rotY": 0 },
+        { "id": "acc-corner-outer", "pos": [6.0, 1.0, 0.0], "rotY": 90 },
+        { "id": "acc-corner-outer", "pos": [6.0, 1.0, -4.0], "rotY": 180 },
+        { "id": "acc-corner-outer", "pos": [0.0, 1.0, -4.0], "rotY": -90 },
+        { "id": "acc-window-basalt-leaded", "pos": [0.5, 2.0, 0.0], "rotY": 0 },
+        { "id": "acc-door-basalt-arch", "pos": [2.5, 1.0, 0.0], "rotY": 0 },
+        { "id": "acc-window-basalt-leaded", "pos": [4.5, 2.0, 0.0], "rotY": 0 },
+        { "id": "acc-floor-tile-paving", "pos": [0.0, 4.0, -2.0], "rotY": 0 },
+        { "id": "acc-floor-tile-paving", "pos": [0.0, 4.0, 0.0], "rotY": 0 },
+        { "id": "acc-floor-tile-paving", "pos": [2.0, 4.0, -2.0], "rotY": 0 },
+        { "id": "acc-floor-tile-paving", "pos": [2.0, 4.0, 0.0], "rotY": 0 },
+        { "id": "acc-floor-tile-paving", "pos": [4.0, 4.0, -2.0], "rotY": 0 },
+        { "id": "acc-floor-tile-paving", "pos": [4.0, 4.0, 0.0], "rotY": 0 },
+        { "id": "acc-cornice-basalt", "pos": [0.0, 4.0, 0.5], "rotY": 0 },
+        { "id": "acc-cornice-basalt", "pos": [2.0, 4.0, 0.5], "rotY": 0 },
+        { "id": "acc-cornice-basalt", "pos": [4.0, 4.0, 0.5], "rotY": 0 },
+        { "id": "acc-cornice-basalt", "pos": [-0.5, 4.0, -4.0], "rotY": -90 },
+        { "id": "acc-cornice-basalt", "pos": [-0.5, 4.0, -2.0], "rotY": -90 },
+        { "id": "acc-wall-deadwood-window", "pos": [0.0, 4.5, 0.0], "rotY": 0 },
+        { "id": "acc-wall-deadwood-door", "pos": [4.0, 4.5, 0.0], "rotY": 90 },
+        { "id": "acc-wall-deadwood-window", "pos": [4.0, 4.5, -2.0], "rotY": 90 },
+        { "id": "acc-wall-deadwood-plain", "pos": [4.0, 4.5, -4.0], "rotY": 180 },
+        { "id": "acc-wall-deadwood-plain", "pos": [2.0, 4.5, -4.0], "rotY": 180 },
+        { "id": "acc-wall-deadwood-window", "pos": [0.0, 4.5, -4.0], "rotY": -90 },
+        { "id": "acc-wall-deadwood-plain", "pos": [0.0, 4.5, -2.0], "rotY": -90 },
+        { "id": "acc-corner-outer", "pos": [0.0, 4.5, 0.0], "rotY": 0 },
+        { "id": "acc-corner-outer", "pos": [4.0, 4.5, 0.0], "rotY": 90 },
+        { "id": "acc-corner-outer", "pos": [4.0, 4.5, -4.0], "rotY": 180 },
+        { "id": "acc-corner-outer", "pos": [0.0, 4.5, -4.0], "rotY": -90 },
+        { "id": "acc-window-deadwood-shutters", "pos": [0.5, 5.5, 0.0], "rotY": 0 },
+        { "id": "acc-door-deadwood", "pos": [4.0, 4.5, -0.5], "rotY": 90 },
+        { "id": "acc-window-deadwood-flowerbox", "pos": [4.0, 5.5, -2.5], "rotY": 90 },
+        { "id": "acc-window-deadwood-flowerbox", "pos": [0.0, 5.5, -3.5], "rotY": -90 },
+        { "id": "acc-wall-deadwood-oriel", "pos": [2.0, 4.5, 1.0], "rotY": 0 },
+        { "id": "acc-balcony-deadwood", "pos": [4.0, 4.5, 0.0], "rotY": 0 },
+        { "id": "acc-balcony-deadwood", "pos": [6.0, 4.5, 0.0], "rotY": 90 },
+        { "id": "acc-balcony-deadwood", "pos": [6.0, 4.5, -2.0], "rotY": 90 },
+        { "id": "acc-roof-run", "pos": [0.0, 7.5, 0.0], "rotY": 0 },
+        { "id": "acc-roof-run", "pos": [2.0, 7.5, -4.0], "rotY": 180 },
+        { "id": "acc-roof-dormer", "pos": [0.0, 7.5, 0.0], "rotY": 0 },
+        { "id": "acc-roof-ridge", "pos": [0.0, 9.5, -1.75], "rotY": 0 },
+        { "id": "acc-roof-run", "pos": [2.0, 7.5, 0.0], "rotY": 0 },
+        { "id": "acc-roof-run", "pos": [4.0, 7.5, -4.0], "rotY": 180 },
+        { "id": "acc-roof-ridge", "pos": [2.0, 9.5, -1.75], "rotY": 0 },
+        { "id": "acc-roof-gable-deadwood", "pos": [0.5, 7.5, 0.0], "rotY": 90 },
+        { "id": "acc-roof-gable-deadwood", "pos": [0.0, 7.5, -4.0], "rotY": -90 },
+        { "id": "acc-roof-gable-deadwood", "pos": [4.0, 7.5, 0.0], "rotY": 90 },
+        { "id": "acc-roof-gable-deadwood", "pos": [3.5, 7.5, -4.0], "rotY": -90 },
+        { "id": "acc-flowerbox-large", "pos": [1.0, 1.62, 0.25], "rotY": 0 },
+        { "id": "acc-awning-sailcloth-galeborne", "pos": [2.0, 2.6, 1.5], "rotY": 0 },
+        { "id": "acc-step-basalt-slope", "pos": [2.0, 0.0, 1.5], "rotY": 0 },
+        { "id": "acc-lamp-bracket-a", "pos": [2.0, 2.2, 0.5], "rotY": 0 },
+        { "id": "acc-lamp-bracket-b", "pos": [4.0, 2.2, 0.5], "rotY": 0 },
+        { "id": "acc-banner-galeborne", "pos": [-0.125, 1.6, -3.0], "rotY": -90 },
+        { "id": "acc-awning-sailcloth-galeborne", "pos": [5.5, 5.95, 0.0], "rotY": 90 }
+      ]
     },
     {
       "id": "acc-prefab-market-hall",
       "name": "Arcaded Market Hall",
-      "footprint": [6, 3],
+      "footprint": [
+        6,
+        3
+      ],
       "storeys": 2,
       "pieces": [
-        { "id": "acc-plinth-basalt", "count": 18 },
-        { "id": "acc-wall-basalt-arch", "count": 12 },
-        { "id": "acc-wall-basalt-window", "count": 2 },
-        { "id": "acc-wall-basalt-endcap", "count": 2 },
-        { "id": "acc-door-market-double", "count": 1 },
-        { "id": "acc-window-basalt-leaded", "count": 2 },
-        { "id": "acc-cornice-basalt", "count": 18 },
-        { "id": "acc-corner-outer", "count": 8 },
-        { "id": "acc-floor-tile-paving", "count": 18 },
-        { "id": "acc-wall-deadwood-window", "count": 12 },
-        { "id": "acc-wall-deadwood-plain", "count": 6 },
-        { "id": "acc-window-deadwood-shutters", "count": 12 },
-        { "id": "acc-balcony-deadwood", "count": 6 },
-        { "id": "acc-cornice-terracotta-galeborne", "count": 18 },
-        { "id": "acc-roof-run", "count": 12 },
-        { "id": "acc-roof-gable-deadwood", "count": 4 },
-        { "id": "acc-roof-ridge", "count": 6 },
-        { "id": "acc-roof-dormer", "count": 4 },
-        { "id": "acc-crown-cupola-galeborne", "count": 1 },
-        { "id": "acc-pennant-galeborne", "count": 3 },
-        { "id": "acc-banner-galeborne", "count": 2 },
-        { "id": "acc-awning-sailcloth-galeborne", "count": 3 },
-        { "id": "acc-lamp-bracket-b", "count": 4 }
+        {
+          "id": "acc-plinth-basalt",
+          "count": 18
+        },
+        {
+          "id": "acc-wall-basalt-arch",
+          "count": 12
+        },
+        {
+          "id": "acc-wall-basalt-window",
+          "count": 2
+        },
+        {
+          "id": "acc-wall-basalt-endcap",
+          "count": 2
+        },
+        {
+          "id": "acc-corner-outer",
+          "count": 8
+        },
+        {
+          "id": "acc-window-basalt-leaded",
+          "count": 2
+        },
+        {
+          "id": "acc-door-market-double",
+          "count": 1
+        },
+        {
+          "id": "acc-step-basalt-slope",
+          "count": 2
+        },
+        {
+          "id": "acc-floor-tile-paving",
+          "count": 18
+        },
+        {
+          "id": "acc-cornice-basalt",
+          "count": 12
+        },
+        {
+          "id": "acc-cornice-terracotta-galeborne",
+          "count": 6
+        },
+        {
+          "id": "acc-wall-deadwood-window",
+          "count": 12
+        },
+        {
+          "id": "acc-wall-deadwood-plain",
+          "count": 4
+        },
+        {
+          "id": "acc-window-deadwood-shutters",
+          "count": 12
+        },
+        {
+          "id": "acc-balcony-deadwood",
+          "count": 8
+        },
+        {
+          "id": "acc-roof-run",
+          "count": 12
+        },
+        {
+          "id": "acc-roof-ridge",
+          "count": 6
+        },
+        {
+          "id": "acc-roof-dormer",
+          "count": 2
+        },
+        {
+          "id": "acc-roof-gable-deadwood",
+          "count": 4
+        },
+        {
+          "id": "acc-crown-cupola-galeborne",
+          "count": 1
+        },
+        {
+          "id": "acc-pennant-galeborne",
+          "count": 3
+        },
+        {
+          "id": "acc-awning-sailcloth-galeborne",
+          "count": 4
+        },
+        {
+          "id": "acc-lamp-bracket-b",
+          "count": 4
+        },
+        {
+          "id": "acc-banner-galeborne",
+          "count": 2
+        }
       ],
-      "notes": "Sheet: 12 x 6 m (6 x 3 modules), 2 storeys (6 m to eaves, ~9 m to cupola). Upper gallery railed along the front; market stalls under the arches are props, not kit pieces."
+      "notes": "Sheet: 12 x 6 m (6 x 3 modules), 2 storeys (6 m to eaves, ~9 m to cupola). Upper gallery railed along the front; market stalls under the arches are props, not kit pieces.",
+      "layout": [
+        { "id": "acc-plinth-basalt", "pos": [0.0, 0.0, 0.0], "rotY": 0 },
+        { "id": "acc-plinth-basalt", "pos": [2.0, 0.0, 0.0], "rotY": 0 },
+        { "id": "acc-plinth-basalt", "pos": [4.0, 0.0, 0.0], "rotY": 0 },
+        { "id": "acc-plinth-basalt", "pos": [6.0, 0.0, 0.0], "rotY": 0 },
+        { "id": "acc-plinth-basalt", "pos": [8.0, 0.0, 0.0], "rotY": 0 },
+        { "id": "acc-plinth-basalt", "pos": [10.0, 0.0, 0.0], "rotY": 0 },
+        { "id": "acc-plinth-basalt", "pos": [12.0, 0.0, 0.0], "rotY": 90 },
+        { "id": "acc-plinth-basalt", "pos": [12.0, 0.0, -2.0], "rotY": 90 },
+        { "id": "acc-plinth-basalt", "pos": [12.0, 0.0, -4.0], "rotY": 90 },
+        { "id": "acc-plinth-basalt", "pos": [12.0, 0.0, -6.0], "rotY": 180 },
+        { "id": "acc-plinth-basalt", "pos": [10.0, 0.0, -6.0], "rotY": 180 },
+        { "id": "acc-plinth-basalt", "pos": [8.0, 0.0, -6.0], "rotY": 180 },
+        { "id": "acc-plinth-basalt", "pos": [6.0, 0.0, -6.0], "rotY": 180 },
+        { "id": "acc-plinth-basalt", "pos": [4.0, 0.0, -6.0], "rotY": 180 },
+        { "id": "acc-plinth-basalt", "pos": [2.0, 0.0, -6.0], "rotY": 180 },
+        { "id": "acc-plinth-basalt", "pos": [0.0, 0.0, -6.0], "rotY": -90 },
+        { "id": "acc-plinth-basalt", "pos": [0.0, 0.0, -4.0], "rotY": -90 },
+        { "id": "acc-plinth-basalt", "pos": [0.0, 0.0, -2.0], "rotY": -90 },
+        { "id": "acc-wall-basalt-arch", "pos": [0.0, 1.0, 0.0], "rotY": 0 },
+        { "id": "acc-wall-basalt-arch", "pos": [2.0, 1.0, 0.0], "rotY": 0 },
+        { "id": "acc-wall-basalt-arch", "pos": [8.0, 1.0, 0.0], "rotY": 0 },
+        { "id": "acc-wall-basalt-arch", "pos": [10.0, 1.0, 0.0], "rotY": 0 },
+        { "id": "acc-wall-basalt-arch", "pos": [12.0, 1.0, 0.0], "rotY": 90 },
+        { "id": "acc-wall-basalt-arch", "pos": [12.0, 1.0, -2.0], "rotY": 90 },
+        { "id": "acc-wall-basalt-window", "pos": [12.0, 1.0, -4.0], "rotY": 90 },
+        { "id": "acc-wall-basalt-endcap", "pos": [12.0, 1.0, -6.0], "rotY": 180 },
+        { "id": "acc-wall-basalt-arch", "pos": [10.0, 1.0, -6.0], "rotY": 180 },
+        { "id": "acc-wall-basalt-arch", "pos": [8.0, 1.0, -6.0], "rotY": 180 },
+        { "id": "acc-wall-basalt-arch", "pos": [6.0, 1.0, -6.0], "rotY": 180 },
+        { "id": "acc-wall-basalt-arch", "pos": [4.0, 1.0, -6.0], "rotY": 180 },
+        { "id": "acc-wall-basalt-endcap", "pos": [2.0, 1.0, -6.0], "rotY": 180 },
+        { "id": "acc-wall-basalt-window", "pos": [0.0, 1.0, -6.0], "rotY": -90 },
+        { "id": "acc-wall-basalt-arch", "pos": [0.0, 1.0, -4.0], "rotY": -90 },
+        { "id": "acc-wall-basalt-arch", "pos": [0.0, 1.0, -2.0], "rotY": -90 },
+        { "id": "acc-corner-outer", "pos": [0.0, 1.0, 0.0], "rotY": 0 },
+        { "id": "acc-corner-outer", "pos": [12.0, 1.0, 0.0], "rotY": 90 },
+        { "id": "acc-corner-outer", "pos": [12.0, 1.0, -6.0], "rotY": 180 },
+        { "id": "acc-corner-outer", "pos": [0.0, 1.0, -6.0], "rotY": -90 },
+        { "id": "acc-window-basalt-leaded", "pos": [12.0, 2.0, -4.5], "rotY": 90 },
+        { "id": "acc-window-basalt-leaded", "pos": [0.0, 2.0, -5.5], "rotY": -90 },
+        { "id": "acc-door-market-double", "pos": [4.0, 1.0, 0.0], "rotY": 0 },
+        { "id": "acc-step-basalt-slope", "pos": [4.0, 0.0, 1.5], "rotY": 0 },
+        { "id": "acc-step-basalt-slope", "pos": [6.0, 0.0, 1.5], "rotY": 0 },
+        { "id": "acc-floor-tile-paving", "pos": [0.0, 4.0, -4.0], "rotY": 0 },
+        { "id": "acc-floor-tile-paving", "pos": [0.0, 4.0, -2.0], "rotY": 0 },
+        { "id": "acc-floor-tile-paving", "pos": [0.0, 4.0, 0.0], "rotY": 0 },
+        { "id": "acc-floor-tile-paving", "pos": [2.0, 4.0, -4.0], "rotY": 0 },
+        { "id": "acc-floor-tile-paving", "pos": [2.0, 4.0, -2.0], "rotY": 0 },
+        { "id": "acc-floor-tile-paving", "pos": [2.0, 4.0, 0.0], "rotY": 0 },
+        { "id": "acc-floor-tile-paving", "pos": [4.0, 4.0, -4.0], "rotY": 0 },
+        { "id": "acc-floor-tile-paving", "pos": [4.0, 4.0, -2.0], "rotY": 0 },
+        { "id": "acc-floor-tile-paving", "pos": [4.0, 4.0, 0.0], "rotY": 0 },
+        { "id": "acc-floor-tile-paving", "pos": [6.0, 4.0, -4.0], "rotY": 0 },
+        { "id": "acc-floor-tile-paving", "pos": [6.0, 4.0, -2.0], "rotY": 0 },
+        { "id": "acc-floor-tile-paving", "pos": [6.0, 4.0, 0.0], "rotY": 0 },
+        { "id": "acc-floor-tile-paving", "pos": [8.0, 4.0, -4.0], "rotY": 0 },
+        { "id": "acc-floor-tile-paving", "pos": [8.0, 4.0, -2.0], "rotY": 0 },
+        { "id": "acc-floor-tile-paving", "pos": [8.0, 4.0, 0.0], "rotY": 0 },
+        { "id": "acc-floor-tile-paving", "pos": [10.0, 4.0, -4.0], "rotY": 0 },
+        { "id": "acc-floor-tile-paving", "pos": [10.0, 4.0, -2.0], "rotY": 0 },
+        { "id": "acc-floor-tile-paving", "pos": [10.0, 4.0, 0.0], "rotY": 0 },
+        { "id": "acc-cornice-basalt", "pos": [12.5, 4.0, 0.0], "rotY": 90 },
+        { "id": "acc-cornice-basalt", "pos": [12.5, 4.0, -2.0], "rotY": 90 },
+        { "id": "acc-cornice-basalt", "pos": [12.5, 4.0, -4.0], "rotY": 90 },
+        { "id": "acc-cornice-basalt", "pos": [12.0, 4.0, -6.5], "rotY": 180 },
+        { "id": "acc-cornice-basalt", "pos": [10.0, 4.0, -6.5], "rotY": 180 },
+        { "id": "acc-cornice-basalt", "pos": [8.0, 4.0, -6.5], "rotY": 180 },
+        { "id": "acc-cornice-basalt", "pos": [6.0, 4.0, -6.5], "rotY": 180 },
+        { "id": "acc-cornice-basalt", "pos": [4.0, 4.0, -6.5], "rotY": 180 },
+        { "id": "acc-cornice-basalt", "pos": [2.0, 4.0, -6.5], "rotY": 180 },
+        { "id": "acc-cornice-basalt", "pos": [-0.5, 4.0, -6.0], "rotY": -90 },
+        { "id": "acc-cornice-basalt", "pos": [-0.5, 4.0, -4.0], "rotY": -90 },
+        { "id": "acc-cornice-basalt", "pos": [-0.5, 4.0, -2.0], "rotY": -90 },
+        { "id": "acc-cornice-terracotta-galeborne", "pos": [0.0, 4.0, 0.5], "rotY": 0 },
+        { "id": "acc-cornice-terracotta-galeborne", "pos": [2.0, 4.0, 0.5], "rotY": 0 },
+        { "id": "acc-cornice-terracotta-galeborne", "pos": [4.0, 4.0, 0.5], "rotY": 0 },
+        { "id": "acc-cornice-terracotta-galeborne", "pos": [6.0, 4.0, 0.5], "rotY": 0 },
+        { "id": "acc-cornice-terracotta-galeborne", "pos": [8.0, 4.0, 0.5], "rotY": 0 },
+        { "id": "acc-cornice-terracotta-galeborne", "pos": [10.0, 4.0, 0.5], "rotY": 0 },
+        { "id": "acc-wall-deadwood-window", "pos": [0.0, 4.5, -2.0], "rotY": 0 },
+        { "id": "acc-wall-deadwood-window", "pos": [2.0, 4.5, -2.0], "rotY": 0 },
+        { "id": "acc-wall-deadwood-window", "pos": [4.0, 4.5, -2.0], "rotY": 0 },
+        { "id": "acc-wall-deadwood-window", "pos": [6.0, 4.5, -2.0], "rotY": 0 },
+        { "id": "acc-wall-deadwood-window", "pos": [8.0, 4.5, -2.0], "rotY": 0 },
+        { "id": "acc-wall-deadwood-window", "pos": [10.0, 4.5, -2.0], "rotY": 0 },
+        { "id": "acc-wall-deadwood-plain", "pos": [12.0, 4.5, -2.0], "rotY": 90 },
+        { "id": "acc-wall-deadwood-plain", "pos": [12.0, 4.5, -4.0], "rotY": 90 },
+        { "id": "acc-wall-deadwood-window", "pos": [12.0, 4.5, -6.0], "rotY": 180 },
+        { "id": "acc-wall-deadwood-window", "pos": [10.0, 4.5, -6.0], "rotY": 180 },
+        { "id": "acc-wall-deadwood-window", "pos": [8.0, 4.5, -6.0], "rotY": 180 },
+        { "id": "acc-wall-deadwood-window", "pos": [6.0, 4.5, -6.0], "rotY": 180 },
+        { "id": "acc-wall-deadwood-window", "pos": [4.0, 4.5, -6.0], "rotY": 180 },
+        { "id": "acc-wall-deadwood-window", "pos": [2.0, 4.5, -6.0], "rotY": 180 },
+        { "id": "acc-wall-deadwood-plain", "pos": [0.0, 4.5, -6.0], "rotY": -90 },
+        { "id": "acc-wall-deadwood-plain", "pos": [0.0, 4.5, -4.0], "rotY": -90 },
+        { "id": "acc-corner-outer", "pos": [0.0, 4.5, -2.0], "rotY": 0 },
+        { "id": "acc-corner-outer", "pos": [12.0, 4.5, -2.0], "rotY": 90 },
+        { "id": "acc-corner-outer", "pos": [12.0, 4.5, -6.0], "rotY": 180 },
+        { "id": "acc-corner-outer", "pos": [0.0, 4.5, -6.0], "rotY": -90 },
+        { "id": "acc-window-deadwood-shutters", "pos": [0.5, 5.5, -2.0], "rotY": 0 },
+        { "id": "acc-window-deadwood-shutters", "pos": [2.5, 5.5, -2.0], "rotY": 0 },
+        { "id": "acc-window-deadwood-shutters", "pos": [4.5, 5.5, -2.0], "rotY": 0 },
+        { "id": "acc-window-deadwood-shutters", "pos": [6.5, 5.5, -2.0], "rotY": 0 },
+        { "id": "acc-window-deadwood-shutters", "pos": [8.5, 5.5, -2.0], "rotY": 0 },
+        { "id": "acc-window-deadwood-shutters", "pos": [10.5, 5.5, -2.0], "rotY": 0 },
+        { "id": "acc-window-deadwood-shutters", "pos": [11.5, 5.5, -6.0], "rotY": 180 },
+        { "id": "acc-window-deadwood-shutters", "pos": [9.5, 5.5, -6.0], "rotY": 180 },
+        { "id": "acc-window-deadwood-shutters", "pos": [7.5, 5.5, -6.0], "rotY": 180 },
+        { "id": "acc-window-deadwood-shutters", "pos": [5.5, 5.5, -6.0], "rotY": 180 },
+        { "id": "acc-window-deadwood-shutters", "pos": [3.5, 5.5, -6.0], "rotY": 180 },
+        { "id": "acc-window-deadwood-shutters", "pos": [1.5, 5.5, -6.0], "rotY": 180 },
+        { "id": "acc-balcony-deadwood", "pos": [0.0, 4.5, 0.0], "rotY": 0 },
+        { "id": "acc-balcony-deadwood", "pos": [2.0, 4.5, 0.0], "rotY": 0 },
+        { "id": "acc-balcony-deadwood", "pos": [4.0, 4.5, 0.0], "rotY": 0 },
+        { "id": "acc-balcony-deadwood", "pos": [6.0, 4.5, 0.0], "rotY": 0 },
+        { "id": "acc-balcony-deadwood", "pos": [8.0, 4.5, 0.0], "rotY": 0 },
+        { "id": "acc-balcony-deadwood", "pos": [10.0, 4.5, 0.0], "rotY": 0 },
+        { "id": "acc-balcony-deadwood", "pos": [0.0, 4.5, -2.0], "rotY": -90 },
+        { "id": "acc-balcony-deadwood", "pos": [12.0, 4.5, 0.0], "rotY": 90 },
+        { "id": "acc-roof-run", "pos": [0.0, 7.5, -2.0], "rotY": 0 },
+        { "id": "acc-roof-run", "pos": [2.0, 7.5, -6.0], "rotY": 180 },
+        { "id": "acc-roof-ridge", "pos": [0.0, 9.5, -3.75], "rotY": 0 },
+        { "id": "acc-roof-run", "pos": [2.0, 7.5, -2.0], "rotY": 0 },
+        { "id": "acc-roof-run", "pos": [4.0, 7.5, -6.0], "rotY": 180 },
+        { "id": "acc-roof-dormer", "pos": [2.0, 7.5, -2.0], "rotY": 0 },
+        { "id": "acc-roof-ridge", "pos": [2.0, 9.5, -3.75], "rotY": 0 },
+        { "id": "acc-roof-run", "pos": [4.0, 7.5, -2.0], "rotY": 0 },
+        { "id": "acc-roof-run", "pos": [6.0, 7.5, -6.0], "rotY": 180 },
+        { "id": "acc-roof-ridge", "pos": [4.0, 9.5, -3.75], "rotY": 0 },
+        { "id": "acc-roof-run", "pos": [6.0, 7.5, -2.0], "rotY": 0 },
+        { "id": "acc-roof-run", "pos": [8.0, 7.5, -6.0], "rotY": 180 },
+        { "id": "acc-roof-ridge", "pos": [6.0, 9.5, -3.75], "rotY": 0 },
+        { "id": "acc-roof-run", "pos": [8.0, 7.5, -2.0], "rotY": 0 },
+        { "id": "acc-roof-run", "pos": [10.0, 7.5, -6.0], "rotY": 180 },
+        { "id": "acc-roof-dormer", "pos": [8.0, 7.5, -2.0], "rotY": 0 },
+        { "id": "acc-roof-ridge", "pos": [8.0, 9.5, -3.75], "rotY": 0 },
+        { "id": "acc-roof-run", "pos": [10.0, 7.5, -2.0], "rotY": 0 },
+        { "id": "acc-roof-run", "pos": [12.0, 7.5, -6.0], "rotY": 180 },
+        { "id": "acc-roof-ridge", "pos": [10.0, 9.5, -3.75], "rotY": 0 },
+        { "id": "acc-roof-gable-deadwood", "pos": [0.5, 7.5, -2.0], "rotY": 90 },
+        { "id": "acc-roof-gable-deadwood", "pos": [0.0, 7.5, -6.0], "rotY": -90 },
+        { "id": "acc-roof-gable-deadwood", "pos": [12.0, 7.5, -2.0], "rotY": 90 },
+        { "id": "acc-roof-gable-deadwood", "pos": [11.5, 7.5, -6.0], "rotY": -90 },
+        { "id": "acc-crown-cupola-galeborne", "pos": [5.0, 8.5, -3.0], "rotY": 0 },
+        { "id": "acc-pennant-galeborne", "pos": [0.6, 9.6, -4.0], "rotY": 0 },
+        { "id": "acc-pennant-galeborne", "pos": [11.4, 9.6, -4.0], "rotY": 0 },
+        { "id": "acc-pennant-galeborne", "pos": [3.0, 9.6, -4.0], "rotY": 0 },
+        { "id": "acc-awning-sailcloth-galeborne", "pos": [0.0, 2.6, 1.5], "rotY": 0 },
+        { "id": "acc-awning-sailcloth-galeborne", "pos": [2.0, 2.6, 1.5], "rotY": 0 },
+        { "id": "acc-awning-sailcloth-galeborne", "pos": [8.0, 2.6, 1.5], "rotY": 0 },
+        { "id": "acc-awning-sailcloth-galeborne", "pos": [10.0, 2.6, 1.5], "rotY": 0 },
+        { "id": "acc-lamp-bracket-b", "pos": [-0.5, 2.4, -4.0], "rotY": -90 },
+        { "id": "acc-lamp-bracket-b", "pos": [-0.5, 2.4, -2.0], "rotY": -90 },
+        { "id": "acc-lamp-bracket-b", "pos": [12.5, 2.4, -2.0], "rotY": 90 },
+        { "id": "acc-lamp-bracket-b", "pos": [12.5, 2.4, -4.0], "rotY": 90 },
+        { "id": "acc-banner-galeborne", "pos": [10.0, 2.1, -6.625], "rotY": 180 },
+        { "id": "acc-banner-galeborne", "pos": [2.0, 2.1, -6.625], "rotY": 180 }
+      ]
     }
   ]
 }

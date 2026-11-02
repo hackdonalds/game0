@@ -8,8 +8,8 @@
     ],
     "radius": 5.45,
     "height": 5.97,
-    "minScale": 0.9,
-    "maxScale": 1.1,
+    "minScale": 1,
+    "maxScale": 1,
     "collide": true,
     "tris": 15375
   },
@@ -22,8 +22,8 @@
     ],
     "radius": 5.45,
     "height": 6.0,
-    "minScale": 0.9,
-    "maxScale": 1.1,
+    "minScale": 1,
+    "maxScale": 1,
     "collide": true,
     "tris": 8171
   },
@@ -36,8 +36,8 @@
     ],
     "radius": 2.6,
     "height": 6.8,
-    "minScale": 0.9,
-    "maxScale": 1.1,
+    "minScale": 1,
+    "maxScale": 1,
     "collide": true,
     "tris": 5262
   },
