@@ -10,6 +10,7 @@
     "dev": "bun run --filter @game0/web dev",
     "dev:demo": "bun scripts/dev-demo.ts",
     "build": "bun scripts/build-pages.ts",
+    "handbook:check": "bun scripts/handbook-check.ts",
     "preview": "bunx serve@14.2.4 dist/site -l 4321",
     "art:image": "bun scripts/gen-image.ts",
     "art:3d": "bun scripts/meshy.ts",

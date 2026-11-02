@@ -154,5 +154,5 @@ export const archStyles: ArchStyle[] = [
 ];
 
 /** Piece count per family, largest first */
-export const familyCounts = (kit: Kit) =>
+export const familyCounts = (kit: { pieces: { family: string }[] }) =>
   Object.entries(kit.pieces.reduce<Record<string, number>>((m, p) => ((m[p.family] = (m[p.family] ?? 0) + 1), m), {})).sort((a, b) => b[1] - a[1]);

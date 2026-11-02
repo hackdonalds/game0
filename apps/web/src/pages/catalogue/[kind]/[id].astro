@@ -12,7 +12,7 @@ import { windNotes } from "../../../data/winds";
 import { ships } from "../../../data/ships";
 import { materials } from "../../../data/materials";
 import { archStyles, familyCounts } from "../../../data/architecture";
-import { biomes } from "../../../data/biomes";
+import { biomes, foliage, kitTrees, pieceSize } from "../../../data/biomes";
 import { Image } from "astro:assets";
 import { plate } from "../../../lib/art";
 import { catalogues, isleSlug, windSlug, peopleName, TONE, type Card } from "../../../lib/catalogues";
@@ -60,7 +60,10 @@ const arch = kind === "architecture" ? archStyles.find((a) => a.id === card.id) 
 const biome = kind === "biomes" ? biomes.find((b) => b.id === card.id) : undefined;
 const biomeIsles = biome ? shard.isles.filter((i) => i.biome === biome.id).sort((a, b) => a.name.localeCompare(b.name)) : [];
 const archBiomes = arch ? biomes.filter((b) => arch.biomes.includes(b.id)) : [];
-const biomeStyles = biome ? archStyles.filter((a) => biome.styles.includes(a.id)) : [];
+const biomeStyles = biome ? archStyles.filter((a) => a.biomes.includes(biome.id)) : [];
+const natureKit = biome?.kit;
+const natureTris = natureKit ? natureKit.pieces.reduce((n, p) => n + p.tris, 0) : 0;
+const biomeLeaves = biome ? foliage.filter((f) => biome.foliage.includes(f.id)) : [];
 const archTris = arch ? arch.kit.pieces.reduce((n, p) => n + p.tris, 0) : 0;
 // Full sheets shown at their own aspect below the entry
 const galleries = arch ? [
@@ -71,6 +74,7 @@ const galleries = arch ? [
   ] },
 ] : biome ? [
   { title: "Concept sheets", note: "The brief for the biome's nature kit and terrain materials.", sheets: biome.sheets.map((s) => ({ art: `biomes/${biome.id}-${s.id}`, label: s.label })) },
+  ...(biome.builtSheets.length ? [{ title: "Built nature kit", note: natureKit ? `Modelled and textured in Blender: ${natureKit.pieces.length} pieces, ${natureTris.toLocaleString("en-GB")} triangles in all.` : "Modelled in Blender.", sheets: biome.builtSheets.map((s) => ({ art: `biomes/${biome.id}-${s.id}`, label: s.label })) }] : []),
 ] : [];
 const hasPlate = kind !== "winds";
 ---
@@ -290,6 +294,30 @@ const hasPlate = kind !== "winds";
         </article>
       )}
 
+      {biome && natureKit && (
+        <article class="stat nature" id="nature-kit">
+          <header><h2>Nature kit</h2><p class="type">Trees, plants, rocks, lip, underside and water, built in Blender</p></header>
+          <hr />
+          <dl class="core">
+            <div><dt>Pieces</dt><dd>{natureKit.pieces.length}</dd></div>
+            <div><dt>Triangles</dt><dd>{natureTris.toLocaleString("en-GB")}</dd></div>
+            <div><dt>Prefix</dt><dd><code>{natureKit.prefix}-</code></dd></div>
+          </dl>
+          <hr />
+          <h3>Pieces by family</h3>
+          <p class="tags">{familyCounts(natureKit).map(([f, n]) => <span class="chip">{cap(f)} {n}</span>)}</p>
+          <h3>Trees and landmarks</h3>
+          <ul class="list trees">{kitTrees(natureKit).map((p) => <li><b>{p.name}</b>{p.family === "hero" && <span class="chip">Landmark</span>} <span class="size">{pieceSize(p)}</span></li>)}</ul>
+          <h3>Materials</h3>
+          <p class="tags">{natureKit.materials.map((m) => <span class="chip">{m}</span>)}</p>
+          {biomeLeaves.length > 0 && (<>
+            <h3>Painted leaf cards</h3>
+            <ul class="leaves">{biomeLeaves.map((f) => { const src = plate(f.art); return src && <li><Image src={src} alt={`Leaf card: ${f.name}`} widths={[160, 320]} sizes="80px" /><span>{f.name}</span></li>; })}</ul>
+          </>)}
+          <p class="note">Every piece is listed in <a href={`https://github.com/hackdonalds/game0/blob/main/art/models/nature/${biome.id}/kit.json`}>its kit manifest</a>; see the <a href={`${base}/catalogue/biomes/#leaf-cards`}>leaf cards</a> shared across biomes.</p>
+        </article>
+      )}
+
       {material && (
         <article class="stat">
           <dl class="core">
@@ -398,6 +426,12 @@ const hasPlate = kind !== "winds";
   .milestones p { margin: 0.15rem 0 0; color: var(--ink-soft); font-size: 0.9rem; }
   .note { margin: 1rem 0 0; font-size: 0.85rem; color: var(--ink-soft); }
   .viewer { margin-top: 2.5rem; }
+  .stat.nature { margin-top: 1.5rem; }
+  .trees .size { color: var(--ink-soft); font-size: 0.88rem; white-space: nowrap; }
+  .trees .chip { margin-left: 0.4rem; font-size: 0.7rem; }
+  .leaves { list-style: none; margin: 0 0 0.6rem; padding: 0; display: flex; flex-wrap: wrap; gap: 0.6rem; }
+  .leaves li { display: grid; justify-items: center; gap: 0.2rem; width: 5.5rem; font-size: 0.78rem; text-align: center; color: var(--ink-soft); }
+  .leaves :global(img) { width: 5rem; height: 5rem; object-fit: contain; border-radius: 8px; background: color-mix(in srgb, var(--paper-deep) 70%, var(--card)); box-shadow: 0 0 0 1px var(--line); }
   .viewer h2 { font-size: 1.4rem; }
 
   .sheets { margin-top: 3rem; }

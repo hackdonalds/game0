@@ -69,3 +69,9 @@ export const chapters = [
 
 /** Map a concept doc path (relative to concept/) to its chapter slug. */
 export const docToChapter = Object.fromEntries(chapters.flatMap((c) => c.docs.map((d) => [d, c.slug])));
+
+/** Concept docs deliberately not rendered as chapters, with the reason. scripts/handbook-check.ts fails on any other doc
+ *  under concept/ that no chapter renders. @type {Record<string, string>} */
+export const excludedDocs = {
+  "README.md": "Index of the concept folder for readers on GitHub; the handbook's chapter list and home page replace it.",
+};

@@ -57,3 +57,5 @@ Copy `demos/floating-isle`, rename the package, and edit `demo.json`. The Vite `
 ## Deploy
 
 Every push to `main` builds with `.github/workflows/pages.yml` and deploys to GitHub Pages.
+
+The handbook reads its facts from the sources (concept docs, `worlds/`, kit manifests, art sheets), and `bun run build` first remakes the WebP plates in `art/handbook/` (`bun run art:sheets`), then runs `bun run handbook:check` before and after building. The check fails, and nothing deploys, when a biome, kit, concept doc, demo or sheet is missing from the site or a plate lags its source.

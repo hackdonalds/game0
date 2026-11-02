@@ -128,7 +128,7 @@ const archCards: Card[] = archStyles.map((a) => ({
 const biomeCards: Card[] = biomes.map((b) => ({
   id: b.id, name: b.name, subtitle: `${b.altitude} up · ${shard.isles.filter((i) => i.biome === b.id).length} isles`, summary: b.summary,
   art: `biomes/${b.id}-isle-portrait`, tone: TONE[b.id], href: href("biomes", b.id), facets: {},
-  search: words(b.name, b.summary, b.look.map((l) => l.value), b.signature, b.creatures, shard.isles.filter((i) => i.biome === b.id).map((i) => i.name)),
+  search: words(b.name, b.summary, b.look.map((l) => l.value), b.signature, b.creatures, shard.isles.filter((i) => i.biome === b.id).map((i) => i.name), b.kit?.pieces.map((p) => p.name)),
 }));
 
 export const catalogues: Catalogue[] = [

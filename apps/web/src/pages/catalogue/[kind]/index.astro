@@ -4,6 +4,9 @@ import CardGrid from "../../../components/CardGrid.astro";
 import ShardMap from "../../../components/ShardMap.astro";
 import { catalogues, type Catalogue } from "../../../lib/catalogues";
 import { glossary } from "../../../data/glossary";
+import { biomes, foliage } from "../../../data/biomes";
+import { Image } from "astro:assets";
+import { plate } from "../../../lib/art";
 import { chapters } from "../../../data/chapters.mjs";
 import { base, sortName } from "../../../lib/text";
 
@@ -49,10 +52,37 @@ const anchor = (t: string) => t.toLowerCase().replace(/[^a-z0-9]+/g, "-");
     ) : (
       <CardGrid cards={cat.cards} filters={cat.filters} label={cat.title} />
     )}
+
+    {cat.slug === "biomes" && foliage.length > 0 && (
+      <section class="leaves" id="leaf-cards">
+        <h2>Painted leaf cards</h2>
+        <p class="note">The nature kits' foliage is built from these hand-painted sprite atlases (four clusters each, transparent background), laid on cards in Blender.</p>
+        <ul>
+          {foliage.map((f) => {
+            const src = plate(f.art);
+            return src && (
+              <li><figure>
+                <a href={src.src}><Image src={src} alt={`Leaf card: ${f.name}`} widths={[256, 512]} sizes="(max-width: 600px) 45vw, 12rem" /></a>
+                <figcaption><b>{f.name}</b><span>{f.biomes.length ? f.biomes.map((id, i) => <>{i > 0 && ", "}<a href={`${base}/catalogue/biomes/${id}/`}>{biomes.find((b) => b.id === id)!.name}</a></>) : "Not used by a kit yet"}</span></figcaption>
+              </figure></li>
+            );
+          })}
+        </ul>
+      </section>
+    )}
   </div>
 </Base>
 
 <style>
+  .leaves { margin-top: 3rem; }
+  .leaves h2 { font-size: 1.4rem; margin-bottom: 0.2rem; }
+  .leaves .note { margin: 0; font-size: 0.9rem; color: var(--ink-soft); max-width: 42rem; }
+  .leaves ul { list-style: none; margin: 1rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(45%, 11rem), 1fr)); gap: 1rem; }
+  .leaves figure { margin: 0; }
+  .leaves :global(img) { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: contain; border-radius: 10px; background: radial-gradient(circle, var(--card), var(--paper-deep)); box-shadow: 0 0 0 1px var(--line); }
+  .leaves figcaption { display: grid; margin-top: 0.4rem; font-size: 0.85rem; color: var(--ink-soft); }
+  .leaves figcaption b { color: var(--ink); font-family: var(--font-display); font-size: 1rem; }
+  .leaves figcaption a { color: inherit; }
   .head { padding-top: clamp(1.5rem, 5vw, 3rem); padding-bottom: 1rem; }
   .crumbs a { font-size: 0.88rem; color: var(--ink-soft); text-decoration: none; }
   .crumbs a:hover { color: var(--teal); }

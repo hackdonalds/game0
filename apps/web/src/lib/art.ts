@@ -10,3 +10,6 @@ for (const [path, mod] of Object.entries(handbook)) {
 }
 
 export const plate = (key: string) => plates.get(key);
+
+/** Every plate key under a prefix, e.g. "biomes/crag-", sorted */
+export const plateKeys = (prefix: string) => [...plates.keys()].filter((k) => k.startsWith(prefix)).sort();
