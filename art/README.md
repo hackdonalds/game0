@@ -18,7 +18,7 @@ Every image lives in exactly one place, by what it is for. Each generated image 
 ## Naming
 
 - **Painted entry plates:** `concept/<kind>/<id>.webp`, where `<id>` is the entry's id in `apps/web/src/data/` (chapter slug for `chapters`). `bun run art:handbook` paints the missing ones. They are the only `.webp` files directly in a `concept/<kind>/` folder.
-- **Concept and kit sheets:** `.png`, named for their subject: `concept/isles/<isle>-portrait.png`, `concept/architecture/<style>/<sheet>.png`, `kit/architecture/<style>/kit-<part>.png`, `kit/biomes/<biome>/{nature,terrain}.png`, `kit/bestiary/<id>.png`, `kit/peoples/<people>/{base-turnaround,outfits,signatures}.png`, `kit/peoples/gear/<sheet>.png`, `kit/ships/{<ship>,kit-<part>}.png`.
+- **Concept and kit sheets:** `.png`, named for their subject: `concept/isles/<isle>-portrait.png`, `concept/architecture/<style>/<sheet>.png`, `kit/architecture/<style>/{kit-<part>,materials}.png`, `kit/biomes/<biome>/{nature,terrain}.png`, `kit/bestiary/<id>.png`, `kit/peoples/<people>/{base-turnaround,outfits,signatures}.png`, `kit/peoples/gear/<sheet>.png`, `kit/ships/{<ship>,kit-<part>}.png`.
 - **Drafts:** `bun run art:image` without `--out` saves to `concept/drafts/`. Move a keeper to its folder; the handbook ignores drafts.
 - **Meshy crops:** `kit/views/<people>-base-{front,side,back}.png` are cut from the base turnaround when needed and are not committed.
 - A name must be unique within its layer and kind, so a concept sheet and a kit sheet of the same kind never share a name: they would make the same plate, and `art:sheets` stops with an error.
