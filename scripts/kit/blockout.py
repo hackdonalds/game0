@@ -5,7 +5,8 @@
 import bpy, bmesh, json, math, sys, os
 from mathutils import Vector, Matrix
 
-STYLE = sys.argv[sys.argv.index("--") + 1] if "--" in sys.argv else "rootwarden"
+_args = sys.argv[sys.argv.index("--") + 1:] if "--" in sys.argv else []
+STYLE = _args[0] if _args and not _args[0].startswith("-") else "rootwarden"
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "../.."))
 KIT_DIR = os.path.join(ROOT, "art/models/architecture", STYLE)
 OUT = os.path.join(KIT_DIR, "blockout")
@@ -213,6 +214,7 @@ def cut_openings(ob, p):
         cutter.rotation_euler = (0, 0, a)
         mod = ob.modifiers.new("cut", "BOOLEAN")
         mod.operation, mod.object, mod.solver = "DIFFERENCE", cutter, "EXACT"
+        mod.use_self = True
         bpy.context.view_layer.objects.active = ob
         bpy.ops.object.modifier_apply(modifier="cut")
         bpy.data.objects.remove(cutter)
@@ -336,11 +338,11 @@ def label(text, at, size=0.5):
     bpy.context.scene.collection.objects.link(ob)
 
 
-def render(path, objs_bounds):
+def render(path, objs_bounds, color_type="OBJECT"):
     sc = bpy.context.scene
     sc.render.engine = "BLENDER_WORKBENCH"
     sc.display.shading.light = "STUDIO"
-    sc.display.shading.color_type = "OBJECT"
+    sc.display.shading.color_type = color_type
     sc.display.shading.show_cavity = True
     sc.display.shading.show_shadows = True
     sc.world = bpy.data.worlds.new("w")
@@ -420,12 +422,13 @@ def render_prefabs(report):
         render(os.path.join(OUT, "sheet-prefabs.png"), bounds(objs))
 
 
-export_pieces()
-report = [check_prefab(f) for f in kit.get("prefabs", []) if "layout" in f]
-json.dump(report, open(os.path.join(OUT, "socket-report.json"), "w"), indent=2, ensure_ascii=False)
-render_pieces()
-render_prefabs(report)
-for r in report:
-    print(f"[prefab] {r['id']}: {len(r['joints'])} joints, {len(r['issues'])} issues")
-    for i in r["issues"]:
-        print("   ", i)
+if __name__ == "__main__":
+    export_pieces()
+    report = [check_prefab(f) for f in kit.get("prefabs", []) if "layout" in f]
+    json.dump(report, open(os.path.join(OUT, "socket-report.json"), "w"), indent=2, ensure_ascii=False)
+    render_pieces()
+    render_prefabs(report)
+    for r in report:
+        print(f"[prefab] {r['id']}: {len(r['joints'])} joints, {len(r['issues'])} issues")
+        for i in r["issues"]:
+            print("   ", i)

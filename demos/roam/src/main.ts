@@ -50,6 +50,12 @@ const JUMP_V = 7.5;
 const RADIUS = 0.4;
 
 const pos = world.spawn.clone();
+// ?at=x,z starts somewhere else on the walkable isles (e.g. ?at=-6,22 for the village)
+const at = new URLSearchParams(location.search).get("at")?.split(",").map(Number);
+if (at?.length === 2 && at.every(Number.isFinite)) {
+  const h = world.heightAt(at[0], at[1]);
+  if (h !== null) pos.set(at[0], h, at[1]);
+}
 const vel = new THREE.Vector3();
 let yaw = 0; // facing, radians; 0 faces +Z
 let grounded = true;

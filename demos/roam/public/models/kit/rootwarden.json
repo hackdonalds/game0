@@ -1,0 +1,96 @@
+[
+  {
+    "id": "rw-prefab-root-flare-home",
+    "file": "rw-prefab-root-flare-home.glb",
+    "category": "building",
+    "biomes": [
+      "roothold"
+    ],
+    "radius": 5.45,
+    "height": 5.97,
+    "minScale": 0.9,
+    "maxScale": 1.1,
+    "collide": true,
+    "tris": 15375
+  },
+  {
+    "id": "rw-prefab-moss-dome-home",
+    "file": "rw-prefab-moss-dome-home.glb",
+    "category": "building",
+    "biomes": [
+      "roothold"
+    ],
+    "radius": 5.45,
+    "height": 6.0,
+    "minScale": 0.9,
+    "maxScale": 1.1,
+    "collide": true,
+    "tris": 8171
+  },
+  {
+    "id": "rw-prefab-hanging-pod-home",
+    "file": "rw-prefab-hanging-pod-home.glb",
+    "category": "building",
+    "biomes": [
+      "roothold"
+    ],
+    "radius": 2.6,
+    "height": 6.8,
+    "minScale": 0.9,
+    "maxScale": 1.1,
+    "collide": true,
+    "tris": 5262
+  },
+  {
+    "id": "rw-fungus-lantern",
+    "file": "rw-fungus-lantern.glb",
+    "category": "prop",
+    "biomes": [
+      "roothold"
+    ],
+    "radius": 0.75,
+    "height": 1,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "rw-lamp-seedpod",
+    "file": "rw-lamp-seedpod.glb",
+    "category": "hanging",
+    "biomes": [
+      "roothold"
+    ],
+    "radius": 0.25,
+    "height": 1,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": false
+  },
+  {
+    "id": "rw-root-arch-d1.0",
+    "file": "rw-root-arch-d1.0.glb",
+    "category": "decor",
+    "biomes": [
+      "roothold"
+    ],
+    "radius": 1.5,
+    "height": 1.5,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": true
+  },
+  {
+    "id": "rw-root-flare-d1.6",
+    "file": "rw-root-flare-d1.6.glb",
+    "category": "decor",
+    "biomes": [
+      "roothold"
+    ],
+    "radius": 2.0,
+    "height": 2.5,
+    "minScale": 0.9,
+    "maxScale": 1.2,
+    "collide": true
+  }
+]

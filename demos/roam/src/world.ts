@@ -51,6 +51,22 @@ interface Bridge {
 }
 const deckY = (b: Bridge, t: number) => b.ay + (b.by - b.ay) * t - b.sag * Math.sin(Math.PI * t);
 
+/**
+ * Compressed kit models store positions and normals as normalized integers with the scale on the node
+ * (KHR_mesh_quantization). Baking the node transform into those integer arrays would clamp them to ±1, so
+ * expand every attribute to floats first.
+ */
+function dequantize(g: THREE.BufferGeometry) {
+  for (const [name, attr] of Object.entries(g.attributes)) {
+    const a = attr as THREE.BufferAttribute;
+    if (a.array instanceof Float32Array && !a.normalized && !(a as unknown as THREE.InterleavedBufferAttribute).isInterleavedBufferAttribute) continue;
+    const out = new Float32Array(a.count * a.itemSize);
+    for (let i = 0; i < a.count; i++) for (let k = 0; k < a.itemSize; k++) out[i * a.itemSize + k] = a.getComponent(i, k);
+    g.setAttribute(name, new THREE.BufferAttribute(out, a.itemSize));
+  }
+  return g;
+}
+
 async function loadCatalog(name: string): Promise<KitEntry[]> {
   try {
     const r = await fetch(`${KIT}${name}.json`);
@@ -173,8 +189,8 @@ export async function createWorld(scene: THREE.Scene, renderer: THREE.WebGLRende
   }
 
   // ---- Kit catalogs ------------------------------------------------------------------------
-  const [nature, settlement] = await Promise.all([loadCatalog("nature"), loadCatalog("settlement")]);
-  const catalog = [...nature, ...settlement];
+  const [nature, settlement, rootwarden] = await Promise.all([loadCatalog("nature"), loadCatalog("settlement"), loadCatalog("rootwarden")]);
+  const catalog = [...nature, ...settlement, ...rootwarden];
   const byId = new Map(catalog.map((e) => [e.id, e]));
   const loader = new GLTFLoader();
   loader.setMeshoptDecoder(MeshoptDecoder);
@@ -188,10 +204,10 @@ export async function createWorld(scene: THREE.Scene, renderer: THREE.WebGLRende
         gltf.scene.traverse((o) => {
           const m = o as THREE.Mesh;
           if (!m.isMesh) return;
-          const geometry = m.geometry.clone().applyMatrix4(m.matrixWorld);
+          const geometry = dequantize(m.geometry.clone()).applyMatrix4(m.matrixWorld);
           const hasColors = !!geometry.attributes.color;
           const mats = Array.isArray(m.material) ? m.material : [m.material];
-          const conv = mats.map((src) => kitMaterial(src.name ?? "", hasColors, (src as THREE.MeshStandardMaterial).color));
+          const conv = mats.map((src) => kitMaterial(src, hasColors));
           parts.push({ geometry, material: conv.length === 1 ? conv[0] : conv });
         });
         return parts;
@@ -219,8 +235,14 @@ export async function createWorld(scene: THREE.Scene, renderer: THREE.WebGLRende
     grass: roothold(catalog.filter((e) => match("grass", "tuft")(e) && !match("mushroom")(e))),
     mushrooms: roothold(catalog.filter(match("mushroom"))),
     flowers: roothold(catalog.filter(match("flower"))),
-    huts: settlement.filter((e) => e.id.startsWith("settle-hut")),
-    props: settlement.filter((e) => match("lantern", "barrel", "crate", "fence", "well", "cart", "sign")(e) && not(isBridge)(e)),
+    // Rootwarden architecture replaces the placeholder settlement huts and props when it is available
+    huts: rootwarden.some((e) => e.category === "building")
+      ? rootwarden.filter((e) => e.category === "building")
+      : settlement.filter((e) => e.id.startsWith("settle-hut")),
+    props: rootwarden.some((e) => e.category === "prop")
+      ? rootwarden.filter((e) => e.category === "prop")
+      : settlement.filter((e) => match("lantern", "barrel", "crate", "fence", "well", "cart", "sign")(e) && not(isBridge)(e)),
+    decor: rootwarden.filter((e) => e.category === "decor"),
   };
   const ancient = byId.get("nature-ancient-tree");
   const shrine = byId.get("settle-shrine");
@@ -294,9 +316,9 @@ export async function createWorld(scene: THREE.Scene, renderer: THREE.WebGLRende
       const s = scaleOf(e, rng);
       for (let tries = 0; tries < 8; tries++) {
         const a = a0 + (i / n) * Math.PI * 2 + (rng() - 0.5) * 0.5;
-        const rr = 10 + rng() * 3;
-        const x = VILLAGE_XZ[0] + Math.cos(a) * rr, z = VILLAGE_XZ[1] + Math.sin(a) * rr;
         const r = (e.radius ?? 3) * s;
+        const rr = Math.max(10, r * 2) + rng() * 3;
+        const x = VILLAGE_XZ[0] + Math.cos(a) * rr, z = VILLAGE_XZ[1] + Math.sin(a) * rr;
         if (pathDist(x, z) < r + 1.5 || !clearOf(x, z, r) || slopeAt(x, z) > 0.35) continue;
         const yaw = Math.atan2(VILLAGE_XZ[0] - x, VILLAGE_XZ[1] - z);
         if (place(elderIdx, e, x, z, yaw, s, true, 0.05)) { big.push({ x, z, r }); break; }
@@ -310,7 +332,7 @@ export async function createWorld(scene: THREE.Scene, renderer: THREE.WebGLRende
       const x = VILLAGE_XZ[0] + 1.5, z = VILLAGE_XZ[1] + 2.5;
       if (place(elderIdx, wellish, x, z, rng() * 6.28, s, true)) big.push({ x, z, r: (wellish.radius ?? 1) * s + 0.5 });
     }
-    const n = 14 + Math.floor(rng() * 8);
+    const n = rootwarden.length ? 5 + Math.floor(rng() * 3) : 14 + Math.floor(rng() * 8);
     for (let i = 0; i < n; i++) {
       const e = choose(pick.props, rng);
       const s = scaleOf(e, rng);
@@ -324,13 +346,25 @@ export async function createWorld(scene: THREE.Scene, renderer: THREE.WebGLRende
         if (place(elderIdx, e, x, z, yaw, s, true)) { big.push({ x, z, r }); break; }
       }
     }
+    // Grown roots arching out of the ground around the village edge
+    for (let i = 0; i < 8 && pick.decor.length; i++) {
+      const e = choose(pick.decor, rng);
+      const s = scaleOf(e, rng);
+      for (let tries = 0; tries < 10; tries++) {
+        const a = rng() * Math.PI * 2, rr = 17 + rng() * 9;
+        const x = VILLAGE_XZ[0] + Math.cos(a) * rr, z = VILLAGE_XZ[1] + Math.sin(a) * rr;
+        const r = (e.radius ?? 1.5) * s;
+        if (pathDist(x, z) < r + 1.4 || !clearOf(x, z, r + 0.5) || slopeAt(x, z) > 0.4) continue;
+        if (place(elderIdx, e, x, z, rng() * Math.PI * 2, s, true, 0.15)) { big.push({ x, z, r }); break; }
+      }
+    }
     // Lanterns and signposts along the paths
     const lanterns = pick.props.filter((e) => e.id.includes("lantern") || e.id.includes("sign"));
     if (lanterns.length) {
       for (const [x1, z1, x2, z2] of paths) {
         const L = Math.hypot(x2 - x1, z2 - z1);
         const nx = -(z2 - z1) / L, nz = (x2 - x1) / L;
-        for (let d = 9; d < L - 3; d += 14) {
+        for (let d = 9; d < L - 3; d += rootwarden.length ? 22 : 14) {
           const side = rng() < 0.5 ? -1 : 1;
           const x = x1 + ((x2 - x1) * d) / L + nx * 2.4 * side, z = z1 + ((z2 - z1) * d) / L + nz * 2.4 * side;
           const e = choose(lanterns, rng);

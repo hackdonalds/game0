@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "models": "bun ../../scripts/web-environment.ts public/models/kit ../../art/models/environment/kit/*.glb && cp ../../art/models/environment/kit/*.json public/models/kit/ || true",
+    "models": "bun ../../scripts/web-environment.ts public/models/kit ../../art/models/environment/kit/*.glb ../../art/models/architecture/rootwarden/prefabs/*.glb && cp ../../art/models/environment/kit/*.json ../../art/models/architecture/rootwarden/prefabs/rootwarden.json public/models/kit/ || true",
     "dev": "bun run models && vite",
     "build": "bun run models && vite build"
   },

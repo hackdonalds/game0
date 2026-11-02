@@ -22,8 +22,8 @@ const cache = new Map<string, THREE.MeshStandardMaterial>();
  * Painterly standard material: vertex colours, roughness 1, wrapped/stepped sun diffuse and a soft
  * warm-over-teal rim. Foliage sways in the wind; glow is self-lit by its vertex colour.
  */
-export function painterly(kind: PaintKind, vertexColors: boolean, color = 0xffffff): THREE.MeshStandardMaterial {
-  const key = `${kind}|${vertexColors}|${color}`;
+export function painterly(kind: PaintKind, vertexColors: boolean, color = 0xffffff, map: THREE.Texture | null = null): THREE.MeshStandardMaterial {
+  const key = `${kind}|${vertexColors}|${color}|${map?.uuid ?? ""}`;
   const hit = cache.get(key);
   if (hit) return hit;
   const m = new THREE.MeshStandardMaterial({
@@ -32,10 +32,12 @@ export function painterly(kind: PaintKind, vertexColors: boolean, color = 0xffff
     roughness: 1,
     metalness: 0,
     side: kind === "foliage" ? THREE.DoubleSide : THREE.FrontSide,
+    map,
   });
   if (kind === "glow") {
-    m.emissive.set(vertexColors ? 0x000000 : color);
-    m.emissiveIntensity = 1.6;
+    m.emissive.set(vertexColors ? 0x000000 : map ? 0xffffff : color);
+    m.emissiveMap = map;
+    m.emissiveIntensity = map ? 1.1 : 1.6;
   }
   m.onBeforeCompile = (shader) => {
     shader.uniforms.uTime = windTime;
@@ -75,8 +77,17 @@ export function painterly(kind: PaintKind, vertexColors: boolean, color = 0xffff
   return m;
 }
 
-/** Pick a painterly material for a GLB material by its name (Kit, Kit_Foliage, Kit_Glow). */
-export function kitMaterial(name: string, hasColors: boolean, fallback: THREE.Color | undefined): THREE.MeshStandardMaterial {
-  const kind: PaintKind = /glow/i.test(name) ? "glow" : /foliage/i.test(name) ? "foliage" : "kit";
-  return painterly(kind, hasColors, hasColors ? 0xffffff : fallback ? fallback.getHex() : 0xcccccc);
+/**
+ * Pick a painterly material for a GLB material by its name: Kit, Kit_Foliage, Kit_Glow for the vertex-coloured
+ * kits; textured architecture keeps its painted map, and its fungus and amber materials glow.
+ */
+export function kitMaterial(src: THREE.Material, hasColors: boolean): THREE.MeshStandardMaterial {
+  const s = src as THREE.MeshStandardMaterial;
+  const name = s.name ?? "";
+  const kind: PaintKind = /glow|fungus|amber/i.test(name) ? "glow" : /foliage/i.test(name) ? "foliage" : "kit";
+  if (s.map) {
+    s.map.colorSpace = THREE.SRGBColorSpace;
+    return painterly(kind, false, 0xffffff, s.map);
+  }
+  return painterly(kind, hasColors, hasColors ? 0xffffff : s.color ? s.color.getHex() : 0xcccccc);
 }
