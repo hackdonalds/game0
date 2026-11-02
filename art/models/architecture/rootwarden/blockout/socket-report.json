@@ -1,0 +1,46 @@
+[
+  {
+    "id": "rw-prefab-root-flare-home",
+    "joints": [
+      "rw-shell-full-r5.anchor-45 ↔ rw-root-bend90-d1.0.b: ok",
+      "rw-shell-full-r5.anchor-135 ↔ rw-root-bend90-d1.0.b: ok",
+      "rw-shell-full-r5.anchor-225 ↔ rw-root-bend90-d1.0.b: ok",
+      "rw-shell-full-r5.anchor-315 ↔ rw-root-bend90-d1.0.b: ok",
+      "rw-root-flare-d1.0.top ↔ rw-root-bend90-d1.0.a: ok",
+      "rw-root-flare-d1.0.top ↔ rw-root-bend90-d1.0.a: ok",
+      "rw-root-flare-d1.0.top ↔ rw-root-bend90-d1.0.a: ok",
+      "rw-root-flare-d1.0.top ↔ rw-root-bend90-d1.0.a: ok"
+    ],
+    "open_sockets_above_ground": [
+      "rw-shell-full-r5.crown",
+      "rw-root-bend90-d1.0.hang",
+      "rw-root-bend90-d1.0.hang",
+      "rw-root-bend90-d1.0.hang",
+      "rw-root-bend90-d1.0.hang"
+    ],
+    "issues": []
+  },
+  {
+    "id": "rw-prefab-moss-dome-home",
+    "joints": [],
+    "open_sockets_above_ground": [
+      "rw-shell-full-r5.anchor-45",
+      "rw-shell-full-r5.anchor-135",
+      "rw-shell-full-r5.anchor-225",
+      "rw-shell-full-r5.anchor-315",
+      "rw-shell-full-r5.crown"
+    ],
+    "issues": []
+  },
+  {
+    "id": "rw-prefab-hanging-pod-home",
+    "joints": [
+      "rw-root-straight-4m-d1.6.b ↔ rw-root-bend90-d1.6.a: ok",
+      "rw-root-bend90-d1.6.hang ↔ rw-shell-pod.hang: ok"
+    ],
+    "open_sockets_above_ground": [
+      "rw-root-bend90-d1.6.b"
+    ],
+    "issues": []
+  }
+]

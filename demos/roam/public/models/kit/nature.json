@@ -1,0 +1,207 @@
+[
+  {
+    "id": "nature-rock-boulder-a",
+    "file": "nature-rock-boulder-a.glb",
+    "category": "rock",
+    "biomes": [
+      "roothold",
+      "forest",
+      "meadow"
+    ],
+    "radius": 1.21,
+    "height": 1.2,
+    "minScale": 0.6,
+    "maxScale": 1.8,
+    "collide": true
+  },
+  {
+    "id": "nature-rock-boulder-b",
+    "file": "nature-rock-boulder-b.glb",
+    "category": "rock",
+    "biomes": [
+      "roothold",
+      "forest",
+      "meadow"
+    ],
+    "radius": 1.58,
+    "height": 0.92,
+    "minScale": 0.6,
+    "maxScale": 1.6,
+    "collide": true
+  },
+  {
+    "id": "nature-rock-slab",
+    "file": "nature-rock-slab.glb",
+    "category": "rock",
+    "biomes": [
+      "roothold",
+      "meadow"
+    ],
+    "radius": 1.9,
+    "height": 0.49,
+    "minScale": 0.7,
+    "maxScale": 1.6,
+    "collide": true
+  },
+  {
+    "id": "nature-rock-spire",
+    "file": "nature-rock-spire.glb",
+    "category": "rock",
+    "biomes": [
+      "roothold",
+      "forest"
+    ],
+    "radius": 1.2,
+    "height": 3.25,
+    "minScale": 0.7,
+    "maxScale": 1.5,
+    "collide": true
+  },
+  {
+    "id": "nature-tree-oak-a",
+    "file": "nature-tree-oak-a.glb",
+    "category": "tree",
+    "biomes": [
+      "roothold",
+      "forest",
+      "meadow"
+    ],
+    "radius": 4.42,
+    "height": 6.56,
+    "minScale": 0.75,
+    "maxScale": 1.35,
+    "collide": true,
+    "collideRadius": 0.5
+  },
+  {
+    "id": "nature-tree-oak-b",
+    "file": "nature-tree-oak-b.glb",
+    "category": "tree",
+    "biomes": [
+      "roothold",
+      "forest",
+      "meadow"
+    ],
+    "radius": 3.58,
+    "height": 6.33,
+    "minScale": 0.75,
+    "maxScale": 1.35,
+    "collide": true,
+    "collideRadius": 0.45
+  },
+  {
+    "id": "nature-tree-pine",
+    "file": "nature-tree-pine.glb",
+    "category": "tree",
+    "biomes": [
+      "forest",
+      "roothold"
+    ],
+    "radius": 2.0,
+    "height": 6.8,
+    "minScale": 0.7,
+    "maxScale": 1.5,
+    "collide": true,
+    "collideRadius": 0.35
+  },
+  {
+    "id": "nature-ancient-tree",
+    "file": "nature-ancient-tree.glb",
+    "category": "landmark",
+    "biomes": [
+      "roothold"
+    ],
+    "radius": 9.51,
+    "height": 19.63,
+    "minScale": 0.9,
+    "maxScale": 1.15,
+    "collide": true,
+    "collideRadius": 2.6
+  },
+  {
+    "id": "nature-root-arch",
+    "file": "nature-root-arch.glb",
+    "category": "landmark",
+    "biomes": [
+      "roothold"
+    ],
+    "radius": 4.4,
+    "height": 3.43,
+    "minScale": 0.8,
+    "maxScale": 1.4,
+    "collide": true,
+    "collideRadius": 0.7
+  },
+  {
+    "id": "nature-bush-a",
+    "file": "nature-bush-a.glb",
+    "category": "bush",
+    "biomes": [
+      "roothold",
+      "forest",
+      "meadow"
+    ],
+    "radius": 0.89,
+    "height": 0.94,
+    "minScale": 0.7,
+    "maxScale": 1.5,
+    "collide": false
+  },
+  {
+    "id": "nature-bush-b",
+    "file": "nature-bush-b.glb",
+    "category": "bush",
+    "biomes": [
+      "meadow",
+      "roothold"
+    ],
+    "radius": 0.73,
+    "height": 0.82,
+    "minScale": 0.7,
+    "maxScale": 1.4,
+    "collide": false
+  },
+  {
+    "id": "nature-grass-tuft",
+    "file": "nature-grass-tuft.glb",
+    "category": "ground",
+    "biomes": [
+      "meadow",
+      "roothold",
+      "forest"
+    ],
+    "radius": 0.58,
+    "height": 0.5,
+    "minScale": 0.7,
+    "maxScale": 1.6,
+    "collide": false
+  },
+  {
+    "id": "nature-fern",
+    "file": "nature-fern.glb",
+    "category": "ground",
+    "biomes": [
+      "roothold",
+      "forest"
+    ],
+    "radius": 0.99,
+    "height": 0.51,
+    "minScale": 0.7,
+    "maxScale": 1.5,
+    "collide": false
+  },
+  {
+    "id": "nature-mushroom-cluster",
+    "file": "nature-mushroom-cluster.glb",
+    "category": "ground",
+    "biomes": [
+      "roothold",
+      "forest"
+    ],
+    "radius": 0.52,
+    "height": 0.75,
+    "minScale": 0.7,
+    "maxScale": 1.8,
+    "collide": false
+  }
+]

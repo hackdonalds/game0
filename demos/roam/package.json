@@ -1,0 +1,17 @@
+{
+  "name": "@game0/demo-roam",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "models": "bun ../../scripts/web-environment.ts public/models/kit ../../art/models/environment/kit/*.glb && cp ../../art/models/environment/kit/*.json public/models/kit/ || true",
+    "dev": "bun run models && vite",
+    "build": "bun run models && vite build"
+  },
+  "dependencies": {
+    "three": "0.186.1"
+  },
+  "devDependencies": {
+    "@types/three": "0.186.0",
+    "vite": "8.3.4"
+  }
+}

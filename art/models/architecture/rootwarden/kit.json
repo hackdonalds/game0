@@ -1,0 +1,3004 @@
+{
+  "style": "rootwarden",
+  "prefix": "rw",
+  "grid": {
+    "base": 0.5
+  },
+  "scaleFigure": 1.6,
+  "trimSheet": "rw-trim",
+  "materials": [
+    "Root Bark",
+    "Smooth Heartwood",
+    "Moss",
+    "Flowering Moss",
+    "Woven Root Lattice",
+    "Lichen Stone",
+    "Glowing Fungus",
+    "Packed Earth"
+  ],
+  "pieces": [
+    {
+      "id": "rw-root-straight-2m-d0.6",
+      "family": "root",
+      "name": "Straight root 2 m, Ø0.6 m",
+      "size": [
+        1.0,
+        2,
+        1.0
+      ],
+      "pivot": "bottom-center",
+      "tris": 300,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown",
+        "sinking"
+      ],
+      "sockets": [
+        {
+          "name": "a",
+          "pos": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "dir": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "diameter": 0.6
+        },
+        {
+          "name": "b",
+          "pos": [
+            0.0,
+            2.0,
+            0.0
+          ],
+          "dir": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "diameter": 0.6
+        }
+      ],
+      "ref": {
+        "sheet": "kit-roots",
+        "label": "Straight (2m)"
+      },
+      "notes": "Row Ø 0.6 m. Upright; caps at both ends."
+    },
+    {
+      "id": "rw-root-straight-2m-d1.0",
+      "family": "root",
+      "name": "Straight root 2 m, Ø1.0 m",
+      "size": [
+        1.0,
+        2,
+        1.0
+      ],
+      "pivot": "bottom-center",
+      "tris": 300,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown",
+        "sinking"
+      ],
+      "sockets": [
+        {
+          "name": "a",
+          "pos": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "dir": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "diameter": 1.0
+        },
+        {
+          "name": "b",
+          "pos": [
+            0.0,
+            2.0,
+            0.0
+          ],
+          "dir": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "diameter": 1.0
+        }
+      ],
+      "ref": {
+        "sheet": "kit-roots",
+        "label": "Straight (2m)"
+      },
+      "notes": "Row Ø 1.0 m. Upright; caps at both ends."
+    },
+    {
+      "id": "rw-root-straight-2m-d1.6",
+      "family": "root",
+      "name": "Straight root 2 m, Ø1.6 m",
+      "size": [
+        2.0,
+        2,
+        2.0
+      ],
+      "pivot": "bottom-center",
+      "tris": 300,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown",
+        "sinking"
+      ],
+      "sockets": [
+        {
+          "name": "a",
+          "pos": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "dir": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "diameter": 1.6
+        },
+        {
+          "name": "b",
+          "pos": [
+            0.0,
+            2.0,
+            0.0
+          ],
+          "dir": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "diameter": 1.6
+        }
+      ],
+      "ref": {
+        "sheet": "kit-roots",
+        "label": "Straight (2m)"
+      },
+      "notes": "Row Ø 1.6 m. Upright; caps at both ends."
+    },
+    {
+      "id": "rw-root-straight-4m-d0.6",
+      "family": "root",
+      "name": "Straight root 4 m, Ø0.6 m",
+      "size": [
+        1.0,
+        4,
+        1.0
+      ],
+      "pivot": "bottom-center",
+      "tris": 400,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown",
+        "sinking"
+      ],
+      "sockets": [
+        {
+          "name": "a",
+          "pos": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "dir": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "diameter": 0.6
+        },
+        {
+          "name": "b",
+          "pos": [
+            0.0,
+            4.0,
+            0.0
+          ],
+          "dir": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "diameter": 0.6
+        }
+      ],
+      "ref": {
+        "sheet": "kit-roots",
+        "label": "Straight (4m)"
+      },
+      "notes": "Row Ø 0.6 m. Upright; caps at both ends."
+    },
+    {
+      "id": "rw-root-straight-4m-d1.0",
+      "family": "root",
+      "name": "Straight root 4 m, Ø1.0 m",
+      "size": [
+        1.0,
+        4,
+        1.0
+      ],
+      "pivot": "bottom-center",
+      "tris": 400,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown",
+        "sinking"
+      ],
+      "sockets": [
+        {
+          "name": "a",
+          "pos": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "dir": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "diameter": 1.0
+        },
+        {
+          "name": "b",
+          "pos": [
+            0.0,
+            4.0,
+            0.0
+          ],
+          "dir": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "diameter": 1.0
+        }
+      ],
+      "ref": {
+        "sheet": "kit-roots",
+        "label": "Straight (4m)"
+      },
+      "notes": "Row Ø 1.0 m. Upright; caps at both ends."
+    },
+    {
+      "id": "rw-root-straight-4m-d1.6",
+      "family": "root",
+      "name": "Straight root 4 m, Ø1.6 m",
+      "size": [
+        2.0,
+        4,
+        2.0
+      ],
+      "pivot": "bottom-center",
+      "tris": 400,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown",
+        "sinking"
+      ],
+      "sockets": [
+        {
+          "name": "a",
+          "pos": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "dir": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "diameter": 1.6
+        },
+        {
+          "name": "b",
+          "pos": [
+            0.0,
+            4.0,
+            0.0
+          ],
+          "dir": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "diameter": 1.6
+        }
+      ],
+      "ref": {
+        "sheet": "kit-roots",
+        "label": "Straight (4m)"
+      },
+      "notes": "Row Ø 1.6 m. Upright; caps at both ends."
+    },
+    {
+      "id": "rw-root-bend45-d0.6",
+      "family": "root",
+      "name": "Root bend 45°, Ø0.6 m",
+      "size": [
+        1.5,
+        2.0,
+        1.0
+      ],
+      "pivot": "bottom-center",
+      "tris": 500,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown"
+      ],
+      "sockets": [
+        {
+          "name": "a",
+          "pos": [
+            -0.249,
+            0.0,
+            0.0
+          ],
+          "dir": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "diameter": 0.6
+        },
+        {
+          "name": "b",
+          "pos": [
+            0.337,
+            1.414,
+            0.0
+          ],
+          "dir": [
+            0.707,
+            0.707,
+            0.0
+          ],
+          "diameter": 0.6
+        }
+      ],
+      "ref": {
+        "sheet": "kit-roots",
+        "label": "Bend 45°"
+      },
+      "notes": "Row Ø 0.6 m. Centreline radius 2.0 m in the XY plane, from cap a (down) curving to +X. Sheet labels every bend 0.6 m wide whatever the diameter; spec wins, size derived from the caps."
+    },
+    {
+      "id": "rw-root-bend45-d1.0",
+      "family": "root",
+      "name": "Root bend 45°, Ø1.0 m",
+      "size": [
+        1.5,
+        2.0,
+        1.0
+      ],
+      "pivot": "bottom-center",
+      "tris": 500,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown"
+      ],
+      "sockets": [
+        {
+          "name": "a",
+          "pos": [
+            -0.22,
+            0.0,
+            0.0
+          ],
+          "dir": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "diameter": 1.0
+        },
+        {
+          "name": "b",
+          "pos": [
+            0.366,
+            1.414,
+            0.0
+          ],
+          "dir": [
+            0.707,
+            0.707,
+            0.0
+          ],
+          "diameter": 1.0
+        }
+      ],
+      "ref": {
+        "sheet": "kit-roots",
+        "label": "Bend 45°"
+      },
+      "notes": "Row Ø 1.0 m. Centreline radius 2.0 m in the XY plane, from cap a (down) curving to +X. Sheet labels every bend 0.6 m wide whatever the diameter; spec wins, size derived from the caps."
+    },
+    {
+      "id": "rw-root-bend45-d1.6",
+      "family": "root",
+      "name": "Root bend 45°, Ø1.6 m",
+      "size": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "pivot": "bottom-center",
+      "tris": 500,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown"
+      ],
+      "sockets": [
+        {
+          "name": "a",
+          "pos": [
+            -0.176,
+            0.0,
+            0.0
+          ],
+          "dir": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "diameter": 1.6
+        },
+        {
+          "name": "b",
+          "pos": [
+            0.41,
+            1.414,
+            0.0
+          ],
+          "dir": [
+            0.707,
+            0.707,
+            0.0
+          ],
+          "diameter": 1.6
+        }
+      ],
+      "ref": {
+        "sheet": "kit-roots",
+        "label": "Bend 45°"
+      },
+      "notes": "Row Ø 1.6 m. Centreline radius 2.0 m in the XY plane, from cap a (down) curving to +X. Sheet labels every bend 0.6 m wide whatever the diameter; spec wins, size derived from the caps."
+    },
+    {
+      "id": "rw-root-bend90-d0.6",
+      "family": "root",
+      "name": "Root bend 90°, Ø0.6 m",
+      "size": [
+        2.5,
+        2.5,
+        1.0
+      ],
+      "pivot": "bottom-center",
+      "tris": 500,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown",
+        "sinking"
+      ],
+      "sockets": [
+        {
+          "name": "a",
+          "pos": [
+            -0.85,
+            0.0,
+            0.0
+          ],
+          "dir": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "diameter": 0.6
+        },
+        {
+          "name": "b",
+          "pos": [
+            1.15,
+            2.0,
+            0.0
+          ],
+          "dir": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "diameter": 0.6
+        },
+        {
+          "name": "hang",
+          "pos": [
+            0.65,
+            1.7,
+            0.0
+          ],
+          "dir": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "diameter": 0.6
+        }
+      ],
+      "ref": {
+        "sheet": "kit-roots",
+        "label": "Bend 90°"
+      },
+      "notes": "Row Ø 0.6 m. Centreline radius 2.0 m in the XY plane, from cap a (down) curving to +X. Sheet labels every bend 0.6 m wide whatever the diameter; spec wins, size derived from the caps."
+    },
+    {
+      "id": "rw-root-bend90-d1.0",
+      "family": "root",
+      "name": "Root bend 90°, Ø1.0 m",
+      "size": [
+        2.5,
+        2.5,
+        1.0
+      ],
+      "pivot": "bottom-center",
+      "tris": 500,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown",
+        "sinking"
+      ],
+      "sockets": [
+        {
+          "name": "a",
+          "pos": [
+            -0.75,
+            0.0,
+            0.0
+          ],
+          "dir": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "diameter": 1.0
+        },
+        {
+          "name": "b",
+          "pos": [
+            1.25,
+            2.0,
+            0.0
+          ],
+          "dir": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "diameter": 1.0
+        },
+        {
+          "name": "hang",
+          "pos": [
+            0.75,
+            1.5,
+            0.0
+          ],
+          "dir": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "diameter": 0.6
+        }
+      ],
+      "ref": {
+        "sheet": "kit-roots",
+        "label": "Bend 90°"
+      },
+      "notes": "Row Ø 1.0 m. Centreline radius 2.0 m in the XY plane, from cap a (down) curving to +X. Sheet labels every bend 0.6 m wide whatever the diameter; spec wins, size derived from the caps."
+    },
+    {
+      "id": "rw-root-bend90-d1.6",
+      "family": "root",
+      "name": "Root bend 90°, Ø1.6 m",
+      "size": [
+        3.0,
+        3.0,
+        2.0
+      ],
+      "pivot": "bottom-center",
+      "tris": 500,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown",
+        "sinking"
+      ],
+      "sockets": [
+        {
+          "name": "a",
+          "pos": [
+            -0.6,
+            0.0,
+            0.0
+          ],
+          "dir": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "diameter": 1.6
+        },
+        {
+          "name": "b",
+          "pos": [
+            1.4,
+            2.0,
+            0.0
+          ],
+          "dir": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "diameter": 1.6
+        },
+        {
+          "name": "hang",
+          "pos": [
+            0.9,
+            1.2,
+            0.0
+          ],
+          "dir": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "diameter": 0.6
+        }
+      ],
+      "ref": {
+        "sheet": "kit-roots",
+        "label": "Bend 90°"
+      },
+      "notes": "Row Ø 1.6 m. Centreline radius 2.0 m in the XY plane, from cap a (down) curving to +X. Sheet labels every bend 0.6 m wide whatever the diameter; spec wins, size derived from the caps."
+    },
+    {
+      "id": "rw-root-fork-d0.6",
+      "family": "root",
+      "name": "Y-fork root, Ø0.6 m",
+      "size": [
+        2.0,
+        2.0,
+        1.0
+      ],
+      "pivot": "bottom-center",
+      "tris": 700,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown"
+      ],
+      "sockets": [
+        {
+          "name": "trunk",
+          "pos": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "dir": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "diameter": 0.6
+        },
+        {
+          "name": "left",
+          "pos": [
+            -0.6,
+            1.74,
+            0.0
+          ],
+          "dir": [
+            -0.5,
+            0.866,
+            0.0
+          ],
+          "diameter": 0.6
+        },
+        {
+          "name": "right",
+          "pos": [
+            0.6,
+            1.74,
+            0.0
+          ],
+          "dir": [
+            0.5,
+            0.866,
+            0.0
+          ],
+          "diameter": 0.6
+        }
+      ],
+      "ref": {
+        "sheet": "kit-roots",
+        "label": "Y-Fork"
+      },
+      "notes": "Row Ø 0.6 m. Branches tilt 30° from vertical, caps 1.2 m apart."
+    },
+    {
+      "id": "rw-root-fork-d1.0",
+      "family": "root",
+      "name": "Y-fork root, Ø1.0 m",
+      "size": [
+        2.5,
+        2.0,
+        1.0
+      ],
+      "pivot": "bottom-center",
+      "tris": 700,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown"
+      ],
+      "sockets": [
+        {
+          "name": "trunk",
+          "pos": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "dir": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "diameter": 1.0
+        },
+        {
+          "name": "left",
+          "pos": [
+            -0.6,
+            1.567,
+            0.0
+          ],
+          "dir": [
+            -0.5,
+            0.866,
+            0.0
+          ],
+          "diameter": 1.0
+        },
+        {
+          "name": "right",
+          "pos": [
+            0.6,
+            1.567,
+            0.0
+          ],
+          "dir": [
+            0.5,
+            0.866,
+            0.0
+          ],
+          "diameter": 1.0
+        }
+      ],
+      "ref": {
+        "sheet": "kit-roots",
+        "label": "Y-Fork"
+      },
+      "notes": "Row Ø 1.0 m. Branches tilt 30° from vertical, caps 1.2 m apart."
+    },
+    {
+      "id": "rw-root-fork-d1.6",
+      "family": "root",
+      "name": "Y-fork root, Ø1.6 m",
+      "size": [
+        3.5,
+        2.0,
+        2.0
+      ],
+      "pivot": "bottom-center",
+      "tris": 700,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown"
+      ],
+      "sockets": [
+        {
+          "name": "trunk",
+          "pos": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "dir": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "diameter": 1.6
+        },
+        {
+          "name": "left",
+          "pos": [
+            -1.0,
+            1.307,
+            0.0
+          ],
+          "dir": [
+            -0.5,
+            0.866,
+            0.0
+          ],
+          "diameter": 1.6
+        },
+        {
+          "name": "right",
+          "pos": [
+            1.0,
+            1.307,
+            0.0
+          ],
+          "dir": [
+            0.5,
+            0.866,
+            0.0
+          ],
+          "diameter": 1.6
+        }
+      ],
+      "ref": {
+        "sheet": "kit-roots",
+        "label": "Y-Fork"
+      },
+      "notes": "Row Ø 1.6 m. Branches tilt 30° from vertical, caps 2.0 m apart. Sheet labels the fork 1.2 m wide in every row; two Ø1.6 m caps cannot fit, so spec wins: caps 2.0 m apart."
+    },
+    {
+      "id": "rw-root-flare-d0.6",
+      "family": "root",
+      "name": "Flare-to-ground buttress, Ø0.6 m",
+      "size": [
+        1.5,
+        2.0,
+        1.5
+      ],
+      "pivot": "bottom-center",
+      "tris": 800,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown",
+        "sinking"
+      ],
+      "sockets": [
+        {
+          "name": "top",
+          "pos": [
+            0.0,
+            2.0,
+            0.0
+          ],
+          "dir": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "diameter": 0.6
+        }
+      ],
+      "ref": {
+        "sheet": "kit-roots",
+        "label": "Flare to Ground"
+      },
+      "notes": "Row Ø 0.6 m. Roots splay into the ground; only the top cap is a socket. Sheet 1.6 m rounded to 1.5 m."
+    },
+    {
+      "id": "rw-root-flare-d1.0",
+      "family": "root",
+      "name": "Flare-to-ground buttress, Ø1.0 m",
+      "size": [
+        2.5,
+        2.0,
+        2.5
+      ],
+      "pivot": "bottom-center",
+      "tris": 800,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown",
+        "sinking"
+      ],
+      "sockets": [
+        {
+          "name": "top",
+          "pos": [
+            0.0,
+            2.0,
+            0.0
+          ],
+          "dir": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "diameter": 1.0
+        }
+      ],
+      "ref": {
+        "sheet": "kit-roots",
+        "label": "Flare to Ground"
+      },
+      "notes": "Row Ø 1.0 m. Roots splay into the ground; only the top cap is a socket. Sheet labels the flare 1.6 m wide in every row; spec wins, base spread scaled with the cap ({b} m)."
+    },
+    {
+      "id": "rw-root-flare-d1.6",
+      "family": "root",
+      "name": "Flare-to-ground buttress, Ø1.6 m",
+      "size": [
+        4.0,
+        2.5,
+        4.0
+      ],
+      "pivot": "bottom-center",
+      "tris": 800,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown",
+        "sinking"
+      ],
+      "sockets": [
+        {
+          "name": "top",
+          "pos": [
+            0.0,
+            2.5,
+            0.0
+          ],
+          "dir": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "diameter": 1.6
+        }
+      ],
+      "ref": {
+        "sheet": "kit-roots",
+        "label": "Flare to Ground"
+      },
+      "notes": "Row Ø 1.6 m. Roots splay into the ground; only the top cap is a socket. Sheet labels the flare 1.6 m wide in every row; spec wins, base spread scaled with the cap ({b} m)."
+    },
+    {
+      "id": "rw-root-arch-d0.6",
+      "family": "root",
+      "name": "Root arch, Ø0.6 m",
+      "size": [
+        2.5,
+        1.5,
+        1.0
+      ],
+      "pivot": "bottom-center",
+      "tris": 700,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown",
+        "sinking"
+      ],
+      "sockets": [
+        {
+          "name": "left",
+          "pos": [
+            -0.95,
+            0.0,
+            0.0
+          ],
+          "dir": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "diameter": 0.6
+        },
+        {
+          "name": "right",
+          "pos": [
+            0.95,
+            0.0,
+            0.0
+          ],
+          "dir": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "diameter": 0.6
+        },
+        {
+          "name": "hang",
+          "pos": [
+            0.0,
+            0.9,
+            0.0
+          ],
+          "dir": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "diameter": 0.6
+        }
+      ],
+      "ref": {
+        "sheet": "kit-roots",
+        "label": "Root Arch"
+      },
+      "notes": "Row Ø 0.6 m. Semicircular centreline radius 0.95 m; both feet are sockets facing down. Sheet 2.4 m rounded to 2.5 m."
+    },
+    {
+      "id": "rw-root-arch-d1.0",
+      "family": "root",
+      "name": "Root arch, Ø1.0 m",
+      "size": [
+        3.0,
+        1.5,
+        1.0
+      ],
+      "pivot": "bottom-center",
+      "tris": 700,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown",
+        "sinking"
+      ],
+      "sockets": [
+        {
+          "name": "left",
+          "pos": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "dir": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "diameter": 1.0
+        },
+        {
+          "name": "right",
+          "pos": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "dir": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "diameter": 1.0
+        },
+        {
+          "name": "hang",
+          "pos": [
+            0.0,
+            0.5,
+            0.0
+          ],
+          "dir": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "diameter": 0.6
+        }
+      ],
+      "ref": {
+        "sheet": "kit-roots",
+        "label": "Root Arch"
+      },
+      "notes": "Row Ø 1.0 m. Semicircular centreline radius 1.0 m; both feet are sockets facing down. Sheet labels every arch 2.4 m; spec wins, span widened to 3.0 m so the inner clear span stays >= 1 m."
+    },
+    {
+      "id": "rw-root-arch-d1.6",
+      "family": "root",
+      "name": "Root arch, Ø1.6 m",
+      "size": [
+        4.5,
+        2.5,
+        2.0
+      ],
+      "pivot": "bottom-center",
+      "tris": 700,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown",
+        "sinking"
+      ],
+      "sockets": [
+        {
+          "name": "left",
+          "pos": [
+            -1.45,
+            0.0,
+            0.0
+          ],
+          "dir": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "diameter": 1.6
+        },
+        {
+          "name": "right",
+          "pos": [
+            1.45,
+            0.0,
+            0.0
+          ],
+          "dir": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "diameter": 1.6
+        },
+        {
+          "name": "hang",
+          "pos": [
+            0.0,
+            0.9,
+            0.0
+          ],
+          "dir": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "diameter": 0.6
+        }
+      ],
+      "ref": {
+        "sheet": "kit-roots",
+        "label": "Root Arch"
+      },
+      "notes": "Row Ø 1.6 m. Semicircular centreline radius 1.45 m; both feet are sockets facing down. Sheet labels every arch 2.4 m; spec wins, span widened to 4.5 m so the inner clear span stays >= 1 m."
+    },
+    {
+      "id": "rw-root-taper-d1.6-d1.0",
+      "family": "root",
+      "name": "Root taper 1.6 to 1.0",
+      "size": [
+        2.0,
+        1.0,
+        2.0
+      ],
+      "pivot": "bottom-center",
+      "tris": 400,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown"
+      ],
+      "ref": {
+        "sheet": "kit-roots",
+        "label": "Straight (2m)"
+      },
+      "sockets": [
+        {
+          "name": "a",
+          "pos": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "dir": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "diameter": 1.6
+        },
+        {
+          "name": "b",
+          "pos": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "dir": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "diameter": 1.0
+        }
+      ],
+      "notes": "Added in the blockout pass so roots can thin out; not drawn on the sheet."
+    },
+    {
+      "id": "rw-root-taper-d1.0-d0.6",
+      "family": "root",
+      "name": "Root taper 1.0 to 0.6",
+      "size": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "pivot": "bottom-center",
+      "tris": 300,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown"
+      ],
+      "ref": {
+        "sheet": "kit-roots",
+        "label": "Straight (2m)"
+      },
+      "sockets": [
+        {
+          "name": "a",
+          "pos": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "dir": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "diameter": 1.0
+        },
+        {
+          "name": "b",
+          "pos": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "dir": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "diameter": 0.6
+        }
+      ],
+      "notes": "Added in the blockout pass so roots can thin out; not drawn on the sheet."
+    },
+    {
+      "id": "rw-root-taper-d2.5-d1.6",
+      "family": "root",
+      "name": "Root taper 2.5 to 1.6",
+      "size": [
+        3.0,
+        1.5,
+        3.0
+      ],
+      "pivot": "bottom-center",
+      "tris": 500,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown"
+      ],
+      "ref": {
+        "sheet": "kit-roots",
+        "label": "Straight (2m)"
+      },
+      "sockets": [
+        {
+          "name": "a",
+          "pos": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "dir": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "diameter": 2.5
+        },
+        {
+          "name": "b",
+          "pos": [
+            0.0,
+            1.5,
+            0.0
+          ],
+          "dir": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "diameter": 1.6
+        }
+      ],
+      "notes": "Great-root taper, added in the blockout pass."
+    },
+    {
+      "id": "rw-root-straight-4m-d2.5",
+      "family": "root",
+      "name": "Great root, straight 4 m",
+      "size": [
+        3.0,
+        4.0,
+        3.0
+      ],
+      "pivot": "bottom-center",
+      "tris": 600,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "kit-roots",
+        "label": "Straight (4m)"
+      },
+      "sockets": [
+        {
+          "name": "a",
+          "pos": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "dir": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "diameter": 2.5
+        },
+        {
+          "name": "b",
+          "pos": [
+            0.0,
+            4.0,
+            0.0
+          ],
+          "dir": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "diameter": 2.5
+        }
+      ],
+      "notes": "Great-root size (2.5 m) added in the blockout pass: 1.6 m roots read as pipes next to r8 domes and landmark trees."
+    },
+    {
+      "id": "rw-root-bend90-d2.5",
+      "family": "root",
+      "name": "Great root, bend 90°",
+      "size": [
+        4.5,
+        4.5,
+        3.0
+      ],
+      "pivot": "bottom-center",
+      "tris": 800,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "kit-roots",
+        "label": "Bend 90°"
+      },
+      "sockets": [
+        {
+          "name": "a",
+          "pos": [
+            -1.5,
+            0.0,
+            0.0
+          ],
+          "dir": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "diameter": 2.5
+        },
+        {
+          "name": "b",
+          "pos": [
+            1.5,
+            3.0,
+            0.0
+          ],
+          "dir": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "diameter": 2.5
+        },
+        {
+          "name": "hang",
+          "pos": [
+            1.0,
+            1.75,
+            0.0
+          ],
+          "dir": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "diameter": 0.6
+        }
+      ],
+      "notes": "Great-root size, bend radius 3 m."
+    },
+    {
+      "id": "rw-root-flare-d2.5",
+      "family": "root",
+      "name": "Great root, flare to ground",
+      "size": [
+        6.0,
+        3.5,
+        6.0
+      ],
+      "pivot": "bottom-center",
+      "tris": 800,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "kit-roots",
+        "label": "Flare to Ground"
+      },
+      "sockets": [
+        {
+          "name": "top",
+          "pos": [
+            0.0,
+            3.5,
+            0.0
+          ],
+          "dir": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "diameter": 2.5
+        }
+      ],
+      "notes": "Great-root buttress for landmark trees and r8 halls."
+    },
+    {
+      "id": "rw-shell-quarter-r3",
+      "family": "shell",
+      "name": "Quarter dome shell, radius 3 m",
+      "size": [
+        3,
+        3,
+        3
+      ],
+      "pivot": "bottom-center",
+      "tris": 500,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown",
+        "sinking"
+      ],
+      "radius": 3,
+      "arc": 90,
+      "sockets": [
+        {
+          "name": "anchor-135",
+          "pos": [
+            1.581,
+            2.0,
+            -1.581
+          ],
+          "dir": [
+            0.707,
+            0.0,
+            -0.707
+          ],
+          "diameter": 0.6
+        }
+      ],
+      "ref": {
+        "sheet": "kit-shells",
+        "label": "Quarter Dome Shell (90°)"
+      },
+      "notes": "Row Radius 3 m. Pivot is the dome centre on the floor plane, not the bounding-box centre, so quarter, half and full shells of one radius share it and join on their cut edges (cut edges on the X=0 / Z=0 planes, shell behind). Rim sockets Ø0.6 m. The opening is a burl collar on the curved face, offset measured from the face's midline. Only window burls fit the r3 quarter. Blockout pass: sockets are root anchors at the dome surface (and a crown anchor), sized by radius; openings are given by azimuth and sill height and cut through the shell.",
+      "openings": [
+        {
+          "kind": "window",
+          "size": [
+            2,
+            2
+          ],
+          "azimuth": 135,
+          "height": 0.5,
+          "accepts": "rw-burl-window-"
+        }
+      ]
+    },
+    {
+      "id": "rw-shell-half-r3",
+      "family": "shell",
+      "name": "Half dome shell, radius 3 m",
+      "size": [
+        6,
+        3,
+        3
+      ],
+      "pivot": "bottom-center",
+      "tris": 800,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown",
+        "sinking"
+      ],
+      "radius": 3,
+      "arc": 180,
+      "sockets": [
+        {
+          "name": "anchor-135",
+          "pos": [
+            1.581,
+            2.0,
+            -1.581
+          ],
+          "dir": [
+            0.707,
+            0.0,
+            -0.707
+          ],
+          "diameter": 0.6
+        },
+        {
+          "name": "anchor-225",
+          "pos": [
+            -1.581,
+            2.0,
+            -1.581
+          ],
+          "dir": [
+            -0.707,
+            0.0,
+            -0.707
+          ],
+          "diameter": 0.6
+        },
+        {
+          "name": "crown",
+          "pos": [
+            0.0,
+            3.0,
+            0.0
+          ],
+          "dir": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "diameter": 0.6
+        }
+      ],
+      "ref": {
+        "sheet": "kit-shells",
+        "label": "Half Dome Shell (180°)"
+      },
+      "notes": "Row Radius 3 m. Pivot is the dome centre on the floor plane, not the bounding-box centre, so quarter, half and full shells of one radius share it and join on their cut edges (cut edges on the X=0 / Z=0 planes, shell behind). Rim sockets Ø0.6 m. The opening is a burl collar on the curved face, offset measured from the face's midline. Blockout pass: sockets are root anchors at the dome surface (and a crown anchor), sized by radius; openings are given by azimuth and sill height and cut through the shell.",
+      "openings": [
+        {
+          "kind": "window",
+          "size": [
+            2,
+            2
+          ],
+          "azimuth": 180,
+          "height": 0.5,
+          "accepts": "rw-burl-window-"
+        }
+      ]
+    },
+    {
+      "id": "rw-shell-full-r3",
+      "family": "shell",
+      "name": "Full dome shell, radius 3 m",
+      "size": [
+        6,
+        3,
+        6
+      ],
+      "pivot": "bottom-center",
+      "tris": 1200,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown",
+        "sinking"
+      ],
+      "radius": 3,
+      "arc": 360,
+      "sockets": [
+        {
+          "name": "anchor-45",
+          "pos": [
+            1.581,
+            2.0,
+            1.581
+          ],
+          "dir": [
+            0.707,
+            0.0,
+            0.707
+          ],
+          "diameter": 0.6
+        },
+        {
+          "name": "anchor-135",
+          "pos": [
+            1.581,
+            2.0,
+            -1.581
+          ],
+          "dir": [
+            0.707,
+            0.0,
+            -0.707
+          ],
+          "diameter": 0.6
+        },
+        {
+          "name": "anchor-225",
+          "pos": [
+            -1.581,
+            2.0,
+            -1.581
+          ],
+          "dir": [
+            -0.707,
+            0.0,
+            -0.707
+          ],
+          "diameter": 0.6
+        },
+        {
+          "name": "anchor-315",
+          "pos": [
+            -1.581,
+            2.0,
+            1.581
+          ],
+          "dir": [
+            -0.707,
+            0.0,
+            0.707
+          ],
+          "diameter": 0.6
+        },
+        {
+          "name": "crown",
+          "pos": [
+            0.0,
+            3.0,
+            0.0
+          ],
+          "dir": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "diameter": 0.6
+        }
+      ],
+      "ref": {
+        "sheet": "kit-shells",
+        "label": "Full Dome Shell (360°)"
+      },
+      "notes": "Row Radius 3 m. Pivot is the dome centre on the floor plane, not the bounding-box centre, so quarter, half and full shells of one radius share it and join on their cut edges. Rim sockets Ø0.6 m. The opening is a burl collar on the curved face, offset measured from the face's midline. Blockout pass: sockets are root anchors at the dome surface (and a crown anchor), sized by radius; openings are given by azimuth and sill height and cut through the shell.",
+      "openings": [
+        {
+          "kind": "door",
+          "size": [
+            3,
+            2.5
+          ],
+          "azimuth": 0,
+          "height": 0,
+          "accepts": "rw-burl-door-"
+        },
+        {
+          "kind": "window",
+          "size": [
+            2,
+            2
+          ],
+          "azimuth": 90,
+          "height": 0.5,
+          "accepts": "rw-burl-window-"
+        },
+        {
+          "kind": "window",
+          "size": [
+            2,
+            2
+          ],
+          "azimuth": -90,
+          "height": 0.5,
+          "accepts": "rw-burl-window-"
+        }
+      ]
+    },
+    {
+      "id": "rw-shell-quarter-r5",
+      "family": "shell",
+      "name": "Quarter dome shell, radius 5 m",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "pivot": "bottom-center",
+      "tris": 600,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown",
+        "sinking"
+      ],
+      "radius": 5,
+      "arc": 90,
+      "sockets": [
+        {
+          "name": "anchor-135",
+          "pos": [
+            2.121,
+            4.0,
+            -2.121
+          ],
+          "dir": [
+            0.707,
+            0.0,
+            -0.707
+          ],
+          "diameter": 1.0
+        }
+      ],
+      "ref": {
+        "sheet": "kit-shells",
+        "label": "Quarter Dome Shell (90°)"
+      },
+      "notes": "Row Radius 5 m. Pivot is the dome centre on the floor plane, not the bounding-box centre, so quarter, half and full shells of one radius share it and join on their cut edges (cut edges on the X=0 / Z=0 planes, shell behind). Rim sockets Ø1.0 m. The opening is a burl collar on the curved face, offset measured from the face's midline. Blockout pass: sockets are root anchors at the dome surface (and a crown anchor), sized by radius; openings are given by azimuth and sill height and cut through the shell.",
+      "openings": [
+        {
+          "kind": "window",
+          "size": [
+            2,
+            2
+          ],
+          "azimuth": 135,
+          "height": 1,
+          "accepts": "rw-burl-window-"
+        }
+      ]
+    },
+    {
+      "id": "rw-shell-half-r5",
+      "family": "shell",
+      "name": "Half dome shell, radius 5 m",
+      "size": [
+        10,
+        5,
+        5
+      ],
+      "pivot": "bottom-center",
+      "tris": 1000,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown",
+        "sinking"
+      ],
+      "radius": 5,
+      "arc": 180,
+      "sockets": [
+        {
+          "name": "anchor-135",
+          "pos": [
+            2.121,
+            4.0,
+            -2.121
+          ],
+          "dir": [
+            0.707,
+            0.0,
+            -0.707
+          ],
+          "diameter": 1.0
+        },
+        {
+          "name": "anchor-225",
+          "pos": [
+            -2.121,
+            4.0,
+            -2.121
+          ],
+          "dir": [
+            -0.707,
+            0.0,
+            -0.707
+          ],
+          "diameter": 1.0
+        },
+        {
+          "name": "crown",
+          "pos": [
+            0.0,
+            5.0,
+            0.0
+          ],
+          "dir": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "diameter": 1.0
+        }
+      ],
+      "ref": {
+        "sheet": "kit-shells",
+        "label": "Half Dome Shell (180°)"
+      },
+      "notes": "Row Radius 5 m. Pivot is the dome centre on the floor plane, not the bounding-box centre, so quarter, half and full shells of one radius share it and join on their cut edges (cut edges on the X=0 / Z=0 planes, shell behind). Rim sockets Ø1.0 m. The opening is a burl collar on the curved face, offset measured from the face's midline. Blockout pass: sockets are root anchors at the dome surface (and a crown anchor), sized by radius; openings are given by azimuth and sill height and cut through the shell.",
+      "openings": [
+        {
+          "kind": "window",
+          "size": [
+            2,
+            2
+          ],
+          "azimuth": 180,
+          "height": 1,
+          "accepts": "rw-burl-window-"
+        }
+      ]
+    },
+    {
+      "id": "rw-shell-full-r5",
+      "family": "shell",
+      "name": "Full dome shell, radius 5 m",
+      "size": [
+        10,
+        5,
+        10
+      ],
+      "pivot": "bottom-center",
+      "tris": 1400,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown",
+        "sinking"
+      ],
+      "radius": 5,
+      "arc": 360,
+      "sockets": [
+        {
+          "name": "anchor-45",
+          "pos": [
+            2.121,
+            4.0,
+            2.121
+          ],
+          "dir": [
+            0.707,
+            0.0,
+            0.707
+          ],
+          "diameter": 1.0
+        },
+        {
+          "name": "anchor-135",
+          "pos": [
+            2.121,
+            4.0,
+            -2.121
+          ],
+          "dir": [
+            0.707,
+            0.0,
+            -0.707
+          ],
+          "diameter": 1.0
+        },
+        {
+          "name": "anchor-225",
+          "pos": [
+            -2.121,
+            4.0,
+            -2.121
+          ],
+          "dir": [
+            -0.707,
+            0.0,
+            -0.707
+          ],
+          "diameter": 1.0
+        },
+        {
+          "name": "anchor-315",
+          "pos": [
+            -2.121,
+            4.0,
+            2.121
+          ],
+          "dir": [
+            -0.707,
+            0.0,
+            0.707
+          ],
+          "diameter": 1.0
+        },
+        {
+          "name": "crown",
+          "pos": [
+            0.0,
+            5.0,
+            0.0
+          ],
+          "dir": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "diameter": 1.0
+        }
+      ],
+      "ref": {
+        "sheet": "kit-shells",
+        "label": "Full Dome Shell (360°)"
+      },
+      "notes": "Row Radius 5 m. Pivot is the dome centre on the floor plane, not the bounding-box centre, so quarter, half and full shells of one radius share it and join on their cut edges. Rim sockets Ø1.0 m. The opening is a burl collar on the curved face, offset measured from the face's midline. Blockout pass: sockets are root anchors at the dome surface (and a crown anchor), sized by radius; openings are given by azimuth and sill height and cut through the shell.",
+      "openings": [
+        {
+          "kind": "door",
+          "size": [
+            3,
+            2.5
+          ],
+          "azimuth": 0,
+          "height": 0,
+          "accepts": "rw-burl-door-"
+        },
+        {
+          "kind": "window",
+          "size": [
+            2,
+            2
+          ],
+          "azimuth": 90,
+          "height": 1,
+          "accepts": "rw-burl-window-"
+        },
+        {
+          "kind": "window",
+          "size": [
+            2,
+            2
+          ],
+          "azimuth": -90,
+          "height": 1,
+          "accepts": "rw-burl-window-"
+        }
+      ]
+    },
+    {
+      "id": "rw-shell-quarter-r8",
+      "family": "shell",
+      "name": "Quarter dome shell, radius 8 m",
+      "size": [
+        8,
+        8,
+        8
+      ],
+      "pivot": "bottom-center",
+      "tris": 700,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown",
+        "sinking"
+      ],
+      "radius": 8,
+      "arc": 90,
+      "sockets": [
+        {
+          "name": "anchor-135",
+          "pos": [
+            4.677,
+            4.5,
+            -4.677
+          ],
+          "dir": [
+            0.707,
+            0.0,
+            -0.707
+          ],
+          "diameter": 1.6
+        }
+      ],
+      "ref": {
+        "sheet": "kit-shells",
+        "label": "Quarter Dome Shell (90°)"
+      },
+      "notes": "Row Radius 8 m. Pivot is the dome centre on the floor plane, not the bounding-box centre, so quarter, half and full shells of one radius share it and join on their cut edges (cut edges on the X=0 / Z=0 planes, shell behind). Rim sockets Ø1.6 m. The opening is a burl collar on the curved face, offset measured from the face's midline. Blockout pass: sockets are root anchors at the dome surface (and a crown anchor), sized by radius; openings are given by azimuth and sill height and cut through the shell.",
+      "openings": [
+        {
+          "kind": "window",
+          "size": [
+            2,
+            2
+          ],
+          "azimuth": 135,
+          "height": 1,
+          "accepts": "rw-burl-window-"
+        }
+      ]
+    },
+    {
+      "id": "rw-shell-half-r8",
+      "family": "shell",
+      "name": "Half dome shell, radius 8 m",
+      "size": [
+        16,
+        8,
+        8
+      ],
+      "pivot": "bottom-center",
+      "tris": 1200,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown",
+        "sinking"
+      ],
+      "radius": 8,
+      "arc": 180,
+      "sockets": [
+        {
+          "name": "anchor-135",
+          "pos": [
+            4.677,
+            4.5,
+            -4.677
+          ],
+          "dir": [
+            0.707,
+            0.0,
+            -0.707
+          ],
+          "diameter": 1.6
+        },
+        {
+          "name": "anchor-225",
+          "pos": [
+            -4.677,
+            4.5,
+            -4.677
+          ],
+          "dir": [
+            -0.707,
+            0.0,
+            -0.707
+          ],
+          "diameter": 1.6
+        },
+        {
+          "name": "crown",
+          "pos": [
+            0.0,
+            8.0,
+            0.0
+          ],
+          "dir": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "diameter": 1.6
+        }
+      ],
+      "ref": {
+        "sheet": "kit-shells",
+        "label": "Half Dome Shell (180°)"
+      },
+      "notes": "Row Radius 8 m. Pivot is the dome centre on the floor plane, not the bounding-box centre, so quarter, half and full shells of one radius share it and join on their cut edges (cut edges on the X=0 / Z=0 planes, shell behind). Rim sockets Ø1.6 m. The opening is a burl collar on the curved face, offset measured from the face's midline. Blockout pass: sockets are root anchors at the dome surface (and a crown anchor), sized by radius; openings are given by azimuth and sill height and cut through the shell.",
+      "openings": [
+        {
+          "kind": "window",
+          "size": [
+            2,
+            2
+          ],
+          "azimuth": 180,
+          "height": 1,
+          "accepts": "rw-burl-window-"
+        }
+      ]
+    },
+    {
+      "id": "rw-shell-full-r8",
+      "family": "shell",
+      "name": "Full dome shell, radius 8 m",
+      "size": [
+        16,
+        8,
+        16
+      ],
+      "pivot": "bottom-center",
+      "tris": 1500,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown",
+        "sinking"
+      ],
+      "radius": 8,
+      "arc": 360,
+      "sockets": [
+        {
+          "name": "anchor-45",
+          "pos": [
+            4.677,
+            4.5,
+            4.677
+          ],
+          "dir": [
+            0.707,
+            0.0,
+            0.707
+          ],
+          "diameter": 1.6
+        },
+        {
+          "name": "anchor-135",
+          "pos": [
+            4.677,
+            4.5,
+            -4.677
+          ],
+          "dir": [
+            0.707,
+            0.0,
+            -0.707
+          ],
+          "diameter": 1.6
+        },
+        {
+          "name": "anchor-225",
+          "pos": [
+            -4.677,
+            4.5,
+            -4.677
+          ],
+          "dir": [
+            -0.707,
+            0.0,
+            -0.707
+          ],
+          "diameter": 1.6
+        },
+        {
+          "name": "anchor-315",
+          "pos": [
+            -4.677,
+            4.5,
+            4.677
+          ],
+          "dir": [
+            -0.707,
+            0.0,
+            0.707
+          ],
+          "diameter": 1.6
+        },
+        {
+          "name": "crown",
+          "pos": [
+            0.0,
+            8.0,
+            0.0
+          ],
+          "dir": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "diameter": 1.6
+        }
+      ],
+      "ref": {
+        "sheet": "kit-shells",
+        "label": "Full Dome Shell (360°)"
+      },
+      "notes": "Row Radius 8 m. Pivot is the dome centre on the floor plane, not the bounding-box centre, so quarter, half and full shells of one radius share it and join on their cut edges. Rim sockets Ø1.6 m. The opening is a burl collar on the curved face, offset measured from the face's midline. Blockout pass: sockets are root anchors at the dome surface (and a crown anchor), sized by radius; openings are given by azimuth and sill height and cut through the shell.",
+      "openings": [
+        {
+          "kind": "door",
+          "size": [
+            3,
+            2.5
+          ],
+          "azimuth": 0,
+          "height": 0,
+          "accepts": "rw-burl-door-"
+        },
+        {
+          "kind": "window",
+          "size": [
+            2,
+            2
+          ],
+          "azimuth": 90,
+          "height": 1,
+          "accepts": "rw-burl-window-"
+        },
+        {
+          "kind": "window",
+          "size": [
+            2,
+            2
+          ],
+          "azimuth": -90,
+          "height": 1,
+          "accepts": "rw-burl-window-"
+        }
+      ]
+    },
+    {
+      "id": "rw-shell-pod",
+      "family": "shell",
+      "name": "Hanging pod shell",
+      "size": [
+        2.5,
+        4,
+        2.5
+      ],
+      "pivot": "bottom-center",
+      "tris": 1200,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown"
+      ],
+      "sockets": [
+        {
+          "name": "hang",
+          "pos": [
+            0.0,
+            4.0,
+            0.0
+          ],
+          "dir": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "diameter": 0.6
+        }
+      ],
+      "ref": {
+        "sheet": "kit-shells",
+        "label": "Hanging Pod Shell"
+      },
+      "notes": "Teardrop woven-root pod hanging from its top socket. kit-shells labels it 4.0 m x 2.4 m (2.4 rounded to 2.5); kit-assembly's Hanging Pod Home calls it ~3.0 m: the structural sheet wins. Not a dome, so no radius/arc. Accepts the teardrop window burl.",
+      "openings": [
+        {
+          "kind": "window",
+          "size": [
+            1.5,
+            2
+          ],
+          "azimuth": 0,
+          "height": 1,
+          "accepts": "rw-burl-window-"
+        }
+      ]
+    },
+    {
+      "id": "rw-burl-door-lattice",
+      "family": "insert",
+      "name": "Woven root-lattice door burl",
+      "size": [
+        3,
+        2.5,
+        1
+      ],
+      "pivot": "bottom-center",
+      "tris": 400,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown"
+      ],
+      "ref": {
+        "sheet": "kit-details",
+        "label": "Burl Door A - Woven Lattice"
+      },
+      "notes": "Sheet 2.8 m (W) x 2.6 m (H) rounded to 3.0 x 2.5. Knotted bark collar that plugs into any shell's burl opening."
+    },
+    {
+      "id": "rw-burl-door-curtain",
+      "family": "insert",
+      "name": "Bark-curtain doorway burl",
+      "size": [
+        3,
+        2.5,
+        1
+      ],
+      "pivot": "bottom-center",
+      "tris": 400,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown"
+      ],
+      "ref": {
+        "sheet": "kit-details",
+        "label": "Burl Door B - Bark Curtain"
+      },
+      "notes": "Sheet 2.8 m (W) x 2.6 m (H) rounded to 3.0 x 2.5. Knotted bark collar that plugs into any shell's burl opening."
+    },
+    {
+      "id": "rw-burl-door-iris",
+      "family": "insert",
+      "name": "Living-iris hatch burl",
+      "size": [
+        3,
+        2.5,
+        1
+      ],
+      "pivot": "bottom-center",
+      "tris": 400,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown"
+      ],
+      "ref": {
+        "sheet": "kit-details",
+        "label": "Burl Door C - Living Iris"
+      },
+      "notes": "Sheet 2.8 m (W) x 2.6 m (H) rounded to 3.0 x 2.5. Knotted bark collar that plugs into any shell's burl opening."
+    },
+    {
+      "id": "rw-burl-window-round",
+      "family": "insert",
+      "name": "Round window burl",
+      "size": [
+        2,
+        2,
+        1
+      ],
+      "pivot": "bottom-center",
+      "tris": 350,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown"
+      ],
+      "ref": {
+        "sheet": "kit-details",
+        "label": "Burl Window A - Round"
+      },
+      "notes": "Sheet 1.8 m (Ø) rounded to 2.0. Amber glow behind root lattice."
+    },
+    {
+      "id": "rw-burl-window-teardrop",
+      "family": "insert",
+      "name": "Teardrop window burl",
+      "size": [
+        1.5,
+        2,
+        1
+      ],
+      "pivot": "bottom-center",
+      "tris": 350,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown"
+      ],
+      "ref": {
+        "sheet": "kit-details",
+        "label": "Burl Window B - Teardrop"
+      },
+      "notes": "Sheet 1.6 m (W) x 2.2 m (H) rounded to 1.5 x 2.0."
+    },
+    {
+      "id": "rw-burl-window-cluster",
+      "family": "insert",
+      "name": "Triple-cluster window burl",
+      "size": [
+        2.5,
+        2,
+        1
+      ],
+      "pivot": "bottom-center",
+      "tris": 400,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown"
+      ],
+      "ref": {
+        "sheet": "kit-details",
+        "label": "Burl Window C - Triple Cluster"
+      },
+      "notes": "Sheet 2.6 m (W) x 1.8 m (H) rounded to 2.5 x 2.0."
+    },
+    {
+      "id": "rw-fungus-lantern",
+      "family": "attachment",
+      "name": "Lantern fungus cluster",
+      "size": [
+        1.5,
+        1,
+        1
+      ],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 400,
+      "variants": [
+        "intact",
+        "mossy"
+      ],
+      "ref": {
+        "sheet": "kit-details",
+        "label": "Lantern Fungus Cluster"
+      },
+      "notes": "Sheet 1.4 m (W) x 1.2 m (H) rounded to 1.5 x 1.0. Teal glowing caps (emissive)."
+    },
+    {
+      "id": "rw-root-stairs",
+      "family": "access",
+      "name": "Spiral root stairs, 4 steps",
+      "size": [
+        2.5,
+        2,
+        2.5
+      ],
+      "pivot": "bottom-center",
+      "tris": 500,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown"
+      ],
+      "ref": {
+        "sheet": "kit-details",
+        "label": "Root Stairs (Spiral, 4 Steps)"
+      },
+      "notes": "Sheet 2.4 m (W) x 1.8 m (H) rounded to 2.5 x 2.0; 0.5 m risers."
+    },
+    {
+      "id": "rw-root-railing",
+      "family": "access",
+      "name": "Root railing segment",
+      "size": [
+        2,
+        1,
+        0.5
+      ],
+      "pivot": "bottom-left-front",
+      "tris": 300,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown"
+      ],
+      "ref": {
+        "sheet": "kit-details",
+        "label": "Root Railing Segment"
+      },
+      "notes": "Sheet 2.0 m (W) x 0.9 m (H) rounded to 2.0 x 1.0."
+    },
+    {
+      "id": "rw-floor-disc",
+      "family": "floor",
+      "name": "Woven root floor disc",
+      "size": [
+        3,
+        0.5,
+        3
+      ],
+      "pivot": "bottom-center",
+      "tris": 300,
+      "variants": [
+        "intact",
+        "mossy",
+        "overgrown",
+        "sinking"
+      ],
+      "ref": {
+        "sheet": "kit-details",
+        "label": "Woven Root Floor Disc"
+      },
+      "notes": "Sheet Ø 3.0 m, H 0.3 m; height rounded to 0.5."
+    },
+    {
+      "id": "rw-lamp-seedpod",
+      "family": "attachment",
+      "name": "Seed-pod lamp",
+      "size": [
+        0.5,
+        1,
+        0.5
+      ],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 200,
+      "variants": [
+        "intact"
+      ],
+      "ref": {
+        "sheet": "kit-details",
+        "label": "Seed-Pod Lamp (x2)"
+      },
+      "notes": "Sheet 0.5 m (W) x 1.2 m (H) rounded to 0.5 x 1.0. The '(x2)' pair is one lamp in front and three-quarter view. Hangs from its hook; amber emissive."
+    },
+    {
+      "id": "rw-cap-moss",
+      "family": "attachment",
+      "name": "Moss roof cap",
+      "size": [
+        6,
+        1.5,
+        6
+      ],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 600,
+      "variants": [
+        "intact",
+        "overgrown"
+      ],
+      "ref": {
+        "sheet": "kit-shells",
+        "label": "Moss Roof Cap"
+      },
+      "notes": "Sheet 6.0 m x 1.6 m rounded to 6.0 x 1.5. Sits on any dome crown. kit-assembly calls it 'Moss Roof Cap (R = 5.0 m)': that is the dome it crowns; the cap itself is drawn 6.0 m wide on kit-shells, which wins."
+    },
+    {
+      "id": "rw-cap-flowering-moss",
+      "family": "attachment",
+      "name": "Flowering-moss roof cap",
+      "size": [
+        6,
+        2,
+        6
+      ],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 800,
+      "variants": [
+        "intact",
+        "overgrown"
+      ],
+      "ref": {
+        "sheet": "kit-shells",
+        "label": "Flowering-Moss Roof Cap"
+      },
+      "notes": "Sheet 6.0 m x 1.8 m rounded to 6.0 x 2.0. Sits on any dome crown (kit-assembly's R = 5.0 m is the host dome)."
+    },
+    {
+      "id": "rw-curtain-short",
+      "family": "attachment",
+      "name": "Hanging-root curtain, short",
+      "size": [
+        4,
+        1.5,
+        0.5
+      ],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 300,
+      "variants": [
+        "intact",
+        "overgrown"
+      ],
+      "ref": {
+        "sheet": "kit-shells",
+        "label": "Hanging-Root Curtain (Short)"
+      },
+      "notes": "Sheet 4.0 m x 1.5 m. Hangs from a bar root; pivot at the bar's base line."
+    },
+    {
+      "id": "rw-curtain-long",
+      "family": "attachment",
+      "name": "Hanging-root curtain, long",
+      "size": [
+        4,
+        3,
+        0.5
+      ],
+      "pivot": "bottom-center",
+      "free": true,
+      "tris": 500,
+      "variants": [
+        "intact",
+        "overgrown"
+      ],
+      "ref": {
+        "sheet": "kit-shells",
+        "label": "Hanging-Root Curtain (Long)"
+      },
+      "notes": "Sheet 4.0 m x 3.0 m."
+    }
+  ],
+  "prefabs": [
+    {
+      "id": "rw-prefab-root-flare-home",
+      "name": "Root Flare Home",
+      "pieces": [
+        {
+          "id": "rw-shell-full-r5",
+          "count": 1
+        },
+        {
+          "id": "rw-root-flare-d1.0",
+          "count": 4
+        },
+        {
+          "id": "rw-root-bend90-d1.0",
+          "count": 4
+        },
+        {
+          "id": "rw-burl-door-iris",
+          "count": 1
+        },
+        {
+          "id": "rw-burl-window-round",
+          "count": 2
+        },
+        {
+          "id": "rw-cap-moss",
+          "count": 1
+        }
+      ],
+      "layout": [
+        {
+          "id": "rw-shell-full-r5",
+          "pos": [
+            0,
+            0,
+            0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "rw-root-flare-d1.0",
+          "pos": [
+            3.536,
+            0.0,
+            3.536
+          ],
+          "rotY": 45
+        },
+        {
+          "id": "rw-root-bend90-d1.0",
+          "pos": [
+            3.005,
+            2.0,
+            3.005
+          ],
+          "rotY": 135
+        },
+        {
+          "id": "rw-root-flare-d1.0",
+          "pos": [
+            3.536,
+            0.0,
+            -3.536
+          ],
+          "rotY": 135
+        },
+        {
+          "id": "rw-root-bend90-d1.0",
+          "pos": [
+            3.005,
+            2.0,
+            -3.005
+          ],
+          "rotY": 225
+        },
+        {
+          "id": "rw-root-flare-d1.0",
+          "pos": [
+            -3.536,
+            0.0,
+            -3.536
+          ],
+          "rotY": 225
+        },
+        {
+          "id": "rw-root-bend90-d1.0",
+          "pos": [
+            -3.005,
+            2.0,
+            -3.005
+          ],
+          "rotY": 315
+        },
+        {
+          "id": "rw-root-flare-d1.0",
+          "pos": [
+            -3.536,
+            0.0,
+            3.536
+          ],
+          "rotY": 315
+        },
+        {
+          "id": "rw-root-bend90-d1.0",
+          "pos": [
+            -3.005,
+            2.0,
+            3.005
+          ],
+          "rotY": 405
+        },
+        {
+          "id": "rw-burl-door-iris",
+          "pos": [
+            0.0,
+            0,
+            4.691
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "rw-burl-window-round",
+          "pos": [
+            4.433,
+            1,
+            0.0
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "rw-burl-window-round",
+          "pos": [
+            -4.433,
+            1,
+            0.0
+          ],
+          "rotY": -90
+        },
+        {
+          "id": "rw-cap-moss",
+          "pos": [
+            0,
+            4.0,
+            0
+          ],
+          "rotY": 0
+        }
+      ],
+      "notes": "Blockout pass: the sheet's three quarter shells left a 5 m gap, so it is a full r5 dome; four flares carry 90° roots that grip the dome's anchors."
+    },
+    {
+      "id": "rw-prefab-moss-dome-home",
+      "name": "Moss Dome Home",
+      "pieces": [
+        {
+          "id": "rw-shell-full-r5",
+          "count": 1
+        },
+        {
+          "id": "rw-burl-door-curtain",
+          "count": 1
+        },
+        {
+          "id": "rw-burl-window-round",
+          "count": 2
+        },
+        {
+          "id": "rw-cap-flowering-moss",
+          "count": 1
+        }
+      ],
+      "layout": [
+        {
+          "id": "rw-shell-full-r5",
+          "pos": [
+            0,
+            0,
+            0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "rw-burl-door-curtain",
+          "pos": [
+            0.0,
+            0,
+            4.691
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "rw-burl-window-round",
+          "pos": [
+            4.433,
+            1,
+            0.0
+          ],
+          "rotY": 90
+        },
+        {
+          "id": "rw-burl-window-round",
+          "pos": [
+            -4.433,
+            1,
+            0.0
+          ],
+          "rotY": -90
+        },
+        {
+          "id": "rw-cap-flowering-moss",
+          "pos": [
+            0,
+            4.0,
+            0
+          ],
+          "rotY": 0
+        }
+      ]
+    },
+    {
+      "id": "rw-prefab-hanging-pod-home",
+      "name": "Hanging Pod Home",
+      "pieces": [
+        {
+          "id": "rw-root-straight-4m-d1.6",
+          "count": 1
+        },
+        {
+          "id": "rw-root-bend90-d1.6",
+          "count": 1
+        },
+        {
+          "id": "rw-shell-pod",
+          "count": 1
+        },
+        {
+          "id": "rw-burl-window-teardrop",
+          "count": 1
+        },
+        {
+          "id": "rw-root-stairs",
+          "count": 1
+        },
+        {
+          "id": "rw-lamp-seedpod",
+          "count": 1
+        }
+      ],
+      "layout": [
+        {
+          "id": "rw-root-straight-4m-d1.6",
+          "pos": [
+            0,
+            0,
+            0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "rw-root-bend90-d1.6",
+          "pos": [
+            0.6,
+            4,
+            0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "rw-shell-pod",
+          "pos": [
+            1.5,
+            1.2,
+            0
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "rw-burl-window-teardrop",
+          "pos": [
+            1.5,
+            2.2,
+            1.1
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "rw-root-stairs",
+          "pos": [
+            1.5,
+            0,
+            2.6
+          ],
+          "rotY": 0
+        },
+        {
+          "id": "rw-lamp-seedpod",
+          "pos": [
+            0.4,
+            4.0,
+            0.9
+          ],
+          "rotY": 0
+        }
+      ],
+      "notes": "Blockout pass: a 4 m trunk lifts the bend so the pod clears the ground; the pod hangs from the bend's hang point."
+    }
+  ]
+}

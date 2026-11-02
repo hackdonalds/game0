@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Roam the Rootholds · game0 demo</title>
+    <style>
+      html, body { margin: 0; height: 100%; background: #a9c9ee; overflow: hidden; }
+      canvas { display: block; opacity: 0; transition: opacity 1s ease; }
+      .ready canvas { opacity: 1; }
+      .loading { position: fixed; inset: 0; display: grid; place-items: center; font: 500 1rem system-ui, sans-serif; color: #12261f; }
+      .ready .loading { display: none; }
+      .help { position: fixed; left: 16px; bottom: 16px; font: 500 13px/1.5 system-ui, sans-serif; color: #f3ecd9; background: #12261fb0; padding: 8px 12px; border-radius: 8px; pointer-events: none; }
+    </style>
+  </head>
+  <body>
+    <div class="loading">Loading the Rootholds…</div>
+    <div class="help">WASD move · Shift run · Space jump · drag to look · scroll to zoom</div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

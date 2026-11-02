@@ -1,0 +1,493 @@
+{
+  "style": "old-world",
+  "prefix": "old",
+  "grid": { "base": 0.5, "module": 4, "storey": 6, "wall": 1, "channel": 0.5 },
+  "scaleFigure": 1.8,
+  "trimSheet": "old-trim",
+  "materials": [
+    "Pale perfect stone",
+    "Weathered pale stone",
+    "Dead channel",
+    "Lit teal channel",
+    "Glyph band",
+    "Moss-overgrown stone",
+    "Root-cracked stone",
+    "Polished floor slab"
+  ],
+  "pieces": [
+    {
+      "id": "old-monolith-1",
+      "family": "block",
+      "name": "Monolith, 1 module",
+      "size": [4, 6, 1],
+      "pivot": "bottom-left-front",
+      "tris": 400,
+      "variants": ["intact", "broken", "overgrown", "lit", "dead"],
+      "ref": { "sheet": "kit-structure", "label": "Monolith (1 Module)" },
+      "notes": "Vertical inset channel with a circle node on the front face."
+    },
+    {
+      "id": "old-monolith-2",
+      "family": "block",
+      "name": "Monolith, 2 modules",
+      "size": [4, 12, 1],
+      "pivot": "bottom-left-front",
+      "tris": 500,
+      "variants": ["intact", "broken", "overgrown", "lit", "dead"],
+      "ref": { "sheet": "kit-structure", "label": "Monolith (2 Modules)" },
+      "notes": "Broken variant: one diagonal razor-clean fracture, upper part displaced."
+    },
+    {
+      "id": "old-monolith-3",
+      "family": "block",
+      "name": "Monolith, 3 modules",
+      "size": [4, 18, 1],
+      "pivot": "bottom-left-front",
+      "tris": 600,
+      "variants": ["intact", "broken", "overgrown", "lit", "dead"],
+      "ref": { "sheet": "kit-structure", "label": "Monolith (3 Modules)" }
+    },
+    {
+      "id": "old-wall-slab-plain",
+      "family": "block",
+      "name": "Wall slab, plain",
+      "size": [4, 6, 1],
+      "pivot": "bottom-left-front",
+      "tris": 300,
+      "variants": ["intact", "broken", "overgrown"],
+      "ref": { "sheet": "kit-structure", "label": "Wall Slab (Plain)" }
+    },
+    {
+      "id": "old-wall-slab-channelled",
+      "family": "block",
+      "name": "Wall slab, channelled",
+      "size": [4, 6, 1],
+      "pivot": "bottom-left-front",
+      "tris": 400,
+      "variants": ["intact", "broken", "overgrown", "lit", "dead"],
+      "ref": { "sheet": "kit-structure", "label": "Wall Slab (Channelled)" },
+      "notes": "One vertical inset channel with a circle node."
+    },
+    {
+      "id": "old-wall-slab-window",
+      "family": "block",
+      "name": "Wall slab, window slot",
+      "size": [4, 6, 1],
+      "pivot": "bottom-left-front",
+      "tris": 400,
+      "variants": ["intact", "broken", "overgrown"],
+      "opening": { "kind": "window", "size": [1, 4], "offset": [1.5, 1] },
+      "ref": { "sheet": "kit-structure", "label": "Wall Slab (Window)" },
+      "notes": "Narrow round-topped slot cut through; no insert, the slot stays open."
+    },
+    {
+      "id": "old-wall-slab-doorway",
+      "family": "block",
+      "name": "Wall slab, doorway",
+      "size": [4, 6, 1],
+      "pivot": "bottom-left-front",
+      "tris": 500,
+      "variants": ["intact", "broken", "overgrown", "lit", "dead"],
+      "opening": { "kind": "door", "size": [2, 4], "offset": [1, 0] },
+      "ref": { "sheet": "kit-structure", "label": "Wall Slab (Doorway)" },
+      "notes": "Round-topped doorway framed by an inset channel; no insert, the doorway stays open."
+    },
+    {
+      "id": "old-corner-block",
+      "family": "corner",
+      "name": "Corner block",
+      "size": [4, 6, 4],
+      "pivot": "bottom-left-front",
+      "tris": 400,
+      "variants": ["intact", "broken", "overgrown"],
+      "ref": { "sheet": "kit-structure", "label": "Corner Block" },
+      "notes": "L-shaped outer corner, two 1 m thick arms."
+    },
+    {
+      "id": "old-column",
+      "family": "block",
+      "name": "Column",
+      "size": [1, 6, 1],
+      "pivot": "bottom-center",
+      "tris": 300,
+      "variants": ["intact", "broken", "overgrown", "lit", "dead"],
+      "ref": { "sheet": "kit-structure", "label": "Column" },
+      "notes": "Square prism, no capital or fluting, one inset channel. The sheet labels it 4 x 6 m, but the drawing (and Column (Broken)) is a slender ~1 m prism; sized 1 x 6 x 1, one storey tall. Column (Broken) on the sheet is the broken variant."
+    },
+    {
+      "id": "old-floor-slab-straight",
+      "family": "floor",
+      "name": "Floor slab, straight channel",
+      "size": [4, 1, 4],
+      "pivot": "bottom-left-front",
+      "tris": 200,
+      "variants": ["intact", "broken", "overgrown", "lit", "dead"],
+      "ref": { "sheet": "kit-structure", "label": "Floor Slab (Straight Channel)" }
+    },
+    {
+      "id": "old-floor-slab-cross",
+      "family": "floor",
+      "name": "Floor slab, cross channel",
+      "size": [4, 1, 4],
+      "pivot": "bottom-left-front",
+      "tris": 250,
+      "variants": ["intact", "broken", "overgrown", "lit", "dead"],
+      "ref": { "sheet": "kit-structure", "label": "Floor Slab (Cross Channel)" }
+    },
+    {
+      "id": "old-floor-slab-ring",
+      "family": "floor",
+      "name": "Floor slab, ring inlay",
+      "size": [4, 1, 4],
+      "pivot": "bottom-left-front",
+      "tris": 300,
+      "variants": ["intact", "broken", "overgrown", "lit", "dead"],
+      "ref": { "sheet": "kit-structure", "label": "Floor Slab (Ring Inlay)" },
+      "notes": "Concentric ring inlay; also used as the hovering lintel of Vault Entrance B."
+    },
+    {
+      "id": "old-steps",
+      "family": "access",
+      "name": "Steps, one module run",
+      "size": [4, 1, 4],
+      "pivot": "bottom-left-front",
+      "tris": 300,
+      "variants": ["intact", "broken", "overgrown"],
+      "ref": { "sheet": "kit-structure", "label": "Steps (1 Module Run)" },
+      "notes": "4 m run, 1 m rise."
+    },
+    {
+      "id": "old-plinth",
+      "family": "foundation",
+      "name": "Plinth",
+      "size": [4, 1, 4],
+      "pivot": "bottom-left-front",
+      "tris": 300,
+      "variants": ["intact", "broken", "overgrown", "lit", "dead"],
+      "ref": { "sheet": "kit-structure", "label": "Plinth" },
+      "notes": "Stepped plinth, 1 m high, with an inset channel band."
+    },
+
+    {
+      "id": "old-ring-90-r4",
+      "family": "ring",
+      "name": "Ring segment 90°, r 4 m",
+      "size": [4, 4, 1],
+      "pivot": "bottom-left-front",
+      "tris": 500,
+      "radius": 4,
+      "arc": 90,
+      "variants": ["intact", "broken", "overgrown", "lit", "dead"],
+      "ref": { "sheet": "kit-rings", "label": "Ring 90 deg, r 4 m" },
+      "notes": "Radius is the outer radius (full ring gate: outer Ø 16 m at r 8 m); square 1 x 1 m cross-section, flat radial ends."
+    },
+    {
+      "id": "old-ring-45-r4",
+      "family": "ring",
+      "name": "Ring segment 45°, r 4 m",
+      "size": [2.83, 1.88, 1],
+      "free": true,
+      "pivot": "bottom-left-front",
+      "tris": 300,
+      "radius": 4,
+      "arc": 45,
+      "variants": ["intact", "broken", "overgrown", "lit", "dead"],
+      "ref": { "sheet": "kit-rings", "label": "Ring 45 deg, r 4 m" },
+      "notes": "Bounding box of a 45° segment, off-grid. Sheet says width 2 m; geometry gives 2.83 m chord extent."
+    },
+    {
+      "id": "old-ring-90-r8",
+      "family": "ring",
+      "name": "Ring segment 90°, r 8 m",
+      "size": [8, 8, 1],
+      "pivot": "bottom-left-front",
+      "tris": 600,
+      "radius": 8,
+      "arc": 90,
+      "variants": ["intact", "broken", "overgrown", "lit", "dead"],
+      "ref": { "sheet": "kit-rings", "label": "Ring 90 deg, r 8 m" },
+      "notes": "Four of these make the Monolith Gate A ring."
+    },
+    {
+      "id": "old-ring-45-r8",
+      "family": "ring",
+      "name": "Ring segment 45°, r 8 m",
+      "size": [5.66, 3.05, 1],
+      "free": true,
+      "pivot": "bottom-left-front",
+      "tris": 400,
+      "radius": 8,
+      "arc": 45,
+      "variants": ["intact", "broken", "overgrown", "lit", "dead"],
+      "ref": { "sheet": "kit-rings", "label": "Ring 45 deg, r 8 m" },
+      "notes": "Bounding box of a 45° segment, off-grid. Sheet says width 4 m; geometry gives 5.66 m."
+    },
+    {
+      "id": "old-ring-90-r16",
+      "family": "ring",
+      "name": "Ring segment 90°, r 16 m",
+      "size": [16, 16, 1],
+      "pivot": "bottom-left-front",
+      "tris": 800,
+      "radius": 16,
+      "arc": 90,
+      "variants": ["intact", "broken", "overgrown", "lit", "dead"],
+      "ref": { "sheet": "kit-rings", "label": "Ring 90 deg, r 16 m" },
+      "notes": "Sheet says arc length 12.13 m; a 90° arc at r 16 m is 25.13 m (outer). Spec wins."
+    },
+    {
+      "id": "old-ring-45-r16",
+      "family": "ring",
+      "name": "Ring segment 45°, r 16 m",
+      "size": [11.31, 5.39, 1],
+      "free": true,
+      "pivot": "bottom-left-front",
+      "tris": 600,
+      "radius": 16,
+      "arc": 45,
+      "variants": ["intact", "broken", "overgrown", "lit", "dead"],
+      "ref": { "sheet": "kit-rings", "label": "Ring 45 deg, r 16 m" },
+      "notes": "Bounding box of a 45° segment, off-grid. Sheet says width 8 m; geometry gives 11.31 m."
+    },
+    {
+      "id": "old-ring-gate-r8",
+      "family": "ring",
+      "name": "Full ring gate, r 8 m",
+      "size": [16, 16, 1],
+      "pivot": "bottom-center",
+      "tris": 800,
+      "radius": 8,
+      "arc": 360,
+      "variants": ["intact", "broken", "overgrown", "lit", "dead"],
+      "ref": { "sheet": "kit-rings", "label": "Full Ring Gate (r 8 m)" },
+      "notes": "Single-piece ring standing on its edge (outer Ø 16 m, inner Ø 14 m). Sheet says width 4 m; a ring of outer Ø 16 m is 16 m wide. Spec wins. Plinth, steps and keystone drawn with it are separate pieces."
+    },
+    {
+      "id": "old-arch-half-r4",
+      "family": "ring",
+      "name": "Half-ring arch, r 4 m",
+      "size": [8, 4, 1],
+      "pivot": "bottom-center",
+      "tris": 600,
+      "radius": 4,
+      "arc": 180,
+      "variants": ["intact", "broken", "overgrown", "lit", "dead"],
+      "ref": { "sheet": "kit-rings", "label": "Half-Ring Arch (r 4 m)" },
+      "notes": "Sheet says arc length 6.28 m; a 180° arc at r 4 m is 12.57 m (outer). Spec wins."
+    },
+    {
+      "id": "old-keystone",
+      "family": "block",
+      "name": "Keystone block",
+      "size": [4, 6, 1],
+      "pivot": "bottom-center",
+      "tris": 400,
+      "variants": ["intact", "broken", "overgrown", "lit", "dead"],
+      "ref": { "sheet": "kit-rings", "label": "Keystone Block" },
+      "notes": "Sits where ring segments meet; holds a circle node inlay."
+    },
+
+    {
+      "id": "old-inlay-straight",
+      "family": "trim",
+      "name": "Channel inlay, straight",
+      "size": [4, 0.5, 4],
+      "pivot": "bottom-left-front",
+      "tris": 100,
+      "variants": ["dead", "lit"],
+      "ref": { "sheet": "kit-details", "label": "Channel Inlay - Straight" },
+      "notes": "Standard 0.5 m channel; drops into slabs."
+    },
+    {
+      "id": "old-inlay-corner",
+      "family": "trim",
+      "name": "Channel inlay, corner 90°",
+      "size": [4, 0.5, 4],
+      "pivot": "bottom-left-front",
+      "tris": 150,
+      "variants": ["dead", "lit"],
+      "ref": { "sheet": "kit-details", "label": "Channel Inlay - Corner (90°)" }
+    },
+    {
+      "id": "old-inlay-t",
+      "family": "trim",
+      "name": "Channel inlay, T-junction",
+      "size": [4, 0.5, 4],
+      "pivot": "bottom-left-front",
+      "tris": 150,
+      "variants": ["dead", "lit"],
+      "ref": { "sheet": "kit-details", "label": "Channel Inlay - T-Junction" }
+    },
+    {
+      "id": "old-inlay-cross",
+      "family": "trim",
+      "name": "Channel inlay, cross",
+      "size": [4, 0.5, 4],
+      "pivot": "bottom-left-front",
+      "tris": 150,
+      "variants": ["dead", "lit"],
+      "ref": { "sheet": "kit-details", "label": "Channel Inlay - Cross" }
+    },
+    {
+      "id": "old-inlay-circle-node",
+      "family": "trim",
+      "name": "Channel inlay, circle node",
+      "size": [4, 0.5, 4],
+      "pivot": "bottom-left-front",
+      "tris": 300,
+      "variants": ["dead", "lit"],
+      "ref": { "sheet": "kit-details", "label": "Channel Inlay - Circle Node" },
+      "notes": "Ring node where channels meet; set into the keystone of Monolith Gate A."
+    },
+    {
+      "id": "old-glyph-plate-a",
+      "family": "trim",
+      "name": "Glyph plate A, concentric circle",
+      "size": [4, 4, 0.2],
+      "free": true,
+      "pivot": "bottom-left-front",
+      "tris": 250,
+      "variants": ["intact", "broken", "lit", "dead"],
+      "ref": { "sheet": "kit-details", "label": "Glyph Plate A - Concentric Circle" },
+      "notes": "0.2 m thick, off the 0.5 m grid."
+    },
+    {
+      "id": "old-glyph-plate-b",
+      "family": "trim",
+      "name": "Glyph plate B, arc node",
+      "size": [4, 4, 0.2],
+      "free": true,
+      "pivot": "bottom-left-front",
+      "tris": 250,
+      "variants": ["intact", "broken", "lit", "dead"],
+      "ref": { "sheet": "kit-details", "label": "Glyph Plate B - Arc Node" },
+      "notes": "0.2 m thick, off the 0.5 m grid."
+    },
+    {
+      "id": "old-glyph-plate-c",
+      "family": "trim",
+      "name": "Glyph plate C, line node",
+      "size": [4, 4, 0.2],
+      "free": true,
+      "pivot": "bottom-left-front",
+      "tris": 200,
+      "variants": ["intact", "broken", "lit", "dead"],
+      "ref": { "sheet": "kit-details", "label": "Glyph Plate C - Line Node" },
+      "notes": "0.2 m thick, off the 0.5 m grid."
+    },
+    {
+      "id": "old-fragment-small",
+      "family": "attachment",
+      "name": "Floating fragments, small",
+      "size": [0.5, 0.5, 0.5],
+      "free": true,
+      "pivot": "bottom-center",
+      "tris": 100,
+      "ref": { "sheet": "kit-details", "label": "Floating Fragments (Small)" },
+      "notes": "Size is per shard; hovers above a faint teal glow."
+    },
+    {
+      "id": "old-fragment-medium",
+      "family": "attachment",
+      "name": "Floating fragments, medium",
+      "size": [1, 1, 1],
+      "free": true,
+      "pivot": "bottom-center",
+      "tris": 150,
+      "ref": { "sheet": "kit-details", "label": "Floating Fragments (Medium)" },
+      "notes": "Size is per shard; hovers above a faint teal glow."
+    },
+    {
+      "id": "old-fragment-large",
+      "family": "attachment",
+      "name": "Floating fragments, large",
+      "size": [2, 2, 2],
+      "free": true,
+      "pivot": "bottom-center",
+      "tris": 250,
+      "ref": { "sheet": "kit-details", "label": "Floating Fragments (Large)" },
+      "notes": "Size is per shard; hovers above a faint teal glow, mossy top."
+    },
+    {
+      "id": "old-root-cluster",
+      "family": "attachment",
+      "name": "Root cluster, edge",
+      "size": [4, 2, 1],
+      "free": true,
+      "pivot": "bottom-left-front",
+      "tris": 800,
+      "ref": { "sheet": "kit-details", "label": "Root Cluster (Edge)" },
+      "notes": "Grips a block edge; covers 4 x 1 m, drapes up to 2 m."
+    },
+    {
+      "id": "old-moss-drape",
+      "family": "attachment",
+      "name": "Moss drape",
+      "size": [4, 3, 1],
+      "free": true,
+      "pivot": "bottom-left-front",
+      "tris": 600,
+      "ref": { "sheet": "kit-details", "label": "Moss Drape" },
+      "notes": "Hangs over a wall top; covers 4 x 1 m, drapes up to 3 m."
+    },
+    {
+      "id": "old-moss-cap",
+      "family": "attachment",
+      "name": "Moss cap, top",
+      "size": [4, 0.3, 4],
+      "free": true,
+      "pivot": "bottom-left-front",
+      "tris": 500,
+      "ref": { "sheet": "kit-details", "label": "Moss Cap (Top)" },
+      "notes": "Covers a 4 x 4 m block top, ~0.3 m thick."
+    },
+    {
+      "id": "old-sapling",
+      "family": "attachment",
+      "name": "Sapling, crack",
+      "size": [1, 2, 1],
+      "free": true,
+      "pivot": "bottom-center",
+      "tris": 400,
+      "ref": { "sheet": "kit-details", "label": "Sapling (Crack)" },
+      "notes": "Sprouts from a crack; ~1 x 1 m, up to 2 m tall."
+    }
+  ],
+  "prefabs": [
+    {
+      "id": "old-prefab-monolith-gate-a",
+      "name": "Monolith Gate A",
+      "pieces": [
+        { "id": "old-plinth", "count": 1 },
+        { "id": "old-steps", "count": 1 },
+        { "id": "old-floor-slab-straight", "count": 2 },
+        { "id": "old-monolith-1", "count": 2 },
+        { "id": "old-ring-90-r8", "count": 4 },
+        { "id": "old-keystone", "count": 1 },
+        { "id": "old-inlay-circle-node", "count": 1 },
+        { "id": "old-moss-drape", "count": 1 },
+        { "id": "old-root-cluster", "count": 1 }
+      ]
+    },
+    {
+      "id": "old-prefab-vault-entrance-b",
+      "name": "Vault Entrance B",
+      "pieces": [
+        { "id": "old-monolith-1", "count": 1 },
+        { "id": "old-wall-slab-channelled", "count": 1 },
+        { "id": "old-floor-slab-straight", "count": 1 },
+        { "id": "old-floor-slab-ring", "count": 1 }
+      ]
+    },
+    {
+      "id": "old-prefab-ruin-kit-c",
+      "name": "Ruin Kit C",
+      "pieces": [
+        { "id": "old-column", "count": 1 },
+        { "id": "old-wall-slab-channelled", "count": 1 },
+        { "id": "old-ring-90-r8", "count": 1 },
+        { "id": "old-floor-slab-ring", "count": 1 }
+      ]
+    }
+  ]
+}
