@@ -41,20 +41,12 @@ Mesh first, texture second. On Smart Topology, mesh-only rerolls (5) plus one te
 
 Meshy's formula: subject + material + art style + technical constraints, most important words first, at most 800 characters. There is no negative-prompt field: write exclusions inline. Describe the look; don't name commercial games.
 
-**Rig-ready base-body concept sheet** (`art:image`, 21:9, `--ref` the people's turnaround). Keep the pose sentence word for word; it is what makes the model rig cleanly:
-> Character base-body turnaround sheet for 3D modeling and rigging: the same [people] shown three times side by side, evenly spaced with wide gaps, not overlapping: front view, side view, back view. Rigging A-pose: standing straight, arms straight and angled 45 degrees down and out from the body with a clear gap between each arm and the torso all the way to the armpit, elbows straight, hands open and flat with palms facing forward, all five fingers spread wide apart with a visible gap between every finger, the thumb clearly separated and pointing away from the palm, slightly oversized hands with thick fingers, legs straight with feet shoulder-width apart and a clear gap between the thighs, feet flat pointing forward, head facing forward. [Body description] WITHOUT [swappable feature]. Hair, beard and growths stay clear of the armpits and the gap between the legs and never join an arm to the body. Wearing only simple plain fitted undershirt and short trousers, no harness, no belts, no tools, no accessories, no cape, no tail. Full body, fully visible. Hand-painted stylized game art, mid-level detail, chunky readable shapes, softer muted colours. Plain light grey background, even soft lighting, no cast shadows, no text, no labels.
+**Concept sheets for Meshy input** (base bodies, parts, props) and every other kit sheet follow `concept/art-direction/kit-sheets.md`: sheet types, the rig-ready rules and checklist, and the prompt templates. Build the prompt from there, never by hand:
 
-**Rig-ready checklist** (check the sheet before spending Meshy credits, then `bun run art:rig --check` checks the model):
-- Gap under each arm, all the way up to the armpit; arms 30–60° from vertical, elbows straight.
-- Five fingers per hand with visible gaps, thumb apart from the palm. Closed fingers still rig, but as a mitten.
-- Gap between the thighs; legs straight; feet flat, pointing forward, shoulder-width apart.
-- Nothing bridges a gap: no hair, beard, feathers, moss, cloth or tail joining an arm to the body or the legs to each other.
-- The figure is mirror-symmetric and the same in all three views.
+- Rig-ready base body: `bun run art:image --kit base-body "<people, body, WITHOUT swappable feature>" --ref <people turnaround> --out art/kit/peoples/<people>/base-body` (21:9).
+- Part or prop: `bun run art:image --kit part "<object, shape and materials>" --ref <design> --out art/kit/peoples/<people>/<part>` (1:1).
 
-Why: the auto-rig finds joints from these gaps (crotch, armpits, fingers). Bridged or closed gaps give misplaced joints, fused fingers and arms that drag the torso skin.
-
-**Part or prop** (`art:image`, 1:1):
-> A single [object] shown alone as a game asset, [no head / no hands], three-quarter front view, [shape and material details, thick chunky proportions]. Hand-painted stylized game art, mid-level detail, chunky readable shapes, softer muted colours. Plain light grey background, even soft lighting, no cast shadows, no text, no labels.
+Check the image against the rig-ready checklist in that doc before spending Meshy credits; `bun run art:rig --check` then checks the model.
 
 **Retexture style prompt** (`retexture --style`):
 > Hand-painted stylized fantasy texture, soft muted colours, painted highlights and shadows, warm golden light, cool teal shadows, [material], no photorealism, no text.

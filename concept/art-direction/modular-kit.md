@@ -1,6 +1,6 @@
 # Modular architecture kit
 
-> Draft. How every building in [architecture](architecture.md) is assembled from a small set of snapping pieces. Reference sheets live in `art/concept/architecture/<style>/kit/`.
+> Draft. How every building in [architecture](architecture.md) is assembled from a small set of snapping pieces. Reference sheets live in `art/kit/architecture/<style>/` and follow [kit sheets](kit-sheets.md).
 
 ## Shared rules
 
@@ -40,10 +40,12 @@ Old world: monolith blocks, wall slabs, arch and ring segments (90° and 45°), 
 
 ## Reference sheets per style
 
-| Sheet | Shows |
-| --- | --- |
-| `kit-structure` | Foundations, walls, corners, floors and stairs: orthographic front views on a grid with module lines, plus one three-quarter view each |
-| `kit-roofs` (Old world: `kit-rings`, Rootwardens: `kit-shells`) | Roof pieces and crowns, or ring/arch segments, or dome shells |
-| `kit-details` | Inserts, trims and signature attachments |
-| `kit-assembly` | An exploded view of one building being assembled from the kit, plus three buildings from the concept sheets rebuilt only from kit pieces |
-| `materials` | The trim-sheet swatches: 6–8 painted tiles |
+Each style has five sheets. Views, layout, labels and the scale figure are set in [kit sheets](kit-sheets.md).
+
+| Sheet | Type | Shows |
+| --- | --- | --- |
+| `kit-structure` | `pieces` | Foundations, walls, corners, floors and stairs |
+| `kit-roofs` (Old world: `kit-rings`, Rootwardens: `kit-shells`) | `pieces` | Roof pieces and crowns, or ring/arch segments, or dome shells |
+| `kit-details` | `pieces` | Inserts, trims and signature attachments |
+| `kit-assembly` | `assembly` | An exploded view of one building being assembled from the kit, plus three buildings from the concept sheets rebuilt only from kit pieces |
+| `materials` | `materials` | The trim-sheet swatches: 6–8 painted tiles |
