@@ -72,9 +72,9 @@ await check("Kits: every architecture and nature kit.json is shown by a catalogu
   for (const a of archStyles) {
     if (!existsSync(at(`art/models/architecture/${a.id}/kit.json`))) problem(`architecture.ts style "${a.id}" has no art/models/architecture/${a.id}/kit.json`);
     // Every concept and kit sheet in art/ is listed (so it is shown), and every listed sheet exists
-    const listed = new Map([...a.concept.map((s) => [s.id, `art/concept/architecture/${a.id}/${s.id}.png`]), ...a.kitSheets.map((s) => [s.id, `art/concept/architecture/${a.id}/kit/${s.id}.png`])] as [string, string][]);
+    const listed = new Map([...a.concept.map((s) => [s.id, `art/concept/architecture/${a.id}/${s.id}.png`]), ...a.kitSheets.map((s) => [s.id, `art/kit/architecture/${a.id}/${s.id}.png`])] as [string, string][]);
     for (const f of await files(`art/concept/architecture/${a.id}`, ".png")) if (!listed.has(f.replace(".png", ""))) problem(`art/concept/architecture/${a.id}/${f} is not listed in architecture.ts "${a.id}".concept`);
-    for (const f of await files(`art/concept/architecture/${a.id}/kit`, ".png")) if (!listed.has(f.replace(".png", ""))) problem(`art/concept/architecture/${a.id}/kit/${f} is not listed in architecture.ts "${a.id}".kitSheets`);
+    for (const f of await files(`art/kit/architecture/${a.id}`, ".png")) if (!listed.has(f.replace(".png", ""))) problem(`art/kit/architecture/${a.id}/${f} is not listed in architecture.ts "${a.id}".kitSheets`);
     for (const [id, src] of listed) if (!existsSync(at(src))) problem(`architecture.ts "${a.id}" lists sheet "${id}", but ${src} does not exist`);
     for (const b of a.biomes) if (biomes.length && !biomes.some((x) => x.id === b)) problem(`architecture.ts "${a.id}" is built in unknown biome "${b}"`);
   }
@@ -126,7 +126,7 @@ await check("Plates: every source sheet has a plate that is up to date, and no p
     if (why) problem(`${j.to} is ${why === "missing" ? "missing" : `stale (${why})`}; source ${j.from}. Run bun run art:sheets`);
   }
   const made = new Set(jobs.map((j) => j.to));
-  for (const kind of ["architecture", "biomes", "foliage", "sheets"])
+  for (const kind of await dirs("art/handbook"))
     for (const f of await files(`art/handbook/${kind}`, ".webp"))
       if (!made.has(`art/handbook/${kind}/${f}`)) problem(`art/handbook/${kind}/${f} has no source sheet any more (renamed or deleted?): delete the plate or restore the source`);
 });

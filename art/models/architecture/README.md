@@ -1,6 +1,6 @@
 # Architecture kits
 
-One modular kit per style, built to the rules in [modular-kit.md](../../../concept/art-direction/modular-kit.md) from the reference sheets in `art/concept/architecture/<style>/kit/`.
+One modular kit per style, built to the rules in [modular-kit.md](../../../concept/art-direction/modular-kit.md) from the reference sheets in `art/kit/architecture/<style>/`.
 
 ```
 art/models/architecture/
@@ -73,7 +73,7 @@ Optional piece fields:
 
 ## Nature kits
 
-Biome nature kits use the same manifest at `art/models/nature/<biome>/kit.json` (`style` is the biome: roothold, crag, meadow, garden, forest, lagoon, ruin), with references in `art/concept/biomes/<biome>/` (`ref.sheet` is `nature`, `terrain` or `isle-portrait`). Nature pieces sit on the ground at `bottom-center` and are usually `free: true`; scatter places them, so they have no sockets. Their families:
+Biome nature kits use the same manifest at `art/models/nature/<biome>/kit.json` (`style` is the biome: roothold, crag, meadow, garden, forest, lagoon, ruin), with references in `art/kit/biomes/<biome>/` (`ref.sheet` `nature` or `terrain`) and `art/concept/biomes/<biome>/` (`isle-portrait`). Nature pieces sit on the ground at `bottom-center` and are usually `free: true`; scatter places them, so they have no sockets. Their families:
 
 | Family | What | Budget (triangles) |
 | --- | --- | --- |

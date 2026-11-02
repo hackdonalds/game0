@@ -11,3 +11,8 @@ apps/game/.godot/
 apps/game/*.import
 
 __pycache__/
+
+# Handbook plates are build output: bun run art:sheets remakes them from art/concept, art/kit, art/models and art/textures
+art/handbook/
+# Meshy input crops, cut from art/kit/peoples/<people>/base-turnaround.png when needed
+art/kit/views/

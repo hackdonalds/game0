@@ -1,8 +1,10 @@
 {
-  "prompt": "Please generate an image. Use the attached image only as the style reference (palette, painterly rendering, light). Game-asset concept sheet, landscape 16:9, locked painterly style (hand-painted, chunky readable shapes, detail painted not modelled, warm golden key light, cool teal shadows, muted saturation). Plain light neutral grey background, no scene, no sky, soft contact shadow only, each view with a small neat label underneath. Subject: the SKIFF, the smallest wooden sky sailship, up to 5 aboard, one person steers and trims; pure high fantasy, no engines, no balloons, no propellers. A light open boat with a single short mast and one lateen sail of canvas with woven teal enchantment patterns that faintly glow; a slim keel-less hull with two small side-fins and one teal-crystal lift charm at the bow; terracotta-red trim and simple brass fittings; a tiller at the stern; bench thwarts; a few lashed crates. Views: (1) side profile, (2) top-down plan, (3) front view, (4) three-quarter view under sail, (5) detail callouts: tiller, sail and boom with enchantment pattern, crystal lift charm, bench and cargo lashing. Include a simple 1.8 m human silhouette for scale.",
+  "prompt": "Plate for an illustrated field guide: a small single-masted wooden skiff with a glowing teal-patterned sail, gliding along a wind current between floating isles at morning. Soft vignette fading to warm parchment at the edges. Style: hand-painted stylized game art, painterly, soft lighting with gentle rim light, softer muted colours with gentle saturation, epic and luminous fantasy, never grim. No text, no labels, no border, no frame.",
+  "model": "openai/gpt-image-2.5-sunburst",
+  "aspect": "1:1",
+  "quality": "high",
   "refs": [
-    "art/concept/style-test-03-airship.png"
+    "art/references/world-tree-floating-isle.webp"
   ],
-  "chat_url": "https://chatgpt.com/c/6ae8bb94-b2d0-83ed-8273-47fa0f1d5287",
-  "tool": "chatgpt.com"
+  "createdAt": "2026-11-01T14:20:13.955Z"
 }

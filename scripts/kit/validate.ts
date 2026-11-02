@@ -34,7 +34,8 @@ for (const file of files) {
   if (dirname(file).split("/").pop() !== kit.style) err("kit", `folder does not match style ${kit.style}`);
   const base = kit.grid?.base ?? 0.5;
   const ids = new Set<string>();
-  const refDir = nature ? join(ROOT, "art/concept/biomes", kit.style) : join(ROOT, "art/concept/architecture", kit.style, "kit");
+  // Reference sheets: kit sheets in art/kit/<architecture|biomes>/<style>/, biome isle portraits in art/concept/biomes/<biome>/
+  const refDirs = nature ? [join(ROOT, "art/kit/biomes", kit.style), join(ROOT, "art/concept/biomes", kit.style)] : [join(ROOT, "art/kit/architecture", kit.style)];
 
   for (const p of kit.pieces ?? []) {
     const id = p.id ?? "?";
@@ -47,7 +48,7 @@ for (const file of files) {
     else if (!p.free && !p.size.every((v: number) => onGrid(v, base))) err(id, `size ${p.size} not on the ${base} m grid (mark details free: true)`);
     if (!["bottom-left-front", "bottom-center"].includes(p.pivot)) err(id, `pivot ${p.pivot}`);
     for (const v of p.variants ?? []) if (!VARIANTS.has(v)) err(id, `unknown variant ${v}`);
-    if (!p.ref?.sheet || !existsSync(join(refDir, `${p.ref.sheet}.png`))) err(id, `ref sheet ${p.ref?.sheet} missing`);
+    if (!p.ref?.sheet || !refDirs.some((d) => existsSync(join(d, `${p.ref.sheet}.png`)))) err(id, `ref sheet ${p.ref?.sheet} missing`);
     for (const s of p.sockets ?? []) if (!SOCKETS.has(s.diameter)) err(id, `socket ${s.name} diameter ${s.diameter}`);
     if (p.radius !== undefined && RADII[kit.style] && !RADII[kit.style].includes(p.radius)) err(id, `radius ${p.radius} not in ${RADII[kit.style]}`);
   }

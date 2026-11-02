@@ -1,11 +1,10 @@
 {
-  "prompt": "Please generate an image. Locked painterly style (hand-painted, chunky readable shapes, detail painted not modelled, warm golden key light, cool teal shadows, muted saturation, epic and luminous, never grim). Use the attached image(s) only as reference as described; the first attachment is always the style reference for palette, rendering and light. Game-asset concept sheet, landscape 16:9, plain light neutral grey background, no scene, no sky, soft contact shadow only, every piece isolated with clear space and a small neat label underneath. Creature TURNAROUND sheet for 3D modelling: SHELLBACK CRAB, a broad crab with a shield-like shell grown over with tiny water plants and shells. Keep the exact design of the creature in the second attachment. Show front, side and back views in a neutral standing pose, a three-quarter action pose, and close-up callouts of head, feet or claws and a texture swatch of skin, fur, feathers or scale. Scale comparison: in one small separate box labelled SCALE, draw a 1.8 m human silhouette standing next to a small copy of the creature drawn at the SAME scale, so the creature is about 1 m across, reaching the human's hip; do not put the large human silhouette next to the big views.",
+  "prompt": "Bestiary plate for a fantasy field guide: a broad crab with a shield-like shell grown over with tiny water plants and shells, raising one big claw on a glowing lagoon shore. The whole creature is in view at a three-quarter angle, set in its habitat, with a soft vignette fading to warm parchment at the edges. No text, no labels, no border, no frame. Style: hand-painted stylized game art, painterly, soft lighting with gentle rim light, softer muted colours with gentle saturation, epic and luminous fantasy, never grim.",
   "model": "openai/gpt-image-2.5-sunburst",
-  "aspect": "16:9",
+  "aspect": "1:1",
   "quality": "high",
   "refs": [
-    "art/concept/style-test-01-market-town.png",
-    "art/bestiary/shellback-crab.webp"
+    "art/references/world-tree-floating-isle.webp"
   ],
-  "createdAt": "2026-11-02T17:43:52.443Z"
+  "createdAt": "2026-11-01T13:49:24.972Z"
 }

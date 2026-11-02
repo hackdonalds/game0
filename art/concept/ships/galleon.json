@@ -1,8 +1,10 @@
 {
-  "prompt": "Please generate an image. Locked painterly style (hand-painted, chunky readable shapes, detail painted not modelled, warm golden key light, cool teal shadows, muted saturation, epic and luminous, never grim). Use the attached image(s) only as reference as described; the first attachment is always the style reference for palette, rendering and light. Game-asset concept sheet, landscape 16:9, plain light neutral grey background, no scene, no sky, soft contact shadow only, every piece isolated with clear space and a small neat label underneath. Subject: the GALLEON, the largest wooden sky sailship, up to 100 aboard; a helmsman steers while a sailmaster works the sails. Pure high fantasy: no engines, balloons or propellers. Three masts with square sails and a fore-and-aft mizzen, canvas with woven glowing teal enchantment patterns; a broad keel-less hull with wide side-fins; a cluster of teal-crystal lift charms under the bow and stern; terracotta-red trim and gold fittings; high sterncastle with helm and a separate sail-master's station by the mainmast; cargo hold hatches, rope ladders, ship's boats hanging off the side. Views: side profile, top-down deck plan, front view, three-quarter view under sail, and detail callouts of helm, sailmaster station, lift-charm cluster, cargo hold. Include a simple 1.8 m human silhouette for scale.",
+  "prompt": "Plate for an illustrated field guide: a towering three-masted wooden galleon with gold trim and many glowing teal sails, sailing past a giant ancient tree on a floating isle. Soft vignette fading to warm parchment at the edges. Style: hand-painted stylized game art, painterly, soft lighting with gentle rim light, softer muted colours with gentle saturation, epic and luminous fantasy, never grim. No text, no labels, no border, no frame.",
+  "model": "openai/gpt-image-2.5-sunburst",
+  "aspect": "1:1",
+  "quality": "high",
   "refs": [
-    "art/concept/style-test-03-airship.png"
+    "art/references/world-tree-floating-isle.webp"
   ],
-  "chat_url": "https://chatgpt.com/c/6ae8bd0c-ec38-83ed-bec0-8d4177dd5c6f",
-  "tool": "chatgpt.com"
+  "createdAt": "2026-11-01T14:20:12.519Z"
 }

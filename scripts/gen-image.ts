@@ -1,7 +1,8 @@
 // Generate concept art via OpenRouter and save it into the repo with a prompt sidecar.
-// Usage: bun run art:image "prompt" [--out art/concept/name] [--ref path.webp ...] [--aspect 16:9] [--quality high] [--model id]
+// Usage: bun run art:image "prompt" [--out art/concept/<kind>/<name> | art/kit/<kind>/<name>] [--ref path.webp ...] [--aspect 16:9] [--quality high] [--model id]
 //        bun run art:image --kit <type> "subject" [--figure 1.8] [--title "..."] --out art/kit/<kind>/<sheet> [--ref ...]
 //   --kit builds the prompt from concept/art-direction/kit-sheets.md (scripts/kit-prompt.ts); the aspect defaults to the type's.
+//   Without --out, images land in art/concept/drafts/ (never shown on the site) until they are reviewed and moved.
 import { parseArgs } from "node:util";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, extname } from "node:path";
@@ -55,7 +56,7 @@ const images: { url?: string; b64_json?: string }[] = data.data ?? [];
 if (!images.length) throw new Error(`No image returned: ${JSON.stringify(data).slice(0, 500)}`);
 
 const slug = (kit ? `${kit.type}-${kit.subject}` : prompt).toLowerCase().replace(/[^a-z0-9]+/g, "-").slice(0, 48).replace(/-+$/, "");
-const base = values.out ?? `art/${kit ? "kit" : "concept"}/${new Date().toISOString().slice(0, 10)}-${slug}`;
+const base = values.out ?? `art/concept/drafts/${new Date().toISOString().slice(0, 10)}-${slug}`;
 await mkdir(dirname(base), { recursive: true });
 
 for (const [i, img] of images.entries()) {
