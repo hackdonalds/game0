@@ -1,0 +1,32 @@
+{
+  "prompt": "A single object shown alone as a game asset, three-quarter front view: The Waystone, a tall ancient standing stone about 6 m high: a single thick rounded slab of pale cream weathered limestone, slightly tapered with a broad rounded top, standing on a low rough plinth of a few chunky stone blocks. Its face is deeply carved with a large compass rose at the centre and many curving wind lanes radiating out and spiralling over the whole stone, and every carved line is a wide deep groove inlaid with pale teal glimmer crystal, the teal inlay a clear separate colour zone from the cream stone, softly luminous teal. A little moss and ivy at the base only. Whole stone in frame. Thick chunky proportions, nothing thin. Hand-painted stylized game art, mid-level detail, chunky readable shapes, softer muted colours. Plain light grey background, even soft lighting, no cast shadows, no text, no labels.",
+  "kit": {
+    "type": "part",
+    "subject": "The Waystone, a tall ancient standing stone about 6 m high: a single thick rounded slab of pale cream weathered limestone, slightly tapered with a broad rounded top, standing on a low rough plinth of a few chunky stone blocks. Its face is deeply carved with a large compass rose at the centre and many curving wind lanes radiating out and spiralling over the whole stone, and every carved line is a wide deep groove inlaid with pale teal glimmer crystal, the teal inlay a clear separate colour zone from the cream stone, softly luminous teal. A little moss and ivy at the base only. Whole stone in frame",
+    "figure": 1.8
+  },
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1024x1024",
+  "aspect": "1:1",
+  "quality": "high",
+  "refs": [
+    "art/references/style-test-01-market-town.png",
+    "art/handbook/isles/isle_waystone.webp"
+  ],
+  "usage": {
+    "input_tokens": 2536,
+    "input_tokens_details": {
+      "image_tokens": 2320,
+      "text_tokens": 216
+    },
+    "output_tokens": 1756,
+    "output_tokens_details": {
+      "image_tokens": 1756,
+      "text_tokens": 0
+    },
+    "total_tokens": 4292
+  },
+  "costUSD": 0.0723,
+  "createdAt": "2026-11-04T13:36:18.630Z"
+}

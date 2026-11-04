@@ -1,0 +1,26 @@
+{
+  "prompt": "Character turnaround sheet for 3D modeling and rigging: the same character shown three times side by side, evenly spaced with wide gaps, not overlapping: front view, side view (facing left), back view, all orthographic and the same height. Keep the exact design, colours and outfit of the character in the attached front concept. The character: an adult Anchorkin guard, a huge, broad, heavy near-human about 2.6 m tall with skin of living grey slate stone in large chunky plates, veined with softly glowing teal crystal, deep-set teal eyes, a carved Ledger line of runes across the brow and carved square oath-marks on both shoulders, and a short, thick, blocky beard of coarse grey stone fibres ending at the upper chest. Massive shoulders and forearms, oversized stone hands. Outfit: a heavy forged iron chain of big chunky links worn diagonally across the chest from the left shoulder to the right hip, a sleeveless dark brown leather jerkin with a broad gold-trimmed hem and a band of gold geometric motifs, a wide leather belt with a square gold buckle, fitted dark brown leather trousers, and heavy iron-capped boots. Bare stone arms. Rigging A-pose: standing straight, arms straight and angled 45 degrees down and out from the body with a clear gap between each arm and the torso all the way to the armpit, elbows straight, hands open and flat with palms facing forward, all five fingers spread wide apart with a visible gap between every finger, the thumb clearly separated and pointing away from the palm, slightly oversized hands with thick fingers, legs straight with feet shoulder-width apart and a clear gap between the thighs, feet flat pointing forward, head facing forward. Hair, beard, feathers, cloth and growths stay clear of the armpits and the gap between the legs and never join an arm to the body or the legs to each other. Nothing held in the hands. The pose and every detail are identical and mirror-symmetric in all three views. Heroic stylized proportions: slightly larger head, hands and shoulders, a silhouette that reads at a distance. No thin geometry: straps, ropes and trims are thick and solid, detail is painted into the surfaces. Clothing is fitted close to the body; nothing hangs loose between the legs or below the hips except as described. Full body, fully visible, nothing cut off by the edge. Hand-painted stylized game art, mid-level detail, chunky readable shapes, softer muted colours. Plain light grey background, even soft lighting, no cast shadows, no text, no labels.",
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1792x768",
+  "aspect": "21:9",
+  "quality": "high",
+  "refs": [
+    "art/concept/waystone/anchorkin.png"
+  ],
+  "usage": {
+    "input_tokens": 2083,
+    "input_tokens_details": {
+      "image_tokens": 1536,
+      "text_tokens": 547
+    },
+    "output_tokens": 851,
+    "output_tokens_details": {
+      "image_tokens": 851,
+      "text_tokens": 0
+    },
+    "total_tokens": 2934
+  },
+  "costUSD": 0.0406,
+  "createdAt": "2026-11-04T13:38:26.992Z"
+}

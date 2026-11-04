@@ -1,0 +1,26 @@
+{
+  "prompt": "Character turnaround sheet for 3D modeling and rigging: the same character shown three times side by side, evenly spaced with wide gaps, not overlapping: front view, side view (facing left), back view, all orthographic and the same height. Keep the exact design, colours and outfit of the character in the attached front concept. The character: a young adult Galeborne adventurer, a tall, light, narrow near-human about 1.9 m tall with hollow-boned slender limbs, sky-pale skin, pointed ears, calm blue-grey eyes and a swept-back crest of slate-blue and cream-white feathers instead of hair. The Galeborne feathered mantle is part of the body: short layered slate-blue and cream feathers grow from the tops of the shoulders and along the OUTER edge of each upper arm and forearm, lying flat and close against the arm like a folded cloak, ending at the wrist, never hanging down toward the torso. Outfit: a cream linen shirt with sleeves rolled to the elbow, a brown leather flight harness crossing the chest with round brass buckles, a slate-blue scarf knotted at the throat, a wide leather belt with a small brown courier satchel fixed flat against the right hip, slim dark blue-grey knee-length trousers, and brown leather wraps from shin to ankle over bare long-toed feet. Rigging A-pose: standing straight, arms straight and angled 45 degrees down and out from the body with a clear gap between each arm and the torso all the way to the armpit, elbows straight, hands open and flat with palms facing forward, all five fingers spread wide apart with a visible gap between every finger, the thumb clearly separated and pointing away from the palm, slightly oversized hands with thick fingers, legs straight with feet shoulder-width apart and a clear gap between the thighs, feet flat pointing forward, head facing forward. Hair, beard, feathers, cloth and growths stay clear of the armpits and the gap between the legs and never join an arm to the body or the legs to each other. Nothing held in the hands. The pose and every detail are identical and mirror-symmetric in all three views. Heroic stylized proportions: slightly larger head, hands and shoulders, a silhouette that reads at a distance. No thin geometry: straps, ropes and trims are thick and solid, detail is painted into the surfaces. Clothing is fitted close to the body; nothing hangs loose between the legs or below the hips except as described. Full body, fully visible, nothing cut off by the edge. Hand-painted stylized game art, mid-level detail, chunky readable shapes, softer muted colours. Plain light grey background, even soft lighting, no cast shadows, no text, no labels.",
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1792x768",
+  "aspect": "21:9",
+  "quality": "high",
+  "refs": [
+    "art/concept/waystone/galeborne.png"
+  ],
+  "usage": {
+    "input_tokens": 2111,
+    "input_tokens_details": {
+      "image_tokens": 1536,
+      "text_tokens": 575
+    },
+    "output_tokens": 851,
+    "output_tokens_details": {
+      "image_tokens": 851,
+      "text_tokens": 0
+    },
+    "total_tokens": 2962
+  },
+  "costUSD": 0.0407,
+  "createdAt": "2026-11-04T13:38:27.053Z"
+}

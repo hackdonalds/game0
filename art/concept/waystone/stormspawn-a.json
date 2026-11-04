@@ -1,0 +1,33 @@
+{
+  "prompt": "A single object shown alone as a game asset, three-quarter front view: Stormspawn, a storm-twisted wild boar about 1.6 m tall at the shoulder hump, in an aggressive braced stance with its head lowered to charge: the stocky body, thick legs, hooves and curved tusks of the attached burrow boar, but made of dark slate-blue and charcoal storm cloud, with chunky billowing cloud masses wrapped tight around the body, a bristling cloud mane along the spine and a stubby cloud tail, all cloud kept as thick solid rounded puffs close to the body, nothing thin or wispy floating free. Two blazing white-blue lightning eyes and broad painted lightning veins crackling across the flanks and legs. Pale grey tusks. Standing on all four hooves on the ground, whole body in frame. Thick chunky proportions, nothing thin. Hand-painted stylized game art, mid-level detail, chunky readable shapes, softer muted colours. Plain light grey background, even soft lighting, no cast shadows, no text, no labels.",
+  "kit": {
+    "type": "part",
+    "subject": "Stormspawn, a storm-twisted wild boar about 1.6 m tall at the shoulder hump, in an aggressive braced stance with its head lowered to charge: the stocky body, thick legs, hooves and curved tusks of the attached burrow boar, but made of dark slate-blue and charcoal storm cloud, with chunky billowing cloud masses wrapped tight around the body, a bristling cloud mane along the spine and a stubby cloud tail, all cloud kept as thick solid rounded puffs close to the body, nothing thin or wispy floating free. Two blazing white-blue lightning eyes and broad painted lightning veins crackling across the flanks and legs. Pale grey tusks. Standing on all four hooves on the ground, whole body in frame",
+    "figure": 1.8
+  },
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1024x1024",
+  "aspect": "1:1",
+  "quality": "high",
+  "refs": [
+    "art/references/style-test-01-market-town.png",
+    "art/kit/bestiary/stormspawn.png",
+    "art/kit/bestiary/burrow-boar.png"
+  ],
+  "usage": {
+    "input_tokens": 4143,
+    "input_tokens_details": {
+      "image_tokens": 3888,
+      "text_tokens": 255
+    },
+    "output_tokens": 1756,
+    "output_tokens_details": {
+      "image_tokens": 1756,
+      "text_tokens": 0
+    },
+    "total_tokens": 5899
+  },
+  "costUSD": 0.0851,
+  "createdAt": "2026-11-04T13:36:27.193Z"
+}

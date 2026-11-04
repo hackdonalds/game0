@@ -1,0 +1,32 @@
+{
+  "prompt": "A single object shown alone as a game asset, three-quarter front view: An ancient gnarled landmark oak about 12 m tall and 14 m wide: a massive twisted trunk with deep painted bark furrows splitting into three thick crooked limbs, thick exposed roots spreading over a low flat patch of grass only slightly wider than the roots. A broad crown made of four or five huge rounded leaf masses of muted yellow-green, wider than tall, sitting on the limbs. The foliage is sculpted as solid closed rounded masses like a stylized clay sculpture, each mass a smooth bulging cushion with large painted leaf shapes on its surface, no gaps, no holes, no loose leaves, no see-through branches. Whole tree in frame. Thick chunky proportions, nothing thin. Hand-painted stylized game art, mid-level detail, chunky readable shapes, softer muted colours. Plain light grey background, even soft lighting, no cast shadows, no text, no labels.",
+  "kit": {
+    "type": "part",
+    "subject": "An ancient gnarled landmark oak about 12 m tall and 14 m wide: a massive twisted trunk with deep painted bark furrows splitting into three thick crooked limbs, thick exposed roots spreading over a low flat patch of grass only slightly wider than the roots. A broad crown made of four or five huge rounded leaf masses of muted yellow-green, wider than tall, sitting on the limbs. The foliage is sculpted as solid closed rounded masses like a stylized clay sculpture, each mass a smooth bulging cushion with large painted leaf shapes on its surface, no gaps, no holes, no loose leaves, no see-through branches. Whole tree in frame",
+    "figure": 1.8
+  },
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1024x1024",
+  "aspect": "1:1",
+  "quality": "high",
+  "refs": [
+    "art/references/style-test-01-market-town.png",
+    "art/concept/waystone/old-tree.png"
+  ],
+  "usage": {
+    "input_tokens": 2538,
+    "input_tokens_details": {
+      "image_tokens": 2320,
+      "text_tokens": 218
+    },
+    "output_tokens": 1756,
+    "output_tokens_details": {
+      "image_tokens": 1756,
+      "text_tokens": 0
+    },
+    "total_tokens": 4294
+  },
+  "costUSD": 0.0723,
+  "createdAt": "2026-11-04T13:46:25.380Z"
+}

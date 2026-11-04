@@ -1,0 +1,13 @@
+{
+  "taskId": "01a1a6cb-7025-7693-ba74-2a2e4ac35085",
+  "endpoint": "/image-to-3d",
+  "images": [
+    "art/concept/waystone/underside.png"
+  ],
+  "model": "meshy-7.1",
+  "textured": true,
+  "polycount": 15000,
+  "pose": "none",
+  "credits": 30,
+  "createdAt": "2026-11-04T13:44:41.070Z"
+}

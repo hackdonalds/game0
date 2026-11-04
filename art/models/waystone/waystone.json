@@ -1,0 +1,13 @@
+{
+  "taskId": "01a1a6c8-4bc8-7111-96e4-bf5789434bed",
+  "endpoint": "/image-to-3d",
+  "images": [
+    "art/concept/waystone/waystone.png"
+  ],
+  "model": "meshy-7.1",
+  "textured": true,
+  "polycount": 8000,
+  "pose": "none",
+  "credits": 30,
+  "createdAt": "2026-11-04T13:40:15.432Z"
+}

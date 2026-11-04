@@ -1,0 +1,32 @@
+{
+  "prompt": "A single object shown alone as a game asset, three-quarter front view: A glimmer shard collectible: a cluster of three thick chunky crystal points of luminous teal glimmer crystal, the largest about 60 cm tall, the others shorter and angled outward, growing from a small rough lump of dark slate stone. The crystal is hand-painted with a few large clean flat facets and soft painted gradients from pale mint at the tips to deep teal at the base, no fine sparkle or noise, one clear bright teal colour zone; the stone is dark grey with broad painted strokes. Whole object in frame. Thick chunky proportions, nothing thin. Hand-painted stylized game art, mid-level detail, chunky readable shapes, softer muted colours. Plain light grey background, even soft lighting, no cast shadows, no text, no labels.",
+  "kit": {
+    "type": "part",
+    "subject": "A glimmer shard collectible: a cluster of three thick chunky crystal points of luminous teal glimmer crystal, the largest about 60 cm tall, the others shorter and angled outward, growing from a small rough lump of dark slate stone. The crystal is hand-painted with a few large clean flat facets and soft painted gradients from pale mint at the tips to deep teal at the base, no fine sparkle or noise, one clear bright teal colour zone; the stone is dark grey with broad painted strokes. Whole object in frame",
+    "figure": 1.8
+  },
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1024x1024",
+  "aspect": "1:1",
+  "quality": "high",
+  "refs": [
+    "art/references/style-test-01-market-town.png",
+    "art/handbook/materials/glimmerstone.webp"
+  ],
+  "usage": {
+    "input_tokens": 2510,
+    "input_tokens_details": {
+      "image_tokens": 2320,
+      "text_tokens": 190
+    },
+    "output_tokens": 1756,
+    "output_tokens_details": {
+      "image_tokens": 1756,
+      "text_tokens": 0
+    },
+    "total_tokens": 4266
+  },
+  "costUSD": 0.0722,
+  "createdAt": "2026-11-04T13:37:47.528Z"
+}

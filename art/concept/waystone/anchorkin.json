@@ -1,0 +1,26 @@
+{
+  "prompt": "Please generate an image. Edit the attached full-body character concept: keep the character, face, colours, outfit, painterly style, plain grey background, framing and front view exactly the same, and change only this: shorten the leather jerkin so it ends at the belt at the waist, with nothing hanging below the belt, so the leather trousers, the crotch and a clear gap between the thighs are fully visible; and straighten both arms fully at the elbows, angled 45 degrees down and out from the body with a wide gap to the torso, hands open and flat with palms facing forward and all five thick stone fingers spread apart, thumb pointing away. No text.",
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1024x1536",
+  "aspect": "2:3",
+  "quality": "high",
+  "refs": [
+    "/private/tmp/claude-501/-Users-htolgasahin-Developer-game0/79963ffe-576e-43f0-9b2d-534a2c218025/scratchpad/a/v1/anchorkin.png"
+  ],
+  "usage": {
+    "input_tokens": 1688,
+    "input_tokens_details": {
+      "image_tokens": 1536,
+      "text_tokens": 152
+    },
+    "output_tokens": 1372,
+    "output_tokens_details": {
+      "image_tokens": 1372,
+      "text_tokens": 0
+    },
+    "total_tokens": 3060
+  },
+  "costUSD": 0.0542,
+  "createdAt": "2026-11-04T13:37:44.423Z"
+}

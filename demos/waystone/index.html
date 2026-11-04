@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Waystone · game0 demo</title>
+    <style>
+      html, body { margin: 0; height: 100%; background: #1d2433; overflow: hidden; touch-action: none; user-select: none; -webkit-user-select: none; }
+      canvas { display: block; opacity: 0; transition: opacity 1s ease; }
+      .ready canvas { opacity: 1; }
+      .loading { position: fixed; inset: 0; display: grid; place-content: center; gap: 12px; font: 500 1rem system-ui, sans-serif; color: #f3ecd9; text-align: center; }
+      .loading-track { width: 220px; height: 4px; background: #ffffff22; border-radius: 2px; overflow: hidden; }
+      .loading-bar { width: 0; height: 100%; background: #e9c46a; transition: width .2s; }
+      .ready .loading { display: none; }
+    </style>
+  </head>
+  <body>
+    <div class="loading"><div>Sailing to Waystone…</div><div class="loading-track"><div class="loading-bar"></div></div></div>
+    <div id="ui"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

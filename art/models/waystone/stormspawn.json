@@ -1,0 +1,13 @@
+{
+  "taskId": "01a1a6cd-a5c6-76ec-a173-476008d148b2",
+  "endpoint": "/image-to-3d",
+  "images": [
+    "art/concept/waystone/stormspawn.png"
+  ],
+  "model": "meshy-7.1",
+  "textured": true,
+  "polycount": 20000,
+  "pose": "none",
+  "credits": 30,
+  "createdAt": "2026-11-04T13:46:05.770Z"
+}

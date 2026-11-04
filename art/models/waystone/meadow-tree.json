@@ -1,0 +1,12 @@
+{
+  "taskId": "01a1a6d0-068f-7579-91d6-4803007bf975",
+  "endpoint": "/image-to-3d",
+  "images": [
+    "art/concept/waystone/meadow-tree.png"
+  ],
+  "model": "meshy-6-lite",
+  "textured": true,
+  "polycount": 10000,
+  "credits": 15,
+  "createdAt": "2026-11-04T13:47:59.837Z"
+}

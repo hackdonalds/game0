@@ -1,0 +1,13 @@
+{
+  "taskId": "01a1a6cc-654c-7340-b5e6-b7b0ab7ee3eb",
+  "endpoint": "/image-to-3d",
+  "images": [
+    "art/concept/waystone/camp.png"
+  ],
+  "model": "meshy-7.1",
+  "textured": true,
+  "polycount": 15000,
+  "pose": "none",
+  "credits": 30,
+  "createdAt": "2026-11-04T13:45:02.819Z"
+}

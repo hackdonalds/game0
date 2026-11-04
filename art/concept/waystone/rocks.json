@@ -1,0 +1,32 @@
+{
+  "prompt": "A single object shown alone as a game asset, three-quarter front view: A small cluster of three pale cream limestone boulders about 1.5 m high, one large rounded boulder with two smaller ones leaning against it, soft weathered edges, patches of green moss and lichen on top, a few grass tufts at the base, all touching as one cluster. Thick chunky proportions, nothing thin. Hand-painted stylized game art, mid-level detail, chunky readable shapes, softer muted colours. Plain light grey background, even soft lighting, no cast shadows, no text, no labels.",
+  "kit": {
+    "type": "part",
+    "subject": "A small cluster of three pale cream limestone boulders about 1.5 m high, one large rounded boulder with two smaller ones leaning against it, soft weathered edges, patches of green moss and lichen on top, a few grass tufts at the base, all touching as one cluster",
+    "figure": 1.8
+  },
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1024x1024",
+  "aspect": "1:1",
+  "quality": "high",
+  "refs": [
+    "art/references/style-test-01-market-town.png",
+    "art/kit/biomes/meadow/nature.png"
+  ],
+  "usage": {
+    "input_tokens": 2740,
+    "input_tokens_details": {
+      "image_tokens": 2592,
+      "text_tokens": 148
+    },
+    "output_tokens": 1756,
+    "output_tokens_details": {
+      "image_tokens": 1756,
+      "text_tokens": 0
+    },
+    "total_tokens": 4496
+  },
+  "costUSD": 0.0742,
+  "createdAt": "2026-11-04T13:36:26.315Z"
+}

@@ -1,0 +1,26 @@
+{
+  "prompt": "Character turnaround sheet for 3D modeling and rigging: the same character shown three times side by side, evenly spaced with wide gaps, not overlapping: front view, side view (facing left), back view, all orthographic and the same height. Keep the exact design, colours and outfit of the character in the attached front concept. The character: Maren, a middle-aged Galeborne skiff warden of the Accord, a tall lean near-human woman about 1.9 m tall with weathered dusk-blue skin, pointed ears, kind crow's-feet around warm gold eyes, and a crest of grey-brown and cream feathers tied back at the nape. Her Galeborne feathered mantle shows as short grey-brown feathers on the tops of the shoulders and along the outer forearms out of her rolled sleeves, lying flat against the arm. Outfit, a practical sailor's look in the Accord colours of terracotta, cream, deep teal and gold: a hip-length, fitted, double-breasted deep-teal wool sailor's coat with turned-back cuffs, round brass buttons and several visible square patches in terracotta and cream sewn on with big painted stitches, the coat ending at the hips, a thick coil of tan rope worn bandolier-style across the chest from the right shoulder to the left hip, a wide leather belt with a small brass lantern with teal-glowing glass hooked flat at the back of the left hip, fitted cream canvas trousers, and tall brown sailor's boots. Rigging A-pose: standing straight, arms straight and angled 45 degrees down and out from the body with a clear gap between each arm and the torso all the way to the armpit, elbows straight, hands open and flat with palms facing forward, all five fingers spread wide apart with a visible gap between every finger, the thumb clearly separated and pointing away from the palm, slightly oversized hands with thick fingers, legs straight with feet shoulder-width apart and a clear gap between the thighs, feet flat pointing forward, head facing forward. Hair, beard, feathers, cloth and growths stay clear of the armpits and the gap between the legs and never join an arm to the body or the legs to each other. Nothing held in the hands. The pose and every detail are identical and mirror-symmetric in all three views. Heroic stylized proportions: slightly larger head, hands and shoulders, a silhouette that reads at a distance. No thin geometry: straps, ropes and trims are thick and solid, detail is painted into the surfaces. Clothing is fitted close to the body; nothing hangs loose between the legs or below the hips except as described. Full body, fully visible, nothing cut off by the edge. Hand-painted stylized game art, mid-level detail, chunky readable shapes, softer muted colours. Plain light grey background, even soft lighting, no cast shadows, no text, no labels.",
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1792x768",
+  "aspect": "21:9",
+  "quality": "high",
+  "refs": [
+    "art/concept/waystone/maren.png"
+  ],
+  "usage": {
+    "input_tokens": 2144,
+    "input_tokens_details": {
+      "image_tokens": 1536,
+      "text_tokens": 608
+    },
+    "output_tokens": 851,
+    "output_tokens_details": {
+      "image_tokens": 851,
+      "text_tokens": 0
+    },
+    "total_tokens": 2995
+  },
+  "costUSD": 0.0409,
+  "createdAt": "2026-11-04T13:38:26.878Z"
+}

@@ -1,0 +1,15 @@
+{
+  "taskId": "01a1a6d0-9c1c-774f-bf10-a6caa60dfc80",
+  "endpoint": "/multi-image-to-3d",
+  "images": [
+    "/private/tmp/claude-501/-Users-htolgasahin-Developer-game0/79963ffe-576e-43f0-9b2d-534a2c218025/scratchpad/a/views/maren-front.png",
+    "/private/tmp/claude-501/-Users-htolgasahin-Developer-game0/79963ffe-576e-43f0-9b2d-534a2c218025/scratchpad/a/views/maren-side.png",
+    "/private/tmp/claude-501/-Users-htolgasahin-Developer-game0/79963ffe-576e-43f0-9b2d-534a2c218025/scratchpad/a/views/maren-back.png"
+  ],
+  "model": "meshy-7.1",
+  "textured": true,
+  "polycount": 20000,
+  "pose": "a-pose",
+  "credits": 30,
+  "createdAt": "2026-11-04T13:51:11.424Z"
+}

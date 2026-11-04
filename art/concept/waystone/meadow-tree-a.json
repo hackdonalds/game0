@@ -1,0 +1,32 @@
+{
+  "prompt": "A single object shown alone as a game asset, three-quarter front view: A meadow tree about 7 m tall: a sturdy slightly leaning trunk with a few thick branches and a rounded crown of five or six big chunky clumps of fresh yellow-green leaves, a small grassy base, a few roots at the foot. Whole tree in frame. Thick chunky proportions, nothing thin. Hand-painted stylized game art, mid-level detail, chunky readable shapes, softer muted colours. Plain light grey background, even soft lighting, no cast shadows, no text, no labels.",
+  "kit": {
+    "type": "part",
+    "subject": "A meadow tree about 7 m tall: a sturdy slightly leaning trunk with a few thick branches and a rounded crown of five or six big chunky clumps of fresh yellow-green leaves, a small grassy base, a few roots at the foot. Whole tree in frame",
+    "figure": 1.8
+  },
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1024x1024",
+  "aspect": "1:1",
+  "quality": "high",
+  "refs": [
+    "art/references/style-test-01-market-town.png",
+    "art/kit/biomes/meadow/nature.png"
+  ],
+  "usage": {
+    "input_tokens": 2732,
+    "input_tokens_details": {
+      "image_tokens": 2592,
+      "text_tokens": 140
+    },
+    "output_tokens": 1756,
+    "output_tokens_details": {
+      "image_tokens": 1756,
+      "text_tokens": 0
+    },
+    "total_tokens": 4488
+  },
+  "costUSD": 0.0741,
+  "createdAt": "2026-11-04T13:36:24.682Z"
+}

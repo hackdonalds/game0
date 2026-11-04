@@ -1,0 +1,13 @@
+{
+  "taskId": "01a1a6d0-0695-7693-9f64-a0a3d3c2e32f",
+  "endpoint": "/image-to-3d",
+  "images": [
+    "art/concept/waystone/old-tree.png"
+  ],
+  "model": "meshy-7.1",
+  "textured": true,
+  "polycount": 20000,
+  "pose": "none",
+  "credits": 30,
+  "createdAt": "2026-11-04T13:49:12.255Z"
+}

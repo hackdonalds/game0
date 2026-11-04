@@ -1,0 +1,13 @@
+{
+  "taskId": "01a1a6d0-0695-7694-bd34-e060453270ae",
+  "endpoint": "/image-to-3d",
+  "images": [
+    "art/concept/waystone/jetty.png"
+  ],
+  "model": "meshy-7.1",
+  "textured": true,
+  "polycount": 12000,
+  "pose": "none",
+  "credits": 30,
+  "createdAt": "2026-11-04T13:48:00.185Z"
+}

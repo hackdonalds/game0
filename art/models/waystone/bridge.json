@@ -1,0 +1,13 @@
+{
+  "taskId": "01a1a6d2-8b5f-7378-b011-ca5d6bb78a85",
+  "endpoint": "/image-to-3d",
+  "images": [
+    "art/concept/waystone/bridge.png"
+  ],
+  "model": "meshy-7.1",
+  "textured": true,
+  "polycount": 8000,
+  "pose": "none",
+  "credits": 30,
+  "createdAt": "2026-11-04T13:50:35.259Z"
+}

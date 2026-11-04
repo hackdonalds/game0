@@ -1,0 +1,32 @@
+{
+  "prompt": "A single object shown alone as a game asset, three-quarter front view: A short wooden jetty about 8 m long and 2 m wide: a deck of thick weathered plank boards on chunky square wooden posts wrapped with thick rope, the jetty starting from a rough stone and earth landing at the back end, one thick post with a hanging iron lantern. A small open wooden skiff about 5 m long with a short stub mast and a furled cream sail is moored right alongside the jetty, touching it, tied to a post with thick rope, its hull at the same height as the deck. Warm brown weathered wood, iron fittings. Thick chunky proportions, nothing thin. Hand-painted stylized game art, mid-level detail, chunky readable shapes, softer muted colours. Plain light grey background, even soft lighting, no cast shadows, no text, no labels.",
+  "kit": {
+    "type": "part",
+    "subject": "A short wooden jetty about 8 m long and 2 m wide: a deck of thick weathered plank boards on chunky square wooden posts wrapped with thick rope, the jetty starting from a rough stone and earth landing at the back end, one thick post with a hanging iron lantern. A small open wooden skiff about 5 m long with a short stub mast and a furled cream sail is moored right alongside the jetty, touching it, tied to a post with thick rope, its hull at the same height as the deck. Warm brown weathered wood, iron fittings",
+    "figure": 1.8
+  },
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1024x1024",
+  "aspect": "1:1",
+  "quality": "high",
+  "refs": [
+    "art/references/style-test-01-market-town.png",
+    "art/handbook/isles/isle_waystone.webp"
+  ],
+  "usage": {
+    "input_tokens": 2526,
+    "input_tokens_details": {
+      "image_tokens": 2320,
+      "text_tokens": 206
+    },
+    "output_tokens": 1756,
+    "output_tokens_details": {
+      "image_tokens": 1756,
+      "text_tokens": 0
+    },
+    "total_tokens": 4282
+  },
+  "costUSD": 0.0723,
+  "createdAt": "2026-11-04T13:36:21.023Z"
+}

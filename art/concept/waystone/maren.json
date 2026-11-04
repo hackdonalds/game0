@@ -1,0 +1,27 @@
+{
+  "prompt": "Please generate an image. Locked painterly style: hand-painted stylized game art, chunky readable shapes, detail painted not modelled, mid-level detail, softer muted colours with gentle saturation, epic and luminous, never grim. The palette's warm gold and cool teal are painted into the surfaces, but the light is flat, even studio light: no strong key light, no cast shadows, no rim light. Use the attached images only as reference: the first attachment is the style reference for palette and brushwork; later attachments are the approved design of this people to keep. Full-body character concept for a 3D game model: one character only, front view, orthographic, the whole figure from the top of the head to the feet centred with clear space around it, on a plain light neutral grey background with only a soft contact shadow. The character: Maren, a middle-aged Galeborne skiff warden of the Accord, a tall lean near-human woman about 1.9 m tall with weathered dusk-blue skin, pointed ears, kind crow's-feet around warm gold eyes, and a crest of grey-brown and cream feathers tied back at the nape. Her Galeborne feathered mantle shows as short grey-brown feathers on the tops of the shoulders and along the outer forearms out of her rolled sleeves, lying flat against the arm. Outfit, a practical sailor's look in the Accord colours of terracotta, cream, deep teal and gold: a hip-length, fitted, double-breasted deep-teal wool sailor's coat with turned-back cuffs, round brass buttons and several visible square patches in terracotta and cream sewn on with big painted stitches, the coat ending at the hips, a thick coil of tan rope worn bandolier-style across the chest from the right shoulder to the left hip, a wide leather belt with a small brass lantern with teal-glowing glass hooked flat at the back of the left hip, fitted cream canvas trousers, and tall brown sailor's boots. Rigging A-pose: standing straight, arms straight and angled 45 degrees down and out from the body with a clear gap between each arm and the torso all the way to the armpit, elbows straight, hands open and flat with palms facing forward, all five fingers spread wide apart with a visible gap between every finger, the thumb clearly separated and pointing away from the palm, slightly oversized hands with thick fingers, legs straight with feet shoulder-width apart and a clear gap between the thighs, feet flat pointing forward, head facing forward. Hair, beard, feathers, cloth and growths stay clear of the armpits and the gap between the legs and never join an arm to the body or the legs to each other. Nothing held in the hands. Heroic stylized proportions: slightly larger head, hands and shoulders, a silhouette that reads at a distance. No thin geometry: straps, ropes and trims are thick and solid, detail is painted into the surfaces. Clothing is fitted close to the body; nothing hangs loose between the legs or below the hips except as described. No text, no labels, no border.",
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1024x1536",
+  "aspect": "2:3",
+  "quality": "high",
+  "refs": [
+    "art/kit/peoples/galeborne/outfits.png",
+    "art/references/style-test-01-market-town.png"
+  ],
+  "usage": {
+    "input_tokens": 3253,
+    "input_tokens_details": {
+      "image_tokens": 2592,
+      "text_tokens": 661
+    },
+    "output_tokens": 1372,
+    "output_tokens_details": {
+      "image_tokens": 1372,
+      "text_tokens": 0
+    },
+    "total_tokens": 4625
+  },
+  "costUSD": 0.0652,
+  "createdAt": "2026-11-04T13:36:37.939Z"
+}

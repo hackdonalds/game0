@@ -1,0 +1,32 @@
+{
+  "prompt": "A single object shown alone as a game asset, three-quarter front view: A wind-bent pine about 9 m tall on a small rock: a thick twisted trunk leaning and curving hard to one side, crown swept flat in one direction by the wind as three or four broad flat tiered pads of dark blue-green needles on thick branches. The foliage pads are solid closed flattened cushion masses like a stylized clay sculpture, painted needle texture on their surface, no gaps, no holes, no loose needles. A few roots gripping the rock at the foot. Whole tree in frame. Thick chunky proportions, nothing thin. Hand-painted stylized game art, mid-level detail, chunky readable shapes, softer muted colours. Plain light grey background, even soft lighting, no cast shadows, no text, no labels.",
+  "kit": {
+    "type": "part",
+    "subject": "A wind-bent pine about 9 m tall on a small rock: a thick twisted trunk leaning and curving hard to one side, crown swept flat in one direction by the wind as three or four broad flat tiered pads of dark blue-green needles on thick branches. The foliage pads are solid closed flattened cushion masses like a stylized clay sculpture, painted needle texture on their surface, no gaps, no holes, no loose needles. A few roots gripping the rock at the foot. Whole tree in frame",
+    "figure": 1.8
+  },
+  "provider": "openai",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1024x1024",
+  "aspect": "1:1",
+  "quality": "high",
+  "refs": [
+    "art/references/style-test-01-market-town.png",
+    "art/concept/waystone/pine.png"
+  ],
+  "usage": {
+    "input_tokens": 2509,
+    "input_tokens_details": {
+      "image_tokens": 2320,
+      "text_tokens": 189
+    },
+    "output_tokens": 1756,
+    "output_tokens_details": {
+      "image_tokens": 1756,
+      "text_tokens": 0
+    },
+    "total_tokens": 4265
+  },
+  "costUSD": 0.0722,
+  "createdAt": "2026-11-04T13:46:26.070Z"
+}
