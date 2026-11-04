@@ -15,6 +15,7 @@ const entries = catalogues.reduce((n, c) => n + c.cards.length, 0);
 const posts = (await getCollection("devlog")).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()).slice(0, 3);
 const fmt = (d: Date) => d.toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
 const demos = [
+  { title: "Waystone", text: "Pick a people and relight the Waystone: a short quest on one sky isle.", href: `${base}/demos/waystone/`, art: "isles/isle_waystone" },
   { title: "The First Shard", text: "Pan and pinch the world map; tap any isle.", href: `${base}/world/#explore`, art: "chapters/world" },
   { title: "Meet the peoples", text: `Turn the ${count(peopleEntries.length)} peoples on a carousel.`, href: `${base}/peoples/`, art: "chapters/peoples" },
   { title: "Trim a sail", text: "Steer against the wind and find your best speed.", href: `${base}/sailing/`, art: "chapters/sailing" },

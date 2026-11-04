@@ -7,7 +7,7 @@ const demos = Object.entries(import.meta.glob<Demo>("../../../../demos/*/demo.js
   .map(([path, meta]) => ({ slug: path.split("/").at(-2)!, ...meta }));
 const notes: Record<string, string> = {
   "world-editor": "Desktop recommended", creator: "Works on phones", "floating-isle": "Works on phones", "npc-lod": "Heavy: best on a computer",
-  roam: "Keyboard: best on a computer", "anim-library": "Works on phones", "peoples-anim": "Works on phones", "rootwarden-anim": "Works on phones",
+  roam: "Keyboard: best on a computer", "anim-library": "Works on phones", "peoples-anim": "Works on phones", "rootwarden-anim": "Works on phones", waystone: "Playable quest · works on phones",
 };
 ---
 <Base title="Workshop · game0 handbook" description="Full-screen tools and prototypes used to design game0." section="workshop">
